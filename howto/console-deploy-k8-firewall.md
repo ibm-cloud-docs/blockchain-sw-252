@@ -92,6 +92,7 @@ subcollection: blockchain-sw-251
 {:video: .video}
 
 
+
 # Deploying {{site.data.keyword.blockchainfull_notm}} Platform 2.5.1 behind a firewall
 {: #deploy-k8-firewall}
 
