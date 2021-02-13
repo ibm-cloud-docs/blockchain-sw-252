@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-02-12"
+lastupdated: "2021-02-13"
 
 keywords: Kubernetes, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, fix pack, multicloud
 
@@ -20,11 +20,11 @@ subcollection: blockchain-sw-251
 {:pre: .pre}
 
 
-# Installing the 2.5.1 fix pack
+# Installing the 2.5.2 fix pack
 {: #install-fixpack}
 
 
-Use these instructions if you have already installed or upgraded to the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.1 before Jan 12, 2021 and want to apply the latest 2.5.1 fix pack. This fix pack is cumulative, which means that it includes all of the fixes from previous 2.5.1 fixpacks. It contains important bug fixes and should be applied to your network as soon as possible.  If you install the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.1 after Jan 12, 2021, the platform will contain all the bug fixes and improvements included in this fix pack, and you do not need to apply it.
+Use these instructions if you have already installed or upgraded to the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 before Jan 12, 2021 and want to apply the latest 2.5.2 fix pack. This fix pack is cumulative, which means that it includes all of the fixes from previous 2.5.1 fixpacks. It contains important bug fixes and should be applied to your network as soon as possible.  If you install the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 after Jan 12, 2021, the platform will contain all the bug fixes and improvements included in this fix pack, and you do not need to apply it.
 {:shortdesc}
 
 You can install the fix pack by updating the {{site.data.keyword.blockchainfull_notm}} Platform deployment on your Kubernetes cluster to pull the latest images from the {{site.data.keyword.IBM_notm}} entitlement registry. You can apply the fix pack by using the following steps:
@@ -34,7 +34,7 @@ You can install the fix pack by updating the {{site.data.keyword.blockchainfull_
 1. [Update the {{site.data.keyword.blockchainfull_notm}} console](#install-fixpack-console)
 1. [Update your blockchain nodes](#install-fixpack-nodes)
 
-You can use these steps if you deployed the platform on the OpenShift Container Platform, open source Kubernetes, or distributions such as Rancher.  If you have multiple networks deployed on your cluster, you will need to repeat steps 2-4 to update each 2.5.1 network because they run on separate namespaces. If you experience any problems, see the instructions for [rolling back the fix pack installation](#install-fixpack-rollback).  If you deployed your network behind a firewall, without access to the external internet, see the separate set of instructions for [Installing the 2.5.1 fix pack behind a firewall](#install-fixpack-firewall). You can install the fix pack without disrupting a running network. However, you cannot use the console to deploy new nodes, deploy smart contracts, or create new channels during the process.
+You can use these steps if you deployed the platform on the OpenShift Container Platform, open source Kubernetes, or distributions such as Rancher.  If you have multiple networks deployed on your cluster, you will need to repeat steps 2-4 to update each 2.5.2 network because they run on separate namespaces. If you experience any problems, see the instructions for [rolling back the fix pack installation](#install-fixpack-rollback).  If you deployed your network behind a firewall, without access to the external internet, see the separate set of instructions for [Installing the 2.5.2 fix pack behind a firewall](#install-fixpack-firewall). You can install the fix pack without disrupting a running network. However, you cannot use the console to deploy new nodes, deploy smart contracts, or create new channels during the process.
 
 ## What this fix pack contains
 {: #install-fixpack-contents}
@@ -49,7 +49,7 @@ To upgrade your network, you need to [retrieve your entitlement key](/docs/block
 ## Step one: Update the webhook
 {: #install-fixpack-webhook}
 
-The process of updating your network begins with updating the webhook that you created when you initially deployed or upgraded to the 2.5.1 blockchain service. Run the following command to update the webhook in the `ibpinfra` namespace or project:
+The process of updating your network begins with updating the webhook that you created when you initially deployed or upgraded to the 2.5.2 blockchain service. Run the following command to update the webhook in the `ibpinfra` namespace or project:
 
 ```
 kubectl set image deploy/ibp-webhook -n ibpinfra ibp-webhook=cp.icr.io/cp/ibp-crdwebhook:2.5.1-20210112-amd64
@@ -120,7 +120,7 @@ kubectl delete deployment -n <namespace> ibpconsole
 ```
 {:codeblock}
 
-After you delete the console deployment and ConfigMap, the console will restart and download the new images and configuration settings provided by the 2.5.1 fix pack from the updated operator. You can use the following commands to confirm that the console has been updated with the latest images and configuration. The new images used by the console and your blockchain nodes will have the tags with the date `20210112`.
+After you delete the console deployment and ConfigMap, the console will restart and download the new images and configuration settings provided by the 2.5.2 fix pack from the updated operator. You can use the following commands to confirm that the console has been updated with the latest images and configuration. The new images used by the console and your blockchain nodes will have the tags with the date `20210112`.
 ```
 kubectl get deployment -n <namespace> ibpconsole -o yaml
 kubectl get configmap -n <namespace> ibpconsole-deployer -o yaml
@@ -148,10 +148,10 @@ When you apply the fix pack to your operator, it saves the secrets, deployment s
 
 You can roll back an upgrade after you use the console to operate your network. However, after you use the console to upgrade your blockchain nodes, you can no longer roll back your console to a previous version of the platform.
 
-## Installing the 2.5.1 fix pack behind a firewall
+## Installing the 2.5.2 fix pack behind a firewall
 {: #install-fixpack-firewall}
 
-If you deployed the {{site.data.keyword.blockchainfull_notm}} Platform behind a firewall, without access to the external internet, you can install the  2.5.1 fix pack by using the following steps:
+If you deployed the {{site.data.keyword.blockchainfull_notm}} Platform behind a firewall, without access to the external internet, you can install the  2.5.2 fix pack by using the following steps:
 
 1. [Pull the latest {{site.data.keyword.blockchainfull_notm}} Platform images](#install-fixpack-images-firewall)
 1. [Update the webhook](#install-fixpack-webhook-firewall)
@@ -159,7 +159,7 @@ If you deployed the {{site.data.keyword.blockchainfull_notm}} Platform behind a 
 1. [Update the {{site.data.keyword.blockchainfull_notm}} console](#install-fixpack-console-firewall)
 1. [Update your blockchain nodes](#install-fixpack-nodes-firewall)
 
-You can continue to submit transactions to your network while you are upgrading your network. However, you cannot use the console to deploy new nodes, deploy smart contracts, or create new channels during the upgrade process. If you have multiple networks deployed on your cluster, you will need to repeat steps 3-5 to update each 2.5.1 network because they run on separate namespaces.
+You can continue to submit transactions to your network while you are upgrading your network. However, you cannot use the console to deploy new nodes, deploy smart contracts, or create new channels during the upgrade process. If you have multiple networks deployed on your cluster, you will need to repeat steps 3-5 to update each 2.5.2 network because they run on separate namespaces.
 
 ### Before you begin
 {: #install-fixpack-begin-firewall}
@@ -220,7 +220,7 @@ After you complete these steps, you can use the following instructions to deploy
 ### Step two: Update the webhook
 {: #install-fixpack-webhook-firewall}
 
-First, you need to update the webhook that you created when you initially deployed or upgraded to the 2.5.1 blockchain service. Run the following command to update the webhook in the `ibpinfra` namespace or project:
+First, you need to update the webhook that you created when you initially deployed or upgraded to the 2.5.2 blockchain service. Run the following command to update the webhook in the `ibpinfra` namespace or project:
 
 ```
 kubectl set image deploy/ibp-webhook -n ibpinfra ibp-webhook=cp.icr.io/cp/ibp-crdwebhook:2.5.1-20210112-amd64
@@ -291,7 +291,7 @@ kubectl delete deployment -n <namespace> ibpconsole
 ```
 {:codeblock}
 
-After you delete the console deployment and ConfigMap, the console will restart and download the new images and configuration settings provided by the 2.5.1 fix pack from the updated operator. You can use the following commands to confirm that the console has been updated with the latest images and configuration. The new images used by the console and your blockchain nodes will have the tags with the date `20210112`.
+After you delete the console deployment and ConfigMap, the console will restart and download the new images and configuration settings provided by the 2.5.2 fix pack from the updated operator. You can use the following commands to confirm that the console has been updated with the latest images and configuration. The new images used by the console and your blockchain nodes will have the tags with the date `20210112`.
 ```
 kubectl get deployment -n <namespace> ibpconsole -o yaml
 kubectl get configmap -n <namespace> ibpconsole-deployer -o yaml

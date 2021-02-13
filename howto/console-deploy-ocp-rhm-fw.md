@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-12"
+lastupdated: "2021-02-13"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, Red Hat Marketplace, subscription, operators, on-prem, firewall, airgap environment, container registry, portable storage, Bastion server
 
@@ -96,7 +96,7 @@ subcollection: blockchain-sw-251
 # Deploy from Red Hat Marketplace (airgap installation)
 {: #deploy-ocp-rhm-fw}
 
-The Red Hat Marketplace can be used to deploy the {{site.data.keyword.blockchainfull}} Platform 2.5.1 operator onto an OpenShift Container Platform 4.4+ cluster behind a firewall. This operator can then be used to deploy an instance of the {{site.data.keyword.blockchainfull_notm}} Platform console that can be used to deploy and manage the blockchain components on your network. These deployment instructions are only for installing {{site.data.keyword.blockchainfull_notm}} Platform in an airgap environment.
+The Red Hat Marketplace can be used to deploy the {{site.data.keyword.blockchainfull}} Platform 2.5.2 operator onto an OpenShift Container Platform 4.4+ cluster behind a firewall. This operator can then be used to deploy an instance of the {{site.data.keyword.blockchainfull_notm}} Platform console that can be used to deploy and manage the blockchain components on your network. These deployment instructions are only for installing {{site.data.keyword.blockchainfull_notm}} Platform in an airgap environment.
 {:shortdesc}
 
 There are three ways to deploy the platform in an airgap environment:
@@ -1291,7 +1291,7 @@ In your browser, you can see the console login screen:
 Ensure that you are not using the ESR version of Firefox. If you are, switch to another browser such as Chrome and log in.
 {: important}
 
-The administrator who provisions the console can grant access to other users and restrict the actions they can perform. For more information, see [Managing users from the console](/docs/blockchain-sw-251?topic=blockchain-sw-251-console-icp-manage#console-icp-manage-users){: external} in the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.1 documentation.
+The administrator who provisions the console can grant access to other users and restrict the actions they can perform. For more information, see [Managing users from the console](/docs/blockchain-sw-251?topic=blockchain-sw-251-console-icp-manage#console-icp-manage-users){: external} in the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 documentation.
 
 ## Next steps
 {: #console-deploy-ocp-rhm-fw-next}

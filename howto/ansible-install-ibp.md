@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-12"
+lastupdated: "2021-02-13"
 
 keywords: ansible playbooks, docker image, blockchain network, APIs, ansible galaxy
 
@@ -40,7 +40,7 @@ In just a few minutes, you can have an instance of the {{site.data.keyword.block
 {: #ansible-install-ibp-prereqs}
 
 Before using the playbook, you must have completed the following steps:
-- Purchase an entitlement to {{site.data.keyword.blockchainfull_notm}} Platform 2.5.1. When you configure the playbook, you will need to provide your entitlement key and the email address of your IBMid account that you use to access the My IBM dashboard.
+- Purchase an entitlement to {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2. When you configure the playbook, you will need to provide your entitlement key and the email address of your IBMid account that you use to access the My IBM dashboard.
 - Review the topic on [getting started with using {{site.data.keyword.blockchainfull_notm}} Platform with Ansible](/docs/blockchain-sw-252?topic=blockchain-sw-252-ansible#ansible-getting-started).
 - [Install the prerequisites](https://ibm-blockchain.github.io/ansible-collection/installation.html#requirements) on the system where you will run Ansible.
 - If you are running on Azure Kubernetes Service, Amazon Web Services, Rancher, Amazon Elastic Kubernetes Service, or Google Kubernetes Engine then you need to set up the NGINX Ingress controller and it needs to be running in [SSL passthrough mode](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#ssl-passthrough){: external}.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-02-12"
+lastupdated: "2021-02-13"
 
 keywords: IBM Blockchain Platform, support case, Hyperledger Fabric Community, Cloud tickets, Rocket Chat, dWAnswers, multicloud
 
@@ -33,7 +33,7 @@ subcollection: blockchain-sw-251
 </div>
 
 
-{{site.data.keyword.blockchainfull}} Platform 2.5.1 provides several avenues for troubleshooting problems and getting support.
+{{site.data.keyword.blockchainfull}} Platform 2.5.2 provides several avenues for troubleshooting problems and getting support.
 {:shortdesc}
 
 It is recommended to start with [free digital support resources](/docs/blockchain-sw-251?topic=blockchain-sw-251-blockchain-support#blockchain-support-resources) to troubleshoot problems and get help from {{site.data.keyword.IBM_notm}} and the Hyperledger Fabric Community. If your problem cannot be solved by using those resources, submit a support case through the [mysupport](https://www.ibm.com/mysupport/s/?language=en_US){: external} page. For more information, see [Submitting support cases](/docs/blockchain-sw-251?topic=blockchain-sw-251-blockchain-support#blockchain-support-cases).
@@ -59,7 +59,7 @@ It is recommended to start with [free digital support resources](/docs/blockchai
 ## Submitting support cases
 {: #blockchain-support-cases}
 
-For issues that are related to {{site.data.keyword.blockchainfull_notm}} Platform 2.5.1, you can submit a support case from the [mysupport](https://www.ibm.com/support/pages/node/1072956){: external} page.   
+For issues that are related to {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2, you can submit a support case from the [mysupport](https://www.ibm.com/support/pages/node/1072956){: external} page.   
 
 For issues that are related to the {{site.data.keyword.blockchainfull_notm}} Platform acquired through the Red Hat Marketplace, it is recommended that you submit a support ticket through the Red Hat Marketplace [support portal](https://marketplace.redhat.com/en-us/support){: external}.
 
