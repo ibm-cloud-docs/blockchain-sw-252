@@ -96,14 +96,13 @@ Hyperledger Fabric is a powerful, versatile, pluggable, open source, distributed
 {: faq}
 
 Refer to the following table for information on which version of Fabric is used by each version of the {{site.data.keyword.blockchainfull_notm}} Platform:
-
 | {{site.data.keyword.blockchainfull_notm}} Platform | Hyperledger Fabric |
 |----------------------------------------------------| -------------------|
+| 2.5.2 | v1.4.9 and v2.2.1 |
 | 2.5.1 | v1.4.9 and v2.2.1 |
 | 2.5 | 1.4.7 and 2.1.1 |
 | 2.1.3 | v1.4.6|
 | 2.1.2 | v1.4.4|
-
 ## Can {{site.data.keyword.blockchainfull_notm}} Platform components interoperate with Hyperledger Fabric components on the same network? And vice versa? And what is the support policy for networks that include both {{site.data.keyword.blockchainfull_notm}} Platform components and open source components?
 {: #ibp-v2-faq-interoperability}
 {: faq}

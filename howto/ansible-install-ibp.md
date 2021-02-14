@@ -34,7 +34,7 @@ Customers can use an Ansible playbook to automate their installation of the {{si
 This playbook can be used to deploy the {{site.data.keyword.blockchainfull_notm}} Platform on any [supported Kubernetes distribution](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-ocp-about#console-ocp-about-prerequisites). It is not available for Kubernetes clusters that are running in {{site.data.keyword.cloud_notm}}.
 {: important}
 
-In just a few minutes, you can have an instance of the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.1 up and running on your cluster.
+In just a few minutes, you can have an instance of the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 up and running on your cluster.
 
 ## Prerequisites
 {: #ansible-install-ibp-prereqs}

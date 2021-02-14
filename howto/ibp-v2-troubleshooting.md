@@ -48,7 +48,7 @@ This topic describes common issues that can occur when you use the {{site.data.k
 - [Extracting the TLS certificate from the Kubernetes webhook fails](#ibp-v2-troubleshooting-wh-extract)
 
 **Issues with the Console**
-- [Why is my console upgrade from 2.5 to 2.5.1 failing?](#ibp-v2-troubleshootingconsole-upgrade-fails)
+- [Why is my console upgrade from 2.5 to 2.5.x failing?](#ibp-v2-troubleshootingconsole-upgrade-fails)
 - [Why are my console actions failing in my Chrome browser Version 77.0.3865.90 (Official Build) (64-bit)?](#ibp-v2-troubleshooting-chrome-v77)
 - [Why am I not able to log in to the console from my Chrome browser on Mac OS Catalina?](#ibp-v2-troubleshooting-console-catalina)
 - [Why is my channel creation failing or I am unable to add a new organization to my ordering service with the error "Unable to get system channel"?](#ibp-v2-troubleshooting-accept-tls)
@@ -150,7 +150,7 @@ To resolve this problem, repeat the steps you followed to [Get your entitlement 
 {: tsResolve}
 
 
-## Why is my console upgrade from 2.5 to 2.5.1 failing?
+## Why is my console upgrade from 2.5 to 2.5.x failing?
 {: #ibp-v2-troubleshootingconsole-upgrade-fails}
 {: troubleshoot}
 
