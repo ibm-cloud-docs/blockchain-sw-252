@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-02-13"
+lastupdated: "2021-02-14"
 
 keywords: IBM Blockchain Platform, support case, Hyperledger Fabric Community, Cloud tickets, Rocket Chat, dWAnswers, multicloud
 
@@ -36,13 +36,13 @@ subcollection: blockchain-sw-251
 {{site.data.keyword.blockchainfull}} Platform 2.5.2 provides several avenues for troubleshooting problems and getting support.
 {:shortdesc}
 
-It is recommended to start with [free digital support resources](/docs/blockchain-sw-251?topic=blockchain-sw-251-blockchain-support#blockchain-support-resources) to troubleshoot problems and get help from {{site.data.keyword.IBM_notm}} and the Hyperledger Fabric Community. If your problem cannot be solved by using those resources, submit a support case through the [mysupport](https://www.ibm.com/mysupport/s/?language=en_US){: external} page. For more information, see [Submitting support cases](/docs/blockchain-sw-251?topic=blockchain-sw-251-blockchain-support#blockchain-support-cases).
+It is recommended to start with [free digital support resources](/docs/blockchain-sw-252?topic=blockchain-sw-252-blockchain-support#blockchain-support-resources) to troubleshoot problems and get help from {{site.data.keyword.IBM_notm}} and the Hyperledger Fabric Community. If your problem cannot be solved by using those resources, submit a support case through the [mysupport](https://www.ibm.com/mysupport/s/?language=en_US){: external} page. For more information, see [Submitting support cases](/docs/blockchain-sw-252?topic=blockchain-sw-252-blockchain-support#blockchain-support-cases).
 
 ## Resources and support forums
 {: #blockchain-support-resources}
 
 **{{site.data.keyword.blockchainfull_notm}} Resources**
-  This [{{site.data.keyword.blockchainfull_notm}} Platform documentation](/docs/blockchain-sw-251?topic=blockchain-sw-251-get-started-console-ocp), provides guidance on how to get started with {{site.data.keyword.blockchainfull_notm}} Platform. You can find corresponding topics from the left navigator or search any term with the search function on the top.
+  This [{{site.data.keyword.blockchainfull_notm}} Platform documentation](/docs/blockchain-sw-252?topic=blockchain-sw-252-get-started-console-ocp), provides guidance on how to get started with {{site.data.keyword.blockchainfull_notm}} Platform. You can find corresponding topics from the left navigator or search any term with the search function on the top.
 
   You can find blockchain tutorials and code patterns on [{{site.data.keyword.IBM_notm}} Developer](https://developer.ibm.com/technologies/blockchain/){: external} that provide guidance for building your own smart contracts and applications.
 

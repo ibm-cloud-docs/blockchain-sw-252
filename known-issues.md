@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-02-13"
+lastupdated: "2021-02-14"
 
 keywords: catalina, chrome, external CA, TLS, orderer, error, multicloud
 
@@ -57,11 +57,11 @@ Creating the HSM configmap fails with the error:
 
 This error is caused by not specifying a value for the `<IMAGE_PULL_SECRET>` in the [HSM configmap](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-adv-deployment#ibp-console-adv-deployment-hsm-configmap). Even if your HSM client image is public and no image pull secret is required, you still need to provide a value of `""` for the `<IMAGE_PULL_SECRET>` field.
 
-<blockchain-sw-251>
+
 
 ## Smart contract instantiation timeout
 {: #sw-known-issues-instantiation-timeout}
 
 When running the {{site.data.keyword.blockchainfull}} Platform on s390x architecture, it is possible that Node.js smart contract instantiation can fail. Customers should wait for five minutes after the failure occurs and then retry the instantiation again. It will then work successfully on the subsequent attempt.
 
-</blockchain-sw-251>
+

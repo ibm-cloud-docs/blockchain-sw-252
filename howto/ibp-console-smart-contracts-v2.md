@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-02-12"
+lastupdated: "2021-02-14"
 
 keywords: smart contract, private data, private data collection, anchor peer, implicit collections
 
@@ -356,7 +356,7 @@ All lifecycle actions are managed from the **Channels** tab in the console.
   Be careful how you name your proposal. If a proposal with the same name already exists on the channel, this proposal replaces it.
   {: tip}
 
-5. On the **Install smart contract** panel, you can install the smart contract on all your peers on the channel or just a subset. In a production network, for redundancy reasons, you should install the smart contract on at least two peers, or three when you want to maintain redundancy but still allow for one peer to go down for maintenance. <blockchain-sw-251>If you are installing a smart contract on s390x, you may need to increase the timeout on your peer. See this [troubleshooting topic](/docs/blockchain-sw-251?topic=blockchain-sw-251-ibp-v2-troubleshooting#ibp-v2-troubleshooting-sc-install) for details.</blockchain-sw-251>
+5. On the **Install smart contract** panel, you can install the smart contract on all your peers on the channel or just a subset. In a production network, for redundancy reasons, you should install the smart contract on at least two peers, or three when you want to maintain redundancy but still allow for one peer to go down for maintenance. If you are installing a smart contract on s390x, you may need to increase the timeout on your peer. See this [troubleshooting topic](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-troubleshooting#ibp-v2-troubleshooting-sc-install) for details.
   Since you are proposing the smart contract, it must be installed on at least one peer.
   {: note}
 

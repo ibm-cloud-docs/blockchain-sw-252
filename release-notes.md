@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-02-12"
+lastupdated: "2021-02-14"
 
 
 keywords: release note, latest changes, Hyperledger Fabric, multicloud
@@ -34,13 +34,15 @@ subcollection: blockchain-sw-251
 Use these release notes that are grouped by date to learn about the latest changes to {{site.data.keyword.blockchainfull}} Platform for {{site.data.keyword.cloud_notm}} which is built on Hyperledger Fabric v1.4.9 and v2.2.1.
 {:shortdesc}
 
-<blockchain-sw-251>
-[Installing the 2.5.1 fix pack](/docs/blockchain-sw-251?topic=blockchain-sw-251-install-fixpack)  
+
+[Installing the 2.5.1 fix pack](/docs/blockchain-sw-252?topic=blockchain-sw-252-install-fixpack)  
 For instructions on how to apply the latest fix pack to your blockchain instance.  
-</blockchain-sw-251>
+
 
 [Installing patches](/docs/blockchain?topic=blockchain-ibp-console-manage-console#ibp-console-manage-patch)  
 For instructions on how to apply patches to your existing blockchain nodes. Patches are cumulative. This means that if multiple patches, for example `1.4.7-0` and `1.4.7-1`, are available for a node, you should always select the latest patch, `1.4.7-1` in this case, wherever possible because it includes the fixes from the previous patches as well.   
+
+
 
 ## 12 Jan 2021
 {: #01-12-2021}
@@ -52,7 +54,7 @@ Miscellaneous bug fixes and security patches.
 ### New logging configuration panel
 {: #01-12-2021-logger-ui}
 
-A new panel is available to override peer and ordering node log levels for specific component loggers. <blockchain-sw-251>See [Configuring node logging](/docs/blockchain-sw-251?topic=blockchain-sw-251-console-icp-manage#ibp-console-manage-logger) for more information.</blockchain-sw-251>
+A new panel is available to override peer and ordering node log levels for specific component loggers. See [Configuring node logging](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-icp-manage#ibp-console-manage-logger) for more information.
 
 ## 08 Dec 2020
 {: #12-08-2020}
@@ -71,10 +73,10 @@ Miscellaneous bug fixes and security patches.
 
 
 
-<blockchain-sw-251>
+
 ## 30 Oct 2020
 {: #10-20-2020}
-</blockchain-sw-251>
+
 
 **Certificate Authority (CA) patch 1.4.9-1, Peer and ordering node patch 1.4.9-1, 2.2.1-1**
 

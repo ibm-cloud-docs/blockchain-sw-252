@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-13"
+lastupdated: "2021-02-14"
 
 keywords: ansible playbooks, docker image, blockchain network, APIs, ansible galaxy
 
@@ -22,7 +22,7 @@ subcollection: blockchain-sw-251
 
 
 
-<blockchain-sw-251>
+
 # Deploy the service from an Ansible playbook
 {: #ansible-install-ibp}
 
@@ -31,7 +31,7 @@ Customers can use an Ansible playbook to automate their installation of the {{si
 
 **Target audience:** This topic is designed for system administrators or network creators who are responsible for installing {{site.data.keyword.blockchainfull_notm}} Platform networks on a Kubernetes cluster and are new to Ansible playbooks.
 
-This playbook can be used to deploy the {{site.data.keyword.blockchainfull_notm}} Platform on any [supported Kubernetes distribution](/docs/blockchain-sw-251?topic=blockchain-sw-251-console-ocp-about#console-ocp-about-prerequisites). It is not available for Kubernetes clusters that are running in {{site.data.keyword.cloud_notm}}.
+This playbook can be used to deploy the {{site.data.keyword.blockchainfull_notm}} Platform on any [supported Kubernetes distribution](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-ocp-about#console-ocp-about-prerequisites). It is not available for Kubernetes clusters that are running in {{site.data.keyword.cloud_notm}}.
 {: important}
 
 In just a few minutes, you can have an instance of the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.1 up and running on your cluster.
@@ -78,6 +78,6 @@ The first time you log in, you are required to change your password, and then lo
 
 If you are simply interested in automating the process of installing the {{site.data.keyword.blockchainfull_notm}} Platform, you are done. You can use the console UI or APIs to create your blockchain components. If you are not familiar with the process to build a network by using the console, check out the [tutorial](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-build-network) that walks you through the steps of building a sample network.
 
-Already familiar with how to build a network and want to continue to learn more about the available Ansible playbooks? Then check out the tutorial on [Building an {{site.data.keyword.blockchainfull_notm}} Platform network using Ansible playbooks](/docs/blockchain-sw-251?topic=blockchain-sw-251-ansible-build).
+Already familiar with how to build a network and want to continue to learn more about the available Ansible playbooks? Then check out the tutorial on [Building an {{site.data.keyword.blockchainfull_notm}} Platform network using Ansible playbooks](/docs/blockchain-sw-252?topic=blockchain-sw-252-ansible-build).
 
-</blockchain-sw-251>
+

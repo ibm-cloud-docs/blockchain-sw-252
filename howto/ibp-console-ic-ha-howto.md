@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-02-12"
+lastupdated: "2021-02-14"
 
 keywords: HA, highly availability, multiregion
 
@@ -24,14 +24,14 @@ subcollection: blockchain-sw-251
 # Setting up multiregion High Availability (HA) deployments for peers
 {: #ibp-console-hadr-mr}
 
-<blockchain-sw-251><div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px;">
+<div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px;">
   <p style="line-height: 10px;">
     <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
     <a href="/docs/blockchain-sw?topic=blockchain-sw-ibp-console-hadr-mr">2.1.2</a>,
     <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-hadr-mr">2.1.3</a>,
     <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-ibp-console-hadr-mr">2.5</a>
     </p>
-</div></blockchain-sw-251>
+</div>
 
 Multiregion HA configuration provides the highest degree of HA coverage that is possible. Deploying peers across multiple geographic regions ensures that if any one region becomes unavailable, the peers in other regions can continue to transact. Note that multiregion HA support for CAs and the ordering service is not currently available.
 
@@ -48,8 +48,8 @@ To set up multiregion HA support for peers, you need to complete the following t
 
 To configure multiregion HA by creating redundant peers for each organization, complete the following steps when you configure your blockchain network:
 
-1. Create three Kubernetes clusters  <blockchain-sw-251> on OpenShift Container Platform</blockchain-sw-251> in the regions you prefer. These clusters can be located in any region you want, although for high performance they should be relatively close together. For example, the regions, East Coast US, and West Coast US, and Canada are better than the regions, West Coast US, London, and Tokyo.
-2. Deploy a new {{site.data.keyword.blockchainfull_notm}} Platform instance on the cluster in one of the regions.   Repeat these steps in the second and third regions. <blockchain-sw-251>When you are finished, you have three separate {{site.data.keyword.blockchainfull_notm}} Platform consoles in three separate clusters, each in a different region.</blockchain-sw-251>
+1. Create three Kubernetes clusters   on OpenShift Container Platform in the regions you prefer. These clusters can be located in any region you want, although for high performance they should be relatively close together. For example, the regions, East Coast US, and West Coast US, and Canada are better than the regions, West Coast US, London, and Tokyo.
+2. Deploy a new {{site.data.keyword.blockchainfull_notm}} Platform instance on the cluster in one of the regions.   Repeat these steps in the second and third regions. When you are finished, you have three separate {{site.data.keyword.blockchainfull_notm}} Platform consoles in three separate clusters, each in a different region.
 
 This tutorial assumes that an ordering service exists with a channel defined that the peers can join.
 {: important}

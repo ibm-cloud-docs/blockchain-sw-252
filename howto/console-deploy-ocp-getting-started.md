@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-02-13"
+lastupdated: "2021-02-14"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -139,7 +139,7 @@ subcollection: blockchain-sw-251
 Deploy the {{site.data.keyword.blockchainfull}} Platform 2.5.2 onto a Kubernetes cluster that is running on OpenShift Container Platform. The {{site.data.keyword.blockchainfull_notm}} Platform uses a [Kubernetes Operator](https://www.openshift.com/learn/topics/operators){: external} to install the {{site.data.keyword.blockchainfull_notm}} Platform console on your cluster and manage the deployment and your blockchain nodes. After the {{site.data.keyword.blockchainfull_notm}} Platform console is running on your cluster, you can use the console to create blockchain nodes and operate a multicloud blockchain network.
 {:shortdesc}
 
-If you prefer to automate the installation of the service, check out the [Ansible Playbook](/docs/blockchain-sw-251?topic=blockchain-sw-251-ansible-install-ibp) that can be used to complete all of these steps for you.
+If you prefer to automate the installation of the service, check out the [Ansible Playbook](/docs/blockchain-sw-252?topic=blockchain-sw-252-ansible-install-ibp) that can be used to complete all of these steps for you.
 {: tip}
 
 ## Resources required
@@ -149,7 +149,7 @@ Ensure that your OpenShift cluster has sufficient resources for the {{site.data.
 
 The resources for the CA, peer, and ordering nodes need to be multiplied by the number of these nodes that you require. The operator and console resources are per blockchain deployment. For example, if you deployed development, staging, and test networks in a single cluster, you need to have enough resources for three instances of the operator and console, one for each blockchain deployment. On the other hand, the webhook resources are per OpenShift cluster, only one instance is required, regardless of the number of blockchain networks in the cluster.
 
-<blockchain-sw-251>| **Component** (all containers) | CPU**  | Memory (GB) | Storage (GB) |
+| **Component** (all containers) | CPU**  | Memory (GB) | Storage (GB) |
 |--------------------------------|---------------|-----------------------|------------------------|
 | **Peer (Hyperledger Fabric v1.4)**                       | 1.1           | 2.8                   | 200 (includes 100GB for peer and 100GB for state database)|
 | **Peer (Hyperledger Fabric v2.x)**                       | 0.7           | 2.0                   | 200 (includes 100GB for peer and 100GB for state database)|
@@ -157,7 +157,7 @@ The resources for the CA, peer, and ordering nodes need to be multiplied by the 
 | **Ordering node**              | 0.35          | 0.7                   | 100                    |
 | **Operator**                   | 0.1           | 0.2                   | 0                      |
 | **Console**                    | 1.2           | 2.4                   | 10                     |
-| **Webhook**                    | 0.1           | 0.2                   | 0                      |</blockchain-sw-251>
+| **Webhook**                    | 0.1           | 0.2                   | 0                      |
 {: caption="Table 1. Default resource allocations" caption-side="bottom"}
 ** These values can vary slightly. Actual VPC allocations are visible in the blockchain console when a node is deployed.  
 
@@ -190,9 +190,9 @@ kubectl patch storageclass
 ```
 {: codeblock}
 
-<blockchain-sw-251>If you prefer not to choose a persistent storage option, the default storage class of your namespace or OpenShift project is used. `Host-local` volume storage is not supported.
+If you prefer not to choose a persistent storage option, the default storage class of your namespace or OpenShift project is used. `Host-local` volume storage is not supported.
 {: note}
-</blockchain-sw-251>
+
 ### Considerations when choosing your persistent storage
 {: ibp-storage-considerations}
 
@@ -218,7 +218,7 @@ The {{site.data.keyword.blockchainfull_notm}} Platform can be deployed in four d
 
 <div class=solutionBoxContainer>
   <div class="solutionBox">
-    <a href = "/docs/blockchain-sw-251?topic=blockchain-sw-251-deploy-ocp-rhm">
+    <a href = "/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm">
       <div>
         <img src="../images/logo_redhat.png" alt="Red Hat icon" width="50" style="width:50px; border-style: none"/>
         <p><strong> Red Hat Marketplace</strong></p>
@@ -227,7 +227,7 @@ The {{site.data.keyword.blockchainfull_notm}} Platform can be deployed in four d
     </a>
   </div>
   <div class="solutionBox">
-    <a href = "/docs/blockchain-sw-251?topic=blockchain-sw-251-deploy-ocp-rhm-fw">
+    <a href = "/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm-fw">
       <div>
         <img src="../images/logo_redhat.png" alt="Red Hat icon" width="50" style="width:50px; border-style: none"/>
         <p><strong> Red Hat Marketplace</strong></p>
@@ -236,7 +236,7 @@ The {{site.data.keyword.blockchainfull_notm}} Platform can be deployed in four d
     </a>
   </div>
   <div class="solutionBox">
-    <a href = "/docs/blockchain-sw-251?topic=blockchain-sw-251-deploy-ocp">
+    <a href = "/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp">
       <div>
         <img src="../images/logo_openshift.svg" alt="OpenShift icon" width="25" style="width:25px; border-style: none"/>
         <p><strong>OpenShift</strong></p>
@@ -245,7 +245,7 @@ The {{site.data.keyword.blockchainfull_notm}} Platform can be deployed in four d
     </a>
   </div>
   <div class="solutionBox">
-      <a href = "/docs/blockchain-sw-251?topic=blockchain-sw-251-deploy-ocp-firewall">
+      <a href = "/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-firewall">
         <div>
           <img src="../images/logo_openshift.svg" alt="OpenShift icon" width="25" style="width:25px; border-style: none"/>
           <p><strong>OpenShift on-prem</strong></p>
@@ -254,7 +254,7 @@ The {{site.data.keyword.blockchainfull_notm}} Platform can be deployed in four d
       </a>
   </div>    
   <div class="solutionBox">
-        <a href = "/docs/blockchain-sw-251?topic=blockchain-sw-251-ansible-install-ibp">
+        <a href = "/docs/blockchain-sw-252?topic=blockchain-sw-252-ansible-install-ibp">
           <div>
             <img src="../images/ansible.png" alt="Ansible icon" width="25" style="width:25px; border-style: none"/>
             <p><strong>Ansible</strong></p>

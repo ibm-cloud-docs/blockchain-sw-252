@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-02-13"
+lastupdated: "2021-02-14"
 
 keywords: pricing model, VPC, CPU, vCPU, virtual core, cost, scalability, estimation, optimize your cost
 
@@ -113,7 +113,7 @@ This guide helps you understand the pricing model for {{site.data.keyword.blockc
 ## License
 {: #ibp-software-pricing-license}
 
-{{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 delivers the components that are needed to run a blockchain network on your own infrastructure using Kubernetes. You can access your [My IBM dashboard](https://myibm.ibm.com/dashboard/){: external} to obtain your entitlement key for the offering which is required in order to deploy the release. With this offering, you are responsible for procuring and provisioning your own Kubernetes cluster on one of the [Supported Platforms](/docs/blockchain-sw-251?topic=blockchain-sw-251-console-ocp-about#console-ocp-about-prerequisites). Technical support from IBM Blockchain is included in the offering.
+{{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 delivers the components that are needed to run a blockchain network on your own infrastructure using Kubernetes. You can access your [My IBM dashboard](https://myibm.ibm.com/dashboard/){: external} to obtain your entitlement key for the offering which is required in order to deploy the release. With this offering, you are responsible for procuring and provisioning your own Kubernetes cluster on one of the [Supported Platforms](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-ocp-about#console-ocp-about-prerequisites). Technical support from IBM Blockchain is included in the offering.
 
 ## Pricing
 {: #ibp-software-pricing-pricing}
@@ -130,7 +130,7 @@ Various licensing options are available. For more information, please [Contact u
 ## Free trial
 {: #ibp-software-pricing-free}
 
-OpenShift customers can preview the {{site.data.keyword.blockchainfull_notm}} Platform at no charge for 30 days when you select the free trial version available from the Red Hat Marketplace.  Simply follow instructions to [deploy the blockchain console](/docs/blockchain-sw-251?topic=blockchain-sw-251-deploy-ocp-rhm) to get started. The free trial version is fully functional, meaning the product features available in the free trial version are identical to the paid version.
+OpenShift customers can preview the {{site.data.keyword.blockchainfull_notm}} Platform at no charge for 30 days when you select the free trial version available from the Red Hat Marketplace.  Simply follow instructions to [deploy the blockchain console](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm) to get started. The free trial version is fully functional, meaning the product features available in the free trial version are identical to the paid version.
 
 ### Free trial limitations
 {: #ibp-software-pricing-free-limits}

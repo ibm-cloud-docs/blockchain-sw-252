@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-12"
+lastupdated: "2021-02-14"
 
 keywords: network components, IBM Cloud Kubernetes Service, backup, restore, disaster, peer, orderer, ordering node, LevelDB, CouchDB
 
@@ -112,15 +112,15 @@ When a snapshot is being taken the node continues to function as normal.
 Because the process for taking a snapshot is the same for all nodes, only one set of instructions is shown here.
 {: tip}
 
-After your node is provisioned, you can get the persistent volumes that are associated with it and the <blockchain-sw-251>project</blockchain-sw-251> the component is deployed into by issuing:
+After your node is provisioned, you can get the persistent volumes that are associated with it and the project the component is deployed into by issuing:
 
 
 
-<blockchain-sw-251>
+
 ```
 kubectl get pvc -n <project>
 ```
-{: codeblock}</blockchain-sw-251>
+{: codeblock}
 
 Which produces a list of nodes and their persistent volumes similar to this example:
 
@@ -200,7 +200,7 @@ ibmcloud sl file snapshot-order 155617812 -s 5
 ```
 {: codeblock}
 
-You might need more or less than 5 GB of space, depending on the size of the pod and the resources that have been used on it. The amount of space that is required depends on the size of your transactions, the quantity of transactions, and how many snapshots (or backups) that you want to keep. To determine how much storage you are using, <blockchain-sw-251>monitor</blockchain-sw-251> the disk space that is consumed by your nodes so that you know when to add storage. You can use this data to inform how much storage is being used, and how fast it is growing. Also, if you monitor the size of each snapshot, you can use the snapshot size along with the number of snapshots you want to keep to determine when more snapshot space is required.
+You might need more or less than 5 GB of space, depending on the size of the pod and the resources that have been used on it. The amount of space that is required depends on the size of your transactions, the quantity of transactions, and how many snapshots (or backups) that you want to keep. To determine how much storage you are using, monitor the disk space that is consumed by your nodes so that you know when to add storage. You can use this data to inform how much storage is being used, and how fast it is growing. Also, if you monitor the size of each snapshot, you can use the snapshot size along with the number of snapshots you want to keep to determine when more snapshot space is required.
 {: tip}
 
 Taking a snapshot incurs charges on your account. Press `y` to accept the charges and order the snapshot.
@@ -291,12 +291,12 @@ peerorg1ca      1/1     1            1           48d
 
 Then scale down the node by setting the `replicas` value to `0`.
 
-<blockchain-sw-251>
+
 ```
 kubectl patch <component> <componentName> --type merge --patch '{"spec":{"replicas":0}}' -n <project>
 ```
 {: codeblock}
-</blockchain-sw-251>
+
 
 Where `<component>` is one of: `ibppeer`, `ibporderer`, or `ibpca`.
 
@@ -403,12 +403,12 @@ peerorg1ca      1/1     1            1           48d
 
 Then scale the `peera` pod back up by setting the replicas value to `1`.
 
-<blockchain-sw-251>
+
 ```
 kubectl patch <component> <componentName> --type merge --patch '{"spec":{"replicas":1}}' -n <project>
 ```
 {: codeblock}
-</blockchain-sw-251>
+
 
 Where `<component>` is, once again, one of: `ibppeer`, `ibporderer`, or `ibpca`.
 

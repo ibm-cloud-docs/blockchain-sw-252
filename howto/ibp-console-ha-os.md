@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2021
-lastupdated: "2021-02-12"
+lastupdated: "2021-02-14"
 
 keywords: high availability, Ordering Service, Raft
 
@@ -132,8 +132,8 @@ The tutorial walks you through the following steps:
 ## Before you begin
 {: #ibp-console-hadr-mr-os-prereq}
 
-This tutorial assumes that you have three Kubernetes clusters that are deployed across three different regions and that you have <blockchain-sw-251> deployed the blockchain service in</blockchain-sw-251> each of those clusters.<blockchain-sw-251>
-* [Install the {{site.data.keyword.blockchainfull_notm}} Platform](/docs/blockchain-sw-251?topic=blockchain-sw-251-get-started-console-ocp#get-started-console-ocp-step-two-deploy-console).</blockchain-sw-251>  
+This tutorial assumes that you have three Kubernetes clusters that are deployed across three different regions and that you have  deployed the blockchain service in each of those clusters.
+* [Install the {{site.data.keyword.blockchainfull_notm}} Platform](/docs/blockchain-sw-252?topic=blockchain-sw-252-get-started-console-ocp#get-started-console-ocp-step-two-deploy-console).  
 
   Deploy an instance of the {{site.data.keyword.blockchainfull_notm}} Platform in each cluster and verify that you can log in to the console.
 

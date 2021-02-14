@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-12"
+lastupdated: "2021-02-14"
 
 keywords: HSM, Gemalto, IBM Cloud
 
@@ -427,8 +427,8 @@ Replace:
 - `DOCKER_REGISTRY_SERVER` - Registry server url where the HSM client image is hosted.
 - `DOCKER_USER` - Valid username with access to HSM client image in the container registry.
 - `DOCKER_PASSWORD` - Valid password or access token for the HSM client image in the container registry.
-- `DOCKER_EMAIL` - Email address for container registry user.<blockchain-sw-251>
-- `NAMESPACE` - Name of the [Kubernetes namespace](/docs/blockchain-sw-251?topic=blockchain-sw-251-deploy-k8#deploy-k8-namespace) or [OpenShift project](/docs/blockchain-sw-251?topic=blockchain-sw-251-deploy-ocp#deploy-ocp-project) that you created for your {{site.data.keyword.blockchainfull_notm}} Platform deployment.</blockchain-sw-251>
+- `DOCKER_EMAIL` - Email address for container registry user.
+- `NAMESPACE` - Name of the [Kubernetes namespace](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#deploy-k8-namespace) or [OpenShift project](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp#deploy-ocp-project) that you created for your {{site.data.keyword.blockchainfull_notm}} Platform deployment.
 
   These instructions are obviously for the Docker registry. If you are using the {{site.data.keyword.IBM_notm}} Container Registry, then you need to set up your own image pull secret in your cluster:
 
@@ -442,14 +442,14 @@ Replace:
 In order for a CA, peer, or ordering node to be able to communicate with the HSM client image you need to
 create a Kubernetes secret named `hsmcrypto` that contains the keys and configuration files for the HSM that you are using. When the console deploys a node that is configured with HSM, it uses this secret to access the HSM client image keys and configuration files.
 
-<blockchain-sw-251>The secret needs to be created in the operator namespace.</blockchain-sw-251>  If you are using the {{site.data.keyword.cloud_notm}} HSM, the command would be:
+The secret needs to be created in the operator namespace.  If you are using the {{site.data.keyword.cloud_notm}} HSM, the command would be:
 
 ```
 $ kubectl create secret generic hsmcrypto -n <NAMESPACE> --from-file=Chrystoki.conf --from-file=cert.pem --from-file=key.pem --from-file=server.pem
 ```
 {: codeblock}
 
-Replace `<NAMESPACE>` with the name of your <blockchain-sw-251>operator [Kubernetes namespace](/docs/blockchain-sw-251?topic=blockchain-sw-251-deploy-k8#deploy-k8-namespace) or [OpenShift project](/docs/blockchain-sw-251?topic=blockchain-sw-251-deploy-ocp#deploy-ocp-project).</blockchain-sw-251> If you are not using {{site.data.keyword.cloud_notm}} HSM, you need to replace the values of the `--from-file` parameters with the set of certificates and configuration files that are required for your HSM client image.
+Replace `<NAMESPACE>` with the name of your operator [Kubernetes namespace](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#deploy-k8-namespace) or [OpenShift project](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp#deploy-ocp-project). If you are not using {{site.data.keyword.cloud_notm}} HSM, you need to replace the values of the `--from-file` parameters with the set of certificates and configuration files that are required for your HSM client image.
 
 When successful, the output looks similar to:
 ```
@@ -520,7 +520,7 @@ mountpaths:
 
 Replace the following values:
 - `HSM_IMAGE_URL`: URL of the HSM client image that you published to your container registry.
-- `IMAGE_PULL_SECRET`: (Optional)  Name of the image pull secret `hsm-docker-secret` that you created in the same namespace as your <blockchain-sw-251>operator.</blockchain-sw-251> Only required if the HSM client image is not publicly available. **Important:** If an image pull secret is not required, set this value to `""`.
+- `IMAGE_PULL_SECRET`: (Optional)  Name of the image pull secret `hsm-docker-secret` that you created in the same namespace as your operator. Only required if the HSM client image is not publicly available. **Important:** If an image pull secret is not required, set this value to `""`.
 - `ENVIRONMENT_VARIABLE_NAME` - If there are any environment variables that need to be set for the HSM client, specify them individually.
 - `ENVIRONMENT_VARIABLE_VALUE` - Value that corresponds to the `ENVIRONMENT_VARIABLE_NAME`.
 - `HSM_LIBRARY_FILE_PATH`: Path to the HSM library file, for example, `/usr/lib/libCryptoki2_64.so`.
