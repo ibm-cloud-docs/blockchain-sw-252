@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-02-14"
+lastupdated: "2021-02-16"
 
 keywords: high availability, HA, failures, zone failure, region failure, component failure, worker node failure, multicloud
 
@@ -31,6 +31,7 @@ subcollection: blockchain-sw-251
     <a href="/docs/blockchain-sw?topic=blockchain-sw-ibp-console-ha">2.1.2</a>,
     <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-ha">2.1.3</a>,
     <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-ibp-console-ha">2.5</a>
+    <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-ibp-console-ha">2.5.1</a>
     </p>
 </div>
 
@@ -74,7 +75,7 @@ Finally, your peer redundancy strategy needs to take into account your smart con
 ### Ordering service considerations
 {: #ibp-console-ha-ordering-service}
 
-{{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 is built upon Hyperledger Fabric  v1.4.9 and v2.2.1 that includes the Raft [ordering service](#x9826021){: term}. Raft is a crash fault tolerant (CFT) ordering service based on an implementation of [Raft protocol](https://raft.github.io/raft.pdf){: external}. By design, Raft ordering nodes automatically synchronize data between them using Raft-based consensus. In {{site.data.keyword.blockchainfull_notm}} Platform, an organization network operator can choose to stand up either a single node Raft-based orderer, with no HA, or five orderers in a single region or across multiple regions that are automatically configured for HA via Raft.
+{{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 is built upon Hyperledger Fabric  v1.4.10 and v2.2.2 that includes the Raft [ordering service](#x9826021){: term}. Raft is a crash fault tolerant (CFT) ordering service based on an implementation of [Raft protocol](https://raft.github.io/raft.pdf){: external}. By design, Raft ordering nodes automatically synchronize data between them using Raft-based consensus. In {{site.data.keyword.blockchainfull_notm}} Platform, an organization network operator can choose to stand up either a single node Raft-based orderer, with no HA, or five orderers in a single region or across multiple regions that are automatically configured for HA via Raft.
 
 
 ### Certificate Authority (CA) considerations

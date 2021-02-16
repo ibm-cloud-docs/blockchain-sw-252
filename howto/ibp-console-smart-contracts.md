@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2021-02-14"
+lastupdated: "2021-02-16"
 
 keywords: smart contract, private data, private data collection, anchor peer, multicloud
 
@@ -31,6 +31,7 @@ subcollection: blockchain-sw-251
     <a href="/docs/blockchain-sw?topic=blockchain-sw-ibp-console-smart-contracts">2.1.2</a>,
     <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-smart-contracts">2.1.3</a>,
     <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-ibp-console-smart-contracts">2.5</a>
+    <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-ibp-console-smart-contracts">2.5.1</a>
     </p>
 </div>
 

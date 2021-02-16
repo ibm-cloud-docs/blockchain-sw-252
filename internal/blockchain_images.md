@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-02-14"
+lastupdated: "2021-02-16"
 
 keywords: IBM Blockchain Platform, images, multicloud
 
@@ -102,6 +102,7 @@ subcollection: blockchain-sw-251
     <a href="/docs/blockchain-sw?topic=blockchain-sw-blockchain-images">2.1.2</a>,
     <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-blockchain-images">2.1.3</a>,
     <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-blockchain-images">2.5</a>
+    <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-blockchain-images">2.5.1</a>
     </p>
 </div>
 
@@ -124,7 +125,7 @@ Although you can deploy the {{site.data.keyword.blockchainfull_notm}} images on 
 ## Supported Fabric versions
 {: #blockchain-images-supported-fabric}
 
-The {{site.data.keyword.blockchainfull_notm}} Docker images are based on Hyperledger Fabric v1.4.9 and v2.2.1. You can use this documentation to install and deploy the latest version of Fabric used by the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2.
+The {{site.data.keyword.blockchainfull_notm}} Docker images are based on Hyperledger Fabric v1.4.10 and v2.2.2. You can use this documentation to install and deploy the latest version of Fabric used by the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2.
 
 See the [My Support](https://www.ibm.com/support/pages/node/1072956){: external} page for details on what is supported.
 

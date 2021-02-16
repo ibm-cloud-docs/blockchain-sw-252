@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-02-14"
+lastupdated: "2021-02-16"
 
 keywords: FAQs, can I, upgrade, what version, peer ledger database, supported languages, why do I, regions, multicloud
 
@@ -33,6 +33,7 @@ content-type: faq
     <a href="/docs/blockchain-sw?topic=blockchain-sw-ibp-v2-faq">2.1.2</a>,
     <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-v2-faq">2.1.3</a>,
     <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-ibp-v2-faq">2.5</a>
+    <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-ibp-v2-faq">2.5.1</a>
     </p>
 </div>
 
@@ -98,8 +99,8 @@ Hyperledger Fabric is a powerful, versatile, pluggable, open source, distributed
 Refer to the following table for information on which version of Fabric is used by each version of the {{site.data.keyword.blockchainfull_notm}} Platform:
 | {{site.data.keyword.blockchainfull_notm}} Platform | Hyperledger Fabric |
 |----------------------------------------------------| -------------------|
-| 2.5.2 | v1.4.9 and v2.2.1 |
-| 2.5.1 | v1.4.9 and v2.2.1 |
+| 2.5.2 | v1.4.10 and v2.2.2 |
+| 2.5.1 | v1.4.10 and v2.2.2 |
 | 2.5 | 1.4.7 and 2.1.1 |
 | 2.1.3 | v1.4.6|
 | 2.1.2 | v1.4.4|

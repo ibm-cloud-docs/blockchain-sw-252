@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-02-14"
+lastupdated: "2021-02-16"
 
 keywords: IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, delete, remove
 
@@ -29,6 +29,7 @@ subcollection: blockchain-sw-251
     <a href="/docs/blockchain-sw?topic=blockchain-sw-Removing-k8">2.1.2</a>,
     <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-Removing-k8">2.1.3</a>,
     <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-Removing-k8">2.5</a>
+    <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-Removing-k8">2.5.1</a>
     </p>
 </div>
 
