@@ -2,11 +2,11 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-14"
+lastupdated: "2021-02-16"
 
 keywords: network components, IBM Cloud Kubernetes Service, backup, restore, disaster, peer, orderer, ordering node, LevelDB, CouchDB
 
-subcollection: blockchain-sw-251
+subcollection: blockchain-sw-252
 
 ---
 

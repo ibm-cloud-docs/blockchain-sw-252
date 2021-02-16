@@ -2,11 +2,11 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-14"
+lastupdated: "2021-02-16"
 
 keywords: deployment, advanced, CouchDB, LevelDB, external CA, HSM, resource allocation
 
-subcollection: blockchain-sw-251
+subcollection: blockchain-sw-252
 
 ---
 

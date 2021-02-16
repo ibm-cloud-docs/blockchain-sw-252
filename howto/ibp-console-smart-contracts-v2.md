@@ -2,11 +2,11 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-02-14"
+lastupdated: "2021-02-16"
 
 keywords: smart contract, private data, private data collection, anchor peer, implicit collections
 
-subcollection: blockchain-sw-251
+subcollection: blockchain-sw-252
 
 ---
 

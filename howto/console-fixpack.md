@@ -2,11 +2,11 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-02-14"
+lastupdated: "2021-02-16"
 
 keywords: Kubernetes, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, fix pack, multicloud
 
-subcollection: blockchain-sw-251
+subcollection: blockchain-sw-252
 
 ---
 

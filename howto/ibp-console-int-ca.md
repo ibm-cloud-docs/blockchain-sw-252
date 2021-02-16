@@ -2,11 +2,11 @@
 
 copyright:
   years: 2020
-lastupdated: "2021-02-12"
+lastupdated: "2021-02-16"
 
 keywords: intermediate CA, root CA, parent server, Certificate Authority, multicloud
 
-subcollection: blockchain-sw-251
+subcollection: blockchain-sw-252
 
 ---
 
