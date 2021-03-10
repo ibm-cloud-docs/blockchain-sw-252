@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-02-16"
+lastupdated: "2021-03-10"
 
 keywords: IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -1437,7 +1437,7 @@ Before you attempt to install the {{site.data.keyword.blockchainfull_notm}} Plat
 
 4. The DNS entry for the load balancer should then be used as the **Domain name** during the installation of IBM Blockchain Platform.
 
-5. The NGINX ingress controller must be used. See the [ingress controller installation guide](https://github.com/kubernetes/ingress-nginx/blob/master/docs/deploy/index.md){: external} that can be used for most Kubernetes distributions.
+5. The NGINX ingress controller must be used. See the [ingress controller installation guide](https://github.com/kubernetes/ingress-nginx/blob/master/docs/deploy/index.md){: external} that can be used for most Kubernetes distributions. If you are using {{site.data.keyword.containerlong_notm}}, then refer to these [instructions](#console-deploy-k8-iks-considerations) for specific configuration information.
 
 6. Use the following instructions to edit the NGINX ingress controller deployment to enable ssl-passthrough or refer to the [Kubernetes instructions](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#ssl-passthrough).
 
@@ -1458,3 +1458,107 @@ Before you attempt to install the {{site.data.keyword.blockchainfull_notm}} Plat
 
 You can now [resume your installation](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#deploy-k8-login).
 
+## Considerations when using {{site.data.keyword.containerlong_notm}}
+{: #console-deploy-k8-iks-considerations}
+
+If your Kubernetes cluster was deployed on {{site.data.keyword.cloud_notm}}, you can deploy an instance of the [{{site.data.keyword.blockchainfull_notm}} Platform](/docs/blockchain?topic=blockchain-ibp-v2-deploy-iks-ic#ibp-v2-deploy-iks-create-service-instance) and link it to your Kubernetes cluster. However, if you have purchased a software entitlement and want to use it with the {{site.data.keyword.containerlong_notm}}, then additional configuration steps are required before you can deploy the platform.  
+
+The {{site.data.keyword.blockchainfull_notm}} Platform service requires that the Kubernetes Ingress image is configured for your cluster and that SSL passthrough is enabled, which allows all data to pass through to a load balancer without decrypting it. If you created your {{site.data.keyword.containerlong_notm}} cluster after 01 December 2020, by default it is configured with the Kubernetes Ingress application load balancers (ALBs). But SSL passthrough is not enabled by default in the configuration, therefore, you need to enable it.
+
+If you are planning to run the platform on OpenShift in {{site.data.keyword.cloud_notm}}, then you do not need to perform the steps in this section.
+{: note}
+
+### Configure Kubernetes Ingress
+{: #console-deploy-k8-iks-ingress}
+
+If your cluster was created before 01 December 2020, it is most likely using {{site.data.keyword.cloud_notm}} Ingress,  and you need to follow the instructions in the [{{site.data.keyword.containerlong_notm}} documentation](/docs/containers?topic=containers-ingress-types) to configure the Kubernetes Ingress image on your cluster.  
+
+Not sure what type of Ingress it is using? From your {{site.data.keyword.cloud_notm}} CLI, run the following command to see the available ingress versions:
+
+```
+ibmcloud ks alb versions
+```
+{: codeblock}
+
+The output looks similar to:
+```
+IBM Cloud Ingress: 'auth' version   
+426   
+
+IBM Cloud Ingress versions   
+658 (default)   
+652   
+651   
+
+Community Ingress versions   
+0.35.0_474_iks (default)   
+0.34.1_475_iks   
+0.33.0_476_iks   
+```
+
+Now run the following command to see what version your cluster is using. Replace `<cluster>` with the name of your {{site.data.keyword.containerlong_notm}} cluster:
+```
+ibmcloud ks alb ls --cluster <cluster>
+
+```
+{: codeblock}
+
+In the output, if the contents of the `Build` column contains an `{{site.data.keyword.cloud_notm}} Ingress version` from the preceding list, then your cluster is configured for {{site.data.keyword.cloud_notm}} Ingress.
+```
+ALB ID                                Enabled   Status     Type      ALB IP           Zone    Build                          ALB VLAN ID   NLB Version   
+public-crbn5uqm1d0bdugc65mhe0-alb1    true      enabled    public    208.43.36.82     dal13   ingress:658/ingress-auth:426   2748052       1.0   
+public-crbn5uqm1d0bdugc65mhe0-alb2    true      enabled    public    150.238.10.157   dal10   ingress:658/ingress-auth:426   2636539       1.0   
+public-crbn5uqm1d0bdugc65mhe0-alb3    true      enabled    public    169.47.96.189    dal12   ingress:658/ingress-auth:426   2683458       1.0   
+```
+{: codeblock}
+
+You need to follow the steps to change your ingress from `IBM Cloud Ingress` to the community `Kubernetes Ingress`.
+
+Otherwise, if the `Build` column contains a `Community Ingress version` from the list, your cluster is configured for Kubernetes Ingress.
+```
+ALB ID                                Enabled   Status     Type      ALB IP           Zone    Build                                  ALB VLAN ID   NLB Version   
+public-crbukohphd0ps6erapoulg-alb1    true      enabled    public    150.239.57.190   dal10   ingress:0.35.0_474_iks/ingress-auth:   2415385       1.0
+```
+{: codeblock}
+
+In this case, you can skip ahead to the next section [Enable SSL passthrough](#console-deploy-k8-iks-passthru).
+
+### Enable SSL passthrough
+{: #console-deploy-k8-iks-passthru}
+
+To override the Kubernetes Ingress configuration and enable SSL passthrough, follow instructions to [customize the ALB deployment](/docs/containers?topic=containers-comm-ingress-annotations#comm-customize-deploy) by creating a configmap and applying it to your cluster. For each ALB, you need to set the value of  `"enableSslPassthrough"` and ` "ingressClass"` as follows:
+
+```
+<alb*-id>: '{"enableSslPassthrough":"true", "ingressClass":"nginx"}'
+```
+{: codeblock}
+
+After you create the configmap and update the ALBs, you can verify that the change is successful by checking the deployment of the ALB on your cluster. You need to wait for the pods to restart. Generally, it takes five to ten minutes for an ALB to pick up new changes. After you run the update command and wait five to ten minutes, check the deployment spec for ALB to confirm it is updated by running the following command:
+
+```
+kubectl get deploy -n kube-system <alb-id> -o yaml
+```
+{: codeblock}
+
+Repeat the command for each ALB in your cluster, replacing `<alb-id>` with the id of each load balancer.  
+
+In the output, examine the `args` section of the `containers`. You should see something similar to:
+```yaml
+containers:
+      - args:
+        - /nginx-ingress-controller
+        - --configmap=kube-system/ibm-k8s-controller-config
+        - --annotations-prefix=nginx.ingress.kubernetes.io
+        - --default-ssl-certificate=default/community-ingress-ibp-68e10f583f026529fe7a89da40169ef4-0000
+        - --ingress-class=nginx
+        - --http-port=80
+        - --https-port=443
+        - --enable-ssl-passthrough=true
+        - --default-backend-service=kube-system/ibm-k8s-controller-default-backend
+        - --tcp-services-configmap=kube-system/tcp-services
+        - --publish-service=kube-system/public-crbukohphd0ps6erapoulg-alb1
+```
+
+Confirm that `- --ingress-class=nginx` and `- --enable-ssl-passthrough=true`.
+
+This result indicates that you have successfully enabled SSL passthrough and that the associated ingress class is named `nginx`, which is what the software version of the platform requires in order for it to be able to be installed on a {{site.data.keyword.containerlong_notm}} cluster. Verify that all pods are running before you attempt to [install](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#deploy-k8-login) the {{site.data.keyword.blockchainfull_notm}} Platform.

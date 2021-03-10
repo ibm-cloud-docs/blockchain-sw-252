@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-03-08"
+lastupdated: "2021-03-10"
 
 keywords: site map
 subcollection: blockchain-sw-252
@@ -797,6 +797,9 @@ subcollection: blockchain-sw-252
 * [Log in to the console](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#deploy-k8-log-in)
 * [Next steps](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#console-deploy-k8-next-steps)
 * [Considerations when using Kubernetes distributions](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#console-deploy-k8-considerations)
+* [Considerations when using {{site.data.keyword.containerlong_notm}}](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#console-deploy-k8-iks-considerations)
+  * [Configure Kubernetes Ingress](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#console-deploy-k8-iks-ingress)
+  * [Enable SSL passthrough](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#console-deploy-k8-iks-passthru)
 
 [Deploying {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 behind a firewall](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8-firewall)
 * [Resources required](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8-firewall#deploy-k8-resources-required-firewall)
@@ -827,6 +830,9 @@ subcollection: blockchain-sw-252
 * [Log in to the console](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8-firewall#deploy-k8-log-in-fw)
 * [Next steps](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8-firewall#console-deploy-k8-next-steps-fw)
 * [Considerations when using Kubernetes distributions](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8-firewall#console-deploy-k8-considerations)
+* [Considerations when using {{site.data.keyword.containerlong_notm}}](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8-firewall#console-deploy-k8-iks-considerations)
+  * [Configure Kubernetes Ingress](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8-firewall#console-deploy-k8-iks-ingress)
+  * [Enable SSL passthrough](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8-firewall#console-deploy-k8-iks-passthru)
 
 [Upgrading your console and components](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-k8)
 * [{{site.data.keyword.blockchainfull_notm}} Platform overview](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-k8#upgrade-k8-platform-overview)
