@@ -117,7 +117,7 @@ Use these instructions to upgrade to the {{site.data.keyword.blockchainfull_notm
 
 | Version | Release date | Image tags | New features |
 |----|----|----|----|
-| [{{site.data.keyword.blockchainfull_notm}} Platform 2.5.2](/docs/blockchain-sw-252?topic=blockchain-sw-252-whats-new#whats-new-03-25-2021) | 25 Mar 2021| **Console and tools** <ul><li>2.5.1-20210112-amd64</li> <li>2.5.1-20201208-amd64</li> <li>2.5.1-20201119-amd64</li> <li>2.5.1-20201030-amd64</li></ul> **Fabric nodes** <ul><li>1.4.9-20210112-amd64</li></ul> **CouchDB** <ul> <li>2.3.1-20210112-amd64</li> <li>2.3.1-20201208-amd64</li></ul> | **Fabric Version Upgrade** <ul><li>Fabric version 1.4.11 and 2.2.2</ul> **Improvements to the Console UI** <ul><li>Support for Fabric v2.x Lifecycle.</li><li>Upgrade CA, peer, and ordering nodes from Fabric v1.4 to Fabric v2.x.</li><li>Certificate renewal enhancements added to the console.</li></ul> |
+| [{{site.data.keyword.blockchainfull_notm}} Platform 2.5.2](/docs/blockchain-sw-252?topic=blockchain-sw-252-whats-new#whats-new-03-25-2021) | 25 Mar 2021| **Console and tools** <ul><li>2.5.2-20210325-amd64</li></ul> **Fabric nodes** <ul><li>1.4.9-20210112-amd64</li></ul> **CouchDB** <ul> <li>2.3.1-20210112-amd64</li> <li>2.3.1-20201208-amd64</li></ul> | **Fabric Version Upgrade** <ul><li>Fabric version 1.4.11 and 2.2.2</ul> **Improvements to the Console UI** <ul><li>Support for Fabric v2.x Lifecycle.</li><li>Upgrade CA, peer, and ordering nodes from Fabric v1.4 to Fabric v2.x.</li><li>Certificate renewal enhancements added to the console.</li></ul> |
 | [{{site.data.keyword.blockchainfull_notm}} Platform 2.5.1](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#01-12-2021) | 12 Jan 2021| **Console and tools** <ul><li>2.5.1-20210112-amd64</li> <li>2.5.1-20201208-amd64</li> <li>2.5.1-20201119-amd64</li> <li>2.5.1-20201030-amd64</li></ul> **Fabric nodes** <ul><li>1.4.9-20210112-amd64</li><li>1.4.9-20201208-amd64</li> <li>1.4.9-20201119-amd64</li> <li>1.4.9-20201030-amd64</li><li>2.2.1-20210112-amd64</li><li>2.2.1-20201208-amd64</li><li>2.2.1-20201119-amd64</li><li>2.2.1-20201030-amd64</li></ul> **CouchDB** <ul> <li>2.3.1-20210112-amd64</li> <li>2.3.1-20201208-amd64</li>  <li>2.3.1-20201119-amd64</li><li>2.3.1-20201030-amd64</li></ul> | **Fabric Version Upgrade** <ul><li>Fabric version 1.4.9 and 2.2.1</ul> **Improvements to the Console UI** <ul><li>Support for Fabric v2.x Lifecycle.</li><li>Upgrade CA, peer, and ordering nodes from Fabric v1.4 to Fabric v2.x.</li><li>Certificate renewal enhancements added to the console.</li></ul> |
 | [{{site.data.keyword.blockchainfull_notm}} Platform 2.5](/docs/blockchain-sw-25?topic=blockchain-sw-25-release-notes-saas-20#08-25-2020){: external} | 9 Sept 2020| **Console and tools** <ul><li>2.5.0-20200825-amd64</li><li>2.5.0-20200714-amd64</li><li>2.5.0-20200618-amd64</li></ul> **Fabric nodes** <ul><li>1.4.7-20200825-amd64</li><li>1.4.7-20200714-amd64</li><li>1.4.7-20200618-amd64</li><li>2.1.1-20200825-amd64</li><li>2.1.1-20200714-amd64</li><li>2.1.1-20200618-amd64</li></ul> **CouchDB** <ul><li>2.3.1-20200825-amd64</li><li>2.3.1-20200714-amd64</li><li>2.3.1-20200618-amd64</li></ul> | **Fabric Version Upgrade** <ul><li>Fabric version 1.4.7 and 2.1.1</ul> **Improvements to the Console UI** <ul><li>Ability to select Fabric version when you deploy a new peer or ordering node.</li></ul> |
 | [{{site.data.keyword.blockchainfull_notm}} Platform v2.1.3](/docs/blockchain-sw-213?topic=blockchain-sw-213-whats-new#whats-new-03-24-2020){: external} | 24 March 2020| **Console and tools** <ul><li>2.1.3-20200520-amd64</li><li>2.1.3-20200416-amd64</li><li>2.1.3-20200324-amd64</li></ul> **Fabric nodes** <ul><li>1.4.6-20200520-amd64</li><li>1.4.6-20200416-amd64</li><li>1.4.6-20200324-amd64</li></ul> **CouchDB** <ul><li>2.3.1-20200520-amd64</li><li>2.3.1-20200416-amd64</li><li>2.3.1-20200324-amd64</li></ul> | **Fabric Version Upgrade** <ul><li>Fabric version 1.4.6</ul> **Additional platforms** <ul><li>Platform can be deployed on the OpenShift Container Platform 4.2 on LinuxONE (s390x)</ul> **Improvements to the Console UI** <ul><li>Hardware Security Module (HSM) support for node identities</li><li>Ability to override CA, peer, and ordering node configuration</li><li>Ability to add and remove Raft ordering nodes</li><li>Java smart contract instantiation</li><li>Updated create channel and create organization panels</ul> |
@@ -130,11 +130,11 @@ Use these instructions to upgrade to the {{site.data.keyword.blockchainfull_notm
 {: #upgrade-k8-before}
 
 The upgrade process that you follow depends on the version of the platform that you are upgrading from, v2.1.x or v2.5.x.
-- [Upgrade to {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 from v2.5.x](#upgrade-k8-steps-251)
+- [Upgrade to {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 from v2.5.x](#upgrade-k8-steps-252)
 - [Upgrade to {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 from v2.1.x](#upgrade-k8-steps-21x)  
 
 Or, if you are upgrading from behind a firewall
-- [Upgrade to {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 from v2.5.x](#upgrade-k8-steps-251)
+- [Upgrade to {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 from v2.5.x](#upgrade-k8-steps-252)
 - [Upgrade to {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 from v2.1.x](#upgrade-k8-firewall)
 
 After you upgrade the {{site.data.keyword.blockchainfull_notm}} Platform Operator, the Operator will automatically upgrade the console that is deployed on your Kubernetes namespace. You can then use the upgraded console to upgrade your blockchain nodes.
@@ -147,22 +147,22 @@ Updating the Operator triggers a restart of all components managed by this insta
 It is a best practice to upgrade your SDK to the latest version as part of a general upgrade of your network. While the SDK will always be compatible with equivalent releases of Fabric and lower, it might be necessary to upgrade to the latest SDK to leverage the latest Fabric features. Also, after upgrading, it's possible your client application may experience errors. Consult the your Fabric SDK documentation for information about how to upgrade.
 {: tip}
 
-## Upgrade to the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.1 from 2.5
-{: #upgrade-k8-steps-251}
+## Upgrade to the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 from 2.5.x
+{: #upgrade-k8-steps-252}
 
-When you upgrade to {{site.data.keyword.blockchainfull_notm}} Platform 2.5.1 from 2.5  you need to update the webhook, the custom resource definitions (CRDs), the ClusterRole, and the operator using the following steps. **These same steps can be followed even if your deployment is behind a firewall.**
+When you upgrade to {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 from 2.5.x  you need to update the webhook, the custom resource definitions (CRDs), the ClusterRole, and the operator using the following steps. **These same steps can be followed even if your deployment is behind a firewall.**
 
-1. [Update webhook image.](#upgrade-k8-steps-251-webhook)
-2. [Update the CRDs.](#upgrade-k8-steps-251-crds)
-3. [Update the ClusterRole.](#upgrade-k8-steps-251-clusterrole)
-4. [Update the operator.](#upgrade-k8-steps-251-operator)
+1. [Update webhook image.](#upgrade-k8-steps-252-webhook)
+2. [Update the CRDs.](#upgrade-k8-steps-252-crds) (Not required when upgrading from 2.5.1)
+3. [Update the ClusterRole.](#upgrade-k8-steps-252-clusterrole) (Not required when upgrading from 2.5.1)
+4. [Update the operator.](#upgrade-k8-steps-252-operator)
 5. [Use your console to upgrade your running blockchain nodes.](#upgrade-k8-nodes)
 6. [Update MSPs in consortium to add organization-level endorsement policy.](#upgrade-k8s-update-consortium)
 
 You need to repeat steps 3-6 for each network that that runs in a separate namespace. If you experience any problems, see the instructions for [rolling back an upgrade](#upgrade-k8-rollback). If you deployed your network behind a firewall, without access to the external internet, see the separate set of instructions for [Upgrading the {{site.data.keyword.blockchainfull_notm}} Platform behind a firewall](#upgrade-k8-firewall).
 
 ### Step one: Update the webhook image
-{: #upgrade-k8-steps-251-webhook}
+{: #upgrade-k8-steps-252-webhook}
 
 Log in to your cluster and run the following command to update the webhook image in the `ibpinfra` namespace or project:
 
@@ -172,7 +172,8 @@ kubectl set image deploy/ibp-webhook -n ibpinfra ibp-webhook="cp.icr.io/cp/ibp-c
 {: codeblock}
 
 ### Step two: Update the CRDs
-{: #upgrade-k8-steps-251-crds}
+{: #upgrade-k8-steps-252-crds}
+**This step is not required when upgrading from 2.5.1.**
 
 1. Extract the webhook TLS certificate from the `ibpinfra` namespace by running the following command:
 
@@ -425,7 +426,8 @@ customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com configured
 ```
 
 ### Step three: Update the ClusterRole
-{: #upgrade-k8-steps-251-clusterrole}
+{: #upgrade-k8-steps-252-clusterrole}
+**This step is not required when upgrading from 2.5.1.**
 
 You need to update the ClusterRole that is applied to your namespace. Copy the following text to a file on your local system and save the file as `ibp-clusterrole.yaml`. Edit the file and replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.  
 
@@ -526,7 +528,7 @@ oc adm policy add-scc-to-group <NAMESPACE> system:serviceaccounts:<NAMESPACE>
 {:codeblock}
 
 ### Step four: Upgrade the {{site.data.keyword.blockchainfull_notm}} operator
-{: #upgrade-k8-steps-251-operator}
+{: #upgrade-k8-steps-252-operator}
 
 Before updating the operator image, you need to stop the ibpconsole by running the following command. Replace <NAMESPACE> with the name of your Kubernetes namespace:
 ```
@@ -540,7 +542,7 @@ Wait a few minutes for the console to stop. While the console is stopped you are
 Run the following command to upgrade the operator. Replace `<NAMESPACE>` with the Kubernetes namespace for the platform.
 
 ```
-kubectl set image deploy/ibp-operator -n <NAMESPACE> ibp-operator="cp.icr.io/cp/ibp-operator:2.5.1-20210112-amd64"
+kubectl set image deploy/ibp-operator -n <NAMESPACE> ibp-operator="cp.icr.io/cp/ibp-operator:2.5.2-20210325-amd64"
 ```
 {: codeblock}
 
@@ -564,7 +566,7 @@ kubectl patch ibpconsole ibpconsole -n <NAMESPACE> -p='[{"op": "replace", "path"
 
 ### Step five: Upgrade your nodes
 
-You can now follow the [steps](#upgrade-k8-nodes) to upgrade your blockchain nodes. Be aware that after the nodes are upgraded, there is no way to roll back the upgrade from 2.5.1 to 2.5. After you upgrade to 2.5.1, you can take advantage of the new Fabric v2.x lifecycle deployment process for your smart contracts. But to avoid your peers crashing, you need to ensure that you upgrade your peers before you upgrade your channels. Learn more about considerations when  [Upgrading to a new version of Fabric](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-govern-components#ibp-console-govern-components-upgrade).
+You can now follow the [steps](#upgrade-k8-nodes) to upgrade your blockchain nodes. Be aware that after the nodes are upgraded, there is no way to roll back the upgrade from 2.5.2 to 2.5.x. After you upgrade to 2.5.2, you can take advantage of the new Fabric v2.x lifecycle deployment process for your smart contracts. But to avoid your peers crashing, you need to ensure that you upgrade your peers before you upgrade your channels. Learn more about considerations when  [Upgrading to a new version of Fabric](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-govern-components#ibp-console-govern-components-upgrade).
 
 After upgrading your nodes and updating your channels, make sure you update your organizations to [add an organization-level endorsement policy](#upgrade-k8s-update-consortium).
 
@@ -575,7 +577,7 @@ To use the 2.x smart contract lifecycle, an organization must have an endorsemen
 
 The best practice to add this endorsement policy to the MSP is to delete the MSP from the system channel and then re-add the MSP. The console detects the fact that the MSP does not contain the endorsement policy and automatically adds it. Note that this action can only be completed by an ordering service administrator. You do not need to delete and re-add the MSPs in the configuration of any application channels that have already been created. For these MSPs, the endorsement policy is added as part of the process of deploying the smart contract.
 
-## Upgrade to the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.1 from 2.1.x
+## Upgrade to the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 from 2.1.x
 {: #upgrade-k8-steps-21x}
 
 You can upgrade an {{site.data.keyword.blockchainfull_notm}} Platform network by using the following steps:
@@ -606,7 +608,7 @@ Occasionally, a five node ordering service that was deployed using v2.1.2 will b
 ### Step one: Create the `ibpinfra` namespace for the webhook
 {: #upgrade-k8s-ibpinfra}
 
-Because the platform has updated the internal apiversion from `v1alpha1` in previous versions to `v1beta1` in 2.5.1, a Kubernetes conversion webhook is required to update the CA, peer, operator, and console to the new API version. This webhook will continue to be used in the future, so new deployments of the platform are required to deploy it as well.  The webhook is deployed to its own namespace, referred to as  `ibpinfra` throughout these instructions.
+Because the platform has updated the internal apiversion from `v1alpha1` in previous versions to `v1beta1` in 2.5.2, a Kubernetes conversion webhook is required to update the CA, peer, operator, and console to the new API version. This webhook will continue to be used in the future, so new deployments of the platform are required to deploy it as well.  The webhook is deployed to its own namespace, referred to as  `ibpinfra` throughout these instructions.
 
 After you log in to your cluster, you can create the new `ibpinfra` namespace for the Kubernetes conversion webhook using the kubectl CLI. The new namespace needs to be created by a cluster administrator.
 
@@ -1273,7 +1275,7 @@ kubectl get deployment ibp-operator -o yaml > operator.yaml
 
 Open `operator.yaml` in a text editor and save a new copy of the file as `operator-upgrade.yaml`. You need to update the `image:` field with the updated version of the operator image. You can find the name and tag of the latest operator image below:
 ```
-cp.icr.io/cp/ibp-operator:2.5.1-20210112-amd64
+cp.icr.io/cp/ibp-operator:2.5.2-20210325-amd64
 ```
 {:codeblock}
 
@@ -1346,7 +1348,7 @@ To use the 2.x smart contract lifecycle, an organization must have an endorsemen
 
 The best practice to add this endorsement policy to the MSP is to delete the MSP from the system channel and then re-add the MSP. The console detects the fact that the MSP does not contain the endorsement policy and automatically adds it. Note that this action can only be completed by an ordering service administrator. You do not need to delete and re-add the MSPs in the configuration of any application channels that have already been created. For these MSPs, the endorsement policy is added as part of the process of deploying the smart contract.
 
-## Upgrade to the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.1 from 2.1.x from behind a firewall
+## Upgrade to the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 from 2.1.x from behind a firewall
 {: #upgrade-k8-firewall}
 
 If you deployed the {{site.data.keyword.blockchainfull_notm}} Platform behind a firewall, without access to the external internet, you can upgrade your network by using the following steps:
@@ -1423,7 +1425,7 @@ After you complete these steps, you can use the following instructions to deploy
 ### Step two: Create the `ibpinfra` namespace for the webhook
 {: #upgrade-k8s-ibpinfra-fw}
 
-Because the platform has updated the internal apiversion from `v1alpha1` in previous versions to `v1beta1` in 2.5.1, a Kubernetes conversion webhook is required to update the CA, peer, operator, and console to the new API version. This webhook will continue to be used in the future, so new deployments of the platform are required to deploy it as well.  The webhook is deployed to its own namespace, referred to as  `ibpinfra` throughout these instructions.
+Because the platform has updated the internal apiversion from `v1alpha1` in previous versions to `v1beta1` in 2.5.2, a Kubernetes conversion webhook is required to update the CA, peer, operator, and console to the new API version. This webhook will continue to be used in the future, so new deployments of the platform are required to deploy it as well.  The webhook is deployed to its own namespace, referred to as  `ibpinfra` throughout these instructions.
 
 After you log in to your cluster, you can create the new `ibpinfra` namespace for the Kubernetes conversion webhook using the kubectl CLI. The new namespace needs to be created by a cluster administrator.
 
@@ -2092,7 +2094,7 @@ kubectl get deployment ibp-operator -o yaml > operator.yaml
 
 Open `operator.yaml` in a text editor and save a new copy of the file as `operator-upgrade.yaml`. You need to update the `image:` field with the updated version of the operator image:
 ```yaml
-<LOCAL_REGISTRY>/ibp-operator:2.5.1-20210112-amd64
+<LOCAL_REGISTRY>/ibp-operator:2.5.2-20210325-amd64
 ```
 {:codeblock}
 
