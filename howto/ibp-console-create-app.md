@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-11"
+lastupdated: "2021-03-18"
 
 keywords: client application, Commercial Paper, SDK, wallet, generate a certificate, generate a private key, fabric gateway, APIs, smart contract
 
@@ -32,6 +32,7 @@ subcollection: blockchain-sw-252
     <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-app">2.1.3</a>,
     <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-ibp-console-app">2.5</a>,
     <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-ibp-console-app">2.5.1</a>
+    <a href="/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-app">2.5.2</a>
     </p>
 </div>
 

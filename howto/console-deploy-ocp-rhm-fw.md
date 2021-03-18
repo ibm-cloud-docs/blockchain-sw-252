@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-16"
+lastupdated: "2021-03-18"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, Red Hat Marketplace, subscription, operators, on-prem, firewall, airgap environment, container registry, portable storage, Bastion server
 
@@ -1100,14 +1100,14 @@ spec:
       class: ''
       size: 5Gi
   serviceAccountName: ibm-blockchain
-  version: 2.5.1
+  version: 2.5.2
 ```
 {:codeblock}
 
 - Accept the IBM Blockchain Platform license by replacing `<ACCEPT>` with the text `true`.
 - Replace `<EMAIL>` with the email address that you want to use for the console administrator.
 - Replace `<PASSWORD>` with the password of your choice. This password becomes the default password for the console administrator but they are required to change it the first time they log in.
-- Replace `<DOMAIN>` with the name of your cluster domain. You can find this value from your OpenShift web console URL. Examine the URL for the current page. It is similar to: `https://console-openshift-console.pa-0803-ocp43-0defdaa0c51bd4a2dcb024eab4bf04a1-0000.us-south.containers.appdomain.cloud/k8s/ns/pa0804/clusterserviceversions/ibm-blockchain.v2.5.1/ibp.com~v1beta1~IBPConsole/~new`. The value of the domain then would be `pa-0803-ocp43-0defdaa0c51bd4a2dcb024eab4bf04a1-0000.us-south.containers.appdomain.cloud`, after you remove `console-openshift-console` and `/k8s/ns/pa0804/clusterserviceversions/ibm-blockchain.v2.5.1/ibp.com~v1beta1~IBPConsole/~new`.  
+- Replace `<DOMAIN>` with the name of your cluster domain. You can find this value from your OpenShift web console URL. Examine the URL for the current page. It is similar to: `https://console-openshift-console.pa-0803-ocp43-0defdaa0c51bd4a2dcb024eab4bf04a1-0000.us-south.containers.appdomain.cloud/k8s/ns/pa0804/clusterserviceversions/ibm-blockchain.v2.5.2/ibp.com~v1beta1~IBPConsole/~new`. The value of the domain then would be `pa-0803-ocp43-0defdaa0c51bd4a2dcb024eab4bf04a1-0000.us-south.containers.appdomain.cloud`, after you remove `console-openshift-console` and `/k8s/ns/pa0804/clusterserviceversions/ibm-blockchain.v2.5.2/ibp.com~v1beta1~IBPConsole/~new`.  
 
 
 You also need to make additional edits to the file depending on your choices in the deployment process. For example, if you created a new storage class for your network, provide the storage class that you created to the `class:` field.
@@ -1153,7 +1153,7 @@ spec:
       class: default
       size: 5Gi
   serviceAccountName: ibm-blockchain
-  version: 2.5.1
+  version: 2.5.2
   clusterdata:
     zones:
   resources:
@@ -1256,7 +1256,7 @@ spec:
       class: default
       size: 5Gi
   serviceAccountName: ibm-blockchain
-  version: 2.5.1
+  version: 2.5.2
   tlsSecretName: "console-tls-secret"
   clusterdata:
     zones:

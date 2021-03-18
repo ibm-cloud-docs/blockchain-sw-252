@@ -103,6 +103,7 @@ subcollection: blockchain-sw-252
     <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-k8-firewall">2.1.3</a>,
     <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-deploy-k8-firewall">2.5</a>,
     <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-deploy-k8-firewall">2.5.1</a>
+    <a href="/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8-firewall">2.5.2</a>
     </p>
 </div>
 
@@ -1200,7 +1201,7 @@ spec:
     console:
       class: ""
       size: 5Gi
-  version: 2.5.1
+  version: 2.5.2
 ```
 {: codeblock}
 
@@ -1288,7 +1289,7 @@ spec:
       requests:
         cpu: 100m
         memory: 200Mi
-  version: 2.5.1
+  version: 2.5.2
 ```
 {: codeblock}
 
