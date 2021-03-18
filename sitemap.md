@@ -1241,6 +1241,12 @@ subcollection: blockchain-sw-252
 
 [IBM Cloud HSM PKCS #11 proxy](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-hsm-build-pkcs11-proxy-ic)
 
+[Build PKCS #11 Docker image](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-hsm-build-pkcs11-proxy-ic#ibp-hsm-build-pkcs11-proxy-ic-build)
+
+[Deploy the Docker image onto your Kubernetes cluster](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-hsm-build-pkcs11-proxy-ic#ibp-hsm-build-pkcs11-proxy-ic-deploy-k8s)
+
+[Next steps](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-hsm-build-pkcs11-proxy-ic#ibp-hsm-build-pkcs11-proxy-ic-next-steps)
+
 
 ## Glossary
 {: #sitemap_glossary}
