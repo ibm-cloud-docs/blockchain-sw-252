@@ -421,6 +421,7 @@ subcollection: blockchain-sw-252
 * [Next steps](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-join-network#ibp-console-join-network-next-steps)
 
 [{{site.data.keyword.blockchainfull_notm}} Platform getting started videos](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-videos)
+* [Getting started with {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-videos#ibp-videos-ibp-v2)
 
 
 ## Deploy a smart contract
