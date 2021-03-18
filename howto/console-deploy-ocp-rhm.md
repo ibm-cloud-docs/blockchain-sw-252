@@ -26,7 +26,7 @@ subcollection: blockchain-sw-252
 # Deploy from Red Hat Marketplace
 {: #deploy-ocp-rhm}
 
-The Red Hat Marketplace can be used to deploy the {{site.data.keyword.blockchainfull}} Platform 2.5.2 operator onto a Kubernetes cluster on OpenShift Container Platform 4.3+. This operator can be used to deploy instances of the Certificate Authority (CA), peer, and ordering nodes, as well as the {{site.data.keyword.blockchainfull_notm}} Platform console that can be used to manage the blockchain components on your network. This deployment option is available for OpenShift clusters that are running in {{site.data.keyword.cloud_notm}} or your cloud.
+The Red Hat Marketplace can be used to deploy the {{site.data.keyword.blockchainfull}} Platform 2.5.2 operator onto a Kubernetes cluster on OpenShift Container Platform 4.4+. This operator can be used to deploy instances of the Certificate Authority (CA), peer, and ordering nodes, as well as the {{site.data.keyword.blockchainfull_notm}} Platform console that can be used to manage the blockchain components on your network. This deployment option is available for OpenShift clusters that are running in {{site.data.keyword.cloud_notm}} or your cloud.
 {:shortdesc}
 
 ## What is the Red Hat Marketplace?
