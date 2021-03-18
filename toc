@@ -37,6 +37,7 @@ IBM Blockchain Platform 2.5.2
 		howto/ibp-console-smart-contracts.md
 		howto/ibp-console-smart-contracts-v2.md
 		howto/ibp-console-smart-contracts-v14.md
+		howto/ibp-chaincode-smart-contract.md
 
 	howto/ibp-console-create-app.md
 

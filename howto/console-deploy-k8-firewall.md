@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-03-10"
+lastupdated: "2021-03-18"
 
 keywords: IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, firewall, on-premises, air-gapped, on-prem, multicloud, on-prem
 
@@ -218,7 +218,7 @@ skopeo copy docker://cp.icr.io/cp/ibp-ccenv:2.2.1-20210112 docker://<LOCAL_REGIS
 skopeo copy docker://cp.icr.io/cp/ibp-goenv:2.2.1-20210112 docker://<LOCAL_REGISTRY>/ibp-goenv:2.2.1-20210112 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 skopeo copy docker://cp.icr.io/cp/ibp-nodeenv:2.2.1-20210112 docker://<LOCAL_REGISTRY>/ibp-nodeenv:2.2.1-20210112 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 skopeo copy docker://cp.icr.io/cp/ibp-javaenv:2.2.1-20210112 docker://<LOCAL_REGISTRY>/ibp-javaenv:2.2.1-20210112 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-crdwebhook:2.5.1-20210112 docker://<LOCAL_REGISTRY>/ibp-crdwebhook:2.5.1-20210112 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-crdwebhook:2.5.2-20210325 docker://<LOCAL_REGISTRY>/ibp-crdwebhook:2.5.2-20210325 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 skopeo copy docker://cp.icr.io/cp/ibp-ccenv:1.4.9-20210112 docker://<LOCAL_REGISTRY>/ibp-ccenv:1.4.9-20210112 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 skopeo copy docker://cp.icr.io/cp/ibp-goenv:1.4.9-20210112 docker://<LOCAL_REGISTRY>/ibp-goenv:1.4.9-20210112 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 skopeo copy docker://cp.icr.io/cp/ibp-nodeenv:1.4.9-20210112 docker://<LOCAL_REGISTRY>/ibp-nodeenv:1.4.9-20210112 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
@@ -435,7 +435,7 @@ spec:
       annotations:
         productName: "IBM Blockchain Platform"
         productID: "54283fa24f1a4e8589964e6e92626ec4"
-        productVersion: "2.5.1"
+        productVersion: "2.5.2"
     spec:
       serviceAccountName: webhook
       imagePullSecrets:
@@ -449,7 +449,7 @@ spec:
         fsGroup: 2000
       containers:
         - name: "ibp-webhook"
-          image: "cp.icr.io/cp/ibp-crdwebhook:2.5.1-20210112-amd64"
+          image: "cp.icr.io/cp/ibp-crdwebhook:2.5.2-20210325-amd64"
           imagePullPolicy: Always
           securityContext:
             privileged: false
@@ -1080,7 +1080,7 @@ spec:
       annotations:
         productName: "IBM Blockchain Platform"
         productID: "54283fa24f1a4e8589964e6e92626ec4"
-        productVersion: "2.5.1"
+        productVersion: "2.5.2"
         productChargedContainers: ""
         productMetric: "VIRTUAL_PROCESSOR_CORE"
     spec:
@@ -1105,7 +1105,7 @@ spec:
         - name: docker-key-secret
       containers:
         - name: ibp-operator
-          image: cp.icr.io/cp/ibp-operator:2.5.1-20210112-amd64
+          image: cp.icr.io/cp/ibp-operator:2.5.2-20210325-amd64
           command:
           - ibp-operator
           imagePullPolicy: Always

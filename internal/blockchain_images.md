@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-02-25"
+lastupdated: "2021-03-18"
 
 keywords: IBM Blockchain Platform, images, multicloud
 
@@ -195,7 +195,7 @@ skopeo copy docker://cp.icr.io/cp/ibp-ccenv:2.2.1-20210112 docker://<LOCAL_REGIS
 skopeo copy docker://cp.icr.io/cp/ibp-goenv:2.2.1-20210112 docker://<LOCAL_REGISTRY>/ibp-goenv:2.2.1-20210112 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 skopeo copy docker://cp.icr.io/cp/ibp-nodeenv:2.2.1-20210112 docker://<LOCAL_REGISTRY>/ibp-nodeenv:2.2.1-20210112 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 skopeo copy docker://cp.icr.io/cp/ibp-javaenv:2.2.1-20210112 docker://<LOCAL_REGISTRY>/ibp-javaenv:2.2.1-20210112 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-crdwebhook:2.5.1-20210112 docker://<LOCAL_REGISTRY>/ibp-crdwebhook:2.5.1-20210112 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-crdwebhook:2.5.2-20210325 docker://<LOCAL_REGISTRY>/ibp-crdwebhook:2.5.2-20210325 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 skopeo copy docker://cp.icr.io/cp/ibp-ccenv:1.4.9-20210112 docker://<LOCAL_REGISTRY>/ibp-ccenv:1.4.9-20210112 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 skopeo copy docker://cp.icr.io/cp/ibp-goenv:1.4.9-20210112 docker://<LOCAL_REGISTRY>/ibp-goenv:1.4.9-20210112 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 skopeo copy docker://cp.icr.io/cp/ibp-nodeenv:1.4.9-20210112 docker://<LOCAL_REGISTRY>/ibp-nodeenv:1.4.9-20210112 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all

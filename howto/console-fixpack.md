@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-02-16"
+lastupdated: "2021-03-18"
 
 keywords: Kubernetes, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, fix pack, multicloud
 
@@ -52,7 +52,7 @@ To upgrade your network, you need to [retrieve your entitlement key](/docs/block
 The process of updating your network begins with updating the webhook that you created when you initially deployed or upgraded to the 2.5.2 blockchain service. Run the following command to update the webhook in the `ibpinfra` namespace or project:
 
 ```
-kubectl set image deploy/ibp-webhook -n ibpinfra ibp-webhook=cp.icr.io/cp/ibp-crdwebhook:2.5.1-20210112-amd64
+kubectl set image deploy/ibp-webhook -n ibpinfra ibp-webhook=cp.icr.io/cp/ibp-crdwebhook:2.5.2-20210325-amd64
 ```
 {: codeblock}
 
@@ -206,7 +206,7 @@ skopeo copy docker://cp.icr.io/cp/ibp-ccenv:2.2.1-20210112 docker://<LOCAL_REGIS
 skopeo copy docker://cp.icr.io/cp/ibp-goenv:2.2.1-20210112 docker://<LOCAL_REGISTRY>/ibp-goenv:2.2.1-20210112 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 skopeo copy docker://cp.icr.io/cp/ibp-nodeenv:2.2.1-20210112 docker://<LOCAL_REGISTRY>/ibp-nodeenv:2.2.1-20210112 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 skopeo copy docker://cp.icr.io/cp/ibp-javaenv:2.2.1-20210112 docker://<LOCAL_REGISTRY>/ibp-javaenv:2.2.1-20210112 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-crdwebhook:2.5.1-20210112 docker://<LOCAL_REGISTRY>/ibp-crdwebhook:2.5.1-20210112 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-crdwebhook:2.5.2-20210325 docker://<LOCAL_REGISTRY>/ibp-crdwebhook:2.5.2-20210325 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 skopeo copy docker://cp.icr.io/cp/ibp-ccenv:1.4.9-20210112 docker://<LOCAL_REGISTRY>/ibp-ccenv:1.4.9-20210112 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 skopeo copy docker://cp.icr.io/cp/ibp-goenv:1.4.9-20210112 docker://<LOCAL_REGISTRY>/ibp-goenv:1.4.9-20210112 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 skopeo copy docker://cp.icr.io/cp/ibp-nodeenv:1.4.9-20210112 docker://<LOCAL_REGISTRY>/ibp-nodeenv:1.4.9-20210112 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
@@ -223,7 +223,7 @@ After you complete these steps, you can use the following instructions to deploy
 First, you need to update the webhook that you created when you initially deployed or upgraded to the 2.5.2 blockchain service. Run the following command to update the webhook in the `ibpinfra` namespace or project:
 
 ```
-kubectl set image deploy/ibp-webhook -n ibpinfra ibp-webhook=cp.icr.io/cp/ibp-crdwebhook:2.5.1-20210112-amd64
+kubectl set image deploy/ibp-webhook -n ibpinfra ibp-webhook=cp.icr.io/cp/ibp-crdwebhook:2.5.2-20210325-amd64
 ```
 {: codeblock}
 
