@@ -1148,7 +1148,7 @@ spec:
     console:
       class: ""
       size: 5Gi
-  version: 2.5.2
+  version: 2.5.1
 ```
 {: codeblock}
 Accept the license:  
