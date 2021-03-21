@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-03-19"
+lastupdated: "2021-03-21"
 
 keywords: site map
 subcollection: blockchain-sw-252
@@ -473,9 +473,11 @@ subcollection: blockchain-sw-252
 [Running the {{site.data.keyword.blockchainfull_notm}} Platform with self-managed Kubernetes smart contracts](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-smart-contracts-k8s-self-managed)
 * [Before you begin](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-smart-contracts-k8s-self-managed#ibp-smart-contracts-k8s-self-managed-before)
   * [Python](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-smart-contracts-k8s-self-managed#ibp-smart-contracts-k8s-self-managed-before-python)
-  * [More tools](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-smart-contracts-k8s-self-managed#ibp-smart-contracts-k8s-self-managed-before-tools)
+  * [Login to {{site.data.keyword.cloud_notm}}](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-smart-contracts-k8s-self-managed#ibp-smart-contracts-k8s-self-managed-before-login)
+  * [Additional tools](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-smart-contracts-k8s-self-managed#ibp-smart-contracts-k8s-self-managed-before-tools)
   * [Hyperledger Fabric Peer Commands](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-smart-contracts-k8s-self-managed#ibp-smart-contracts-k8s-self-managed-before-hyperledger)
-* [API Keys](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-smart-contracts-k8s-self-managed#ibp-smart-contracts-k8s-self-managed-api)
+  * [API Keys](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-smart-contracts-k8s-self-managed#ibp-smart-contracts-k8s-self-managed-before-api)
+* [Quick start](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-smart-contracts-k8s-self-managed#ibp-smart-contracts-k8s-self-managed-quickstart)
 * [Node.js smart contract](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-smart-contracts-k8s-self-managed#ibp-smart-contracts-k8s-self-managed-nodejs)
   * [Chaincode-as-a-server](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-smart-contracts-k8s-self-managed#ibp-smart-contracts-k8s-self-managed-nodejs-chaincode)
   * [Dockerfile](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-smart-contracts-k8s-self-managed#ibp-smart-contracts-k8s-self-managed-nodejs-dockerfile)
@@ -1390,9 +1392,7 @@ subcollection: blockchain-sw-252
 
 [Known issues](/docs/blockchain-sw-252?topic=blockchain-sw-252-sw-known-issues)
 
-[Nil pointer when creating HSM-configmap](/docs/blockchain-sw-252?topic=blockchain-sw-252-sw-known-issues#known-issues-hsm-configmap)
-
-[Smart contract instantiation timeout](/docs/blockchain-sw-252?topic=blockchain-sw-252-sw-known-issues#sw-known-issues-instantiation-timeout)
+[Peer 1.4 Failure on VPC cluster](/docs/blockchain-sw-252?topic=blockchain-sw-252-sw-known-issues#sw-known-issues-peer14-failure)
 
 
 ## Troubleshooting
