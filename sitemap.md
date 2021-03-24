@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-03-22"
+lastupdated: "2021-03-24"
 
 keywords: site map
 subcollection: blockchain-sw-252
@@ -469,24 +469,6 @@ subcollection: blockchain-sw-252
   * [How to upgrade a smart contract](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-smart-contracts-v14#ibp-console-smart-contracts-upgrade-howto)
   * [Considerations when you upgrade smart contracts](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-smart-contracts-v14#ibp-console-smart-contracts-upgrade-considerations)
 * [Private data](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-smart-contracts-v14#ibp-console-smart-contracts-private-data)
-
-[Running the {{site.data.keyword.blockchainfull_notm}} Platform with self-managed Kubernetes smart contracts](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-smart-contracts-k8s-self-managed)
-* [Before you begin](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-smart-contracts-k8s-self-managed#ibp-smart-contracts-k8s-self-managed-before)
-  * [Python](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-smart-contracts-k8s-self-managed#ibp-smart-contracts-k8s-self-managed-before-python)
-  * [Login to {{site.data.keyword.cloud_notm}}](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-smart-contracts-k8s-self-managed#ibp-smart-contracts-k8s-self-managed-before-login)
-  * [Additional tools](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-smart-contracts-k8s-self-managed#ibp-smart-contracts-k8s-self-managed-before-tools)
-  * [Hyperledger Fabric Peer Commands](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-smart-contracts-k8s-self-managed#ibp-smart-contracts-k8s-self-managed-before-hyperledger)
-  * [API Keys](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-smart-contracts-k8s-self-managed#ibp-smart-contracts-k8s-self-managed-before-api)
-* [Quick start](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-smart-contracts-k8s-self-managed#ibp-smart-contracts-k8s-self-managed-quickstart)
-* [Node.js smart contract](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-smart-contracts-k8s-self-managed#ibp-smart-contracts-k8s-self-managed-nodejs)
-  * [Chaincode-as-a-server](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-smart-contracts-k8s-self-managed#ibp-smart-contracts-k8s-self-managed-nodejs-chaincode)
-  * [Dockerfile](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-smart-contracts-k8s-self-managed#ibp-smart-contracts-k8s-self-managed-nodejs-dockerfile)
-* [Secret to pull the docker image](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-smart-contracts-k8s-self-managed#ibp-smart-contracts-k8s-self-managed-secret)
-* [{{site.data.keyword.blockchainfull_notm}} Platform Configuration](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-smart-contracts-k8s-self-managed#ibp-smart-contracts-k8s-self-managed-ibpconfig)
-  * [Playbook details](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-smart-contracts-k8s-self-managed#ibp-smart-contracts-k8s-self-managed-ibpconfig-playbook)
-* [Checkpoint](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-smart-contracts-k8s-self-managed#ibp-smart-contracts-k8s-self-managed-checkpoint)
-* [Create identities](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-smart-contracts-k8s-self-managed#ibp-smart-contracts-k8s-self-managed-createidentities)
-* [Using these identities](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-smart-contracts-k8s-self-managed#ibp-smart-contracts-k8s-self-managed-usingidentities)
 
 
 ## Creating applications
@@ -1408,6 +1390,8 @@ subcollection: blockchain-sw-252
 [Extracting the TLS certificate from the Kubernetes webhook fails](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-troubleshooting#ibp-v2-troubleshooting-wh-extract)
 
 [Why is my console upgrade from 2.5 to 2.5.x failing?](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-troubleshooting#ibp-v2-troubleshootingconsole-upgrade-fails)
+
+[Why is my {{site.data.keyword.blockchainfull_notm}} Platform user interface unable to connect to cluster after deployment (Ingress issue)?](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-troubleshooting#ibp-v2-troubleshooting-ingress-issue)
 
 [Why are my console actions failing in my Chrome browser Version 77.0.3865.90 (Official Build) (64-bit)?](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-troubleshooting#ibp-v2-troubleshooting-chrome-v77)
 
