@@ -221,6 +221,7 @@ To resolve this problem, you can perform the following steps:
 1. **Update and deploy ALB.** For clusters with only one single node, you can add a second node to it. For clusters with multizone cluster, you can add a second node to each zone or another option is to edit the replica set and scale it down to 1. To scale-down the replica set to 1, you can perform the following steps: 
 
     a. To find the existing replica set.
+
         ```
         kubectl get replicasets -n kube-system | grep -i alb
         public-crbpt86avw0kfob73dpb3g-alb1-875bc4d57    2         2         2       24h
@@ -228,24 +229,27 @@ To resolve this problem, you can perform the following steps:
         {: codeblock}
 
     b. To scale-down the replica set to 1.
+
         ```
         kubectl scale --replicas=1 rs/public-crbpt86avw0kfob73dpb3g-alb1-875bc4d57 -n kube-system
         replicaset.apps/public-crbpt86avw0kfob73dpb3g-alb1-875bc4d57 scaled
         ```
         {: codeblock}
 
-2. **Fix ingress on clusters with version 1.18 or higher.** For clusters with version 1.18 or higher, you will need to add the ingress changes manually for each peer and orderer by performing the following steps: 
+2. **Fix ingress on clusters with version 1.18 or higher.** For clusters with version 1.18 or higher, you need to add the ingress changes manually for each peer and orderer by performing the following steps: 
 
-    a. Get and edit the ingress name
+    a. To get and edit the ingress name.
+
         ```
         kubectl get ingress --all-namespaces 
         kubectl -n <name-space> edit ingress <ingress-name> 
         ```
         {: codeblock}
 
-    b. Edit the ingress definition:
+    b. To edit the ingress definition, you need to:
 
         - Change annotations
+            
             ```
             annotations:
             nginx.ingress.kubernetes.io/backend-protocol: HTTPS
@@ -254,6 +258,7 @@ To resolve this problem, you can perform the following steps:
             {: codeblock}
 
         - Add in spec section
+            
             ```
             spec:
             ingressClassName: public-iks-k8s-nginx 
@@ -262,8 +267,9 @@ To resolve this problem, you can perform the following steps:
 
 3. **Verify the resolution.** You can now verify the changes by performing the following steps:
 
-    - Run `kubectl get ingress --all-namespaces` command to check if ingress gets an IP address for each listed entry.
-   - Run `curl -kv https://<component-proxy-url>/settings` for testing the connectivity to ensure the component-proxy-url matches the corresponding "Hosts" entry in the `kubectl get ingress --all-namespaces` command.
+  - Run `kubectl get ingress --all-namespaces` command to check if ingress gets an IP address for each listed entry.
+
+  - Run `curl -kv https://<component-proxy-url>/settings` for testing the connectivity to ensure the component-proxy-url matches the corresponding "Hosts" entry in the `kubectl get ingress --all-namespaces` command.
 
 
 ## Why are my console actions failing in my Chrome browser Version 77.0.3865.90 (Official Build) (64-bit)?
@@ -293,25 +299,33 @@ There are three ways to resolve this problem:
 2. Use your own [TLS certificates when deploying on OpenShift Contain Platform](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp#console-deploy-ocp-use-your-own-tls-certificates-optional) or [TLS certificates when deploying on Kubernetes](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#deploy-k8-tls).
 3. Run the following commands to generate a new key and certificate pair for the console that will fix the problem.
       - Run the following command to get the pod that corresponds to the console:
+
         ```
         kubectl get po
         ```
         {: codeblock}
+
       - Exec into the pod by running the command:
+
         ```
         kubectl get po <pod-name> -c optools bash
         ```
         {: codeblock}
+
       - Delete the console key and certificate by running the command:
+        
         ```
         rm -f /certs/tls.key rm -f /certs/tls.crt
         ```
         {: codeblock}
+
       - Delete the console pod which causes it to restart by running the command:
+
         ```
         kubectl delete po <pod-name>
         ```
         {: codeblock}
+
    When the pod restart completes, you should now be able to log in to your console URL from a Chrome Browser.
 
 ## Why is my channel creation failing or I am unable to add a new organization to my ordering service with the error "Unable to get system channel"?
@@ -667,11 +681,13 @@ This problem can happen when you try to deploy a CA, peer, or ordering node that
 ```
 {"code":1000,"message":"Private key not found [pkcs11: 0x30: CKR_DEVICE_ERROR]"}"
 ```
+{: codeblock}
+
 or
 ```
 {"code":1000,"message":"Private key not found [pkcs11: 0xB3: CKR_SESSION_HANDLE_INVALID]"}"
 ```
-
+{: codeblock}
 
 This problem happens when the PKCS #11 proxy that is associated with the HSM is unreachable due to a network problem or if the proxy restarts after the node has connected to it.
 {: tsCauses}
@@ -703,9 +719,10 @@ To resolve this problem, you need to restart the Operator pod in your cluster.
 
     The output would look similar to:
 
-    ```
-    ibp-operator-5794799cff-pbm2h   1/1     Running   0          21d
-  ```
+     ```
+     ibp-operator-5794799cff-pbm2h   1/1     Running   0          21d
+     ```
+     {: codeblock}
 
   - In the following command, replace `<OPERATOR-POD>` with the name of the operator pod from the previous command, for example `ibp-operator-5794799cff-pbm2h`.
     ```
@@ -738,6 +755,7 @@ Transactions submitted from VS Code fail with an error similar to:
 ```
 Error submitting transaction: No endorsement plan available for {"chaincodes":[{"name":"hello-world"}]}
 ```
+{: codeblock}
 
 This error occurs if you are using the Fabric Service Discovery feature but did not configure any anchor peers on your channel.
 {: tsCauses}
@@ -756,6 +774,7 @@ Also in the endorsing peer logs I can see the error:
 ```
 UTC [discovery] chaincodeQuery -> ERRO 23c Failed constructing descriptor for chaincode chaincodes:<name:"chaincode-name">,: cannot satisfy any principal combination
 ```
+{: codeblock}
 
 This error occurs when the peer's enroll id type does not match the smart contract endorsement policy that was configured when the smart contract was instantiated on the channel.
 {: tsCauses}
