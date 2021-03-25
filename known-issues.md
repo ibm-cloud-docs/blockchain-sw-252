@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-22"
+lastupdated: "2021-03-25"
 
 keywords: catalina, chrome, external CA, TLS, orderer, error, multicloud
 
@@ -37,16 +37,6 @@ This page describes known issues that you might encounter when you use {{site.da
     </p>
 </div>
 
-
-
-
-
-
-
-## Peer 1.4 Failure on VPC cluster
-{: #sw-known-issues-peer14-failure}
-
-Peer 1.4 might not work on VPC cluster due to an issue of mtu mismatch in DinD container.
 
 
 
