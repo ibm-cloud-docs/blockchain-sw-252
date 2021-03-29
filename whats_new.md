@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-03-18"
+lastupdated: "2021-03-29"
 
 keywords: IBM Blockchain Platform, release, new features, multicloud
 
@@ -33,6 +33,18 @@ subcollection: blockchain-sw-252
     <a href="/docs/blockchain-sw-252?topic=blockchain-sw-252-whats-new">2.5.2</a>
     </p>
 </div>
+
+
+
+## March 25, 2021
+{: #whats-new-03-25-2021}
+
+
+{{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 is now available with support for:
+
+- For customers who want to use openCryptoki Hardware Security Module (HSM) on s390x, the platform now supports configuration of HSM with a daemon. For more information, see [Configure an HSM daemon](https://cloud.ibm.com/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-adv-deployment#ibp-console-adv-deployment-hsm-daemon).
+
+
 
 
 
