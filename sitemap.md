@@ -158,6 +158,8 @@ subcollection: blockchain-sw-252
 
 [What's new](/docs/blockchain-sw-252?topic=blockchain-sw-252-whats-new)
 
+[March 25, 2021](/docs/blockchain-sw-252?topic=blockchain-sw-252-whats-new#whats-new-03-25-2021)
+
 
 ## Pricing
 {: #sitemap_pricing}
@@ -1350,6 +1352,8 @@ subcollection: blockchain-sw-252
 
 
 [Release notes](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20)
+
+[25 Mar 2021](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#25-03-2021)
 
 [22 Feb 2021](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#02-22-2021)
 
