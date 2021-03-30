@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-29"
+lastupdated: "2021-03-30"
 
 keywords: IBM Blockchain Platform, images, multicloud
 
@@ -185,7 +185,7 @@ skopeo copy docker://cp.icr.io/cp/ibp-couchdb:2.3.1-20210325 docker://<LOCAL_REG
 skopeo copy docker://cp.icr.io/cp/ibp-couchdb:3.1.1-20210325 docker://<LOCAL_REGISTRY>/ibp-couchdb:3.1.1-20210325 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 skopeo copy docker://cp.icr.io/cp/ibp-peer:1.4.11-20210325 docker://<LOCAL_REGISTRY>/ibp-peer:1.4.11-20210325 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 skopeo copy docker://cp.icr.io/cp/ibp-orderer:1.4.11-20210325 docker://<LOCAL_REGISTRY>/ibp-orderer:1.4.11-20210325 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-ca:1.4.11-20210325 docker://<LOCAL_REGISTRY>/ibp-ca:1.4.11-20210325 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-ca:1.4.9-20210325 docker://<LOCAL_REGISTRY>/ibp-ca:1.4.9-20210325 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 skopeo copy docker://cp.icr.io/cp/ibp-dind:1.4.11-20210325 docker://<LOCAL_REGISTRY>/ibp-dind:1.4.11-20210325 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 skopeo copy docker://cp.icr.io/cp/ibp-utilities:1.4.11-20210325 docker://<LOCAL_REGISTRY>/ibp-utilities:1.4.11-20210325 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 skopeo copy docker://cp.icr.io/cp/ibp-peer:2.2.2-20210325 docker://<LOCAL_REGISTRY>/ibp-peer:2.2.2-20210325 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
