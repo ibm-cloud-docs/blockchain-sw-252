@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-03-18"
+lastupdated: "2021-04-01"
 
 keywords: IBM Blockchain, IBM Blockchain Platform, terms, Fabric, Raft, CouchDB, consortium
 
@@ -29,7 +29,6 @@ subcollection: blockchain-sw-252
     <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-glossary">2.1.3</a>,
     <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-glossary">2.5</a>,
     <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-glossary">2.5.1</a>
-    <a href="/docs/blockchain-sw-252?topic=blockchain-sw-252-glossary">2.5.2</a>
     </p>
 </div>
 
