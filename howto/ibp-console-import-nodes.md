@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-01"
+lastupdated: "2021-04-05"
 
 keywords: import nodes, another console, import a CA, import a peer, import admin identities, import an ordering service node
 
@@ -30,7 +30,7 @@ subcollection: blockchain-sw-252
     <a href="/docs/blockchain-sw?topic=blockchain-sw-ibp-console-import-nodes">2.1.2</a>,
     <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-import-nodes">2.1.3</a>,
     <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-ibp-console-import-nodes">2.5</a>,
-    <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-ibp-console-import-nodes">2.5.1</a>
+    <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-ibp-console-import-nodes">2.5.1</a>, 2.52
     </p>
 </div>
 
