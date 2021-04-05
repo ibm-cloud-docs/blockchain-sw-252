@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-01"
+lastupdated: "2021-04-05"
 
 keywords: FAQs, can I, upgrade, what version, peer ledger database, supported languages, why do I, regions, multicloud
 
@@ -33,7 +33,7 @@ content-type: faq
     <a href="/docs/blockchain-sw?topic=blockchain-sw-ibp-v2-faq">2.1.2</a>,
     <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-v2-faq">2.1.3</a>,
     <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-ibp-v2-faq">2.5</a>,
-    <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-ibp-v2-faq">2.5.1</a>
+    <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-ibp-v2-faq">2.5.1</a>, 2.52
     </p>
 </div>
 
@@ -320,7 +320,7 @@ The {{site.data.keyword.blockchainfull_notm}} Platform extension provides guided
 {: #ibp-v2-faq-mon-client-app}
 {: faq}
 
-The {{site.data.keyword.blockchainfull_notm}} Platform console does not monitor the health of blockchain client applications, but {{site.data.keyword.cloud_notm}} does offer tooling such as [{{site.data.keyword.la_full_notm}}](/catalog/services/ibm-log-analysis-with-logdna){: external} and [{{site.data.keyword.mon_full_notm}}](/catalog/services/ibm-cloud-monitoring-with-sysdig){: external} that can be used for their health monitoring.
+The {{site.data.keyword.blockchainfull_notm}} Platform console does not monitor the health of blockchain client applications, but {{site.data.keyword.cloud_notm}} does offer tooling such as [{{site.data.keyword.la_full_notm}}](/catalog/services/ibm-log-analysis){: external} and [{{site.data.keyword.mon_full_notm}}](/catalog/services/ibm-cloud-monitoring){: external} that can be used for their health monitoring.
 
 
 
@@ -334,7 +334,7 @@ The logs are stored in the customer's Kubernetes cluster. {{site.data.keyword.IB
 {: #ibp-v2-faq-v2-Logging-and-Monitoring-11-6}
 {: faq}
 
-With {{site.data.keyword.blockchainfull_notm}} Platform, you can now directly access logs from your Kubernetes dashboard. It is recommend that you take advantage of the {{site.data.keyword.cloud_notm}} LogDNA service that allows you to easily parse the logs in real time.
+With {{site.data.keyword.blockchainfull_notm}} Platform, you can now directly access logs from your Kubernetes dashboard. It is recommend that you take advantage of the {{site.data.keyword.la_full_notm}} service that allows you to easily parse the logs in real time.
 
 
 
@@ -343,7 +343,7 @@ With {{site.data.keyword.blockchainfull_notm}} Platform, you can now directly ac
 {: faq}
 {: support}
 
-You are responsible for the health monitoring and resource allocation of the blockchain nodes in your Kubernetes cluster. While requests against the nodes are being actively processed, you should be monitoring for spikes in resource consumption to avoid problems. You can configure a monitoring tool, such as [Sysdig](https://sysdig.com/secure-devops-platform/){: external} with alert notifications for the nodes in your cluster.
+You are responsible for the health monitoring and resource allocation of the blockchain nodes in your Kubernetes cluster. While requests against the nodes are being actively processed, you should be monitoring for spikes in resource consumption to avoid problems. You can configure a monitoring tool, such as [{{site.data.keyword.mon_full_notm}}](https://cloud.ibm.com/catalog/services/ibm-cloud-monitoring){: external} with alert notifications for the nodes in your cluster.
 
 You should be aware that JavaScript and TypeScript smart contracts require more resources than contracts written in Golang. Therefore, when you are allocating resources to your cluster, it is important to ensure adequate resources are available to your smart contract pods when they are deployed on a channel and during transaction processing. The pods containing the smart contracts will consume as much resources as they need to function.
 {: tip}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-04-01"
+lastupdated: "2021-04-05"
 
 keywords: site map
 subcollection: blockchain-sw-252
@@ -149,7 +149,7 @@ subcollection: blockchain-sw-252
 
 ## What is blockchain?
 
-[What is blockchain?](https://www.ibm.com/blockchain/what-is-blockchain){: external}
+[What is blockchain?](https://www.ibm.com/topics/what-is-blockchain){: external}
 
 
 ## What's new
@@ -611,6 +611,7 @@ subcollection: blockchain-sw-252
 * [Resources required](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-getting-started#deploy-ocp-resources-required)
 * [Browsers](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-getting-started#deploy-ocp-browsers)
 * [Storage](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-getting-started#deploy-ocp-storage)
+  * [Considerations when choosing your persistent storage](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-getting-started#considerations-when-choosing-your-persistent-storage)
 * [Filesystem permissions](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-getting-started#deploy-ocp-fs-perm)
 * [Choose your deployment option](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-getting-started#deploy-ocp-choose)
 
@@ -669,17 +670,23 @@ subcollection: blockchain-sw-252
   * [1. Configure role-based access control (RBAC) for the webhook](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp#webhook-rbac)
   * [2. (OpenShift cluster only) Apply the Security Context Constraint](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp#webhook-scc)
   * [3. Deploy the webhook](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp#webhook-deploy)
+  * [4. Extract the certificate and create the custom resource definitions](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp#4.-extract-the-certificate-and-create-the-custom-resource-definitions)
 * [Create a new project for your {{site.data.keyword.blockchainfull_notm}} Platform deployment](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp#deploy-ocp-project)
 * [Create a secret for your entitlement key](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp#deploy-ocp-docker-registry-secret)
 * [Add security and access policies](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp#deploy-ocp-scc)
+  * [Apply the Security Context Constraint](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp#apply-the-security-context-constraint)
+  * [Apply the ClusterRole](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp#apply-the-clusterrole)
+  * [Apply the ClusterRoleBinding](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp#apply-the-clusterrolebinding)
 * [Deploy the {{site.data.keyword.blockchainfull_notm}} Platform operator](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp#deploy-ocp-operator)
 * [Deploy the {{site.data.keyword.blockchainfull_notm}} Platform console](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp#deploy-ocp-console)
   * [Advanced deployment options](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp#console-deploy-ocp-advanced)
   * [Use your own TLS Certificates (Optional)](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp#console-deploy-ocp-use-your-own-tls-certificates-optional)
+  * [Verifying the console installation](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp#verifying-the-console-installation)
 * [Log in to the console](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp#deploy-ocp-log-in)
 * [Next steps](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp#console-deploy-ocp-next-steps)
 
 [Deploy {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 on-prem manually](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-firewall)
+* [Need to Know](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-firewall#need-to-know)
 * [Get your entitlement key](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-firewall#deploy-ocp-entitlement-key-firewall)
 * [Before you begin](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-firewall#deploy-ocp-prerequisites-firewall)
 * [Pull the {{site.data.keyword.blockchainfull_notm}} Platform images](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-firewall#deploy-ocp-images-firewall)
@@ -690,6 +697,7 @@ subcollection: blockchain-sw-252
   * [1. Configure role-based access control (RBAC) for the webhook](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-firewall#webhook-rbac)
   * [2. (OpenShift cluster only) Apply the Security Context Constraint](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-firewall#webhook-scc)
   * [3. Deploy the webhook](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-firewall#webhook-deploy)
+  * [4. Extract the certificate and create the custom resource definitions](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-firewall#4.-extract-the-certificate-and-create-the-custom-resource-definitions)
 * [Create a new project for your {{site.data.keyword.blockchainfull_notm}} Platform deployment](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-firewall#deploy-ocp-project-firewall)
 * [Set up the entitlement for a local registry](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-firewall#deploy-ocp-docker-registry-secret)
 * [Add security and access policies](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-firewall#deploy-ocp-scc-firewall)
@@ -699,6 +707,8 @@ subcollection: blockchain-sw-252
 * [Deploy the {{site.data.keyword.blockchainfull_notm}} Platform operator](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-firewall#deploy-ocp-operator-fw)
 * [Deploy the {{site.data.keyword.blockchainfull_notm}} Platform console](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-firewall#deploy-ocp-console-fw)
   * [Advanced deployment options](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-firewall#console-deploy-ocp-advanced-firewall)
+  * [Use your own TLS Certificates (Optional)](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-firewall#use-your-own-tls-certificates-(optional))
+  * [Verifying the console installation](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-firewall#verifying-the-console-installation)
 * [Log in to the console](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-firewall#deploy-ocp-log-in)
 * [Next steps](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-firewall#console-deploy-ocp-next-steps-fw)
 
@@ -726,6 +736,7 @@ subcollection: blockchain-sw-252
 * [Step two: Update the CRDs](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#upgrade-ocp-steps-252-crds)
 * [Step three: Update the ClusterRole](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#upgrade-ocp-steps-252-clusterrole)
 * [Step four: Upgrade the {{site.data.keyword.blockchainfull_notm}} operator](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#upgrade-ocp-steps-252-operator)
+* [Step six: Upgrade your nodes](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#step-six-upgrade-your-nodes)
 * [Step seven: Update MSPs in consortium to add organization-level endorsement policy](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#upgrade-ocp-update-consortium)
 
 [Upgrade to the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 from 2.1.x](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#upgrade-ocp-steps-21x)
@@ -734,6 +745,7 @@ subcollection: blockchain-sw-252
 * [Step three: Deploy the webhook and custom resource definitions to your OpenShift cluster](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#webhook)
 * [Step four: Update the ClusterRole](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#upgrade-ocp-clusterrole)
 * [Step five: Upgrade the {{site.data.keyword.blockchainfull_notm}} operator](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#upgrade-ocp-operator)
+* [Step six: Upgrade your nodes](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#step-six-upgrade-your-nodes)
 * [Step seven: Update MSPs in consortium to add organization-level endorsement policy](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#upgrade-ocp-update-nodes-consortium)
 
 [Upgrade to the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 from 2.1.x from behind a firewall](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#upgrade-ocp-firewall)
@@ -775,6 +787,7 @@ subcollection: blockchain-sw-252
 * [Resources required](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#deploy-k8-resources-required)
 * [Browsers](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#deploy-k8-browsers)
 * [Storage](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#deploy-k8-storage)
+  * [Considerations when choosing your persistent storage](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#considerations-when-choosing-your-persistent-storage)
 * [Filesystem permissions](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#deploy-k8-fs-perm)
 * [Get your entitlement key](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#deploy-k8-entitlement-key)
 * [Before you begin](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#deploy-k8-prerequisites)
@@ -785,6 +798,7 @@ subcollection: blockchain-sw-252
   * [1. Configure role-based access control (RBAC) for the webhook](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#webhook-rbac)
   * [2. (OpenShift cluster only) Apply the Security Context Constraint](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#webhook-scc)
   * [3. Deploy the webhook](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#webhook-deploy)
+  * [4. Extract the certificate and create the custom resource definitions](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#4.-extract-the-certificate-and-create-the-custom-resource-definitions)
 * [Create a new namespace for your {{site.data.keyword.blockchainfull_notm}} Platform deployment](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#deploy-k8-namespace)
 * [Create a secret for your entitlement key](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#deploy-k8-docker-registry-secret)
 * [Add security and access policies](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#deploy-k8-scc)
@@ -805,6 +819,7 @@ subcollection: blockchain-sw-252
   * [Enable SSL passthrough](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#console-deploy-k8-iks-passthru)
 
 [Deploying {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 behind a firewall](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8-firewall)
+* [Need to Know](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8-firewall#need-to-know)
 * [Resources required](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8-firewall#deploy-k8-resources-required-firewall)
 * [Browsers](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8-firewall#deploy-k8-browsers-firewall)
 * [Storage](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8-firewall#deploy-k8-storage-firewall)
@@ -818,6 +833,7 @@ subcollection: blockchain-sw-252
   * [1. Configure role-based access control (RBAC) for the webhook](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8-firewall#webhook-rbac)
   * [2. (OpenShift cluster only) Apply the Security Context Constraint](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8-firewall#webhook-scc)
   * [3. Deploy the webhook](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8-firewall#webhook-deploy)
+  * [4. Extract the certificate and create the custom resource definitions](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8-firewall#4.-extract-the-certificate-and-create-the-custom-resource-definitions)
 * [Create a new namespace for your {{site.data.keyword.blockchainfull_notm}} Platform deployment](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8-firewall#deploy-k8-namespace-firewall)
 * [Set up the entitlement for a local registry](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8-firewall#deploy-k8s-docker-registry-secret-fw)
 * [Add security and access policies](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8-firewall#deploy-k8-scc-firewall)
@@ -845,6 +861,7 @@ subcollection: blockchain-sw-252
   * [Step two: Update the CRDs](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-k8#upgrade-k8-steps-252-crds)
   * [Step three: Update the ClusterRole](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-k8#upgrade-k8-steps-252-clusterrole)
   * [Step four: Upgrade the {{site.data.keyword.blockchainfull_notm}} operator](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-k8#upgrade-k8-steps-252-operator)
+  * [Step five: Upgrade your nodes](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-k8#step-five-upgrade-your-nodes)
   * [Step six: Update MSPs in consortium to add organization-level endorsement policy](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-k8#upgrade-k8s-update-consortium)
 * [Upgrade to the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 from 2.1.x](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-k8#upgrade-k8-steps-21x)
   * [Before you begin](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-k8#upgrade-k8-before-steps-21x)
@@ -853,6 +870,7 @@ subcollection: blockchain-sw-252
   * [Step three: Deploy the webhook and custom resource definitions to your Kubernetes cluster](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-k8#upgrade-k8s-webhook-crd)
   * [Step four: Update the ClusterRole](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-k8#upgrade-k8-clusterrole)
   * [Step five: Upgrade the {{site.data.keyword.blockchainfull_notm}} operator](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-k8#upgrade-k8-operator)
+  * [Step six: Upgrade your nodes](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-k8#step-six-upgrade-your-nodes)
   * [Step seven: Update MSPs in consortium to add organization-level endorsement policy](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-k8#upgrade-k8-before-steps-21x-update-consortium)
 * [Upgrade to the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 from 2.1.x from behind a firewall](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-k8#upgrade-k8-firewall)
   * [Before you begin](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-k8#upgrade-k8-begin-firewall)
@@ -921,6 +939,7 @@ subcollection: blockchain-sw-252
   * [Using an API key](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-icp-manage#console-icp-manage-api-key)
   * [Manage your console API keys](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-icp-manage#console-icp-manage-api-keys)
   * [Managing users using the APIs](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-icp-manage#console-icp-manage-users-apis)
+  * [Use the APIs to manage your components](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-icp-manage#use-the-apis-to-manage-your-components)
 * [Configuring node logging](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-icp-manage#ibp-console-manage-logger)
   * [Before you begin](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-icp-manage#ibp-console-logger-before)
   * [Customize logging](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-icp-manage#ibp-console-logger-custom)
@@ -957,6 +976,7 @@ subcollection: blockchain-sw-252
   * [What capability does HSM add to my blockchain node?](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-adv-deployment#ibp-console-adv-deployment-cfg-hsm-capability)
   * [Considerations when using HSM](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-adv-deployment#ibp-console-adv-deployment-cfg-hsm-considerations)
   * [Before you begin](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-adv-deployment#ibp-console-adv-deployment-hsm-before)
+  * [(Optional) Configure an HSM daemon](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-adv-deployment#ibp-console-adv-deployment-hsm-daemon)
   * [Build a Docker image](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-adv-deployment#ibp-console-adv-deployment-hsm-build-docker)
   * [Configuring a CA, peer, or ordering node to use the HSM](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-adv-deployment#ibp-console-adv-deployment-cfg-hsm-node)
 
@@ -1161,12 +1181,17 @@ subcollection: blockchain-sw-252
 * [Remove users](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#console-icp-manage-remove-users-api)
 * [Example curl request: remove a user](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#console-icp-remove-add-users-api-example)
 
+[Use the APIs to manage your components](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#use-the-apis-to-manage-your-components)
+
 [Limitations](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#ibp-v2-apis-limitations)
 
 [Building a network by using APIs](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#ibp-v2-apis-build-with-apis)
 * [Creating a node within a specific zone](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#ibp-v2-apis-zone)
 
 [Creating a node with a custom configuration](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#ibp-v2-apis-custom)
+* [Example: Creating a custom Certificate Authority](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#example-creating-a-custom-certificate-authority)
+* [Create a high availability CA](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#create-a-high-availability-ca)
+* [Deploy a node that uses an HSM](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#deploy-a-node-that-uses-an-hsm)
 
 [Import a network by using APIs](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#ibp-v2-apis-import-with-apis)
 
@@ -1183,6 +1208,9 @@ subcollection: blockchain-sw-252
 
 [Creating a configuration file](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#ibp-v2-apis-config)
 * [Retrieve the CA connection information](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#ibp-v2-apis-config-connx-info)
+* [Provide your component enroll ID and secret](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#provide-your-component-enroll-id-and-secret)
+* [Provide the signCert of your organization administrator](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#provide-the-signcert-of-your-organization-administrator)
+* [CSR (Certificate Signing Request) hosts](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#csr-(certificate-signing-request)-hosts)
 * [Completing the configuration file](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#ibp-v2-apis-config-file)
 * [Importing an admin identity into the {{site.data.keyword.blockchainfull_notm}} Platform console](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#ibp-v2-apis-admin-console)
 
@@ -1196,6 +1224,8 @@ subcollection: blockchain-sw-252
 [Overview](/docs/blockchain-sw-252?topic=blockchain-sw-252-metering#metering-overview)
 
 [Manual integration of License Service](/docs/blockchain-sw-252?topic=blockchain-sw-252-metering#metering-manual-integration)
+
+[Validating if License Service is deployed on the cluster](/docs/blockchain-sw-252?topic=blockchain-sw-252-metering#validating-if-license-service-is-deployed-on-the-cluster)
 
 [Archiving license information data before you decommission the cluster](/docs/blockchain-sw-252?topic=blockchain-sw-252-metering#metering-archive)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-01"
+lastupdated: "2021-04-05"
 
 keywords: getting started tutorials, create a CA, enroll, register, create an MSP, wallet, create a peer, create ordering service, Raft, ordering service, blockchain network, multicloud
 
@@ -103,7 +103,7 @@ subcollection: blockchain-sw-252
     <a href="/docs/blockchain-sw?topic=blockchain-sw-ibp-console-build-network">2.1.2</a>,
     <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-build-network">2.1.3</a>,
     <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-ibp-console-build-network">2.5</a>,
-    <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-ibp-console-build-network">2.5.1</a>
+    <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-ibp-console-build-network">2.5.1</a>, 2.52
     </p>
 </div>
 

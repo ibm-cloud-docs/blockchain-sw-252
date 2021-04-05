@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-01"
+lastupdated: "2021-04-05"
 
 keywords: client application, Commercial Paper, SDK, wallet, generate a certificate, generate a private key, fabric gateway, APIs, smart contract
 
@@ -31,7 +31,7 @@ subcollection: blockchain-sw-252
     <a href="/docs/blockchain-sw?topic=blockchain-sw-ibp-console-app">2.1.2</a>,
     <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-app">2.1.3</a>,
     <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-ibp-console-app">2.5</a>,
-    <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-ibp-console-app">2.5.1</a>
+    <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-ibp-console-app">2.5.1</a>, 2.52
     </p>
 </div>
 
@@ -175,8 +175,8 @@ Java and Node runtime versions are determined by {{site.data.keyword.blockchainf
 {: note}
 
 For more details on smart contract-API compatibility, see:
-- [Java smart contract-API compatibility](https://github.com/hyperledger/fabric-chaincode-java/blob/master/COMPATIBILITY.md){: external}
-- [Node smart contract-API compatibility](https://github.com/hyperledger/fabric-chaincode-node/blob/master/COMPATIBILITY.md){: external}
+- [Java smart contract-API compatibility](https://github.com/hyperledger/fabric-chaincode-java/blob/main/COMPATIBILITY.md){: external}
+- [Node smart contract-API compatibility](https://github.com/hyperledger/fabric-chaincode-node/blob/main/COMPATIBILITY.md){: external}
 
 ## Registering an application identity
 {: #ibp-console-app-identities}

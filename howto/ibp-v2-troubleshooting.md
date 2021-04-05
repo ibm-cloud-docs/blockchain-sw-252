@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-01"
+lastupdated: "2021-04-05"
 keywords: troubleshooting, debug, why, what does this mean, how can I, when I
 
 subcollection: blockchain-sw-252
@@ -34,7 +34,7 @@ content-type: troubleshoot
     <a href="/docs/blockchain-sw?topic=blockchain-sw-ibp-v2-troubleshooting">2.1.2</a>,
     <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-v2-troubleshooting">2.1.3</a>,
     <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-ibp-v2-troubleshooting">2.5</a>,
-    <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-ibp-v2-troubleshooting">2.5.1</a>
+    <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-ibp-v2-troubleshooting">2.5.1</a>, 2.52
     </p>
 </div>
 
@@ -439,7 +439,7 @@ Error: endorsement failure during query. response: status:500 message:"error in 
 By default, a Fabric v1.4 peer creates a Node v8 runtime, and a Fabric v2.x peer creates a Node v12 runtime. In order for the smart contract to work with Node 12 runtime, the `fabric-contract-api` and `fabric-shim` node modules must be at v1.4.5 or greater.
 
 {: tsResolve}
-If you are using a smart contract that was originally written to work with Fabric 1.4, update the Node modules by running the following command before deploying the smart contract on a Fabric v2.x peer.  See [Support and Compatibility for fabric-chaincode-node](https://github.com/hyperledger/fabric-chaincode-node/blob/master/COMPATIBILITY.md) for more information.
+If you are using a smart contract that was originally written to work with Fabric 1.4, update the Node modules by running the following command before deploying the smart contract on a Fabric v2.x peer.  See [Support and compatibility for fabric-chaincode-node](https://github.com/hyperledger/fabric-chaincode-node/blob/main/COMPATIBILITY.md) for more information.
 ```
 npm install --save fabric-contract-api@latest-1.4 fabric-shim@latest-1.4
 ```
