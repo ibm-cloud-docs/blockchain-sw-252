@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-03-18"
+lastupdated: "2021-04-07"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, Red Hat Marketplace, subscription, operators
 
@@ -121,6 +121,7 @@ oc apply -f ibp-scc.yaml -n <PROJECT_NAME>
 oc adm policy add-scc-to-user <PROJECT_NAME> system:serviceaccounts:<PROJECT_NAME>
 ```
 {:codeblock}
+
 Replace `<PROJECT_NAME>` with the name that you want to use for your {{site.data.keyword.blockchainfull_notm}} Platform deployment project.
 
 When the command is successful, you see a response that is similar to the following example:
@@ -128,8 +129,47 @@ When the command is successful, you see a response that is similar to the follow
 securitycontextconstraints.security.openshift.io/blockchain-project created
 scc "blockchain-project" added to: ["system:serviceaccounts:blockchain-project"]
 ```
+{:codeblock}
 
-## Step two: Deploy the {{site.data.keyword.blockchainfull_notm}} Platform console
+## Step two: Apply the image pull secrets
+{: #deploy-ocp-rhm-secrets}
+
+To apply the image pull secrets, you go to the **OpenShift Container Platform**.
+
+1. Click **Workloads** in the left navigation.
+2. Click **Secrets**.
+3. Type **pull-secret** in the search box beside the **Name** drop down.
+4. Click **pull-secret** from listing to go to the secret details page.
+5. Click the **YAML** tab.
+6. In the YAML view, **copy only** the secret data and type information.
+
+     ![Pull-secret YAML](../images/pull-secret.png){: caption="Figure 1. Pull-secret YAML" caption-side="bottom"}
+
+7. Click **Secrets** in the left navigation. From the **Create** drop down, select **From YAML**.
+8. Paste your secret data and type information under the existing YAML code.
+9. Replace the existing YAML code by copying the following:
+    ```
+    kind: Secret
+    apiVersion: v1
+    metadata:
+      name: regcred
+      namespace: <Your Blockchain Platform namespace>
+    ```
+    {:codeblock}
+
+10. Your complete pull-secret YAML code looks like this:
+    ```
+    kind: Secret
+    apiVersion: v1
+    metadata:
+      name: regcred
+      namespace: <Your IBM Blockchain Platform namespace>
+    data: <Paste your data here>
+    type: kubernetes.io/dockerconfigjson
+    ```
+    {:codeblock}
+
+## Step three: Deploy the {{site.data.keyword.blockchainfull_notm}} Platform console
 {: #deploy-ocp-rhm-console}
 
 There are four instances available listed under "Provided APIs":
@@ -202,7 +242,7 @@ When you are satisfied with your edits to the specification, click **Create**.
 The console can take a few minutes to deploy.
 {: note}
 
-After the console has been created, you can verify that the console deployment succeeded. See [Step three: Verify the console installation](#console-deploy-ocp-verify-install) for instructions on verifying and accessing the console.
+After the console has been created, you can verify that the console deployment succeeded. See [Step four: Verify the console installation](#console-deploy-ocp-verify-install) for instructions on verifying and accessing the console.
 
 ### Advanced deployment options
 {: #console-deploy-ocp-rhm-advanced}
@@ -347,7 +387,7 @@ spec:
 ```
 {:codeblock}
 
-## Step three: Verify the console installation
+## Step four: Verify the console installation
 {: #console-deploy-ocp-verify-install}
 
 You can confirm that the console is up by running the following command, replacing `<PROJECT_NAME>` with the name of your project:
@@ -390,7 +430,7 @@ kubectl logs -f ibpconsole-55cf9db6cc-856nz optools -n blockchain-project
 ```
 {:codeblock}
 
-## Step four: Log in to the console
+## Step five: Log in to the console
 {: #deploy-ocp-rhm-log-in}
 
 Congratulations! You have deployed the IBM Blockchain Platform operator. The only thing left to do is to deploy the console user interface (UI). First, click on **IBM Blockchain** in the **Installed Operators** page.

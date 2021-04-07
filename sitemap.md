@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-04-05"
+lastupdated: "2021-04-07"
 
 keywords: site map
 subcollection: blockchain-sw-252
@@ -620,11 +620,12 @@ subcollection: blockchain-sw-252
 * [Limitations](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm#deploy-ocp-rhm-limitations)
 * [Before you begin](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm#deploy-ocp-rhm-prerequisites)
 * [Step one: Apply the Security Context Constraint](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm#deploy-ocp-rhm-scc)
-* [Step two: Deploy the {{site.data.keyword.blockchainfull_notm}} Platform console](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm#deploy-ocp-rhm-console)
+* [Step two: Apply the image pull secrets](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm#deploy-ocp-rhm-secrets)
+* [Step three: Deploy the {{site.data.keyword.blockchainfull_notm}} Platform console](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm#deploy-ocp-rhm-console)
   * [Advanced deployment options](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm#console-deploy-ocp-rhm-advanced)
   * [Use your own TLS Certificates (Optional)](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm#console-deploy-ocp-use-your-own-tls-certificates-optional)
-* [Step three: Verify the console installation](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm#console-deploy-ocp-verify-install)
-* [Step four: Log in to the console](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm#deploy-ocp-rhm-log-in)
+* [Step four: Verify the console installation](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm#console-deploy-ocp-verify-install)
+* [Step five: Log in to the console](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm#deploy-ocp-rhm-log-in)
 * [Removing your deployment](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm#console-deploy-ocp-rhm-remove-deployment)
 * [Next steps](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm#console-deploy-ocp-rhm-next-steps)
 * [Support](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm#deploy-ocp-rhm-support)
