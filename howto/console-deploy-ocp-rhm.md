@@ -140,13 +140,13 @@ To apply the image pull secrets, go to the **OpenShift Container Platform**.
 2. In the search box next to the **Name** drop down, type **pull-secret**.
 3. From the listing page, select **pull-secret**.
 4. Click the **YAML** tab.
-5. In the YAML tab, you see the YAML code as follows. Right-click to **copy only** the last two sets of codes. Those are the secret data and the type for secret data handling.
+5. In the YAML tab, you see the YAML code as follows. Right-click to **copy only** the last two sets of codes. Those are the secret data and the secret data handling type.
 
      ![Pull-secret YAML](../images/pull-secret.png){: caption="Figure 1. Pull-secret YAML Sample" caption-side="bottom"}
 
 6. After you copied the two sets of codes, go to the left navigation, click **Secrets**. Then, use the **Create** drop down from the upper right of the page to switch to **From YAML**.
 7. Paste your two sets of codes under the existing YAML code.
-8. Replace the existing YAML code by copying the following codes:
+8. Replace the existing YAML code by copying the following:
     ```
     kind: Secret
     apiVersion: v1
@@ -164,11 +164,11 @@ To apply the image pull secrets, go to the **OpenShift Container Platform**.
       name: regcred
       namespace: <Your IBM Blockchain Platform namespace>
     data: <Your secret data here>
-    type: <Your secret data handling type>
+    type: kubernetes.io/dockerconfigjson
     ```
     {:codeblock}
   
-10. Click **Create** to finish your pull-secret setup.
+10. Click **Create** to finish your setup.
 
 ## Step three: Deploy the {{site.data.keyword.blockchainfull_notm}} Platform console
 {: #deploy-ocp-rhm-console}
