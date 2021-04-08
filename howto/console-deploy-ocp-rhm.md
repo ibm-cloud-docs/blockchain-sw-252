@@ -137,16 +137,16 @@ scc "blockchain-project" added to: ["system:serviceaccounts:blockchain-project"]
 To apply the image pull secrets, you go to the **OpenShift Container Platform**.
 
 1. In the left navigation, click **Workloads** > **Secrets**.
-2. Type **pull-secret** in the search box beside the **Name** drop down.
-4. Click **pull-secret** from the listing page to load the secret details page.
-5. Click the **YAML** tab.
-6. In the YAML tab, you see the YAML code as follow. **Copy only** the secret data and the type information for secret data handling.
+2. In the search box beside the **Name** drop down, type **pull-secret**.
+3. From the listing page, select **pull-secret**.
+4. Click the **YAML** tab.
+5. In the YAML tab, you see the YAML code as follow. right click to **copy only** the secret data and the information for secret data handling type.
 
      ![Pull-secret YAML](../images/pull-secret.png){: caption="Figure 1. Pull-secret YAML Sample" caption-side="bottom"}
 
-7. In the left navigation, click **Secrets** > **From YAML** in the **Create** drop down.
-8. Paste your secret data and secret data handling type information under the existing YAML code.
-9. Replace the existing YAML code by copying the following:
+6. In the left navigation, click **Secrets**. Then, select **From YAML** in the **Create** drop down.
+7. Paste your secret data and secret data handling type information under the existing YAML code.
+8. Replace the existing YAML code by the following:
     ```
     kind: Secret
     apiVersion: v1
@@ -156,7 +156,7 @@ To apply the image pull secrets, you go to the **OpenShift Container Platform**.
     ```
     {:codeblock}
 
-10. Your complete pull-secret YAML code looks like the following:
+9. Your complete pull-secret YAML code looks as follow:
     ```
     kind: Secret
     apiVersion: v1
@@ -167,6 +167,8 @@ To apply the image pull secrets, you go to the **OpenShift Container Platform**.
     type: <Your secret data handling type>
     ```
     {:codeblock}
+  
+10. Click **Create**.
 
 ## Step three: Deploy the {{site.data.keyword.blockchainfull_notm}} Platform console
 {: #deploy-ocp-rhm-console}
