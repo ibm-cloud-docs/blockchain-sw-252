@@ -140,13 +140,13 @@ To apply the image pull secrets, go to the **OpenShift Container Platform**.
 2. In the search box next to the **Name** drop down, type **pull-secret**.
 3. From the listing page, select **pull-secret**.
 4. Click the **YAML** tab.
-5. In the YAML tab, you see the YAML code as follows. right-click to **copy only** the last two sets of codes. Those are the secret data and the type for secret data handling.
+5. In the YAML tab, you see the YAML code as follows. Right-click to **copy only** the last two sets of codes. Those are the secret data and the type for secret data handling.
 
      ![Pull-secret YAML](../images/pull-secret.png){: caption="Figure 1. Pull-secret YAML Sample" caption-side="bottom"}
 
-6. After you copied the two sets of codes, go back to the left navigation, click **Secrets**. Then, use the **Create** drop down from the upper right of the page to switch to **From YAML**.
+6. After you copied the two sets of codes, go to the left navigation, click **Secrets**. Then, use the **Create** drop down from the upper right of the page to switch to **From YAML**.
 7. Paste your two sets of codes under the existing YAML code.
-8. Replace the existing YAML code by the following:
+8. Replace the existing YAML code by copying the following codes:
     ```
     kind: Secret
     apiVersion: v1
@@ -156,7 +156,7 @@ To apply the image pull secrets, go to the **OpenShift Container Platform**.
     ```
     {:codeblock}
 
-9. Your complete pull-secret YAML code now looks as follows:
+9. Your complete set of pull-secret YAML code is now as follows:
     ```
     kind: Secret
     apiVersion: v1
