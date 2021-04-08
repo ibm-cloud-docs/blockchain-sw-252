@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-04-07"
+lastupdated: "2021-04-08"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, Red Hat Marketplace, subscription, operators
 
@@ -136,17 +136,16 @@ scc "blockchain-project" added to: ["system:serviceaccounts:blockchain-project"]
 
 To apply the image pull secrets, you go to the **OpenShift Container Platform**.
 
-1. Click **Workloads** in the left navigation.
-2. Click **Secrets**.
-3. Type **pull-secret** in the search box beside the **Name** drop down.
-4. Click **pull-secret** from listing to go to the secret details page.
+1. In the left navigation, click **Workloads** > **Secrets**.
+2. Type **pull-secret** in the search box beside the **Name** drop down.
+4. Click **pull-secret** from the listing page to load the secret details page.
 5. Click the **YAML** tab.
-6. In the YAML view, **copy only** the secret data and type information.
+6. In the YAML tab, you see the YAML code as follow. **Copy only** the secret data and the type information for secret data handling.
 
-     ![Pull-secret YAML](../images/pull-secret.png){: caption="Figure 1. Pull-secret YAML" caption-side="bottom"}
+     ![Pull-secret YAML](../images/pull-secret.png){: caption="Figure 1. Pull-secret YAML Sample" caption-side="bottom"}
 
-7. Click **Secrets** in the left navigation. From the **Create** drop down, select **From YAML**.
-8. Paste your secret data and type information under the existing YAML code.
+7. In the left navigation, click **Secrets** > **From YAML** in the **Create** drop down.
+8. Paste your secret data and secret data handling type information under the existing YAML code.
 9. Replace the existing YAML code by copying the following:
     ```
     kind: Secret
@@ -157,15 +156,15 @@ To apply the image pull secrets, you go to the **OpenShift Container Platform**.
     ```
     {:codeblock}
 
-10. Your complete pull-secret YAML code looks like this:
+10. Your complete pull-secret YAML code looks like the following:
     ```
     kind: Secret
     apiVersion: v1
     metadata:
       name: regcred
       namespace: <Your IBM Blockchain Platform namespace>
-    data: <Paste your data here>
-    type: kubernetes.io/dockerconfigjson
+    data: <Your secret data here>
+    type: <Your secret data handling type>
     ```
     {:codeblock}
 
