@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-05"
+lastupdated: "2021-04-12"
 keywords: troubleshooting, debug, why, what does this mean, how can I, when I
 
 subcollection: blockchain-sw-252
@@ -49,6 +49,7 @@ This topic describes common issues that can occur when you use the {{site.data.k
 - [Extracting the TLS certificate from the Kubernetes webhook fails](#ibp-v2-troubleshooting-wh-extract)
 
 **Issues with the Console**
+- [Why is my cluster from the Red Hat Marketplace 'fail to pull image cp.icr.io/ibp-init@sha256' during setup?](#ibp-v2-troubleshooting-pull-image-fails)
 - [Why is my console upgrade from 2.5 to 2.5.x failing?](#ibp-v2-troubleshootingconsole-upgrade-fails)
 - [Why is my {{site.data.keyword.blockchainfull_notm}} Platform user interface unable to connect to cluster after deployment? (Ingress issue)](#ibp-v2-troubleshooting-ingress-issue)
 - [Why are my console actions failing in my Chrome browser Version 77.0.3865.90 (Official Build) (64-bit)?](#ibp-v2-troubleshooting-chrome-v77)
@@ -152,6 +153,17 @@ To resolve this problem, repeat the steps you followed to [Get your entitlement 
 {: tsResolve}
 
 
+##Why is my cluster from the Red Hat Marketplace 'fail to pull image cp.icr.io/ibp-init@sha256' during setup?
+{: #ibp-v2-troubleshooting-pull-image-fails}
+{: troubleshoot}
+
+I am setting up my trial cluster from the Red Hat Marketplace but I am receiving a 'fail to pull image cp.icr.io/ibp-init@sha256' error message.
+{: tsSymptoms}
+
+To resolve this problem, you need to get the pull secret from the Red Hat Marketplace to update your global cluster pull secret. See [Get pull secret](https://marketplace.redhat.com/en-us/documentation/clusters#get-pull-secret) from the Red Hat Marketplace for the setup procedures.
+{: tsResolve}
+
+
 ## Why is my console upgrade from 2.5 to 2.5.x failing?
 {: #ibp-v2-troubleshootingconsole-upgrade-fails}
 {: troubleshoot}
@@ -171,8 +183,6 @@ kubectl delete deploy ibpconsole
 {: codeblock}
 
 This command deletes the console replicas and the operator then starts only one console replica which starts successfully.
-
-
 
 
 ## Why is my {{site.data.keyword.blockchainfull_notm}} Platform user interface unable to connect to cluster after deployment (Ingress issue)?
