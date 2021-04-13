@@ -1422,7 +1422,7 @@ subcollection: blockchain-sw-252
 
 [Extracting the TLS certificate from the Kubernetes webhook fails](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-troubleshooting#ibp-v2-troubleshooting-wh-extract)
 
-[Why is my cluster from the Red Hat Marketplace 'fail to pull image cp.icr.io/ibp-init@sha256' during setup?](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-troubleshooting#ibp-v2-troubleshooting-pull-image-fails)
+[Why is my cluster from the Red Hat Marketplace `fail to pull image cp.icr.io/ibp-init@sha256` during setup?](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-troubleshooting#ibp-v2-troubleshooting-pull-image-fails)
 
 [Why is my console upgrade from 2.5 to 2.5.x failing?](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-troubleshooting#ibp-v2-troubleshootingconsole-upgrade-fails)
 
