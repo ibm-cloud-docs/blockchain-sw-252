@@ -156,12 +156,11 @@ To resolve this problem, repeat the steps you followed to [Get your entitlement 
 {: #ibp-v2-troubleshooting-pull-image-fails}
 {: troubleshoot}
 
-I am setting up my trial cluster from the Red Hat Marketplace but I am receiving a 'fail to pull image cp.icr.io/ibp-init@sha256' error message.
+I am setting up my trial cluster from the Red Hat Marketplace but I am receiving a `fail to pull image cp.icr.io/ibp-init@sha256` error message.
 {: tsSymptoms}
 
-To resolve this problem, you need to get the pull secret from the Red Hat Marketplace to update your global cluster pull secret. See [Get pull secret](https://marketplace.redhat.com/en-us/documentation/clusters#get-pull-secret) from the Red Hat Marketplace for the setup procedures.
+To resolve this problem, you need to get the pull secret from the Red Hat Marketplace to update your global cluster pull secret. See [Get pull secret](https://marketplace.redhat.com/en-us/documentation/clusters#get-pull-secret) for the setup procedures.
 {: tsResolve}
-
 
 ## Why is my console upgrade from 2.5 to 2.5.x failing?
 {: #ibp-v2-troubleshootingconsole-upgrade-fails}
