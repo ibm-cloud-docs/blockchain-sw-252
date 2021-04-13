@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-04-12"
+lastupdated: "2021-04-13"
 
 keywords: site map
 subcollection: blockchain-sw-252
@@ -1421,6 +1421,8 @@ subcollection: blockchain-sw-252
 [My deployment fails when I try apply the custom resource definition of the console or operator](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-troubleshooting#ibp-v2-troubleshooting-deployment-cr)
 
 [Extracting the TLS certificate from the Kubernetes webhook fails](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-troubleshooting#ibp-v2-troubleshooting-wh-extract)
+
+[Why is my cluster from the Red Hat Marketplace 'fail to pull image cp.icr.io/ibp-init@sha256' during setup?](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-troubleshooting#ibp-v2-troubleshooting-pull-image-fails)
 
 [Why is my console upgrade from 2.5 to 2.5.x failing?](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-troubleshooting#ibp-v2-troubleshootingconsole-upgrade-fails)
 
