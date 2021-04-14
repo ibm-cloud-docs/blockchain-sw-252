@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-04-05"
+lastupdated: "2021-04-13"
 
 keywords: site map
 subcollection: blockchain-sw-252
@@ -620,11 +620,12 @@ subcollection: blockchain-sw-252
 * [Limitations](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm#deploy-ocp-rhm-limitations)
 * [Before you begin](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm#deploy-ocp-rhm-prerequisites)
 * [Step one: Apply the Security Context Constraint](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm#deploy-ocp-rhm-scc)
-* [Step two: Deploy the {{site.data.keyword.blockchainfull_notm}} Platform console](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm#deploy-ocp-rhm-console)
+* [Step two: Apply the image pull secrets](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm#deploy-ocp-rhm-secrets)
+* [Step three: Deploy the {{site.data.keyword.blockchainfull_notm}} Platform console](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm#deploy-ocp-rhm-console)
   * [Advanced deployment options](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm#console-deploy-ocp-rhm-advanced)
   * [Use your own TLS Certificates (Optional)](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm#console-deploy-ocp-use-your-own-tls-certificates-optional)
-* [Step three: Verify the console installation](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm#console-deploy-ocp-verify-install)
-* [Step four: Log in to the console](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm#deploy-ocp-rhm-log-in)
+* [Step four: Verify the console installation](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm#console-deploy-ocp-verify-install)
+* [Step five: Log in to the console](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm#deploy-ocp-rhm-log-in)
 * [Removing your deployment](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm#console-deploy-ocp-rhm-remove-deployment)
 * [Next steps](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm#console-deploy-ocp-rhm-next-steps)
 * [Support](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm#deploy-ocp-rhm-support)
@@ -1210,7 +1211,7 @@ subcollection: blockchain-sw-252
 * [Retrieve the CA connection information](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#ibp-v2-apis-config-connx-info)
 * [Provide your component enroll ID and secret](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#provide-your-component-enroll-id-and-secret)
 * [Provide the signCert of your organization administrator](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#provide-the-signcert-of-your-organization-administrator)
-* [CSR (Certificate Signing Request) hosts](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#csr-(certificate-signing-request)-hosts)
+* [CSR (Certificate Signing Request) hosts](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#csr)
 * [Completing the configuration file](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#ibp-v2-apis-config-file)
 * [Importing an admin identity into the {{site.data.keyword.blockchainfull_notm}} Platform console](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#ibp-v2-apis-admin-console)
 
@@ -1420,6 +1421,8 @@ subcollection: blockchain-sw-252
 [My deployment fails when I try apply the custom resource definition of the console or operator](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-troubleshooting#ibp-v2-troubleshooting-deployment-cr)
 
 [Extracting the TLS certificate from the Kubernetes webhook fails](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-troubleshooting#ibp-v2-troubleshooting-wh-extract)
+
+[Why is my cluster deployed from the Red Hat Marketplace `fail to pull image cp.icr.io/ibp-init@sha256` during setup?](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-troubleshooting#ibp-v2-troubleshooting-pull-image-fails)
 
 [Why is my console upgrade from 2.5 to 2.5.x failing?](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-troubleshooting#ibp-v2-troubleshootingconsole-upgrade-fails)
 
