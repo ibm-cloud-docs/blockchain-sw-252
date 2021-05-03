@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-05"
+lastupdated: "2021-05-03"
 
 keywords: deployment, advanced, CouchDB, LevelDB, external CA, HSM, resource allocation
 
@@ -1336,7 +1336,7 @@ When a CA, peer, or ordering node is configured to use an HSM, their private key
 * A single partition can be used to generate and store multiple keys.
 * Multiple blockchain nodes can share an HSM configuration, however it is recommended that one HSM is configured per organization.
 * An HSM is not configured for an ordering service. Rather it is configured at the ordering node level inside the ordering service. Consider the case when different organizations contribute ordering nodes to an ordering service, it is possible that some organizations may want to use an HSM for the private key for their ordering node, while other organizations may not have that requirement. But all of the ordering nodes can still function together in the ordering service nonetheless.
-* The use of an HSM introduces overhead in transaction processing, therefore you can expect a performance hit when using an HSM to manage the private keys for your nodes.
+* The use of an HSM introduces an increase in transaction processing, therefore you can expect a performance hit when using an HSM to manage the private keys for your nodes.
 * An HSM can be configured for a node only when the node is initially deployed. You cannot add HSM capability to existing nodes at this time.
 
 Configuring a node to use HSM is a three-part process:
