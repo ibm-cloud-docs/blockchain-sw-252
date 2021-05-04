@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-28"
+lastupdated: "2021-05-04"
 
 keywords: IBM Blockchain Platform, administrate, add user, remove user, password, APIs, authentication, view logs
 
@@ -382,9 +382,9 @@ You can view only the console logs if you are logged in as a console administrat
 ### Viewing your node logs
 {: #console-icp-manage-node-logs}
 
-Component logs can be viewed from the command line by using the [kubectl CLI commands](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_3.2.0/manage_cluster/install_kubectl.html){: external} or through [Kibana](https://www.elastic.co/kibana){: external} which is included in the OpenShift Container Platform.
+Component logs can be viewed from the command line by using the [kubectl CLI commands](https://www.ibm.com/docs/en/cloud-private/3.2.0?topic=guide-installing-kubernetes-cli-kubectl){: external} or through [Kibana](https://www.elastic.co/kibana){: external} which is included in the OpenShift Container Platform.
 
-- Use the `kubectl logs` command to view the container logs inside the pod. Follow the instructions to [Install the kubectl cli](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_3.2.0/manage_cluster/install_kubectl.html){: external} if you have not already done so. If you are unsure of your pod name, run the following command to view your list of pods.
+- Use the `kubectl logs` command to view the container logs inside the pod. Follow the instructions to [Install the kubectl cli](https://www.ibm.com/docs/en/cloud-private/3.2.0?topic=guide-installing-kubernetes-cli-kubectl){: external} if you have not already done so. If you are unsure of your pod name, run the following command to view your list of pods.
 
   ```
   kubectl get pods
