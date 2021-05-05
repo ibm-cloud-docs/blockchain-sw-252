@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-04-05"
+lastupdated: "2021-05-05"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -97,7 +97,7 @@ subcollection: blockchain-sw-252
 {: #deploy-ocp}
 
 <div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px;">
-  <p style="line-height: 10px;">
+  <p style="line-height: 15px;">
     <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
     <a href="/docs/blockchain-sw?topic=blockchain-sw-deploy-ocp">2.1.2</a>,
     <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-ocp">2.1.3</a>,
@@ -372,7 +372,7 @@ spec:
         fsGroup: 2000
       containers:
         - name: "ibp-webhook"
-          image: "cp.icr.io/cp/ibp-crdwebhook:2.5.2-20210325-amd64"
+          image: "cp.icr.io/cp/ibp-crdwebhook:2.5.2-20210505-amd64"
           imagePullPolicy: Always
           securityContext:
             privileged: false
@@ -1046,7 +1046,7 @@ spec:
         - name: docker-key-secret
       containers:
         - name: ibp-operator
-          image: cp.icr.io/cp/ibp-operator:2.5.2-20210325-amd64
+          image: cp.icr.io/cp/ibp-operator:2.5.2-20210505-amd64
           command:
           - ibp-operator
           imagePullPolicy: Always
@@ -1147,7 +1147,7 @@ spec:
     console:
       class: ""
       size: 5Gi
-  version: 2.5.1
+  version: 2.5.2
 ```
 {: codeblock}
 Accept the license:  
@@ -1249,7 +1249,7 @@ spec:
       requests:
         cpu: 100m
         memory: 200Mi
-  version: 2.5.1
+  version: 2.5.2
 ```
 {: codeblock}
 
