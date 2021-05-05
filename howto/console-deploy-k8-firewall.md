@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-05-04"
+lastupdated: "2021-05-05"
 
 keywords: IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, firewall, on-premises, air-gapped, on-prem, multicloud, on-prem
 
@@ -1288,7 +1288,7 @@ spec:
       requests:
         cpu: 100m
         memory: 200Mi
-  version: 2.5.1
+  version: 2.5.2
 ```
 {: codeblock}
 
