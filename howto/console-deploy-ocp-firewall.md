@@ -1117,7 +1117,7 @@ spec:
         - name: docker-key-secret
       containers:
         - name: ibp-operator
-          image: cp.icr.io/cp/ibp-operator:2.5.2-20210325-amd64
+          image: cp.icr.io/cp/ibp-operator:2.5.2-20210505-amd64
           command:
           - ibp-operator
           imagePullPolicy: Always
