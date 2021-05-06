@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-28"
+lastupdated: "2021-05-06"
 keywords: troubleshooting, debug, why, what does this mean, how can I, when I
 
 subcollection: blockchain-sw-252
@@ -38,7 +38,7 @@ content-type: troubleshoot
     </p>
 </div>
 
-General problems can occur when you use the console to manage nodes, channels, or smart contracts. In many cases, you can recover from these problems by following a few easy steps.
+General problems can occur when you use the console to manage nodes, channels, or smart contracts. In many cases, you can recover from these problems by following a few simple steps.
 {:shortdesc}
 
 This topic describes common issues that can occur when you use the {{site.data.keyword.blockchainfull_notm}} Platform console.  
@@ -52,15 +52,15 @@ This topic describes common issues that can occur when you use the {{site.data.k
 - [Why is my cluster deployed from the Red Hat Marketplace `fail to pull image cp.icr.io/ibp-init@sha256` during setup?](#ibp-v2-troubleshooting-pull-image-fails)
 - [Why is my console upgrade from 2.5 to 2.5.x failing?](#ibp-v2-troubleshootingconsole-upgrade-fails)
 - [Why is my {{site.data.keyword.blockchainfull_notm}} Platform user interface unable to connect to cluster after deployment? (Ingress issue)](#ibp-v2-troubleshooting-ingress-issue)
-- [Why are my console actions failing in my Chrome browser Version 77.0.3865.90 (Official Build) (64-bit)?](#ibp-v2-troubleshooting-chrome-v77)
+- [Why is my console actions failing in my Chrome browser Version 77.0.3865.90 (Official Build) (64-bit)?](#ibp-v2-troubleshooting-chrome-v77)
 - [Why am I not able to log in to the console from my Chrome browser on Mac OS Catalina?](#ibp-v2-troubleshooting-console-catalina)
-- [Why is my channel creation failing or I am unable to add a new organization to my ordering service with the error "Unable to get system channel"?](#ibp-v2-troubleshooting-accept-tls)
+- [Why is my channel fail to create or I am unable to add a new organization to my ordering service with the error "Unable to get system channel"?](#ibp-v2-troubleshooting-accept-tls)
 - [When I hover over my node, the status is `Status unavailable`, what does this mean?](#ibp-v2-troubleshooting-status-unavailable)
 - [When I hover over my node, the status is `Status undetectable`, what does this mean?](#ibp-v2-troubleshooting-status-undetectable)
 - [Why did my smart contract installation, instantiation or upgrade fail?](#ibp-console-smart-contracts-troubleshoot-entry1)
-- [Why is my smart contract installation failing with an error on my peer?](#ibp-v2-troubleshooting-sc-install)
-- [Why is my Node.js smart contract instantiation failing?](#ibp-v2-troubleshooting-nodejs-instantiate)
-- [Why is my Node.js smart contract endorsement failing?](#ibp-v2-troubleshooting-nodejs-endorsement)
+- [Why is my smart contract fail to install with an error on my peer?](#ibp-v2-troubleshooting-sc-install)
+- [Why is my Node.js smart contract fail to instantiate?](#ibp-v2-troubleshooting-nodejs-instantiate)
+- [Why is my Node.js smart contract fail to endorse?](#ibp-v2-troubleshooting-nodejs-endorsement)
 - [Why is the smart contract that I installed on the peer not listed in the UI?](#ibp-console-build-network-troubleshoot-missing-sc)
 - [My channel, smart contracts, and identities have disappeared from the console. How can I get them back?](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-troubleshooting#ibp-v2-troubleshooting-browser-storage)
 - [Why am I getting the error `Unable to authenticate with the enroll ID and secret you provided` when I create a new organization MSP definition?](#ibp-v2-troubleshooting-create-msp)
@@ -70,8 +70,8 @@ This topic describes common issues that can occur when you use the {{site.data.k
 
 **Issues with your Nodes**  
 
-- [Why is my first invoke of a smart contract returning the following error: no suitable peers available to initialize from?](#ibp-v2-troubleshooting-smart-contract-anchor-peers)
-- [Why are my node operations failing after I create my peer or ordering service?](#ibp-console-build-network-troubleshoot-entry1)
+- [Why is my first start of a smart contract returns the following error: no suitable peers available to initialize from?](#ibp-v2-troubleshooting-smart-contract-anchor-peers)
+- [Why are my node operations fail to operate after I create my peer or ordering service?](#ibp-console-build-network-troubleshoot-entry1)
 - [Why does my peer or ordering node fail to start?](#ibp-console-build-network-troubleshoot-entry2)
 - [What is the proper way to clean up a failed node deployment?](#ibp-v2-troubleshooting-cleanup)
 - [How can I view my smart contract container logs?](#ibp-console-smart-contracts-troubleshoot-entry2)
@@ -202,7 +202,7 @@ This problem can occur when the cluster is created after 01 December 2020 with v
 
 Before resolving this problem, you can check the application load balancer (ALB) replica set by running `kubectl get replicasets -n kube-system` and look for result similar to `public-crbpt86avw0kfob73dpb3g-alb1-875bc4d57    2         2         2       24h`. 
 
-For clusters created after 01 December 2020 with version 1.18 or higher, you can check the ingress configuration as follow:
+For clusters created after 01 December 2020 with version 1.18 or higher, you can check that the ingress configuration as follows:
 
 1. Run `kubectl get ingress --all-namespaces` to find out which are the ingress matching nodes that are having issues.
 
@@ -216,49 +216,24 @@ For clusters created after 01 December 2020 with version 1.18 or higher, you can
     ```
     {: codeblock}
 
-To resolve this problem, you can perform the following steps:
+To resolve this problem, you can execute the following steps:
 {: tsResolve}
 
-If you are running a two nodes cluster or a multizone cluster with two nodes in each zone, go directly to step 3.
-{: note}
+**Get the list of ALB replica set.** 
+If your cluster has only one ALB, you can get the replica set as follows:
+  ```
+  kubectl get replicaset -n kube-system | grep <ALB-name>
+  ```
+  {: codeblock}
 
-1. **Update and deploy ALB.** For clusters with only one single node, you can add a second node on to it. For clusters with multizone, you can add a second node to each zone. Or, edit the replica set and scale it down to 1. To scale-down the replica set to 1, you can perform the following steps: 
-
-  - To find the existing replica set.
-
-      ```
-      kubectl get replicasets -n kube-system | grep -i alb
-      public-crbpt86avw0kfob73dpb3g-alb1-875bc4d57    2         2         2       24h
-      ```
-      {: codeblock}
-
-  - To scale-down the replica set to 1.
-
-      ```
-      kubectl scale --replicas=1 rs/public-crbpt86avw0kfob73dpb3g-alb1-875bc4d57 -n kube-system
-      replicaset.apps/public-crbpt86avw0kfob73dpb3g-alb1-875bc4d57 scaled
-      ```
-      {: codeblock}
-
-2. **Verify the resolution.** You can now verify the changes by performing the following steps:
-
-  - Run `kubectl get ingress --all-namespaces` command to check if ingress gets an IP address for each listed entry.
-  - Run `curl -kv https://<component-proxy-url>/settings` for testing the connectivity to ensure the component-proxy-url matches the corresponding "Hosts" entry in the `kubectl get ingress --all-namespaces` command.
-
-3. **Get the list of ALB replica set.** If your cluster has only one ALB, you can get the replica set as follows:
-      ```
-      kubectl get replicaset -n kube-system | grep <ALB-name>
-      ```
-      {: codeblock}
-
-  If you have multiple ALBs, perform the following steps for each ALB as follows:
-    - Get the list of all replica sets. 
+If you have multiple ALBs, execute the following steps for each ALB as follows:
+  1. Get the list of all replica sets. 
       ```
       kubectl get replicaset -n kube-system | grep alb
       ```
       {: codeblock}
 
-      For example, you will see multiple replica sets listed as follow:
+     For example, you will see multiple replicas sets listed as followss:
       ```
       $ kubectl get rs -n kube-system | grep alb
       NAME  DESIRED   CURRENT   READY   AGE
@@ -268,32 +243,32 @@ If you are running a two nodes cluster or a multizone cluster with two nodes in 
       ```
       {: codeblock}
 
-    - Delete all the replica sets except for the latest one.
+  2. Delete all the replica sets except for the latest one.
       ```
       kubectl delete replicaset -n kube-system <replicaset-name>
       ```
       {: codeblock}
 
-      Based on the example shown, you need to delete the extra replica sets as follows:
+    Based on the example shown, you need to delete the extra replica sets as follows:
       ```
       kubectl delete replicaset -n kube-system public-x-alb1-59db7dbfb4  
       kubectl delete replicaset -n kube-system public-x-alb1-d856b94c4
       ```
       {: codeblock}
 
-    - Get the list of replica set again to ensure there is only one remaining.
+  3. Get the list of replica set again to ensure that there is only one remaining.
       ```
       kubectl get replicaset -n kube-system | grep <ALB-name>
       ```
       {: codeblock}
  
-      Referring to the example, the result will display as follows:
+    Referring to the example, the result will display as follows:
       ```
       public-x-alb1-6486c45c96   2         2         2       3d17h
       ```
       {: codeblock}
 
-## Why are my console actions failing in my Chrome browser Version 77.0.3865.90 (Official Build) (64-bit)?
+## Why is my console actions failing in my Chrome browser Version 77.0.3865.90 (Official Build) (64-bit)?
 {: #ibp-v2-troubleshooting-chrome-v77}
 {: troubleshoot}
 
@@ -303,7 +278,7 @@ The console has been working successfully, but requests have started to fail. Fo
 This problem can be caused by a [bug](https://bugs.chromium.org/p/chromium/issues/detail?id=1006243){: external} introduced by the Chrome browser `Version 77.0.3865.90 (Official Build) (64-bit)` that causes actions from the browser to fail.
 {: tsCauses}
 
-To resolve this problem, open the console in a new browser tab in Chrome. Any identities that you saved in your console wallet will  persist in the new browser tab. To avoid this problem you can upgrade your Chrome browser version. Ensure you have downloaded all of your wallet identities to your local machine before closing your browser. If this solution does not resolve your problem see [Why is my channel creation failing or I am unable to add a new organization to my ordering service with the error "Unable to get system channel"?](#ibp-v2-troubleshooting-accept-tls).
+To resolve this problem, open the console in a new browser tab in Chrome. Any identities that you saved in your console wallet will persist in the new browser tab. To avoid this problem you can upgrade your Chrome browser version. Ensure you have downloaded all of your wallet identities to your local machine before closing your browser. If this solution does not resolve your problem see [Why is my channel fail to create or I am unable to add a new organization to my ordering service with the error "Unable to get system channel"?](#ibp-v2-troubleshooting-accept-tls).
 {: tsResolve}
 
 
@@ -311,7 +286,7 @@ To resolve this problem, open the console in a new browser tab in Chrome. Any id
 {: #ibp-v2-troubleshooting-console-catalina}
 {: troubleshoot}
 
-The console has been working successfully, but after I upgraded my Mac OS to Catalina, I can no longer log in to the console.
+The console has been working successfully, but after I upgraded my Mac OS to Catalina, I can no longer login to the console.
 {: tsSymptoms}
 
 There are three ways to resolve this problem:
@@ -428,7 +403,7 @@ You may receive this error if this version of the smart contract already exists 
 - If you are still experiencing problems after the node is up,  [check your node logs](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-icp-manage#console-icp-manage-node-logs) for errors.
 {: tsResolve}
 
-## Why is my smart contract installation failing with an error on my peer?
+## Why is my smart contract fail to install with an error on my peer?
 {: #ibp-v2-troubleshooting-sc-install}
 {: troubleshoot}
 {: support}
@@ -464,7 +439,7 @@ In some cases, if you simply wait several minutes and then refresh the **Smart c
 
 The peer restarts and then you can retry the smart contract installation. Because the original installation failed you need to specify a new smart contract name and version. 
 
-## Why is my Node.js smart contract instantiation failing?
+## Why is my Node.js smart contract fail to instantiate?
 {: #ibp-v2-troubleshooting-nodejs-instantiate}
 {: troubleshoot}
 
@@ -482,7 +457,7 @@ When running the {{site.data.keyword.blockchainfull_notm}} Platform on s390x arc
 {: tsResolve}
 Customers should wait for five minutes after the failure occurs and then retry the instantiation again. It will then work successfully on the subsequent attempt.
 
-## Why is my Node.js smart contract endorsement failing?
+## Why is my Node.js smart contract fail to endorse?
 {: #ibp-v2-troubleshooting-nodejs-endorsement}
 {: troubleshoot}
 {: support}
@@ -603,7 +578,7 @@ An Out of Memory (OOM) situation can cause this error.
 To resolve this problem, you need to resize the peers and CouchDB containers to add more memory, such as 2000 MB memory each. After resizing the memory, [delete the peer pods](#ibp-troubleshooting-delete-peer) so they will be re-created. Then try the scenario again. See [Considerations when reallocating resources](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-govern-components#ibp-console-govern-components-reallocate-resources) for more information.
 {: tsResolve}
 
-## Why is my first invoke of a smart contract returning the following error: no suitable peers available to initialize from?
+## Why is my first invoke of a smart contract returns the following error: no suitable peers available to initialize from?
 {: #ibp-v2-troubleshooting-smart-contract-anchor-peers}
 {: troubleshoot}
 {: support}
@@ -622,7 +597,7 @@ Use the following steps to [configure anchor peers on your channel](/docs/blockc
 Also, you should verify that you are submitting the transactions against the correct channel and organization MSP id.
 {: tsResolve}
 
-## Why are my node operations failing after I create my peer or ordering service?
+## Why are my node operations fail to operate after I create my peer or ordering service?
 {: #ibp-console-build-network-troubleshoot-entry1}
 {: troubleshoot}
 
