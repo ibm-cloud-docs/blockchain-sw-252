@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-06"
+lastupdated: "2021-05-07"
 keywords: troubleshooting, debug, why, what does this mean, how can I, when I
 
 subcollection: blockchain-sw-252
@@ -52,7 +52,7 @@ This topic describes common issues that can occur when you use the {{site.data.k
 - [Why is my cluster deployed from the Red Hat Marketplace `fail to pull image cp.icr.io/ibp-init@sha256` during setup?](#ibp-v2-troubleshooting-pull-image-fails)
 - [Why is my console upgrade from 2.5 to 2.5.x failing?](#ibp-v2-troubleshootingconsole-upgrade-fails)
 - [Why is my {{site.data.keyword.blockchainfull_notm}} Platform user interface unable to connect to cluster after deployment? (Ingress issue)](#ibp-v2-troubleshooting-ingress-issue)
-- [Why is my console actions failing in my Chrome browser Version 77.0.3865.90 (Official Build) (64-bit)?](#ibp-v2-troubleshooting-chrome-v77)
+- [Why are my console actions failing in my Chrome browser Version 77.0.3865.90 (Official Build) (64-bit)?](#ibp-v2-troubleshooting-chrome-v77)
 - [Why am I not able to log in to the console from my Chrome browser on Mac OS Catalina?](#ibp-v2-troubleshooting-console-catalina)
 - [Why is my channel fail to create or I am unable to add a new organization to my ordering service with the error "Unable to get system channel"?](#ibp-v2-troubleshooting-accept-tls)
 - [When I hover over my node, the status is `Status unavailable`, what does this mean?](#ibp-v2-troubleshooting-status-unavailable)
@@ -233,7 +233,7 @@ If you have multiple ALBs, execute the following steps for each ALB as follows:
       ```
       {: codeblock}
 
-     For example, you will see multiple replicas sets listed as followss:
+     For example, you will see multiple replica sets listed as follows:
       ```
       $ kubectl get rs -n kube-system | grep alb
       NAME  DESIRED   CURRENT   READY   AGE
@@ -268,7 +268,7 @@ If you have multiple ALBs, execute the following steps for each ALB as follows:
       ```
       {: codeblock}
 
-## Why is my console actions failing in my Chrome browser Version 77.0.3865.90 (Official Build) (64-bit)?
+## Why are my console actions failing in my Chrome browser Version 77.0.3865.90 (Official Build) (64-bit)?
 {: #ibp-v2-troubleshooting-chrome-v77}
 {: troubleshoot}
 
