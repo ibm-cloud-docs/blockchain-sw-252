@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-05-05"
+lastupdated: "2021-05-19"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -469,6 +469,7 @@ service/ibp-webhook created
 ```
 
 ### 4. Extract the certificate and create the custom resource definitions
+{: #webhook-extract-cert}
 
 1. Extract the webhook TLS certificate from the `ibpinfra` namespace by running the following command:
 
