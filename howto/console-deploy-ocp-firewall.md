@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-05-05"
+lastupdated: "2021-05-19"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, firewall, on-premises, air-gapped, on-prem, multicloud, on-prem
 
@@ -532,6 +532,7 @@ service/ibp-webhook created
 ```
 
 ### 4. Extract the certificate and create the custom resource definitions
+{: #webhook-extract-cert}
 
 1. Extract the webhook TLS certificate from the `ibpinfra` namespace by running the following command:
 
@@ -1345,6 +1346,7 @@ Unlike the resource allocation, you cannot add zones to a running network. If yo
 {: important}
 
 ### Use your own TLS Certificates (Optional)
+{: #deploy-console-tls-fw}
 
 The {{site.data.keyword.blockchainfull_notm}} Platform console uses TLS certificates to secure the communication between the console and your blockchain nodes and between the console and your browser. You have the option of creating your own TLS certificates and providing them to the console by using a Kubernetes secret. If you skip this step, the console creates its own self-signed TLS certificates during deployment.
 
