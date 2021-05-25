@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-03"
+lastupdated: "2021-05-25"
 
 keywords: IBM Blockchain Platform, images, multicloud
 
@@ -77,6 +77,7 @@ subcollection: blockchain-sw-252
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -643,7 +644,7 @@ After we deploy a network, we can use the gRPC web proxy to import a peer or ord
   - `"name"`: The display name for the peer in the {{site.data.keyword.blockchainfull_notm}} Platform console.
   - `"grpcwp_url"`: The external address of the web proxy that you selected using the `EXTERNAL_ADDRESS` variable.
   - `"api_url"`: The public address of the node used by your client applications and is specified in the `BACKEND_ADDRESS` variable.
-  - `"operations_url"`: The URL and port that was opened for the operations service. We used the `CORE_OPERATIONS_LISTENADDRESS` variable to specify that the operations service will use port `9443` in step one. As a result, the console can use the address https://peer0.org1.example.com:9443 to check the health of our peer.
+  - `"operations_url"`: The URL and port that was opened for the operations service. We used the `CORE_OPERATIONS_LISTENADDRESS` variable to specify that the operations service will use port `9443` in step one. As a result, the console can use the address `https://peer0.org1.example.com:9443` to check the health of our peer.
   - `"type"`: select `fabric-peer`, `fabric-orderer`, or `fabric-ca`.
   - `"msp_id"`: The MSPID of the organization that operates the node.
   - `"location"`: Location of your choice.
