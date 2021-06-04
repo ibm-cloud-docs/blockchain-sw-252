@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-05-28"
+lastupdated: "2021-06-04"
 
 keywords: IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -297,6 +297,8 @@ serviceaccount/webhook created
 role.rbac.authorization.k8s.io/webhook created
 rolebinding.rbac.authorization.k8s.io/ibpinfra created
 ```
+{:codeblock}
+
 ### 2. (OpenShift cluster only) Apply the Security Context Constraint
 {: #webhook-scc}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-05-19"
+lastupdated: "2021-06-04"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -77,6 +77,7 @@ subcollection: blockchain-sw-252
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -263,6 +264,8 @@ serviceaccount/webhook created
 role.rbac.authorization.k8s.io/webhook created
 rolebinding.rbac.authorization.k8s.io/ibpinfra created
 ```
+{:codeblock}
+
 ### 2. (OpenShift cluster only) Apply the Security Context Constraint
 {: #webhook-scc}
 
