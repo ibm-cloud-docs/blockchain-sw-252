@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-15"
+lastupdated: "2021-06-16"
 
 keywords: IBM Blockchain Platform, images, multicloud
 
@@ -434,7 +434,7 @@ If you want to deploy a raft ordering service, you need to make the same edits t
 
 After you update the relevant files, you can test that you can deploy your images by running the following command:
 ```
-sudo ./byfn.sh up -i 1.4.6
+sudo ./byfn.sh up -i 1.4.12
 ```
 {:codeblock}
 
