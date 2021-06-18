@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2021
-lastupdated: "2021-06-14"
+  years: 2021
+lastupdated: "2021-06-18"
 
 keywords: Kubernetes, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, fix pack, multicloud
 
@@ -23,8 +23,7 @@ subcollection: blockchain-sw-252
 # Installing the 2.5.2 fix pack
 {: #install-fixpack}
 
-
-Use these instructions if you have already installed or upgraded to the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 before Mon dd, 2021 and want to apply the latest 2.5.2 fix pack. This fix pack is cumulative, which means that it includes all of the fixes from previous 2.5.2 fixpacks. It contains important bug fixes and should be applied to your network as soon as possible.  If you install the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 after Mon dd, 2021, the platform will contain all the bug fixes and improvements included in this fix pack, and you do not need to apply it.
+Use these instructions if you have already installed or upgraded to the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 before June 17, 2021 and want to apply the latest 2.5.2 fix pack. This fix pack is cumulative, which means that it includes all of the fixes from previous 2.5.2 fixpacks. It contains important bug fixes and should be applied to your network as soon as possible.  If you install the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 after June 17, 2021, the platform will contain all the bug fixes and improvements included in this fix pack, and you do not need to apply it.
 {:shortdesc}
 
 You can install the fix pack by updating the {{site.data.keyword.blockchainfull_notm}} Platform deployment on your Kubernetes cluster to pull the latest images from the {{site.data.keyword.IBM_notm}} entitlement registry. You can apply the fix pack by using the following steps:
@@ -73,6 +72,7 @@ When the webhook is successfully restarted, it looks similar to:
 NAME                              READY   STATUS    RESTARTS   AGE
 ibp-webhook-5fd96f6c7d-gpwhr      1/1     Running   0          1m
 ```
+{: codeblock}
 
 ## Step two: Update the {{site.data.keyword.blockchainfull_notm}} operator
 {: #install-fixpack-operator}
@@ -100,6 +100,7 @@ When the upgrade is successful, the output looks similar to:
 NAME           READY     UP-TO-DATE   AVAILABLE   AGE
 ibp-operator   1/1       1            1           1m
 ```
+{: codeblock}
 
 If you experience a problem while you are updating the operator, go to this [troubleshooting topic](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-troubleshooting#ibp-v2-troubleshooting-deployment-cr) for a list of commonly encountered problems.
 
@@ -114,13 +115,19 @@ kubectl delete configmap -n <namespace> ibpconsole-deployer
 ```
 {:codeblock}
 
-You can then delete the console deployment. The default name of the console deployment is `ibpconsole`, unless you changed the name during the deployment process. You can find the name of your console deployment by using the `kubectl get deployment -n <namespace>` command to get the name of the deployments on your namespace. Delete the deployment using the following command:
+You can then edit the console custom resource and delete the versions from spec. The default name of the console is `ipconsole`.  You can find the list of names for your console by using the `kubectl get ibpconsole -n <namespace>` command. Edit the custom resource using the following command:
+```
+kubectl edit ibpconsole ibpconsole -n <namespace>
+```
+{: codeblock}
+
+Following with the console custom resource editing, you can now delete the console deployment using the following command:
 ```
 kubectl delete deployment -n <namespace> ibpconsole
 ```
 {:codeblock}
 
-After you delete the console deployment and ConfigMap, the console will restart and download the new images and configuration settings provided by the 2.5.2 fix pack from the updated operator. You can use the following commands to confirm that the console has been updated with the latest images and configuration. The new images used by the console and your blockchain nodes will have the tags with the date `20210112`.
+After you edit the custome resource, and delete the deployment and ConfigMap, the console will restart and download the new images and configuration settings provided by the 2.5.2 fix pack from the updated operator. You can use the following commands to confirm that the console has been updated with the latest images and configuration. The new images used by the console and your blockchain nodes will have the tags with the date `20210616`.
 ```
 kubectl get deployment -n <namespace> ibpconsole -o yaml
 kubectl get configmap -n <namespace> ibpconsole-deployer -o yaml
@@ -132,6 +139,8 @@ You can check that the upgrade is complete by running `kubectl get deployment ib
 NAME           READY     UP-TO-DATE   AVAILABLE   AGE
 ibpconsole     1/1       1            1           1m
 ```
+{: codeblock}
+
 
 ## Step four: Apply fixes to your blockchain nodes
 {: #install-fixpack-nodes}
@@ -285,13 +294,19 @@ kubectl delete configmap -n <namespace> ibpconsole-deployer
 ```
 {:codeblock}
 
-You can then delete the console deployment. The default name of the console deployment is `ibpconsole`, unless you changed the name during the deployment process. You can find the name of your console deployment by using the `kubectl get deployment -n <namespace>` command to get the name of the deployments on your namespace. Delete the deployment using the following command:
+You can then edit the console custom resource and delete the versions from spec. The default name of the console is `ipconsole`.  You can find the list of names for your console by using the `kubectl get ibpconsole -n <namespace>` command. Edit the custom resource using the following command:
+```
+kubectl edit ibpconsole ibpconsole -n <namespace>
+```
+{: codeblock}
+
+Following with the console custom resource editing, you can now delete the console deployment using the following command:
 ```
 kubectl delete deployment -n <namespace> ibpconsole
 ```
 {:codeblock}
 
-After you delete the console deployment and ConfigMap, the console will restart and download the new images and configuration settings provided by the 2.5.2 fix pack from the updated operator. You can use the following commands to confirm that the console has been updated with the latest images and configuration. The new images used by the console and your blockchain nodes will have the tags with the date `20210112`.
+After you edit the custome resource, and delete the deployment and ConfigMap, the console will restart and download the new images and configuration settings provided by the 2.5.2 fix pack from the updated operator. You can use the following commands to confirm that the console has been updated with the latest images and configuration. The new images used by the console and your blockchain nodes will have the tags with the date `20210616`.
 ```
 kubectl get deployment -n <namespace> ibpconsole -o yaml
 kubectl get configmap -n <namespace> ibpconsole-deployer -o yaml

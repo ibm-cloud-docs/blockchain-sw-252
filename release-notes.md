@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-16"
+lastupdated: "2021-06-18"
 
 
 keywords: release note, latest changes, Hyperledger Fabric, multicloud
@@ -36,6 +36,8 @@ Use these release notes that are grouped by date to learn about the latest chang
 {:shortdesc}
 
 
+[Installing the 2.5.2 fix pack](/docs/blockchain-sw-252?topic=blockchain-sw-252-install-fixpack)  
+For instructions on how to apply the latest fix pack to your blockchain instance.  
 
 
 [Installing patches](/docs/blockchain?topic=blockchain-ibp-console-manage-console#ibp-console-manage-patch)  
