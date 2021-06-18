@@ -59,6 +59,7 @@ When the webhook update is successful, you see something similar to:
 ```
 deployment.apps/ibp-webhook image updated
 ```
+{: codeblock}
 
 Before you proceed with the next step, wait for the webhook to restart by running the following command:
 ```
@@ -83,7 +84,7 @@ Run the following command to download the operator deployment spec to your local
 ```
 kubectl set image deploy/ibp-operator -n <namespace> ibp-operator=cp.icr.io/cp/ibp-operator:2.5.2-20210616-amd64
 ```
-{:codeblock}
+{: codeblock}
 
 After you update the operator, it will restart and pull the latest operator image. While the operator is restarting, you can still access your console UI. However, you cannot use the console to deploy smart contracts, or use the console or the APIs to create or remove a node.
 
@@ -113,7 +114,7 @@ You can start by running the following command to delete the ConfigMap used by t
 ```
 kubectl delete configmap -n <namespace> ibpconsole-deployer
 ```
-{:codeblock}
+{: codeblock}
 
 You can then edit the console custom resource and delete the versions from spec. The default name of the console is `ipconsole`.  You can find the list of names for your console by using the `kubectl get ibpconsole -n <namespace>` command. Edit the custom resource using the following command:
 ```
@@ -125,14 +126,14 @@ Following with the console custom resource editing, you can now delete the conso
 ```
 kubectl delete deployment -n <namespace> ibpconsole
 ```
-{:codeblock}
+{: codeblock}
 
 After you edit the custome resource, and delete the deployment and ConfigMap, the console will restart and download the new images and configuration settings provided by the 2.5.2 fix pack from the updated operator. You can use the following commands to confirm that the console has been updated with the latest images and configuration. The new images used by the console and your blockchain nodes will have the tags with the date `20210616`.
 ```
 kubectl get deployment -n <namespace> ibpconsole -o yaml
 kubectl get configmap -n <namespace> ibpconsole-deployer -o yaml
 ```
-{:codeblock}
+{: codeblock}
 
 You can check that the upgrade is complete by running `kubectl get deployment ibpconsole`. If the upgrade is successful, then you can see the following tables with four ones displayed for your operator and your console.
 ```
@@ -240,6 +241,7 @@ When the webhook update is successful, you see something similar to:
 ```
 deployment.apps/ibp-webhook image updated
 ```
+{: codeblock}
 
 Before you proceed with the next step, wait for the webhook to restart by running the following command:
 ```
@@ -253,6 +255,7 @@ When the webhook is successfully restarted, it looks similar to:
 NAME                              READY   STATUS    RESTARTS   AGE
 ibp-webhook-5fd96f6c7d-gpwhr      1/1     Running   0          1m
 ```
+{: codeblock}
 
 ### Step three: Update the {{site.data.keyword.blockchainfull_notm}} operator
 {: #install-fixpack-operator-firewall}
@@ -263,7 +266,7 @@ Run the following command to download the operator deployment spec to your local
 ```
 kubectl set image deploy/ibp-operator -n <namespace> ibp-operator=cp.icr.io/cp/ibp-operator:2.5.2-20210616-amd64
 ```
-{:codeblock}
+{: codeblock}
 
 After you update the operator, it will restart and pull the latest operator image. While the operator is restarting, you can still access your console UI. However, you cannot use the console to deploy smart contracts, or use the console or the APIs to create or remove a node.
 
@@ -280,6 +283,7 @@ When the upgrade is successful, the output looks similar to:
 NAME           READY     UP-TO-DATE   AVAILABLE   AGE
 ibp-operator   1/1       1            1           1m
 ```
+{: codeblock}
 
 If you experience a problem while you are updating the operator, go to this [troubleshooting topic](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-troubleshooting#ibp-v2-troubleshooting-deployment-cr) for a list of commonly encountered problems.
 
@@ -292,7 +296,7 @@ You can start by running the following command to delete the ConfigMap used by t
 ```
 kubectl delete configmap -n <namespace> ibpconsole-deployer
 ```
-{:codeblock}
+{: codeblock}
 
 You can then edit the console custom resource and delete the versions from spec. The default name of the console is `ipconsole`.  You can find the list of names for your console by using the `kubectl get ibpconsole -n <namespace>` command. Edit the custom resource using the following command:
 ```
@@ -304,39 +308,40 @@ Following with the console custom resource editing, you can now delete the conso
 ```
 kubectl delete deployment -n <namespace> ibpconsole
 ```
-{:codeblock}
+{: codeblock}
 
 After you edit the custome resource, and delete the deployment and ConfigMap, the console will restart and download the new images and configuration settings provided by the 2.5.2 fix pack from the updated operator. You can use the following commands to confirm that the console has been updated with the latest images and configuration. The new images used by the console and your blockchain nodes will have the tags with the date `20210616`.
 ```
 kubectl get deployment -n <namespace> ibpconsole -o yaml
 kubectl get configmap -n <namespace> ibpconsole-deployer -o yaml
 ```
-{:codeblock}
+{: codeblock}
 
 You can check that the upgrade is complete by running `kubectl get deployment ibpconsole`. If the upgrade is successful, then you can see the following tables with four ones displayed for your operator and your console.
 ```
 NAME           READY     UP-TO-DATE   AVAILABLE   AGE
 ibpconsole     1/1       1            1           1m
 ```
+{: codeblock}
 
 If your console experiences an image pull error, you may need to update the console CR spec with local registry that you used to download the images. Run the following command to download the CR spec of the console:
 ```
 kubectl get ibpconsole ibpconsole -o yaml > console.yaml
 ```
-{:codeblock}
+{: codeblock}
 
 Then add the URL of your local registry to the `spec:` section of `console.yaml`. Replace `<LOCAL_REGISTRY>` with the URL of your local registry:
 ```
 spec:
   registryURL: <LOCAL_REGISTRY>
 ```
-{:codeblock}
+{: codeblock}
 
 Save the updated file as `console-upgrade.yaml` on your local system. You can then issue the following command upgrade your console:
 ```
 kubectl apply -f console-upgrade.yaml
 ```
-{:codeblock}
+{: codeblock}
 
 ### Step five: Update your blockchain nodes
 {: #install-fixpack-nodes-firewall}

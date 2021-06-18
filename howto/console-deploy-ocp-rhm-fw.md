@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-18"
+lastupdated: "2021-06-18"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, Red Hat Marketplace, subscription, operators, on-prem, firewall, airgap environment, container registry, portable storage, Bastion server
 
@@ -77,6 +77,7 @@ subcollection: blockchain-sw-252
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -1102,7 +1103,7 @@ spec:
   serviceAccountName: ibm-blockchain
   version: 2.5.2
 ```
-{:codeblock}
+{: codeblock}
 
 - Accept the IBM Blockchain Platform license by replacing `<ACCEPT>` with the text `true`.
 - Replace `<EMAIL>` with the email address that you want to use for the console administrator.
@@ -1186,7 +1187,7 @@ spec:
         cpu: 100m
         memory: 200Mi
 ```
-{:codeblock}
+{: codeblock}
 
 
 - You can use the `resources:` section to allocate more resources to your console. The values in the example file are the default values allocated to each container. Allocating more resources to your console allows you to operate a larger number of nodes or channels.
@@ -1199,7 +1200,7 @@ spec:
       - dal12
       - dal13
   ```
-  {:codeblock}
+  {: codeblock}
 
 When you finish editing the file, click **Create**.
 
@@ -1226,7 +1227,7 @@ Navigate to the TLS certificates that you plan to use on your local system. Name
 ```
 kubectl create secret generic console-tls-secret --from-file=tls.crt=./tlscert.pem --from-file=tls.key=./tlskey.pem -n <PROJECT_NAME>
 ```
-{:codeblock}
+{: codeblock}
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment project.
 
 After you create the secret, add the `tlsSecretName` field to the `spec:` section with one indent added, at the same level as the `resources:` and `clusterdata:` sections of the advanced deployment options. You must provide the name of the TLS secret that you created to the field. The following example deploys a console with the TLS certificate and key that is stored in a secret named `"console-tls-secret"`:
@@ -1264,7 +1265,7 @@ spec:
       - dal12
       - dal13
 ```
-{:codeblock}
+{: codeblock}
 
 ## Verify the console installation
 {: #console-deploy-ocp-rhm-fw-verify}
@@ -1319,14 +1320,14 @@ Alternatively, you can use the CLI to switch to the OpenShift project that you c
   ```
   oc project <PROJECT_NAME>
   ```
-  {:codeblock}
+  {: codeblock}
 
 And then remove any instances or the IBM Blockchain operator by using the OpenShift CLI. For example, this command would delete the operator:
 
   ```
   kubectl delete deployment ibp-operator
   ```
-  {:codeblock}
+  {: codeblock}
 
 ## Create a project for your {{site.data.keyword.blockchainfull_notm}} Platform deployment
 {: #deploy-ocp-rhm-fw-project}
@@ -1337,7 +1338,7 @@ If you are using the CLI, create a new project by the following command:
 ```
 oc new-project <PROJECT_NAME>
 ```
-{:codeblock}
+{: codeblock}
 
 Replace `<PROJECT_NAME>` with the name that you want to use for your {{site.data.keyword.blockchainfull_notm}} Platform deployment project.
 
@@ -1355,4 +1356,4 @@ You can also use the CLI to find the available storage classes for your namespac
 ```
 kubectl get storageclasses
 ```
-{:codeblock}
+{: codeblock}

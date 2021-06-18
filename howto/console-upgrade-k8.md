@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-14"
+lastupdated: "2021-06-18"
 
 keywords: Kubernetes, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters
 
@@ -526,7 +526,7 @@ After you edit and save the file, run the following commands.
 oc apply -f ibp-clusterrole.yaml
 oc adm policy add-scc-to-group <NAMESPACE> system:serviceaccounts:<NAMESPACE>
 ```
-{:codeblock}
+{: codeblock}
 
 ### Step four: Upgrade the {{site.data.keyword.blockchainfull_notm}} operator
 {: #upgrade-k8-steps-252-operator}
@@ -617,7 +617,7 @@ Run the following command to create the namespace:
 ```
 kubectl create namespace ibpinfra
 ```
-{:codeblock}
+{: codeblock}
 
 ### Step two: Create a secret for your entitlement key
 {: #upgrade-k8s-secret-ibpinfra}
@@ -630,7 +630,7 @@ Run the following command to create the secret and add it to your `ibpinfra` nam
 ```
 kubectl create secret docker-registry docker-key-secret --docker-server=cp.icr.io --docker-username=cp --docker-password=<KEY> --docker-email=<EMAIL> -n ibpinfra
 ```
-{:codeblock}
+{: codeblock}
 - Replace `<KEY>` with your entitlement key.
 - Replace `<EMAIL>` with your email address.
 
@@ -689,7 +689,7 @@ Run the following command to add the file to your cluster definition:
 ```
 kubectl apply -f rbac.yaml -n ibpinfra
 ```
-{:codeblock}
+{: codeblock}
 
 When the command completes successfully, you should see something similar to:
 ```
@@ -747,7 +747,7 @@ After you save the file, run the following commands to add the file to your clus
 oc apply -f ibpinfra-scc.yaml -n ibpinfra
 oc adm policy add-scc-to-user ibpinfra system:serviceaccounts:ibpinfra
 ```
-{:codeblock}
+{: codeblock}
 
 If the commands are successful, you can see a response that is similar to the following example:
 ```
@@ -1254,7 +1254,7 @@ After you save and edit the file, run the following commands. Replace `<NAMESPAC
 ```
 kubectl apply -f ibp-clusterrole.yaml -n <NAMESPACE>
 ```
-{:codeblock}
+{: codeblock}
 Replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.
 
 ### Step five: Upgrade the {{site.data.keyword.blockchainfull_notm}} operator
@@ -1266,33 +1266,33 @@ Log in to your cluster by using the kubectl CLI. Because each {{site.data.keywor
 ```
 kubectl config set-context --current --namespace=<NAMESPACE>
 ```
-{:codeblock}
+{: codeblock}
 
 When you are operating from your namespace, run the following command to download the operator deployment spec to your local file system:
 ```
 kubectl get deployment ibp-operator -o yaml > operator.yaml
 ```
-{:codeblock}
+{: codeblock}
 
 Open `operator.yaml` in a text editor and save a new copy of the file as `operator-upgrade.yaml`. You need to update the `image:` field with the updated version of the operator image. You can find the name and tag of the latest operator image below:
 ```
 cp.icr.io/cp/ibp-operator:2.5.2-20210616-amd64
 ```
-{:codeblock}
+{: codeblock}
 
 You also need to edit the `env:` section of the file. Find the following lines in `operator-upgrade.yaml`:
 ```
 - name: ISOPENSHIFT
   value: "false"
 ```
-{:codeblock}
+{: codeblock}
 
 Replace the values above with the following lines at the same indentation:
 ```
 - name: CLUSTERTYPE
   value: <CLUSTER_TYPE>
 ```
-{:codeblock}
+{: codeblock}
 
 - Replace `<CLUSTER_TYPE>` with `K8S` if you are deploying the platform on open source Kubernetes or Rancher.
 
@@ -1314,13 +1314,13 @@ env:
 - name: CLUSTERTYPE
   value: K8S
 ```
-{:codeblock}
+{: codeblock}
 
 Save the file on your local system. You can then issue the following command upgrade your operator:
 ```
 kubectl apply -f operator-upgrade.yaml -n <NAMESPACE>
 ```
-{:codeblock}
+{: codeblock}
 Replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.
 
 You can use the `kubectl get deployment ibp-operator -o yaml` command to confirm that the command updated the operator spec.
@@ -1434,7 +1434,7 @@ Run the following command to create the namespace:
 ```
 kubectl create namespace ibpinfra
 ```
-{:codeblock}
+{: codeblock}
 
 ### Step three: Create a secret for your entitlement key
 {: #upgrade-k8s-secret-ibpinfra-fw}
@@ -1447,7 +1447,7 @@ Run the following command to create the secret and add it to your `ibpinfra` nam
 ```
 kubectl create secret docker-registry docker-key-secret --docker-server=cp.icr.io --docker-username=cp --docker-password=<KEY> --docker-email=<EMAIL> -n ibpinfra
 ```
-{:codeblock}
+{: codeblock}
 - Replace `<KEY>` with your entitlement key.
 - Replace `<EMAIL>` with your email address.
 
@@ -1506,7 +1506,7 @@ Run the following command to add the file to your cluster definition:
 ```
 kubectl apply -f rbac.yaml -n ibpinfra
 ```
-{:codeblock}
+{: codeblock}
 
 When the command completes successfully, you should see something similar to:
 ```
@@ -1564,7 +1564,7 @@ After you save the file, run the following commands to add the file to your clus
 oc apply -f ibpinfra-scc.yaml -n ibpinfra
 oc adm policy add-scc-to-user ibpinfra system:serviceaccounts:ibpinfra
 ```
-{:codeblock}
+{: codeblock}
 
 If the commands are successful, you can see a response that is similar to the following example:
 ```
@@ -2071,7 +2071,7 @@ After you save and edit the file, run the following commands. Replace `<NAMESPAC
 ```
 kubectl apply -f ibp-clusterrole.yaml -n <NAMESPACE>
 ```
-{:codeblock}
+{: codeblock}
 Replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.
 
 
@@ -2084,34 +2084,34 @@ Log in to your cluster by using the kubectl CLI. Because each {{site.data.keywor
 ```
 kubectl config set-context --current --namespace=<NAMESPACE>
 ```
-{:codeblock}
+{: codeblock}
 Replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.
 
 When you are operating from your namespace, run the following command to download the operator deployment spec to your local file system:
 ```
 kubectl get deployment ibp-operator -o yaml > operator.yaml
 ```
-{:codeblock}
+{: codeblock}
 
 Open `operator.yaml` in a text editor and save a new copy of the file as `operator-upgrade.yaml`. You need to update the `image:` field with the updated version of the operator image:
 ```yaml
 <LOCAL_REGISTRY>/ibp-operator:2.5.2-20210616-amd64
 ```
-{:codeblock}
+{: codeblock}
 
 You also need to edit the `env:` section of the file. Find the following lines in `operator-upgrade.yaml`:
 ```yaml
 - name: ISOPENSHIFT
   value: "false"
 ```
-{:codeblock}
+{: codeblock}
 
 Replace the values above with the following lines at the same indentation:
 ```yaml
 - name: CLUSTERTYPE
   value: <CLUSTER_TYPE>
 ```
-{:codeblock}
+{: codeblock}
 
 - Replace `<CLUSTER_TYPE>` with `K8S` if you are deploying the platform on open source Kubernetes or Rancher.
 
@@ -2133,13 +2133,13 @@ env:
 - name: CLUSTERTYPE
   value: K8S
 ```
-{:codeblock}
+{: codeblock}
 
 Save the file on your local system. You can then issue the following command upgrade your operator:
 ```
 kubectl apply -f operator-upgrade.yaml
 ```
-{:codeblock}
+{: codeblock}
 
 
 You can use the `kubectl get deployment ibp-operator -o yaml` command to confirm that the command updated the operator spec.
@@ -2159,20 +2159,20 @@ If your console experiences an image pull error, you may need to update the cons
 ```
 kubectl get ibpconsole ibpconsole -o yaml > console.yaml
 ```
-{:codeblock}
+{: codeblock}
 
 Then add the URL of your local registry to the `spec:` section of `console.yaml`. Replace `<LOCAL_REGISTRY>` with the URL of your local registry:
 ```yaml
 spec:
   registryURL: <LOCAL_REGISTRY>
 ```
-{:codeblock}
+{: codeblock}
 
 Save the updated file as `console-upgrade.yaml` on your local system. You can then issue the following command upgrade your console:
 ```
 kubectl apply -f console-upgrade.yaml
 ```
-{:codeblock}
+{: codeblock}
 
 ### Step seven: Upgrade your blockchain nodes
 {: #upgrade-k8-nodes-firewall}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-04-28"
+lastupdated: "2021-06-18"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters
 
@@ -66,7 +66,7 @@ If you want to delete all of your smart contract pods, you can issue this comman
 ```
 kubectl get po -n <PROJECT_NAME> | grep chaincode-execution | cut -d" " -f1 | xargs -I {} kubectl delete po {} -n <PROJECT_NAME>
 ```
-{:codeblock}
+{: codeblock}
 
 Where `<PROJECT_NAME>` is the name of your OpenShift project.
 
@@ -102,7 +102,7 @@ To delete a single pod, issue this command, substituting the `<POD_NAME>` for th
 ```
 oc delete pod <POD_NAME> -n <PROJECT_NAME>
 ```
-{:codeblock}
+{: codeblock}
 
 
 
@@ -113,7 +113,7 @@ If you cannot use your console or the APIs to remove your nodes, you can manuall
 ```
 oc project <PROJECT_NAME>
 ```
-{:codeblock}
+{: codeblock}
 
 
 Then run the following commands to delete all of your blockchain nodes:
@@ -123,7 +123,7 @@ kubectl delete ibpca --all
 kubectl delete ibppeer --all
 kubectl delete ibporderer --all
 ```
-{:codeblock}
+{: codeblock}
 
 You may also choose to only delete all of a single type of node within a namespace, for example, by only issuing `kubectl delete ibppeer --all`.
 
@@ -142,14 +142,14 @@ You can use the OpenShift CLI to remove the {{site.data.keyword.blockchainfull_n
   ```
   oc project <PROJECT_NAME>
   ```
-  {:codeblock}
+  {: codeblock}
 
 3. You can remove the operator deployment using the OpenShift CLI:
 
   ```
   kubectl delete deployment ibp-operator
   ```
-  {:codeblock}
+  {: codeblock}
 
 ## Step Three: Delete the {{site.data.keyword.blockchainfull_notm}} Platform console
 {: #Removing-ocp-step-three}
@@ -159,7 +159,7 @@ After you remove the operator, you can then delete the console without it being 
 ```
 kubectl delete ibpconsole --all
 ```
-{:codeblock}
+{: codeblock}
 
 ## Step Four: Remove policies and secrets
 {: #Removing-ocp-step-four}
@@ -169,7 +169,7 @@ If you are done working with the {{site.data.keyword.blockchainfull_notm}} Platf
 ```
 oc delete project <PROJECT_NAME>
 ```
-{:codeblock}
+{: codeblock}
 
 This command deletes any remaining blockchain nodes that are running on the project, in addition to your console and the {{site.data.keyword.blockchainfull_notm}} Platform operator.
 {:important}

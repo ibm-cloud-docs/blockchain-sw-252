@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-14"
+lastupdated: "2021-06-18"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters
 
@@ -538,7 +538,7 @@ After you edit and save the file, run the following commands. Replace `<PROJECT_
 oc apply -f ibp-clusterrole.yaml
 oc adm policy add-scc-to-group <PROJECT_NAME> system:serviceaccounts:<PROJECT_NAME>
 ```
-{:codeblock}
+{: codeblock}
 
 ### Step four: Upgrade the {{site.data.keyword.blockchainfull_notm}} operator
 {: #upgrade-ocp-steps-252-operator}
@@ -623,7 +623,7 @@ Run the following command to create the project:
 ```
 oc new-project ibpinfra
 ```
-{:codeblock}
+{: codeblock}
 
 When you create a new project, a new namespace is created with the same name as your project. You can verify that the existence of the new namespace by using the `oc get namespace` command:
 ```
@@ -642,7 +642,7 @@ Run the following command to create the secret and add it to your `ibpinfra` nam
 ```
 kubectl create secret docker-registry docker-key-secret --docker-server=cp.icr.io --docker-username=cp --docker-password=<KEY> --docker-email=<EMAIL> -n ibpinfra
 ```
-{:codeblock}
+{: codeblock}
 - Replace `<KEY>` with your entitlement key.
 - Replace `<EMAIL>` with your email address.
 
@@ -700,7 +700,7 @@ Run the following command to add the file to your cluster definition:
 ```
 kubectl apply -f rbac.yaml -n ibpinfra
 ```
-{:codeblock}
+{: codeblock}
 
 When the command completes successfully, you should see something similar to:
 ```
@@ -758,7 +758,7 @@ After you save the file, run the following commands to add the file to your clus
 oc apply -f ibpinfra-scc.yaml -n ibpinfra
 oc adm policy add-scc-to-user ibpinfra system:serviceaccounts:ibpinfra
 ```
-{:codeblock}
+{: codeblock}
 
 If the commands are successful, you can see a response that is similar to the following example:
 ```
@@ -1270,7 +1270,7 @@ After you save and edit the file, run the following commands. Replace `<PROJECT_
 oc apply -f ibp-clusterrole.yaml
 oc adm policy add-scc-to-group <PROJECT_NAME> system:serviceaccounts:<PROJECT_NAME>
 ```
-{:codeblock}
+{: codeblock}
 
 
 ### Step five: Upgrade the {{site.data.keyword.blockchainfull_notm}} operator
@@ -1282,33 +1282,33 @@ Log in to your cluster by using the OpenShift CLI. Because each {{site.data.keyw
 ```
 oc project <PROJECT_NAME>
 ```
-{:codeblock}
+{: codeblock}
 
 When you are operating from your project, run the following command to download the operator deployment spec to your local file system:
 ```
 kubectl get deployment ibp-operator -o yaml > operator.yaml
 ```
-{:codeblock}
+{: codeblock}
 
 Open `operator.yaml` in a text editor and save a new copy of the file as `operator-upgrade.yaml`. Open `operator-upgrade.yaml` in a text editor. You need to update the `image:` field with the updated version of the operator image. You can find the name and tag of the latest operator image below:
 ```yaml
 cp.icr.io/cp/ibp-operator:2.5.2-20210616-amd64
 ```
-{:codeblock}
+{: codeblock}
 
 If you are upgrading from v2.1.0 or v2.1.1, then you also need to edit the `env:` section of the file. Find the following lines in `operator-upgrade.yaml`:
 ```yaml
 - name: ISOPENSHIFT
   value: "true"
 ```
-{:codeblock}
+{: codeblock}
 
 Replace this section with the following lines at the same indentation:
 ```yaml
 - name: CLUSTERTYPE
   value: OPENSHIFT
 ```
-{:codeblock}
+{: codeblock}
 
 When you are finished editing the file, the `env:` section would look similar to the following:
 ```yaml
@@ -1328,13 +1328,13 @@ env:
 - name: CLUSTERTYPE
   value: OPENSHIFT
 ```
-{:codeblock}
+{: codeblock}
 
 Save the file on your local system. You can then issue the following command upgrade your operator:
 ```
 kubectl apply -f operator-upgrade.yaml
 ```
-{:codeblock}
+{: codeblock}
 
 You can use the `kubectl get deployment ibp-operator -o yaml` command to confirm that the command updated the operator spec.
 
@@ -1448,7 +1448,7 @@ Run the following command to create the project:
 ```
 oc new-project ibpinfra
 ```
-{:codeblock}
+{: codeblock}
 
 When you create a new project, a new namespace is created with the same name as your project. You can verify that the existence of the new namespace by using the `oc get namespace` command:
 ```
@@ -1467,7 +1467,7 @@ Run the following command to create the secret and add it to your `ibpinfra` nam
 ```
 kubectl create secret docker-registry docker-key-secret --docker-server=cp.icr.io --docker-username=cp --docker-password=<KEY> --docker-email=<EMAIL> -n ibpinfra
 ```
-{:codeblock}
+{: codeblock}
 - Replace `<KEY>` with your entitlement key.
 - Replace `<EMAIL>` with your email address.
 
@@ -1526,7 +1526,7 @@ Run the following command to add the file to your cluster definition:
 ```
 kubectl apply -f rbac.yaml -n ibpinfra
 ```
-{:codeblock}
+{: codeblock}
 
 When the command completes successfully, you should see something similar to:
 ```
@@ -1584,7 +1584,7 @@ After you save the file, run the following commands to add the file to your clus
 oc apply -f ibpinfra-scc.yaml -n ibpinfra
 oc adm policy add-scc-to-user ibpinfra system:serviceaccounts:ibpinfra
 ```
-{:codeblock}
+{: codeblock}
 
 If the commands are successful, you can see a response that is similar to the following example:
 ```
@@ -2106,26 +2106,26 @@ Log in to your cluster by using the OpenShift CLI. Because each {{site.data.keyw
 ```
 oc project <PROJECT_NAME>
 ```
-{:codeblock}
+{: codeblock}
 
 When you are operating from your project, run the following command to download the operator deployment spec to your local file system:
 ```
 kubectl get deployment ibp-operator -o yaml > operator.yaml
 ```
-{:codeblock}
+{: codeblock}
 
 Open `operator.yaml` in a text editor and save a new copy of the file as `operator-upgrade.yaml`. Open `operator-upgrade.yaml` a text editor. You need to update the `image:` field with the updated version of the operator image:
 ```
 <LOCAL_REGISTRY>/ibp-operator:2.5.2-20210616-amd64
 ```
-{:codeblock}
+{: codeblock}
 
 If you are upgrading from v2.1.0 or v2.1.1, then you also need to edit the `env:` section of the file. Find the following lines in `operator-upgrade.yaml`:
 ```
 - name: ISOPENSHIFT
   value: "true"
 ```
-{:codeblock}
+{: codeblock}
 
 Replace the values above with the following lines at the same indentation:
 ```
@@ -2151,13 +2151,13 @@ env:
 - name: CLUSTERTYPE
   value: OPENSHIFT
 ```
-{:codeblock}
+{: codeblock}
 
 Save the file on your local system. You can then issue the following command upgrade your operator:
 ```
 kubectl apply -f operator-upgrade.yaml
 ```
-{:codeblock}
+{: codeblock}
 
 You can use the `kubectl get deployment ibp-operator -o yaml` command to confirm that the command updated the operator spec.
 
@@ -2182,20 +2182,20 @@ This can happen if you have changed your registry URL between deployments. Run t
 ```
 kubectl get ibpconsole ibpconsole -o yaml > console.yaml
 ```
-{:codeblock}
+{: codeblock}
 
 Then add the URL of your local registry to the `spec:` section of `console.yaml`. Replace `<LOCAL_REGISTRY>` with the URL of your local registry:
 ```
 spec:
   registryURL: <LOCAL_REGISTRY>
 ```
-{:codeblock}
+{: codeblock}
 
 Save the updated file as `console-upgrade.yaml` on your local system. You can then issue the following command upgrade your console:
 ```
 kubectl apply -f console-upgrade.yaml
 ```
-{:codeblock}
+{: codeblock}
 
 ### Step seven: Upgrade your blockchain nodes
 {: #upgrade-ocp-nodes-firewall}

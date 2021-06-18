@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-06-15"
+lastupdated: "2021-06-18"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, firewall, on-premises, air-gapped, on-prem, multicloud, on-prem
 
@@ -209,7 +209,7 @@ If the command is successful, you can see the list of pods in your cluster in yo
 ```
 oc get pods
 ```
-{:codeblock}
+{: codeblock}
 
 If successful, you can see the pods that are running in your default namespace:
 ```
@@ -224,7 +224,7 @@ When you connect to your cluster by using the OpenShift CLI, you also connect by
 ```
 kubectl get pods
 ```
-{:codeblock}
+{: codeblock}
 
 ## Create the `ibpinfra` project for the webhook
 {: #deploy-ocp-ibpinfra}
@@ -238,7 +238,7 @@ Run the following command to create the project.
 ```
 oc new-project ibpinfra
 ```
-{:codeblock}
+{: codeblock}
 
 When you create a new project, a new namespace is created with the same name as your project. You can verify that the existence of the new namespace by using the `oc get namespace` command:
 ```
@@ -256,7 +256,7 @@ Run the following command to create the secret and add it to your `ibpinfra` nam
 ```
 kubectl create secret docker-registry docker-key-secret --docker-server=<LOCAL_REGISTRY> --docker-username=<USER> --docker-password=<LOCAL_REGISTRY_PASSWORD> --docker-email=<EMAIL> -n <NAMESPACE>
 ```
-{:codeblock}
+{: codeblock}
 
 - Replace `<USER>` with your username
 - Replace `<EMAIL>` with your email address.
@@ -319,7 +319,7 @@ Run the following command to add the file to your cluster definition:
 ```
 kubectl apply -f rbac.yaml -n ibpinfra
 ```
-{:codeblock}
+{: codeblock}
 
 When the command completes successfully, you should see something similar to:
 ```
@@ -327,7 +327,7 @@ serviceaccount/webhook created
 role.rbac.authorization.k8s.io/webhook created
 rolebinding.rbac.authorization.k8s.io/ibpinfra created
 ```
-{:codeblock}
+{: codeblock}
 
 ### 2. (OpenShift cluster only) Apply the Security Context Constraint
 {: #webhook-scc}
@@ -380,7 +380,7 @@ After you save the file, run the following commands to add the file to your clus
 oc apply -f ibpinfra-scc.yaml -n ibpinfra
 oc adm policy add-scc-to-user ibpinfra system:serviceaccounts:ibpinfra
 ```
-{:codeblock}
+{: codeblock}
 
 If the commands are successful, you can see a response that is similar to the following example:
 ```
@@ -796,7 +796,7 @@ If you are using the CLI, create a new project by the following command:
 ```
 oc new-project <PROJECT_NAME>
 ```
-{:codeblock}
+{: codeblock}
 
 Replace `<PROJECT_NAME>` with the name of your project.
 
@@ -814,7 +814,7 @@ You can also use the CLI to find the available storage classes for your namespac
 ```
 kubectl get storageclasses
 ```
-{:codeblock}
+{: codeblock}
 
 If you are not using the default storage class, additional configuration is required. See [Storage](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-getting-started#deploy-ocp-storage) for the considerations.
 
@@ -827,7 +827,7 @@ Run the following command to create the secret and add it to your namespace:
 ```
 kubectl create secret docker-registry docker-key-secret --docker-server=<LOCAL_REGISTRY> --docker-username=<USER> --docker-password=<LOCAL_REGISTRY_PASSWORD> --docker-email=<EMAIL> -n <NAMESPACE>
 ```
-{:codeblock}
+{: codeblock}
 
 - Replace `<USER>` with your username
 - Replace `<EMAIL>` with your email address.
@@ -892,7 +892,7 @@ After you save and edit the file, run the following commands to add the file to 
 oc apply -f ibp-scc.yaml -n <PROJECT_NAME>
 oc adm policy add-scc-to-user <PROJECT_NAME> system:serviceaccounts:<PROJECT_NAME>
 ```
-{:codeblock}
+{: codeblock}
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment project.
 
 If the command is successful, you can see a response that is similar to the following example:
@@ -1005,7 +1005,7 @@ After you save and edit the file, run the following commands. Replace `<PROJECT_
 oc apply -f ibp-clusterrole.yaml -n <PROJECT_NAME>
 oc adm policy add-scc-to-group <PROJECT_NAME> system:serviceaccounts:<PROJECT_NAME>
 ```
-{:codeblock}
+{: codeblock}
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment project.
 
 If successful, you can see a response that is similar to the following example:
@@ -1046,7 +1046,7 @@ After you save and edit the file, run the following commands. Replace `<PROJECT_
 oc apply -f ibp-clusterrolebinding.yaml -n <PROJECT_NAME>
 oc adm policy add-cluster-role-to-user <PROJECT_NAME> system:serviceaccounts:<PROJECT_NAME>
 ```
-{:codeblock}
+{: codeblock}
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment project.
 
 If successful, you can see a response that is similar to the following example:
@@ -1181,7 +1181,7 @@ Then, use the `kubectl` CLI to add the custom resource to your project.
 ```
 kubectl apply -f ibp-operator.yaml -n <PROJECT_NAME>
 ```
-{:codeblock}
+{: codeblock}
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment project.
 
 You can confirm that the operator deployed by running the command `kubectl get deployment -n <PROJECT_NAME>`. If your operator deployment is successful, then you can see the following tables with four ones displayed. The operator takes about a minute to deploy.
@@ -1258,7 +1258,7 @@ After you update the file, you can use the CLI to install the console.
 ```
 kubectl apply -f ibp-console.yaml -n <PROJECT_NAME>
 ```
-{:codeblock}
+{: codeblock}
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment project.
 
 Replace `<PROJECT_NAME>` with the name of your project. Before you install the console, you might want to review the advanced deployment options in the next section. The console can take a few minutes to deploy.
@@ -1336,13 +1336,13 @@ spec:
       - dal12
       - dal13
   ```
-  {:codeblock}
+  {: codeblock}
 
 When you finish editing the file, apply it to your cluster.
 ```
 kubectl apply -f ibp-console.yaml -n <PROJECT_NAME>
 ```
-{:codeblock}
+{: codeblock}
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment project.
 
 Unlike the resource allocation, you cannot add zones to a running network. If you have already deployed a console and used it to create nodes on your cluster, you will lose your previous work. After the console restarts, you need to deploy new nodes.    
@@ -1368,7 +1368,7 @@ Navigate to the TLS certificates that you plan to use on your local system. Name
 ```
 kubectl create secret generic console-tls-secret --from-file=tls.crt=./tlscert.pem --from-file=tls.key=./tlskey.pem -n <PROJECT_NAME>
 ```
-{:codeblock}
+{: codeblock}
 
 After you create the secret, add the `tlsSecretName` field to the `spec:` section of `ibp-console.yaml` with one indent added, at the same level as the `resources:` and `clusterdata:` sections of the advanced deployment options. You must provide the name of the TLS secret that you created to the field. The following example deploys a console with the TLS certificate and key stored in a secret named `"console-tls-secret"`. Replace `"<CONSOLE_TLS_SECRET_NAME>"` with `"console-tls-secret"` unless you used a different name for the secret.
 
@@ -1406,7 +1406,7 @@ When you finish editing the file, you can apply it to your cluster in order to s
 ```
 kubectl apply -f ibp-console.yaml -n <PROJECT_NAME>
 ```
-{:codeblock}
+{: codeblock}
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment project.
 
 ### Verifying the console installation
@@ -1428,18 +1428,18 @@ If there is an issue with your deployment, you can view the logs from an individ
 ```
 kubectl get pods -n <PROJECT_NAME>
 ```
-{:codeblock}
+{: codeblock}
 
 Then, use the following command to get the logs from one of the four containers inside the pod:
 ```
 kubectl logs -f <pod_name> <container_name> -n <PROJECT_NAME>
 ```
-{:codeblock}
+{: codeblock}
 As an example, a command to get the logs from the UI container would look like the following example:
 ```
 kubectl logs -f ibpconsole-55cf9db6cc-856nz console -n blockchain-project
 ```
-{:codeblock}
+{: codeblock}
 
 ## Log in to the console
 {: #deploy-ocp-log-in}
