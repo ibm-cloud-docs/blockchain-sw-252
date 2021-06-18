@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-06-04"
+lastupdated: "2021-06-18"
 
 keywords: site map
 subcollection: blockchain-sw-252
@@ -945,6 +945,22 @@ subcollection: blockchain-sw-252
 * [Step Three: Delete the {{site.data.keyword.blockchainfull_notm}} Platform console](/docs/blockchain-sw-252?topic=blockchain-sw-252-Removing-k8#Removing-k8-step-three)
 * [Step Four: Remove policies and secrets](/docs/blockchain-sw-252?topic=blockchain-sw-252-Removing-k8#Removing-k8-step-four)
 
+[Installing the 2.5.2 fix pack](/docs/blockchain-sw-252?topic=blockchain-sw-252-install-fixpack)
+* [What this fix pack contains](/docs/blockchain-sw-252?topic=blockchain-sw-252-install-fixpack#install-fixpack-contents)
+* [Before you begin](/docs/blockchain-sw-252?topic=blockchain-sw-252-install-fixpack#install-fixpack-begin)
+* [Step one: Update the webhook](/docs/blockchain-sw-252?topic=blockchain-sw-252-install-fixpack#install-fixpack-webhook)
+* [Step two: Update the {{site.data.keyword.blockchainfull_notm}} operator](/docs/blockchain-sw-252?topic=blockchain-sw-252-install-fixpack#install-fixpack-operator)
+* [Step three: Update the {{site.data.keyword.blockchainfull_notm}} console](/docs/blockchain-sw-252?topic=blockchain-sw-252-install-fixpack#install-fixpack-console)
+* [Step four: Apply fixes to your blockchain nodes](/docs/blockchain-sw-252?topic=blockchain-sw-252-install-fixpack#install-fixpack-nodes)
+* [Rolling back the fix pack installation](/docs/blockchain-sw-252?topic=blockchain-sw-252-install-fixpack#install-fixpack-rollback)
+* [Installing the 2.5.2 fix pack behind a firewall](/docs/blockchain-sw-252?topic=blockchain-sw-252-install-fixpack#install-fixpack-firewall)
+  * [Before you begin](/docs/blockchain-sw-252?topic=blockchain-sw-252-install-fixpack#install-fixpack-begin-firewall)
+  * [Step one: Pull the latest {{site.data.keyword.blockchainfull_notm}} Platform images](/docs/blockchain-sw-252?topic=blockchain-sw-252-install-fixpack#install-fixpack-images-firewall)
+  * [Step two: Update the webhook](/docs/blockchain-sw-252?topic=blockchain-sw-252-install-fixpack#install-fixpack-webhook-firewall)
+  * [Step three: Update the {{site.data.keyword.blockchainfull_notm}} operator](/docs/blockchain-sw-252?topic=blockchain-sw-252-install-fixpack#install-fixpack-operator-firewall)
+  * [Step four: Update the {{site.data.keyword.blockchainfull_notm}} console](/docs/blockchain-sw-252?topic=blockchain-sw-252-install-fixpack#install-fixpack-console-firewall)
+  * [Step five: Update your blockchain nodes](/docs/blockchain-sw-252?topic=blockchain-sw-252-install-fixpack#install-fixpack-nodes-firewall)
+
 
 ## Using the {{site.data.keyword.blockchainfull_notm}} images
 {: #sitemap_using_the__images}
@@ -1436,6 +1452,8 @@ subcollection: blockchain-sw-252
 
 
 [Release notes](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20)
+
+* [16 June 2021](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#16-06-2021)
 
 * [05 May 2021](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#05-05-2021)
 

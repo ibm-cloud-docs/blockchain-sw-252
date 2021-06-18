@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-25"
+lastupdated: "2021-06-18"
 
 keywords: IBM Blockchain Platform, images, multicloud
 
@@ -126,7 +126,7 @@ Although you can deploy the {{site.data.keyword.blockchainfull_notm}} images on 
 ## Supported Fabric versions
 {: #blockchain-images-supported-fabric}
 
-The {{site.data.keyword.blockchainfull_notm}} Docker images are based on Hyperledger Fabric v1.4.11 and v2.2.2. You can use this documentation to install and deploy the latest version of Fabric used by the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2.
+The {{site.data.keyword.blockchainfull_notm}} Docker images are based on Hyperledger Fabric v1.4.12 and v2.2.3. You can use this documentation to install and deploy the latest version of Fabric used by the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2.
 
 See the [My Support](https://www.ibm.com/support/pages/node/1072956){: external} page for details on what is supported.
 
@@ -175,33 +175,33 @@ The following commands only work with a Docker container registry. Depending on 
 {: note}
 
 ```
-skopeo copy docker://cp.icr.io/cp/ibp-operator:2.5.2-20210505 docker://<LOCAL_REGISTRY>/ibp-operator:2.5.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-init:2.5.2-20210505 docker://<LOCAL_REGISTRY>/ibp-init:2.5.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-console:2.5.2-20210505 docker://<LOCAL_REGISTRY>/ibp-console:2.5.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-grpcweb:2.5.2-20210505 docker://<LOCAL_REGISTRY>/ibp-grpcweb:2.5.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-deployer:2.5.2-20210505 docker://<LOCAL_REGISTRY>/ibp-deployer:2.5.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-fluentd:2.5.2-20210505 docker://<LOCAL_REGISTRY>/ibp-fluentd:2.5.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-couchdb:2.3.1-20210505 docker://<LOCAL_REGISTRY>/ibp-couchdb:2.3.1-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-couchdb:3.1.1-20210505 docker://<LOCAL_REGISTRY>/ibp-couchdb:3.1.1-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-peer:1.4.11-20210505 docker://<LOCAL_REGISTRY>/ibp-peer:1.4.11-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-orderer:1.4.11-20210505 docker://<LOCAL_REGISTRY>/ibp-orderer:1.4.11-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-ca:1.4.9-20210505 docker://<LOCAL_REGISTRY>/ibp-ca:1.4.9-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-dind:1.4.11-20210505 docker://<LOCAL_REGISTRY>/ibp-dind:1.4.11-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-utilities:1.4.11-20210505 docker://<LOCAL_REGISTRY>/ibp-utilities:1.4.11-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-peer:2.2.2-20210505 docker://<LOCAL_REGISTRY>/ibp-peer:2.2.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-orderer:2.2.2-20210505 docker://<LOCAL_REGISTRY>/ibp-orderer:2.2.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-chaincode-launcher:2.2.2-20210505 docker://<LOCAL_REGISTRY>/ibp-chaincode-launcher:2.2.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-utilities:2.2.2-20210505 docker://<LOCAL_REGISTRY>/ibp-utilities:2.2.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-ccenv:2.2.2-20210505 docker://<LOCAL_REGISTRY>/ibp-ccenv:2.2.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-goenv:2.2.2-20210505 docker://<LOCAL_REGISTRY>/ibp-goenv:2.2.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-nodeenv:2.2.2-20210505 docker://<LOCAL_REGISTRY>/ibp-nodeenv:2.2.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-javaenv:2.2.2-20210505 docker://<LOCAL_REGISTRY>/ibp-javaenv:2.2.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-crdwebhook:2.5.2-20210505 docker://<LOCAL_REGISTRY>/ibp-crdwebhook:2.5.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-ccenv:1.4.11-20210505 docker://<LOCAL_REGISTRY>/ibp-ccenv:1.4.11-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-goenv:1.4.11-20210505 docker://<LOCAL_REGISTRY>/ibp-goenv:1.4.11-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-nodeenv:1.4.11-20210505 docker://<LOCAL_REGISTRY>/ibp-nodeenv:1.4.11-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-javaenv:1.4.11-20210505 docker://<LOCAL_REGISTRY>/ibp-javaenv:1.4.11-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-enroller:2.5.2-20210505 docker://<LOCAL_REGISTRY>/ibp-enroller:2.5.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-operator:2.5.2-20210616 docker://<LOCAL_REGISTRY>/ibp-operator:2.5.2-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-init:2.5.2-20210616 docker://<LOCAL_REGISTRY>/ibp-init:2.5.2-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-console:2.5.2-20210616 docker://<LOCAL_REGISTRY>/ibp-console:2.5.2-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-grpcweb:2.5.2-20210616 docker://<LOCAL_REGISTRY>/ibp-grpcweb:2.5.2-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-deployer:2.5.2-20210616 docker://<LOCAL_REGISTRY>/ibp-deployer:2.5.2-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-fluentd:2.5.2-20210616 docker://<LOCAL_REGISTRY>/ibp-fluentd:2.5.2-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-couchdb:2.3.1-20210616 docker://<LOCAL_REGISTRY>/ibp-couchdb:2.3.1-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-couchdb:3.1.1-20210616 docker://<LOCAL_REGISTRY>/ibp-couchdb:3.1.1-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-peer:1.4.12-20210616 docker://<LOCAL_REGISTRY>/ibp-peer:1.4.12-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-orderer:1.4.12-20210616 docker://<LOCAL_REGISTRY>/ibp-orderer:1.4.12-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-ca:1.4.9-20210616 docker://<LOCAL_REGISTRY>/ibp-ca:1.4.9-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-dind:1.4.12-20210616 docker://<LOCAL_REGISTRY>/ibp-dind:1.4.12-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-utilities:1.4.12-20210616 docker://<LOCAL_REGISTRY>/ibp-utilities:1.4.12-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-peer:2.2.3-20210616 docker://<LOCAL_REGISTRY>/ibp-peer:2.2.3-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-orderer:2.2.3-20210616 docker://<LOCAL_REGISTRY>/ibp-orderer:2.2.3-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-chaincode-launcher:2.2.3-20210616 docker://<LOCAL_REGISTRY>/ibp-chaincode-launcher:2.2.3-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-utilities:2.2.3-20210616 docker://<LOCAL_REGISTRY>/ibp-utilities:2.2.3-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-ccenv:2.2.3-20210616 docker://<LOCAL_REGISTRY>/ibp-ccenv:2.2.3-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-goenv:2.2.3-20210616 docker://<LOCAL_REGISTRY>/ibp-goenv:2.2.3-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-nodeenv:2.2.3-20210616 docker://<LOCAL_REGISTRY>/ibp-nodeenv:2.2.3-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-javaenv:2.2.3-20210616 docker://<LOCAL_REGISTRY>/ibp-javaenv:2.2.3-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-crdwebhook:2.5.2-20210616 docker://<LOCAL_REGISTRY>/ibp-crdwebhook:2.5.2-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-ccenv:1.4.12-20210616 docker://<LOCAL_REGISTRY>/ibp-ccenv:1.4.12-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-goenv:1.4.12-20210616 docker://<LOCAL_REGISTRY>/ibp-goenv:1.4.12-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-nodeenv:1.4.12-20210616 docker://<LOCAL_REGISTRY>/ibp-nodeenv:1.4.12-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-javaenv:1.4.12-20210616 docker://<LOCAL_REGISTRY>/ibp-javaenv:1.4.12-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-enroller:2.5.2-20210616 docker://<LOCAL_REGISTRY>/ibp-enroller:2.5.2-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 ```
 {: codeblock}
 
@@ -223,7 +223,7 @@ If you are using the open source configuration files, you need to make the follo
 
 3. If you are deploying a peer node, you need to use the core chaincode variables to instruct the peer to build chaincode using the {{site.data.keyword.blockchainfull_notm}} certified images. For example, if you are using Go chaincode, you need to set the following variables:
   ```
-  CORE_CHAINCODE_NODE_RUNTIME=cp.icr.io/cp/ibp-nodeenv:1.4.9-20210112-amd64
+  CORE_CHAINCODE_NODE_RUNTIME=cp.icr.io/cp/ibp-nodeenv:1.4.12-20210616-amd64
   CORE_CHAINCODE_GOLANG_DYNAMICLINK=true
   ```
 
@@ -317,13 +317,13 @@ orderer-base:
   working_dir: /opt/gopath/src/github.com/hyperledger/fabric
   command: orderer
 ```
-{:codeblock}
+{: codeblock}
 
-To deploy an ordering node by using the {{site.data.keyword.blockchainfull_notm}} image, change the `image` field to the tag of the {{site.data.keyword.blockchainfull_notm}} image, `cp.icr.io/cp/ibp-orderer:1.4.9-20210112-amd64`. Accept the license by adding the field of `LICENSE=accept`. You then need to add the `FABRIC_CFG_PATH` environment variable and set the path to the folder where you mount the configuration files. Set the `working_dir` variable to the same path. After your changes, the orderer section would look like the example below:
+To deploy an ordering node by using the {{site.data.keyword.blockchainfull_notm}} image, change the `image` field to the tag of the {{site.data.keyword.blockchainfull_notm}} image, `cp.icr.io/cp/ibp-orderer:1.4.12-20210616-amd64`. Accept the license by adding the field of `LICENSE=accept`. You then need to add the `FABRIC_CFG_PATH` environment variable and set the path to the folder where you mount the configuration files. Set the `working_dir` variable to the same path. After your changes, the orderer section would look like the example below:
 
 ```yaml
 orderer-base:
-  image: cp.icr.io/cp/ibp-orderer:1.4.9-20210112-amd64
+  image: cp.icr.io/cp/ibp-orderer:1.4.12-20210616-amd64
   environment:
     - LICENSE=accept
     - FABRIC_CFG_PATH=/etc/hyperledger/fabric
@@ -346,20 +346,20 @@ orderer-base:
   working_dir: /etc/hyperledger/fabric
   command: orderer
 ```
-{:codeblock}
+{: codeblock}
 
 If you are deploying a peer, you can make the same changes to the peer section of the `peer-base.yaml` file. However, you need add the core chaincode variables and specify images that you downloaded from {{site.data.keyword.IBM_notm}} as the chaincode builder and the runtime environment. You also need to set `DYNAMICLINK=true` After your changes, the peer section would look like the example below:
 
 ```yaml
 services:
   peer-base:
-    image: cp.icr.io/cp/ibp-peer:1.4.9-20210112-amd64
+    image: cp.icr.io/cp/ibp-peer:1.4.12-20210616-amd64
     environment:
       - LICENSE=accept
       - FABRIC_CFG_PATH=/etc/hyperledger/fabric
-      - CORE_CHAINCODE_BUILDER=cp.icr.io/cp/ibp-ccenv:1.4.9-20210112-amd64
-      - CORE_CHAINCODE_GOLANG_RUNTIME=cp.icr.io/cp/ibp-goenv:1.4.9-20210112-amd64
-      - CORE_CHAINCODE_NODE_RUNTIME=cp.icr.io/cp/ibp-nodeenv:1.4.9-20210112-amd64
+      - CORE_CHAINCODE_BUILDER=cp.icr.io/cp/ibp-ccenv:1.4.12-20210616-amd64
+      - CORE_CHAINCODE_GOLANG_RUNTIME=cp.icr.io/cp/ibp-goenv:1.4.12-20210616-amd64
+      - CORE_CHAINCODE_NODE_RUNTIME=cp.icr.io/cp/ibp-nodeenv:1.4.12-20210616-amd64
       - CORE_CHAINCODE_GOLANG_DYNAMICLINK=true
       - CORE_CHAINCODE_NODE_DYNAMICLINK=true
       - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
@@ -379,7 +379,7 @@ services:
     working_dir: /etc/hyperledger/fabric
     command: peer node start
 ```
-{:codeblock}
+{: codeblock}
 
 The files that are mounted into the peer and orderer containers are specified in the `docker-compose-base.yaml` file. In the `volumes:` section, you can add the following line ``../../config:/etc/hyperledger/fabric`` to mount the peer and orderer configuration files that are located in the `fabric-samples` directory. You need to remove the `PKCS11` section of the `fabric-samples/config/core.yaml` file. The ledger data folder is mounted in the `/var/hyperledger/production`. We need to change this path to an existing folder to change the permissions of that folder. After your changes, `docker-compose-base.yaml` would look like the example below for an ordering node and one of your peers:
 
@@ -421,22 +421,22 @@ peer0.org1.example.com:
   ports:
     - 7051:7051
 ```
-{:codeblock}
+{: codeblock}
 
 After you edit the file, you need to change the security permissions of the folders that are mounted to store your certificates and ledger data. Your peer MSP folder and TLS certificates are both stored in the `crypto-config` folder that is created when you run `./byfn.sh generate`. To simplify the deployment, the example also mounts a folder in this directory to store our ledger data. You can run the following commands to generate the crypto material and folders, and then provide those folders the required permissions:
 ```
 ./byfn.sh generate
 chmod -R 777 crypto-config
 ```
-{:codeblock}
+{: codeblock}
 
 If you want to deploy a raft ordering service, you need to make the same edits to the `docker-compose-etcdraft2.yaml` file that you made to the order section of `docker-compose-base.yaml`. You need to create ledger folders for each ordering node and change the permissions of each folder.
 
 After you update the relevant files, you can test that you can deploy your images by running the following command:
 ```
-sudo ./byfn.sh up -i 1.4.6
+sudo ./byfn.sh up -i 1.4.12
 ```
-{:codeblock}
+{: codeblock}
 
 You can use the updates that are provided in this example to deploy the {{site.data.keyword.blockchainfull_notm}} images in the environment of your choice. The Fabric samples that are published by the Hyperledger community are intended to be used only as examples. Do not use the samples as templates for deploying production networks.
 
@@ -454,7 +454,7 @@ networks:
 services:
 
   ca-org1:
-    image: cp.icr.io/cp/ibp-ca:1.4.9-20210112-amd64
+    image: cp.icr.io/cp/ibp-ca:1.4.12-20210616-amd64
     environment:
       - LICENSE=accept
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
@@ -468,13 +468,13 @@ services:
       - fabric-ca-config:/etc/hyperledger/fabric-ca-server
     container_name: ca_org1
 ```
-{:codeblock}
+{: codeblock}
 
 You need to mount a copy of the Fabric CA server configuration file in the CA container. Create a folder named `fabric-ca-config` and save a copy of the [Fabric CA server configuration file](https://hyperledger-fabric-ca.readthedocs.io/en/release-1.4/serverconfig.html) inside as `fabric-ca-server-config.yaml`. Update the sample file with information about your organization and the domain name of your CA. The Docker compose file will use this file to start the Fabric CA server and set the username and password of your CA admin to `admin` and `adminpw`. You can find more information about the Fabric CA server in the [Fabric CA users guide](https://hyperledger-fabric-ca.readthedocs.io/en/latest/users-guide.html). After you have saved `docker-compose-ibm-ca.yaml` and the configuration file, you can deploy the CA using the following command:
 ```
 docker-compose -f docker-compose-ibm-ca.yaml up
 ```
-{:codeblock}
+{: codeblock}
 
 When the CA is deployed, you can use the Fabric CA client or the Fabric SDKs to register new identities and generate certificates. For more information about how you would set up a blockchain network by using Certificate Authorities, see the [Fabric CA Operations guide](https://hyperledger-fabric-ca.readthedocs.io/en/latest/operations_guide.html).
 
@@ -488,7 +488,7 @@ After we deploy a network, we can use the gRPC web proxy to import a peer or ord
   - CORE_OPERATIONS_LISTENADDRESS=0.0.0.0:9443
   - CORE_OPERATIONS_TLS_ENABLED=false
   ```
-  {:codeblock}
+  {: codeblock}
 
   You can also need to add the `9443` to the list of ports exposed by the peer.
   ```yaml
@@ -496,14 +496,14 @@ After we deploy a network, we can use the gRPC web proxy to import a peer or ord
   - 7051:7051
   - 9443:9443
   ```
-  {:codeblock}
+  {: codeblock}
 
 2. You need TLS certificates and keys to secure communication between your the console and your node. Create a folder that you will use for the TLS material and change into that directory.
   ```
   mkdir peer0.org1-proxy-certs
   cd peer0.org1-proxy-certs
   ```
-  {:codeblock}
+  {: codeblock}
 
   This folder will be mounted in the gRPC web proxy container in a later step.
 
@@ -514,7 +514,7 @@ After we deploy a network, we can use the gRPC web proxy to import a peer or ord
     ```
     openssl genrsa -out private.key 4096
     ```
-    {:codeblock}
+    {: codeblock}
 
   - Create a `ssl.conf` file using the template below. Replace the `_default` variables with the values of your choice. Use the `alt_names` section to provide the domain of your cluster. This domain needs to match the public URL that you will select for the web proxy.
 
@@ -552,27 +552,27 @@ After we deploy a network, we can use the gRPC web proxy to import a peer or ord
     DNS.1   = web_proxy.peer0.org1.example.com
     DNS.2   = *.example.com
     ```
-    {:codeblock}
+    {: codeblock}
 
   - Use the `ssl.conf` file and your private key to create a certificate signing request. Click enter to accept all the values you provided using the `_default` variables.
 
     ```
     openssl req -new -sha256 -out private.csr -key private.key -config ssl.conf
     ```
-    {:codeblock}
+    {: codeblock}
 
   - Create the certificate:
 
     ```
     openssl x509 -req -sha256 -days 3650 -in private.csr -signkey private.key -out public.crt -extensions req_ext -extfile ssl.conf
     ```
-    {:codeblock}
+    {: codeblock}
 
 4. In addition to the TLS certificates used by the proxy, the web proxy also needs the public TLS certificate used by the peer or ordering node. Use the following command to copy the `peer0.org1.example.com` TLS certificate into your the current folder.
   ```
   cp ../crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt ca.crt
   ```
-  {:codeblock}
+  {: codeblock}
 
   After copying the TLS certificate, the `peer0.org1-proxy-certs` should contain the peer TLS certificate and the web proxy TLS certificate and key:
   ```
@@ -591,7 +591,7 @@ After we deploy a network, we can use the gRPC web proxy to import a peer or ord
   services:
     web_proxy.peer0.org1.example.com:
       container_name: web_proxy.peer0.org1.example.com
-      image: cp.icr.io/cp/ibp-grpcweb:2.5.2-20210505-amd64
+      image: cp.icr.io/cp/ibp-grpcweb:2.5.2-20210616-amd64
       environment:
         - LICENSE=accept
         - BACKEND_ADDRESS=peer0.org1.example.com:7051
@@ -613,7 +613,7 @@ After we deploy a network, we can use the gRPC web proxy to import a peer or ord
       networks:
         - byfn
   ```
-  {:codeblock}
+  {: codeblock}
 
   The Docker Compose file mounts the folder where we stored the TLS certificates in the web proxy container inside a folder named `certs/tls`. We need to specify several important environment variables that point to the certificates inside this folder:
   - `SERVER_TLS_CERT_FILE` needs to point to the certificate you created using OpenSSL.
@@ -638,7 +638,7 @@ After we deploy a network, we can use the gRPC web proxy to import a peer or ord
     "location": "mycluster"
   }
   ```
-  {:codeblock}
+  {: codeblock}
 
   Use the following values to complete the file:
   - `"name"`: The display name for the peer in the {{site.data.keyword.blockchainfull_notm}} Platform console.
@@ -654,13 +654,13 @@ After we deploy a network, we can use the gRPC web proxy to import a peer or ord
     export FLAG=$(if [ "$(uname -s)" == "Linux" ]; then echo "-w 0"; else echo "-b 0"; fi)
     cat peer0.org1-proxy-certs/ca.crt | base64 $FLAG
     ```
-    {:codeblock}
+    {: codeblock}
 
 7. Bring up the web proxy using the following command:
   ```
   docker-compose -f docker-compose-proxy.yaml up
   ```
-  {:codeblock}
+  {: codeblock}
 
   If the web proxy is created successfully, you should see messages in your logs similar to the following:
   ```

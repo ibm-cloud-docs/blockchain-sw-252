@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-19"
+lastupdated: "2021-06-18"
 
 
 keywords: release note, latest changes, Hyperledger Fabric, multicloud
@@ -32,14 +32,27 @@ subcollection: blockchain-sw-252
     </p>
 </div>
 
-Use these release notes that are grouped by date to learn about the latest changes to {{site.data.keyword.blockchainfull}} Platform for {{site.data.keyword.cloud_notm}} which is built on Hyperledger Fabric v1.4.11 and v2.2.2.
+Use these release notes that are grouped by date to learn about the latest changes to {{site.data.keyword.blockchainfull}} Platform for {{site.data.keyword.cloud_notm}} which is built on Hyperledger Fabric v1.4.12 and v2.2.3.
 {:shortdesc}
 
+
+[Installing the 2.5.2 fix pack](/docs/blockchain-sw-252?topic=blockchain-sw-252-install-fixpack)  
+For instructions on how to apply the latest fix pack to your blockchain instance.  
 
 
 
 [Installing patches](/docs/blockchain?topic=blockchain-ibp-console-manage-console#ibp-console-manage-patch)  
-For instructions on how to apply patches to your existing blockchain nodes. Patches are cumulative. This means that if multiple patches, for example `1.4.7-0` and `1.4.11-2`, are available for a node, you should always select the latest patch, `1.4.11-2` in this case, wherever possible because it includes the fixes from the previous patches as well.   
+For instructions on how to apply patches to your existing blockchain nodes. Patches are cumulative. This means that if multiple patches, for example `1.4.7-0` and `1.4.12-1`, are available for a node, you should always select the latest patch, `1.4.12-1` in this case, wherever possible because it includes the fixes from the previous patches as well.   
+
+## 16 June 2021
+{: #16-06-2021}
+
+**Certificate Authority (CA) patch 1.4.9-8, Peer and ordering node patch 1.4.12-1, 2.2.3-1**
+
+Miscellaneous bug fixes and security patches.
+
+The platform has been updated to include support for Hyperledger Fabric v1.4.12 and v2.2.3.
+
 
 ## 05 May 2021
 {: #05-05-2021}

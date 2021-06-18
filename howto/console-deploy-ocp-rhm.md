@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-04-08"
+lastupdated: "2021-06-18"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, Red Hat Marketplace, subscription, operators
 
@@ -120,7 +120,7 @@ Run the following commands to add the file to your cluster and add the constrain
 oc apply -f ibp-scc.yaml -n <PROJECT_NAME>
 oc adm policy add-scc-to-user <PROJECT_NAME> system:serviceaccounts:<PROJECT_NAME>
 ```
-{:codeblock}
+{: codeblock}
 
 Replace `<PROJECT_NAME>` with the name that you want to use for your {{site.data.keyword.blockchainfull_notm}} Platform deployment project.
 
@@ -129,7 +129,7 @@ When the command is successful, you see a response that is similar to the follow
 securitycontextconstraints.security.openshift.io/blockchain-project created
 scc "blockchain-project" added to: ["system:serviceaccounts:blockchain-project"]
 ```
-{:codeblock}
+{: codeblock}
 
 ## Step two: Apply the image pull secrets
 {: #deploy-ocp-rhm-secrets}
@@ -154,7 +154,7 @@ To apply the image pull secrets, go to the **OpenShift Container Platform**.
       name: regcred
       namespace: <Your Blockchain Platform namespace>
     ```
-    {:codeblock}
+    {: codeblock}
 
 9. Your complete set of pull-secret YAML code is now as follows:
     ```
@@ -166,7 +166,7 @@ To apply the image pull secrets, go to the **OpenShift Container Platform**.
     data: <Your secret data here>
     type: kubernetes.io/dockerconfigjson
     ```
-    {:codeblock}
+    {: codeblock}
   
 10. Click **Create** to finish your setup.
 
@@ -224,7 +224,7 @@ spec:
   serviceAccountName: ibm-blockchain
   version: 2.5.2
 ```
-{:codeblock}
+{: codeblock}
 
 - Accept the IBM Blockchain Platform license by replacing `<ACCEPT>` with the text `true`.
 - Replace `<EMAIL>` with the email address that you want to use for the console administrator.
@@ -308,7 +308,7 @@ spec:
         cpu: 100m
         memory: 200Mi
 ```
-{:codeblock}
+{: codeblock}
 
 
 - You can use the `resources:` section to allocate more resources to your console. The values in the example file are the default values allocated to each container. Allocating more resources to your console allows you to operate a larger number of nodes or channels.
@@ -321,7 +321,7 @@ spec:
       - dal12
       - dal13
   ```
-  {:codeblock}
+  {: codeblock}
 
 When you finish editing the file, click **Create**.
 
@@ -348,7 +348,7 @@ Navigate to the TLS certificates that you plan to use on your local system. Name
 ```
 kubectl create secret generic console-tls-secret --from-file=tls.crt=./tlscert.pem --from-file=tls.key=./tlskey.pem -n <PROJECT_NAME>
 ```
-{:codeblock}
+{: codeblock}
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment project.
 
 After you create the secret, add the `tlsSecretName` field to the `spec:` section with one indent added, at the same level as the `resources:` and `clusterdata:` sections of the advanced deployment options. You must provide the name of the TLS secret that you created to the field. The following example deploys a console with the TLS certificate and key that is stored in a secret named `"console-tls-secret"`:
@@ -386,7 +386,7 @@ spec:
       - dal12
       - dal13
 ```
-{:codeblock}
+{: codeblock}
 
 ## Step four: Verify the console installation
 {: #console-deploy-ocp-verify-install}
@@ -415,21 +415,21 @@ If there is an issue with your deployment, you can view the logs from one of the
 ```
 kubectl get pods -n <PROJECT_NAME>
 ```
-{:codeblock}
+{: codeblock}
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment project.
 
 Then, use the following command to get the logs from one of the four containers:
 ```
 kubectl logs -f <pod_name> <container_name> -n <PROJECT_NAME>
 ```
-{:codeblock}
+{: codeblock}
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment project.
 
 As an example, a command to get the logs from the UI container would look like the following example:
 ```
 kubectl logs -f ibpconsole-55cf9db6cc-856nz optools -n blockchain-project
 ```
-{:codeblock}
+{: codeblock}
 
 ## Step five: Log in to the console
 {: #deploy-ocp-rhm-log-in}
@@ -474,14 +474,14 @@ Alternatively, you can use the CLI to switch to the OpenShift project that you c
   ```
   oc project <PROJECT_NAME>
   ```
-  {:codeblock}
+  {: codeblock}
 
 And then remove any instances or the IBM Blockchain operator by using the OpenShift CLI. For example, this command would delete the operator:
 
   ```
   kubectl delete deployment ibp-operator
   ```
-  {:codeblock}
+  {: codeblock}
 
 ## Next steps
 {: #console-deploy-ocp-rhm-next-steps}
@@ -506,7 +506,7 @@ If you are using the CLI, create a new project by the following command:
 ```
 oc new-project <PROJECT_NAME>
 ```
-{:codeblock}
+{: codeblock}
 
 Replace `<PROJECT_NAME>` with the name that you want to use for your {{site.data.keyword.blockchainfull_notm}} Platform deployment project.
 
@@ -524,5 +524,5 @@ You can also use the CLI to find the available storage classes for your namespac
 ```
 kubectl get storageclasses
 ```
-{:codeblock}
+{: codeblock}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-11"
+lastupdated: "2021-06-18"
 
 keywords: network components, Kubernetes, OpenShift, allocate resources, batch timeout, reallocate resources, LevelDB, CouchDB, ordering nodes, ordering, add and remove, governance
 
@@ -217,7 +217,7 @@ If you want to delete all of your smart contract pods, you can issue this comman
 ```
 kubectl get po -n <PROJECT_NAME> | grep chaincode-execution | cut -d" " -f1 | xargs -I {} kubectl delete po {} -n <PROJECT_NAME>
 ```
-{:codeblock}
+{: codeblock}
 
 Where `<PROJECT_NAME>` is the name of your OpenShift project.
 
@@ -253,7 +253,7 @@ To delete a single pod, issue this command, substituting the `<POD_NAME>` for th
 ```
 oc delete pod <POD_NAME> -n <PROJECT_NAME>
 ```
-{:codeblock}
+{: codeblock}
 
 
 
@@ -264,7 +264,7 @@ If you cannot use your console or the APIs to remove your nodes, you can manuall
 ```
 oc project <PROJECT_NAME>
 ```
-{:codeblock}
+{: codeblock}
 
 
 Then run the following commands to delete all of your blockchain nodes:
@@ -274,7 +274,7 @@ kubectl delete ibpca --all
 kubectl delete ibppeer --all
 kubectl delete ibporderer --all
 ```
-{:codeblock}
+{: codeblock}
 
 You may also choose to only delete all of a single type of node within a namespace, for example, by only issuing `kubectl delete ibppeer --all`.
 

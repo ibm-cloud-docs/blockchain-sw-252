@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-05-25"
+lastupdated: "2021-06-18"
 
 keywords: IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, delete, remove
 
@@ -87,14 +87,14 @@ To delete a single pod, issue this command, substituting the `<POD_NAME>` for th
 ```
 oc delete pod <POD_NAME> -n <NAMESPACE>
 ```
-{:codeblock}
+{: codeblock}
 
 If you cannot use your console or the APIs to remove your nodes, you can manually remove all of the nodes from your cluster by using the OpenShift CLI. First, set your namespace:
 
 ```
 kubectl config set-context --current --namespace=<NAMESPACE>
 ```
-{:codeblock}
+{: codeblock}
 
 Then run the following commands to delete all of your blockchain nodes.
 
@@ -103,7 +103,7 @@ kubectl delete ibpca --all
 kubectl delete ibppeer --all
 kubectl delete ibporderer --all
 ```
-{:codeblock}
+{: codeblock}
 
 You may also choose to only delete all of a single type of node within a namespace, for example, by only issuing `kubectl delete ibppeer --all`.
 {: tip}
@@ -120,14 +120,14 @@ You can use the kubectl CLI to remove the {{site.data.keyword.blockchainfull_not
   ```
   kubectl config set-context --current --namespace=<NAMESPACE>
   ```
-  {:codeblock}
+  {: codeblock}
 
 3. You can remove the operator deployment using the kubectl CLI:
 
   ```
   kubectl delete deployment ibp-operator
   ```
-  {:codeblock}
+  {: codeblock}
 
 ## Step Three: Delete the {{site.data.keyword.blockchainfull_notm}} Platform console
 {: #Removing-k8-step-three}
@@ -137,7 +137,7 @@ After you remove the operator, you can then delete the console without it being 
 ```
 kubectl delete ibpconsole --all
 ```
-{:codeblock}
+{: codeblock}
 
 ## Step Four: Remove policies and secrets
 {: #Removing-k8-step-four}
@@ -147,7 +147,7 @@ If you are done working with the {{site.data.keyword.blockchainfull_notm}} Platf
 ```
 kubectl delete namespaces <NAMESPACE>
 ```
-{:codeblock}
+{: codeblock}
 
 This command deletes any remaining blockchain nodes that are running on the project, in addition to your console and the {{site.data.keyword.blockchainfull_notm}} Platform operator.
 {:important}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-04"
+lastupdated: "2021-06-18"
 
 keywords: IBM Blockchain Platform, administrate, add user, remove user, password, APIs, authentication, view logs
 
@@ -389,14 +389,14 @@ Component logs can be viewed from the command line by using the [kubectl CLI com
   ```
   kubectl get pods
   ```
-  {:codeblock}
+  {: codeblock}
 
   Then, run the following command to retrieve the logs for the node container that resides inside the pod:
 
   ```
   kubectl logs -f <pod_name> -c <node>
   ```
-  {:codeblock}
+  {: codeblock}
 
   Replace `<pod_name>` with the name of your pod from the command output above.  
   Replace `<node>` with `ca`, `peer`, or `orderer` to view the logs for your node.  
@@ -427,7 +427,7 @@ First get a list of all of the chaincode pods running in your cluster:
 ```
 kubectl get po -n <NAMESPACE> | grep chaincode-execution | cut -d" " -f1 | xargs -I {} kubectl get po {} -n <NAMESPACE> --show-labels
 ```
-{:codeblock}
+{: codeblock}
 Replacing `<NAMESPACE>` with the name of your cluster namespace or OpenShift project.  
 
 You should see results similar to:
@@ -444,7 +444,7 @@ Then, to view the logs for a specific smart contract pod, run the command:
 ```
 kubectl logs -f <SMART_CONTRACT_POD> -n <NAMESPACE>
 ```
-{:codeblock}
+{: codeblock}
 
 Replace
 - `<SMART_CONTRACT_POD>` with the name of the pod where the chaincode is running.
@@ -465,7 +465,7 @@ If your peer is based on the Fabric v1.4 image, you can run the following kubect
 ```
 kubectl  logs -f <PEER_POD> -c chaincode-logs -n <NAMESPACE>
 ```
-{:codeblock}
+{: codeblock}
 
 Replace
 - `<PEER_POD>` with the name of the peer pod where the smart contract is running. Use the command `kubectl get po` to get the list of running pods.

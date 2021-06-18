@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-06-04"
+lastupdated: "2021-06-18"
 
 keywords: IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, firewall, on-premises, air-gapped, on-prem, multicloud, on-prem
 
@@ -198,33 +198,33 @@ The following commands only work with a Docker container registry. Depending on 
 {: note}
 
 ```
-skopeo copy docker://cp.icr.io/cp/ibp-operator:2.5.2-20210505 docker://<LOCAL_REGISTRY>/ibp-operator:2.5.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-init:2.5.2-20210505 docker://<LOCAL_REGISTRY>/ibp-init:2.5.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-console:2.5.2-20210505 docker://<LOCAL_REGISTRY>/ibp-console:2.5.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-grpcweb:2.5.2-20210505 docker://<LOCAL_REGISTRY>/ibp-grpcweb:2.5.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-deployer:2.5.2-20210505 docker://<LOCAL_REGISTRY>/ibp-deployer:2.5.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-fluentd:2.5.2-20210505 docker://<LOCAL_REGISTRY>/ibp-fluentd:2.5.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-couchdb:2.3.1-20210505 docker://<LOCAL_REGISTRY>/ibp-couchdb:2.3.1-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-couchdb:3.1.1-20210505 docker://<LOCAL_REGISTRY>/ibp-couchdb:3.1.1-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-peer:1.4.11-20210505 docker://<LOCAL_REGISTRY>/ibp-peer:1.4.11-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-orderer:1.4.11-20210505 docker://<LOCAL_REGISTRY>/ibp-orderer:1.4.11-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-ca:1.4.9-20210505 docker://<LOCAL_REGISTRY>/ibp-ca:1.4.9-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-dind:1.4.11-20210505 docker://<LOCAL_REGISTRY>/ibp-dind:1.4.11-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-utilities:1.4.11-20210505 docker://<LOCAL_REGISTRY>/ibp-utilities:1.4.11-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-peer:2.2.2-20210505 docker://<LOCAL_REGISTRY>/ibp-peer:2.2.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-orderer:2.2.2-20210505 docker://<LOCAL_REGISTRY>/ibp-orderer:2.2.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-chaincode-launcher:2.2.2-20210505 docker://<LOCAL_REGISTRY>/ibp-chaincode-launcher:2.2.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-utilities:2.2.2-20210505 docker://<LOCAL_REGISTRY>/ibp-utilities:2.2.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-ccenv:2.2.2-20210505 docker://<LOCAL_REGISTRY>/ibp-ccenv:2.2.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-goenv:2.2.2-20210505 docker://<LOCAL_REGISTRY>/ibp-goenv:2.2.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-nodeenv:2.2.2-20210505 docker://<LOCAL_REGISTRY>/ibp-nodeenv:2.2.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-javaenv:2.2.2-20210505 docker://<LOCAL_REGISTRY>/ibp-javaenv:2.2.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-crdwebhook:2.5.2-20210505 docker://<LOCAL_REGISTRY>/ibp-crdwebhook:2.5.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-ccenv:1.4.11-20210505 docker://<LOCAL_REGISTRY>/ibp-ccenv:1.4.11-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-goenv:1.4.11-20210505 docker://<LOCAL_REGISTRY>/ibp-goenv:1.4.11-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-nodeenv:1.4.11-20210505 docker://<LOCAL_REGISTRY>/ibp-nodeenv:1.4.11-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-javaenv:1.4.11-20210505 docker://<LOCAL_REGISTRY>/ibp-javaenv:1.4.11-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-enroller:2.5.2-20210505 docker://<LOCAL_REGISTRY>/ibp-enroller:2.5.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-operator:2.5.2-20210616 docker://<LOCAL_REGISTRY>/ibp-operator:2.5.2-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-init:2.5.2-20210616 docker://<LOCAL_REGISTRY>/ibp-init:2.5.2-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-console:2.5.2-20210616 docker://<LOCAL_REGISTRY>/ibp-console:2.5.2-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-grpcweb:2.5.2-20210616 docker://<LOCAL_REGISTRY>/ibp-grpcweb:2.5.2-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-deployer:2.5.2-20210616 docker://<LOCAL_REGISTRY>/ibp-deployer:2.5.2-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-fluentd:2.5.2-20210616 docker://<LOCAL_REGISTRY>/ibp-fluentd:2.5.2-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-couchdb:2.3.1-20210616 docker://<LOCAL_REGISTRY>/ibp-couchdb:2.3.1-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-couchdb:3.1.1-20210616 docker://<LOCAL_REGISTRY>/ibp-couchdb:3.1.1-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-peer:1.4.12-20210616 docker://<LOCAL_REGISTRY>/ibp-peer:1.4.12-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-orderer:1.4.12-20210616 docker://<LOCAL_REGISTRY>/ibp-orderer:1.4.12-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-ca:1.4.9-20210616 docker://<LOCAL_REGISTRY>/ibp-ca:1.4.9-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-dind:1.4.12-20210616 docker://<LOCAL_REGISTRY>/ibp-dind:1.4.12-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-utilities:1.4.12-20210616 docker://<LOCAL_REGISTRY>/ibp-utilities:1.4.12-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-peer:2.2.3-20210616 docker://<LOCAL_REGISTRY>/ibp-peer:2.2.3-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-orderer:2.2.3-20210616 docker://<LOCAL_REGISTRY>/ibp-orderer:2.2.3-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-chaincode-launcher:2.2.3-20210616 docker://<LOCAL_REGISTRY>/ibp-chaincode-launcher:2.2.3-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-utilities:2.2.3-20210616 docker://<LOCAL_REGISTRY>/ibp-utilities:2.2.3-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-ccenv:2.2.3-20210616 docker://<LOCAL_REGISTRY>/ibp-ccenv:2.2.3-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-goenv:2.2.3-20210616 docker://<LOCAL_REGISTRY>/ibp-goenv:2.2.3-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-nodeenv:2.2.3-20210616 docker://<LOCAL_REGISTRY>/ibp-nodeenv:2.2.3-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-javaenv:2.2.3-20210616 docker://<LOCAL_REGISTRY>/ibp-javaenv:2.2.3-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-crdwebhook:2.5.2-20210616 docker://<LOCAL_REGISTRY>/ibp-crdwebhook:2.5.2-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-ccenv:1.4.12-20210616 docker://<LOCAL_REGISTRY>/ibp-ccenv:1.4.12-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-goenv:1.4.12-20210616 docker://<LOCAL_REGISTRY>/ibp-goenv:1.4.12-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-nodeenv:1.4.12-20210616 docker://<LOCAL_REGISTRY>/ibp-nodeenv:1.4.12-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-javaenv:1.4.12-20210616 docker://<LOCAL_REGISTRY>/ibp-javaenv:1.4.12-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-enroller:2.5.2-20210616 docker://<LOCAL_REGISTRY>/ibp-enroller:2.5.2-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 ```
 {: codeblock}
 
@@ -237,7 +237,7 @@ Before you can complete the next steps, you need to log in to your cluster by us
 ```
 kubectl get pods
 ```
-{:codeblock}
+{: codeblock}
 
 If successful, you can see the pods that are running in your default namespace:
 ```
@@ -259,7 +259,7 @@ Run the following command to create the namespace.
 ```
 kubectl create namespace ibpinfra
 ```
-{:codeblock}
+{: codeblock}
 
 ## Set up the entitlement for a local registry
 {: #deploy-k8-secret-ibpinfra-fw}
@@ -270,7 +270,7 @@ Run the following command to create the secret and add it to your `ibpinfra` nam
 ```
 kubectl create secret docker-registry docker-key-secret --docker-server=<LOCAL_REGISTRY> --docker-username=<USER> --docker-password=<LOCAL_REGISTRY_PASSWORD> --docker-email=<EMAIL> -n <NAMESPACE>
 ```
-{:codeblock}
+{: codeblock}
 
 - Replace `<USER>` with your username
 - Replace `<EMAIL>` with your email address.
@@ -333,7 +333,7 @@ Run the following command to add the file to your cluster definition:
 ```
 kubectl apply -f rbac.yaml -n ibpinfra
 ```
-{:codeblock}
+{: codeblock}
 
 When the command completes successfully, you should see something similar to:
 ```
@@ -341,7 +341,7 @@ serviceaccount/webhook created
 role.rbac.authorization.k8s.io/webhook created
 rolebinding.rbac.authorization.k8s.io/ibpinfra created
 ```
-{:codeblock}
+{: codeblock}
 
 ### 2. (OpenShift cluster only) Apply the Security Context Constraint
 {: #webhook-scc}
@@ -394,7 +394,7 @@ After you save the file, run the following commands to add the file to your clus
 oc apply -f ibpinfra-scc.yaml -n ibpinfra
 oc adm policy add-scc-to-user ibpinfra system:serviceaccounts:ibpinfra
 ```
-{:codeblock}
+{: codeblock}
 
 If the commands are successful, you can see a response that is similar to the following example:
 ```
@@ -452,7 +452,7 @@ spec:
         fsGroup: 2000
       containers:
         - name: "ibp-webhook"
-          image: "cp.icr.io/cp/ibp-crdwebhook:2.5.2-20210505-amd64"
+          image: "cp.icr.io/cp/ibp-crdwebhook:2.5.2-20210616-amd64"
           imagePullPolicy: Always
           securityContext:
             privileged: false
@@ -810,7 +810,7 @@ If you are using the CLI, create a new namespace by the following command:
 ```
 kubectl create namespace <NAMESPACE>
 ```
-{:codeblock}
+{: codeblock}
 
 Replace `<NAMESPACE>` with the name that you want to use for your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.
 
@@ -821,7 +821,7 @@ You can also use the CLI to find the available storage classes for your namespac
 ```
 kubectl get storageclasses
 ```
-{:codeblock}
+{: codeblock}
 
 If you are not using the default storage class, additional configuration is required. See [Storage](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#deploy-k8-storage) for the considerations.
 
@@ -834,7 +834,7 @@ Run the following command to create the secret and add it to your namespace:
 ```
 kubectl create secret docker-registry docker-key-secret --docker-server=<LOCAL_REGISTRY> --docker-username=<USER> --docker-password=<LOCAL_REGISTRY_PASSWORD> --docker-email=<EMAIL> -n <NAMESPACE>
 ```
-{:codeblock}
+{: codeblock}
 
 - Replace `<USER>` with your username
 - Replace `<EMAIL>` with your email address.
@@ -893,7 +893,7 @@ After you save and edit the file, run the following commands to add the file to 
 ```
 kubectl apply -f ibp-psp.yaml
 ```
-{:codeblock}
+{: codeblock}
 
 ### Apply the ClusterRole
 {: #deploy-k8-clusterrole-fw}
@@ -994,7 +994,7 @@ After you save and edit the file, run the following commands.
 ```
 kubectl apply -f ibp-clusterrole.yaml -n <NAMESPACE>
 ```
-{:codeblock}
+{: codeblock}
 Replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.
 
 ### Apply the ClusterRoleBinding
@@ -1029,7 +1029,7 @@ After you save and edit the file, run the following commands.
 ```
 kubectl apply -f ibp-clusterrolebinding.yaml -n <NAMESPACE>
 ```
-{:codeblock}
+{: codeblock}
 Replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.
 
 ### Create the role binding
@@ -1039,7 +1039,7 @@ After applying the policies, you must grant your service account the required le
 ```
 kubectl -n <NAMESPACE> create rolebinding ibp-operator-rolebinding --clusterrole=<NAMESPACE> --group=system:serviceaccounts:<NAMESPACE>
 ```
-{:codeblock}
+{: codeblock}
 
 
 ## Deploy the {{site.data.keyword.blockchainfull_notm}} Platform operator
@@ -1167,7 +1167,7 @@ Then, use the kubectl CLI to add the custom resource to your namespace.
 ```
 kubectl apply -f ibp-operator.yaml -n <NAMESPACE>
 ```
-{:codeblock}
+{: codeblock}
 Replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.
 
 You can confirm that the operator deployed by running the command `kubectl get deployment -n <NAMESPACE>`. If your operator deployment is successful, then you can see the following tables with four ones displayed. The operator takes about a minute to deploy.
@@ -1231,7 +1231,7 @@ After you update the file, you can use the CLI to install the console.
 ```
 kubectl apply -f ibp-console.yaml -n <NAMESPACE>
 ```
-{:codeblock}
+{: codeblock}
 Replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace. Before you install the console, you might want to review the advanced deployment options in the next section. The console can take a few minutes to deploy.
 
 ### Advanced deployment options
@@ -1306,13 +1306,13 @@ spec:
       - dal12
       - dal13
   ```
-  {:codeblock}
+  {: codeblock}
 
 When you finish editing the file, apply it to your cluster.
 ```
 kubectl apply -f ibp-console.yaml -n <NAMESPACE>
 ```
-{:codeblock}
+{: codeblock}
 
 Unlike the resource allocation, you cannot add zones to a running network. If you have already deployed a console and used it to create nodes on your cluster, you will lose your previous work. After the console restarts, you need to deploy new nodes.
 {: important}
@@ -1337,7 +1337,7 @@ Navigate to the TLS certificates that you plan to use on your local system. Name
 ```
 kubectl create secret generic console-tls-secret --from-file=tls.crt=./tlscert.pem --from-file=tls.key=./tlskey.pem -n <NAMESPACE>
 ```
-{:codeblock}
+{: codeblock}
 
 After you create the secret, add the following field to the `spec:` section of `ibp-console.yaml` with one indent added, at the same level as the `resources:` and `clusterdata:` sections of the advanced deployment options. You must provide the name of the TLS secret that you created to the field. The following example deploys a console with the TLS certificate and key stored in a secret named `"console-tls-secret"`. Replace `"<CONSOLE_TLS_SECRET_NAME>"` with `"console-tls-secret"` unless you used a different name for the secret.
 ```yaml
@@ -1372,7 +1372,7 @@ When you finish editing the file, you can apply it to your cluster in order to s
 ```
 kubectl apply -f ibp-console.yaml -n <NAMESPACE>
 ```
-{:codeblock}
+{: codeblock}
 
 ### Verifying the console installation
 {: #deploy-k8-verify-fw}
@@ -1394,18 +1394,18 @@ If there is an issue with your deployment, you can view the logs from an individ
 ```
 kubectl get pods -n <NAMESPACE>
 ```
-{:codeblock}
+{: codeblock}
 
 Then, use the following command to get the logs from one of the four containers inside the pod:
 ```
 kubectl logs -f <pod_name> <container_name> -n <NAMESPACE>
 ```
-{:codeblock}
+{: codeblock}
 As an example, a command to get the logs from the UI container would look like the following example:
 ```
 kubectl logs -f ibpconsole-55cf9db6cc-856nz console -n blockchain-project
 ```
-{:codeblock}
+{: codeblock}
 
 ## Log in to the console
 {: #deploy-k8-log-in-fw}

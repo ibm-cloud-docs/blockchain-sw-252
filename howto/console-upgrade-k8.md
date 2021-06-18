@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-19"
+lastupdated: "2021-06-18"
 
 keywords: Kubernetes, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters
 
@@ -77,6 +77,7 @@ subcollection: blockchain-sw-252
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -117,7 +118,7 @@ Use these instructions to upgrade to the {{site.data.keyword.blockchainfull_notm
 
 | Version | Release date | Image tags | New features |
 |----|----|----|----|
-| [{{site.data.keyword.blockchainfull_notm}} Platform 2.5.2](/docs/blockchain-sw-252?topic=blockchain-sw-252-whats-new#whats-new-03-29-2021) | 29 Mar 2021| **Console and tools** <ul><li>2.5.2-20210505-amd64</li><li>2.5.2-20210325-amd64</li></ul> **Fabric nodes** <ul><li>1.4.11-20210505</li><li>1.4.11-20210325</li></ul> **CouchDB** <ul> <li>2.3.1-20210505</li><li>2.3.1-20210325</li> <li>3.1.1-20210505</li> <li>3.1.1-20210325</li></ul> | **Fabric Version Upgrade** <ul><li>Fabric version 1.4.11 and 2.2.2</ul> **Improvements to the Console UI** <ul><li>Support for Fabric v2.x Lifecycle.</li><li>Upgrade CA, peer, and ordering nodes from Fabric v1.4 to Fabric v2.x.</li><li>Certificate renewal enhancements added to the console.</li></ul> |
+| [{{site.data.keyword.blockchainfull_notm}} Platform 2.5.2](/docs/blockchain-sw-252?topic=blockchain-sw-252-whats-new#whats-new-03-29-2021) | 29 Mar 2021| **Console and tools** <ul><li>2.5.2-20210616-amd64</li><li>2.5.2-20210505-amd64</li><li>2.5.2-20210325-amd64</li></ul> **Fabric nodes** <ul><li>1.4.12-20210616</li><li>1.4.11-20210505</li><li>1.4.11-20210325</li></ul> **CouchDB** <ul> <li>2.3.1-20210505</li><li>2.3.1-20210325</li> <li>3.1.1-20210505</li> <li>3.1.1-20210325</li></ul> | **Fabric Version Upgrade** <ul><li>Fabric version 1.4.12 and 2.2.3</li><li>Fabric version 1.4.11 and 2.2.2</li></ul> **Improvements to the Console UI** <ul><li>Support for Fabric v2.x Lifecycle.</li><li>Upgrade CA, peer, and ordering nodes from Fabric v1.4 to Fabric v2.x.</li><li>Certificate renewal enhancements added to the console.</li></ul> |
 | [{{site.data.keyword.blockchainfull_notm}} Platform 2.5.1](/docs/blockchain-sw-251?topic=blockchain-sw-251-release-notes-saas-20#01-12-2021) | 12 Jan 2021| **Console and tools** <ul><li>2.5.1-20210112-amd64</li> <li>2.5.1-20201208-amd64</li> <li>2.5.1-20201119-amd64</li> <li>2.5.1-20201030-amd64</li></ul> **Fabric nodes** <ul><li>1.4.9-20210112-amd64</li><li>1.4.9-20201208-amd64</li> <li>1.4.9-20201119-amd64</li> <li>1.4.9-20201030-amd64</li><li>2.2.1-20210112-amd64</li><li>2.2.1-20201208-amd64</li><li>2.2.1-20201119-amd64</li><li>2.2.1-20201030-amd64</li></ul> **CouchDB** <ul> <li>2.3.1-20210112-amd64</li> <li>2.3.1-20201208-amd64</li>  <li>2.3.1-20201119-amd64</li><li>2.3.1-20201030-amd64</li></ul> | **Fabric Version Upgrade** <ul><li>Fabric version 1.4.9 and 2.2.1</ul> **Improvements to the Console UI** <ul><li>Support for Fabric v2.x Lifecycle.</li><li>Upgrade CA, peer, and ordering nodes from Fabric v1.4 to Fabric v2.x.</li><li>Certificate renewal enhancements added to the console.</li></ul> |
 | [{{site.data.keyword.blockchainfull_notm}} Platform 2.5](/docs/blockchain-sw-25?topic=blockchain-sw-25-release-notes-saas-20#08-25-2020){: external} | 9 Sept 2020| **Console and tools** <ul><li>2.5.0-20200825-amd64</li><li>2.5.0-20200714-amd64</li><li>2.5.0-20200618-amd64</li></ul> **Fabric nodes** <ul><li>1.4.7-20200825-amd64</li><li>1.4.7-20200714-amd64</li><li>1.4.7-20200618-amd64</li><li>2.1.1-20200825-amd64</li><li>2.1.1-20200714-amd64</li><li>2.1.1-20200618-amd64</li></ul> **CouchDB** <ul><li>2.3.1-20200825-amd64</li><li>2.3.1-20200714-amd64</li><li>2.3.1-20200618-amd64</li></ul> | **Fabric Version Upgrade** <ul><li>Fabric version 1.4.7 and 2.1.1</ul> **Improvements to the Console UI** <ul><li>Ability to select Fabric version when you deploy a new peer or ordering node.</li></ul> |
 | [{{site.data.keyword.blockchainfull_notm}} Platform v2.1.3](/docs/blockchain-sw-213?topic=blockchain-sw-213-whats-new#whats-new-03-24-2020){: external} | 24 March 2020| **Console and tools** <ul><li>2.1.3-20200520-amd64</li><li>2.1.3-20200416-amd64</li><li>2.1.3-20200324-amd64</li></ul> **Fabric nodes** <ul><li>1.4.6-20200520-amd64</li><li>1.4.6-20200416-amd64</li><li>1.4.6-20200324-amd64</li></ul> **CouchDB** <ul><li>2.3.1-20200520-amd64</li><li>2.3.1-20200416-amd64</li><li>2.3.1-20200324-amd64</li></ul> | **Fabric Version Upgrade** <ul><li>Fabric version 1.4.6</ul> **Additional platforms** <ul><li>Platform can be deployed on the OpenShift Container Platform 4.2 on LinuxONE (s390x)</ul> **Improvements to the Console UI** <ul><li>Hardware Security Module (HSM) support for node identities</li><li>Ability to override CA, peer, and ordering node configuration</li><li>Ability to add and remove Raft ordering nodes</li><li>Java smart contract instantiation</li><li>Updated create channel and create organization panels</ul> |
@@ -167,7 +168,7 @@ You need to repeat steps 3-6 for each network that that runs in a separate names
 Log in to your cluster and run the following command to update the webhook image in the `ibpinfra` namespace or project:
 
 ```
-kubectl set image deploy/ibp-webhook -n ibpinfra ibp-webhook="cp.icr.io/cp/ibp-crdwebhook:2.5.2-20210505-amd64"
+kubectl set image deploy/ibp-webhook -n ibpinfra ibp-webhook="cp.icr.io/cp/ibp-crdwebhook:2.5.2-20210616-amd64"
 ```
 {: codeblock}
 
@@ -525,7 +526,7 @@ After you edit and save the file, run the following commands.
 oc apply -f ibp-clusterrole.yaml
 oc adm policy add-scc-to-group <NAMESPACE> system:serviceaccounts:<NAMESPACE>
 ```
-{:codeblock}
+{: codeblock}
 
 ### Step four: Upgrade the {{site.data.keyword.blockchainfull_notm}} operator
 {: #upgrade-k8-steps-252-operator}
@@ -542,7 +543,7 @@ Wait a few minutes for the console to stop. While the console is stopped you are
 Run the following command to upgrade the operator. Replace `<NAMESPACE>` with the Kubernetes namespace for the platform.
 
 ```
-kubectl set image deploy/ibp-operator -n <NAMESPACE> ibp-operator="cp.icr.io/cp/ibp-operator:2.5.2-20210505-amd64"
+kubectl set image deploy/ibp-operator -n <NAMESPACE> ibp-operator="cp.icr.io/cp/ibp-operator:2.5.2-20210616-amd64"
 ```
 {: codeblock}
 
@@ -616,7 +617,7 @@ Run the following command to create the namespace:
 ```
 kubectl create namespace ibpinfra
 ```
-{:codeblock}
+{: codeblock}
 
 ### Step two: Create a secret for your entitlement key
 {: #upgrade-k8s-secret-ibpinfra}
@@ -629,7 +630,7 @@ Run the following command to create the secret and add it to your `ibpinfra` nam
 ```
 kubectl create secret docker-registry docker-key-secret --docker-server=cp.icr.io --docker-username=cp --docker-password=<KEY> --docker-email=<EMAIL> -n ibpinfra
 ```
-{:codeblock}
+{: codeblock}
 - Replace `<KEY>` with your entitlement key.
 - Replace `<EMAIL>` with your email address.
 
@@ -688,7 +689,7 @@ Run the following command to add the file to your cluster definition:
 ```
 kubectl apply -f rbac.yaml -n ibpinfra
 ```
-{:codeblock}
+{: codeblock}
 
 When the command completes successfully, you should see something similar to:
 ```
@@ -746,7 +747,7 @@ After you save the file, run the following commands to add the file to your clus
 oc apply -f ibpinfra-scc.yaml -n ibpinfra
 oc adm policy add-scc-to-user ibpinfra system:serviceaccounts:ibpinfra
 ```
-{:codeblock}
+{: codeblock}
 
 If the commands are successful, you can see a response that is similar to the following example:
 ```
@@ -805,7 +806,7 @@ spec:
         fsGroup: 2000
       containers:
         - name: "ibp-webhook"
-          image: "cp.icr.io/cp/ibp-crdwebhook:2.5.2-20210505-amd64"
+          image: "cp.icr.io/cp/ibp-crdwebhook:2.5.2-20210616-amd64"
           imagePullPolicy: Always
           securityContext:
             privileged: false
@@ -1253,7 +1254,7 @@ After you save and edit the file, run the following commands. Replace `<NAMESPAC
 ```
 kubectl apply -f ibp-clusterrole.yaml -n <NAMESPACE>
 ```
-{:codeblock}
+{: codeblock}
 Replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.
 
 ### Step five: Upgrade the {{site.data.keyword.blockchainfull_notm}} operator
@@ -1265,33 +1266,33 @@ Log in to your cluster by using the kubectl CLI. Because each {{site.data.keywor
 ```
 kubectl config set-context --current --namespace=<NAMESPACE>
 ```
-{:codeblock}
+{: codeblock}
 
 When you are operating from your namespace, run the following command to download the operator deployment spec to your local file system:
 ```
 kubectl get deployment ibp-operator -o yaml > operator.yaml
 ```
-{:codeblock}
+{: codeblock}
 
 Open `operator.yaml` in a text editor and save a new copy of the file as `operator-upgrade.yaml`. You need to update the `image:` field with the updated version of the operator image. You can find the name and tag of the latest operator image below:
 ```
-cp.icr.io/cp/ibp-operator:2.5.2-20210505-amd64
+cp.icr.io/cp/ibp-operator:2.5.2-20210616-amd64
 ```
-{:codeblock}
+{: codeblock}
 
 You also need to edit the `env:` section of the file. Find the following lines in `operator-upgrade.yaml`:
 ```
 - name: ISOPENSHIFT
   value: "false"
 ```
-{:codeblock}
+{: codeblock}
 
 Replace the values above with the following lines at the same indentation:
 ```
 - name: CLUSTERTYPE
   value: <CLUSTER_TYPE>
 ```
-{:codeblock}
+{: codeblock}
 
 - Replace `<CLUSTER_TYPE>` with `K8S` if you are deploying the platform on open source Kubernetes or Rancher.
 
@@ -1313,13 +1314,13 @@ env:
 - name: CLUSTERTYPE
   value: K8S
 ```
-{:codeblock}
+{: codeblock}
 
 Save the file on your local system. You can then issue the following command upgrade your operator:
 ```
 kubectl apply -f operator-upgrade.yaml -n <NAMESPACE>
 ```
-{:codeblock}
+{: codeblock}
 Replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.
 
 You can use the `kubectl get deployment ibp-operator -o yaml` command to confirm that the command updated the operator spec.
@@ -1390,33 +1391,33 @@ The following commands only work with a Docker container registry. Depending on 
 {: note}
 
 ```
-skopeo copy docker://cp.icr.io/cp/ibp-operator:2.5.2-20210505 docker://<LOCAL_REGISTRY>/ibp-operator:2.5.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-init:2.5.2-20210505 docker://<LOCAL_REGISTRY>/ibp-init:2.5.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-console:2.5.2-20210505 docker://<LOCAL_REGISTRY>/ibp-console:2.5.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-grpcweb:2.5.2-20210505 docker://<LOCAL_REGISTRY>/ibp-grpcweb:2.5.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-deployer:2.5.2-20210505 docker://<LOCAL_REGISTRY>/ibp-deployer:2.5.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-fluentd:2.5.2-20210505 docker://<LOCAL_REGISTRY>/ibp-fluentd:2.5.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-couchdb:2.3.1-20210505 docker://<LOCAL_REGISTRY>/ibp-couchdb:2.3.1-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-couchdb:3.1.1-20210505 docker://<LOCAL_REGISTRY>/ibp-couchdb:3.1.1-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-peer:1.4.11-20210505 docker://<LOCAL_REGISTRY>/ibp-peer:1.4.11-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-orderer:1.4.11-20210505 docker://<LOCAL_REGISTRY>/ibp-orderer:1.4.11-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-ca:1.4.9-20210505 docker://<LOCAL_REGISTRY>/ibp-ca:1.4.9-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-dind:1.4.11-20210505 docker://<LOCAL_REGISTRY>/ibp-dind:1.4.11-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-utilities:1.4.11-20210505 docker://<LOCAL_REGISTRY>/ibp-utilities:1.4.11-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-peer:2.2.2-20210505 docker://<LOCAL_REGISTRY>/ibp-peer:2.2.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-orderer:2.2.2-20210505 docker://<LOCAL_REGISTRY>/ibp-orderer:2.2.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-chaincode-launcher:2.2.2-20210505 docker://<LOCAL_REGISTRY>/ibp-chaincode-launcher:2.2.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-utilities:2.2.2-20210505 docker://<LOCAL_REGISTRY>/ibp-utilities:2.2.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-ccenv:2.2.2-20210505 docker://<LOCAL_REGISTRY>/ibp-ccenv:2.2.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-goenv:2.2.2-20210505 docker://<LOCAL_REGISTRY>/ibp-goenv:2.2.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-nodeenv:2.2.2-20210505 docker://<LOCAL_REGISTRY>/ibp-nodeenv:2.2.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-javaenv:2.2.2-20210505 docker://<LOCAL_REGISTRY>/ibp-javaenv:2.2.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-crdwebhook:2.5.2-20210505 docker://<LOCAL_REGISTRY>/ibp-crdwebhook:2.5.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-ccenv:1.4.11-20210505 docker://<LOCAL_REGISTRY>/ibp-ccenv:1.4.11-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-goenv:1.4.11-20210505 docker://<LOCAL_REGISTRY>/ibp-goenv:1.4.11-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-nodeenv:1.4.11-20210505 docker://<LOCAL_REGISTRY>/ibp-nodeenv:1.4.11-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-javaenv:1.4.11-20210505 docker://<LOCAL_REGISTRY>/ibp-javaenv:1.4.11-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-enroller:2.5.2-20210505 docker://<LOCAL_REGISTRY>/ibp-enroller:2.5.2-20210505 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-operator:2.5.2-20210616 docker://<LOCAL_REGISTRY>/ibp-operator:2.5.2-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-init:2.5.2-20210616 docker://<LOCAL_REGISTRY>/ibp-init:2.5.2-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-console:2.5.2-20210616 docker://<LOCAL_REGISTRY>/ibp-console:2.5.2-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-grpcweb:2.5.2-20210616 docker://<LOCAL_REGISTRY>/ibp-grpcweb:2.5.2-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-deployer:2.5.2-20210616 docker://<LOCAL_REGISTRY>/ibp-deployer:2.5.2-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-fluentd:2.5.2-20210616 docker://<LOCAL_REGISTRY>/ibp-fluentd:2.5.2-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-couchdb:2.3.1-20210616 docker://<LOCAL_REGISTRY>/ibp-couchdb:2.3.1-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-couchdb:3.1.1-20210616 docker://<LOCAL_REGISTRY>/ibp-couchdb:3.1.1-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-peer:1.4.12-20210616 docker://<LOCAL_REGISTRY>/ibp-peer:1.4.12-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-orderer:1.4.12-20210616 docker://<LOCAL_REGISTRY>/ibp-orderer:1.4.12-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-ca:1.4.9-20210616 docker://<LOCAL_REGISTRY>/ibp-ca:1.4.9-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-dind:1.4.12-20210616 docker://<LOCAL_REGISTRY>/ibp-dind:1.4.12-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-utilities:1.4.12-20210616 docker://<LOCAL_REGISTRY>/ibp-utilities:1.4.12-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-peer:2.2.3-20210616 docker://<LOCAL_REGISTRY>/ibp-peer:2.2.3-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-orderer:2.2.3-20210616 docker://<LOCAL_REGISTRY>/ibp-orderer:2.2.3-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-chaincode-launcher:2.2.3-20210616 docker://<LOCAL_REGISTRY>/ibp-chaincode-launcher:2.2.3-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-utilities:2.2.3-20210616 docker://<LOCAL_REGISTRY>/ibp-utilities:2.2.3-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-ccenv:2.2.3-20210616 docker://<LOCAL_REGISTRY>/ibp-ccenv:2.2.3-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-goenv:2.2.3-20210616 docker://<LOCAL_REGISTRY>/ibp-goenv:2.2.3-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-nodeenv:2.2.3-20210616 docker://<LOCAL_REGISTRY>/ibp-nodeenv:2.2.3-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-javaenv:2.2.3-20210616 docker://<LOCAL_REGISTRY>/ibp-javaenv:2.2.3-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-crdwebhook:2.5.2-20210616 docker://<LOCAL_REGISTRY>/ibp-crdwebhook:2.5.2-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-ccenv:1.4.12-20210616 docker://<LOCAL_REGISTRY>/ibp-ccenv:1.4.12-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-goenv:1.4.12-20210616 docker://<LOCAL_REGISTRY>/ibp-goenv:1.4.12-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-nodeenv:1.4.12-20210616 docker://<LOCAL_REGISTRY>/ibp-nodeenv:1.4.12-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-javaenv:1.4.12-20210616 docker://<LOCAL_REGISTRY>/ibp-javaenv:1.4.12-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-enroller:2.5.2-20210616 docker://<LOCAL_REGISTRY>/ibp-enroller:2.5.2-20210616 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 ```
 {: codeblock}
 
@@ -1433,7 +1434,7 @@ Run the following command to create the namespace:
 ```
 kubectl create namespace ibpinfra
 ```
-{:codeblock}
+{: codeblock}
 
 ### Step three: Create a secret for your entitlement key
 {: #upgrade-k8s-secret-ibpinfra-fw}
@@ -1446,7 +1447,7 @@ Run the following command to create the secret and add it to your `ibpinfra` nam
 ```
 kubectl create secret docker-registry docker-key-secret --docker-server=cp.icr.io --docker-username=cp --docker-password=<KEY> --docker-email=<EMAIL> -n ibpinfra
 ```
-{:codeblock}
+{: codeblock}
 - Replace `<KEY>` with your entitlement key.
 - Replace `<EMAIL>` with your email address.
 
@@ -1505,7 +1506,7 @@ Run the following command to add the file to your cluster definition:
 ```
 kubectl apply -f rbac.yaml -n ibpinfra
 ```
-{:codeblock}
+{: codeblock}
 
 When the command completes successfully, you should see something similar to:
 ```
@@ -1563,7 +1564,7 @@ After you save the file, run the following commands to add the file to your clus
 oc apply -f ibpinfra-scc.yaml -n ibpinfra
 oc adm policy add-scc-to-user ibpinfra system:serviceaccounts:ibpinfra
 ```
-{:codeblock}
+{: codeblock}
 
 If the commands are successful, you can see a response that is similar to the following example:
 ```
@@ -1622,7 +1623,7 @@ spec:
         fsGroup: 2000
       containers:
         - name: "ibp-webhook"
-          image: "cp.icr.io/cp/ibp-crdwebhook:2.5.2-20210505-amd64"
+          image: "cp.icr.io/cp/ibp-crdwebhook:2.5.2-20210616-amd64"
           imagePullPolicy: Always
           securityContext:
             privileged: false
@@ -2070,7 +2071,7 @@ After you save and edit the file, run the following commands. Replace `<NAMESPAC
 ```
 kubectl apply -f ibp-clusterrole.yaml -n <NAMESPACE>
 ```
-{:codeblock}
+{: codeblock}
 Replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.
 
 
@@ -2083,34 +2084,34 @@ Log in to your cluster by using the kubectl CLI. Because each {{site.data.keywor
 ```
 kubectl config set-context --current --namespace=<NAMESPACE>
 ```
-{:codeblock}
+{: codeblock}
 Replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.
 
 When you are operating from your namespace, run the following command to download the operator deployment spec to your local file system:
 ```
 kubectl get deployment ibp-operator -o yaml > operator.yaml
 ```
-{:codeblock}
+{: codeblock}
 
 Open `operator.yaml` in a text editor and save a new copy of the file as `operator-upgrade.yaml`. You need to update the `image:` field with the updated version of the operator image:
 ```yaml
-<LOCAL_REGISTRY>/ibp-operator:2.5.2-20210505-amd64
+<LOCAL_REGISTRY>/ibp-operator:2.5.2-20210616-amd64
 ```
-{:codeblock}
+{: codeblock}
 
 You also need to edit the `env:` section of the file. Find the following lines in `operator-upgrade.yaml`:
 ```yaml
 - name: ISOPENSHIFT
   value: "false"
 ```
-{:codeblock}
+{: codeblock}
 
 Replace the values above with the following lines at the same indentation:
 ```yaml
 - name: CLUSTERTYPE
   value: <CLUSTER_TYPE>
 ```
-{:codeblock}
+{: codeblock}
 
 - Replace `<CLUSTER_TYPE>` with `K8S` if you are deploying the platform on open source Kubernetes or Rancher.
 
@@ -2132,13 +2133,13 @@ env:
 - name: CLUSTERTYPE
   value: K8S
 ```
-{:codeblock}
+{: codeblock}
 
 Save the file on your local system. You can then issue the following command upgrade your operator:
 ```
 kubectl apply -f operator-upgrade.yaml
 ```
-{:codeblock}
+{: codeblock}
 
 
 You can use the `kubectl get deployment ibp-operator -o yaml` command to confirm that the command updated the operator spec.
@@ -2158,20 +2159,20 @@ If your console experiences an image pull error, you may need to update the cons
 ```
 kubectl get ibpconsole ibpconsole -o yaml > console.yaml
 ```
-{:codeblock}
+{: codeblock}
 
 Then add the URL of your local registry to the `spec:` section of `console.yaml`. Replace `<LOCAL_REGISTRY>` with the URL of your local registry:
 ```yaml
 spec:
   registryURL: <LOCAL_REGISTRY>
 ```
-{:codeblock}
+{: codeblock}
 
 Save the updated file as `console-upgrade.yaml` on your local system. You can then issue the following command upgrade your console:
 ```
 kubectl apply -f console-upgrade.yaml
 ```
-{:codeblock}
+{: codeblock}
 
 ### Step seven: Upgrade your blockchain nodes
 {: #upgrade-k8-nodes-firewall}
