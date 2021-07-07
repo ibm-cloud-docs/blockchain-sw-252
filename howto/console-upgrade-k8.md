@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-18"
+lastupdated: "2021-07-07"
 
 keywords: Kubernetes, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters
 
@@ -130,7 +130,7 @@ Use these instructions to upgrade to the {{site.data.keyword.blockchainfull_notm
 ## Before you begin
 {: #upgrade-k8-before}
 
-The upgrade process that you follow depends on the version of the platform that you are upgrading from, v2.1.x or v2.5.x.
+The upgrade process that you follow depends on the version of the platform that you are upgrading from v2.1.x or v2.5.x.
 - [Upgrade to {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 from v2.5.x](#upgrade-k8-steps-252)
 - [Upgrade to {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 from v2.1.x](#upgrade-k8-steps-21x)  
 

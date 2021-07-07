@@ -1349,7 +1349,7 @@ Configuring a node to use HSM is a three-part process:
 ### Before you begin
 {: #ibp-console-adv-deployment-hsm-before}
 
-- The Kubernetes CLI is required to configure the HSM.  See [Install and Set Up kubectl CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl/){: external} or if your cluster is running on OpenShift see [Getting started with the CLI](https://docs.openshift.com/container-platform/4.5/cli_reference/openshift_cli/getting-started-cli.html){: external} for instructions. 
+- The Kubernetes CLI is required to configure the HSM.  See [Install and Set Up kubectl CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl/){: external} or if your cluster is running on OpenShift see [Getting started with the CLI](https://docs.openshift.com/container-platform/4.7/cli_reference/openshift_cli/getting-started-cli.html){: external} for instructions. 
 - You need access to a container registry, such as Docker or the [{{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started).
 <staging-zHSM>
 ### (Optional) Configure an HSM daemon
