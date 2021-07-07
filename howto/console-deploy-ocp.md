@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-06-18"
+lastupdated: "2021-07-07"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -145,6 +145,8 @@ The command looks similar to the following example:
 ```
 oc login https://c100-e.us-south.containers.cloud.ibm.com:31394 --token=<TOKEN>
 ```
+{: codeblock}
+
 If the command is successful, you can see the list of pods in your cluster in your terminal by running the following command:
 ```
 oc get pods
@@ -159,6 +161,7 @@ registry-console-6c74fc45f9-nl5nw   1/1       Running   0          7d
 router-6cc88df47c-hqjmk             1/1       Running   0          7d
 router-6cc88df47c-mwzbq             1/1       Running   0          7d
 ```
+{: codeblock}
 
 When you connect to your cluster by using the OpenShift CLI, you also connect by using the `kubectl` CLI. You can find the same pods by running the equivalent `kubectl` command:
 ```
