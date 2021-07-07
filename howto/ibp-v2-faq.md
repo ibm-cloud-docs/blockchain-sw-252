@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-18"
+lastupdated: "2021-07-07"
 
 keywords: FAQs, can I, upgrade, what version, peer ledger database, supported languages, why do I, regions, multicloud
 
@@ -157,6 +157,8 @@ See the port information in the [Security topic](/docs/blockchain-sw-252?topic=b
 {: faq}
 
 After you understand how many CAs, peers, and ordering nodes are required, you can examine the default resource allocations table for  [OpenShift](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-getting-started#deploy-ocp-resources-required) or [Kubernetes](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#deploy-k8-resources-required) to get an approximate estimate of the CPUs (VPCs) required for your network.  If you plan to deploy the platform outside of {{site.data.keyword.cloud_notm}}, you will need to buy licenses per VPC (CPU) based on expected usage. As a reminder, these are only sold per VPC so you should always round up the number of VPCs if you plan to use fractional parts. For example, if you estimate that you will need 11.2 VPCs then you should license 12 VPCs.
+
+
 
 
 
