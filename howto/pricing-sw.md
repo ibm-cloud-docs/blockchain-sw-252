@@ -2,9 +2,9 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-14"
+lastupdated: "2021-07-13"
 
-keywords: pricing model, VPC, CPU, vCPU, virtual core, cost, scalability, estimation, optimize your cost
+keywords: pricing model, CPU, vCPU, virtual core, cost, scalability, estimation, optimize your cost
 
 subcollection: blockchain-sw-252
 

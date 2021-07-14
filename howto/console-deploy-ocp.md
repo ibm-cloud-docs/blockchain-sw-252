@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-07-07"
+lastupdated: "2021-07-13"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -378,7 +378,7 @@ spec:
         fsGroup: 2000
       containers:
         - name: "ibp-webhook"
-          image: "cp.icr.io/cp/ibp-crdwebhook:2.5.2-20210616-amd64"
+          image: "cp.icr.io/cp/ibp-crdwebhook:2.5.2-20210713-amd64"
           imagePullPolicy: Always
           securityContext:
             privileged: false
