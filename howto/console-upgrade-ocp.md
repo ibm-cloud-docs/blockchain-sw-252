@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-07-13"
+lastupdated: "2021-07-19"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters
 
@@ -151,7 +151,7 @@ It is a best practice to upgrade your SDK to the latest version as part of a gen
 ## Platform limitations
 {: #upgrade-ocp-platform}
 
-If your {{site.data.keyword.blockchainfull_notm}} Platform is running on OpenShift Container Platform 3.11, you cannot upgrade to {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 unless you first upgrade your OpenShift cluster from 3.11 to 4.7. For more information, see [Planning your migrationn](https://docs.openshift.com/container-platform/4.7/migration/migrating_3_4/planning-migration-3-to-4.html).
+If your {{site.data.keyword.blockchainfull_notm}} Platform is running on OpenShift Container Platform 3.11, you cannot upgrade to {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 unless you first upgrade your OpenShift cluster from 3.11 to 4.7. For more information, see [Upgrading your migrationn](https://docs.openshift.com/container-platform/4.7/migration-toolkit-for-containers/installing-mtc.html).
 
 
 ## Upgrade to the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 from 2.5.x
