@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2021-04-28"
+lastupdated: "2021-08-10"
 
 keywords: smart contract, private data, private data collection, anchor peer, multicloud
 
@@ -10,15 +10,15 @@ subcollection: blockchain-sw-252
 
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:note: .note}
-{:term: .term}
-{:important: .important}
-{:tip: .tip}
-{:pre: .pre}
+{: external: target="_blank" .external}
+{: shortdesc: .shortdesc}
+{: screen: .screen}
+{: codeblock: .codeblock}
+{: note: .note}
+{: term: .term}
+{: important: .important}
+{: tip: .tip}
+{: pre: .pre}
 
 
 
@@ -36,7 +36,7 @@ subcollection: blockchain-sw-252
 </div>
 
 A smart contract is the code, packaged as chaincode, that applications interact with to read and update data on the blockchain ledger. A smart contract turns business logic into an executable program that is agreed to and verified by all members of a blockchain network. This tutorial is the third part in the [sample network tutorial series](#ibp-console-smart-contracts-structure) and describes how to deploy smart contracts to start transactions in the blockchain network.
-{:shortdesc}
+{: shortdesc}
 
 **Target audience:** This topic is designed for network operators who are responsible for creating, monitoring, and managing the blockchain network. Additionally, application developers might be interested in the sections that reference how to create a smart contract.
 

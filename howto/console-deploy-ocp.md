@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-08-07"
+lastupdated: "2021-08-10"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -122,7 +122,7 @@ subcollection: blockchain-sw-252
 </div>
 
 You can use the following instructions to deploy the {{site.data.keyword.blockchainfull}} Platform 2.5.2 onto a Kubernetes cluster that is running on OpenShift Container Platform. The {{site.data.keyword.blockchainfull_notm}} Platform uses a [Kubernetes Operator](https://www.openshift.com/learn/topics/operators){: external} to install the {{site.data.keyword.blockchainfull_notm}} Platform console on your cluster and manage the deployment and your blockchain nodes. After the {{site.data.keyword.blockchainfull_notm}} Platform console is running on your cluster, you can use the console to create blockchain nodes and operate a multicloud blockchain network.
-{:shortdesc}
+{: shortdesc}
 
 ## Get your entitlement key
 {: #deploy-ocp-entitlement-key}

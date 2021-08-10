@@ -3,7 +3,7 @@
 copyright:
   years: 2019
 
-lastupdated: "2021-04-28"
+lastupdated: "2021-08-10"
 
 keywords: getting started tutorials, create a CA, enroll, register, create an MSP, wallet, create a peer, create ordering service, Raft, join a network, system channel, multicloud
 
@@ -11,14 +11,14 @@ subcollection: blockchain-sw-252
 
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:note: .note}
-{:important: .important}
-{:tip: .tip}
-{:pre: .pre}
+{: external: target="_blank" .external}
+{: shortdesc: .shortdesc}
+{: screen: .screen}
+{: codeblock: .codeblock}
+{: note: .note}
+{: important: .important}
+{: tip: .tip}
+{: pre: .pre}
 
 
 
@@ -37,7 +37,7 @@ subcollection: blockchain-sw-252
 
 
 {{site.data.keyword.blockchainfull}} Platform is a blockchain-as-a-service offering that enables you to develop, deploy, and operate blockchain applications and networks. You can learn more about blockchain components and how they work together by visiting the [Blockchain component overview](/docs/blockchain-sw-252?topic=blockchain-sw-252-blockchain-component-overview#blockchain-component-overview). This tutorial is the second part in the [sample network tutorial series](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-build-network#ibp-console-build-network-sample-tutorial) and describes how to create nodes in the {{site.data.keyword.blockchainfull_notm}} Platform console and connect them to a blockchain consortium hosted in another cluster.
-{:shortdesc}
+{: shortdesc}
 
 **Target audience:** This topic is designed for network operators who are responsible for creating, monitoring, and managing the blockchain network.  
 

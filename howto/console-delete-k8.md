@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-06-18"
+lastupdated: "2021-08-10"
 
 keywords: IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, delete, remove
 
@@ -10,14 +10,14 @@ subcollection: blockchain-sw-252
 
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:note: .note}
-{:important: .important}
-{:tip: .tip}
-{:pre: .pre}
+{: external: target="_blank" .external}
+{: shortdesc: .shortdesc}
+{: screen: .screen}
+{: codeblock: .codeblock}
+{: note: .note}
+{: important: .important}
+{: tip: .tip}
+{: pre: .pre}
 
 
 # Removing your deployment
@@ -150,6 +150,6 @@ kubectl delete namespaces <NAMESPACE>
 {: codeblock}
 
 This command deletes any remaining blockchain nodes that are running on the project, in addition to your console and the {{site.data.keyword.blockchainfull_notm}} Platform operator.
-{:important}
+{: important}
 
 Deleting the namespace removes the {{site.data.keyword.blockchainfull_notm}} Platform Security Context Constraint, clusterRole, and ClusterRoleBinding that you applied. It also deletes the secrets that you created. You cannot undo this action. As a result, deleting your project is not recommended unless you are not going to deploy another instance of the platform.

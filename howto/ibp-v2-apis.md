@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-07-19"
+lastupdated: "2021-08-10"
 
 keywords: APIs, build a network, authentication, service credentials, API key, API endpoint, IAM access token, Fabric CA client, import a network, generate certificates
 
@@ -10,17 +10,17 @@ subcollection: blockchain-sw-252
 
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:note: .note}
-{:important: .important}
-{:term: .term}
-{:tip: .tip}
-{:faq: data-hd-content-type='faq'}
-{:pre: .pre}
-{:curl: #curl .ph data-hd-programlang='curl'}
+{: external: target="_blank" .external}
+{: shortdesc: .shortdesc}
+{: screen: .screen}
+{: codeblock: .codeblock}
+{: note: .note}
+{: important: .important}
+{: term: .term}
+{: tip: .tip}
+{: faq: data-hd-content-type='faq'}
+{: pre: .pre}
+{: curl: #curl .ph data-hd-programlang='curl'}
 
 
 # Using the {{site.data.keyword.blockchainfull_notm}} Platform APIs
@@ -45,7 +45,7 @@ This tutorial introduces the generic flow to build a blockchain network with {{s
 ## Swagger
 {: #ibp-v2-apis-swagger}
 
-After you review the instructions in this topic on how to use the APIs, you can alternatively access a Swagger version of the APIs instead of the [APIs in {{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/apidocs/blockchain){:external} where the current version is `v2`. If you need to access the `v1` version of the APIs, you can import the `v1` version into the [Swagger editor](http://editor.swagger.io){: external}.
+After you review the instructions in this topic on how to use the APIs, you can alternatively access a Swagger version of the APIs instead of the [APIs in {{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/apidocs/blockchain){: external} where the current version is `v2`. If you need to access the `v1` version of the APIs, you can import the `v1` version into the [Swagger editor](http://editor.swagger.io){: external}.
 
 - [v1](https://github.com/ibm-cloud-docs/blockchain/blob/master/reference/ibp-v1.yaml){: external}
 - [v2](https://github.com/ibm-cloud-docs/blockchain/blob/master/reference/ibp-v2.yaml){: external}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-16"
+lastupdated: "2021-08-10"
 
 keywords: ansible playbooks, docker image, blockchain network, APIs, ansible galaxy,
 
@@ -10,15 +10,15 @@ subcollection: blockchain-sw-252
 
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:note: .note}
-{:important: .important}
-{:javascript: data-hd-programlang="javascript"}
-{:tip: .tip}
-{:pre: .pre}
+{: external: target="_blank" .external}
+{: shortdesc: .shortdesc}
+{: screen: .screen}
+{: codeblock: .codeblock}
+{: note: .note}
+{: important: .important}
+{: javascript: data-hd-programlang="javascript"}
+{: tip: .tip}
+{: pre: .pre}
 
 
 
@@ -26,7 +26,7 @@ subcollection: blockchain-sw-252
 {: #ansible}
 
 Customers who are interested in automating their {{site.data.keyword.blockchainfull}} Platform network deployments can use Ansible playbooks to deploy an instance of the service and build out their networks.
-{:shortdesc}
+{: shortdesc}
 
 **Target audience:** This topic is designed for network creators and system administrators who are responsible for planning and configuring {{site.data.keyword.blockchainfull_notm}} networks on {{site.data.keyword.cloud_notm}} or on their own Kubernetes cluster and are new to Ansible playbooks.
 

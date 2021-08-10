@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-07-07"
+lastupdated: "2021-08-10"
 
 keywords: FAQs, can I, upgrade, what version, peer ledger database, supported languages, why do I, regions, multicloud
 
@@ -11,16 +11,16 @@ content-type: faq
 
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:note: .note}
-{:term: .term}
-{:important: .important}
-{:tip: .tip}
-{:faq: data-hd-content-type='faq'}
-{:pre: .pre}
+{: external: target="_blank" .external}
+{: shortdesc: .shortdesc}
+{: screen: .screen}
+{: codeblock: .codeblock}
+{: note: .note}
+{: term: .term}
+{: important: .important}
+{: tip: .tip}
+{: faq: data-hd-content-type='faq'}
+{: pre: .pre}
 
 
 

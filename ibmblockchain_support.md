@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-04-28"
+lastupdated: "2021-08-10"
 
 keywords: IBM Blockchain Platform, support case, Hyperledger Fabric Community, Cloud tickets, Rocket Chat, dWAnswers, multicloud
 
@@ -10,14 +10,14 @@ subcollection: blockchain-sw-252
 
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:note: .note}
-{:important: .important}
-{:tip: .tip}
-{:pre: .pre}
+{: external: target="_blank" .external}
+{: shortdesc: .shortdesc}
+{: codeblock: .codeblock}
+{: screen: .screen}
+{: note: .note}
+{: important: .important}
+{: tip: .tip}
+{: pre: .pre}
 
 
 # Getting support
@@ -35,7 +35,7 @@ subcollection: blockchain-sw-252
 
 
 {{site.data.keyword.blockchainfull}} Platform 2.5.2 provides several avenues for troubleshooting problems and getting support.
-{:shortdesc}
+{: shortdesc}
 
 It is recommended to start with [free digital support resources](/docs/blockchain-sw-252?topic=blockchain-sw-252-blockchain-support#blockchain-support-resources) to troubleshoot problems and get help from {{site.data.keyword.IBM_notm}} and the Hyperledger Fabric Community. If your problem cannot be solved by using those resources, submit a support case through the [mysupport](https://www.ibm.com/mysupport/s/?language=en_US){: external} page. For more information, see [Submitting support cases](/docs/blockchain-sw-252?topic=blockchain-sw-252-blockchain-support#blockchain-support-cases).
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-28"
+lastupdated: "2021-08-10"
 
 
 keywords: vs code extension, Visual Studio Code extension, smart contract, development tools, multicloud
@@ -11,15 +11,15 @@ subcollection: blockchain-sw-252
 
 ---
 
-{:shortdesc: .shortdesc}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:note: .note}
-{:term: .term}
-{:important: .important}
-{:tip: .tip}
-{:pre: .pre}
-{:external: target="_blank" .external}
+{: shortdesc: .shortdesc}
+{: codeblock: .codeblock}
+{: screen: .screen}
+{: note: .note}
+{: term: .term}
+{: important: .important}
+{: tip: .tip}
+{: pre: .pre}
+{: external: target="_blank" .external}
 
 
 

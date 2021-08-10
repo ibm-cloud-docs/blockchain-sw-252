@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-16"
+lastupdated: "2021-08-10"
 
 keywords: ansible playbooks, docker image, blockchain network, APIs, ansible galaxy
 
@@ -10,15 +10,15 @@ subcollection: blockchain-sw-252
 
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:note: .note}
-{:important: .important}
-{:javascript: data-hd-programlang="javascript"}
-{:tip: .tip}
-{:pre: .pre}
+{: external: target="_blank" .external}
+{: shortdesc: .shortdesc}
+{: screen: .screen}
+{: codeblock: .codeblock}
+{: note: .note}
+{: important: .important}
+{: javascript: data-hd-programlang="javascript"}
+{: tip: .tip}
+{: pre: .pre}
 
 
 
@@ -27,7 +27,7 @@ subcollection: blockchain-sw-252
 {: #ansible-install-ibp}
 
 Customers can use an Ansible playbook to automate their installation of the {{site.data.keyword.blockchainfull}} Platform network deployments on a Kubernetes distribution.
-{:shortdesc}
+{: shortdesc}
 
 **Target audience:** This topic is designed for system administrators or network creators who are responsible for installing {{site.data.keyword.blockchainfull_notm}} Platform networks on a Kubernetes cluster and are new to Ansible playbooks.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-03-18"
+lastupdated: "2021-08-10"
 
 keywords: IBM Blockchain Platform, video series, videos, getting started videos, demo videos
 
@@ -10,15 +10,15 @@ subcollection: blockchain-sw-252
 
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:note: .note}
-{:download: .download}
+{: external: target="_blank" .external}
+{: shortdesc: .shortdesc}
+{: screen: .screen}
+{: pre: .pre}
+{: table: .aria-labeledby="caption"}
+{: codeblock: .codeblock}
+{: tip: .tip}
+{: note: .note}
+{: download: .download}
 
 
 
@@ -138,7 +138,7 @@ subcollection: blockchain-sw-252
 {: #ibp-videos}
 
 You can watch the getting started video series to learn more about how to use {{site.data.keyword.blockchainfull}} Platform.
-{:shortdesc}
+{: shortdesc}
 
 ## Getting started with {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2
 {: #ibp-videos-ibp-v2}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2021-05-03"
+lastupdated: "2021-08-10"
 
 keywords: intermediate CA, root CA, parent server, Certificate Authority, multicloud
 
@@ -10,15 +10,15 @@ subcollection: blockchain-sw-252
 
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:note: .note}
-{:important: .important}
-{:support: data-reuse='support'}
-{:tip: .tip}
-{:pre: .pre}
+{: external: target="_blank" .external}
+{: shortdesc: .shortdesc}
+{: screen: .screen}
+{: codeblock: .codeblock}
+{: note: .note}
+{: important: .important}
+{: support: data-reuse='support'}
+{: tip: .tip}
+{: pre: .pre}
 
 
 

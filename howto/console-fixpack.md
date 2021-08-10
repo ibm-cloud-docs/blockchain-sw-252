@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-07-13"
+lastupdated: "2021-08-10"
 
 keywords: Kubernetes, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, fix pack, multicloud
 
@@ -10,21 +10,21 @@ subcollection: blockchain-sw-252
 
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:note: .note}
-{:important: .important}
-{:tip: .tip}
-{:pre: .pre}
+{: external: target="_blank" .external}
+{: shortdesc: .shortdesc}
+{: screen: .screen}
+{: codeblock: .codeblock}
+{: note: .note}
+{: important: .important}
+{: tip: .tip}
+{: pre: .pre}
 
 
 # Installing the 2.5.2 fix pack
 {: #install-fixpack}
 
 Use these instructions if you have already installed or upgraded to the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 before June 17, 2021 and want to apply the latest 2.5.2 fix pack. This fix pack is cumulative, which means that it includes all of the fixes from previous 2.5.2 fixpacks. It contains important bug fixes and should be applied to your network as soon as possible.  If you install the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 after June 17, 2021, the platform will contain all the bug fixes and improvements included in this fix pack, and you do not need to apply it.
-{:shortdesc}
+{: shortdesc}
 
 You can install the fix pack by updating the {{site.data.keyword.blockchainfull_notm}} Platform deployment on your Kubernetes cluster to pull the latest images from the {{site.data.keyword.IBM_notm}} entitlement registry. You can apply the fix pack by using the following steps:
 
@@ -82,7 +82,7 @@ You can start applying the fix pack to your network by updating the {{site.data.
 
 Run the following command to download the operator deployment spec to your local file system. The default name of the operator deployment is `ibp-operator`. If you changed the name during the deployment process, you can use the `kubectl get deployment -n <namespace>` command to get the name of the deployments on your namespace. Replace `<namespace>` with the name of your namespace or OpenShift project:
 ```
-kubectl set image deploy/ibp-operator -n <namespace> ibp-operator=cp.icr.io/cp/ibp-operator:2.5.2-20210713-amd64
+kubectl set image deploy/ibp-operator -n <namespace> ibp-operator=cp.icr.io/cp/ibp-operator:2.5.2-20210810-amd64
 ```
 {: codeblock}
 
@@ -149,7 +149,7 @@ ibpconsole     1/1       1            1           1m
 After you apply the fix to your console, you need to use your console UI to update the nodes of your blockchain network. Browse to the console UI and open the nodes overview tab. To upgrade a node, open the node tile and click the **Upgrade available** button. You cannot upgrade nodes that you imported to the console.
 
 Apply upgrades to nodes one at a time. Your nodes are unavailable to process requests or transactions while the patch is being applied. Therefore, to avoid any disruption of service, you need to ensure that another node of the same type is available to process requests whenever possible. Installing upgrades on a node takes about a minute to complete and when it is complete, the node is ready to process requests.
-{:important}
+{: important}
 
 ## Rolling back the fix pack installation
 {: #install-fixpack-rollback}
@@ -195,9 +195,9 @@ The following commands only work with a Docker container registry. Depending on 
 {: note}
 
 ```
-skopeo copy docker://cp.icr.io/cp/ibp-operator:2.5.2-20210713 docker://<LOCAL_REGISTRY>/ibp-operator:2.5.2-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-operator:2.5.2-20210810 docker://<LOCAL_REGISTRY>/ibp-operator:2.5.2-20210810 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 skopeo copy docker://cp.icr.io/cp/ibp-init:2.5.2-20210713 docker://<LOCAL_REGISTRY>/ibp-init:2.5.2-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-console:2.5.2-20210713 docker://<LOCAL_REGISTRY>/ibp-console:2.5.2-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-console:2.5.2-20210810 docker://<LOCAL_REGISTRY>/ibp-console:2.5.2-20210810 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 skopeo copy docker://cp.icr.io/cp/ibp-grpcweb:2.5.2-20210713 docker://<LOCAL_REGISTRY>/ibp-grpcweb:2.5.2-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 skopeo copy docker://cp.icr.io/cp/ibp-deployer:2.5.2-20210713 docker://<LOCAL_REGISTRY>/ibp-deployer:2.5.2-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 skopeo copy docker://cp.icr.io/cp/ibp-fluentd:2.5.2-20210713 docker://<LOCAL_REGISTRY>/ibp-fluentd:2.5.2-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
@@ -264,7 +264,7 @@ You can start applying the fix pack to your network by updating the {{site.data.
 
 Run the following command to download the operator deployment spec to your local file system. The default name of the operator deployment is `ibp-operator`. If you changed the name during the deployment process, you can use the `kubectl get deployment -n <namespace>` command to get the name of the deployments on your namespace. Replace `<namespace>` with the name of your namespace or OpenShift project:
 ```
-kubectl set image deploy/ibp-operator -n <namespace> ibp-operator=cp.icr.io/cp/ibp-operator:2.5.2-20210713-amd64
+kubectl set image deploy/ibp-operator -n <namespace> ibp-operator=cp.icr.io/cp/ibp-operator:2.5.2-20210810-amd64
 ```
 {: codeblock}
 

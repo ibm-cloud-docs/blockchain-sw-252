@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-04"
+lastupdated: "2021-08-10"
 
 keywords: metering, licensing service, license consumption, license tracking
 
@@ -10,24 +10,24 @@ subcollection: blockchain-sw-252
 
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:important: .important}
-{:note: .note}
-{:term: .term}
-{:tip: .tip}
-{:download: .download}
+{: external: target="_blank" .external}
+{: shortdesc: .shortdesc}
+{: screen: .screen}
+{: pre: .pre}
+{: table: .aria-labeledby="caption"}
+{: codeblock: .codeblock}
+{: important: .important}
+{: note: .note}
+{: term: .term}
+{: tip: .tip}
+{: download: .download}
 
 
 # Tracking license consumption
 {: #metering}
 
 This page describes the licensing service that can be used with the {{site.data.keyword.blockchainfull}} Platform to track license consumption. The License Service collects and measures the license usage of Virtual Processor Core (VPC) metric at the cluster level.
-{:shortdesc}
+{: shortdesc}
 
 ## Overview
 {: #metering-overview}

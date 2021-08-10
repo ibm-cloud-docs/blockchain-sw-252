@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-08-07"
+lastupdated: "2021-08-10"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, firewall, on-premises, air-gapped, on-prem, multicloud, on-prem
 
@@ -123,7 +123,7 @@ subcollection: blockchain-sw-252
 
 
 You can use these instructions to deploy {{site.data.keyword.blockchainfull}} Platform 2.5.2 behind a firewall without internet connectivity. If you are deploying the platform on a cluster with access to the external internet, use the main instructions for [Deploy {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp).
-{:shortdesc}
+{: shortdesc}
 
 You can deploy the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 onto a Kubernetes cluster that is running on Red Hat OpenShift Container Platform. The {{site.data.keyword.blockchainfull_notm}} Platform uses a [Kubernetes Operator](https://www.openshift.com/learn/topics/operators){: external} to install the {{site.data.keyword.blockchainfull_notm}} Platform console on your cluster and manage the deployment and your blockchain nodes. When the {{site.data.keyword.blockchainfull_notm}} Platform console is running on your cluster, you can use the console to create blockchain nodes and operate a multicloud blockchain network.
 
@@ -174,9 +174,9 @@ The following commands only work with a Docker container registry. Depending on 
 {: note}
 
 ```
-skopeo copy docker://cp.icr.io/cp/ibp-operator:2.5.2-20210713 docker://<LOCAL_REGISTRY>/ibp-operator:2.5.2-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-operator:2.5.2-20210810 docker://<LOCAL_REGISTRY>/ibp-operator:2.5.2-20210810 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 skopeo copy docker://cp.icr.io/cp/ibp-init:2.5.2-20210713 docker://<LOCAL_REGISTRY>/ibp-init:2.5.2-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-console:2.5.2-20210713 docker://<LOCAL_REGISTRY>/ibp-console:2.5.2-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-console:2.5.2-20210810 docker://<LOCAL_REGISTRY>/ibp-console:2.5.2-20210810 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 skopeo copy docker://cp.icr.io/cp/ibp-grpcweb:2.5.2-20210713 docker://<LOCAL_REGISTRY>/ibp-grpcweb:2.5.2-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 skopeo copy docker://cp.icr.io/cp/ibp-deployer:2.5.2-20210713 docker://<LOCAL_REGISTRY>/ibp-deployer:2.5.2-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 skopeo copy docker://cp.icr.io/cp/ibp-fluentd:2.5.2-20210713 docker://<LOCAL_REGISTRY>/ibp-fluentd:2.5.2-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all

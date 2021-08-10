@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-07"
+lastupdated: "2021-08-10"
 keywords: troubleshooting, debug, why, what does this mean, how can I, when I
 
 subcollection: blockchain-sw-252
@@ -10,18 +10,18 @@ content-type: troubleshoot
 
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:note: .note}
-{:important: .important}
-{:tip: .tip}
-{:pre: .pre}
-{:tsSymptoms: .tsSymptoms}
-{:tsCauses: .tsCauses}
-{:tsResolve: .tsResolve}
-{:troubleshoot: data-hd-content-type='troubleshoot'}
+{: external: target="_blank" .external}
+{: shortdesc: .shortdesc}
+{: screen: .screen}
+{: codeblock: .codeblock}
+{: note: .note}
+{: important: .important}
+{: tip: .tip}
+{: pre: .pre}
+{: tsSymptoms: .tsSymptoms}
+{: tsCauses: .tsCauses}
+{: tsResolve: .tsResolve}
+{: troubleshoot: data-hd-content-type='troubleshoot'}
 
 
 
@@ -39,7 +39,7 @@ content-type: troubleshoot
 </div>
 
 General problems can occur when you use the console to manage nodes, channels, or smart contracts. In many cases, you can recover from these problems by following a few simple steps.
-{:shortdesc}
+{: shortdesc}
 
 This topic describes common issues that can occur when you use the {{site.data.keyword.blockchainfull_notm}} Platform console.  
 
