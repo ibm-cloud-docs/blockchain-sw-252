@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-03"
+lastupdated: "2021-08-10"
 
 keywords: IBM Blockchain Platform, Data residency, world state, channels, multicloud
 
@@ -10,14 +10,102 @@ subcollection: blockchain-sw-252
 
 ---
 
-{:shortdesc: .shortdesc}
-{:screen: .screen}
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:authenticated-content: .authenticated-content}
+{:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
+{:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
-{:note: .note}
-{:important: .important}
-{:tip: .tip}
-{:pre: .pre}
+{:curl: #curl .ph data-hd-programlang='curl'}
+{:curl: .ph data-hd-programlang='curl'}
+{:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
+{:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
+{:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
+{:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
+{:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
+{:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
+{:java: .ph data-hd-programlang='java'}
+{:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
+{:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
+{:new_window: target="_blank"}
+{:node: .ph data-hd-programlang='node'}
+{:note .note}
+{:note: .note}
+{:note:.deprecated}
+{:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
+{:php: data-hd-programlang="php"}
+{:pre: .pre}
+{:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
+{:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
+{:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
+{:subsection: outputclass="subsection"}
+{:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
+{:table: .aria-labeledby="caption"}
+{:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
+{:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
+{:troubleshoot: data-hd-content-type='troubleshoot'}
+{:tsCauses: .tsCauses}
+{:tsResolve: .tsResolve}
+{:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vbnet: .ph data-hd-programlang='vb.net'}
+{:video: .video}
+
 
 
 
@@ -35,7 +123,7 @@ subcollection: blockchain-sw-252
 </div>
 
 Because blockchain networks are oblivious to the type of data that is processed, extra steps must sometimes be taken to keep certain kinds of data secure. The most common requirement on data residency is associated with laws within certain countries, which mandate that all data that is processed and stored in an IT system must remain within a specific country’s borders. Similarly, some companies in highly regulated industries, such as government, healthcare, and financial services, require that data must be stored entirely behind their firewall.
-{:shortdesc}
+{: shortdesc}
 
 Blockchain networks allow multiple organizations to use a distributed ledger to transact and share data in a way that is trusted and secure. However, this implies that data can be distributed across the nodes of the network and the regions where those nodes reside. Organizations can use several options to separate data from the rest of the network and achieve data residency:
 1. [Private data collections on a shared channel](#console-icp-about-data-residency-fabric)
@@ -67,13 +155,13 @@ If you are using an OpenShift cluster that was deployed with the {{site.data.key
 
 We can use an example consortium to illustrate how data is distributed on the {{site.data.keyword.blockchainfull_notm}} Platform, and to explore how members can  achieve data residency. The following figure contains a consortium with one ordering service and four organizations. Each organization has one peer node. Two organizations, Org A and Org B, and the ordering service are located in the United States. The other two organizations, Org C and Org D, are located in Germany. All four organizations are members of and have joined their peers to channel X.
 
-![An example consortium](../images/data_res_use_case.svg "An example consortium"){: caption="Figure 1. An example blockchain consortium with one ordering service and four organizations. The four organizations are all members of one channel, Channel X. " caption-side="bottom"}
+![An example consortium](images/data_res_use_case.svg "An example consortium"){: caption="Figure 1. An example blockchain consortium with one ordering service and four organizations. The four organizations are all members of one channel, Channel X. " caption-side="bottom"}
 
 Each peer joined to channel X stores a copy of the channel ledger, which is displayed in **Figure 1** as Ledger X. Because peers from the United States and Germany are joined to the channel, the data on the channel ledger resides in both geographies. The blockchain portion of the ledger is also stored by the ordering service that is located in the United States.
 
 If two organizations in the consortium create a second channel, Channel Y, a second ledger is created and stored on the peers of channel members. Only the organizations that joined the channel have a copy of the channel data.
 
-![Adding a second channel](../images/data_res_use_case_channel.svg "Adding a second channel"){: caption="Figure 2. Two organizations in the consortium have created and joined a second channel, Channel Y. A second channel ledger is created and stored on the peers of Org B and Org D and the ordering service." caption-side="bottom"}
+![Adding a second channel](images/data_res_use_case_channel.svg "Adding a second channel"){: caption="Figure 2. Two organizations in the consortium have created and joined a second channel, Channel Y. A second channel ledger is created and stored on the peers of Org B and Org D and the ordering service." caption-side="bottom"}
 
 In **Figure 2**, Org B and Org D have joined channel Y. The peers of Org B and Org D now store a copy of ledger Y, in addition to ledger X. Because the same ordering service was used to create channel X and channel Y, the ordering service now has a copy of the blockchain portion of both channel ledgers. In both **Figure 1** and **Figure 2**, data being created by applications in Germany is stored in the United States, which is undesirable if data residency is required.
 
@@ -85,7 +173,7 @@ We can use the previous example to explore the options that organizations can us
 
 Org C and Org D can use the [private data feature](https://hyperledger-fabric.readthedocs.io/en/release-2.2/private-data/private-data.html#what-is-a-private-data-collection "What is a private data collection?"){: external} of Hyperledger Fabric to prevent data from being distributed to all organizations on the channel. Private data collections allow organizations to share state data peer-to-peer (via a [gossip data dissemination protocol](https://hyperledger-fabric.readthedocs.io/en/release-2.2/gossip.html)) with other organizations that are authorized to read the collection. The data is stored in a private, separate database on the peer. The ordering service is not involved and does not see the private data. Only a hash of the data in the collection is added to the channel ledger and is stored on the peers of other channel members and the ordering service. This allows organizations to verify private data if they want to make the transaction details public. To learn more, visit the [Private Data](https://hyperledger-fabric.readthedocs.io/en/release-2.2/private-data/private-data.html#private-data "Private data"){: external} concept article in the Fabric documentation.
 
-![Private data](../images/data_res_private_data.svg "caption three"){: caption="Figure 3. Org C and Org D use a private data collection to keep data from being distributed on channel X and from leaving Germany. Hashes of data in the collection are stored on ledger X." caption-side="bottom"}
+![Private data](images/data_res_private_data.svg "caption three"){: caption="Figure 3. Org C and Org D use a private data collection to keep data from being distributed on channel X and from leaving Germany. Hashes of data in the collection are stored on ledger X." caption-side="bottom"}
 
 In **Figure 3**, Org C and Org D have created a private data collection, the `OrgC-OrgD` collection, that allows the organizations to transact without having to share data with Org A, Org B, or the ordering service. The key-value state data inside this collection is only stored on the peers of Org C and Org D and does not leave Germany. However, a hash of the data within the collection is stored on ledger X and shared with the broader channel. This means that a hash of the data in the `OrgC-OrgD` collection is stored on the peers and the ordering service in the United States.
 
@@ -100,7 +188,7 @@ Also, consider that data inside a private data collection can be purged from the
 
 Org C and Org D can also use private data collections in the context of a separate channel to provide additional isolation for their data. Creating a new channel, Channel Y in this case, ensures that the hash of the private data is only shared with the ordering service, without being shared with other members of the consortium and stored on their peers.
 
-![Using private data with a separate channel](../images/data_res_private_data_channel.svg "Using private data with a separate channel"){: caption="Figure 4. Org C and Org D form a separate channel, Channel Y, and use a private data collection. Hashes of data in the collection are stored on ledger Y, and is only stored by the peers in Germany but not on the peers in the United States." caption-side="bottom"}
+![Using private data with a separate channel](images/data_res_private_data_channel.svg "Using private data with a separate channel"){: caption="Figure 4. Org C and Org D form a separate channel, Channel Y, and use a private data collection. Hashes of data in the collection are stored on ledger Y, and is only stored by the peers in Germany but not on the peers in the United States." caption-side="bottom"}
 
 In **Figure 4**, Org C and Org D have formed a new channel, Channel Y, that does not contain any members in the United States. As a result, hashes of data in the `OrgC-OrgD` collection is stored on ledger Y instead of ledger X, and is not stored on the peers in the United States. Because the ordering service is located in the United States, a hash of the data that is created in Germany still leaves the country.
 
@@ -111,7 +199,7 @@ Creating a separate channel can prevent transaction details from being shared wi
 
 Org C and Org D can also create a channel with all of the infrastructure within the same country. This requires that the peers joined to the channel, the applications, and the ordering service all reside within the same region. In this scenario, none of the data that is stored on the channel ledger will leave the region and be stored outside the country.
 
-![Creating a separate channel](../images/data_res_separate_channel.svg "Creating a separate channel"){: caption="Figure 5. Org C and Org D create a new channel using an ordering service located in Germany. All data is stored in the country on Ledger Y." caption-side="bottom"}
+![Creating a separate channel](images/data_res_separate_channel.svg "Creating a separate channel"){: caption="Figure 5. Org C and Org D create a new channel using an ordering service located in Germany. All data is stored in the country on Ledger Y." caption-side="bottom"}
 
 In **Figure 5**, Org C and Org D have created a new channel for data that must not leave Germany. This requires the creation of a new ordering service that is located in Germany to ensure that the orderer's copy of the channel ledger is stored inside the country. Since in this case the ordering service, the OrgC-peer, and the OrgD-peer are located in Germany, Org C and Org D can now keep the data public on the channel if they choose, or they could still decide to use private data collections to prevent the full transaction data from being stored on the ordering service.
 
@@ -123,7 +211,7 @@ Creating a channel with all of the components in one country ensures that all of
 
 When you initially deploy an ordering service, you create a set of ordering nodes that will be available to the application channels for transaction processing. A major benefit of the Raft ordering service is that you can configure a channel to only use specific ordering nodes from the ordering service. That's why the console includes an Advanced Channel creation option to select a subset of ordering nodes to include in the channel consenter set, where each ordering node that you select will contain a copy of the channel ledger. Therefore, it is possible to restrict the channel ledger locations to only nodes that reside in country.
 
-![Spreading ordering nodes across countries](../images/data_res_4.png "Spreading ordering nodes across countries"){: caption="Figure 6. Org C and Org D create a Channel Y using ordering nodes only located in Germany. All data is stored in the country on Ledger Y." caption-side="bottom"}
+![Spreading ordering nodes across countries](images/data_res_4.png "Spreading ordering nodes across countries"){: caption="Figure 6. Org C and Org D create a Channel Y using ordering nodes only located in Germany. All data is stored in the country on Ledger Y." caption-side="bottom"}
 
 In **Figure 6**, the ordering nodes that participate in the Raft ordering service are spread across the two countries. Two ordering nodes are located in the United States, and three ordering nodes are in Germany for a total of five ordering nodes. When **Channel X** is created, all five ordering nodes are included in the consenter set, which would _not_ meet a data residency requirement as the ledger data is spread across both countries. **Channel Y** however only includes the three ordering nodes that reside in Germany, which guarantees that all ledger data for this channel stays in country. A minimum of three ordering nodes is recommended because this configuration allows for one node to go down and two nodes to be available to maintain "quorum", the minimum number of nodes that must be available (out of the total number) for the ordering service to process transactions. A more robust configuration would be to include five ordering nodes in Germany for **Channel Y**, which means that two nodes could go down without losing quorum.
 
