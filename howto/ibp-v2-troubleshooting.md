@@ -106,10 +106,8 @@ content-type: troubleshoot
 {:video: .video}
 
 
-{:tsSymptoms: tsSymptoms}
-{:tsCauses:.tsCauses}
-{:tsResolve:.tsResolve}
-{:troubleshoot:data-hd-content-type='troubleshoot'}
+
+
 
 
 
