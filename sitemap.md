@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-08-31"
+lastupdated: "2021-09-19"
 
 keywords: site map
 subcollection: blockchain-sw-252
@@ -743,9 +743,9 @@ subcollection: blockchain-sw-252
 * [Create a new project for your {{site.data.keyword.blockchainfull_notm}} Platform deployment](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp#deploy-ocp-project)
 * [Create a secret for your entitlement key](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp#deploy-ocp-docker-registry-secret)
 * [Add security and access policies](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp#deploy-ocp-scc)
-  * [Apply the Security Context Constraint](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp#apply-the-security-context-constraint)
-  * [Apply the ClusterRole](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp#apply-the-clusterrole)
-  * [Apply the ClusterRoleBinding](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp#apply-the-clusterrolebinding)
+  * [Apply the Security Context Constraint](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp#deploy-ocp-scc-apply-security-context-constraint)
+  * [Apply the ClusterRole](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp#deploy-ocp-scc-apply-clusterrole)
+  * [Apply the ClusterRoleBinding](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp#deploy-ocp-scc-apply-clusterrolebinding)
 * [Deploy the {{site.data.keyword.blockchainfull_notm}} Platform operator](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp#deploy-ocp-operator)
 * [Deploy the {{site.data.keyword.blockchainfull_notm}} Platform console](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp#deploy-ocp-console)
   * [Advanced deployment options](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp#console-deploy-ocp-advanced)

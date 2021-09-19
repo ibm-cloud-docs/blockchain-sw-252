@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-08-27"
+lastupdated: "2021-09-19"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -798,6 +798,7 @@ The name of the secret that you are creating is `docker-key-secret`. This value 
 The {{site.data.keyword.blockchainfull_notm}} Platform requires specific security and access policies to be added to your project. The contents of a set of `.yaml` files are provided here for you to copy and edit to define the security policies for your project. You must save these files to your local system and then add them your project by using the OpenShift CLI. These steps need to be completed by a cluster administrator. Also, be aware that the peer `init` and `dind` containers that get deployed are required to run in privileged mode.
 
 ### Apply the Security Context Constraint
+{: #deploy-ocp-scc-apply-security-context-constraint}
 
 Copy the security context constraint object below and save it to your local system as `ibp-scc.yaml`. Edit the file and replace `<PROJECT_NAME>` with the name of your project.
 
@@ -854,6 +855,7 @@ securitycontextconstraints.security.openshift.io/blockchain-project created
 clusterrole.rbac.authorization.k8s.io/system:openshift:scc:blockchain-project added: "system:serviceaccounts:blockchain-project"
 ```
 ### Apply the ClusterRole
+{: #deploy-ocp-scc-apply-clusterrole}
 
 Copy the following text to a file on your local system and save the file as `ibp-clusterrole.yaml`. This file defines the required ClusterRole for the PodSecurityPolicy. Edit the file and replace `<PROJECT_NAME>` with the name of your project.
 
@@ -965,6 +967,7 @@ clusterrole.rbac.authorization.k8s.io/system:openshift:scc:blockchain-project ad
 ```
 
 ### Apply the ClusterRoleBinding
+{: #deploy-ocp-scc-apply-clusterrolebinding}
 
 Copy the following text to a file on your local system and save the file as `ibp-clusterrolebinding.yaml`. This file defines the ClusterRoleBinding. Edit the file and replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment project.  
 
