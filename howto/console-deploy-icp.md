@@ -109,15 +109,15 @@ subcollection: blockchain-sw-252
 
 
 # Deploying {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 for ICP
-{:#deploy-icp}
+{: #deploy-icp}
 
 <div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px;">
   <p style="line-height: 15px;">
     <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
-    <a href="/docs/blockchain-sw?topic=blockchain-sw-deploy-k8-entitlement-key">2.1.2</a>,
-    <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-k8-entitlement-key">2.1.3</a>,
-    <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-deploy-k8-entitlement-key">2.5</a>,
-    <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-deploy-k8-entitlement-key">2.5.1</a>, 2.52
+    <a href="/docs/blockchain-sw?topic=blockchain-sw-deploy-icp">2.1.2</a>,
+    <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-icp">2.1.3</a>,
+    <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-deploy-icp">2.5</a>,
+    <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-deploy-icp">2.5.1</a>, 2.52
     </p>
 </div>
 
@@ -129,7 +129,7 @@ Kubernetes cluster does not download and update the latest version of {site.data
 {: note} 
 
 ## Resources required
-{:#deploy-icp-resources-required}
+{: #deploy-icp-resources-required}
 
 Ensure that your Kubernetes cluster has sufficient resources for the {{site.data.keyword.blockchainfull_notm}} Platform console and for the blockchain nodes that you create. The amount of resources that are required can vary depending on your infrastructure, network design, and performance requirements. To help you deploy a cluster of the appropriate size, the default CPU, memory, and storage requirements for each component type are provided in this table. Your actual resource allocations are visible in your blockchain console when you deploy a node and can be adjusted at deployment time or after deployment according to your business needs.
 
@@ -150,14 +150,14 @@ The resources for the CA, peer, and ordering nodes need to be multiplied by the 
 Note that when smart contracts are installed on peers that run a Fabric v2.x image, the smart contract is launched in its own pod instead of a separate container on the peer, which accounts for the smaller amount of resources required on the peer.
 
 ## Browsers
-{:#deploy-icp-browsers}
+{: #deploy-icp-browsers}
 The {{site.data.keyword.blockchainfull_notm}} Platform console has been successfully tested on the following browsers:
 
 - Chrome Version 91.0.4472.114 (Official Build) (64-bit)
 - Safari Version 14.1.1 (16611.2.7.1.4)
 
 ## Storage
-{:#deploy-icp-storage}
+{: #deploy-icp-storage}
 
 In addition to a small amount of storage (10 GB) required by the {{site.data.keyword.blockchainfull_notm}} console, persistent storage is required for each CA, peer, and ordering node that you deploy. Because blockchain components do not use the Kubernetes node local storage, network-attached remote storage is required so that blockchain nodes can fail over to a different Kubernetes worker node in the event of a node outage.  And because you cannot change your storage type after deploying peer, CA, or ordering nodes, you need to decide the type of persistent storage that you want to use _before_ you deploy any blockchain nodes.
 
@@ -190,12 +190,12 @@ If you prefer not to choose a persistent storage option, the default storage cla
 | **Multi-zone capable storage** | {{site.data.keyword.cloud_notm}} includes the ability to create a single Kubernetes cluster across multiple data centers or "zones". Portworx offers multi-zone capable storage that can be used to potentially reduce the number of peers required. Consider a scenario where you build two zones with two peers for redundancy, one zone can go down and you still have two peers up in another zone. With multi-zone capable storage, you could instead have two zones with one peer each. If one zone goes down, the peer comes up in the other zone with its storage intact, reducing the overall redundant peer requirements. |
 
 ## Filesystem permissions
-{:#deploy-icp-fs-perm}
+{: #deploy-icp-fs-perm}
 
 {{site.data.keyword.blockchainfull_notm}} Platform uses Kubernetes [init containers](https://kubernetes.io/docs/concepts/workloads/pods/init-containers/){: externnal} to set the correct filesystem permissions for the mounted volumes. The init containers run as the root user. The volumes are mounted on the init container which then changes the owner of the mounted folder to be the non-root user of the container that will use it. Learn  more about [how to give non-root users write permission on the volume mount path](/docs/containers?topic=containers-nonroot){: external}.
 
 ## Get your entitlement key
-{: #deploy-k8-entitlement-key}
+{: #deploy-icp-k8-entitlement-key}
 
 When you purchase the {{site.data.keyword.blockchainfull_notm}} Platform from PPA, you receive an entitlement key for the software is associated with your MyIBM account. You need to access and save this key to deploy the platform.
 
@@ -204,7 +204,7 @@ When you purchase the {{site.data.keyword.blockchainfull_notm}} Platform from PP
 2. In the Entitlement keys section, select **Copy key** to copy the entitlement key to the clipboard. Save this value for use later during deployment.
 
 ## Before you begin
-{: #deploy-k8-prerequisites}
+{: #deploy-icp-k8-prerequisites}
 
 1. The {{site.data.keyword.blockchainfull_notm}} Platform can be installed only on the [Supported Platforms](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-ocp-about#console-ocp-about-prerequisites){: external}.
 
@@ -219,12 +219,12 @@ When you purchase the {{site.data.keyword.blockchainfull_notm}} Platform from PP
 **Looking for a way to script the deployment of the service?** Check out the [Ansible playbooks](/docs/blockchain-sw-252?topic=blockchain-sw-252-ansible), a powerful tool for scripting the deployment of components in your blockchain network. If you prefer a manual installation, proceed to the next section.
 
 ## Log in to your cluster
-{: #deploy-k8-login}
+{: #deploy-icp-k8-login}
 
 Before you can complete the next steps, you need to log in to your cluster by using the kubectl CLI. Follow the instructions for logging in to your cluster.
 
 ## ({{site.data.keyword.cloud_notm}} Private only) Create an image policy
-{: #deploy-k8-docker-icp-img-policy}  
+{: #deploy-icp-k8-docker-icp-img-policy}  
 
 If you are deploying on {{site.data.keyword.cloud_notm}} Private, you must also create an image policy. Copy the following text to a file on your local system and save the file as `image-policy.yaml`.
 ```
@@ -246,7 +246,7 @@ kubectl apply -f image-policy.yaml -n <NAMESPACE>
 {: codeblock}
 
 ## Create the `ibpinfra` namespace for the webhook
-{: #deploy-k8-ibpinfra}
+{: #deploy-icp-k8-ibpinfra}
 
 Because the platform has updated the internal apiversion from `v1alpha1` in previous versions to `v1beta1`, a Kubernetes conversion webhook is required to update the CA, peer, operator, and console to the new API version. This webhook will continue to be used in the future, so new deployments of the platform are required to deploy it as well.  The webhook is deployed to its own namespace, referred to as  `ibpinfra` throughout these instructions.
 
@@ -259,7 +259,7 @@ kubectl create namespace ibpinfra
 {: codeblock}
 
 ## Create a secret for your entitlement key
-{: #deploy-k8-secret-ibpinfra}
+{: #deploy-icp-k8-secret-ibpinfra}
 
 After you purchase the {{site.data.keyword.blockchainfull_notm}} Platform, you can access the [My IBM dashboard](https://myibm.ibm.com/dashboard/){: external} to obtain your entitlement key for the offering. You need to store the entitlement key on your cluster by creating a [Kubernetes Secret](https://kubernetes.io/docs/concepts/configuration/secret/){: external}. Kubernetes secrets are used to securely store the key on your cluster and pass it to the operator and the console deployments.
 
@@ -277,7 +277,7 @@ The name of the secret that you are creating is `docker-key-secret`. It is requi
 {: note}
 
 ## Deploy the webhook and custom resource definitions (CRDS) to your Kubernetes cluster
-{: #deploy-k8s-webhook-crd}
+{: #deploy-icp-k8s-webhook-crd}
 
 Before you can upgrade an existing 2.1.x network to 2.5.x, or deploy a new instance of the platform to your Kubernetes cluster, you need to create the conversion webhook by completing the steps in this section. The webhook is deployed to its own namespace or project, referred to `ibpinfra` throughout these instructions.
 
@@ -810,7 +810,7 @@ customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com configured
 {: codeblock}
 
 ## Create a new namespace for your {{site.data.keyword.blockchainfull_notm}} Platform deployment
-{: #deploy-k8-namespace}
+{: #deploy-icp-k8-namespace}
 
 Next, you need to create a second project for your deployment of {{site.data.keyword.blockchainfull_notm}} Platform. You can create a namespace by using the kubectl CLI. The namespace needs to be created by a cluster administrator.
 
@@ -834,7 +834,7 @@ kubectl get storageclasses
 If you are not using the default storage class, additional configuration is required. See [Storage](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#deploy-k8-storage) for the considerations.
 
 ## Create a secret for your entitlement key
-{: #deploy-k8-docker-registry-secret}
+{: #deploy-icp-k8-docker-registry-secret}
 
 You've already created a secret for the entitlement key in the `ibpinfra` namespace or project, now you need to create one in your {{site.data.keyword.blockchainfull_notm}} Platform namespace or project. After you purchase the {{site.data.keyword.blockchainfull_notm}} Platform, you can access the [My IBM dashboard](https://myibm.ibm.com/dashboard/){: external} to obtain your entitlement key for the offering. You need to store the entitlement key on your cluster by creating a [Kubernetes Secret](https://kubernetes.io/docs/concepts/configuration/secret/){: external}. Kubernetes secrets are used to securely store the key on your cluster and pass it to the operator and the console deployments.
 
@@ -853,12 +853,12 @@ The name of the secret that you are creating is `docker-key-secret`. This value 
 {: note}
 
 ## Add security and access policies
-{: #deploy-k8-scc}
+{: #deploy-icp-k8-scc}
 
 The {{site.data.keyword.blockchainfull_notm}} Platform requires specific security and access policies to be added to your namespace. The contents of a set of `.yaml` files are provided here for you to copy and edit to define the security policies. You must save these files to your local system and then add them your namespace by using the kubectl CLI. These steps need to be completed by a cluster administrator. Also, be aware that the peer `init` and `dind` containers that get deployed are required to run in privileged mode.
 
 ### Apply the Pod Security Policy
-{: #deploy-k8-apply-psp}
+{: #deploy-icp-k8-apply-psp}
 
 Copy the PodSecurityPolicy object below and save it to your local system as `ibp-psp.yaml`.
 
@@ -903,7 +903,7 @@ kubectl apply -f ibp-psp.yaml
 {: codeblock}
 
 ### Apply the ClusterRole
-{: #deploy-k8-clusterrole}
+{: #deploy-icp-k8-clusterrole}
 
 Copy the following text to a file on your local system and save the file as `ibp-clusterrole.yaml`. This file defines the required ClusterRole for the PodSecurityPolicy. Edit the file and replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.
 
@@ -1006,7 +1006,7 @@ Replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_n
 
 
 ### Apply the ClusterRoleBinding
-{: #deploy-k8-clusterrolebinding}
+{: #deploy-icp-k8-clusterrolebinding}
 
 Copy the following text to a file on your local system and save the file as `ibp-clusterrolebinding.yaml`. This file defines the ClusterRoleBinding. Edit the file and replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.  
 
@@ -1041,7 +1041,7 @@ kubectl apply -f ibp-clusterrolebinding.yaml -n <NAMESPACE>
 Replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.
 
 ### Create the role binding
-{: #deploy-k8-rolebinding}
+{: #deploy-icp-k8-rolebinding}
 
 After applying the policies, you must grant your service account the required level of permissions to deploy your console. Run the following command with the name of your target namespace:
 ```
@@ -1184,7 +1184,7 @@ ibp-operator   1/1     1            1           1m
 {: codeblock}
 
 ## Deploy the {{site.data.keyword.blockchainfull_notm}} Platform console
-{:#deploy-icp-console}
+{: #deploy-icp-console}
 
 When the operator is running on your namespace, you can apply a custom resource to start the {{site.data.keyword.blockchainfull_notm}} Platform console on your cluster. You can then access the console from your browser. Note that you can deploy only one console per namespace.
 
@@ -1259,7 +1259,7 @@ kubectl apply -f ibp-console.yaml -n <NAMESPACE>
 Replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace. Before you install the console, you might want to review the advanced deployment options in the next section. The console can take a few minutes to deploy.
 
 ### Advanced deployment options
-{: #console-deploy-k8-advanced}
+{: #console-icp-deploy-k8-advanced}
 
 Before you deploy the console, you can edit the `ibp-console.yaml` file to allocate more resources to your console or use zones for high availability in a multizone cluster. To take advantage of these deployment options, you can use the console resource definition with the `resources:` and `clusterdata:` sections added:
 
@@ -1346,7 +1346,7 @@ Unlike the resource allocation, you cannot add zones to a running network. If yo
 {: important}
 
 ### Use your own TLS Certificates (Optional)
-{:#deploy-icp-tls}
+{: #deploy-icp-tls}
 
 The {{site.data.keyword.blockchainfull_notm}} Platform console uses TLS certificates to secure the communication between the console and your blockchain nodes and between the console and your browser. You have the option of creating your own TLS certificates and providing them to the console by using a Kubernetes secret. If you skip this step, the console creates its own self-signed TLS certificates during deployment.
 
@@ -1409,7 +1409,7 @@ kubectl apply -f ibp-console.yaml -n <NAMESPACE>
 Replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.
 
 ### Verifying the console installation
-{:#deploy-icp-verify}
+{: #deploy-icp-verify}
 
 You can confirm that the operator deployed by running the command `kubectl get deployment -n <NAMESPACE>`. If your console deployment is successful, you can see `ibpconsole` added to the deployment table, with four ones displayed. The console takes a few minutes to deploy. You might need to click refresh and wait for the table to be updated.
 ```
@@ -1448,7 +1448,7 @@ kubectl logs -f ibpconsole-55cf9db6cc-856nz optools -n blockchain-project
 {: codeblock}
 
 ## Log in to the console
-{:#deploy-icp-log-in}
+{: #deploy-icp-log-in}
 
 If you are deploying the platform on **{{site.data.keyword.cloud_notm}} Private**, you can access the console by browsing to the following URL:
 ```
@@ -1476,7 +1476,7 @@ browser such as Chrome and log in. Otherwise, clear your browser cache and try l
 The administrator who provisions the console can grant access to other users and restrict the actions they can perform. For more information, see [Managing users from the console](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-icp-manage#console-icp-manage-users).
 
 ## Next steps
-{: #console-deploy-k8-next-steps}
+{: #deploy-icp-k8-next-steps}
 
 When you access your console, you can view the **nodes** tab of your console UI. You can use this screen to deploy components on the cluster where you deployed the console. See the [Build a network tutorial](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-build-network#ibp-console-build-network) to get started with the console. You can also use this tab to operate nodes that are created on other clouds. For more information, see [Importing nodes](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-import-nodes#ibp-console-import-nodes).
 
