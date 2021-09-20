@@ -108,7 +108,7 @@ subcollection: blockchain-sw-252
 
 
 
-# Deploying {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 for ICP
+# Deploying {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 for {{site.data.keyword.cloud_notm}} Private
 {: #deploy-icp}
 
 <div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px;">
@@ -223,7 +223,7 @@ When you purchase the {{site.data.keyword.blockchainfull_notm}} Platform from PP
 
 Before you can complete the next steps, you need to log in to your cluster by using the kubectl CLI. Follow the instructions for logging in to your cluster.
 
-## ({{site.data.keyword.cloud_notm}} Private only) Create an image policy
+## Create an image policy
 {: #deploy-icp-k8-docker-icp-img-policy}  
 
 If you are deploying on {{site.data.keyword.cloud_notm}} Private, you must also create an image policy. Copy the following text to a file on your local system and save the file as `image-policy.yaml`.
@@ -1449,7 +1449,7 @@ kubectl logs -f ibpconsole-55cf9db6cc-856nz optools -n blockchain-project
 ## Log in to the console
 {: #deploy-icp-log-in}
 
-If you are deploying the platform on **{{site.data.keyword.cloud_notm}} Private**, you can access the console by browsing to the following URL:
+You can access the console by browsing to the following URL:
 ```
 https://<DOMAIN>:<CONSOLE_PORT>
 ```
