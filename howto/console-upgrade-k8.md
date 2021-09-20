@@ -652,13 +652,12 @@ kubectl create namespace ibpinfra
 
 After you purchase the {{site.data.keyword.blockchainfull_notm}} Platform, you can access the [My IBM dashboard](https://myibm.ibm.com/dashboard/){: external} to obtain your entitlement key for the offering. You need to store the entitlement key on your cluster by creating a [Kubernetes Secret](https://kubernetes.io/docs/concepts/configuration/secret/){: external}. Kubernetes secrets are used to securely store the key on your cluster and pass it to the operator and the console deployments.
 
-
-
 Run the following command to create the secret and add it to your `ibpinfra` namespace or project:
 ```
 kubectl create secret docker-registry docker-key-secret --docker-server=cp.icr.io --docker-username=cp --docker-password=<KEY> --docker-email=<EMAIL> -n ibpinfra
 ```
 {: codeblock}
+
 - Replace `<KEY>` with your entitlement key.
 - Replace `<EMAIL>` with your email address.
 
@@ -1482,13 +1481,12 @@ kubectl create namespace ibpinfra
 
 After you purchase the {{site.data.keyword.blockchainfull_notm}} Platform, you can access the [My IBM dashboard](https://myibm.ibm.com/dashboard/){: external} to obtain your entitlement key for the offering. You need to store the entitlement key on your cluster by creating a [Kubernetes Secret](https://kubernetes.io/docs/concepts/configuration/secret/){: external}. Kubernetes secrets are used to securely store the key on your cluster and pass it to the operator and the console deployments.
 
-
-
 Run the following command to create the secret and add it to your `ibpinfra` namespace or project:
 ```
 kubectl create secret docker-registry docker-key-secret --docker-server=cp.icr.io --docker-username=cp --docker-password=<KEY> --docker-email=<EMAIL> -n ibpinfra
 ```
 {: codeblock}
+
 - Replace `<KEY>` with your entitlement key.
 - Replace `<EMAIL>` with your email address.
 
