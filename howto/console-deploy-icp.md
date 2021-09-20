@@ -227,17 +227,17 @@ Before you can complete the next steps, you need to log in to your cluster by us
 {: #deploy-k8-docker-icp-img-policy}  
 
 If you are deploying on {{site.data.keyword.cloud_notm}} Private, you must also create an image policy. Copy the following text to a file on your local system and save the file as `image-policy.yaml`.
-  ```
-  apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
-  kind: ImagePolicy
-  metadata:
-    name: image-policy
-    spec:
-    repositories:
-    - name: cp.icr.io/cp/*
-      policy: null
-  ```
-    {: codeblock}
+```
+apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
+kind: ImagePolicy
+metadata:
+  name: image-policy
+  spec:
+  repositories:
+  - name: cp.icr.io/cp/*
+    policy: null
+```
+ {: codeblock}
 
 Then, use the kubectl CLI to add the image policy to your namespace.
 ```

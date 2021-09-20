@@ -203,6 +203,7 @@ $ oc get namespace
 NAME                                STATUS    AGE
 ibpinfra                            Active    2m
 ```
+{: codeblock}
 
 ## Create a secret for your entitlement key
 {: #deploy-ocp-secret-ibpinfra}
@@ -775,8 +776,9 @@ When you create a new project, a new namespace is created with the same name as 
 ```
 $ oc get namespace
 NAME                                STATUS    AGE
-blockchain-project                  Active    2m
+blockchain-project    Active    2m
 ```
+{: codeblock}
 
 You can also use the CLI to find the available storage classes for your namespace. If you created a new storage class for your deployment, that storage class must be visible in the output in the following command:
 ```
@@ -860,6 +862,7 @@ oc apply -f ibp-scc.yaml -n <PROJECT_NAME>
 oc adm policy add-scc-to-user <PROJECT_NAME> system:serviceaccounts:<PROJECT_NAME>
 ```
 {: codeblock}
+
 Replace `<PROJECT_NAME>` with the name that you want to use for your {{site.data.keyword.blockchainfull_notm}} Platform deployment project.
 
 If the command is successful, you can see a response that is similar to the following example:
@@ -867,6 +870,8 @@ If the command is successful, you can see a response that is similar to the foll
 securitycontextconstraints.security.openshift.io/blockchain-project created
 clusterrole.rbac.authorization.k8s.io/system:openshift:scc:blockchain-project added: "system:serviceaccounts:blockchain-project"
 ```
+{: codeblock}
+
 ### Apply the ClusterRole
 {: #deploy-ocp-scc-apply-clusterrole}
 
@@ -971,6 +976,7 @@ oc apply -f ibp-clusterrole.yaml -n <PROJECT_NAME>
 oc adm policy add-scc-to-group <PROJECT_NAME> system:serviceaccounts:<PROJECT_NAME>
 ```
 {: codeblock}
+
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment project.
 
 If successful, you can see a response that is similar to the following example:
@@ -978,6 +984,7 @@ If successful, you can see a response that is similar to the following example:
 clusterrole.rbac.authorization.k8s.io/blockchain-project created
 clusterrole.rbac.authorization.k8s.io/system:openshift:scc:blockchain-project added: "system:blockchain-project"
 ```
+{: codeblock}
 
 ### Apply the ClusterRoleBinding
 {: #deploy-ocp-scc-apply-clusterrolebinding}
@@ -1006,13 +1013,13 @@ roleRef:
 ```
 {: codeblock}
 
-
 After you save and edit the file, run the following commands:
 ```
 oc apply -f ibp-clusterrolebinding.yaml -n <PROJECT_NAME>
 oc adm policy add-cluster-role-to-user <PROJECT_NAME> system:serviceaccounts:<PROJECT_NAME>
 ```
 {: codeblock}
+
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment project.
 
 If successful, you can see a response that is similar to the following example:
@@ -1020,14 +1027,14 @@ If successful, you can see a response that is similar to the following example:
 clusterrolebinding.rbac.authorization.k8s.io/blockchain-project created
 clusterrole.rbac.authorization.k8s.io/blockchain-project added: "system:serviceaccounts:blockchain-project"
 ```
+{: codeblock}
+
 ## Deploy the {{site.data.keyword.blockchainfull_notm}} Platform operator
 {: #deploy-ocp-operator}
 
 The {{site.data.keyword.blockchainfull_notm}} Platform uses an operator to install the {{site.data.keyword.blockchainfull_notm}} Platform console. You can deploy the operator on your cluster by adding a custom resource to your project by using the OpenShift CLI. The custom resource pulls the operator image from the Docker registry and starts it on your cluster.   
 
 Copy the following text to a file on your local system and save the file as `ibp-operator.yaml`.
-
-
 
 ```yaml
 apiVersion: apps/v1
@@ -1146,6 +1153,7 @@ Then, use the `kubectl` CLI to add the custom resource to your project.
 kubectl apply -f ibp-operator.yaml -n <PROJECT_NAME>
 ```
 {: codeblock}
+
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment project.
 
 You can confirm that the operator deployed by running the command `kubectl get deployment -n <PROJECT_NAME>`. If your operator deployment is successful, then you can see the following tables with four ones displayed. The operator takes about a minute to deploy.
@@ -1153,6 +1161,7 @@ You can confirm that the operator deployed by running the command `kubectl get d
 NAME           READY     UP-TO-DATE   AVAILABLE   AGE
 ibp-operator   1/1       1            1           46s
 ```
+{: codeblock}
 
 ## Deploy the {{site.data.keyword.blockchainfull_notm}} Platform console
 {: #deploy-ocp-console}
@@ -1160,8 +1169,6 @@ ibp-operator   1/1       1            1           46s
 When the operator is running on your namespace, you can apply a custom resource to start the {{site.data.keyword.blockchainfull_notm}} Platform console on your cluster. You can then access the console from your browser. Note that you can deploy only one console per OpenShift project.
 
 Save the custom resource definition below as `ibp-console.yaml` on your local system. If you changed the name of the entitlement key secret, then you need to edit the field of `name: docker-key-secret`.
-
-
 
 ```yaml
 apiVersion: ibp.com/v1beta1
@@ -1188,6 +1195,7 @@ spec:
   version: 2.5.2
 ```
 {: codeblock}
+
 Accept the license:  
 
 - Accept the [IBM Blockchain Platform license](https://www-03.ibm.com/software/sla/sladb.nsf/lilookup/6CE1C5684689691C852586000043982B?OpenDocument){: external} by replacing the `license` parameter `accept: false` with the text `accept: true`.
@@ -1208,11 +1216,14 @@ If you are deploying on OpenShift Container Platform on LinuxONE, you need to re
 arch:
 - amd64
 ```
+{: codeblock}
+
 in the `spec:` section with:
 ```yaml
 arch:
 - s390x
 ```
+{: codeblock}
 
 If you are running OpenShift on Azure, you also need to change the storage class from `default` to `azure-standard`, unless you created your own storage class.
 {: tip}
@@ -1225,14 +1236,13 @@ After you update the file, you can use the CLI to install the console.
 kubectl apply -f ibp-console.yaml -n <PROJECT_NAME>
 ```
 {: codeblock}
+
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment project. The console can take a few minutes to deploy.
 
 ### Advanced deployment options
 {: #console-deploy-ocp-advanced}
 
 Before you deploy the console, you can edit the `ibp-console.yaml` file to allocate more resources to your console or use zones for high availability in a multizone cluster. To take advantage of these deployment options, you can use the console resource definition with the `resources:` and `clusterdata:` sections added:
-
-
 
 ```yaml
 apiVersion: ibp.com/v1beta1
@@ -1311,6 +1321,7 @@ When you finish editing the file, apply it to your cluster.
 kubectl apply -f ibp-console.yaml -n <PROJECT_NAME>
 ```
 {: codeblock}
+
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment project.
 
 Unlike the resource allocation, you cannot add zones to a running network. If you have already deployed a console and used it to create nodes on your cluster, you will lose your previous work. After the console restarts, you need to deploy new nodes.
@@ -1337,10 +1348,10 @@ Navigate to the TLS certificates that you plan to use on your local system. Name
 kubectl create secret generic console-tls-secret --from-file=tls.crt=./tlscert.pem --from-file=tls.key=./tlskey.pem -n <PROJECT_NAME>
 ```
 {: codeblock}
+
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment project.
 
 After you create the secret, add the `tlsSecretName` field to the `spec:` section of `ibp-console.yaml` with one indent added, at the same level as the `resources:` and `clusterdata:` sections of the advanced deployment options. You must provide the name of the TLS secret that you created to the field. The following example deploys a console with the TLS certificate and key stored in a secret named `"console-tls-secret"`. Replace `"<CONSOLE_TLS_SECRET_NAME>"` with `"console-tls-secret"` unless you used a different name for the secret.
-
 
 ```yaml
 apiVersion: ibp.com/v1beta1
@@ -1378,6 +1389,7 @@ When you finish editing the file, you can apply it to your cluster in order to s
 kubectl apply -f ibp-console.yaml -n <PROJECT_NAME>
 ```
 {: codeblock}
+
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment project.
 
 ### Verifying the console installation
@@ -1388,6 +1400,7 @@ NAME           READY     UP-TO-DATE   AVAILABLE   AGE
 ibp-operator   1/1       1            1           10m
 ibpconsole     1/1       1            1           4m
 ```
+{: codeblock}
 
 The console consists of four containers that are deployed inside a single pod:
 - `optools`: The console UI.
@@ -1400,6 +1413,7 @@ If there is an issue with your deployment, you can view the logs from one of the
 kubectl get pods -n <PROJECT_NAME>
 ```
 {: codeblock}
+
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment project.
 
 Then, use the following command to get the logs from one of the four containers listed above:
@@ -1407,6 +1421,7 @@ Then, use the following command to get the logs from one of the four containers 
 kubectl logs -f <pod_name> <container_name> -n <PROJECT_NAME>
 ```
 {: codeblock}
+
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment project.
 
 As an example, a command to get the logs from the UI container would look like the following example:
@@ -1440,6 +1455,7 @@ You can also find your console URL by logging in to your OpenShift cluster and r
 oc get routes -n <PROJECT_NAME>
 ```
 {: codeblock}
+
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment project.
 
 In the output of the command, you can see the URLs for the proxy and the console. You need to add `https://` to the beginning console URL to access the console. You do not need to add a port to the URL.
