@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-04"
 
 keywords: site map
 subcollection: blockchain-sw-252
@@ -892,17 +892,17 @@ subcollection: blockchain-sw-252
 * [Before you begin](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-k8-prerequisites)
 * [Log in to your cluster](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-k8-login)
 * [Create an image policy](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-k8-docker-icp-img-policy)
+* [Add security and access policies](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-k8-scc)
+  * [Apply the Pod Security Policy](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-k8-apply-psp)
 * [Create the `ibpinfra` namespace for the webhook](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-k8-ibpinfra)
 * [Create a secret for your entitlement key](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-k8-secret-ibpinfra)
 * [Deploy the webhook and custom resource definitions (CRDS) to your Kubernetes cluster](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-k8s-webhook-crd)
   * [1. Configure role-based access control (RBAC) for the webhook](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#webhook-rbac)
-  * [2. (OpenShift cluster only) Apply the Security Context Constraint](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#webhook-scc)
+  * [2.  Apply the Security Context Constraint](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#webhook-scc)
   * [3. Deploy the webhook](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#webhook-deploy)
   * [4. Extract the certificate and create the custom resource definitions](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#webhook-extract-cert)
 * [Create a new namespace for your {{site.data.keyword.blockchainfull_notm}} Platform deployment](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-k8-namespace)
 * [Create a secret for your entitlement key](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-k8-docker-registry-secret)
-* [Add security and access policies](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-k8-scc)
-  * [Apply the Pod Security Policy](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-k8-apply-psp)
   * [Apply the ClusterRole](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-k8-clusterrole)
   * [Apply the ClusterRoleBinding](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-k8-clusterrolebinding)
   * [Create the role binding](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-k8-rolebinding)
@@ -1410,6 +1410,8 @@ subcollection: blockchain-sw-252
 
 
 [Release notes](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20)
+
+* [05 Oct 2021](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#05-10-2021)
 
 * [10 Aug 2021](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#10-08-2021)
 
