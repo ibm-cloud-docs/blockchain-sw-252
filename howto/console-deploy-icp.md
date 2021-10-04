@@ -437,6 +437,7 @@ spec:
 
 ```
 {: codeblock}
+
 Run the following command to add the file to your cluster definition:
 ```
 kubectl apply -n ibpinfra -f deployment.yaml
@@ -453,7 +454,6 @@ deployment.apps/ibp-webhook created
 {: #webhook-service-yaml}
 
 Second, copy the following text to a file on your local system and save the file as `service.yaml`.
-
 ```yaml
 apiVersion: v1
 kind: Service
@@ -487,12 +487,12 @@ When the command completes successfully, you should see something similar to:
 ```
 service/ibp-webhook created
 ```
+{: codeblock}
 
 ### 4. Extract the certificate and create the custom resource definitions
 {: #webhook-extract-cert}
 
 1. Extract the webhook TLS certificate from the `ibpinfra` namespace by running the following command:
-
   ```
   TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibpinfra -o jsonpath={'.data.cert\.pem'})
   ```
@@ -796,12 +796,10 @@ kubectl create secret docker-registry docker-key-secret -–docker-server <your 
 The name of the secret that you are creating is `docker-key-secret`. This value is used by the operator to deploy the offering in future steps. If you change the name of any of secrets that you create, you need to change the corresponding name in future steps.
 {: note}
 
-
 ### Apply the ClusterRole
 {: #deploy-icp-k8-clusterrole}
 
 Copy the following text to a file on your local system and save the file as `ibp-clusterrole.yaml`. This file defines the required ClusterRole for the PodSecurityPolicy. Edit the file and replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.
-
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole

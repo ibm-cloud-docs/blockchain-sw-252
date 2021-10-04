@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-11"
+lastupdated: "2021-10-04"
 keywords: troubleshooting, debug, why, what does this mean, how can I, when I
 
 subcollection: blockchain-sw-252
@@ -10,100 +10,7 @@ content-type: troubleshoot
 
 ---
 
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
-{:android: data-hd-operatingsystem="android"}
-{:api: .ph data-hd-interface='api'}
-{:apikey: data-credential-placeholder='apikey'}
-{:app_key: data-hd-keyref="app_key"}
-{:app_name: data-hd-keyref="app_name"}
-{:app_secret: data-hd-keyref="app_secret"}
-{:app_url: data-hd-keyref="app_url"}
-{:audio: .audio}
-{:authenticated-content: .authenticated-content}
-{:beta: .beta}
-{:c#: .ph data-hd-programlang='c#'}
-{:c#: data-hd-programlang="c#"}
-{:cli: .ph data-hd-interface='cli'}
-{:codeblock: .codeblock}
-{:curl: #curl .ph data-hd-programlang='curl'}
-{:curl: .ph data-hd-programlang='curl'}
-{:deprecated: .deprecated}
-{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
-{:download: .download}
-{:external: .external target="_blank"}
-{:external: target="_blank" .external}
-{:faq: data-hd-content-type='faq'}
-{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
-{:generic: data-hd-operatingsystem="generic"}
-{:generic: data-hd-programlang="generic"}
-{:gif: data-image-type='gif'}
-{:go: .ph data-hd-programlang='go'}
-{:help: data-hd-content-type='help'}
-{:hide-dashboard: .hide-dashboard}
-{:hide-in-docs: .hide-in-docs}
-{:important: .important}
-{:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
-{:java: .ph data-hd-programlang='java'}
-{:java: data-hd-programlang="java"}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:javascript: data-hd-programlang="javascript"}
-{:middle: .ph data-hd-position='middle'}
-{:navgroup: .navgroup}
-{:new_window: target="_blank"}
-{:node: .ph data-hd-programlang='node'}
-{:note: .note}
-{:objectc: .ph data-hd-programlang='Objective C'}
-{:objectc: data-hd-programlang="objectc"}
-{:org_name: data-hd-keyref="org_name"}
-{:php: .ph data-hd-programlang='PHP'}
-{:php: data-hd-programlang="php"}
-{:pre: .pre}
-{:preview: .preview}
-{:python: .ph data-hd-programlang='python'}
-{:python: data-hd-programlang="python"}
-{:right: .ph data-hd-position='right'}
-{:route: data-hd-keyref="route"}
-{:row-headers: .row-headers}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:ruby: data-hd-programlang="ruby"}
-{:runtime: architecture="runtime"}
-{:runtimeIcon: .runtimeIcon}
-{:runtimeIconList: .runtimeIconList}
-{:runtimeLink: .runtimeLink}
-{:runtimeTitle: .runtimeTitle}
-{:screen: .screen}
-{:script: data-hd-video='script'}
-{:service: architecture="service"}
-{:service_instance_name: data-hd-keyref="service_instance_name"}
-{:service_name: data-hd-keyref="service_name"}
-{:shortdesc: .shortdesc}
-{:space_name: data-hd-keyref="space_name"}
-{:step: data-tutorial-type='step'}
-{:step: data-tutorial-type='step'} 
-{:subsection: outputclass="subsection"}
-{:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
-{:swift: .ph data-hd-programlang='swift'}
-{:swift: data-hd-programlang="swift"}
-{:table: .aria-labeledby="caption"}
-{:term: .term}
-{:terraform: .ph data-hd-interface='terraform'}
-{:tip: .tip}
-{:tooling-url: data-tooling-url-placeholder='tooling-url'}
-{:topicgroup: .topicgroup}
-{:troubleshoot: data-hd-content-type='troubleshoot'}
-{:tsCauses: .tsCauses}
-{:tsResolve: .tsResolve}
-{:tsSymptoms: .tsSymptoms}
-{:tutorial: data-hd-content-type='tutorial'}
-{:ui: .ph data-hd-interface='ui'}
-{:unity: .ph data-hd-programlang='unity'}
-{:url: data-credential-placeholder='url'}
-{:user_ID: data-hd-keyref="user_ID"}
-{:vbnet: .ph data-hd-programlang='vb.net'}
-{:video: .video}
+{{site.data.keyword.attribute-definition-list}}
 
 
 
@@ -166,6 +73,9 @@ This topic describes common issues that can occur when you use the {{site.data.k
 - [Why are my transactions returning an endorsement policy error: signature set did not satisfy policy?](#ibp-v2-troubleshooting-endorsement-sig-failure)
 - [Why are the transactions I submit from VS Code failing with a No endorsement plan available error?](#ibp-v2-troubleshooting-anchor-peer)
 - [Why are the transactions I submit from VS Code failing with an endorsement failure?](#ibp-v2-troubleshooting-endorsement)
+- [Why is my peer unable to communicate with my ordering node?](#ibp-v2-troubleshooting-peer-bad-connection)
+- [When I hover over my node, the status is red, what does this mean?](#ibp-v2-troubleshooting-status-error})
+- [How do I disable the network policies in my namespace?](#ibp-v2-troubleshooting-disable-network-policies)
 
 
 ## My deployment fails when I try apply the security and access policies to my namespace
@@ -180,6 +90,7 @@ When I apply the file, I receive a user forbidden error:
 ```
 securitycontextconstraints.security.openshift.io "e-block2" is forbidden: User cannot get securitycontextconstraints.security.openshift.io at the cluster scope: no RBAC policy matched
 ```
+{: codeblock}
 
 This problem occurs when you are not a cluster administrator. You must have a cluster administrator role and apply the security and access policies to your namespace.
 {: tsCauses}
@@ -190,6 +101,7 @@ When I try to apply resource file, I receive a parsing error:
 ```
 error: error parsing ibp-scc.yaml: error converting YAML to JSON: yaml: line 10: mapping values are not allowed in this context
 ```
+{: codeblock}
 
 This error happens when a problem exists with the indents in your YAML file. Refer to the documentation for the correct format for the security and access files.
 {: tsCauses}
@@ -208,6 +120,7 @@ When I apply the custom resource file, I receive an image pull or image pull bac
 NAME                            READY     STATUS             RESTARTS   AGE
 ibp-operator-769d94ffbc-w52n6   0/1       ImagePullBackOff   0          32s
 ```
+{: codeblock}
 
 This problem occurs when your deployment cannot pull the {{site.data.keyword.blockchainfull_notm}} Platform images from the {{site.data.keyword.IBM_notm}} Entitlement registry. This can happen because you provided an incorrect name of your secret to the `imagePullSecrets:` field, or if there was a problem with the URL or the key that you provided to the entitlement key secret. This error can also occur if you supplied the wrong image tag to the file.
 {: tsCauses}
@@ -218,6 +131,7 @@ When I try to apply the custom resource file, I receive a parsing error:
 ```
 error: error parsing console.yaml: error converting YAML to JSON: yaml: line 11: mapping values are not allowed in this context
 ```
+{: codeblock}
 
 This error happens when a problem exists with the indents in your file. Refer to the documentation for the correct format for the custom resource files of the console and operator.
 {: tsCauses}
@@ -230,6 +144,8 @@ When deploying or upgrading to the {{site.data.keyword.blockchainfull_notm}} Pla
 ```
 kubectl get secret webhook-tls-cert -n ibpinfra -o json | jq -r .data.\"cert.pem\"
 ```
+{: codeblock}
+
 {: tsSymptoms}
 
 This problem can be occur when the entitlement `key`, that you specified in the `docker-key-secret` for the `ibpinfra` namespace or project, is invalid. Because only one entitlement key can be used per deployment, you  need to refresh the key if it was already used for a different deployment.
@@ -496,12 +412,12 @@ You may receive this error if this version of the smart contract already exists 
 
 {: tsSymptoms}
 Installing a smart contract on a peer fails with an error similar to the following:
-
 ```
 An error occurred when installing smart contract on peer.
 error in simulation: failed to execute transaction
 421fac...2fda: error sending: timeout expired while executing transaction.
 ```
+{: codeblock}
 
 {: tsCauses}
 When running the {{site.data.keyword.blockchainfull_notm}} Platform on s390x architecture, or in an environment with constrained resources, it is possible that smart contract installation can fail on a peer if the default timeout is too short on the peer that is running the Fabric v2x image.
@@ -536,6 +452,7 @@ Instantiating a Node.js smart contract fails with the timeout error:
 github.com/hyperledger/fabric/core/chaincode.(*RuntimeLauncher).Launch
 	/go/src/github.com/hyperledger/fabric/core/chaincode/runtime_launcher.go:75
 ```
+{: codeblock}
 
 {: tsCauses}
 When running the {{site.data.keyword.blockchainfull_notm}} Platform on s390x architecture, it is possible that Node.js smart contract instantiation can fail if the default timeout is too short.
@@ -553,6 +470,7 @@ My Node.js smart contract endorsement fails with the error:
 ```
 Error: endorsement failure during query. response: status:500 message:"error in simulation: failed to execute transaction 6cbcf9f94bdef3fc68abba5604e46293ae: could not launch chaincode nodecc:1.1: error building chaincode: error building image: external builder failed: external builder failed to build: external builder 'ibp-builder' failed: exit status 3"
 ```
+{: codeblock}
 
 {: tsCauses}
 By default, a Fabric v1.4 peer creates a Node v8 runtime, and a Fabric v2.x peer creates a Node v12 runtime. In order for the smart contract to work with Node 12 runtime, the `fabric-contract-api` and `fabric-shim` node modules must be at v1.4.5 or greater.
@@ -675,6 +593,7 @@ When I try to invoke a smart contract from the Fabric SDK, the transaction fails
 ```
 error: [Network]: _initializeInternalChannel: no suitable peers available to initialize from Failed to submit transaction: Error: no suitable peers available to initialize from
 ```
+{: codeblock}
 
 This error occurs if you have not configured an anchor peer on your channel. Unless you have manually updated your connection profile, your application needs to use the [Service Discovery](https://hyperledger-fabric.readthedocs.io/en/release-2.2/discovery-overview.html){: external} feature to learn about the peers it needs to submit the transaction to.
 {: tsCauses}
@@ -713,11 +632,14 @@ The peer log includes:
 ```
 [main] InitCmd -> ERRO 001 Cannot run peer because cannot init crypto, folder “/certs/msp” does not exist`
 ```
+{: codeblock}
+
 or the ordering node log contains:
 
 ```
 Failed to initialize local MSP: admin 0 is invalid [The identity does not contain OU [CLIENT], MSP: [orderermsp],The identity does not contain OU [ADMIN], MSP: [orderermsp]]
 ```
+{: codeblock}
 
 - This error can occur under the following conditions:
   - When you created the peer or ordering service organization MSP definition, you specified an enroll ID and secret that corresponds to an identity of type `peer` and not `client` or `admin`. It must be of type `client` or `admin`.
@@ -823,6 +745,7 @@ When I invoke a smart contract to submit a transaction, the transaction returns 
 ```
 returned error: VSCC error: endorsement policy failure, err: signature set did not satisfy policy
 ```
+{: codeblock}
 
 If you have recently joined a channel and installed the smart contract, this error occurs if you have not added your organization to the endorsement policy. Because your organization is not on the list of organizations who can endorse a transaction from the smart contract, the endorsement from your peers is rejected by the channel. If you encounter this problem, you can change the endorsement policy by upgrading the smart contract. For more information, see [Specifying an endorsement policy](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-smart-contracts-v2#ibp-console-smart-contracts-v2-install-propose) and [Versioning a smart contract](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-smart-contracts-v2#ibp-console-smart-contracts-v2-versioning).
 {: tsCauses}
@@ -863,6 +786,66 @@ This error occurs when the peer's enroll id type does not match the smart contra
 
 The only way to resolve this error is to delete the peer and create a new one with an enroll id that has the correct type `peer`. You can use the enroll id and secret from an existing user of type `peer` from the peer's CA or register a new user with type `peer`. Follow the instructions in the [Build a network tutorial](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-build-network#ibp-console-build-network-create-peer-org1) to create a new peer identity with the correct type and peer.
 {: tsResolve}
+
+
+## Why is my peer unable to communicate with my ordering node?
+{: #ibp-v2-troubleshooting-peer-bad-connection}
+{: troubleshoot}
+
+A peer node has a timeout or connection refused error when trying to communicate with the orderer.
+{: tsSymptoms}
+
+This problem can occur due to the network policies applied by the operator, which occurs when the environment variable `IBPOPERATOR_CONSOLE_APPLYNETWORKPOLICY` is set to `"true"`.
+{: tsCauses}
+
+[Disable the network policies in your namespace](#ibp-v2-troubleshooting-disable-network-policies). This should resolve connectivity issues with your nodes.
+{: tsResolve}
+
+## When I hover over my node, the status is red, what does this mean?
+{: #ibp-v2-troubleshooting-status-error}
+{: troubleshoot}
+
+A CA, peer, or ordering node has a red status box, meaning there may be connectivity issues with the node. Ideally, when you hover over any node, the node status should be `Running`.
+{: tsSymptoms}
+
+This problem can occur due to the network policies applied by the operator, which occurs when the environment variable `IBPOPERATOR_CONSOLE_APPLYNETWORKPOLICY` is set to `"true"`.
+{: tsCauses}
+
+[Disable the network policies in your namespace](#ibp-v2-troubleshooting-disable-network-policies). This should resolve connectivity issues with your nodes.
+{: tsResolve}
+
+## How do I disable the network policies in my namespace?
+{: #ibp-v2-troubleshooting-disable-network-policies}
+{: troubleshoot}
+
+You may need to disable the network policies in your namespace to address connectivity issues in your network.
+{: tsSymptoms}
+
+Check if network policies have been applied in your namespace by running the following CLI command:
+{: tsResolve}
+
+```
+kubectl get netpol -n <NAMESPACE>
+```
+{: codeblock}
+
+If the command returns a list of one or more network policies that you did not apply and/or you want to disable, first disable the operator creation of network policies. Get the operator deployment spec in your namespace and check for environment variable `IBPOPERATOR_CONSOLE_APPLYNETWORKPOLICY`:
+```
+kubectl get deploy ibm-hlfsupport-operator -n <NAMESPACE>
+```
+{: codeblock}
+
+If it is present, remove the environment variable `IBPOPERATOR_CONSOLE_APPLYNETWORKPOLICY`:
+```
+kubectl edit deploy ibm-hlfsupport-operator -n <NAMESPACE>
+```
+{: codeblock}
+
+Once the operator creation of the network policy has been disabled, delete the network policies from the namespace:
+```
+kubectl delete netpol -n <NAMESPACE> <NETWORKPOLICYNAME>
+```
+{: codeblock}
 
 ## How do I delete a peer pod?
 {: #ibp-troubleshooting-delete-peer}
