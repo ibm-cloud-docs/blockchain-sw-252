@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-10-04"
+lastupdated: "2021-10-05"
 
 keywords: IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, firewall, on-premises, air-gapped, on-prem, multicloud, on-prem
 
@@ -860,32 +860,19 @@ rules:
   verbs:
   - use
 - apiGroups:
-  - "*"
+  - apiextensions.k8s.io
   resources:
-  - pods
-  - pod/logs
-  - services
-  - endpoints
   - persistentvolumeclaims
   - persistentvolumes
-  - events
-  - configmaps
-  - secrets
-  - ingresses
-  - roles
-  - rolebindings
-  - serviceaccounts
-  - nodes
-  - jobs
   verbs:
-  - '*'
-- apiGroups:
-  - ""
-  resources:
-  - namespaces
-  - nodes
-  verbs:
-  - 'get'
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
 - apiGroups:
   - apiextensions.k8s.io
   resources:
@@ -893,29 +880,78 @@ rules:
   verbs:
   - get
 - apiGroups:
-  - apiextensions.k8s.io
+  - route.openshift.io
   resources:
+  - routes
+  - routes/custom-host
+  verbs:
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
+- apiGroups:
+  - ""
+  resources:
+  - pods
+  - pods/log
   - persistentvolumeclaims
   - persistentvolumes
+  - services
+  - endpoints
+  - events
+  - configmaps
+  - secrets
+  - nodes
+  - serviceaccounts
   verbs:
-  - '*'
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
 - apiGroups:
-  - ibp.com
+  - "batch"
   resources:
-  - '*'
-  - ibpservices
-  - ibpcas
-  - ibppeers
-  - ibpfabproxies
-  - ibporderers
+  - jobs
   verbs:
-  - '*'
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
 - apiGroups:
-  - ibp.com
+  - "authorization.openshift.io"
+  - "rbac.authorization.k8s.io"
   resources:
-  - '*'
+  - roles
+  - rolebindings
   verbs:
-  - '*'
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
+  - bind
+  - escalate
+- apiGroups:
+  - ""
+  resources:
+  - namespaces
+  verbs:
+  - get
 - apiGroups:
   - apps
   resources:
@@ -924,7 +960,72 @@ rules:
   - replicasets
   - statefulsets
   verbs:
-  - '*'
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
+- apiGroups:
+  - monitoring.coreos.com
+  resources:
+  - servicemonitors
+  verbs:
+  - get
+  - create
+- apiGroups:
+  - apps
+  resourceNames:
+  - ibp-operator
+  resources:
+  - deployments/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - ibp.com
+  resources:
+  - ibpcas.ibp.com
+  - ibppeers.ibp.com
+  - ibporderers.ibp.com
+  - ibpconsoles.ibp.com
+  - ibpcas
+  - ibppeers
+  - ibporderers
+  - ibpconsoles
+  - ibpcas/finalizers
+  - ibppeers/finalizers
+  - ibporderers/finalizers
+  - ibpconsoles/finalizers
+  - ibpcas/status
+  - ibppeers/status
+  - ibporderers/status
+  - ibpconsoles/status
+  verbs:
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
+- apiGroups:
+  - extensions
+  - networking.k8s.io
+  - config.openshift.io
+  resources:
+  - ingresses
+  verbs:
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
 ```
 {: codeblock}
 
