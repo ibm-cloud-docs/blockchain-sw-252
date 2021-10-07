@@ -79,7 +79,7 @@ IBM Blockchain Platform 2.5.2
 		howto/console-upgrade-k8.md
 		howto/console-delete-k8.md
 		howto/console-fixpack.md
-		howto/console-deploy-icp.md
+		
 
 	internal/blockchain_images.md
 
