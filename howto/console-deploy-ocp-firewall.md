@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-10-05"
+lastupdated: "2021-10-07"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, firewall, on-premises, air-gapped, on-prem, multicloud, on-prem
 
@@ -255,6 +255,7 @@ rolebinding.rbac.authorization.k8s.io/ibpinfra created
 {: #webhook-scc}
 
 Skip this step if you are not using OpenShift. The {{site.data.keyword.blockchainfull_notm}} Platform requires specific security and access policies to be added to the `ibpinfra` project. Copy the security context constraint object below and save it to your local system as `ibpinfra-scc.yaml`.
+
 Replace `<PROJECT_NAME>` with `ibpinfra`.
 ```yaml
 allowHostDirVolumePlugin: false
@@ -297,7 +298,6 @@ volumes:
 {: codeblock}
 
 After you save the file, run the following commands to add the file to your cluster and add the policy to your project.
-
 ```
 oc apply -f ibpinfra-scc.yaml -n ibpinfra
 oc adm policy add-scc-to-user ibpinfra system:serviceaccounts:ibpinfra
@@ -309,6 +309,7 @@ If the commands are successful, you can see a response that is similar to the fo
 securitycontextconstraints.security.openshift.io/ibpinfra created
 clusterrole.rbac.authorization.k8s.io/system:openshift:scc:ibpinfra added: "system:serviceaccounts:ibpinfra"
 ```
+{: codeblock}
 
 ### 3. Deploy the webhook
 {: #webhook-deploy}
@@ -319,6 +320,7 @@ In order to deploy the webhook, you need to create two `.yaml` files and apply t
 {: #webhook-deployment-yaml}
 
 Copy the following text to a file on your local system and save the file as `deployment.yaml`. If you are deploying on OpenShift Container Platform on LinuxONE, you need to replace `amd64` with `s390x`.
+
 
 
 ```yaml
@@ -406,6 +408,7 @@ spec:
 
 ```
 {: codeblock}
+
 Run the following command to add the file to your cluster definition:
 ```
 kubectl apply -n ibpinfra -f deployment.yaml
@@ -416,6 +419,7 @@ When the command completes successfully, you should see something similar to:
 ```
 deployment.apps/ibp-webhook created
 ```
+{: codeblock}
 
 #### service.yaml
 {: #webhook-service-yaml}
@@ -455,6 +459,7 @@ When the command completes successfully, you should see something similar to:
 ```
 service/ibp-webhook created
 ```
+{: codeblock}
 
 ### 4. Extract the certificate and create the custom resource definitions
 {: #webhook-extract-cert}
