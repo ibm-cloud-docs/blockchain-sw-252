@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-05"
+lastupdated: "2021-10-07"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters
 
@@ -106,7 +106,6 @@ If you are running the platform on LinuxONE, replace `-amd64` with `-s390x`.
 **This step is not required when upgrading from 2.5.1.**
 
 1. Extract the webhook TLS certificate from the `ibpinfra` namespace by running the following command:
-
   ```
   TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibpinfra -o jsonpath={'.data.cert\.pem'})
   ```
@@ -941,7 +940,6 @@ service/ibp-webhook created
 {: #upgrade-webhook-extract-cert}
 
 1. Extract the webhook TLS certificate from the `ibpinfra` namespace by running the following command:
-
   ```
   TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibpinfra -o jsonpath={'.data.cert\.pem'})
   ```
@@ -1868,7 +1866,6 @@ service/ibp-webhook created
 {: #upgrade-webhook-extract-cert}
 
 1. Extract the webhook TLS certificate from the `ibpinfra` namespace by running the following command:
-
   ```
   TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibpinfra -o jsonpath={'.data.cert\.pem'})
   ```
