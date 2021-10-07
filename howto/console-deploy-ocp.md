@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-08-11"
+lastupdated: "2021-10-05"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -10,100 +10,7 @@ subcollection: blockchain-sw-252
 
 ---
 
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
-{:android: data-hd-operatingsystem="android"}
-{:api: .ph data-hd-interface='api'}
-{:apikey: data-credential-placeholder='apikey'}
-{:app_key: data-hd-keyref="app_key"}
-{:app_name: data-hd-keyref="app_name"}
-{:app_secret: data-hd-keyref="app_secret"}
-{:app_url: data-hd-keyref="app_url"}
-{:audio: .audio}
-{:authenticated-content: .authenticated-content}
-{:beta: .beta}
-{:c#: .ph data-hd-programlang='c#'}
-{:c#: data-hd-programlang="c#"}
-{:cli: .ph data-hd-interface='cli'}
-{:codeblock: .codeblock}
-{:curl: #curl .ph data-hd-programlang='curl'}
-{:curl: .ph data-hd-programlang='curl'}
-{:deprecated: .deprecated}
-{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
-{:download: .download}
-{:external: .external target="_blank"}
-{:external: target="_blank" .external}
-{:faq: data-hd-content-type='faq'}
-{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
-{:generic: data-hd-operatingsystem="generic"}
-{:generic: data-hd-programlang="generic"}
-{:gif: data-image-type='gif'}
-{:go: .ph data-hd-programlang='go'}
-{:help: data-hd-content-type='help'}
-{:hide-dashboard: .hide-dashboard}
-{:hide-in-docs: .hide-in-docs}
-{:important: .important}
-{:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
-{:java: .ph data-hd-programlang='java'}
-{:java: data-hd-programlang="java"}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:javascript: data-hd-programlang="javascript"}
-{:middle: .ph data-hd-position='middle'}
-{:navgroup: .navgroup}
-{:new_window: target="_blank"}
-{:node: .ph data-hd-programlang='node'}
-{:note: .note}
-{:objectc: .ph data-hd-programlang='Objective C'}
-{:objectc: data-hd-programlang="objectc"}
-{:org_name: data-hd-keyref="org_name"}
-{:php: .ph data-hd-programlang='PHP'}
-{:php: data-hd-programlang="php"}
-{:pre: .pre}
-{:preview: .preview}
-{:python: .ph data-hd-programlang='python'}
-{:python: data-hd-programlang="python"}
-{:right: .ph data-hd-position='right'}
-{:route: data-hd-keyref="route"}
-{:row-headers: .row-headers}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:ruby: data-hd-programlang="ruby"}
-{:runtime: architecture="runtime"}
-{:runtimeIcon: .runtimeIcon}
-{:runtimeIconList: .runtimeIconList}
-{:runtimeLink: .runtimeLink}
-{:runtimeTitle: .runtimeTitle}
-{:screen: .screen}
-{:script: data-hd-video='script'}
-{:service: architecture="service"}
-{:service_instance_name: data-hd-keyref="service_instance_name"}
-{:service_name: data-hd-keyref="service_name"}
-{:shortdesc: .shortdesc}
-{:space_name: data-hd-keyref="space_name"}
-{:step: data-tutorial-type='step'}
-{:step: data-tutorial-type='step'} 
-{:subsection: outputclass="subsection"}
-{:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
-{:swift: .ph data-hd-programlang='swift'}
-{:swift: data-hd-programlang="swift"}
-{:table: .aria-labeledby="caption"}
-{:term: .term}
-{:terraform: .ph data-hd-interface='terraform'}
-{:tip: .tip}
-{:tooling-url: data-tooling-url-placeholder='tooling-url'}
-{:topicgroup: .topicgroup}
-{:troubleshoot: data-hd-content-type='troubleshoot'}
-{:tsCauses: .tsCauses}
-{:tsResolve: .tsResolve}
-{:tsSymptoms: .tsSymptoms}
-{:tutorial: data-hd-content-type='tutorial'}
-{:ui: .ph data-hd-interface='ui'}
-{:unity: .ph data-hd-programlang='unity'}
-{:url: data-credential-placeholder='url'}
-{:user_ID: data-hd-keyref="user_ID"}
-{:vbnet: .ph data-hd-programlang='vb.net'}
-{:video: .video}
+{{site.data.keyword.attribute-definition-list}}
 
 
 
@@ -202,19 +109,19 @@ $ oc get namespace
 NAME                                STATUS    AGE
 ibpinfra                            Active    2m
 ```
+{: codeblock}
 
 ## Create a secret for your entitlement key
 {: #deploy-ocp-secret-ibpinfra}
 
 After you purchase the {{site.data.keyword.blockchainfull_notm}} Platform, you can access the [My IBM dashboard](https://myibm.ibm.com/dashboard/){: external} to obtain your entitlement key for the offering. You need to store the entitlement key on your cluster by creating a [Kubernetes Secret](https://kubernetes.io/docs/concepts/configuration/secret/){: external}. Kubernetes secrets are used to securely store the key on your cluster and pass it to the operator and the console deployments.
 
-
-
 Run the following command to create the secret and add it to your `ibpinfra` namespace or project:
 ```
 kubectl create secret docker-registry docker-key-secret --docker-server=cp.icr.io --docker-username=cp --docker-password=<KEY> --docker-email=<EMAIL> -n ibpinfra
 ```
 {: codeblock}
+
 - Replace `<KEY>` with your entitlement key.
 - Replace `<EMAIL>` with your email address.
 
@@ -392,7 +299,7 @@ spec:
         fsGroup: 2000
       containers:
         - name: "ibp-webhook"
-          image: "cp.icr.io/cp/ibp-crdwebhook:2.5.2-20210713-amd64"
+          image: "cp.icr.io/cp/ibp-crdwebhook:2.5.2-20211005-amd64"
           imagePullPolicy: Always
           securityContext:
             privileged: false
@@ -497,6 +404,7 @@ service/ibp-webhook created
   TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibpinfra -o jsonpath={'.data.cert\.pem'})
   ```
   {: codeblock}
+  
 2. When you deploy the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 you need to apply the following four CRDs for the CA, peer, orderer, and console. If you are upgrading to 2.5.2, before you can update the operator, you need to update the CRDs to include a new `v1beta1` section as well as the webhook TLS certificate that you just stored in the `TLS_CERT` environment variable. In either case, run the following four commands to apply or update each CRD.
 
 Run this command to update the CA CRD:   
@@ -559,10 +467,13 @@ Depending on whether you are creating or updating the CRD, when successful, you 
 ```
 customresourcedefinition.apiextensions.k8s.io/ibpcas.ibp.com created
 ```
+{: codeblock}
+
 or
 ```
 customresourcedefinition.apiextensions.k8s.io/ibpcas.ibp.com configured
 ```
+{: codeblock}
 
 Run this command to update the peer CRD:
 ```yaml
@@ -618,10 +529,13 @@ When successful, you should see:
 ```
 customresourcedefinition.apiextensions.k8s.io/ibppeers.ibp.com created
 ```
+{: codeblock}
+
 or
 ```
 customresourcedefinition.apiextensions.k8s.io/ibppeers.ibp.com configured
 ```
+{: codeblock}
 
 Run this command to update the console CRD:
 ```yaml
@@ -677,10 +591,13 @@ When successful, you should see:
 ```
 customresourcedefinition.apiextensions.k8s.io/ibpconsoles.ibp.com created
 ```
+{: codeblock}
+
 or
 ```
 customresourcedefinition.apiextensions.k8s.io/ibpconsoles.ibp.com configured
 ```
+{: codeblock}
 
 Run this command to update the orderer CRD:  
 ```yaml
@@ -736,10 +653,13 @@ When successful, you should see:
 ```
 customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com created
 ```
+{: codeblock}
+
 or
 ```
 customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com configured
 ```
+{: codeblock}
 
 ## Create a new project for your {{site.data.keyword.blockchainfull_notm}} Platform deployment
 {: #deploy-ocp-project}
@@ -761,8 +681,9 @@ When you create a new project, a new namespace is created with the same name as 
 ```
 $ oc get namespace
 NAME                                STATUS    AGE
-blockchain-project                  Active    2m
+blockchain-project    Active    2m
 ```
+{: codeblock}
 
 You can also use the CLI to find the available storage classes for your namespace. If you created a new storage class for your deployment, that storage class must be visible in the output in the following command:
 ```
@@ -797,6 +718,7 @@ The name of the secret that you are creating is `docker-key-secret`. This value 
 The {{site.data.keyword.blockchainfull_notm}} Platform requires specific security and access policies to be added to your project. The contents of a set of `.yaml` files are provided here for you to copy and edit to define the security policies for your project. You must save these files to your local system and then add them your project by using the OpenShift CLI. These steps need to be completed by a cluster administrator. Also, be aware that the peer `init` and `dind` containers that get deployed are required to run in privileged mode.
 
 ### Apply the Security Context Constraint
+{: #deploy-ocp-scc-apply-security-context-constraint}
 
 Copy the security context constraint object below and save it to your local system as `ibp-scc.yaml`. Edit the file and replace `<PROJECT_NAME>` with the name of your project.
 
@@ -845,6 +767,7 @@ oc apply -f ibp-scc.yaml -n <PROJECT_NAME>
 oc adm policy add-scc-to-user <PROJECT_NAME> system:serviceaccounts:<PROJECT_NAME>
 ```
 {: codeblock}
+
 Replace `<PROJECT_NAME>` with the name that you want to use for your {{site.data.keyword.blockchainfull_notm}} Platform deployment project.
 
 If the command is successful, you can see a response that is similar to the following example:
@@ -852,7 +775,10 @@ If the command is successful, you can see a response that is similar to the foll
 securitycontextconstraints.security.openshift.io/blockchain-project created
 clusterrole.rbac.authorization.k8s.io/system:openshift:scc:blockchain-project added: "system:serviceaccounts:blockchain-project"
 ```
+{: codeblock}
+
 ### Apply the ClusterRole
+{: #deploy-ocp-scc-apply-clusterrole}
 
 Copy the following text to a file on your local system and save the file as `ibp-clusterrole.yaml`. This file defines the required ClusterRole for the PodSecurityPolicy. Edit the file and replace `<PROJECT_NAME>` with the name of your project.
 
@@ -874,40 +800,91 @@ rules:
   - persistentvolumeclaims
   - persistentvolumes
   verbs:
-  - '*'
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
 - apiGroups:
   - apiextensions.k8s.io
   resources:
   - customresourcedefinitions
   verbs:
-  - 'get'
+  - get
 - apiGroups:
-  - "*"
+  - route.openshift.io
   resources:
-  - pods
-  - pods/log
-  - services
-  - endpoints
-  - persistentvolumeclaims
-  - persistentvolumes
-  - events
-  - configmaps
-  - secrets
-  - ingresses
-  - roles
-  - rolebindings
-  - serviceaccounts
-  - nodes
-  - jobs
   - routes
   - routes/custom-host
   verbs:
-  - '*'
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
+- apiGroups:
+  - ""
+  resources:
+  - pods
+  - pods/log
+  - persistentvolumeclaims
+  - persistentvolumes
+  - services
+  - endpoints
+  - events
+  - configmaps
+  - secrets
+  - nodes
+  - serviceaccounts
+  verbs:
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
+- apiGroups:
+  - "batch"
+  resources:
+  - jobs
+  verbs:
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
+- apiGroups:
+  - "authorization.openshift.io"
+  - "rbac.authorization.k8s.io"
+  resources:
+  - roles
+  - rolebindings
+  verbs:
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
+  - bind
+  - escalate
 - apiGroups:
   - ""
   resources:
   - namespaces
-  - nodes
   verbs:
   - get
 - apiGroups:
@@ -918,7 +895,14 @@ rules:
   - replicasets
   - statefulsets
   verbs:
-  - '*'
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
 - apiGroups:
   - monitoring.coreos.com
   resources:
@@ -937,15 +921,46 @@ rules:
 - apiGroups:
   - ibp.com
   resources:
-  - '*'
+  - ibpcas.ibp.com
+  - ibppeers.ibp.com
+  - ibporderers.ibp.com
+  - ibpconsoles.ibp.com
+  - ibpcas
+  - ibppeers
+  - ibporderers
+  - ibpconsoles
+  - ibpcas/finalizers
+  - ibppeers/finalizers
+  - ibporderers/finalizers
+  - ibpconsoles/finalizers
+  - ibpcas/status
+  - ibppeers/status
+  - ibporderers/status
+  - ibpconsoles/status
   verbs:
-  - '*'
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
 - apiGroups:
+  - extensions
+  - networking.k8s.io
   - config.openshift.io
   resources:
-  - '*'
+  - ingresses
   verbs:
-  - '*'
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
 ```
 {: codeblock}
 
@@ -955,6 +970,7 @@ oc apply -f ibp-clusterrole.yaml -n <PROJECT_NAME>
 oc adm policy add-scc-to-group <PROJECT_NAME> system:serviceaccounts:<PROJECT_NAME>
 ```
 {: codeblock}
+
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment project.
 
 If successful, you can see a response that is similar to the following example:
@@ -962,8 +978,10 @@ If successful, you can see a response that is similar to the following example:
 clusterrole.rbac.authorization.k8s.io/blockchain-project created
 clusterrole.rbac.authorization.k8s.io/system:openshift:scc:blockchain-project added: "system:blockchain-project"
 ```
+{: codeblock}
 
 ### Apply the ClusterRoleBinding
+{: #deploy-ocp-scc-apply-clusterrolebinding}
 
 Copy the following text to a file on your local system and save the file as `ibp-clusterrolebinding.yaml`. This file defines the ClusterRoleBinding. Edit the file and replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment project.  
 
@@ -989,13 +1007,13 @@ roleRef:
 ```
 {: codeblock}
 
-
 After you save and edit the file, run the following commands:
 ```
 oc apply -f ibp-clusterrolebinding.yaml -n <PROJECT_NAME>
 oc adm policy add-cluster-role-to-user <PROJECT_NAME> system:serviceaccounts:<PROJECT_NAME>
 ```
 {: codeblock}
+
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment project.
 
 If successful, you can see a response that is similar to the following example:
@@ -1003,14 +1021,14 @@ If successful, you can see a response that is similar to the following example:
 clusterrolebinding.rbac.authorization.k8s.io/blockchain-project created
 clusterrole.rbac.authorization.k8s.io/blockchain-project added: "system:serviceaccounts:blockchain-project"
 ```
+{: codeblock}
+
 ## Deploy the {{site.data.keyword.blockchainfull_notm}} Platform operator
 {: #deploy-ocp-operator}
 
 The {{site.data.keyword.blockchainfull_notm}} Platform uses an operator to install the {{site.data.keyword.blockchainfull_notm}} Platform console. You can deploy the operator on your cluster by adding a custom resource to your project by using the OpenShift CLI. The custom resource pulls the operator image from the Docker registry and starts it on your cluster.   
 
 Copy the following text to a file on your local system and save the file as `ibp-operator.yaml`.
-
-
 
 ```yaml
 apiVersion: apps/v1
@@ -1067,7 +1085,7 @@ spec:
         - name: docker-key-secret
       containers:
         - name: ibp-operator
-          image: cp.icr.io/cp/ibp-operator:2.5.2-20210505-amd64
+          image: cp.icr.io/cp/ibp-operator:2.5.2-20211005-amd64
           command:
           - ibp-operator
           imagePullPolicy: Always
@@ -1129,6 +1147,7 @@ Then, use the `kubectl` CLI to add the custom resource to your project.
 kubectl apply -f ibp-operator.yaml -n <PROJECT_NAME>
 ```
 {: codeblock}
+
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment project.
 
 You can confirm that the operator deployed by running the command `kubectl get deployment -n <PROJECT_NAME>`. If your operator deployment is successful, then you can see the following tables with four ones displayed. The operator takes about a minute to deploy.
@@ -1136,6 +1155,7 @@ You can confirm that the operator deployed by running the command `kubectl get d
 NAME           READY     UP-TO-DATE   AVAILABLE   AGE
 ibp-operator   1/1       1            1           46s
 ```
+{: codeblock}
 
 ## Deploy the {{site.data.keyword.blockchainfull_notm}} Platform console
 {: #deploy-ocp-console}
@@ -1143,8 +1163,6 @@ ibp-operator   1/1       1            1           46s
 When the operator is running on your namespace, you can apply a custom resource to start the {{site.data.keyword.blockchainfull_notm}} Platform console on your cluster. You can then access the console from your browser. Note that you can deploy only one console per OpenShift project.
 
 Save the custom resource definition below as `ibp-console.yaml` on your local system. If you changed the name of the entitlement key secret, then you need to edit the field of `name: docker-key-secret`.
-
-
 
 ```yaml
 apiVersion: ibp.com/v1beta1
@@ -1171,6 +1189,7 @@ spec:
   version: 2.5.2
 ```
 {: codeblock}
+
 Accept the license:  
 
 - Accept the [IBM Blockchain Platform license](https://www-03.ibm.com/software/sla/sladb.nsf/lilookup/6CE1C5684689691C852586000043982B?OpenDocument){: external} by replacing the `license` parameter `accept: false` with the text `accept: true`.
@@ -1191,11 +1210,14 @@ If you are deploying on OpenShift Container Platform on LinuxONE, you need to re
 arch:
 - amd64
 ```
+{: codeblock}
+
 in the `spec:` section with:
 ```yaml
 arch:
 - s390x
 ```
+{: codeblock}
 
 If you are running OpenShift on Azure, you also need to change the storage class from `default` to `azure-standard`, unless you created your own storage class.
 {: tip}
@@ -1208,14 +1230,13 @@ After you update the file, you can use the CLI to install the console.
 kubectl apply -f ibp-console.yaml -n <PROJECT_NAME>
 ```
 {: codeblock}
+
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment project. The console can take a few minutes to deploy.
 
 ### Advanced deployment options
 {: #console-deploy-ocp-advanced}
 
 Before you deploy the console, you can edit the `ibp-console.yaml` file to allocate more resources to your console or use zones for high availability in a multizone cluster. To take advantage of these deployment options, you can use the console resource definition with the `resources:` and `clusterdata:` sections added:
-
-
 
 ```yaml
 apiVersion: ibp.com/v1beta1
@@ -1294,6 +1315,7 @@ When you finish editing the file, apply it to your cluster.
 kubectl apply -f ibp-console.yaml -n <PROJECT_NAME>
 ```
 {: codeblock}
+
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment project.
 
 Unlike the resource allocation, you cannot add zones to a running network. If you have already deployed a console and used it to create nodes on your cluster, you will lose your previous work. After the console restarts, you need to deploy new nodes.
@@ -1320,10 +1342,10 @@ Navigate to the TLS certificates that you plan to use on your local system. Name
 kubectl create secret generic console-tls-secret --from-file=tls.crt=./tlscert.pem --from-file=tls.key=./tlskey.pem -n <PROJECT_NAME>
 ```
 {: codeblock}
+
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment project.
 
 After you create the secret, add the `tlsSecretName` field to the `spec:` section of `ibp-console.yaml` with one indent added, at the same level as the `resources:` and `clusterdata:` sections of the advanced deployment options. You must provide the name of the TLS secret that you created to the field. The following example deploys a console with the TLS certificate and key stored in a secret named `"console-tls-secret"`. Replace `"<CONSOLE_TLS_SECRET_NAME>"` with `"console-tls-secret"` unless you used a different name for the secret.
-
 
 ```yaml
 apiVersion: ibp.com/v1beta1
@@ -1361,6 +1383,7 @@ When you finish editing the file, you can apply it to your cluster in order to s
 kubectl apply -f ibp-console.yaml -n <PROJECT_NAME>
 ```
 {: codeblock}
+
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment project.
 
 ### Verifying the console installation
@@ -1371,6 +1394,7 @@ NAME           READY     UP-TO-DATE   AVAILABLE   AGE
 ibp-operator   1/1       1            1           10m
 ibpconsole     1/1       1            1           4m
 ```
+{: codeblock}
 
 The console consists of four containers that are deployed inside a single pod:
 - `optools`: The console UI.
@@ -1383,6 +1407,7 @@ If there is an issue with your deployment, you can view the logs from one of the
 kubectl get pods -n <PROJECT_NAME>
 ```
 {: codeblock}
+
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment project.
 
 Then, use the following command to get the logs from one of the four containers listed above:
@@ -1390,6 +1415,7 @@ Then, use the following command to get the logs from one of the four containers 
 kubectl logs -f <pod_name> <container_name> -n <PROJECT_NAME>
 ```
 {: codeblock}
+
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment project.
 
 As an example, a command to get the logs from the UI container would look like the following example:
@@ -1423,6 +1449,7 @@ You can also find your console URL by logging in to your OpenShift cluster and r
 oc get routes -n <PROJECT_NAME>
 ```
 {: codeblock}
+
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment project.
 
 In the output of the command, you can see the URLs for the proxy and the console. You need to add `https://` to the beginning console URL to access the console. You do not need to add a port to the URL.

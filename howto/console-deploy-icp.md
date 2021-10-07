@@ -14,29 +14,17 @@ subcollection: blockchain-sw-252
 
 
 
+# Deploying {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 for {{site.data.keyword.cloud_notm}} Private
+{: #deploy-icp}
 
-# Deploying {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2
-{: #deploy-k8}
-
-<div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px;">
-  <p style="line-height: 15px;">
-    <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
-    <a href="/docs/blockchain-sw?topic=blockchain-sw-deploy-k8">2.1.2</a>,
-    <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-k8">2.1.3</a>,
-    <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-deploy-k8">2.5</a>,
-    <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-deploy-k8">2.5.1</a>, 2.52
-    </p>
-</div>
-
-
-You can use the following instructions to deploy the {{site.data.keyword.blockchainfull}} Platform 2.5.2 on any x86_64 Kubernetes cluster running at v1.19 - v1.21 or on s390x on OpenShift Container Platform running LinuxONE. The {{site.data.keyword.blockchainfull_notm}} Platform uses a [Kubernetes Operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/){: external} to install the {{site.data.keyword.blockchainfull_notm}} Platform console on your cluster and manage the deployment and your blockchain nodes. When the {{site.data.keyword.blockchainfull_notm}} Platform console is running on your cluster, you can use the console to create blockchain nodes and operate a multicloud blockchain network.
+You can use the following instructions to deploy the {{site.data.keyword.blockchainfull}} Platform 2.5.2 on any x86_64 Kubernetes cluster running at v1.19 - v1.21. The {{site.data.keyword.blockchainfull_notm}} Platform uses a [Kubernetes Operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/){: external} to install the {{site.data.keyword.blockchainfull_notm}} Platform console on your cluster and manage the deployment and your blockchain nodes. When the {{site.data.keyword.blockchainfull_notm}} Platform console is running on your cluster, you can use the console to create blockchain nodes and operate a multicloud blockchain network.
 {: shortdesc}
 
 Kubernetes cluster does not download and update the latest version of {site.data.keyword.blockchainfull_notm}} Platform automatically. To get the latest update, you need to create a new cluster and a new service instance.
 {: note} 
 
 ## Resources required
-{: #deploy-k8-resources-required}
+{: #deploy-icp-resources-required}
 
 Ensure that your Kubernetes cluster has sufficient resources for the {{site.data.keyword.blockchainfull_notm}} Platform console and for the blockchain nodes that you create. The amount of resources that are required can vary depending on your infrastructure, network design, and performance requirements. To help you deploy a cluster of the appropriate size, the default CPU, memory, and storage requirements for each component type are provided in this table. Your actual resource allocations are visible in your blockchain console when you deploy a node and can be adjusted at deployment time or after deployment according to your business needs.
 
@@ -58,14 +46,14 @@ The resources for the CA, peer, and ordering nodes need to be multiplied by the 
 Note that when smart contracts are installed on peers that run a Fabric v2.x image, the smart contract is launched in its own pod instead of a separate container on the peer, which accounts for the smaller amount of resources required on the peer.
 
 ## Browsers
-{: #deploy-k8-browsers}
+{: #deploy-icp-browsers}
 The {{site.data.keyword.blockchainfull_notm}} Platform console has been successfully tested on the following browsers:
 
 - Chrome Version 91.0.4472.114 (Official Build) (64-bit)
 - Safari Version 14.1.1 (16611.2.7.1.4)
 
 ## Storage
-{: #deploy-k8-storage}
+{: #deploy-icp-storage}
 
 In addition to a small amount of storage (10 GB) required by the {{site.data.keyword.blockchainfull_notm}} console, persistent storage is required for each CA, peer, and ordering node that you deploy. Because blockchain components do not use the Kubernetes node local storage, network-attached remote storage is required so that blockchain nodes can fail over to a different Kubernetes worker node in the event of a node outage.  And because you cannot change your storage type after deploying peer, CA, or ordering nodes, you need to decide the type of persistent storage that you want to use _before_ you deploy any blockchain nodes.
 
@@ -98,12 +86,12 @@ If you prefer not to choose a persistent storage option, the default storage cla
 | **Multi-zone capable storage** | {{site.data.keyword.cloud_notm}} includes the ability to create a single Kubernetes cluster across multiple data centers or "zones". Portworx offers multi-zone capable storage that can be used to potentially reduce the number of peers required. Consider a scenario where you build two zones with two peers for redundancy, one zone can go down and you still have two peers up in another zone. With multi-zone capable storage, you could instead have two zones with one peer each. If one zone goes down, the peer comes up in the other zone with its storage intact, reducing the overall redundant peer requirements. |
 
 ## Filesystem permissions
-{: #deploy-k8-fs-perm}
+{: #deploy-icp-fs-perm}
 
 {{site.data.keyword.blockchainfull_notm}} Platform uses Kubernetes [init containers](https://kubernetes.io/docs/concepts/workloads/pods/init-containers/){: externnal} to set the correct filesystem permissions for the mounted volumes. The init containers run as the root user. The volumes are mounted on the init container which then changes the owner of the mounted folder to be the non-root user of the container that will use it. Learn  more about [how to give non-root users write permission on the volume mount path](/docs/containers?topic=containers-nonroot){: external}.
 
 ## Get your entitlement key
-{: #deploy-k8-entitlement-key}
+{: #deploy-icp-k8-entitlement-key}
 
 When you purchase the {{site.data.keyword.blockchainfull_notm}} Platform from PPA, you receive an entitlement key for the software is associated with your MyIBM account. You need to access and save this key to deploy the platform.
 
@@ -112,7 +100,7 @@ When you purchase the {{site.data.keyword.blockchainfull_notm}} Platform from PP
 2. In the Entitlement keys section, select **Copy key** to copy the entitlement key to the clipboard. Save this value for use later during deployment.
 
 ## Before you begin
-{: #deploy-k8-prerequisites}
+{: #deploy-icp-k8-prerequisites}
 
 1. The {{site.data.keyword.blockchainfull_notm}} Platform can be installed only on the [Supported Platforms](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-ocp-about#console-ocp-about-prerequisites){: external}.
 
@@ -120,19 +108,81 @@ When you purchase the {{site.data.keyword.blockchainfull_notm}} Platform from PP
 
 3. You need to install and connect to your cluster by using the [kubectl CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl){: external} to deploy the platform.
 
-4. If you are not running the platform on Red Hat OpenShift Container Platform or Red Hat Open Kubernetes Distribution then you need to set up the NGINX Ingress controller and it needs to be running in [SSL passthrough mode](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#ssl-passthrough){: external}. For more information, see [Considerations when using Kubernetes distributions](#console-deploy-k8-considerations).
-
-5. If you have a Hardware Security Module (HSM) that you plan to use to generate and store the private key for your CA, peer, or ordering nodes, you need to create an HSM client image and push it to your container registry. Follow instructions in the [advanced deployment](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-adv-deployment#ibp-console-adv-deployment-hsm-build-docker) topic to build the image.
+4. If you have a Hardware Security Module (HSM) that you plan to use to generate and store the private key for your CA, peer, or ordering nodes, you need to create an HSM client image and push it to your container registry. Follow instructions in the [advanced deployment](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-adv-deployment#ibp-console-adv-deployment-hsm-build-docker) topic to build the image.
 
 **Looking for a way to script the deployment of the service?** Check out the [Ansible playbooks](/docs/blockchain-sw-252?topic=blockchain-sw-252-ansible), a powerful tool for scripting the deployment of components in your blockchain network. If you prefer a manual installation, proceed to the next section.
 
-## Log in to your cluster
-{: #deploy-k8-login}
+** Placemarker for pulling images. Chris & Matt please check. 
 
-Before you can complete the next steps, you need to log in to your cluster by using the kubectl CLI. Follow the instructions for logging in to your cluster.
+## Log in to your cluster
+{: #deploy-icp-k8-login}
+
+Before you can complete the next steps, you need to log in to your {{site.data.keyword.cloud_notm}} Private cluster and select the target namespace of your deployment.. 
+```
+cloudctl login -a https://<cluster_CA_domain>:8443 --skip-ssl-validation
+```
+{: codeblock}
+
+Log in to the docker image registry for your cluster:
+
+```
+docker login <cluster_CA_domain>:8500
+```
+{: codeblock}
+
+## Add security and access policies
+{: #deploy-icp-k8-scc}
+
+The {{site.data.keyword.blockchainfull_notm}} Platform requires specific security and access policies to be added to your namespace. The contents of a set of `.yaml` files are provided here for you to copy and edit to define the security policies. You must save these files to your local system and then add them your namespace by using the kubectl CLI. These steps need to be completed by a cluster administrator. Also, be aware that the peer `init` and `dind` containers that get deployed are required to run in privileged mode.
+
+### Apply the Pod Security Policy
+{: #deploy-icp-k8-apply-psp}
+
+Copy the PodSecurityPolicy object below and save it to your local system as `ibp-psp.yaml`.
+
+```yaml
+apiVersion: policy/v1beta1
+kind: PodSecurityPolicy
+metadata:
+  name: ibm-blockchain-platform-psp
+spec:
+  hostIPC: false
+  hostNetwork: false
+  hostPID: false
+  privileged: true
+  allowPrivilegeEscalation: true
+  readOnlyRootFilesystem: false
+  seLinux:
+    rule: RunAsAny
+  supplementalGroups:
+    rule: RunAsAny
+  runAsUser:
+    rule: RunAsAny
+  fsGroup:
+    rule: RunAsAny
+  requiredDropCapabilities:
+  - ALL
+  allowedCapabilities:
+  - NET_BIND_SERVICE
+  - CHOWN
+  - DAC_OVERRIDE
+  - SETGID
+  - SETUID
+  - FOWNER
+  volumes:
+  - '*'
+
+```
+{: codeblock}
+
+After you save and edit the file, run the following command to add the file to your cluster and add the policy to your namespace.
+```
+kubectl apply -f ibp-psp.yaml
+```
+{: codeblock}
 
 ## Create the `ibpinfra` namespace for the webhook
-{: #deploy-k8-ibpinfra}
+{: #deploy-icp-k8-ibpinfra}
 
 Because the platform has updated the internal apiversion from `v1alpha1` in previous versions to `v1beta1`, a Kubernetes conversion webhook is required to update the CA, peer, operator, and console to the new API version. This webhook will continue to be used in the future, so new deployments of the platform are required to deploy it as well.  The webhook is deployed to its own namespace, referred to as  `ibpinfra` throughout these instructions.
 
@@ -144,14 +194,156 @@ kubectl create namespace ibpinfra
 ```
 {: codeblock}
 
-## Create a secret for your entitlement key
-{: #deploy-k8-secret-ibpinfra}
+## Create a new namespace for your {{site.data.keyword.blockchainfull_notm}} Platform deployment
+{: #deploy-icp-k8-namespace}
 
-After you purchase the {{site.data.keyword.blockchainfull_notm}} Platform, you can access the [My IBM dashboard](https://myibm.ibm.com/dashboard/){: external} to obtain your entitlement key for the offering. You need to store the entitlement key on your cluster by creating a [Kubernetes Secret](https://kubernetes.io/docs/concepts/configuration/secret/){: external}. Kubernetes secrets are used to securely store the key on your cluster and pass it to the operator and the console deployments.
+Next, you need to create a second project for your deployment of {{site.data.keyword.blockchainfull_notm}} Platform. You can create a namespace by using the kubectl CLI. The namespace needs to be created by a cluster administrator.
+
+If you are using the CLI, create a new namespace by running the following command:
+```
+kubectl create namespace <NAMESPACE>
+```
+{: codeblock}
+
+Replace `<NAMESPACE>` with the name that you want to use for your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.
+
+It is required that you create a namespace for each blockchain network that you deploy with the {{site.data.keyword.blockchainfull_notm}} Platform. For example, if you plan to create different networks for development, staging, and production, then you need to create a unique namespace for each environment. Using a separate namespace provides each network with separate resources and allows you to set unique access policies for each network. You need to follow these deployment instructions to deploy a separate operator and console for each namespace.
+{: important}
+
+You can also use the CLI to find the available storage classes for your namespace. If you created a new storage class for your deployment, that storage class must be visible in the output in the following command:
+```
+kubectl get storageclasses
+```
+{: codeblock}
+
+If you are not using the default storage class, additional configuration is required. See [Storage](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#deploy-k8-storage) for the considerations.
+
+## Download and extract {{site.data.keyword.blockchainfull_notm}} Platform images
+{: #deploy-icp-download-extract-images}
+
+Extract and load the {{site.data.keyword.blockchainfull_notm}} Platform archive file into the docker registry.  
+
+Use the following command to extract the images and load into the docker registry.
+```
+tar -xzvf IBM_BLOCKCHAIN_PF_F_IBM_CL.2.0.7.tar.gz amd64/ibp.tar.gz &&
+tar -xzvf amd64/ibp.tar.gz &&
+for file in images/*; do docker load < $file; done
+```
+{: codeblock}
+
+## Tag the webhook image for the 'ibpinfra' namespace:
+{: #deploy-icp-k8-tag-webhook-images-ibpinfra-namespace}
+
+Execute the following command to tag the webhook image:
+```
+docker tag icr.io/cp/ibp-crdwebhook:2.5.2-20210713-amd64 <cluster_CA_domain>:8500/ibpinfra/ibp-crdwebhook:2.5.2-20210713-amd64
+```
+{: codeblock}
+
+## Tag the images image for the blockchain namespace:
+{: #deploy-icp-k8-tag-images-ibp-namespace}
+
+Execute the following command to tag the webhook image:
+```
+docker tag icr.io/cp/ibp-orderer:2.2.3-20210713-amd64 <cluster_CA_domain>:8500/<NAMESPACE>/ibp-orderer:2.2.3-20210713-amd64
+docker tag icr.io/cp/ibp-peer:2.2.3-20210713-amd64 <cluster_CA_domain>:8500/<NAMESPACE>/ibp-peer:2.2.3-20210713-amd64
+docker tag icr.io/cp/ibp-orderer:1.4.12-20210713-amd64 <cluster_CA_domain>:8500/<NAMESPACE>/ibp-orderer:1.4.12-20210713-amd64
+docker tag icr.io/cp/ibp-peer:1.4.12-20210713-amd64 <cluster_CA_domain>:8500/<NAMESPACE>/ibp-peer:1.4.12-20210713-amd64
+docker tag icr.io/cp/ibp-ca:1.5.0-20210713-amd64 <cluster_CA_domain>:8500/<NAMESPACE>/ibp-ca:1.5.0-20210713-amd64
+docker tag icr.io/cp/ibp-couchdb:3.1.1-20210713-amd64 <cluster_CA_domain>:8500/<NAMESPACE>/ibp-couchdb:3.1.1-20210713-amd64
+docker tag icr.io/cp/ibp-chaincode-launcher:2.2.3-20210713-amd64 <cluster_CA_domain>:8500/<NAMESPACE>/ibp-chaincode-launcher:2.2.3-20210713-amd64
+docker tag icr.io/cp/ibp-javaenv:2.2.3-20210713-amd64 <cluster_CA_domain>:8500/<NAMESPACE>/ibp-javaenv:2.2.3-20210713-amd64
+docker tag icr.io/cp/ibp-nodeenv:2.2.3-20210713-amd64 <cluster_CA_domain>:8500/<NAMESPACE>/ibp-nodeenv:2.2.3-20210713-amd64
+docker tag icr.io/cp/ibp-goenv:2.2.3-20210713-amd64 <cluster_CA_domain>:8500/<NAMESPACE>/ibp-goenv:2.2.3-20210713-amd64
+docker tag icr.io/cp/ibp-utilities:2.2.3-20210713-amd64 <cluster_CA_domain>:8500/<NAMESPACE>/ibp-utilities:2.2.3-20210713-amd64
+docker tag icr.io/cp/ibp-ccenv:2.2.3-20210713-amd64 <cluster_CA_domain>:8500/<NAMESPACE>/ibp-ccenv:2.2.3-20210713-amd64
+docker tag icr.io/cp/ibp-couchdb:2.3.1-20210713-amd64 <cluster_CA_domain>:8500/<NAMESPACE>/ibp-couchdb:2.3.1-20210713-amd64
+docker tag icr.io/cp/ibp-javaenv:1.4.12-20210713-amd64 <cluster_CA_domain>:8500/<NAMESPACE>/ibp-javaenv:1.4.12-20210713-amd64
+docker tag icr.io/cp/ibp-nodeenv:1.4.12-20210713-amd64 <cluster_CA_domain>:8500/<NAMESPACE>/ibp-nodeenv:1.4.12-20210713-amd64
+docker tag icr.io/cp/ibp-goenv:1.4.12-20210713-amd64 <cluster_CA_domain>:8500/<NAMESPACE>/ibp-goenv:1.4.12-20210713-amd64
+docker tag icr.io/cp/ibp-dind:1.4.12-20210713-amd64 <cluster_CA_domain>:8500/<NAMESPACE>/ibp-dind:1.4.12-20210713-amd64
+docker tag icr.io/cp/ibp-utilities:1.4.12-20210713-amd64 <cluster_CA_domain>:8500/<NAMESPACE>/ibp-utilities:1.4.12-20210713-amd64
+docker tag icr.io/cp/ibp-ccenv:1.4.12-20210713-amd64 <cluster_CA_domain>:8500/<NAMESPACE>/ibp-ccenv:1.4.12-20210713-amd64
+docker tag icr.io/cp/ibp-enroller:2.5.2-20210713-amd64 <cluster_CA_domain>:8500/<NAMESPACE>/ibp-enroller:2.5.2-20210713-amd64
+docker tag icr.io/cp/ibp-init:2.5.2-20210713-amd64 <cluster_CA_domain>:8500/<NAMESPACE>/ibp-init:2.5.2-20210713-amd64
+docker tag icr.io/cp/ibp-fluentd:2.5.2-20210713-amd64 <cluster_CA_domain>:8500/<NAMESPACE>/ibp-fluentd:2.5.2-20210713-amd64
+docker tag icr.io/cp/ibp-grpcweb:2.5.2-20210713-amd64 <cluster_CA_domain>:8500/<NAMESPACE>/ibp-grpcweb:2.5.2-20210713-amd64
+docker tag icr.io/cp/ibp-console:2.5.2-20210810-amd64 <cluster_CA_domain>:8500/<NAMESPACE>/ibp-console:2.5.2-20210810-amd64
+docker tag icr.io/cp/ibp-deployer:2.5.2-20210713-amd64 <cluster_CA_domain>:8500/<NAMESPACE>/ibp-deployer:2.5.2-20210713-amd64
+docker tag icr.io/cp/ibp-operator:2.5.2-20210810-amd64 <cluster_CA_domain>:8500/<NAMESPACE>/ibp-operator:2.5.2-20210810-amd64
+```
+{: codeblock}
+
+Replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.
+
+## Push the webhook image to the `ibpinfra` namespace
+{: #deploy-icp-k8-push-webhook-images-ibpinfra-namespace}
+
+Execute the following command to push the webhook image to the private image repository:
+```
+docker push <cluster_CA_domain>:8500/ibpinfra/ibp-crdwebhook:2.5.2-20210713-amd64
+```
+{: codeblock}
+
+- Replace `<cluster_CA_domain>:8500` with the domain you use to log in to your {{site.data.keyword.cloud_notm}} Private cluster.
+
+## Push the {{site.data.keyword.blockchainfull_notm}}  images to the blockchain namespace
+{: #deploy-icp-k8-push-images-ibp-namespace}
+
+Execute the following command to push the blockchain images to the private image repository:
+```
+docker push <cluster_CA_domain>:8500/<NAMESPACE>/ibp-orderer:2.2.3-20210713-amd64
+docker push <cluster_CA_domain>:8500/<NAMESPACE>/ibp-peer:2.2.3-20210713-amd64
+docker push <cluster_CA_domain>:8500/<NAMESPACE>/ibp-orderer:1.4.12-20210713-amd64
+docker push <cluster_CA_domain>:8500/<NAMESPACE>/ibp-peer:1.4.12-20210713-amd64
+docker push <cluster_CA_domain>:8500/<NAMESPACE>/ibp-ca:1.5.0-20210713-amd64
+docker push <cluster_CA_domain>:8500/<NAMESPACE>/ibp-couchdb:3.1.1-20210713-amd64
+docker push <cluster_CA_domain>:8500/<NAMESPACE>/ibp-chaincode-launcher:2.2.3-20210713-amd64
+docker push <cluster_CA_domain>:8500/<NAMESPACE>/ibp-javaenv:2.2.3-20210713-amd64
+docker push <cluster_CA_domain>:8500/<NAMESPACE>/ibp-nodeenv:2.2.3-20210713-amd64
+docker push <cluster_CA_domain>:8500/<NAMESPACE>/ibp-goenv:2.2.3-20210713-amd64
+docker push <cluster_CA_domain>:8500/<NAMESPACE>/ibp-utilities:2.2.3-20210713-amd64
+docker push <cluster_CA_domain>:8500/<NAMESPACE>/ibp-ccenv:2.2.3-20210713-amd64
+docker push <cluster_CA_domain>:8500/<NAMESPACE>/ibp-couchdb:2.3.1-20210713-amd64
+docker push <cluster_CA_domain>:8500/<NAMESPACE>/ibp-javaenv:1.4.12-20210713-amd64
+docker push <cluster_CA_domain>:8500/<NAMESPACE>/ibp-nodeenv:1.4.12-20210713-amd64
+docker push <cluster_CA_domain>:8500/<NAMESPACE>/ibp-goenv:1.4.12-20210713-amd64
+docker push <cluster_CA_domain>:8500/<NAMESPACE>/ibp-dind:1.4.12-20210713-amd64
+docker push <cluster_CA_domain>:8500/<NAMESPACE>/ibp-utilities:1.4.12-20210713-amd64
+docker push <cluster_CA_domain>:8500/<NAMESPACE>/ibp-ccenv:1.4.12-20210713-amd64
+docker push <cluster_CA_domain>:8500/<NAMESPACE>/ibp-enroller:2.5.2-20210713-amd64
+docker push <cluster_CA_domain>:8500/<NAMESPACE>/ibp-init:2.5.2-20210713-amd64
+docker push <cluster_CA_domain>:8500/<NAMESPACE>/ibp-fluentd:2.5.2-20210713-amd64
+docker push <cluster_CA_domain>:8500/<NAMESPACE>/ibp-grpcweb:2.5.2-20210713-amd64
+docker push <cluster_CA_domain>:8500/<NAMESPACE>/ibp-console:2.5.2-20210810-amd64
+docker push <cluster_CA_domain>:8500/<NAMESPACE>/ibp-deployer:2.5.2-20210713-amd64
+docker push <cluster_CA_domain>:8500/<NAMESPACE>/ibp-operator:2.5.2-20210810-amd64
+```
+{: codeblock}
+
+- Replace `<cluster_CA_domain>:8500` with the domain you use to log in to your {{site.data.keyword.cloud_notm}}Private cluster.
+- Replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.
+
+## Create a secret for your internal registry
+{: #deploy-icp-k8-create-ibpinfra-secret-docker-registry}
+
+Add credentials to the internal registry for the `ibpinfra` namespace. Run the following command to create the secret and add it to your `ibpinfra` namespace:
+```
+kubectl create secret docker-registry docker-key-secret --docker-server=<cluster_CA_domain>:8500 --docker-username=<USERNAME> --docker-password=<PASSWORD> --docker-email=<EMAIL> -n ibpinfra
+```
+{: codeblock}
+
+- Replace `<cluster_CA_domain>:8500` with the domain you use to log in to your {{site.data.keyword.cloud_notm}} Private cluster.
+- Replace `<USERNAME>` with the admin username for your {{site.data.keyword.cloud_notm}} Private cluster.
+- Replace `<PASSWORD>` with the admin password for your {{site.data.keyword.cloud_notm}} Private cluster.
+- Replace `<EMAIL>` with your email address.
+
+<internal>
+You need to store the entitlement key on your cluster by creating a [Kubernetes Secret](https://kubernetes.io/docs/concepts/configuration/secret/){: external}. Kubernetes secrets are used to securely store the key on your cluster and pass it to the operator and the console deployments.
 
 Run the following command to create the secret and add it to your `ibpinfra` namespace or project:
 ```
-kubectl create secret docker-registry docker-key-secret --docker-server=cp.icr.io --docker-username=cp --docker-password=<KEY> --docker-email=<EMAIL> -n ibpinfra
+kubectl create secret docker-registry docker-key-secret -–docker-server<your_internal_registry> --docker-username=<your_internal_registry_username> --docker-password=<your_internal_registry_password>
 ```
 {: codeblock}
 
@@ -160,9 +352,10 @@ kubectl create secret docker-registry docker-key-secret --docker-server=cp.icr.i
 
 The name of the secret that you are creating is `docker-key-secret`. It is required by the webhook that you will deploy later. You can only use the key once per deployment. You can refresh the key before you attempt another deployment and use that value here.
 {: note}
+</internal>
 
 ## Deploy the webhook and custom resource definitions (CRDS) to your Kubernetes cluster
-{: #deploy-k8s-webhook-crd}
+{: #deploy-icp-k8s-webhook-crd}
 
 Before you can upgrade an existing 2.1.x network to 2.5.x, or deploy a new instance of the platform to your Kubernetes cluster, you need to create the conversion webhook by completing the steps in this section. The webhook is deployed to its own namespace or project, referred to `ibpinfra` throughout these instructions.
 
@@ -205,7 +398,6 @@ roleRef:
   kind: Role
   name: webhook
   apiGroup: rbac.authorization.k8s.io
-
 ```
 {: codeblock}
 
@@ -223,7 +415,7 @@ rolebinding.rbac.authorization.k8s.io/ibpinfra created
 ```
 {: codeblock}
 
-### 2. (OpenShift cluster only) Apply the Security Context Constraint
+### 2.  Apply the Security Context Constraint
 {: #webhook-scc}
 
 Skip this step if you are not using OpenShift. The {{site.data.keyword.blockchainfull_notm}} Platform requires specific security and access policies to be added to the `ibpinfra` project. Copy the security context constraint object below and save it to your local system as `ibpinfra-scc.yaml`.
@@ -264,7 +456,6 @@ users:
 - system:serviceaccounts:<PROJECT_NAME>
 volumes:
 - "*"
-
 ```
 {: codeblock}
 
@@ -281,6 +472,7 @@ If the commands are successful, you can see a response that is similar to the fo
 securitycontextconstraints.security.openshift.io/ibpinfra created
 clusterrole.rbac.authorization.k8s.io/system:openshift:scc:ibpinfra added: "system:serviceaccounts:ibpinfra"
 ```
+{: codeblock}
 
 ### 3. Deploy the webhook
 {: #webhook-deploy}
@@ -291,7 +483,6 @@ In order to deploy the webhook, you need to create two `.yaml` files and apply t
 {: #webhook-deployment-yaml}
 
 Copy the following text to a file on your local system and save the file as `deployment.yaml`. If you are deploying on OpenShift Container Platform on LinuxONE, you need to replace `amd64` with `s390x`.
-
 
 ```yaml
 apiVersion: apps/v1
@@ -332,7 +523,7 @@ spec:
         fsGroup: 2000
       containers:
         - name: "ibp-webhook"
-          image: "cp.icr.io/cp/ibp-crdwebhook:2.5.2-20211005-amd64"
+          image: "<cluster_CA_domain>:8500/ibpinfra/ibp-crdwebhook:2.5.2-20210713-amd64"
           imagePullPolicy: Always
           securityContext:
             privileged: false
@@ -378,6 +569,9 @@ spec:
 
 ```
 {: codeblock}
+
+Replace `<cluster_CA_domain>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.
+
 Run the following command to add the file to your cluster definition:
 ```
 kubectl apply -n ibpinfra -f deployment.yaml
@@ -388,12 +582,12 @@ When the command completes successfully, you should see something similar to:
 ```
 deployment.apps/ibp-webhook created
 ```
+{: codeblock}
 
 #### service.yaml
 {: #webhook-service-yaml}
 
 Second, copy the following text to a file on your local system and save the file as `service.yaml`.
-
 ```yaml
 apiVersion: v1
 kind: Service
@@ -427,12 +621,12 @@ When the command completes successfully, you should see something similar to:
 ```
 service/ibp-webhook created
 ```
+{: codeblock}
 
 ### 4. Extract the certificate and create the custom resource definitions
 {: #webhook-extract-cert}
 
 1. Extract the webhook TLS certificate from the `ibpinfra` namespace by running the following command:
-
   ```
   TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibpinfra -o jsonpath={'.data.cert\.pem'})
   ```
@@ -694,104 +888,26 @@ customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com configured
 ```
 {: codeblock}
 
-## Create a new namespace for your {{site.data.keyword.blockchainfull_notm}} Platform deployment
-{: #deploy-k8-namespace}
+## Create a secret for your internal registry
+{: #deploy-icp-k8-create-docker-secret-ibp-namespace}
 
-Next, you need to create a second project for your deployment of {{site.data.keyword.blockchainfull_notm}} Platform. You can create a namespace by using the kubectl CLI. The namespace needs to be created by a cluster administrator.
-
-If you are using the CLI, create a new namespace by running the following command:
+Add credentials to the internal registry for the blockchain namespace. Run the following command to create the secret and add it to your blockchain namespace:
 ```
-kubectl create namespace <NAMESPACE>
+kubectl create secret docker-registry docker-key-secret --docker-server=<cluster_CA_domain>:8500 --docker-username=<USERNAME> --docker-password=<PASSWORD> --docker-email=<EMAIL> -n <NAMESPACE>
 ```
 {: codeblock}
 
-Replace `<NAMESPACE>` with the name that you want to use for your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.
-
-It is required that you create a namespace for each blockchain network that you deploy with the {{site.data.keyword.blockchainfull_notm}} Platform. For example, if you plan to create different networks for development, staging, and production, then you need to create a unique namespace for each environment. Using a separate namespace provides each network with separate resources and allows you to set unique access policies for each network. You need to follow these deployment instructions to deploy a separate operator and console for each namespace.
-{: important}
-
-You can also use the CLI to find the available storage classes for your namespace. If you created a new storage class for your deployment, that storage class must be visible in the output in the following command:
-```
-kubectl get storageclasses
-```
-{: codeblock}
-
-If you are not using the default storage class, additional configuration is required. See [Storage](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#deploy-k8-storage) for the considerations.
-
-## Create a secret for your entitlement key
-{: #deploy-k8-docker-registry-secret}
-
-You've already created a secret for the entitlement key in the `ibpinfra` namespace or project, now you need to create one in your {{site.data.keyword.blockchainfull_notm}} Platform namespace or project. After you purchase the {{site.data.keyword.blockchainfull_notm}} Platform, you can access the [My IBM dashboard](https://myibm.ibm.com/dashboard/){: external} to obtain your entitlement key for the offering. You need to store the entitlement key on your cluster by creating a [Kubernetes Secret](https://kubernetes.io/docs/concepts/configuration/secret/){: external}. Kubernetes secrets are used to securely store the key on your cluster and pass it to the operator and the console deployments.
-
-
-
-Run the following command to create the secret and add it to your namespace or project:
-```
-kubectl create secret docker-registry docker-key-secret --docker-server=cp.icr.io --docker-username=cp --docker-password=<KEY> --docker-email=<EMAIL> -n <NAMESPACE>
-```
-{: codeblock}
-- Replace `<KEY>` with your entitlement key.
+- Replace `<cluster_CA_domain>:8500` with the domain you use to log in to your {{site.data.keyword.cloud_notm}} Private cluster.
+- Replace `<USERNAME>` with the admin username for your {{site.data.keyword.cloud_notm}} Private cluster.
+- Replace `<PASSWORD>` with the admin password for your {{site.data.keyword.cloud_notm}} Private cluster.
 - Replace `<EMAIL>` with your email address.
-- Replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace or OpenShift project.
+- Replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.
 
-The name of the secret that you are creating is `docker-key-secret`. This value is used by the operator to deploy the offering in future steps. If you change the name of any of secrets that you create, you need to change the corresponding name in future steps.
-{: note}
-
-## Add security and access policies
-{: #deploy-k8-scc}
-
-The {{site.data.keyword.blockchainfull_notm}} Platform requires specific security and access policies to be added to your namespace. The contents of a set of `.yaml` files are provided here for you to copy and edit to define the security policies. You must save these files to your local system and then add them your namespace by using the kubectl CLI. These steps need to be completed by a cluster administrator. Also, be aware that the peer `init` and `dind` containers that get deployed are required to run in privileged mode.
-
-### Apply the Pod Security Policy
-{: #deploy-k8-apply-psp}
-
-Copy the PodSecurityPolicy object below and save it to your local system as `ibp-psp.yaml`.
-
-```yaml
-apiVersion: policy/v1beta1
-kind: PodSecurityPolicy
-metadata:
-  name: ibm-blockchain-platform-psp
-spec:
-  hostIPC: false
-  hostNetwork: false
-  hostPID: false
-  privileged: true
-  allowPrivilegeEscalation: true
-  readOnlyRootFilesystem: false
-  seLinux:
-    rule: RunAsAny
-  supplementalGroups:
-    rule: RunAsAny
-  runAsUser:
-    rule: RunAsAny
-  fsGroup:
-    rule: RunAsAny
-  requiredDropCapabilities:
-  - ALL
-  allowedCapabilities:
-  - NET_BIND_SERVICE
-  - CHOWN
-  - DAC_OVERRIDE
-  - SETGID
-  - SETUID
-  - FOWNER
-  volumes:
-  - '*'
-```
-{: codeblock}
-
-After you save and edit the file, run the following command to add the file to your cluster and add the policy to your namespace.
-```
-kubectl apply -f ibp-psp.yaml
-```
-{: codeblock}
 
 ### Apply the ClusterRole
-{: #deploy-k8-clusterrole}
+{: #deploy-icp-k8-clusterrole}
 
 Copy the following text to a file on your local system and save the file as `ibp-clusterrole.yaml`. This file defines the required ClusterRole for the PodSecurityPolicy. Edit the file and replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.
-
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
@@ -813,19 +929,32 @@ rules:
   verbs:
   - use
 - apiGroups:
-  - apiextensions.k8s.io
+  - "*"
   resources:
+  - pods
+  - pod/logs
+  - services
+  - endpoints
   - persistentvolumeclaims
   - persistentvolumes
+  - events
+  - configmaps
+  - secrets
+  - ingresses
+  - roles
+  - rolebindings
+  - serviceaccounts
+  - nodes
+  - jobs
   verbs:
-  - get
-  - list
-  - create
-  - update
-  - patch
-  - watch
-  - delete
-  - deletecollection
+  - '*'
+- apiGroups:
+  - ""
+  resources:
+  - namespaces
+  - nodes
+  verbs:
+  - 'get'
 - apiGroups:
   - apiextensions.k8s.io
   resources:
@@ -833,78 +962,29 @@ rules:
   verbs:
   - get
 - apiGroups:
-  - route.openshift.io
+  - apiextensions.k8s.io
   resources:
-  - routes
-  - routes/custom-host
-  verbs:
-  - get
-  - list
-  - create
-  - update
-  - patch
-  - watch
-  - delete
-  - deletecollection
-- apiGroups:
-  - ""
-  resources:
-  - pods
-  - pods/log
   - persistentvolumeclaims
   - persistentvolumes
-  - services
-  - endpoints
-  - events
-  - configmaps
-  - secrets
-  - nodes
-  - serviceaccounts
   verbs:
-  - get
-  - list
-  - create
-  - update
-  - patch
-  - watch
-  - delete
-  - deletecollection
+  - '*'
 - apiGroups:
-  - "batch"
+  - ibp.com
   resources:
-  - jobs
+  - '*'
+  - ibpservices
+  - ibpcas
+  - ibppeers
+  - ibpfabproxies
+  - ibporderers
   verbs:
-  - get
-  - list
-  - create
-  - update
-  - patch
-  - watch
-  - delete
-  - deletecollection
+  - '*'
 - apiGroups:
-  - "authorization.openshift.io"
-  - "rbac.authorization.k8s.io"
+  - ibp.com
   resources:
-  - roles
-  - rolebindings
+  - '*'
   verbs:
-  - get
-  - list
-  - create
-  - update
-  - patch
-  - watch
-  - delete
-  - deletecollection
-  - bind
-  - escalate
-- apiGroups:
-  - ""
-  resources:
-  - namespaces
-  verbs:
-  - get
+  - '*'
 - apiGroups:
   - apps
   resources:
@@ -913,72 +993,8 @@ rules:
   - replicasets
   - statefulsets
   verbs:
-  - get
-  - list
-  - create
-  - update
-  - patch
-  - watch
-  - delete
-  - deletecollection
-- apiGroups:
-  - monitoring.coreos.com
-  resources:
-  - servicemonitors
-  verbs:
-  - get
-  - create
-- apiGroups:
-  - apps
-  resourceNames:
-  - ibp-operator
-  resources:
-  - deployments/finalizers
-  verbs:
-  - update
-- apiGroups:
-  - ibp.com
-  resources:
-  - ibpcas.ibp.com
-  - ibppeers.ibp.com
-  - ibporderers.ibp.com
-  - ibpconsoles.ibp.com
-  - ibpcas
-  - ibppeers
-  - ibporderers
-  - ibpconsoles
-  - ibpcas/finalizers
-  - ibppeers/finalizers
-  - ibporderers/finalizers
-  - ibpconsoles/finalizers
-  - ibpcas/status
-  - ibppeers/status
-  - ibporderers/status
-  - ibpconsoles/status
-  verbs:
-  - get
-  - list
-  - create
-  - update
-  - patch
-  - watch
-  - delete
-  - deletecollection
-- apiGroups:
-  - extensions
-  - networking.k8s.io
-  - config.openshift.io
-  resources:
-  - ingresses
-  verbs:
-  - get
-  - list
-  - create
-  - update
-  - patch
-  - watch
-  - delete
-  - deletecollection
+  - '*'
+
 ```
 {: codeblock}
 
@@ -990,8 +1006,9 @@ kubectl apply -f ibp-clusterrole.yaml -n <NAMESPACE>
 
 Replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.
 
+
 ### Apply the ClusterRoleBinding
-{: #deploy-k8-clusterrolebinding}
+{: #deploy-icp-k8-clusterrolebinding}
 
 Copy the following text to a file on your local system and save the file as `ibp-clusterrolebinding.yaml`. This file defines the ClusterRoleBinding. Edit the file and replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.  
 
@@ -1014,6 +1031,7 @@ roleRef:
   kind: ClusterRole
   name: <NAMESPACE>
   apiGroup: rbac.authorization.k8s.io
+
 ```
 {: codeblock}
 
@@ -1026,7 +1044,7 @@ kubectl apply -f ibp-clusterrolebinding.yaml -n <NAMESPACE>
 Replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.
 
 ### Create the role binding
-{: #deploy-k8-rolebinding}
+{: #deploy-icp-k8-rolebinding}
 
 After applying the policies, you must grant your service account the required level of permissions to deploy your console. Run the following command with the name of your target namespace:
 ```
@@ -1037,7 +1055,7 @@ kubectl -n <NAMESPACE> create rolebinding ibp-operator-rolebinding --clusterrole
 Replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.
 
 ## Deploy the {{site.data.keyword.blockchainfull_notm}} Platform operator
-{: #deploy-k8-operator}
+{: #deploy-icp-operator}
 
 The {{site.data.keyword.blockchainfull_notm}} Platform uses an operator to install the {{site.data.keyword.blockchainfull_notm}} Platform console. You can deploy the operator on your cluster by adding a custom resource to your namespace by using the kubectl CLI. The custom resource pulls the operator image from the Docker registry and starts it on your cluster.  
 
@@ -1098,7 +1116,7 @@ spec:
         - name: docker-key-secret
       containers:
         - name: ibp-operator
-          image: cp.icr.io/cp/ibp-operator:2.5.2-20211005-amd64
+          image: <cluster_CA_domain>:8500/<NAMESPACE>/ibp-operator:2.5.2-20210810-amd64
           command:
           - ibp-operator
           imagePullPolicy: Always
@@ -1138,7 +1156,7 @@ spec:
             - name: OPERATOR_NAME
               value: "ibp-operator"
             - name: CLUSTERTYPE
-              value: K8S
+              value: ICP
           resources:
             requests:
               cpu: 100m
@@ -1146,8 +1164,12 @@ spec:
             limits:
               cpu: 100m
               memory: 200Mi
+
 ```
 {: codeblock}
+
+- Replace `<cluster_CA_domain>:8500` with domain that you use to log in to your {{site.data.keyword.cloud_notm}} Private cluster
+- Replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.
 
 - If you changed the name of the Docker key secret, then you need to edit the field of `name: docker-key-secret`.
 
@@ -1168,44 +1190,161 @@ ibp-operator   1/1     1            1           1m
 {: codeblock}
 
 ## Deploy the {{site.data.keyword.blockchainfull_notm}} Platform console
-{: #deploy-k8-console}
+{: #deploy-icp-console}
 
 When the operator is running on your namespace, you can apply a custom resource to start the {{site.data.keyword.blockchainfull_notm}} Platform console on your cluster. You can then access the console from your browser. Note that you can deploy only one console per namespace.
 
 Save the custom resource definition below as `ibp-console.yaml` on your local system.
-
-```yaml
-apiVersion: ibp.com/v1beta1
+```
+apiVersion: ibp.com/v1alpha1
 kind: IBPConsole
 metadata:
   name: ibpconsole
 spec:
   arch:
   - amd64
-  license:
-    accept: false
+  license: accept
   serviceAccountName: default
   email: "<EMAIL>"
   password: "<PASSWORD>"
-  registryURL: cp.icr.io/cp
-  imagePullSecrets:
-    - docker-key-secret
+  registryURL: <cluster_CA_domain>:8500/<NAMESPACE>
+  images:
+    configtxlatorImage: ibp-utilities
+    configtxlatorTag: 2.2.3-20210713
+    consoleImage: ibp-console
+    consoleInitImage: ibp-init
+    consoleInitTag: 2.5.2-20210713
+    consoleTag: 2.5.2-20210810
+    couchdbImage: ibp-couchdb
+    couchdbTag: 2.3.1-20210713
+    deployerImage: ibp-deployer
+    deployerTag: 2.5.2-20210713
+  imagePullSecret: "docker-key-secret"
   networkinfo:
-    domain: <DOMAIN>
+    domain: steerage1.fyre.ibm.com
+    consolePort: 30001
+    proxyPort: 30002
   storage:
     console:
-      class: ""
-      size: 5Gi
-  version: 2.5.2
+      class: default
+      size: 10Gi
+  versions:
+    ca:
+      1.5.0-0:
+        default: true
+        image:
+          caImage: ibp-ca
+          caInitImage: ibp-init
+          caInitTag: 2.5.2-20210713
+          caTag: 1.5.0-20210713
+          enrollerImage: ibp-enroller
+          enrollerTag: 2.5.2-20210713
+        version: 1.5.0-0
+    orderer:
+      1.4.12-0:
+        default: true
+        image:
+          enrollerImage: ibp-enroller
+          enrollerTag: 2.5.2-20210713
+          grpcwebImage: ibp-grpcweb
+          grpcwebTag: 2.5.2-20210713
+          ordererImage: ibp-orderer
+          ordererInitImage: ibp-init
+          ordererInitTag: 2.5.2-20210713
+          ordererTag: 1.4.12-20210713
+        version: 1.4.12-0
+      2.2.3-0:
+        default: false
+        image:
+          enrollerImage: ibp-enroller
+          enrollerTag: 2.5.2-20210713
+          grpcwebImage: ibp-grpcweb
+          grpcwebTag: 2.5.2-20210713
+          ordererImage: ibp-orderer
+          ordererInitImage: ibp-init
+          ordererInitTag: 2.5.2-20210713
+          ordererTag: 2.2.3-20210713
+        version: 2.2.3-0
+    peer:
+      1.4.12-0:
+        default: true
+        image:
+          couchdbImage: ibp-couchdb
+          couchdbTag: 2.3.1-20210713
+          dindImage: ibp-dind
+          dindTag: 1.4.12-20210713
+          enrollerImage: ibp-enroller
+          enrollerTag: 2.5.2-20210713
+          fluentdImage:ibp-fluentd
+          fluentdTag: 2.5.2-20210713
+          grpcwebImage: ibp-grpcweb
+          grpcwebTag: 2.5.2-20210713
+          goEnvImage: ibp-goenv
+          goEnvTag: 1.4.12-20210713
+          javaEnvImage: ibp-javaenv
+          javaEnvTag: 1.4.12-20210713
+          nodeEnvImage: ibp-nodeenv
+          nodeEnvTag: 1.4.12-20210713
+          peerImage: ibp-peer
+          peerInitImage: ibp-init
+          peerInitTag: 2.5.2-20210713
+          peerTag: 1.4.12-20210713
+        version: 1.4.12-0
+      2.2.3-0:
+        default: false
+        image:
+          builderImage:ibp-ccenv
+          builderTag: 2.2.3-20210713
+          chaincodeLauncherImage: ibp-chaincode-launcher
+          chaincodeLauncherTag: 2.2.3-20210713
+          couchdbImage: ibp-couchdb
+          couchdbTag: 3.1.1-20210713
+          enrollerImage: ibp-enroller
+          enrollerTag: 2.5.2-20210713
+          fluentdImage: ibp-fluentd
+          fluentdTag: 2.5.2-20210713
+          goEnvImage: ibp-goenv
+          goEnvTag: 2.2.3-20210713
+          grpcwebImage: ibp-grpcweb
+          grpcwebTag: 2.5.2-20210713
+          javaEnvImage: ibp-javaenv
+          javaEnvTag: 2.2.3-20210713
+          nodeEnvImage: ibp-nodeenv
+          nodeEnvTag: 2.2.3-20210713
+          peerImage: ibp-peer
+          peerInitImage: ibp-init
+          peerInitTag: 2.5.2-20210713
+          peerTag: 2.2.3-20210713
+        version: 2.2.3-0
 ```
 {: codeblock}
 
+- Replace `<cluster_CA_domain>:8500` with the domain that you use to log in to your {{site.data.keyword.cloud_notm}} Private cluster.
+- Replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.
+
 Accept the license:  
 
-- Accept the [IBM Blockchain Platform license](https://www-03.ibm.com/software/sla/sladb.nsf/lilookup/6CE1C5684689691C852586000043982B?OpenDocument){: external} by replacing the `license` parameter `accept: false` with the text `accept: true`.
+- Accept the [{{site.data.keyword.blockchainfull_notm}} Platform license](https://www-03.ibm.com/software/sla/sladb.nsf/lilookup/6CE1C5684689691C852586000043982B?OpenDocument){: external} by replacing the `license` parameter `accept: false` with the text `accept: true`.
 
 Specify the external endpoint information of the console in the `ibp-console.yaml` file:
-- Replace `<DOMAIN>` with the name of your cluster domain. You need to make sure that this domain is pointed to the load balancer of your cluster.  
+-  Replace <DOMAIN> with the Proxy IP address your cluster. You can retrieve the value of your Proxy IP address from the {{site.data.keyword.cloud_notm}} Private console. Note: You need to be a Cluster administrator to access your proxy IP. Log in to the {{site.data.keyword.cloud_notm}} Private cluster. In the left navigation panel, click Platform and then Nodes to view the nodes that are defined in the cluster. Click the node with the role proxy and then copy the value of the Host IP from the table.
+- Replace <CONSOLE_PORT> with a number between 30000 and 32767. This port is used to access the Console UI from your browser.
+-   Replace <PROXY_PORT> with a number between 30000 and 32767. Select a different port than the one you selected for your console port. This port is used by the console to communicate with your blockchain nodes.
+
+If you are deploying on {{site.data.keyword.cloud_notm}} Private on LinuxONE (s390x), you need to replace the `arch` field in the `ibp_console.yaml` as follow:
+```
+arch:
+- amd64
+```
+{: codeblock}
+
+with:
+
+```
+arch:
+- s390x
+```
+{: codeblock}
 
 Provide the user name and password that is used to access the console for the first time:
 - Replace `<EMAIL>` with the email address of the console administrator.
@@ -1227,7 +1366,7 @@ kubectl apply -f ibp-console.yaml -n <NAMESPACE>
 Replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace. Before you install the console, you might want to review the advanced deployment options in the next section. The console can take a few minutes to deploy.
 
 ### Advanced deployment options
-{: #console-deploy-k8-advanced}
+{: #console-icp-deploy-k8-advanced}
 
 Before you deploy the console, you can edit the `ibp-console.yaml` file to allocate more resources to your console or use zones for high availability in a multizone cluster. To take advantage of these deployment options, you can use the console resource definition with the `resources:` and `clusterdata:` sections added:
 
@@ -1285,6 +1424,7 @@ spec:
         cpu: 100m
         memory: 200Mi
   version: 2.5.2
+
 ```
 {: codeblock}
 
@@ -1300,7 +1440,7 @@ spec:
   ```
   {: codeblock}
 
-- Accept the [IBM Blockchain Platform license](https://www-03.ibm.com/software/sla/sladb.nsf/lilookup/6CE1C5684689691C852586000043982B?OpenDocument){: external} by replacing the `license` parameter `accept: false` with the text `accept: true`.
+- Accept the [{{site.data.keyword.blockchainfull_notm}} Platform license](https://www-03.ibm.com/software/sla/sladb.nsf/lilookup/6CE1C5684689691C852586000043982B?OpenDocument){: external} by replacing the `license` parameter `accept: false` with the text `accept: true`.
 
 When you finish editing the file, apply it to your cluster.
 ```
@@ -1310,11 +1450,11 @@ kubectl apply -f ibp-console.yaml -n <NAMESPACE>
 
 Replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.
 
-Unlike the resource allocation, you cannot add zones to a running network. If you have already deployed a console and used it to create nodes on your cluster, you will lose your previous work. After the console restarts, you need to deploy new nodes.
-{: Important}
+Unlike the resource allocation, you cannot add zones to a running network. If you have already deployed a console and used it to create nodes on your cluster, you will lose your previous work. After the console restarts, you need to deploy new nodes.s
+{: important}
 
 ### Use your own TLS Certificates (Optional)
-{: #deploy-k8-tls}
+{: #deploy-icp-tls}
 
 The {{site.data.keyword.blockchainfull_notm}} Platform console uses TLS certificates to secure the communication between the console and your blockchain nodes and between the console and your browser. You have the option of creating your own TLS certificates and providing them to the console by using a Kubernetes secret. If you skip this step, the console creates its own self-signed TLS certificates during deployment.
 
@@ -1323,8 +1463,8 @@ This step needs to be performed before the console is deployed.
 
 You can use a Certificate Authority or tool to create the TLS certificates for the console. The TLS certificate needs to include the hostname of the console and the proxy in the subject name or the alternative domain names. The console and proxy hostname are in the following format:
 
-**Console hostname:** ``<NAMESPACE>-ibpconsole-console.<DOMAIN>``  
-**Proxy hostname:** ``<NAMESPACE>-ibpconsole-proxy.<DOMAIN>``
+**Console hostname:** ``<NAMESPACE>-proxy:ip.<DOMAIN>``  
+**Proxy hostname:** ``<NAMESPACE>-proxy:ip.<DOMAIN>``
 
 - Replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.
 - Replace `<DOMAIN>` with the name of your cluster domain.
@@ -1366,7 +1506,7 @@ spec:
 
 Accept the license:  
 
-- Accept the [IBM Blockchain Platform license](https://www-03.ibm.com/software/sla/sladb.nsf/lilookup/6CE1C5684689691C852586000043982B?OpenDocument){: external} by replacing the `license` parameter `accept: false` with the text `accept: true`.
+- Accept the [{{site.data.keyword.blockchainfull_notm}} Platform license](https://www-03.ibm.com/software/sla/sladb.nsf/lilookup/6CE1C5684689691C852586000043982B?OpenDocument){: external} by replacing the `license` parameter `accept: false` with the text `accept: true`.
 
 When you finish editing the file, you can apply it to your cluster in order to secure communications with your own TLS certificates:
 ```
@@ -1377,7 +1517,7 @@ kubectl apply -f ibp-console.yaml -n <NAMESPACE>
 Replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.
 
 ### Verifying the console installation
-{: #deploy-k8-verify}
+{: #deploy-icp-verify}
 
 You can confirm that the operator deployed by running the command `kubectl get deployment -n <NAMESPACE>`. If your console deployment is successful, you can see `ibpconsole` added to the deployment table, with four ones displayed. The console takes a few minutes to deploy. You might need to click refresh and wait for the table to be updated.
 ```
@@ -1401,7 +1541,6 @@ kubectl get pods -n <NAMESPACE>
 
 Replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.
 
-
 Then, use the following command to get the logs from one of the four containers listed above:
 ```
 kubectl logs -f <pod_name> <container_name> -n <NAMESPACE>
@@ -1410,7 +1549,6 @@ kubectl logs -f <pod_name> <container_name> -n <NAMESPACE>
 
 Replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.
 
-
 As an example, a command to get the logs from the UI container would look like the following example:
 ```
 kubectl logs -f ibpconsole-55cf9db6cc-856nz optools -n blockchain-project
@@ -1418,20 +1556,20 @@ kubectl logs -f ibpconsole-55cf9db6cc-856nz optools -n blockchain-project
 {: codeblock}
 
 ## Log in to the console
-{: #deploy-k8-log-in}
+{: #deploy-icp-log-in}
 
-You can use your browser to access the console by using the console URL:
+You can access the console by browsing to the following URL:
 ```
-https://<NAMESPACE>-ibpconsole-console.<DOMAIN>:443
+https://<DOMAIN>:<CONSOLE_PORT>
 ```
 {: codeblock}
 
-- Replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.
-- Replace `<DOMAIN>` with the name of your cluster domain. You passed this value to the `DOMAIN:` field of the `ibp-console.yaml` file.
+- Replace `<DOMAIN>` with the value of the `domain:` field in the `ibp-console.yaml` file.
+- Replace `<CONSOLE_PORT>` with the port that you specified in the `consolePort:` in the `ibp-console.yaml` file.
 
 Your console URL looks similar to the following example:
 ```
-https://blockchain-project-ibpconsole-console.xyz.abc.com:443
+https://9.30.252.107:32615
 ```
 {: codeblock}
 
@@ -1446,7 +1584,7 @@ browser such as Chrome and log in. Otherwise, clear your browser cache and try l
 The administrator who provisions the console can grant access to other users and restrict the actions they can perform. For more information, see [Managing users from the console](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-icp-manage#console-icp-manage-users).
 
 ## Next steps
-{: #console-deploy-k8-next-steps}
+{: #deploy-icp-k8-next-steps}
 
 When you access your console, you can view the **nodes** tab of your console UI. You can use this screen to deploy components on the cluster where you deployed the console. See the [Build a network tutorial](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-build-network#ibp-console-build-network) to get started with the console. You can also use this tab to operate nodes that are created on other clouds. For more information, see [Importing nodes](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-import-nodes#ibp-console-import-nodes).
 
@@ -1467,25 +1605,29 @@ Before you attempt to install the {{site.data.keyword.blockchainfull_notm}} Plat
     ```
     *.test.example.com
     ```
+    {: codeblock}
 
     that ultimately resolves to
     ```
     test.example.com
     ```
+    {: codeblock}
 
     When this host entry is configured, the following examples should all resolve to test.example.com:
     ```
     console.test.example.com
     peer.test.example.com
     ```
+    {: codeblock}
 
     You can use `nslookup` to verify that DNS is configured correctly:
 
     ```
     $ nslookup console.test.example.com
     ```
+    {: codeblock}
 
-4. The DNS entry for the load balancer should then be used as the **Domain name** during the installation of IBM Blockchain Platform.
+4. The DNS entry for the load balancer should then be used as the **Domain name** during the installation of {{site.data.keyword.blockchainfull_notm}} Platform.
 
 5. The NGINX ingress controller must be used. See the [ingress controller installation guide](https://github.com/kubernetes/ingress-nginx/blob/master/docs/deploy/index.md){: external} that can be used for most Kubernetes distributions. If you are using {{site.data.keyword.containerlong_notm}}, then refer to these [instructions](#console-deploy-k8-iks-considerations) for specific configuration information.
 
@@ -1505,6 +1647,7 @@ Before you attempt to install the {{site.data.keyword.blockchainfull_notm}} Plat
     {: codeblock}
 
 7. Verify that all pods are running before you attempt to [install](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#deploy-k8-login) the {{site.data.keyword.blockchainfull_notm}} Platform.
+
 
 You can now [resume your installation](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#deploy-k8-login).
 

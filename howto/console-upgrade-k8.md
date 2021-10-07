@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-11"
+lastupdated: "2021-10-05"
 
 keywords: Kubernetes, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters
 
@@ -10,100 +10,7 @@ subcollection: blockchain-sw-252
 
 ---
 
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
-{:android: data-hd-operatingsystem="android"}
-{:api: .ph data-hd-interface='api'}
-{:apikey: data-credential-placeholder='apikey'}
-{:app_key: data-hd-keyref="app_key"}
-{:app_name: data-hd-keyref="app_name"}
-{:app_secret: data-hd-keyref="app_secret"}
-{:app_url: data-hd-keyref="app_url"}
-{:audio: .audio}
-{:authenticated-content: .authenticated-content}
-{:beta: .beta}
-{:c#: .ph data-hd-programlang='c#'}
-{:c#: data-hd-programlang="c#"}
-{:cli: .ph data-hd-interface='cli'}
-{:codeblock: .codeblock}
-{:curl: #curl .ph data-hd-programlang='curl'}
-{:curl: .ph data-hd-programlang='curl'}
-{:deprecated: .deprecated}
-{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
-{:download: .download}
-{:external: .external target="_blank"}
-{:external: target="_blank" .external}
-{:faq: data-hd-content-type='faq'}
-{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
-{:generic: data-hd-operatingsystem="generic"}
-{:generic: data-hd-programlang="generic"}
-{:gif: data-image-type='gif'}
-{:go: .ph data-hd-programlang='go'}
-{:help: data-hd-content-type='help'}
-{:hide-dashboard: .hide-dashboard}
-{:hide-in-docs: .hide-in-docs}
-{:important: .important}
-{:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
-{:java: .ph data-hd-programlang='java'}
-{:java: data-hd-programlang="java"}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:javascript: data-hd-programlang="javascript"}
-{:middle: .ph data-hd-position='middle'}
-{:navgroup: .navgroup}
-{:new_window: target="_blank"}
-{:node: .ph data-hd-programlang='node'}
-{:note: .note}
-{:objectc: .ph data-hd-programlang='Objective C'}
-{:objectc: data-hd-programlang="objectc"}
-{:org_name: data-hd-keyref="org_name"}
-{:php: .ph data-hd-programlang='PHP'}
-{:php: data-hd-programlang="php"}
-{:pre: .pre}
-{:preview: .preview}
-{:python: .ph data-hd-programlang='python'}
-{:python: data-hd-programlang="python"}
-{:right: .ph data-hd-position='right'}
-{:route: data-hd-keyref="route"}
-{:row-headers: .row-headers}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:ruby: data-hd-programlang="ruby"}
-{:runtime: architecture="runtime"}
-{:runtimeIcon: .runtimeIcon}
-{:runtimeIconList: .runtimeIconList}
-{:runtimeLink: .runtimeLink}
-{:runtimeTitle: .runtimeTitle}
-{:screen: .screen}
-{:script: data-hd-video='script'}
-{:service: architecture="service"}
-{:service_instance_name: data-hd-keyref="service_instance_name"}
-{:service_name: data-hd-keyref="service_name"}
-{:shortdesc: .shortdesc}
-{:space_name: data-hd-keyref="space_name"}
-{:step: data-tutorial-type='step'}
-{:step: data-tutorial-type='step'} 
-{:subsection: outputclass="subsection"}
-{:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
-{:swift: .ph data-hd-programlang='swift'}
-{:swift: data-hd-programlang="swift"}
-{:table: .aria-labeledby="caption"}
-{:term: .term}
-{:terraform: .ph data-hd-interface='terraform'}
-{:tip: .tip}
-{:tooling-url: data-tooling-url-placeholder='tooling-url'}
-{:topicgroup: .topicgroup}
-{:troubleshoot: data-hd-content-type='troubleshoot'}
-{:tsCauses: .tsCauses}
-{:tsResolve: .tsResolve}
-{:tsSymptoms: .tsSymptoms}
-{:tutorial: data-hd-content-type='tutorial'}
-{:ui: .ph data-hd-interface='ui'}
-{:unity: .ph data-hd-programlang='unity'}
-{:url: data-credential-placeholder='url'}
-{:user_ID: data-hd-keyref="user_ID"}
-{:vbnet: .ph data-hd-programlang='vb.net'}
-{:video: .video}
+{{site.data.keyword.attribute-definition-list}}
 
 
 
@@ -132,7 +39,7 @@ Use these instructions to upgrade to the {{site.data.keyword.blockchainfull_notm
 
 | Version | Release date | Image tags | New features |
 |----|----|----|----|
-| [{{site.data.keyword.blockchainfull_notm}} Platform 2.5.2](/docs/blockchain-sw-252?topic=blockchain-sw-252-whats-new#whats-new-03-29-2021) | 29 Mar 2021| **Console and tools** <ul><li>2.5.2-20210713-amd64</li><li>2.5.2-20210616-amd64</li><li>2.5.2-20210505-amd64</li><li>2.5.2-20210325-amd64</li></ul> **Fabric nodes** <ul><li>1.4.12-20210616</li><li>1.4.11-20210505</li><li>1.4.11-20210325</li></ul> **CouchDB** <ul> <li>2.3.1-20210505</li><li>2.3.1-20210325</li> <li>3.1.1-20210505</li> <li>3.1.1-20210325</li></ul> | **Fabric Version Upgrade** <ul><li>Fabric version 1.4.12 and 2.2.3</li><li>Fabric version 1.4.11 and 2.2.2</li></ul> **Improvements to the Console UI** <ul><li>Support for Fabric v2.x Lifecycle.</li><li>Upgrade CA, peer, and ordering nodes from Fabric v1.4 to Fabric v2.x.</li><li>Certificate renewal enhancements added to the console.</li></ul> |
+| [{{site.data.keyword.blockchainfull_notm}} Platform 2.5.2](/docs/blockchain-sw-252?topic=blockchain-sw-252-whats-new#whats-new-03-29-2021) | 29 Mar 2021| **Console and tools** <ul><li>2.5.2-20211005-amd64</li><li>2.5.2-20210810-amd64</li><li>2.5.2-20210616-amd64</li><li>2.5.2-20210505-amd64</li><li>2.5.2-20210325-amd64</li></ul> **Fabric nodes** <ul><li>1.4.12-20210616</li><li>1.4.11-20210505</li><li>1.4.11-20210325</li></ul> **CouchDB** <ul> <li>2.3.1-20210505</li><li>2.3.1-20210325</li> <li>3.1.1-20210505</li> <li>3.1.1-20210325</li></ul> | **Fabric Version Upgrade** <ul><li>Fabric version 1.4.12 and 2.2.4</li><li>Fabric version 1.4.11 and 2.2.2</li></ul> **Improvements to the Console UI** <ul><li>Support for Fabric v2.x Lifecycle.</li><li>Upgrade CA, peer, and ordering nodes from Fabric v1.4 to Fabric v2.x.</li><li>Certificate renewal enhancements added to the console.</li></ul> |
 | [{{site.data.keyword.blockchainfull_notm}} Platform 2.5.1](/docs/blockchain-sw-251?topic=blockchain-sw-251-release-notes-saas-20#01-12-2021) | 12 Jan 2021| **Console and tools** <ul><li>2.5.1-20210112-amd64</li> <li>2.5.1-20201208-amd64</li> <li>2.5.1-20201119-amd64</li> <li>2.5.1-20201030-amd64</li></ul> **Fabric nodes** <ul><li>1.4.9-20210112-amd64</li><li>1.4.9-20201208-amd64</li> <li>1.4.9-20201119-amd64</li> <li>1.4.9-20201030-amd64</li><li>2.2.1-20210112-amd64</li><li>2.2.1-20201208-amd64</li><li>2.2.1-20201119-amd64</li><li>2.2.1-20201030-amd64</li></ul> **CouchDB** <ul> <li>2.3.1-20210112-amd64</li> <li>2.3.1-20201208-amd64</li>  <li>2.3.1-20201119-amd64</li><li>2.3.1-20201030-amd64</li></ul> | **Fabric Version Upgrade** <ul><li>Fabric version 1.4.9 and 2.2.1</ul> **Improvements to the Console UI** <ul><li>Support for Fabric v2.x Lifecycle.</li><li>Upgrade CA, peer, and ordering nodes from Fabric v1.4 to Fabric v2.x.</li><li>Certificate renewal enhancements added to the console.</li></ul> |
 | [{{site.data.keyword.blockchainfull_notm}} Platform 2.5](/docs/blockchain-sw-25?topic=blockchain-sw-25-release-notes-saas-20#08-25-2020){: external} | 9 Sept 2020| **Console and tools** <ul><li>2.5.0-20200825-amd64</li><li>2.5.0-20200714-amd64</li><li>2.5.0-20200618-amd64</li></ul> **Fabric nodes** <ul><li>1.4.7-20200825-amd64</li><li>1.4.7-20200714-amd64</li><li>1.4.7-20200618-amd64</li><li>2.1.1-20200825-amd64</li><li>2.1.1-20200714-amd64</li><li>2.1.1-20200618-amd64</li></ul> **CouchDB** <ul><li>2.3.1-20200825-amd64</li><li>2.3.1-20200714-amd64</li><li>2.3.1-20200618-amd64</li></ul> | **Fabric Version Upgrade** <ul><li>Fabric version 1.4.7 and 2.1.1</ul> **Improvements to the Console UI** <ul><li>Ability to select Fabric version when you deploy a new peer or ordering node.</li></ul> |
 | [{{site.data.keyword.blockchainfull_notm}} Platform v2.1.3](/docs/blockchain-sw-213?topic=blockchain-sw-213-whats-new#whats-new-03-24-2020){: external} | 24 March 2020| **Console and tools** <ul><li>2.1.3-20200520-amd64</li><li>2.1.3-20200416-amd64</li><li>2.1.3-20200324-amd64</li></ul> **Fabric nodes** <ul><li>1.4.6-20200520-amd64</li><li>1.4.6-20200416-amd64</li><li>1.4.6-20200324-amd64</li></ul> **CouchDB** <ul><li>2.3.1-20200520-amd64</li><li>2.3.1-20200416-amd64</li><li>2.3.1-20200324-amd64</li></ul> | **Fabric Version Upgrade** <ul><li>Fabric version 1.4.6</ul> **Additional platforms** <ul><li>Platform can be deployed on the OpenShift Container Platform 4.2 on LinuxONE (s390x)</ul> **Improvements to the Console UI** <ul><li>Hardware Security Module (HSM) support for node identities</li><li>Ability to override CA, peer, and ordering node configuration</li><li>Ability to add and remove Raft ordering nodes</li><li>Java smart contract instantiation</li><li>Updated create channel and create organization panels</ul> |
@@ -182,7 +89,7 @@ You need to repeat steps 3-6 for each network that that runs in a separate names
 Log in to your cluster and run the following command to update the webhook image in the `ibpinfra` namespace or project:
 
 ```
-kubectl set image deploy/ibp-webhook -n ibpinfra ibp-webhook="cp.icr.io/cp/ibp-crdwebhook:2.5.2-20210713-amd64"
+kubectl set image deploy/ibp-webhook -n ibpinfra ibp-webhook="cp.icr.io/cp/ibp-crdwebhook:2.5.2-20211005-amd64"
 ```
 {: codeblock}
 
@@ -196,6 +103,7 @@ kubectl set image deploy/ibp-webhook -n ibpinfra ibp-webhook="cp.icr.io/cp/ibp-c
   TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibpinfra -o jsonpath={'.data.cert\.pem'})
   ```
   {: codeblock}
+  
 2. When you deploy the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 you need to apply the following four CRDs for the CA, peer, orderer, and console. If you are upgrading to 2.5.2, before you can update the operator, you need to update the CRDs to include a new `v1beta1` section as well as the webhook TLS certificate that you just stored in the `TLS_CERT` environment variable. In either case, run the following four commands to apply or update each CRD.
 
 Run this command to update the CA CRD:   
@@ -258,10 +166,13 @@ Depending on whether you are creating or updating the CRD, when successful, you 
 ```
 customresourcedefinition.apiextensions.k8s.io/ibpcas.ibp.com created
 ```
+{: codeblock}
+
 or
 ```
 customresourcedefinition.apiextensions.k8s.io/ibpcas.ibp.com configured
 ```
+{: codeblock}
 
 Run this command to update the peer CRD:
 ```yaml
@@ -317,10 +228,13 @@ When successful, you should see:
 ```
 customresourcedefinition.apiextensions.k8s.io/ibppeers.ibp.com created
 ```
+{: codeblock}
+
 or
 ```
 customresourcedefinition.apiextensions.k8s.io/ibppeers.ibp.com configured
 ```
+{: codeblock}
 
 Run this command to update the console CRD:
 ```yaml
@@ -376,10 +290,13 @@ When successful, you should see:
 ```
 customresourcedefinition.apiextensions.k8s.io/ibpconsoles.ibp.com created
 ```
+{: codeblock}
+
 or
 ```
 customresourcedefinition.apiextensions.k8s.io/ibpconsoles.ibp.com configured
 ```
+{: codeblock}
 
 Run this command to update the orderer CRD:  
 ```yaml
@@ -435,10 +352,13 @@ When successful, you should see:
 ```
 customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com created
 ```
+{: codeblock}
+
 or
 ```
 customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com configured
 ```
+{: codeblock}
 
 ### Step three: Update the ClusterRole
 {: #upgrade-k8-steps-252-clusterrole}
@@ -467,32 +387,19 @@ rules:
   verbs:
   - use
 - apiGroups:
-  - "*"
+  - apiextensions.k8s.io
   resources:
-  - pods
-  - pod/logs
-  - services
-  - endpoints
   - persistentvolumeclaims
   - persistentvolumes
-  - events
-  - configmaps
-  - secrets
-  - ingresses
-  - roles
-  - rolebindings
-  - serviceaccounts
-  - nodes
-  - jobs
   verbs:
-  - '*'
-- apiGroups:
-  - ""
-  resources:
-  - namespaces
-  - nodes
-  verbs:
-  - 'get'
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
 - apiGroups:
   - apiextensions.k8s.io
   resources:
@@ -500,29 +407,78 @@ rules:
   verbs:
   - get
 - apiGroups:
-  - apiextensions.k8s.io
+  - route.openshift.io
   resources:
+  - routes
+  - routes/custom-host
+  verbs:
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
+- apiGroups:
+  - ""
+  resources:
+  - pods
+  - pods/log
   - persistentvolumeclaims
   - persistentvolumes
+  - services
+  - endpoints
+  - events
+  - configmaps
+  - secrets
+  - nodes
+  - serviceaccounts
   verbs:
-  - '*'
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
 - apiGroups:
-  - ibp.com
+  - "batch"
   resources:
-  - '*'
-  - ibpservices
-  - ibpcas
-  - ibppeers
-  - ibpfabproxies
-  - ibporderers
+  - jobs
   verbs:
-  - '*'
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
 - apiGroups:
-  - ibp.com
+  - "authorization.openshift.io"
+  - "rbac.authorization.k8s.io"
   resources:
-  - '*'
+  - roles
+  - rolebindings
   verbs:
-  - '*'
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
+  - bind
+  - escalate
+- apiGroups:
+  - ""
+  resources:
+  - namespaces
+  verbs:
+  - get
 - apiGroups:
   - apps
   resources:
@@ -531,7 +487,72 @@ rules:
   - replicasets
   - statefulsets
   verbs:
-  - '*'
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
+- apiGroups:
+  - monitoring.coreos.com
+  resources:
+  - servicemonitors
+  verbs:
+  - get
+  - create
+- apiGroups:
+  - apps
+  resourceNames:
+  - ibp-operator
+  resources:
+  - deployments/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - ibp.com
+  resources:
+  - ibpcas.ibp.com
+  - ibppeers.ibp.com
+  - ibporderers.ibp.com
+  - ibpconsoles.ibp.com
+  - ibpcas
+  - ibppeers
+  - ibporderers
+  - ibpconsoles
+  - ibpcas/finalizers
+  - ibppeers/finalizers
+  - ibporderers/finalizers
+  - ibpconsoles/finalizers
+  - ibpcas/status
+  - ibppeers/status
+  - ibporderers/status
+  - ibpconsoles/status
+  verbs:
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
+- apiGroups:
+  - extensions
+  - networking.k8s.io
+  - config.openshift.io
+  resources:
+  - ingresses
+  verbs:
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
 ```
 {: codeblock}
 
@@ -557,7 +578,7 @@ Wait a few minutes for the console to stop. While the console is stopped you are
 Run the following command to upgrade the operator. Replace `<NAMESPACE>` with the Kubernetes namespace for the platform.
 
 ```
-kubectl set image deploy/ibp-operator -n <NAMESPACE> ibp-operator="cp.icr.io/cp/ibp-operator:2.5.2-20210810-amd64"
+kubectl set image deploy/ibp-operator -n <NAMESPACE> ibp-operator="cp.icr.io/cp/ibp-operator:2.5.2-20211005-amd64"
 ```
 {: codeblock}
 
@@ -638,13 +659,12 @@ kubectl create namespace ibpinfra
 
 After you purchase the {{site.data.keyword.blockchainfull_notm}} Platform, you can access the [My IBM dashboard](https://myibm.ibm.com/dashboard/){: external} to obtain your entitlement key for the offering. You need to store the entitlement key on your cluster by creating a [Kubernetes Secret](https://kubernetes.io/docs/concepts/configuration/secret/){: external}. Kubernetes secrets are used to securely store the key on your cluster and pass it to the operator and the console deployments.
 
-
-
 Run the following command to create the secret and add it to your `ibpinfra` namespace or project:
 ```
 kubectl create secret docker-registry docker-key-secret --docker-server=cp.icr.io --docker-username=cp --docker-password=<KEY> --docker-email=<EMAIL> -n ibpinfra
 ```
 {: codeblock}
+
 - Replace `<KEY>` with your entitlement key.
 - Replace `<EMAIL>` with your email address.
 
@@ -820,7 +840,7 @@ spec:
         fsGroup: 2000
       containers:
         - name: "ibp-webhook"
-          image: "cp.icr.io/cp/ibp-crdwebhook:2.5.2-20210713-amd64"
+          image: "cp.icr.io/cp/ibp-crdwebhook:2.5.2-20211005-amd64"
           imagePullPolicy: Always
           securityContext:
             privileged: false
@@ -926,6 +946,7 @@ service/ibp-webhook created
   TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibpinfra -o jsonpath={'.data.cert\.pem'})
   ```
   {: codeblock}
+  
 2. When you deploy the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 you need to apply the following four CRDs for the CA, peer, orderer, and console. If you are upgrading to 2.5.2, before you can update the operator, you need to update the CRDs to include a new `v1beta1` section as well as the webhook TLS certificate that you just stored in the `TLS_CERT` environment variable. In either case, run the following four commands to apply or update each CRD.
 
 Run this command to update the CA CRD:   
@@ -988,10 +1009,13 @@ Depending on whether you are creating or updating the CRD, when successful, you 
 ```
 customresourcedefinition.apiextensions.k8s.io/ibpcas.ibp.com created
 ```
+{: codeblock}
+
 or
 ```
 customresourcedefinition.apiextensions.k8s.io/ibpcas.ibp.com configured
 ```
+{: codeblock}
 
 Run this command to update the peer CRD:
 ```yaml
@@ -1047,10 +1071,13 @@ When successful, you should see:
 ```
 customresourcedefinition.apiextensions.k8s.io/ibppeers.ibp.com created
 ```
+{: codeblock}
+
 or
 ```
 customresourcedefinition.apiextensions.k8s.io/ibppeers.ibp.com configured
 ```
+{: codeblock}
 
 Run this command to update the console CRD:
 ```yaml
@@ -1106,10 +1133,13 @@ When successful, you should see:
 ```
 customresourcedefinition.apiextensions.k8s.io/ibpconsoles.ibp.com created
 ```
+{: codeblock}
+
 or
 ```
 customresourcedefinition.apiextensions.k8s.io/ibpconsoles.ibp.com configured
 ```
+{: codeblock}
 
 Run this command to update the orderer CRD:  
 ```yaml
@@ -1165,10 +1195,13 @@ When successful, you should see:
 ```
 customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com created
 ```
+{: codeblock}
+
 or
 ```
 customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com configured
 ```
+{: codeblock}
 
 ### Step four: Update the ClusterRole
 {: #upgrade-k8-clusterrole}
@@ -1196,32 +1229,19 @@ rules:
   verbs:
   - use
 - apiGroups:
-  - "*"
+  - apiextensions.k8s.io
   resources:
-  - pods
-  - pod/logs
-  - services
-  - endpoints
   - persistentvolumeclaims
   - persistentvolumes
-  - events
-  - configmaps
-  - secrets
-  - ingresses
-  - roles
-  - rolebindings
-  - serviceaccounts
-  - nodes
-  - jobs
   verbs:
-  - '*'
-- apiGroups:
-  - ""
-  resources:
-  - namespaces
-  - nodes
-  verbs:
-  - 'get'
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
 - apiGroups:
   - apiextensions.k8s.io
   resources:
@@ -1229,29 +1249,78 @@ rules:
   verbs:
   - get
 - apiGroups:
-  - apiextensions.k8s.io
+  - route.openshift.io
   resources:
+  - routes
+  - routes/custom-host
+  verbs:
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
+- apiGroups:
+  - ""
+  resources:
+  - pods
+  - pods/log
   - persistentvolumeclaims
   - persistentvolumes
+  - services
+  - endpoints
+  - events
+  - configmaps
+  - secrets
+  - nodes
+  - serviceaccounts
   verbs:
-  - '*'
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
 - apiGroups:
-  - ibp.com
+  - "batch"
   resources:
-  - '*'
-  - ibpservices
-  - ibpcas
-  - ibppeers
-  - ibpfabproxies
-  - ibporderers
+  - jobs
   verbs:
-  - '*'
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
 - apiGroups:
-  - ibp.com
+  - "authorization.openshift.io"
+  - "rbac.authorization.k8s.io"
   resources:
-  - '*'
+  - roles
+  - rolebindings
   verbs:
-  - '*'
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
+  - bind
+  - escalate
+- apiGroups:
+  - ""
+  resources:
+  - namespaces
+  verbs:
+  - get
 - apiGroups:
   - apps
   resources:
@@ -1260,7 +1329,72 @@ rules:
   - replicasets
   - statefulsets
   verbs:
-  - '*'
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
+- apiGroups:
+  - monitoring.coreos.com
+  resources:
+  - servicemonitors
+  verbs:
+  - get
+  - create
+- apiGroups:
+  - apps
+  resourceNames:
+  - ibp-operator
+  resources:
+  - deployments/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - ibp.com
+  resources:
+  - ibpcas.ibp.com
+  - ibppeers.ibp.com
+  - ibporderers.ibp.com
+  - ibpconsoles.ibp.com
+  - ibpcas
+  - ibppeers
+  - ibporderers
+  - ibpconsoles
+  - ibpcas/finalizers
+  - ibppeers/finalizers
+  - ibporderers/finalizers
+  - ibpconsoles/finalizers
+  - ibpcas/status
+  - ibppeers/status
+  - ibporderers/status
+  - ibpconsoles/status
+  verbs:
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
+- apiGroups:
+  - extensions
+  - networking.k8s.io
+  - config.openshift.io
+  resources:
+  - ingresses
+  verbs:
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
 ```
 {: codeblock}
 
@@ -1290,7 +1424,7 @@ kubectl get deployment ibp-operator -o yaml > operator.yaml
 
 Open `operator.yaml` in a text editor and save a new copy of the file as `operator-upgrade.yaml`. You need to update the `image:` field with the updated version of the operator image. You can find the name and tag of the latest operator image below:
 ```
-cp.icr.io/cp/ibp-operator:2.5.2-20210810-amd64
+cp.icr.io/cp/ibp-operator:2.5.2-20211005-amd64
 ```
 {: codeblock}
 
@@ -1405,33 +1539,33 @@ The following commands only work with a Docker container registry. Depending on 
 {: note}
 
 ```
-skopeo copy docker://cp.icr.io/cp/ibp-operator:2.5.2-20210810 docker://<LOCAL_REGISTRY>/ibp-operator:2.5.2-20210810 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-init:2.5.2-20210713 docker://<LOCAL_REGISTRY>/ibp-init:2.5.2-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-console:2.5.2-20210810 docker://<LOCAL_REGISTRY>/ibp-console:2.5.2-20210810 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-grpcweb:2.5.2-20210713 docker://<LOCAL_REGISTRY>/ibp-grpcweb:2.5.2-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-deployer:2.5.2-20210713 docker://<LOCAL_REGISTRY>/ibp-deployer:2.5.2-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-fluentd:2.5.2-20210713 docker://<LOCAL_REGISTRY>/ibp-fluentd:2.5.2-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-couchdb:2.3.1-20210713 docker://<LOCAL_REGISTRY>/ibp-couchdb:2.3.1-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-couchdb:3.1.1-20210713 docker://<LOCAL_REGISTRY>/ibp-couchdb:3.1.1-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-peer:1.4.12-20210713 docker://<LOCAL_REGISTRY>/ibp-peer:1.4.12-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-orderer:1.4.12-20210713 docker://<LOCAL_REGISTRY>/ibp-orderer:1.4.12-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-ca:1.5.0-20210713 docker://<LOCAL_REGISTRY>/ibp-ca:1.5.0-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-dind:1.4.12-20210713 docker://<LOCAL_REGISTRY>/ibp-dind:1.4.12-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-utilities:1.4.12-20210713 docker://<LOCAL_REGISTRY>/ibp-utilities:1.4.12-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-peer:2.2.3-20210713 docker://<LOCAL_REGISTRY>/ibp-peer:2.2.3-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-orderer:2.2.3-20210713 docker://<LOCAL_REGISTRY>/ibp-orderer:2.2.3-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-chaincode-launcher:2.2.3-20210713 docker://<LOCAL_REGISTRY>/ibp-chaincode-launcher:2.2.3-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-utilities:2.2.3-20210713 docker://<LOCAL_REGISTRY>/ibp-utilities:2.2.3-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-ccenv:2.2.3-20210713 docker://<LOCAL_REGISTRY>/ibp-ccenv:2.2.3-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-goenv:2.2.3-20210713 docker://<LOCAL_REGISTRY>/ibp-goenv:2.2.3-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-nodeenv:2.2.3-20210713 docker://<LOCAL_REGISTRY>/ibp-nodeenv:2.2.3-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-javaenv:2.2.3-20210713 docker://<LOCAL_REGISTRY>/ibp-javaenv:2.2.3-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-crdwebhook:2.5.2-20210713 docker://<LOCAL_REGISTRY>/ibp-crdwebhook:2.5.2-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-ccenv:1.4.12-20210713 docker://<LOCAL_REGISTRY>/ibp-ccenv:1.4.12-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-goenv:1.4.12-20210713 docker://<LOCAL_REGISTRY>/ibp-goenv:1.4.12-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-nodeenv:1.4.12-20210713 docker://<LOCAL_REGISTRY>/ibp-nodeenv:1.4.12-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-javaenv:1.4.12-20210713 docker://<LOCAL_REGISTRY>/ibp-javaenv:1.4.12-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-enroller:2.5.2-20210713 docker://<LOCAL_REGISTRY>/ibp-enroller:2.5.2-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-operator:2.5.2-20211005 docker://<LOCAL_REGISTRY>/ibp-operator:2.5.2-20211005 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-init:2.5.2-20211005 docker://<LOCAL_REGISTRY>/ibp-init:2.5.2-20211005 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-console:2.5.2-20211005 docker://<LOCAL_REGISTRY>/ibp-console:2.5.2-20211005 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-grpcweb:2.5.2-20211005 docker://<LOCAL_REGISTRY>/ibp-grpcweb:2.5.2-20211005 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-deployer:2.5.2-20211005 docker://<LOCAL_REGISTRY>/ibp-deployer:2.5.2-20211005 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-fluentd:2.5.2-20211005 docker://<LOCAL_REGISTRY>/ibp-fluentd:2.5.2-20211005 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-couchdb:2.3.1-20211005 docker://<LOCAL_REGISTRY>/ibp-couchdb:2.3.1-20211005 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-couchdb:3.1.1-20211005 docker://<LOCAL_REGISTRY>/ibp-couchdb:3.1.1-20211005 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-peer:1.4.12-20211005 docker://<LOCAL_REGISTRY>/ibp-peer:1.4.12-20211005 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-orderer:1.4.12-20211005 docker://<LOCAL_REGISTRY>/ibp-orderer:1.4.12-20211005 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-ca:1.5.0-20211005 docker://<LOCAL_REGISTRY>/ibp-ca:1.5.0-20211005 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-dind:1.4.12-20211005 docker://<LOCAL_REGISTRY>/ibp-dind:1.4.12-20211005 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-utilities:1.4.12-20211005 docker://<LOCAL_REGISTRY>/ibp-utilities:1.4.12-20211005 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-peer:2.2.4-20211005 docker://<LOCAL_REGISTRY>/ibp-peer:2.2.4-20211005 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-orderer:2.2.4-20211005 docker://<LOCAL_REGISTRY>/ibp-orderer:2.2.4-20211005 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-chaincode-launcher:2.2.4-20211005 docker://<LOCAL_REGISTRY>/ibp-chaincode-launcher:2.2.4-20211005 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-utilities:2.2.4-20211005 docker://<LOCAL_REGISTRY>/ibp-utilities:2.2.4-20211005 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-ccenv:2.2.4-20211005 docker://<LOCAL_REGISTRY>/ibp-ccenv:2.2.4-20211005 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-goenv:2.2.4-20211005 docker://<LOCAL_REGISTRY>/ibp-goenv:2.2.4-20211005 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-nodeenv:2.2.4-20211005 docker://<LOCAL_REGISTRY>/ibp-nodeenv:2.2.4-20211005 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-javaenv:2.2.4-20211005 docker://<LOCAL_REGISTRY>/ibp-javaenv:2.2.4-20211005 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-crdwebhook:2.5.2-20211005 docker://<LOCAL_REGISTRY>/ibp-crdwebhook:2.5.2-20211005 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-ccenv:1.4.12-20211005 docker://<LOCAL_REGISTRY>/ibp-ccenv:1.4.12-20211005 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-goenv:1.4.12-20211005 docker://<LOCAL_REGISTRY>/ibp-goenv:1.4.12-20211005 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-nodeenv:1.4.12-20211005 docker://<LOCAL_REGISTRY>/ibp-nodeenv:1.4.12-20211005 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-javaenv:1.4.12-20211005 docker://<LOCAL_REGISTRY>/ibp-javaenv:1.4.12-20211005 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-enroller:2.5.2-20211005 docker://<LOCAL_REGISTRY>/ibp-enroller:2.5.2-20211005 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 ```
 {: codeblock}
 
@@ -1455,13 +1589,12 @@ kubectl create namespace ibpinfra
 
 After you purchase the {{site.data.keyword.blockchainfull_notm}} Platform, you can access the [My IBM dashboard](https://myibm.ibm.com/dashboard/){: external} to obtain your entitlement key for the offering. You need to store the entitlement key on your cluster by creating a [Kubernetes Secret](https://kubernetes.io/docs/concepts/configuration/secret/){: external}. Kubernetes secrets are used to securely store the key on your cluster and pass it to the operator and the console deployments.
 
-
-
 Run the following command to create the secret and add it to your `ibpinfra` namespace or project:
 ```
 kubectl create secret docker-registry docker-key-secret --docker-server=cp.icr.io --docker-username=cp --docker-password=<KEY> --docker-email=<EMAIL> -n ibpinfra
 ```
 {: codeblock}
+
 - Replace `<KEY>` with your entitlement key.
 - Replace `<EMAIL>` with your email address.
 
@@ -1637,7 +1770,7 @@ spec:
         fsGroup: 2000
       containers:
         - name: "ibp-webhook"
-          image: "cp.icr.io/cp/ibp-crdwebhook:2.5.2-20210713-amd64"
+          image: "cp.icr.io/cp/ibp-crdwebhook:2.5.2-20211005-amd64"
           imagePullPolicy: Always
           securityContext:
             privileged: false
@@ -1743,6 +1876,7 @@ service/ibp-webhook created
   TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibpinfra -o jsonpath={'.data.cert\.pem'})
   ```
   {: codeblock}
+  
 2. When you deploy the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 you need to apply the following four CRDs for the CA, peer, orderer, and console. If you are upgrading to 2.5.2, before you can update the operator, you need to update the CRDs to include a new `v1beta1` section as well as the webhook TLS certificate that you just stored in the `TLS_CERT` environment variable. In either case, run the following four commands to apply or update each CRD.
 
 Run this command to update the CA CRD:   
@@ -1805,10 +1939,13 @@ Depending on whether you are creating or updating the CRD, when successful, you 
 ```
 customresourcedefinition.apiextensions.k8s.io/ibpcas.ibp.com created
 ```
+{: codeblock}
+
 or
 ```
 customresourcedefinition.apiextensions.k8s.io/ibpcas.ibp.com configured
 ```
+{: codeblock}
 
 Run this command to update the peer CRD:
 ```yaml
@@ -1864,10 +2001,13 @@ When successful, you should see:
 ```
 customresourcedefinition.apiextensions.k8s.io/ibppeers.ibp.com created
 ```
+{: codeblock}
+
 or
 ```
 customresourcedefinition.apiextensions.k8s.io/ibppeers.ibp.com configured
 ```
+{: codeblock}
 
 Run this command to update the console CRD:
 ```yaml
@@ -1923,10 +2063,13 @@ When successful, you should see:
 ```
 customresourcedefinition.apiextensions.k8s.io/ibpconsoles.ibp.com created
 ```
+{: codeblock}
+
 or
 ```
 customresourcedefinition.apiextensions.k8s.io/ibpconsoles.ibp.com configured
 ```
+{: codeblock}
 
 Run this command to update the orderer CRD:  
 ```yaml
@@ -1982,10 +2125,13 @@ When successful, you should see:
 ```
 customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com created
 ```
+{: codeblock}
+
 or
 ```
 customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com configured
 ```
+{: codeblock}
 
 ### Step five: Update the ClusterRole
 {: #upgrade-k8-clusterrole-firewall}
@@ -2013,32 +2159,19 @@ rules:
   verbs:
   - use
 - apiGroups:
-  - "*"
+  - apiextensions.k8s.io
   resources:
-  - pods
-  - pod/logs
-  - services
-  - endpoints
   - persistentvolumeclaims
   - persistentvolumes
-  - events
-  - configmaps
-  - secrets
-  - ingresses
-  - roles
-  - rolebindings
-  - serviceaccounts
-  - nodes
-  - jobs
   verbs:
-  - '*'
-- apiGroups:
-  - ""
-  resources:
-  - namespaces
-  - nodes
-  verbs:
-  - 'get'
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
 - apiGroups:
   - apiextensions.k8s.io
   resources:
@@ -2046,29 +2179,78 @@ rules:
   verbs:
   - get
 - apiGroups:
-  - apiextensions.k8s.io
+  - route.openshift.io
   resources:
+  - routes
+  - routes/custom-host
+  verbs:
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
+- apiGroups:
+  - ""
+  resources:
+  - pods
+  - pods/log
   - persistentvolumeclaims
   - persistentvolumes
+  - services
+  - endpoints
+  - events
+  - configmaps
+  - secrets
+  - nodes
+  - serviceaccounts
   verbs:
-  - '*'
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
 - apiGroups:
-  - ibp.com
+  - "batch"
   resources:
-  - '*'
-  - ibpservices
-  - ibpcas
-  - ibppeers
-  - ibpfabproxies
-  - ibporderers
+  - jobs
   verbs:
-  - '*'
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
 - apiGroups:
-  - ibp.com
+  - "authorization.openshift.io"
+  - "rbac.authorization.k8s.io"
   resources:
-  - '*'
+  - roles
+  - rolebindings
   verbs:
-  - '*'
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
+  - bind
+  - escalate
+- apiGroups:
+  - ""
+  resources:
+  - namespaces
+  verbs:
+  - get
 - apiGroups:
   - apps
   resources:
@@ -2077,7 +2259,72 @@ rules:
   - replicasets
   - statefulsets
   verbs:
-  - '*'
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
+- apiGroups:
+  - monitoring.coreos.com
+  resources:
+  - servicemonitors
+  verbs:
+  - get
+  - create
+- apiGroups:
+  - apps
+  resourceNames:
+  - ibp-operator
+  resources:
+  - deployments/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - ibp.com
+  resources:
+  - ibpcas.ibp.com
+  - ibppeers.ibp.com
+  - ibporderers.ibp.com
+  - ibpconsoles.ibp.com
+  - ibpcas
+  - ibppeers
+  - ibporderers
+  - ibpconsoles
+  - ibpcas/finalizers
+  - ibppeers/finalizers
+  - ibporderers/finalizers
+  - ibpconsoles/finalizers
+  - ibpcas/status
+  - ibppeers/status
+  - ibporderers/status
+  - ibpconsoles/status
+  verbs:
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
+- apiGroups:
+  - extensions
+  - networking.k8s.io
+  - config.openshift.io
+  resources:
+  - ingresses
+  verbs:
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
 ```
 {: codeblock}
 
@@ -2109,7 +2356,7 @@ kubectl get deployment ibp-operator -o yaml > operator.yaml
 
 Open `operator.yaml` in a text editor and save a new copy of the file as `operator-upgrade.yaml`. You need to update the `image:` field with the updated version of the operator image:
 ```yaml
-<LOCAL_REGISTRY>/ibp-operator:2.5.2-20210810-amd64
+<LOCAL_REGISTRY>/ibp-operator:2.5.2-20211005-amd64
 ```
 {: codeblock}
 
