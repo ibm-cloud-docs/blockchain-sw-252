@@ -32,8 +32,8 @@ subcollection: blockchain-sw-252
 * [Already have an {{site.data.keyword.blockchainfull_notm}} Platform v2.1.x network and want to upgrade?](/docs/blockchain-sw-252?topic=blockchain-sw-252-get-started-console-ocp#get-started-console-ocp-upgrade)
 
 * [Is {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 suitable for you?](/docs/blockchain-sw-252?topic=blockchain-sw-252-get-started-console-ocp#get-started-console-ocp-suitable)
-        * [Developer Tools](/docs/blockchain-sw-252?topic=blockchain-sw-252-get-started-console-ocp#get-started-console-ocp-dev-tools)
-        * [{{site.data.keyword.blockchainfull_notm}} images](/docs/blockchain-sw-252?topic=blockchain-sw-252-get-started-console-ocp#get-started-console-ocp-images)
+    * [Developer Tools](/docs/blockchain-sw-252?topic=blockchain-sw-252-get-started-console-ocp#get-started-console-ocp-dev-tools)
+    * [{{site.data.keyword.blockchainfull_notm}} images](/docs/blockchain-sw-252?topic=blockchain-sw-252-get-started-console-ocp#get-started-console-ocp-images)
 
 * [Before you begin](/docs/blockchain-sw-252?topic=blockchain-sw-252-get-started-console-ocp#get-started-console-ocp-set-up-ocp)
 
@@ -99,8 +99,8 @@ subcollection: blockchain-sw-252
 * [February 06, 2020](/docs/blockchain-sw-252?topic=blockchain-sw-252-whats-new#whats-new-02-06-2020)
 
 * [October 02, 2019](/docs/blockchain-sw-252?topic=blockchain-sw-252-whats-new#whats-new-10-02-2019)
-        * [Reminders for Starter Plan users](/docs/blockchain-sw-252?topic=blockchain-sw-252-whats-new#whats-new-10-02-2019-reminders)
-        * [The {{site.data.keyword.blockchainfull_notm}} Platform console UI has been updated](/docs/blockchain-sw-252?topic=blockchain-sw-252-whats-new#whats-new-10-02-2019-Console)
+    * [Reminders for Starter Plan users](/docs/blockchain-sw-252?topic=blockchain-sw-252-whats-new#whats-new-10-02-2019-reminders)
+    * [The {{site.data.keyword.blockchainfull_notm}} Platform console UI has been updated](/docs/blockchain-sw-252?topic=blockchain-sw-252-whats-new#whats-new-10-02-2019-Console)
 
 * [August 27, 2019](/docs/blockchain-sw-252?topic=blockchain-sw-252-whats-new#whats-new-8-27-2019)
 
@@ -146,7 +146,7 @@ subcollection: blockchain-sw-252
 * [Pricing](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-sw-pricing#ibp-software-pricing-pricing)
 
 * [Free trial](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-sw-pricing#ibp-software-pricing-free)
-        * [Free trial limitations](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-sw-pricing#ibp-software-pricing-free-limits)
+    * [Free trial limitations](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-sw-pricing#ibp-software-pricing-free-limits)
 
 
 ## Blockchain component overview
@@ -177,22 +177,22 @@ subcollection: blockchain-sw-252
 [Security](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-security)
 
 * [Security on the {{site.data.keyword.blockchainfull_notm}} Platform console](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-security#ibp-security-ibp)
-        * [IAM (Identity and Access Management)](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-security#ibp-security-ibp-iam)
-        * [Ports](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-security#ibp-security-ibp-ports)
-        * [Key management](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-security#ibp-security-ibp-keys)
-        * [Membership Service Providers (MSPs)](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-security#ibp-security-ibp-msp)
-        * [Access control lists (ACLs)](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-security#ibp-security-ibp-acls)
-        * [API authentication](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-security#ibp-security-ibp-apis)
+    * [IAM (Identity and Access Management)](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-security#ibp-security-ibp-iam)
+    * [Ports](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-security#ibp-security-ibp-ports)
+    * [Key management](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-security#ibp-security-ibp-keys)
+    * [Membership Service Providers (MSPs)](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-security#ibp-security-ibp-msp)
+    * [Access control lists (ACLs)](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-security#ibp-security-ibp-acls)
+    * [API authentication](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-security#ibp-security-ibp-apis)
 
 * [Best practices for security on the customer Kubernetes cluster](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-security#ibp-security-Kubernetes)
-        * [Kubernetes cluster security](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-security#ibp-security-Kubernetes-security)
-        * [Network security](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-security#ibp-security-Kubernetes-network)
-        * [Cluster and Operating System security](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-security#ibp-security-Kubernetes-container-os)
-        * [Keys and cluster access information](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-security#ibp-security-Kubernetes-keys)
-        * [Membership Service Providers (MSPs)](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-security#ibp-security-kubernetes-msp)
-        * [Storage](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-security#ibp-security-kubernetes-storage)
-        * [Data privacy](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-security#ibp-security-kubernetes-privacy)
-        * [GDPR](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-security#ibp-security-kubernetes-gdpr)
+    * [Kubernetes cluster security](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-security#ibp-security-Kubernetes-security)
+    * [Network security](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-security#ibp-security-Kubernetes-network)
+    * [Cluster and Operating System security](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-security#ibp-security-Kubernetes-container-os)
+    * [Keys and cluster access information](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-security#ibp-security-Kubernetes-keys)
+    * [Membership Service Providers (MSPs)](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-security#ibp-security-kubernetes-msp)
+    * [Storage](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-security#ibp-security-kubernetes-storage)
+    * [Data privacy](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-security#ibp-security-kubernetes-privacy)
+    * [GDPR](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-security#ibp-security-kubernetes-gdpr)
 
 * [Hyperledger Fabric Security](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-security#ibp-security-kubernetes-fabric)
 
@@ -456,16 +456,16 @@ subcollection: blockchain-sw-252
 [Creating applications](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-app)
 
 * [Overview](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-app#ibp-console-app-learning-resources)
-        * [High-Level Programming Model APIs](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-app#ibp-console-app-high-level)
-        * [Low-Level Fabric SDK APIs**](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-app#ibp-console-app-low-level)
+    * [High-Level Programming Model APIs](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-app#ibp-console-app-high-level)
+    * [Low-Level Fabric SDK APIs**](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-app#ibp-console-app-low-level)
 
 * [Application connectivity and availability](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-app#ibp-console-app-transx)
 
 * [Network considerations](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-app#ibp-console-app-networking)
 
 * [Application compatibility](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-app#ibp-console-app-compat)
-        * [SDKs](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-app#ibp-console-app-compat-sdk)
-        * [Smart contracts](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-app#ibp-console-app-compat-sc)
+    * [SDKs](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-app#ibp-console-app-compat-sdk)
+    * [Smart contracts](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-app#ibp-console-app-compat-sc)
 
 * [Registering an application identity](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-app#ibp-console-app-identities)
 
@@ -478,13 +478,13 @@ subcollection: blockchain-sw-252
 * [Invoking a smart contract by using the SDK](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-app#ibp-console-app-invoke)
 
 * [Running the Commercial Paper sample](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-app#ibp-console-app-commercial-paper)
-        * [Prerequisites](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-app#ibp-console-app-commercial-paper-prereq)
-        * [Step one: Download the sample](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-app#ibp-console-app-commercial-paper-step-one-download-sample)
-        * [Step two: Install and Propose smart contract](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-app#ibp-console-app-commercial-paper-step-two-install-propose)
-        * [Step three: Generate certificates for your wallet](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-app#ibp-console-app-commercial-paper-step-three-generate-certificates)
-        * [Step four: Use the connection profile to build a Fabric gateway](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-app#ibp-console-app-commercial-paper-step-four-gateway)
-        * [Step five: Invoke the smart contract](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-app#ibp-console-app-commercial-paper-step-five-invoke)
-        * [Step six: Operate the sample as Digibank](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-app#ibp-console-app-commercial-paper-step-six-operate-as-digibank)
+    * [Prerequisites](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-app#ibp-console-app-commercial-paper-prereq)
+    * [Step one: Download the sample](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-app#ibp-console-app-commercial-paper-step-one-download-sample)
+    * [Step two: Install and Propose smart contract](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-app#ibp-console-app-commercial-paper-step-two-install-propose)
+    * [Step three: Generate certificates for your wallet](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-app#ibp-console-app-commercial-paper-step-three-generate-certificates)
+    * [Step four: Use the connection profile to build a Fabric gateway](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-app#ibp-console-app-commercial-paper-step-four-gateway)
+    * [Step five: Invoke the smart contract](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-app#ibp-console-app-commercial-paper-step-five-invoke)
+    * [Step six: Operate the sample as Digibank](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-app#ibp-console-app-commercial-paper-step-six-operate-as-digibank)
 
 * [Connecting to your network by using low-level Fabric SDK APIs](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-app#ibp-console-app-low-level-api)
 
@@ -709,32 +709,32 @@ subcollection: blockchain-sw-252
 * [Platform limitations](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#upgrade-ocp-platform)
 
 * [Upgrade to the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 from 2.5.x](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#upgrade-ocp-steps-252)
-        * [Step one: Update the webhook image](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#upgrade-ocp-steps-252-webhook)
-        * [Step two: Update the CRDs](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#upgrade-ocp-steps-252-crds)
-        * [Step three: Update the ClusterRole](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#upgrade-ocp-steps-252-clusterrole)
-        * [Step four: Upgrade the {{site.data.keyword.blockchainfull_notm}} operator](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#upgrade-ocp-steps-252-operator)
-        * [Step six: Upgrade your nodes](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#step-six-upgrade-your-nodes)
-        * [Step seven: Update MSPs in consortium to add organization-level endorsement policy](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#upgrade-ocp-update-consortium)
+    * [Step one: Update the webhook image](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#upgrade-ocp-steps-252-webhook)
+    * [Step two: Update the CRDs](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#upgrade-ocp-steps-252-crds)
+    * [Step three: Update the ClusterRole](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#upgrade-ocp-steps-252-clusterrole)
+    * [Step four: Upgrade the {{site.data.keyword.blockchainfull_notm}} operator](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#upgrade-ocp-steps-252-operator)
+    * [Step six: Upgrade your nodes](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#step-six-upgrade-your-nodes)
+    * [Step seven: Update MSPs in consortium to add organization-level endorsement policy](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#upgrade-ocp-update-consortium)
 
 * [Upgrade to the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 from 2.1.x](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#upgrade-ocp-steps-21x)
-        * [Step one: Create the `ibpinfra` project for the webhook](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#deploy-ocp-ibpinfra)
-        * [Step two: Create a secret for your entitlement key](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#deploy-ocp-secret-ibpinfra)
-        * [Step three: Deploy the webhook and custom resource definitions to your OpenShift cluster](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#webhook)
-        * [Step four: Update the ClusterRole](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#upgrade-ocp-clusterrole)
-        * [Step five: Upgrade the {{site.data.keyword.blockchainfull_notm}} operator](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#upgrade-ocp-operator)
-        * [Step six: Upgrade your nodes](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#step-six-upgrade-your-nodes)
-        * [Step seven: Update MSPs in consortium to add organization-level endorsement policy](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#upgrade-ocp-update-nodes-consortium)
+    * [Step one: Create the `ibpinfra` project for the webhook](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#deploy-ocp-ibpinfra)
+    * [Step two: Create a secret for your entitlement key](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#deploy-ocp-secret-ibpinfra)
+    * [Step three: Deploy the webhook and custom resource definitions to your OpenShift cluster](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#webhook)
+    * [Step four: Update the ClusterRole](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#upgrade-ocp-clusterrole)
+    * [Step five: Upgrade the {{site.data.keyword.blockchainfull_notm}} operator](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#upgrade-ocp-operator)
+    * [Step six: Upgrade your nodes](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#step-six-upgrade-your-nodes)
+    * [Step seven: Update MSPs in consortium to add organization-level endorsement policy](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#upgrade-ocp-update-nodes-consortium)
 
 * [Upgrade to the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 from 2.1.x from behind a firewall](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#upgrade-ocp-firewall)
-        * [Before you begin](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#upgrade-ocp-begin-firewall)
-        * [Step one: Pull the latest {{site.data.keyword.blockchainfull_notm}} Platform images](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#upgrade-ocp-images-firewall)
-        * [Step two: Create the `ibpinfra` project for the webhook](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#deploy-ocp-ibpinfra-fw)
-        * [Step three: Create a secret for your entitlement key](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#deploy-ocp-secret-ibpinfra-fw)
-        * [Step four: Deploy the webhook and custom resource definitions to your OpenShift cluster](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#webhook-fw)
-        * [Step five: Update the ClusterRole](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#upgrade-ocp-clusterrole-firewall)
-        * [Step six: Upgrade the {{site.data.keyword.blockchainfull_notm}} operator](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#upgrade-ocp-operator-firewall)
-        * [Step seven: Upgrade your blockchain nodes](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#upgrade-ocp-nodes-firewall)
-        * [Step eight: Update MSPs in consortium to add organization-level endorsement policy](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#upgrade-ocp-nodes-firewall-update-consortium)
+    * [Before you begin](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#upgrade-ocp-begin-firewall)
+    * [Step one: Pull the latest {{site.data.keyword.blockchainfull_notm}} Platform images](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#upgrade-ocp-images-firewall)
+    * [Step two: Create the `ibpinfra` project for the webhook](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#deploy-ocp-ibpinfra-fw)
+    * [Step three: Create a secret for your entitlement key](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#deploy-ocp-secret-ibpinfra-fw)
+    * [Step four: Deploy the webhook and custom resource definitions to your OpenShift cluster](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#webhook-fw)
+    * [Step five: Update the ClusterRole](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#upgrade-ocp-clusterrole-firewall)
+    * [Step six: Upgrade the {{site.data.keyword.blockchainfull_notm}} operator](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#upgrade-ocp-operator-firewall)
+    * [Step seven: Upgrade your blockchain nodes](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#upgrade-ocp-nodes-firewall)
+    * [Step eight: Update MSPs in consortium to add organization-level endorsement policy](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#upgrade-ocp-nodes-firewall-update-consortium)
 
 * [Upgrade your blockchain nodes](/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-ocp#upgrade-ocp-nodes)
 
@@ -904,11 +904,11 @@ subcollection: blockchain-sw-252
 * [Downloading the {{site.data.keyword.blockchainfull_notm}} Platform images](/docs/blockchain-sw-252?topic=blockchain-sw-252-blockchain-images#blockchain-images-downloading)
 
 * [Getting started](/docs/blockchain-sw-252?topic=blockchain-sw-252-blockchain-images#getting-started)
-        * [Configuring the gRPC web proxy (optional)](/docs/blockchain-sw-252?topic=blockchain-sw-252-blockchain-images#getting-started-proxy)
+    * [Configuring the gRPC web proxy (optional)](/docs/blockchain-sw-252?topic=blockchain-sw-252-blockchain-images#getting-started-proxy)
 
 * [Example](/docs/blockchain-sw-252?topic=blockchain-sw-252-blockchain-images#blockchain-images-example)
-        * [Deploying an {{site.data.keyword.blockchainfull_notm}} Certificate Authority](/docs/blockchain-sw-252?topic=blockchain-sw-252-blockchain-images#blockchain-images-example-ca)
-        * [Deploying the gRPC web proxy](/docs/blockchain-sw-252?topic=blockchain-sw-252-blockchain-images#example-proxy)
+    * [Deploying an {{site.data.keyword.blockchainfull_notm}} Certificate Authority](/docs/blockchain-sw-252?topic=blockchain-sw-252-blockchain-images#blockchain-images-example-ca)
+    * [Deploying the gRPC web proxy](/docs/blockchain-sw-252?topic=blockchain-sw-252-blockchain-images#example-proxy)
 
 * [Interoperability](/docs/blockchain-sw-252?topic=blockchain-sw-252-blockchain-images#blockchain-images-interop)
 
@@ -1135,16 +1135,16 @@ subcollection: blockchain-sw-252
 [Backing up and restoring components and networks](/docs/blockchain-sw-252?topic=blockchain-sw-252-backup-restore)
 
 * [ Overview](/docs/blockchain-sw-252?topic=blockchain-sw-252-backup-restore#backup-restore-overview)
-        * [Backup considerations for each node type](/docs/blockchain-sw-252?topic=blockchain-sw-252-backup-restore#backup-restore-node-considerations)
-        * [Scheduling snapshots](/docs/blockchain-sw-252?topic=blockchain-sw-252-backup-restore#backup-restore-schedule-snapshot)
+    * [Backup considerations for each node type](/docs/blockchain-sw-252?topic=blockchain-sw-252-backup-restore#backup-restore-node-considerations)
+    * [Scheduling snapshots](/docs/blockchain-sw-252?topic=blockchain-sw-252-backup-restore#backup-restore-schedule-snapshot)
 
 * [Taking snapshots](/docs/blockchain-sw-252?topic=blockchain-sw-252-backup-restore#backup-restore-take-snapshot)
-        * [Node snapshots](/docs/blockchain-sw-252?topic=blockchain-sw-252-backup-restore#backup-restore-peer-snapshot)
+    * [Node snapshots](/docs/blockchain-sw-252?topic=blockchain-sw-252-backup-restore#backup-restore-peer-snapshot)
 
 * [Restoring nodes](/docs/blockchain-sw-252?topic=blockchain-sw-252-backup-restore#backup-restore-restore)
-        * [Sequencing restorations](/docs/blockchain-sw-252?topic=blockchain-sw-252-backup-restore#backup-restore-restore-sequence)
-        * [Restoring a peer](/docs/blockchain-sw-252?topic=blockchain-sw-252-backup-restore#backup-restore-restore-peer)
-        * [Restoring an ordering node](/docs/blockchain-sw-252?topic=blockchain-sw-252-backup-restore#backup-restore-restore-orderer)
+    * [Sequencing restorations](/docs/blockchain-sw-252?topic=blockchain-sw-252-backup-restore#backup-restore-restore-sequence)
+    * [Restoring a peer](/docs/blockchain-sw-252?topic=blockchain-sw-252-backup-restore#backup-restore-restore-peer)
+    * [Restoring an ordering node](/docs/blockchain-sw-252?topic=blockchain-sw-252-backup-restore#backup-restore-restore-orderer)
 
 
 ## Using the {{site.data.keyword.blockchainfull_notm}} Platform APIs
@@ -1158,55 +1158,55 @@ subcollection: blockchain-sw-252
 * [Prerequisites](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#ibp-v2-apis-prereq)
 
 * [Connect to your console using API keys](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#console-icp-manage-api-key)
-        * [Create an API key](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#console-icp-manage-create-api-key)
-        * [Example curl request: Create API key](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#console-icp-manage-create-api-key-example)
-        * [View API keys](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#console-icp-manage-view-api-keys)
-        * [Example curl request: view API keys](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#console-icp-manage-view-api-key-example)
-        * [Delete API keys](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#console-icp-manage-delete-api-keys)
-        * [Example curl request: delete API key](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#console-icp-manage-delete-api-keys-example)
+    * [Create an API key](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#console-icp-manage-create-api-key)
+    * [Example curl request: Create API key](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#console-icp-manage-create-api-key-example)
+    * [View API keys](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#console-icp-manage-view-api-keys)
+    * [Example curl request: view API keys](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#console-icp-manage-view-api-key-example)
+    * [Delete API keys](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#console-icp-manage-delete-api-keys)
+    * [Example curl request: delete API key](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#console-icp-manage-delete-api-keys-example)
 
 * [Managing users using the APIs](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#console-icp-manage-users-apis)
-        * [List users](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#console-icp-manage-list-users-api)
-        * [Example curl request: list users](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#console-icp-manage-list-users-api-example)
-        * [Edit users](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#console-icp-manage-edit-users-api)
-        * [Example curl request: edit a user](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#console-icp-manage-edit-users-api-example)
-        * [Add users](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#console-icp-manage-add-users-api)
-        * [Example curl request: add a user](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#console-icp-manage-add-users-api-example)
-        * [Remove users](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#console-icp-manage-remove-users-api)
-        * [Example curl request: remove a user](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#console-icp-remove-add-users-api-example)
+    * [List users](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#console-icp-manage-list-users-api)
+    * [Example curl request: list users](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#console-icp-manage-list-users-api-example)
+    * [Edit users](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#console-icp-manage-edit-users-api)
+    * [Example curl request: edit a user](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#console-icp-manage-edit-users-api-example)
+    * [Add users](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#console-icp-manage-add-users-api)
+    * [Example curl request: add a user](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#console-icp-manage-add-users-api-example)
+    * [Remove users](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#console-icp-manage-remove-users-api)
+    * [Example curl request: remove a user](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#console-icp-remove-add-users-api-example)
 
 * [Use the APIs to manage your components](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#use-the-apis-to-manage-your-components)
 
 * [Limitations](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#ibp-v2-apis-limitations)
 
 * [Building a network by using APIs](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#ibp-v2-apis-build-with-apis)
-        * [Creating a node within a specific zone](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#ibp-v2-apis-zone)
+    * [Creating a node within a specific zone](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#ibp-v2-apis-zone)
 
 * [Creating a node with a custom configuration](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#ibp-v2-apis-custom)
-        * [Example: Creating a custom Certificate Authority](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#example-creating-a-custom-certificate-authority)
-        * [Create a high availability CA](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#create-a-high-availability-ca)
-        * [Deploy a node that uses an HSM](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#deploy-a-node-that-uses-an-hsm)
+    * [Example: Creating a custom Certificate Authority](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#example-creating-a-custom-certificate-authority)
+    * [Create a high availability CA](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#create-a-high-availability-ca)
+    * [Deploy a node that uses an HSM](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#deploy-a-node-that-uses-an-hsm)
 
 * [Import a network by using APIs](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#ibp-v2-apis-import-with-apis)
 
 * [Operating your CA with the Fabric CA client](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#ibp-v2-apis-config-fabric-ca-client)
-        * [Set up the Fabric CA client](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#ibp-v2-apis-setup-fabric-ca-client)
-        * [Generate certificates with your CA admin](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#ibp-v2-apis-enroll-ca-admin)
-        * [Registering the component identity with the CA](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#ibp-v2-apis-config-register-component)
-        * [Registering your organization administrator](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#ibp-v2-apis-config-register-admin)
-        * [Generating the admin Membership Service Provider (MSP) folder](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#ibp-v2-apis-config-enroll-admin)
-        * [Registering the component identity with the TLS CA](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#ibp-v2-apis-config-register-component-tls)
-        * [Troubleshooting](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#ibp-v2-apis-config-troubleshooting)
+    * [Set up the Fabric CA client](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#ibp-v2-apis-setup-fabric-ca-client)
+    * [Generate certificates with your CA admin](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#ibp-v2-apis-enroll-ca-admin)
+    * [Registering the component identity with the CA](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#ibp-v2-apis-config-register-component)
+    * [Registering your organization administrator](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#ibp-v2-apis-config-register-admin)
+    * [Generating the admin Membership Service Provider (MSP) folder](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#ibp-v2-apis-config-enroll-admin)
+    * [Registering the component identity with the TLS CA](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#ibp-v2-apis-config-register-component-tls)
+    * [Troubleshooting](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#ibp-v2-apis-config-troubleshooting)
 
 * [Creating an organization MSP definition](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#ibp-v2-apis-msp)
 
 * [Creating a configuration file](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#ibp-v2-apis-config)
-        * [Retrieve the CA connection information](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#ibp-v2-apis-config-connx-info)
-        * [Provide your component enroll ID and secret](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#provide-your-component-enroll-id-and-secret)
-        * [Provide the signCert of your organization administrator](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#provide-the-signcert-of-your-organization-administrator)
-        * [CSR (Certificate Signing Request) hosts](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#csr)
-        * [Completing the configuration file](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#ibp-v2-apis-config-file)
-        * [Importing an admin identity into the {{site.data.keyword.blockchainfull_notm}} Platform console](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#ibp-v2-apis-admin-console)
+    * [Retrieve the CA connection information](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#ibp-v2-apis-config-connx-info)
+    * [Provide your component enroll ID and secret](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#provide-your-component-enroll-id-and-secret)
+    * [Provide the signCert of your organization administrator](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#provide-the-signcert-of-your-organization-administrator)
+    * [CSR (Certificate Signing Request) hosts](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#csr)
+    * [Completing the configuration file](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#ibp-v2-apis-config-file)
+    * [Importing an admin identity into the {{site.data.keyword.blockchainfull_notm}} Platform console](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-apis#ibp-v2-apis-admin-console)
 
 
 ## Tracking license consumption
@@ -1237,10 +1237,10 @@ subcollection: blockchain-sw-252
 * [Building the proxy image](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-hsm-build-pkcs11-proxy#ibp-hsm-build-pkcs11-proxy-build-img)
 
 * [Deploying the proxy to your cluster](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-hsm-build-pkcs11-proxy#ibp-hsm-build-pkcs11-proxy-deploy)
-        * [**Step one:**  Create a new namespace](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-hsm-build-pkcs11-proxy#ibp-hsm-build-pkcs11-proxy-deploy-s1)
-        * [**Step two:** Create a Kubernetes secret](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-hsm-build-pkcs11-proxy#ibp-hsm-build-pkcs11-proxy-deploy-s2)
-        * [**Step three:** Deploy the proxy pod](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-hsm-build-pkcs11-proxy#ibp-hsm-build-pkcs11-proxy-deploy-s3)
-        * [**Step four:** Configure communication between the proxy and the blockchain components](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-hsm-build-pkcs11-proxy#ibp-hsm-build-pkcs11-proxy-deploy-s4)
+    * [**Step one:**  Create a new namespace](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-hsm-build-pkcs11-proxy#ibp-hsm-build-pkcs11-proxy-deploy-s1)
+    * [**Step two:** Create a Kubernetes secret](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-hsm-build-pkcs11-proxy#ibp-hsm-build-pkcs11-proxy-deploy-s2)
+    * [**Step three:** Deploy the proxy pod](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-hsm-build-pkcs11-proxy#ibp-hsm-build-pkcs11-proxy-deploy-s3)
+    * [**Step four:** Configure communication between the proxy and the blockchain components](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-hsm-build-pkcs11-proxy#ibp-hsm-build-pkcs11-proxy-deploy-s4)
 
 * [Next steps](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-hsm-build-pkcs11-proxy#ibp-hsm-build-pkcs11-proxy-next-steps)
 
@@ -1392,18 +1392,18 @@ subcollection: blockchain-sw-252
 * [22 Feb 2021](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#02-22-2021)
 
 * [12 Jan 2021](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#01-12-2021)
-        * [New logging configuration panel](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#01-12-2021-logger-ui)
+    * [New logging configuration panel](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#01-12-2021-logger-ui)
 
 * [08 Dec 2020](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#12-08-2020)
 
 * [19 Nov 2020](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#11-19-2020)
 
 * [30 Oct 2020](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#10-20-2020)
-        * [Fabric v2.x node upgrade](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#11-02-2020-upgrade)
-        * [Support for Fabric v2.x smart contract lifecycle](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#11-02-2020-lc)
-        * [Improvements for HSM support](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#11-02-2020-hsm)
-        * [Certificate renewal enhancements](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#11-02-2020-cert-renew)
-        * [Remove registered user from CA](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#11-02-2020-delete-user)
+    * [Fabric v2.x node upgrade](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#11-02-2020-upgrade)
+    * [Support for Fabric v2.x smart contract lifecycle](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#11-02-2020-lc)
+    * [Improvements for HSM support](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#11-02-2020-hsm)
+    * [Certificate renewal enhancements](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#11-02-2020-cert-renew)
+    * [Remove registered user from CA](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#11-02-2020-delete-user)
 
 
 ## Known issues
