@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-12"
 
 keywords: IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -39,8 +39,8 @@ The resources for the CA, peer, and ordering nodes need to be multiplied by the 
 | **Operator**                   | 0.1           | 0.2                   | 0                      |
 | **Console**                    | 1.2           | 2.4                   | 10                     |
 | **Webhook**                    | 0.1           | 0.2                   | 0                      |
-
 {: caption="Table 1. Default resource allocations" caption-side="bottom"}
+
 ** These values can vary slightly. Actual VPC allocations are visible in the blockchain console when a node is deployed.
 
 Note that when smart contracts are installed on peers that run a Fabric v2.x image, the smart contract is launched in its own pod instead of a separate container on the peer, which accounts for the smaller amount of resources required on the peer.
