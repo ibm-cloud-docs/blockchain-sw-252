@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-10-05"
+lastupdated: "2021-10-07"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -118,7 +118,7 @@ After you purchase the {{site.data.keyword.blockchainfull_notm}} Platform, you c
 
 Run the following command to create the secret and add it to your `ibpinfra` namespace or project:
 ```
-kubectl create secret docker-registry docker-key-secret --docker-server=cp.icr.io --docker-username=cp --docker-password=<KEY> --docker-email=<EMAIL> -n ibpinfra
+  kubectl create secret docker-registry docker-key-secret --docker-server=cp.icr.io --docker-username=cp --docker-password=<KEY> --docker-email=<EMAIL> -n ibpinfra
 ```
 {: codeblock}
 
@@ -172,21 +172,20 @@ roleRef:
   kind: Role
   name: webhook
   apiGroup: rbac.authorization.k8s.io
-
 ```
 {: codeblock}
 
 Run the following command to add the file to your cluster definition:
 ```
-kubectl apply -f rbac.yaml -n ibpinfra
+  kubectl apply -f rbac.yaml -n ibpinfra
 ```
 {: codeblock}
 
 When the command completes successfully, you should see something similar to:
 ```
-serviceaccount/webhook created
-role.rbac.authorization.k8s.io/webhook created
-rolebinding.rbac.authorization.k8s.io/ibpinfra created
+  serviceaccount/webhook created
+  role.rbac.authorization.k8s.io/webhook created
+  rolebinding.rbac.authorization.k8s.io/ibpinfra created
 ```
 {: codeblock}
 
@@ -194,6 +193,7 @@ rolebinding.rbac.authorization.k8s.io/ibpinfra created
 {: #webhook-scc}
 
 Skip this step if you are not using OpenShift. The {{site.data.keyword.blockchainfull_notm}} Platform requires specific security and access policies to be added to the `ibpinfra` project. Copy the security context constraint object below and save it to your local system as `ibpinfra-scc.yaml`.
+
 Replace `<PROJECT_NAME>` with `ibpinfra`.
 ```yaml
 allowHostDirVolumePlugin: false
@@ -231,23 +231,22 @@ users:
 - system:serviceaccounts:<PROJECT_NAME>
 volumes:
 - "*"
-
 ```
 {: codeblock}
 
 After you save the file, run the following commands to add the file to your cluster and add the policy to your project.
-
 ```
-oc apply -f ibpinfra-scc.yaml -n ibpinfra
-oc adm policy add-scc-to-user ibpinfra system:serviceaccounts:ibpinfra
+  oc apply -f ibpinfra-scc.yaml -n ibpinfra
+  oc adm policy add-scc-to-user ibpinfra system:serviceaccounts:ibpinfra
 ```
 {: codeblock}
 
 If the commands are successful, you can see a response that is similar to the following example:
 ```
-securitycontextconstraints.security.openshift.io/ibpinfra created
-clusterrole.rbac.authorization.k8s.io/system:openshift:scc:ibpinfra added: "system:serviceaccounts:ibpinfra"
+  securitycontextconstraints.security.openshift.io/ibpinfra created
+  clusterrole.rbac.authorization.k8s.io/system:openshift:scc:ibpinfra added: "system:serviceaccounts:ibpinfra"
 ```
+{: codeblock}
 
 ### 3. Deploy the webhook
 {: #webhook-deploy}
@@ -260,8 +259,9 @@ In order to deploy the webhook, you need to create two `.yaml` files and apply t
 Copy the following text to a file on your local system and save the file as `deployment.yaml`. If you are deploying on OpenShift Container Platform on LinuxONE, you need to replace `amd64` with `s390x`.
 
 
+
 ```yaml
-apiVersion: apps/v1
+  apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: "ibp-webhook"
@@ -342,9 +342,9 @@ spec:
             requests:
               cpu: 0.1
               memory: "100Mi"
-
 ```
 {: codeblock}
+
 Run the following command to add the file to your cluster definition:
 ```
 kubectl apply -n ibpinfra -f deployment.yaml
@@ -353,8 +353,9 @@ kubectl apply -n ibpinfra -f deployment.yaml
 
 When the command completes successfully, you should see something similar to:
 ```
-deployment.apps/ibp-webhook created
+  deployment.apps/ibp-webhook created
 ```
+{: codeblock}
 
 #### service.yaml
 {: #webhook-service-yaml}
@@ -362,26 +363,26 @@ deployment.apps/ibp-webhook created
 Second, copy the following text to a file on your local system and save the file as `service.yaml`.
 
 ```yaml
-apiVersion: v1
-kind: Service
-metadata:
-  name: "ibp-webhook"
-  labels:
-    type: "webhook"
-    app.kubernetes.io/name: "ibp"
-    app.kubernetes.io/instance: "ibp-webhook"
-    helm.sh/chart: "ibm-ibp"
-spec:
-  type: ClusterIP
-  ports:
-    - name: server
-      port: 443
-      targetPort: server
-      protocol: TCP
-  selector:
-    app.kubernetes.io/instance: "ibp-webhook"
-
-```
+  apiVersion: v1
+  kind: Service
+  metadata:
+    name: "ibp-webhook"
+    labels:
+      type: "webhook"
+      app.kubernetes.io/name: "ibp"
+      app.kubernetes.io/instance: "ibp-webhook"
+      helm.sh/chart: "ibm-ibp"
+  spec:
+    type: ClusterIP
+    ports:
+      - name: server
+        port: 443
+        targetPort: server
+        protocol: TCP
+    selector:
+      app.kubernetes.io/instance: "ibp-webhook"
+  
+  ```
 {: codeblock}
 
 Run the following command to add the file to your cluster definition:
@@ -391,19 +392,19 @@ kubectl apply -n ibpinfra -f service.yaml
 {: codeblock}
 
 When the command completes successfully, you should see something similar to:
-```
-service/ibp-webhook created
-```
+    ```
+    service/ibp-webhook created
+    ```
+    {: codeblock}
 
 ### 4. Extract the certificate and create the custom resource definitions
 {: #webhook-extract-cert}
 
 1. Extract the webhook TLS certificate from the `ibpinfra` namespace by running the following command:
-
-  ```
-  TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibpinfra -o jsonpath={'.data.cert\.pem'})
-  ```
-  {: codeblock}
+    ```
+      TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibpinfra -o jsonpath={'.data.cert\.pem'})
+    ```
+    {: codeblock}
   
 2. When you deploy the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 you need to apply the following four CRDs for the CA, peer, orderer, and console. If you are upgrading to 2.5.2, before you can update the operator, you need to update the CRDs to include a new `v1beta1` section as well as the webhook TLS certificate that you just stored in the `TLS_CERT` environment variable. In either case, run the following four commands to apply or update each CRD.
 
@@ -698,13 +699,12 @@ If you are not using the default storage class, additional configuration is requ
 
 You've already created a secret for the entitlement key in the `ibpinfra` namespace or project, now you need to create one in your {{site.data.keyword.blockchainfull_notm}} Platform namespace or project. After you purchase the {{site.data.keyword.blockchainfull_notm}} Platform, you can access the [My IBM dashboard](https://myibm.ibm.com/dashboard/){: external} to obtain your entitlement key for the offering. You need to store the entitlement key on your cluster by creating a [Kubernetes Secret](https://kubernetes.io/docs/concepts/configuration/secret/){: external}. Kubernetes secrets are used to securely store the key on your cluster and pass it to the operator and the console deployments.
 
-
-
 Run the following command to create the secret and add it to your namespace or project:
 ```
 kubectl create secret docker-registry docker-key-secret --docker-server=cp.icr.io --docker-username=cp --docker-password=<KEY> --docker-email=<EMAIL> -n <NAMESPACE>
 ```
 {: codeblock}
+
 - Replace `<KEY>` with your entitlement key.
 - Replace `<EMAIL>` with your email address.
 - Replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace or OpenShift project.

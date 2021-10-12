@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-10-05"
+lastupdated: "2021-10-12"
 
 keywords: IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -20,13 +20,13 @@ subcollection: blockchain-sw-252
 You can use the following instructions to deploy the {{site.data.keyword.blockchainfull}} Platform 2.5.2 on any x86_64 Kubernetes cluster running at v1.19 - v1.21. The {{site.data.keyword.blockchainfull_notm}} Platform uses a [Kubernetes Operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/){: external} to install the {{site.data.keyword.blockchainfull_notm}} Platform console on your cluster and manage the deployment and your blockchain nodes. When the {{site.data.keyword.blockchainfull_notm}} Platform console is running on your cluster, you can use the console to create blockchain nodes and operate a multicloud blockchain network.
 {: shortdesc}
 
-Kubernetes cluster does not download and update the latest version of {site.data.keyword.blockchainfull_notm}} Platform automatically. To get the latest update, you need to create a new cluster and a new service instance.
+Kubernetes cluster does not download and update the latest version of {{site.data.keyword.blockchainfull_notm}} Platform automatically. To get the latest update, you need to create a new cluster and a new service instance.
 {: note} 
 
 ## Resources required
 {: #deploy-icp-resources-required}
 
-Ensure that your Kubernetes cluster has sufficient resources for the {{site.data.keyword.blockchainfull_notm}} Platform console and for the blockchain nodes that you create. The amount of resources that are required can vary depending on your infrastructure, network design, and performance requirements. To help you deploy a cluster of the appropriate size, the default CPU, memory, and storage requirements for each component type are provided in this table. Your actual resource allocations are visible in your blockchain console when you deploy a node and can be adjusted at deployment time or after deployment according to your business needs.
+Ensure your Kubernetes cluster has sufficient resources for the {{site.data.keyword.blockchainfull_notm}} Platform console and for the blockchain nodes that you create. The amount of resources that are required can vary depending on your infrastructure, network design, and performance requirements. To help you deploy a cluster of the appropriate size, the default CPU, memory, and storage requirements for each component type are provided in this table. Your actual resource allocations are visible in your blockchain console when you deploy a node and can be adjusted at deployment time or after deployment according to your business needs.
 
 The resources for the CA, peer, and ordering nodes need to be multiplied by the number of these nodes that you require. The operator and console resources are per blockchain deployment. For example, if you deployed development, staging, and test networks in a single cluster, you need to have enough resources for three instances of the operator and console, one for each blockchain deployment. On the other hand, the webhook resources are per Kubernetes cluster, only one instance is required, regardless of the number of blockchain networks in the cluster.
 
@@ -39,8 +39,8 @@ The resources for the CA, peer, and ordering nodes need to be multiplied by the 
 | **Operator**                   | 0.1           | 0.2                   | 0                      |
 | **Console**                    | 1.2           | 2.4                   | 10                     |
 | **Webhook**                    | 0.1           | 0.2                   | 0                      |
-
 {: caption="Table 1. Default resource allocations" caption-side="bottom"}
+
 ** These values can vary slightly. Actual VPC allocations are visible in the blockchain console when a node is deployed.
 
 Note that when smart contracts are installed on peers that run a Fabric v2.x image, the smart contract is launched in its own pod instead of a separate container on the peer, which accounts for the smaller amount of resources required on the peer.
@@ -112,8 +112,6 @@ When you purchase the {{site.data.keyword.blockchainfull_notm}} Platform from PP
 
 **Looking for a way to script the deployment of the service?** Check out the [Ansible playbooks](/docs/blockchain-sw-252?topic=blockchain-sw-252-ansible), a powerful tool for scripting the deployment of components in your blockchain network. If you prefer a manual installation, proceed to the next section.
 
-** Placemarker for pulling images. Chris & Matt please check. 
-
 ## Log in to your cluster
 {: #deploy-icp-k8-login}
 
@@ -134,52 +132,6 @@ docker login <cluster_CA_domain>:8500
 {: #deploy-icp-k8-scc}
 
 The {{site.data.keyword.blockchainfull_notm}} Platform requires specific security and access policies to be added to your namespace. The contents of a set of `.yaml` files are provided here for you to copy and edit to define the security policies. You must save these files to your local system and then add them your namespace by using the kubectl CLI. These steps need to be completed by a cluster administrator. Also, be aware that the peer `init` and `dind` containers that get deployed are required to run in privileged mode.
-
-### Apply the Pod Security Policy
-{: #deploy-icp-k8-apply-psp}
-
-Copy the PodSecurityPolicy object below and save it to your local system as `ibp-psp.yaml`.
-
-```yaml
-apiVersion: policy/v1beta1
-kind: PodSecurityPolicy
-metadata:
-  name: ibm-blockchain-platform-psp
-spec:
-  hostIPC: false
-  hostNetwork: false
-  hostPID: false
-  privileged: true
-  allowPrivilegeEscalation: true
-  readOnlyRootFilesystem: false
-  seLinux:
-    rule: RunAsAny
-  supplementalGroups:
-    rule: RunAsAny
-  runAsUser:
-    rule: RunAsAny
-  fsGroup:
-    rule: RunAsAny
-  requiredDropCapabilities:
-  - ALL
-  allowedCapabilities:
-  - NET_BIND_SERVICE
-  - CHOWN
-  - DAC_OVERRIDE
-  - SETGID
-  - SETUID
-  - FOWNER
-  volumes:
-  - '*'
-
-```
-{: codeblock}
-
-After you save and edit the file, run the following command to add the file to your cluster and add the policy to your namespace.
-```
-kubectl apply -f ibp-psp.yaml
-```
-{: codeblock}
 
 ## Create the `ibpinfra` namespace for the webhook
 {: #deploy-icp-k8-ibpinfra}
@@ -205,7 +157,7 @@ kubectl create namespace <NAMESPACE>
 ```
 {: codeblock}
 
-Replace `<NAMESPACE>` with the name that you want to use for your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.
+Replace `<NAMESPACE>` with the name you want to use for your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.
 
 It is required that you create a namespace for each blockchain network that you deploy with the {{site.data.keyword.blockchainfull_notm}} Platform. For example, if you plan to create different networks for development, staging, and production, then you need to create a unique namespace for each environment. Using a separate namespace provides each network with separate resources and allows you to set unique access policies for each network. You need to follow these deployment instructions to deploy a separate operator and console for each namespace.
 {: important}
@@ -230,6 +182,8 @@ tar -xzvf amd64/ibp.tar.gz &&
 for file in images/*; do docker load < $file; done
 ```
 {: codeblock}
+
+**Note:** For s390 systems, substitute s390x for amd64.
 
 ## Tag the webhook image for the 'ibpinfra' namespace:
 {: #deploy-icp-k8-tag-webhook-images-ibpinfra-namespace}
@@ -338,22 +292,6 @@ kubectl create secret docker-registry docker-key-secret --docker-server=<cluster
 - Replace `<PASSWORD>` with the admin password for your {{site.data.keyword.cloud_notm}} Private cluster.
 - Replace `<EMAIL>` with your email address.
 
-<internal>
-You need to store the entitlement key on your cluster by creating a [Kubernetes Secret](https://kubernetes.io/docs/concepts/configuration/secret/){: external}. Kubernetes secrets are used to securely store the key on your cluster and pass it to the operator and the console deployments.
-
-Run the following command to create the secret and add it to your `ibpinfra` namespace or project:
-```
-kubectl create secret docker-registry docker-key-secret -–docker-server<your_internal_registry> --docker-username=<your_internal_registry_username> --docker-password=<your_internal_registry_password>
-```
-{: codeblock}
-
-- Replace `<KEY>` with your entitlement key.
-- Replace `<EMAIL>` with your email address.
-
-The name of the secret that you are creating is `docker-key-secret`. It is required by the webhook that you will deploy later. You can only use the key once per deployment. You can refresh the key before you attempt another deployment and use that value here.
-{: note}
-</internal>
-
 ## Deploy the webhook and custom resource definitions (CRDS) to your Kubernetes cluster
 {: #deploy-icp-k8s-webhook-crd}
 
@@ -415,62 +353,26 @@ rolebinding.rbac.authorization.k8s.io/ibpinfra created
 ```
 {: codeblock}
 
-### 2.  Apply the Security Context Constraint
-{: #webhook-scc}
+### 2.  Apply the Pod Security Policy
+The IBM Blockchain Platform requires specific security and access policies to be added to the `ibpinfra` project.
 
-Skip this step if you are not using OpenShift. The {{site.data.keyword.blockchainfull_notm}} Platform requires specific security and access policies to be added to the `ibpinfra` project. Copy the security context constraint object below and save it to your local system as `ibpinfra-scc.yaml`.
-Replace `<PROJECT_NAME>` with `ibpinfra`.
-```yaml
-allowHostDirVolumePlugin: false
-allowHostIPC: false
-allowHostNetwork: false
-allowHostPID: false
-allowHostPorts: false
-allowPrivilegeEscalation: true
-allowPrivilegedContainer: true
-allowedCapabilities:
-- NET_BIND_SERVICE
-- CHOWN
-- DAC_OVERRIDE
-- SETGID
-- SETUID
-- FOWNER
-apiVersion: security.openshift.io/v1
-defaultAddCapabilities: []
-fsGroup:
-  type: RunAsAny
-groups:
-- system:serviceaccounts:<PROJECT_NAME>
-kind: SecurityContextConstraints
-metadata:
-  name: <PROJECT_NAME>
-readOnlyRootFilesystem: false
-requiredDropCapabilities: []
-runAsUser:
-  type: RunAsAny
-seLinuxContext:
-  type: RunAsAny
-supplementalGroups:
-  type: RunAsAny
-users:
-- system:serviceaccounts:<PROJECT_NAME>
-volumes:
-- "*"
+Run the following commands to apply the pop security policy to the ibpinfra service account:
 ```
-{: codeblock}
+kubectl create role webhook-psp \
+    --verb=use \
+    --resource=podsecuritypolicy \
+    --resource-name=ibm-blockchain-platform-psp -n ibpinfra
 
-After you save the file, run the following commands to add the file to your cluster and add the policy to your project.
-
-```
-oc apply -f ibpinfra-scc.yaml -n ibpinfra
-oc adm policy add-scc-to-user ibpinfra system:serviceaccounts:ibpinfra
+kubectl create rolebinding ibpinfra:webhook-psp \
+    --role=webhook-psp \
+    --serviceaccount=ibpinfra:webhook -n ibpinfra
 ```
 {: codeblock}
 
 If the commands are successful, you can see a response that is similar to the following example:
 ```
-securitycontextconstraints.security.openshift.io/ibpinfra created
-clusterrole.rbac.authorization.k8s.io/system:openshift:scc:ibpinfra added: "system:serviceaccounts:ibpinfra"
+role.rbac.authorization.k8s.io/webhook-psp created
+rolebinding.rbac.authorization.k8s.io/ibpinfra:webhook-psp created
 ```
 {: codeblock}
 
@@ -627,10 +529,10 @@ service/ibp-webhook created
 {: #webhook-extract-cert}
 
 1. Extract the webhook TLS certificate from the `ibpinfra` namespace by running the following command:
-  ```
-  TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibpinfra -o jsonpath={'.data.cert\.pem'})
-  ```
-  {: codeblock}
+    ```
+      TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibpinfra -o jsonpath={'.data.cert\.pem'})
+    ```
+    {: codeblock}
   
 2. When you deploy the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 you need to apply the following four CRDs for the CA, peer, orderer, and console. If you are upgrading to 2.5.2, before you can update the operator, you need to update the CRDs to include a new `v1beta1` section as well as the webhook TLS certificate that you just stored in the `TLS_CERT` environment variable. In either case, run the following four commands to apply or update each CRD.
 
@@ -1168,7 +1070,7 @@ spec:
 ```
 {: codeblock}
 
-- Replace `<cluster_CA_domain>:8500` with domain that you use to log in to your {{site.data.keyword.cloud_notm}} Private cluster
+- Replace `<cluster_CA_domain>:8500` with domain you use to log in to your {{site.data.keyword.cloud_notm}} Private cluster
 - Replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.
 
 - If you changed the name of the Docker key secret, then you need to edit the field of `name: docker-key-secret`.
@@ -1221,9 +1123,9 @@ spec:
     deployerTag: 2.5.2-20210713
   imagePullSecret: "docker-key-secret"
   networkinfo:
-    domain: steerage1.fyre.ibm.com
-    consolePort: 30001
-    proxyPort: 30002
+    domain: <DOMAIN>
+    consolePort: <CONSOLE_PORT>
+    proxyPort: <PROXY_PORT>
   storage:
     console:
       class: default
@@ -1319,7 +1221,8 @@ spec:
 ```
 {: codeblock}
 
-- Replace `<cluster_CA_domain>:8500` with the domain that you use to log in to your {{site.data.keyword.cloud_notm}} Private cluster.
+- Replace `<cluster_CA_domain>:8500` with the domain you use to log in to your {{site.data.keyword.cloud_notm}} Private cluster.
+- Replace `<DOMAIN>` with the Proxy IP address of your cluster.
 - Replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.
 
 Accept the license:  
@@ -1565,7 +1468,7 @@ https://<DOMAIN>:<CONSOLE_PORT>
 {: codeblock}
 
 - Replace `<DOMAIN>` with the value of the `domain:` field in the `ibp-console.yaml` file.
-- Replace `<CONSOLE_PORT>` with the port that you specified in the `consolePort:` in the `ibp-console.yaml` file.
+- Replace `<CONSOLE_PORT>` with the port you specified in the `consolePort:` in the `ibp-console.yaml` file.
 
 Your console URL looks similar to the following example:
 ```
@@ -1592,166 +1495,3 @@ To learn how to manage the users that can access the console, view the logs of y
 
 Ready to automate the entire deployment process? Check out the [Ansible Playbook](/docs/blockchain-sw-252?topic=blockchain-sw-252-ansible-install-ibp) that can be used to complete all of the steps  in this topic for you.
 
-## Considerations when using Kubernetes distributions
-{: #console-deploy-k8-considerations}
-
-Before you attempt to install the {{site.data.keyword.blockchainfull_notm}} Platform on Azure Kubernetes Service, Amazon Web Services, Rancher, Amazon Elastic Kubernetes Service, or Google Kubernetes Engine, you should perform the following steps. Refer to your Kubernetes distribution documentation for more details.
-
-1. Ensure that a load balancer with a public IP is configured in front of the Kubernetes cluster.
-2. Create a DNS entry for the IP address of the load balancer.
-3. Create a wild card host entry in DNS for the load balancer. This entry is a `DNS A` record with a wild card host.
-
-    For example, if the DNS entry for the load balancer is `test.example.com`, the DNS entry would be:
-    ```
-    *.test.example.com
-    ```
-    {: codeblock}
-
-    that ultimately resolves to
-    ```
-    test.example.com
-    ```
-    {: codeblock}
-
-    When this host entry is configured, the following examples should all resolve to test.example.com:
-    ```
-    console.test.example.com
-    peer.test.example.com
-    ```
-    {: codeblock}
-
-    You can use `nslookup` to verify that DNS is configured correctly:
-
-    ```
-    $ nslookup console.test.example.com
-    ```
-    {: codeblock}
-
-4. The DNS entry for the load balancer should then be used as the **Domain name** during the installation of {{site.data.keyword.blockchainfull_notm}} Platform.
-
-5. The NGINX ingress controller must be used. See the [ingress controller installation guide](https://github.com/kubernetes/ingress-nginx/blob/master/docs/deploy/index.md){: external} that can be used for most Kubernetes distributions. If you are using {{site.data.keyword.containerlong_notm}}, then refer to these [instructions](#console-deploy-k8-iks-considerations) for specific configuration information.
-
-6. Use the following instructions to edit the NGINX ingress controller deployment to enable ssl-passthrough or refer to the [Kubernetes instructions](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#ssl-passthrough).
-
-    This example might not be exact for your installation. The key is to ensure the last line that enables `ssl-passthrough` is present.
-
-    ```
-    /nginx-ingress-controller
-    --configmap=$(POD_NAMESPACE)/nginx-configuration
-    --tcp-services-configmap=$(POD_NAMESPACE)/tcp-services
-    --udp-services-configmap=$(POD_NAMESPACE)/udp-services
-    --publish-service=$(POD_NAMESPACE)/ingress-nginx
-    --annotations-prefix=nginx.ingress.kubernetes.io
-    --enable-ssl-passthrough=true
-    ```
-    {: codeblock}
-
-7. Verify that all pods are running before you attempt to [install](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#deploy-k8-login) the {{site.data.keyword.blockchainfull_notm}} Platform.
-
-
-You can now [resume your installation](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#deploy-k8-login).
-
-## Considerations when using {{site.data.keyword.containerlong_notm}}
-{: #console-deploy-k8-iks-considerations}
-
-If your Kubernetes cluster was deployed on {{site.data.keyword.cloud_notm}}, you can deploy an instance of the [{{site.data.keyword.blockchainfull_notm}} Platform](/docs/blockchain?topic=blockchain-ibp-v2-deploy-iks-ic#ibp-v2-deploy-iks-create-service-instance) and link it to your Kubernetes cluster. However, if you have purchased a software entitlement and want to use it with the {{site.data.keyword.containerlong_notm}}, then additional configuration steps are required before you can deploy the platform.  
-
-The {{site.data.keyword.blockchainfull_notm}} Platform service requires that the Kubernetes Ingress image is configured for your cluster and that SSL passthrough is enabled, which allows all data to pass through to a load balancer without decrypting it. If you created your {{site.data.keyword.containerlong_notm}} cluster after 01 December 2020, by default it is configured with the Kubernetes Ingress application load balancers (ALBs). But SSL passthrough is not enabled by default in the configuration, therefore, you need to enable it.
-
-If you are planning to run the platform on OpenShift in {{site.data.keyword.cloud_notm}}, then you do not need to perform the steps in this section.
-{: note}
-
-### Configure Kubernetes Ingress
-{: #console-deploy-k8-iks-ingress}
-
-If your cluster was created before 01 December 2020, it is most likely using {{site.data.keyword.cloud_notm}} Ingress,  and you need to follow the instructions in the [{{site.data.keyword.containerlong_notm}} documentation](/docs/containers?topic=containers-ingress-types) to configure the Kubernetes Ingress image on your cluster.  
-
-Not sure what type of Ingress it is using? From your {{site.data.keyword.cloud_notm}} CLI, run the following command to see the available ingress versions:
-
-```
-ibmcloud ks alb versions
-```
-{: codeblock}
-
-The output looks similar to:
-```
-IBM Cloud Ingress: 'auth' version   
-426   
-
-IBM Cloud Ingress versions   
-658 (default)   
-652   
-651   
-
-Community Ingress versions   
-0.35.0_474_iks (default)   
-0.34.1_475_iks   
-0.33.0_476_iks   
-```
-
-Now run the following command to see what version your cluster is using. Replace `<cluster>` with the name of your {{site.data.keyword.containerlong_notm}} cluster:
-```
-ibmcloud ks alb ls --cluster <cluster>
-
-```
-{: codeblock}
-
-In the output, if the contents of the `Build` column contains an `{{site.data.keyword.cloud_notm}} Ingress version` from the preceding list, then your cluster is configured for {{site.data.keyword.cloud_notm}} Ingress.
-```
-ALB ID                                Enabled   Status     Type      ALB IP           Zone    Build                          ALB VLAN ID   NLB Version   
-public-crbn5uqm1d0bdugc65mhe0-alb1    true      enabled    public    208.43.36.82     dal13   ingress:658/ingress-auth:426   2748052       1.0   
-public-crbn5uqm1d0bdugc65mhe0-alb2    true      enabled    public    150.238.10.157   dal10   ingress:658/ingress-auth:426   2636539       1.0   
-public-crbn5uqm1d0bdugc65mhe0-alb3    true      enabled    public    169.47.96.189    dal12   ingress:658/ingress-auth:426   2683458       1.0   
-```
-{: codeblock}
-
-You need to follow the steps to change your ingress from `IBM Cloud Ingress` to the community `Kubernetes Ingress`.
-
-Otherwise, if the `Build` column contains a `Community Ingress version` from the list, your cluster is configured for Kubernetes Ingress.
-```
-ALB ID                                Enabled   Status     Type      ALB IP           Zone    Build                                  ALB VLAN ID   NLB Version   
-public-crbukohphd0ps6erapoulg-alb1    true      enabled    public    150.239.57.190   dal10   ingress:0.35.0_474_iks/ingress-auth:   2415385       1.0
-```
-{: codeblock}
-
-In this case, you can skip ahead to the next section [Enable SSL passthrough](#console-deploy-k8-iks-passthru).
-
-### Enable SSL passthrough
-{: #console-deploy-k8-iks-passthru}
-
-To override the Kubernetes Ingress configuration and enable SSL passthrough, follow instructions to [customize the ALB deployment](/docs/containers?topic=containers-comm-ingress-annotations#comm-customize-deploy) by creating a configmap and applying it to your cluster. For each ALB, you need to set the value of  `"enableSslPassthrough"` and ` "ingressClass"` as follows:
-
-```
-<alb*-id>: '{"enableSslPassthrough":"true", "ingressClass":"nginx"}'
-```
-{: codeblock}
-
-After you create the configmap and update the ALBs, you can verify that the change is successful by checking the deployment of the ALB on your cluster. You need to wait for the pods to restart. Generally, it takes five to ten minutes for an ALB to pick up new changes. After you run the update command and wait five to ten minutes, check the deployment spec for ALB to confirm it is updated by running the following command:
-
-```
-kubectl get deploy -n kube-system <alb-id> -o yaml
-```
-{: codeblock}
-
-Repeat the command for each ALB in your cluster, replacing `<alb-id>` with the id of each load balancer.  
-
-In the output, examine the `args` section of the `containers`. You should see something similar to:
-```yaml
-containers:
-      - args:
-        - /nginx-ingress-controller
-        - --configmap=kube-system/ibm-k8s-controller-config
-        - --annotations-prefix=nginx.ingress.kubernetes.io
-        - --default-ssl-certificate=default/community-ingress-ibp-68e10f583f026529fe7a89da40169ef4-0000
-        - --ingress-class=nginx
-        - --http-port=80
-        - --https-port=443
-        - --enable-ssl-passthrough=true
-        - --default-backend-service=kube-system/ibm-k8s-controller-default-backend
-        - --tcp-services-configmap=kube-system/tcp-services
-        - --publish-service=kube-system/public-crbukohphd0ps6erapoulg-alb1
-```
-
-Confirm that `- --ingress-class=nginx` and `- --enable-ssl-passthrough=true`.
-
-This result indicates that you have successfully enabled SSL passthrough and that the associated ingress class is named `nginx`, which is what the software version of the platform requires in order for it to be able to be installed on a {{site.data.keyword.containerlong_notm}} cluster. Verify that all pods are running before you attempt to [install](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#deploy-k8-login) the {{site.data.keyword.blockchainfull_notm}} Platform.
