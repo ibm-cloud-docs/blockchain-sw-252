@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-10-12"
+lastupdated: "2021-10-13"
 
 keywords: site map
 subcollection: blockchain-sw-252
@@ -61,6 +61,7 @@ subcollection: blockchain-sw-252
 * [Considerations and limitations](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-ocp-about#console-ocp-about-considerations)
 
 * [Installing {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-ocp-about#console-ocp-about-install)
+    * [Installing behind a firewall](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-ocp-about#installing-behind-a-firewall)
 
 * [Security Considerations](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-ocp-about#console-ocp-about-security)
 
