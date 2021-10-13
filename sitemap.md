@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-10-12"
+lastupdated: "2021-10-13"
 
 keywords: site map
 subcollection: blockchain-sw-252
@@ -61,6 +61,7 @@ subcollection: blockchain-sw-252
 * [Considerations and limitations](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-ocp-about#console-ocp-about-considerations)
 
 * [Installing {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-ocp-about#console-ocp-about-install)
+    * [Installing behind a firewall](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-ocp-about#installing-behind-a-firewall)
 
 * [Security Considerations](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-ocp-about#console-ocp-about-security)
 
@@ -883,6 +884,41 @@ subcollection: blockchain-sw-252
     * [Step three: Update the {{site.data.keyword.blockchainfull_notm}} operator](/docs/blockchain-sw-252?topic=blockchain-sw-252-install-fixpack#install-fixpack-operator-firewall)
     * [Step four: Update the {{site.data.keyword.blockchainfull_notm}} console](/docs/blockchain-sw-252?topic=blockchain-sw-252-install-fixpack#install-fixpack-console-firewall)
     * [Step five: Update your blockchain nodes](/docs/blockchain-sw-252?topic=blockchain-sw-252-install-fixpack#install-fixpack-nodes-firewall)
+
+[Deploying {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 for {{site.data.keyword.cloud_notm}} Private](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp)
+* [Resources required](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-resources-required)
+* [Browsers](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-browsers)
+* [Storage](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-storage)
+    * [Considerations when choosing your persistent storage](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#considerations-when-choosing-your-persistent-storage)
+* [Filesystem permissions](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-fs-perm)
+* [Get your entitlement key](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-k8-entitlement-key)
+* [Before you begin](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-k8-prerequisites)
+* [Log in to your cluster](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-k8-login)
+* [Add security and access policies](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-k8-scc)
+* [Create the `ibpinfra` namespace for the webhook](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-k8-ibpinfra)
+* [Create a new namespace for your {{site.data.keyword.blockchainfull_notm}} Platform deployment](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-k8-namespace)
+* [Download and extract {{site.data.keyword.blockchainfull_notm}} Platform images](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-download-extract-images)
+* [Tag the webhook image for the 'ibpinfra' namespace:](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-k8-tag-webhook-images-ibpinfra-namespace)
+* [Tag the images image for the blockchain namespace:](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-k8-tag-images-ibp-namespace)
+* [Push the webhook image to the `ibpinfra` namespace](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-k8-push-webhook-images-ibpinfra-namespace)
+* [Push the {{site.data.keyword.blockchainfull_notm}}  images to the blockchain namespace](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-k8-push-images-ibp-namespace)
+* [Create a secret for your internal registry](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-k8-create-ibpinfra-secret-docker-registry)
+* [Deploy the webhook and custom resource definitions (CRDS) to your Kubernetes cluster](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-k8s-webhook-crd)
+    * [1. Configure role-based access control (RBAC) for the webhook](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#webhook-rbac)
+    * [2.  Apply the Pod Security Policy](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#2.--apply-the-pod-security-policy)
+    * [3. Deploy the webhook](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#webhook-deploy)
+    * [4. Extract the certificate and create the custom resource definitions](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#webhook-extract-cert)
+* [Create a secret for your internal registry](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-k8-create-docker-secret-ibp-namespace)
+    * [Apply the ClusterRole](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-k8-clusterrole)
+    * [Apply the ClusterRoleBinding](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-k8-clusterrolebinding)
+    * [Create the role binding](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-k8-rolebinding)
+* [Deploy the {{site.data.keyword.blockchainfull_notm}} Platform operator](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-operator)
+* [Deploy the {{site.data.keyword.blockchainfull_notm}} Platform console](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-console)
+    * [Advanced deployment options](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#console-icp-deploy-k8-advanced)
+    * [Use your own TLS Certificates (Optional)](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-tls)
+    * [Verifying the console installation](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-verify)
+* [Log in to the console](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-log-in)
+* [Next steps](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-k8-next-steps)
 
 
 ## Using the {{site.data.keyword.blockchainfull_notm}} images

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-10-12"
+lastupdated: "2021-10-13"
 
 keywords: IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -17,11 +17,16 @@ subcollection: blockchain-sw-252
 # Deploying {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 for {{site.data.keyword.cloud_notm}} Private
 {: #deploy-icp}
 
-You can use the following instructions to deploy the {{site.data.keyword.blockchainfull}} Platform 2.5.2 on any x86_64 Kubernetes cluster running at v1.19 - v1.21. The {{site.data.keyword.blockchainfull_notm}} Platform uses a [Kubernetes Operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/){: external} to install the {{site.data.keyword.blockchainfull_notm}} Platform console on your cluster and manage the deployment and your blockchain nodes. When the {{site.data.keyword.blockchainfull_notm}} Platform console is running on your cluster, you can use the console to create blockchain nodes and operate a multicloud blockchain network.
+You can use the following instructions to deploy {{site.data.keyword.blockchainfull}} Platform 2.5.2 on IBM Cloud Private with a minimum fix pack level of 3.2.2.2008.
+
+{{site.data.keyword.blockchainfull}} Platform 2.5.2 has been tested on IBM Cloud Private 3.2.2.2105, which contains a supported version of Kubernetes (1.19). However, the minimum fix level for IBM Cloud Private (3.2.2.2008) contains an earlier version of Kubernetes (1.16). Though IBM Blockchain Platform is functional with Kubernetes 1.16, version 1.16 is no longer supported by Kubernetes and may be missing fixes for identified vulnerabilities.
+{: important}
+
+The {{site.data.keyword.blockchainfull_notm}} Platform uses a [Kubernetes Operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/){: external} to install the {{site.data.keyword.blockchainfull_notm}} Platform console on your cluster and manage the deployment and your blockchain nodes. When the {{site.data.keyword.blockchainfull_notm}} Platform console is running on your cluster, you can use the console to create blockchain nodes and operate a multicloud blockchain network.
 {: shortdesc}
 
-Kubernetes cluster does not download and update the latest version of {{site.data.keyword.blockchainfull_notm}} Platform automatically. To get the latest update, you need to create a new cluster and a new service instance.
-{: note} 
+Kubernetes does not download and update the latest version of {{site.data.keyword.blockchainfull_notm}} Platform automatically. To get the latest update, you need to create a new cluster and a new service instance.
+{: note}
 
 ## Resources required
 {: #deploy-icp-resources-required}
@@ -115,7 +120,7 @@ When you purchase the {{site.data.keyword.blockchainfull_notm}} Platform from PP
 ## Log in to your cluster
 {: #deploy-icp-k8-login}
 
-Before you can complete the next steps, you need to log in to your {{site.data.keyword.cloud_notm}} Private cluster and select the target namespace of your deployment.. 
+Before you can complete the next steps, you need to log in to your {{site.data.keyword.cloud_notm}} Private cluster and select the target namespace of your deployment..
 ```
 cloudctl login -a https://<cluster_CA_domain>:8443 --skip-ssl-validation
 ```
@@ -1494,4 +1499,3 @@ When you access your console, you can view the **nodes** tab of your console UI.
 To learn how to manage the users that can access the console, view the logs of your console and your blockchain components, see [Administering your console](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-icp-manage#console-icp-manage).  
 
 Ready to automate the entire deployment process? Check out the [Ansible Playbook](/docs/blockchain-sw-252?topic=blockchain-sw-252-ansible-install-ibp) that can be used to complete all of the steps  in this topic for you.
-
