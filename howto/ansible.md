@@ -55,7 +55,6 @@ It also includes an entire set of playbooks that can be used to deploy your peer
 
 
 There are two main scenarios that the playbooks address:
-
 - **Deploying the {{site.data.keyword.blockchainfull_notm}} Platform on a Kubernetes cluster**.  If you are using your own Kubernetes distribution, you can purchase an [{{site.data.keyword.blockchainfull_notm}} 2.5.2 license](/docs/blockchain-sw-252?topic=blockchain-sw-252-get-started-console-ocp) and then use the `install-ibp.yml` playbook to deploy the platform onto your Kubernetes cluster. The alternative is to install the service manually by following instructions for [OpenShift Container Platform](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp) or [Kubernetes](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp).
 
   This option is not applicable if you are planning to install the {{site.data.keyword.blockchainfull_notm}} Platform service from the {{site.data.keyword.cloud_notm}} catalog because the Cloud catalog installs it for you.
@@ -83,6 +82,7 @@ When you use the Ansible playbooks to deploy blockchain nodes, the identities th
 
 
 
+
 The Ansible collection documentation provides the complete set of steps for installing the collection.
 
 - If you plan to use the playbooks to **install the {{site.data.keyword.blockchainfull_notm}} Platform service** on your Kubernetes or OpenShift cluster, you need to install all of the [prerequisites](https://ibm-blockchain.github.io/ansible-collection/installation.html#requirements) on the machine where you will run Ansible.
@@ -90,7 +90,7 @@ The Ansible collection documentation provides the complete set of steps for inst
     ```
     Docker version 18.09.2, build 6247962
     ```
-(: codeblock)
+    {: codeblock)
 
 If Docker is not installed, see [install Docker](https://docs.docker.com/get-docker/){: external} to download and install it. You can also check out the [Docker site](https://www.docker.com/){: external} for more education and documentation.
 
