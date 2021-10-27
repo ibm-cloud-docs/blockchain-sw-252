@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-10-07"
+lastupdated: "2021-10-26"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -299,7 +299,7 @@ spec:
         fsGroup: 2000
       containers:
         - name: "ibp-webhook"
-          image: "cp.icr.io/cp/ibp-crdwebhook:2.5.2-20211005-amd64"
+          image: "cp.icr.io/cp/ibp-crdwebhook:2.5.2-20211026-amd64"
           imagePullPolicy: Always
           securityContext:
             privileged: false
@@ -1056,7 +1056,7 @@ spec:
         helm.sh/chart: "ibm-ibp"
         app.kubernetes.io/name: "ibp"
         app.kubernetes.io/instance: "ibp"
-        app.kubernetes.io/managed-by: "ibp-operator"  
+        app.kubernetes.io/managed-by: "ibp-operator"
       annotations:
         productName: "IBM Blockchain Platform"
         productID: "54283fa24f1a4e8589964e6e92626ec4"
@@ -1072,11 +1072,11 @@ spec:
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
             nodeSelectorTerms:
-            - matchExpressions:
-              - key: beta.kubernetes.io/arch
-                operator: In
-                values:
-                - amd64
+              - matchExpressions:
+                  - key: beta.kubernetes.io/arch
+                    operator: In
+                    values:
+                      - amd64
       securityContext:
         runAsNonRoot: true
         runAsUser: 1001
@@ -1085,9 +1085,9 @@ spec:
         - name: docker-key-secret
       containers:
         - name: ibp-operator
-          image: cp.icr.io/cp/ibp-operator:2.5.2-20211005-amd64
+          image: cp.icr.io/cp/ibp-operator:2.5.2-20211026-amd64
           command:
-          - ibp-operator
+            - ibp-operator
           imagePullPolicy: Always
           securityContext:
             privileged: false
@@ -1097,10 +1097,10 @@ spec:
             runAsUser: 1001
             capabilities:
               drop:
-              - ALL
+                - ALL
               add:
-              - CHOWN
-              - FOWNER
+                - CHOWN
+                - FOWNER
           livenessProbe:
             tcpSocket:
               port: 8383
