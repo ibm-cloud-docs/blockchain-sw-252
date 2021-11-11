@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-10-26"
+lastupdated: "2021-11-11"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, firewall, on-premises, air-gapped, on-prem, multicloud, on-prem
 
@@ -19,8 +19,8 @@ subcollection: blockchain-sw-252
 {: #deploy-ocp-firewall}
 
 <div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px;">
-  <p style="line-height: 15px;">
-    <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
+    <p style="line-height: 15px;">
+        <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
     <a href="/docs/blockchain-sw?topic=blockchain-sw-deploy-ocp-firewall">2.1.2</a>,
     <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-ocp-firewall">2.1.3</a>,
     <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-deploy-ocp-firewall">2.5</a>,
@@ -466,10 +466,10 @@ service/ibp-webhook created
 
 1. Extract the webhook TLS certificate from the `ibpinfra` namespace by running the following command:
     ```
-      TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibpinfra -o jsonpath={'.data.cert\.pem'})
+    TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibpinfra -o jsonpath={'.data.cert\.pem'})
     ```
     {: codeblock}
-  
+
 2. When you deploy the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 you need to apply the following four CRDs for the CA, peer, orderer, and console. If you are upgrading to 2.5.2, before you can update the operator, you need to update the CRDs to include a new `v1beta1` section as well as the webhook TLS certificate that you just stored in the `TLS_CERT` environment variable. In either case, run the following four commands to apply or update each CRD.
 
 Run this command to update the CA CRD:   
@@ -832,6 +832,7 @@ oc apply -f ibp-scc.yaml -n <PROJECT_NAME>
 oc adm policy add-scc-to-user <PROJECT_NAME> system:serviceaccounts:<PROJECT_NAME>
 ```
 {: codeblock}
+
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment project.
 
 If the command is successful, you can see a response that is similar to the following example:
@@ -1034,6 +1035,7 @@ oc apply -f ibp-clusterrole.yaml -n <PROJECT_NAME>
 oc adm policy add-scc-to-group <PROJECT_NAME> system:serviceaccounts:<PROJECT_NAME>
 ```
 {: codeblock}
+
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment project.
 
 If successful, you can see a response that is similar to the following example:
@@ -1075,6 +1077,7 @@ oc apply -f ibp-clusterrolebinding.yaml -n <PROJECT_NAME>
 oc adm policy add-cluster-role-to-user <PROJECT_NAME> system:serviceaccounts:<PROJECT_NAME>
 ```
 {: codeblock}
+
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment project.
 
 If successful, you can see a response that is similar to the following example:
@@ -1094,6 +1097,7 @@ Copy the following text to a file on your local system and save the file as `ibp
 
 Replace `image: cp.icr.io/cp/` with `image: <LOCAL_REGISTRY>/`, insert the URL of your local registry.
 {: important}
+
 ```yaml
 apiVersion: apps/v1
 kind: Deployment
@@ -1199,10 +1203,11 @@ spec:
               memory: 200Mi
 ```
 {: codeblock}
+
 - If you changed the name of the Docker key secret, then you need to edit the field of `name: docker-key-secret`.
 - If you are using OpenShift Container Platform on LinuxONE, you need to make the following additional customizations:
-   1. In the `spec.affinity` section, change `amd64` to `s390x`.
-   2. In the `spec.containers` section, replace `amd64` in the operator `images` tag with `s390x`.
+    1. In the `spec.affinity` section, change `amd64` to `s390x`.
+    2. In the `spec.containers` section, replace `amd64` in the operator `images` tag with `s390x`.
 
 Then, use the `kubectl` CLI to add the custom resource to your project.
 
@@ -1210,6 +1215,7 @@ Then, use the `kubectl` CLI to add the custom resource to your project.
 kubectl apply -f ibp-operator.yaml -n <PROJECT_NAME>
 ```
 {: codeblock}
+
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment project.
 
 You can confirm that the operator deployed by running the command `kubectl get deployment -n <PROJECT_NAME>`. If your operator deployment is successful, then you can see the following tables with four ones displayed. The operator takes about a minute to deploy.
@@ -1252,6 +1258,7 @@ spec:
   version: 2.5.2
 ```
 {: codeblock}
+
 Accept the license:  
 
 - Accept the [IBM Blockchain Platform license](https://www-03.ibm.com/software/sla/sladb.nsf/lilookup/6CE1C5684689691C852586000043982B?OpenDocument){: external} by replacing the `license` parameter `accept: false` with the text `accept: true`.
@@ -1287,6 +1294,7 @@ After you update the file, you can use the CLI to install the console.
 kubectl apply -f ibp-console.yaml -n <PROJECT_NAME>
 ```
 {: codeblock}
+
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment project.
 
 Replace `<PROJECT_NAME>` with the name of your project. Before you install the console, you might want to review the advanced deployment options in the next section. The console can take a few minutes to deploy.
@@ -1357,20 +1365,21 @@ spec:
 
 - You can use the `resources:` section to allocate more resources to your console. The values in the example file are the default values allocated to each container. Allocating more resources to your console allows you to operate a larger number of nodes or channels. You can allocate more resources to a currently running console by editing the resource file and applying it to your cluster. The console will restart and return to its previous state, allowing you to operate all of your exiting nodes and channels.
 - If you plan to use the console with a multizone Kubernetes cluster, you need to add the zones to the `clusterdata.zones:` section of the file. When zones are provided to the deployment, you can select the zone that a node is deployed to using the console or the APIs. As an example, if you are deploying to a cluster across the zones of dal10, dal12, and dal13, you would add the zones to the file by using the format below.
-  ```yaml
-  clusterdata:
-    zones:
-      - dal10
-      - dal12
-      - dal13
-  ```
-  {: codeblock}
+    ```yaml
+    clusterdata:
+      zones:
+        - dal10
+        - dal12
+        - dal13
+    ```
+    {: codeblock}
 
 When you finish editing the file, apply it to your cluster.
 ```
 kubectl apply -f ibp-console.yaml -n <PROJECT_NAME>
 ```
 {: codeblock}
+
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment project.
 
 Unlike the resource allocation, you cannot add zones to a running network. If you have already deployed a console and used it to create nodes on your cluster, you will lose your previous work. After the console restarts, you need to deploy new nodes.    
@@ -1435,6 +1444,7 @@ When you finish editing the file, you can apply it to your cluster in order to s
 kubectl apply -f ibp-console.yaml -n <PROJECT_NAME>
 ```
 {: codeblock}
+
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment project.
 
 ### Verifying the console installation
@@ -1463,6 +1473,7 @@ Then, use the following command to get the logs from one of the four containers 
 kubectl logs -f <pod_name> <container_name> -n <PROJECT_NAME>
 ```
 {: codeblock}
+
 As an example, a command to get the logs from the UI container would look like the following example:
 ```
 kubectl logs -f ibpconsole-55cf9db6cc-856nz console -n blockchain-project
@@ -1507,3 +1518,5 @@ The administrator who provisions the console can grant access to other users and
 When you access your console, you can view the **nodes** tab of your console UI. You can use this screen to deploy components on the cluster where you deployed the console. See the [Build a network tutorial](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-build-network#ibp-console-build-network) to get started with the console. You can also use this tab to operate nodes that are created on other clouds. For more information, see [Importing nodes](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-import-nodes#ibp-console-import-nodes).
 
 To learn how to manage the users that can access the console, view the logs of your console and your blockchain components, see [Administering your console](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-icp-manage#console-icp-manage).
+
+

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-10-26"
+lastupdated: "2021-11-11"
 
 keywords: Kubernetes, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, fix pack, multicloud
 
@@ -326,7 +326,7 @@ kubectl get ibpconsole ibpconsole -o yaml > console.yaml
 {: codeblock}
 
 Then add the URL of your local registry to the `spec:` section of `console.yaml`. Replace `<LOCAL_REGISTRY>` with the URL of your local registry:
-```
+```yaml
 spec:
   registryURL: <LOCAL_REGISTRY>
 ```
@@ -342,3 +342,5 @@ kubectl apply -f console-upgrade.yaml
 {: #install-fixpack-nodes-firewall}
 
 After you upgrade your console, you can use the console UI to upgrade the nodes of your blockchain network. For more information, see [Upgrade your blockchain nodes](#install-fixpack-nodes).
+
+

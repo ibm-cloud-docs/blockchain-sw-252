@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-08-11"
+lastupdated: "2021-11-11"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -10,100 +10,7 @@ subcollection: blockchain-sw-252
 
 ---
 
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
-{:android: data-hd-operatingsystem="android"}
-{:api: .ph data-hd-interface='api'}
-{:apikey: data-credential-placeholder='apikey'}
-{:app_key: data-hd-keyref="app_key"}
-{:app_name: data-hd-keyref="app_name"}
-{:app_secret: data-hd-keyref="app_secret"}
-{:app_url: data-hd-keyref="app_url"}
-{:audio: .audio}
-{:authenticated-content: .authenticated-content}
-{:beta: .beta}
-{:c#: .ph data-hd-programlang='c#'}
-{:c#: data-hd-programlang="c#"}
-{:cli: .ph data-hd-interface='cli'}
-{:codeblock: .codeblock}
-{:curl: #curl .ph data-hd-programlang='curl'}
-{:curl: .ph data-hd-programlang='curl'}
-{:deprecated: .deprecated}
-{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
-{:download: .download}
-{:external: .external target="_blank"}
-{:external: target="_blank" .external}
-{:faq: data-hd-content-type='faq'}
-{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
-{:generic: data-hd-operatingsystem="generic"}
-{:generic: data-hd-programlang="generic"}
-{:gif: data-image-type='gif'}
-{:go: .ph data-hd-programlang='go'}
-{:help: data-hd-content-type='help'}
-{:hide-dashboard: .hide-dashboard}
-{:hide-in-docs: .hide-in-docs}
-{:important: .important}
-{:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
-{:java: .ph data-hd-programlang='java'}
-{:java: data-hd-programlang="java"}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:javascript: data-hd-programlang="javascript"}
-{:middle: .ph data-hd-position='middle'}
-{:navgroup: .navgroup}
-{:new_window: target="_blank"}
-{:node: .ph data-hd-programlang='node'}
-{:note: .note}
-{:objectc: .ph data-hd-programlang='Objective C'}
-{:objectc: data-hd-programlang="objectc"}
-{:org_name: data-hd-keyref="org_name"}
-{:php: .ph data-hd-programlang='PHP'}
-{:php: data-hd-programlang="php"}
-{:pre: .pre}
-{:preview: .preview}
-{:python: .ph data-hd-programlang='python'}
-{:python: data-hd-programlang="python"}
-{:right: .ph data-hd-position='right'}
-{:route: data-hd-keyref="route"}
-{:row-headers: .row-headers}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:ruby: data-hd-programlang="ruby"}
-{:runtime: architecture="runtime"}
-{:runtimeIcon: .runtimeIcon}
-{:runtimeIconList: .runtimeIconList}
-{:runtimeLink: .runtimeLink}
-{:runtimeTitle: .runtimeTitle}
-{:screen: .screen}
-{:script: data-hd-video='script'}
-{:service: architecture="service"}
-{:service_instance_name: data-hd-keyref="service_instance_name"}
-{:service_name: data-hd-keyref="service_name"}
-{:shortdesc: .shortdesc}
-{:space_name: data-hd-keyref="space_name"}
-{:step: data-tutorial-type='step'}
-{:step: data-tutorial-type='step'} 
-{:subsection: outputclass="subsection"}
-{:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
-{:swift: .ph data-hd-programlang='swift'}
-{:swift: data-hd-programlang="swift"}
-{:table: .aria-labeledby="caption"}
-{:term: .term}
-{:terraform: .ph data-hd-interface='terraform'}
-{:tip: .tip}
-{:tooling-url: data-tooling-url-placeholder='tooling-url'}
-{:topicgroup: .topicgroup}
-{:troubleshoot: data-hd-content-type='troubleshoot'}
-{:tsCauses: .tsCauses}
-{:tsResolve: .tsResolve}
-{:tsSymptoms: .tsSymptoms}
-{:tutorial: data-hd-content-type='tutorial'}
-{:ui: .ph data-hd-interface='ui'}
-{:unity: .ph data-hd-programlang='unity'}
-{:url: data-credential-placeholder='url'}
-{:user_ID: data-hd-keyref="user_ID"}
-{:vbnet: .ph data-hd-programlang='vb.net'}
-{:video: .video}
+{{site.data.keyword.attribute-definition-list}}
 
 
 
@@ -281,6 +188,7 @@ kubectl patch storageclass
 If you prefer not to choose a persistent storage option, the default storage class of your namespace or OpenShift project is used. `Host-local` volume storage is not supported.
 {: note}
 
+
 ### Considerations when choosing your persistent storage
 {: ibp-storage-considerations}
 
@@ -305,43 +213,43 @@ If you prefer not to choose a persistent storage option, the default storage cla
 The {{site.data.keyword.blockchainfull_notm}} Platform can be deployed in four different ways depending on your business goals. Red Hat customers may prefer to deploy the service directly from the Red Hat Marketplace to their OpenShift cluster in the cloud or on-prem. If you prefer to step through the process manually, you can deploy it to your cloud or on-prem  behind a firewall. Finally, an Ansible playbook is available to automate the deployment of the service to your OpenShift cluster.
 
 <div class=solutionBoxContainer>
-  <div class="solutionBox">
-    <a href = "/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm">
-      <div>
+    <div class="solutionBox">
+        <a href = "/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm">
+        <div>
         <img src="../images/logo_redhat.png" alt="Red Hat icon" width="50" style="width:50px; border-style: none"/>
         <p><strong> Red Hat Marketplace</strong></p>
         <p class="bx--type-caption">Use the Red Hat Marketplace to deploy the service to your OpenShift cluster in the cloud.</p>
-      </div>
+        </div>
     </a>
-  </div>
-  <div class="solutionBox">
-    <a href = "/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm-fw">
-      <div>
+    </div>
+    <div class="solutionBox">
+        <a href = "/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm-fw">
+        <div>
         <img src="../images/logo_redhat.png" alt="Red Hat icon" width="50" style="width:50px; border-style: none"/>
         <p><strong> Red Hat Marketplace</strong></p>
         <p class="bx--type-caption">(Airgap install) Use the Red Hat Marketplace to deploy the service to your OpenShift cluster behind a firewall.</p>
-      </div>
+        </div>
     </a>
-  </div>
-  <div class="solutionBox">
-    <a href = "/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp">
-      <div>
+    </div>
+    <div class="solutionBox">
+        <a href = "/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp">
+        <div>
         <img src="../images/logo_openshift.svg" alt="OpenShift icon" width="25" style="width:25px; border-style: none"/>
         <p><strong>OpenShift</strong></p>
         <p class="bx--type-caption"> Manually deploy the IBM Blockchain  Platform service to your OpenShift cluster in your cloud.</p>
-      </div>
+        </div>
     </a>
-  </div>
-  <div class="solutionBox">
-      <a href = "/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-firewall">
+    </div>
+    <div class="solutionBox">
+        <a href = "/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-firewall">
         <div>
           <img src="../images/logo_openshift.svg" alt="OpenShift icon" width="25" style="width:25px; border-style: none"/>
           <p><strong>OpenShift on-prem</strong></p>
           <p class="bx--type-caption"> Manually deploy the IBM Blockchain Platform to your OpenShift cluster on-prem behind a firewall.</p>
         </div>
-      </a>
-  </div>    
-  <div class="solutionBox">
+        </a>
+    </div>    
+    <div class="solutionBox">
         <a href = "/docs/blockchain-sw-252?topic=blockchain-sw-252-ansible-install-ibp">
           <div>
             <img src="../images/ansible.png" alt="Ansible icon" width="25" style="width:25px; border-style: none"/>
@@ -349,5 +257,7 @@ The {{site.data.keyword.blockchainfull_notm}} Platform can be deployed in four d
             <p class="bx--type-caption"> Automate the deployment of the IBM Blockchain Platform to your OpenShift cluster using an Ansible playbook.</p>
           </div>
         </a>
-  </div>
+    </div>
 </div>
+
+

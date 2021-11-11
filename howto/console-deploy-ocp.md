@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-10-26"
+lastupdated: "2021-11-11"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -19,8 +19,8 @@ subcollection: blockchain-sw-252
 {: #deploy-ocp}
 
 <div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px;">
-  <p style="line-height: 15px;">
-    <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
+    <p style="line-height: 15px;">
+        <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
     <a href="/docs/blockchain-sw?topic=blockchain-sw-deploy-ocp">2.1.2</a>,
     <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-ocp">2.1.3</a>,
     <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-deploy-ocp">2.5</a>,
@@ -118,7 +118,7 @@ After you purchase the {{site.data.keyword.blockchainfull_notm}} Platform, you c
 
 Run the following command to create the secret and add it to your `ibpinfra` namespace or project:
 ```
-  kubectl create secret docker-registry docker-key-secret --docker-server=cp.icr.io --docker-username=cp --docker-password=<KEY> --docker-email=<EMAIL> -n ibpinfra
+kubectl create secret docker-registry docker-key-secret --docker-server=cp.icr.io --docker-username=cp --docker-password=<KEY> --docker-email=<EMAIL> -n ibpinfra
 ```
 {: codeblock}
 
@@ -177,15 +177,15 @@ roleRef:
 
 Run the following command to add the file to your cluster definition:
 ```
-  kubectl apply -f rbac.yaml -n ibpinfra
+kubectl apply -f rbac.yaml -n ibpinfra
 ```
 {: codeblock}
 
 When the command completes successfully, you should see something similar to:
 ```
-  serviceaccount/webhook created
-  role.rbac.authorization.k8s.io/webhook created
-  rolebinding.rbac.authorization.k8s.io/ibpinfra created
+serviceaccount/webhook created
+role.rbac.authorization.k8s.io/webhook created
+rolebinding.rbac.authorization.k8s.io/ibpinfra created
 ```
 {: codeblock}
 
@@ -236,15 +236,15 @@ volumes:
 
 After you save the file, run the following commands to add the file to your cluster and add the policy to your project.
 ```
-  oc apply -f ibpinfra-scc.yaml -n ibpinfra
-  oc adm policy add-scc-to-user ibpinfra system:serviceaccounts:ibpinfra
+oc apply -f ibpinfra-scc.yaml -n ibpinfra
+oc adm policy add-scc-to-user ibpinfra system:serviceaccounts:ibpinfra
 ```
 {: codeblock}
 
 If the commands are successful, you can see a response that is similar to the following example:
 ```
-  securitycontextconstraints.security.openshift.io/ibpinfra created
-  clusterrole.rbac.authorization.k8s.io/system:openshift:scc:ibpinfra added: "system:serviceaccounts:ibpinfra"
+securitycontextconstraints.security.openshift.io/ibpinfra created
+clusterrole.rbac.authorization.k8s.io/system:openshift:scc:ibpinfra added: "system:serviceaccounts:ibpinfra"
 ```
 {: codeblock}
 
@@ -261,7 +261,7 @@ Copy the following text to a file on your local system and save the file as `dep
 
 
 ```yaml
-  apiVersion: apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: "ibp-webhook"
@@ -353,7 +353,7 @@ kubectl apply -n ibpinfra -f deployment.yaml
 
 When the command completes successfully, you should see something similar to:
 ```
-  deployment.apps/ibp-webhook created
+deployment.apps/ibp-webhook created
 ```
 {: codeblock}
 
@@ -382,7 +382,7 @@ Second, copy the following text to a file on your local system and save the file
     selector:
       app.kubernetes.io/instance: "ibp-webhook"
   
-  ```
+```
 {: codeblock}
 
 Run the following command to add the file to your cluster definition:
@@ -402,10 +402,10 @@ When the command completes successfully, you should see something similar to:
 
 1. Extract the webhook TLS certificate from the `ibpinfra` namespace by running the following command:
     ```
-      TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibpinfra -o jsonpath={'.data.cert\.pem'})
+    TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibpinfra -o jsonpath={'.data.cert\.pem'})
     ```
     {: codeblock}
-  
+
 2. When you deploy the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 you need to apply the following four CRDs for the CA, peer, orderer, and console. If you are upgrading to 2.5.2, before you can update the operator, you need to update the CRDs to include a new `v1beta1` section as well as the webhook TLS certificate that you just stored in the `TLS_CERT` environment variable. In either case, run the following four commands to apply or update each CRD.
 
 Run this command to update the CA CRD:   
@@ -1138,8 +1138,8 @@ spec:
 
 - If you changed the name of the Docker key secret, then you need to edit the field of `name: docker-key-secret`.
 - If you are using OpenShift Container Platform on LinuxONE, you need to make the following additional customizations:
-   1. In the `spec.affinity` section, change `amd64` to `s390x`.
-   2. In the `spec.containers` section, replace `amd64` in the operator `images` tag with `s390x`.
+    1. In the `spec.affinity` section, change `amd64` to `s390x`.
+    2. In the `spec.containers` section, replace `amd64` in the operator `images` tag with `s390x`.
 
 Then, use the `kubectl` CLI to add the custom resource to your project.
 
@@ -1297,14 +1297,14 @@ spec:
 
 - You can use the `resources:` section to allocate more resources to your console. The values in the example file are the default values allocated to each container. Allocating more resources to your console allows you to operate a larger number of nodes or channels. You can allocate more resources to a currently running console by editing the resource file and applying it to your cluster. The console will restart and return to its previous state, allowing you to operate all of your exiting nodes and channels.
 - If you plan to use the console with a multizone Kubernetes cluster, you need to add the zones to the `clusterdata.zones:` section of the file. When zones are provided to the deployment, you can select the zone that a node is deployed to using the console or the APIs. As an example, if you are deploying to a cluster across the zones of dal10, dal12, and dal13, you would add the zones to the file by using the format below.
-  ```yaml
-  clusterdata:
-    zones:
-      - dal10
-      - dal12
-      - dal13
-  ```
-  {: codeblock}
+    ```yaml
+    clusterdata:
+      zones:
+        - dal10
+        - dal12
+        - dal13
+    ```
+    {: codeblock}
 
 Accept the license:  
 
@@ -1471,3 +1471,5 @@ When you access your console, you can view the **nodes** tab of your console UI.
 To learn how to manage the users that can access the console, view the logs of your console and your blockchain components, see [Administering your console](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-icp-manage#console-icp-manage).  
 
 Ready to automate the entire deployment process? Check out the [Ansible Playbook](/docs/blockchain-sw-252?topic=blockchain-sw-252-ansible-install-ibp) that can be used to complete all of the steps  in this topic for you.
+
+

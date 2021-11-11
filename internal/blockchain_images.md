@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-26"
+lastupdated: "2021-11-11"
 
 keywords: IBM Blockchain Platform, images, multicloud
 
@@ -19,8 +19,8 @@ subcollection: blockchain-sw-252
 {: #blockchain-images}
 
 <div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px;">
-  <p style="line-height: 15px;">
-    <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
+    <p style="line-height: 15px;">
+        <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
     <a href="/docs/blockchain-sw?topic=blockchain-sw-blockchain-images">2.1.2</a>,
     <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-blockchain-images">2.1.3</a>,
     <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-blockchain-images">2.5</a>,
@@ -55,7 +55,7 @@ See the [My Support](https://www.ibm.com/support/pages/node/1072956){: external}
 {: #blockchain-images-considerations}
 
 The images do not include the {{site.data.keyword.blockchainfull_notm}} Platform console or operator. This offering is meant for experienced Fabric users with existing deployments. If you are still exploring Hyperledger Fabric, you can get started with [{{site.data.keyword.blockchainfull_notm}} Platform for {{site.data.keyword.cloud_notm}}](/docs/blockchain?topic=blockchain-ibp-v2-deploy-iks#ibp-v2-deploy-iks).
-{:important}
+{: important}
 
 - {{site.data.keyword.blockchainfull_notm}} provides support for Hyperledger Fabric only if you purchase {{site.data.keyword.blockchainfull_notm}} 2.5.2 and deploy the commercial distribution of Hyperledger Fabric images that comes with it. You cannot purchase support for the Hyperledger Fabric Docker images that are provided by the Hyperledger community.
 - {{site.data.keyword.blockchainfull_notm}} does not support images that have been altered.
@@ -138,38 +138,42 @@ If you are using the open source configuration files, you need to make the follo
 1. For each component, you need to alter the `image` field to use the {{site.data.keyword.blockchainfull_notm}} image instead of the open source image.
 
 2. You need add the `LICENSE` field to accept the {{site.data.keyword.IBM_notm}} license:
-  ```
-  LICENSE=accept
-  ```
+    ```
+    LICENSE=accept
+    ```
+    {: codeblock}
 
 3. If you are deploying a peer node, you need to use the core chaincode variables to instruct the peer to build chaincode using the {{site.data.keyword.blockchainfull_notm}} certified images. For example, if you are using Go chaincode, you need to set the following variables:
-  ```
-  CORE_CHAINCODE_NODE_RUNTIME=cp.icr.io/cp/ibp-nodeenv:1.4.12-20211026-amd64
-  CORE_CHAINCODE_GOLANG_DYNAMICLINK=true
-  ```
+    ```
+    CORE_CHAINCODE_NODE_RUNTIME=cp.icr.io/cp/ibp-nodeenv:1.4.12-20211026-amd64
+    CORE_CHAINCODE_GOLANG_DYNAMICLINK=true
+    ```
+    {: codeblock}
 
 4. You need to mount the configuration files, `core.yaml` or `orderer.yaml`, inside the node container. You also need to set the `FABRIC_CFG_PATH` environment variable to the path where you mounted the configuration files.
 
-  If you are deploying a peer node, you need to comment out or remove the `PKCS11` section of the file unless you are using an HSM. The section of `core.yaml` that needs to be removed is below:
-  ```
-   Settings for the PKCS#11 crypto provider (i.e. when DEFAULT: PKCS11)
-   PKCS11:
-       # Location of the PKCS11 module library
-       Library:
-       # Token Label
-      Label:
-      # User PIN
-      Pin:
-      Hash:
-      Security:
-      FileKeyStore:
+    If you are deploying a peer node, you need to comment out or remove the `PKCS11` section of the file unless you are using an HSM. The section of `core.yaml` that needs to be removed is below:
+    ```
+    Settings for the PKCS#11 crypto provider (i.e. when DEFAULT: PKCS11)
+    PKCS11:
+        # Location of the PKCS11 module library
+        Library:
+        # Token Label
+        Label:
+        # User PIN
+        Pin:
+        Hash:
+        Security:
+        FileKeyStore:
           KeyStore:
-  ```
+    ```
+    {: codeblock}
 
 5. For security reasons, the {{site.data.keyword.blockchainfull_notm}} images require a different level of permission to access data than the open source images. You need to change the access of the folder that you mount to store your organization MSP and TLS certificates and the folder that is mounted to store your ledger data. You can use the following command to change access to the folders before they are mounted inside the container:
-  ```
-  chmod -R 777 <folder_name>
-  ```
+    ```
+    chmod -R 777 <folder_name>
+    ```
+    {: codeblock}
 
 In addition to using the Fabric tools, you can also use the tools that are provided in the `ibp-utilities` image to operate your network. The utilities image includes the configtxlator, cryptogen, configtxgen binaries.
 
@@ -405,39 +409,39 @@ When the CA is deployed, you can use the Fabric CA client or the Fabric SDKs to 
 After we deploy a network, we can use the gRPC web proxy to import a peer or ordering node into an instance of the {{site.data.keyword.blockchainfull_notm}} Platform console. Assuming that you downloaded the gRPC web proxy image, you can use the instructions below to connect a web proxy `peer0.org1.example.com`.
 
 1. You need to enable the operations service for the peer. This will allow the console to check if the peer or ordering node is healthy before it connects to the node. To enable the operations service for `peer0.org1.example.com`, add the following environment variables to the to the `peer0.org1.example.com` section of `docker-composer-base.yaml`:
-  ```
-  - CORE_OPERATIONS_LISTENADDRESS=0.0.0.0:9443
-  - CORE_OPERATIONS_TLS_ENABLED=false
-  ```
-  {: codeblock}
+    ```
+    - CORE_OPERATIONS_LISTENADDRESS=0.0.0.0:9443
+    - CORE_OPERATIONS_TLS_ENABLED=false
+    ```
+    {: codeblock}
 
-  You can also need to add the `9443` to the list of ports exposed by the peer.
-  ```yaml
-  ports:
-  - 7051:7051
-  - 9443:9443
-  ```
-  {: codeblock}
+    You can also need to add the `9443` to the list of ports exposed by the peer.
+    ```yaml
+    ports:
+    - 7051:7051
+    - 9443:9443
+    ```
+    {: codeblock}
 
 2. You need TLS certificates and keys to secure communication between your the console and your node. Create a folder that you will use for the TLS material and change into that directory.
-  ```
-  mkdir peer0.org1-proxy-certs
-  cd peer0.org1-proxy-certs
-  ```
-  {: codeblock}
+    ```
+    mkdir peer0.org1-proxy-certs
+    cd peer0.org1-proxy-certs
+    ```
+    {: codeblock}
 
-  This folder will be mounted in the gRPC web proxy container in a later step.
+    This folder will be mounted in the gRPC web proxy container in a later step.
 
 3. In a production environment, you would use the TLS certificates that secure the domain name of your deployment environment. For this example, we will generate self signed certificates using the OpenSSL tool.
 
-  - Use the following command to generate a private key:
+    - Use the following command to generate a private key:
 
     ```
     openssl genrsa -out private.key 4096
     ```
     {: codeblock}
 
-  - Create a `ssl.conf` file using the template below. Replace the `_default` variables with the values of your choice. Use the `alt_names` section to provide the domain of your cluster. This domain needs to match the public URL that you will select for the web proxy.
+    - Create a `ssl.conf` file using the template below. Replace the `_default` variables with the values of your choice. Use the `alt_names` section to provide the domain of your cluster. This domain needs to match the public URL that you will select for the web proxy.
 
     ```
     extensions = extend
@@ -475,14 +479,14 @@ After we deploy a network, we can use the gRPC web proxy to import a peer or ord
     ```
     {: codeblock}
 
-  - Use the `ssl.conf` file and your private key to create a certificate signing request. Click enter to accept all the values you provided using the `_default` variables.
+    - Use the `ssl.conf` file and your private key to create a certificate signing request. Click enter to accept all the values you provided using the `_default` variables.
 
     ```
     openssl req -new -sha256 -out private.csr -key private.key -config ssl.conf
     ```
     {: codeblock}
 
-  - Create the certificate:
+    - Create the certificate:
 
     ```
     openssl x509 -req -sha256 -days 3650 -in private.csr -signkey private.key -out public.crt -extensions req_ext -extfile ssl.conf
@@ -490,65 +494,65 @@ After we deploy a network, we can use the gRPC web proxy to import a peer or ord
     {: codeblock}
 
 4. In addition to the TLS certificates used by the proxy, the web proxy also needs the public TLS certificate used by the peer or ordering node. Use the following command to copy the `peer0.org1.example.com` TLS certificate into your the current folder.
-  ```
-  cp ../crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt ca.crt
-  ```
-  {: codeblock}
+    ```
+    cp ../crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt ca.crt
+    ```
+    {: codeblock}
 
-  After copying the TLS certificate, the `peer0.org1-proxy-certs` should contain the peer TLS certificate and the web proxy TLS certificate and key:
-  ```
-  $ ls
-  ca.crt		private.csr	private.key	public.crt	ssl.conf
-  ```
+    After copying the TLS certificate, the `peer0.org1-proxy-certs` should contain the peer TLS certificate and the web proxy TLS certificate and key:
+    ```
+    $ ls
+    ca.crt        private.csr    private.key    public.crt    ssl.conf
+    ```
 
 5. Change back into the main directory of the BYFN example and save the following Docker Compose file for the gRPC web proxy image as `docker-compose-proxy`:
 
-  ```yaml
-  version: '2'
+    ```yaml
+    version: '2'
 
-  networks:
-    byfn:
+    networks:
+      byfn:
 
-  services:
-    web_proxy.peer0.org1.example.com:
-      container_name: web_proxy.peer0.org1.example.com
-      image: cp.icr.io/cp/ibp-grpcweb:2.5.2-20211026-amd64
-      environment:
-        - LICENSE=accept
-        - BACKEND_ADDRESS=peer0.org1.example.com:7051
-        - EXTERNAL_ADDRESS=web_proxy.peer0.org1.example.com:8443
-        - SERVER_TLS_CERT_FILE=/certs/tls/public.crt
-        - SERVER_TLS_KEY_FILE=/certs/tls/private.key
-        - SERVER_TLS_CLIENT_CA_FILES=/certs/tls/ca.crt
-        - SERVER_BIND_ADDRESS=0.0.0.0
-        - SERVER_HTTP_DEBUG_PORT=8080
-        - SERVER_HTTP_TLS_PORT=8443
-        - BACKEND_TLS=true
-        - SERVER_HTTP_MAX_WRITE_TIMEOUT=5m
-        - SERVER_HTTP_MAX_READ_TIMEOUT=5m
-        - USE_WEBSOCKETS=true
-      ports:
-        - "8443:8443"
-      volumes:
-        - ./peer0.org1-proxy-certs:/certs/tls
-      networks:
-        - byfn
-  ```
-  {: codeblock}
+    services:
+      web_proxy.peer0.org1.example.com:
+        container_name: web_proxy.peer0.org1.example.com
+        image: cp.icr.io/cp/ibp-grpcweb:2.5.2-20211026-amd64
+        environment:
+          - LICENSE=accept
+          - BACKEND_ADDRESS=peer0.org1.example.com:7051
+          - EXTERNAL_ADDRESS=web_proxy.peer0.org1.example.com:8443
+          - SERVER_TLS_CERT_FILE=/certs/tls/public.crt
+          - SERVER_TLS_KEY_FILE=/certs/tls/private.key
+          - SERVER_TLS_CLIENT_CA_FILES=/certs/tls/ca.crt
+          - SERVER_BIND_ADDRESS=0.0.0.0
+          - SERVER_HTTP_DEBUG_PORT=8080
+          - SERVER_HTTP_TLS_PORT=8443
+          - BACKEND_TLS=true
+          - SERVER_HTTP_MAX_WRITE_TIMEOUT=5m
+          - SERVER_HTTP_MAX_READ_TIMEOUT=5m
+          - USE_WEBSOCKETS=true
+        ports:
+          - "8443:8443"
+        volumes:
+          - ./peer0.org1-proxy-certs:/certs/tls
+        networks:
+          - byfn
+    ```
+    {: codeblock}
 
-  The Docker Compose file mounts the folder where we stored the TLS certificates in the web proxy container inside a folder named `certs/tls`. We need to specify several important environment variables that point to the certificates inside this folder:
-  - `SERVER_TLS_CERT_FILE` needs to point to the certificate you created using OpenSSL.
-  - `SERVER_TLS_KEY_FILE` needs to point to the private key that you created using OpenSSL.
-  - `SERVER_TLS_CLIENT_CA_FILES` needs to point to the node TLS certificate.
+    The Docker Compose file mounts the folder where we stored the TLS certificates in the web proxy container inside a folder named `certs/tls`. We need to specify several important environment variables that point to the certificates inside this folder:
+    - `SERVER_TLS_CERT_FILE` needs to point to the certificate you created using OpenSSL.
+    - `SERVER_TLS_KEY_FILE` needs to point to the private key that you created using OpenSSL.
+    - `SERVER_TLS_CLIENT_CA_FILES` needs to point to the node TLS certificate.
 
-  You also need to specify the public URL of the peer and the web proxy:
-  - `BACKEND_ADDRESS` needs to point to the public endpoint of your peer that is used by client applications, `peer0.org1.example.com:7051`.
-  - Use the `EXTERNAL_ADDRESS` variable select the URL and port that will be used to access the web proxy. This URL and port needs to be accessible by external traffic.
+    You also need to specify the public URL of the peer and the web proxy:
+    - `BACKEND_ADDRESS` needs to point to the public endpoint of your peer that is used by client applications, `peer0.org1.example.com:7051`.
+    - Use the `EXTERNAL_ADDRESS` variable select the URL and port that will be used to access the web proxy. This URL and port needs to be accessible by external traffic.
 
 6. Before we bring up the proxy, we need to create a JSON file used to import the peer into our console. Save the following file as `peer0.org1.json`
 
-  ```JSON
-  {
+    ```JSON
+    {
     "name": "peer.org1.exaple.com",
     "grpcwp_url": "https://web_proxy.peer0.org1.example.com:8443",
     "api_url": "grpcs://peer0.org1.example.com:7051",
@@ -557,19 +561,19 @@ After we deploy a network, we can use the gRPC web proxy to import a peer or ord
     "msp_id": "org1msp",
     "pem": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNGekNDQWI2Z0F3SUJBZ0lVUi9zMGxGTG5ZNmdWRmV1Mlg5ajkrY3JDZFBrd0NnWUlLb1pJemowRUF3SXcKWFRFTE1Ba0dBMVVFQmhNQ1ZWTXhGekFWQmdOVkJBZ1REazV2Y25Sb0lFTmhjbTlzYVc1aE1SUXdFZ1lEVlFRSwpFd3RJZVhCbGNteGxaR2RsY2pFUE1BMEdBMVVFQ3hNR1JtRmljbWxqTVE0d0RBWURWUVFERXdWMGJITmpZVEFlCkZ3MHhPVEEyTVRBeE9USXhNREJhRncwek5EQTJNRFl4T1RJeE1EQmFNRjB4Q3pBSkJnTlZCQVlUQWxWVE1SY3cKRlFZRFZRUUlFdzVPYjNKMGFDQkRZWEp2YkdsdVlURVVNQklHQTFVRUNoTUxTSGx3WlhKc1pXUm5aWEl4RHpBTgpCZ05WQkFzVEJrWmhZbkpwWXpFT01Bd0dBMVVFQXhNRmRHeHpZMkV3V1RBVEJnY3Foa2pPUFFJQkJnZ3Foa2pPClBRTUJCd05DQUFUYUtyN2srUHNYeXFkWkdXUHlJUXlGMGQxUkFFdmdCYlpkVnlsc3hReWZOcUdZS0FZV3A0SFUKVUVaVHVVNmtiRXN5Qi9aOVJQWEY0WVNGbW8reTVmSkhvMXd3V2pBT0JnTlZIUThCQWY4RUJBTUNBUVl3RWdZRApWUjBUQVFIL0JBZ3dCZ0VCL3dJQkFUQWRCZ05WSFE0RUZnUVUrcnBNb2dRc3dDTnZMQzJKNmp2cElQOExwaE13CkZRWURWUjBSQkE0d0RJY0VDUjc4YTRjRXJCRE5DakFLQmdncWhrak9QUVFEQWdOSEFEQkVBaUJGWmpMWU9XZUMKLy92L2RNMHdYNUxZT3NCaHFFNnNQZ1BSWWppOTZqT093QUlnZEppZDU0WmxjR2h0R3dEY3ZoZE02RVlBVFpQNwpmS29IMDZ3ZFhpK3VzVXM9Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K",
     "location": "mycluster"
-  }
-  ```
-  {: codeblock}
+    }
+    ```
+    {: codeblock}
 
-  Use the following values to complete the file:
-  - `"name"`: The display name for the peer in the {{site.data.keyword.blockchainfull_notm}} Platform console.
-  - `"grpcwp_url"`: The external address of the web proxy that you selected using the `EXTERNAL_ADDRESS` variable.
-  - `"api_url"`: The public address of the node used by your client applications and is specified in the `BACKEND_ADDRESS` variable.
-  - `"operations_url"`: The URL and port that was opened for the operations service. We used the `CORE_OPERATIONS_LISTENADDRESS` variable to specify that the operations service will use port `9443` in step one. As a result, the console can use the address `https://peer0.org1.example.com:9443` to check the health of our peer.
-  - `"type"`: select `fabric-peer`, `fabric-orderer`, or `fabric-ca`.
-  - `"msp_id"`: The MSPID of the organization that operates the node.
-  - `"location"`: Location of your choice.
-  - ``"pem"`` The node TLS certificate encoded in Base64 format. We copied the peer TLS certificate into the `peer0.org1-proxy-cert` folder. We can encode the certificate using the following command:
+    Use the following values to complete the file:
+    - `"name"`: The display name for the peer in the {{site.data.keyword.blockchainfull_notm}} Platform console.
+    - `"grpcwp_url"`: The external address of the web proxy that you selected using the `EXTERNAL_ADDRESS` variable.
+    - `"api_url"`: The public address of the node used by your client applications and is specified in the `BACKEND_ADDRESS` variable.
+    - `"operations_url"`: The URL and port that was opened for the operations service. We used the `CORE_OPERATIONS_LISTENADDRESS` variable to specify that the operations service will use port `9443` in step one. As a result, the console can use the address `https://peer0.org1.example.com:9443` to check the health of our peer.
+    - `"type"`: select `fabric-peer`, `fabric-orderer`, or `fabric-ca`.
+    - `"msp_id"`: The MSPID of the organization that operates the node.
+    - `"location"`: Location of your choice.
+    - ``"pem"`` The node TLS certificate encoded in Base64 format. We copied the peer TLS certificate into the `peer0.org1-proxy-cert` folder. We can encode the certificate using the following command:
 
     ```
     export FLAG=$(if [ "$(uname -s)" == "Linux" ]; then echo "-w 0"; else echo "-b 0"; fi)
@@ -578,16 +582,16 @@ After we deploy a network, we can use the gRPC web proxy to import a peer or ord
     {: codeblock}
 
 7. Bring up the web proxy using the following command:
-  ```
-  docker-compose -f docker-compose-proxy.yaml up
-  ```
-  {: codeblock}
+    ```
+    docker-compose -f docker-compose-proxy.yaml up
+    ```
+    {: codeblock}
 
-  If the web proxy is created successfully, you should see messages in your logs similar to the following:
-  ```
-  web_proxy.peer0.org1.example.com    | time="2020-01-29T22:18:37Z" level=info msg="listening for http_tls on: [::]:8443"
-  web_proxy.peer0.org1.example.com    | time="2020-01-29T22:18:37Z" level=info msg="listening for http on: [::]:8080"
-  ```
+    If the web proxy is created successfully, you should see messages in your logs similar to the following:
+    ```
+    web_proxy.peer0.org1.example.com    | time="2020-01-29T22:18:37Z" level=info msg="listening for http_tls on: [::]:8443"
+    web_proxy.peer0.org1.example.com    | time="2020-01-29T22:18:37Z" level=info msg="listening for http on: [::]:8080"
+    ```
 
 You can now view the node from a console by importing the ``peer0.org1.json`` file into an {{site.data.keyword.blockchainfull_notm}} Platform console deployed on {{site.data.keyword.cloud_notm}} or your own cluster using {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2. In order for the console to access your nodes, the URL of the web proxy, the peer, and the operations URL needs be externally accessible.
 
@@ -612,3 +616,5 @@ If you encounter issues that are related to Hyperledger Fabric or the underlying
 {{site.data.keyword.IBM_notm}} provides support for issues that are related to the Hyperledger Fabric code or the steps to download and deploy the images that you can find in this documentation. {{site.data.keyword.IBM_notm}} does not provide support for issues that relate to the operation of the images or your underlying infrastructure. Deployment issues due to the specific circumstances of the customer environment will be the customer's responsibility to investigate. If you need assistance with the deployment and management of a Fabric network, use the [{{site.data.keyword.blockchainfull_notm}} Platform 2.5.2](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-ocp-about#console-ocp-about) offering.
 
 You can take advantage of free blockchain developer resources and support forums to troubleshoot problems and get help from {{site.data.keyword.IBM_notm}} and the Fabric community. For more information, see [Resources and support forums](/docs/blockchain-sw-252?topic=blockchain-sw-252-blockchain-support#blockchain-support-resources).
+
+

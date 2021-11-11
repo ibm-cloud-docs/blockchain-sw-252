@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-10-26"
+lastupdated: "2021-11-11"
 
 keywords: IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, firewall, on-premises, air-gapped, on-prem, multicloud, on-prem
 
@@ -19,8 +19,8 @@ subcollection: blockchain-sw-252
 {: #deploy-k8-firewall}
 
 <div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px;">
-  <p style="line-height: 15px;">
-    <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
+    <p style="line-height: 15px;">
+        <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
     <a href="/docs/blockchain-sw?topic=blockchain-sw-deploy-k8-firewall">2.1.2</a>,
     <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-k8-firewall">2.1.3</a>,
     <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-deploy-k8-firewall">2.5</a>,
@@ -483,10 +483,10 @@ service/ibp-webhook created
 
 1. Extract the webhook TLS certificate from the `ibpinfra` namespace by running the following command:
     ```
-      TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibpinfra -o jsonpath={'.data.cert\.pem'})
+    TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibpinfra -o jsonpath={'.data.cert\.pem'})
     ```
     {: codeblock}
-  
+
 2. When you deploy the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 you need to apply the following four CRDs for the CA, peer, orderer, and console. If you are upgrading to 2.5.2, before you can update the operator, you need to update the CRDs to include a new `v1beta1` section as well as the webhook TLS certificate that you just stored in the `TLS_CERT` environment variable. In either case, run the following four commands to apply or update each CRD.
 
 Run this command to update the CA CRD:   
@@ -1038,6 +1038,7 @@ After you save and edit the file, run the following commands.
 kubectl apply -f ibp-clusterrole.yaml -n <NAMESPACE>
 ```
 {: codeblock}
+
 Replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.
 
 ### Apply the ClusterRoleBinding
@@ -1073,6 +1074,7 @@ After you save and edit the file, run the following commands.
 kubectl apply -f ibp-clusterrolebinding.yaml -n <NAMESPACE>
 ```
 {: codeblock}
+
 Replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.
 
 ### Create the role binding
@@ -1211,6 +1213,7 @@ Then, use the kubectl CLI to add the custom resource to your namespace.
 kubectl apply -f ibp-operator.yaml -n <NAMESPACE>
 ```
 {: codeblock}
+
 Replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.
 
 You can confirm that the operator deployed by running the command `kubectl get deployment -n <NAMESPACE>`. If your operator deployment is successful, then you can see the following tables with four ones displayed. The operator takes about a minute to deploy.
@@ -1275,6 +1278,7 @@ After you update the file, you can use the CLI to install the console.
 kubectl apply -f ibp-console.yaml -n <NAMESPACE>
 ```
 {: codeblock}
+
 Replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace. Before you install the console, you might want to review the advanced deployment options in the next section. The console can take a few minutes to deploy.
 
 ### Advanced deployment options
@@ -1342,14 +1346,14 @@ spec:
 - **Reminder:** Replace `registryURL: cp.icr.io/cp` with the URL of your local registry and accept the license.
 - You can use the `resources:` section to allocate more resources to your console. The values in the example file are the default values allocated to each container. Allocating more resources to your console allows you to operate a larger number of nodes or channels. You can allocate more resources to a currently running console by editing the resource file and applying it to your cluster. The console will restart and return to its previous state, allowing you to operate all of your exiting nodes and channels.
 - If you plan to use the console with a multizone Kubernetes cluster, you need to add the zones to the `clusterdata.zones:` section of the file. When zones are provided to the deployment, you can select the zone that a node is deployed to using the console or the APIs. As an example, if you are deploying to a cluster across the zones of dal10, dal12, and dal13, you would add the zones to the file by using the format below.
-  ```yaml
-  clusterdata:
-    zones:
-      - dal10
-      - dal12
-      - dal13
-  ```
-  {: codeblock}
+    ```yaml
+    clusterdata:
+      zones:
+        - dal10
+        - dal12
+        - dal13
+    ```
+    {: codeblock}
 
 When you finish editing the file, apply it to your cluster.
 ```
@@ -1444,6 +1448,7 @@ Then, use the following command to get the logs from one of the four containers 
 kubectl logs -f <pod_name> <container_name> -n <NAMESPACE>
 ```
 {: codeblock}
+
 As an example, a command to get the logs from the UI container would look like the following example:
 ```
 kubectl logs -f ibpconsole-55cf9db6cc-856nz console -n blockchain-project
@@ -1642,3 +1647,5 @@ containers:
 Confirm that `- --ingress-class=nginx` and `- --enable-ssl-passthrough=true`.
 
 This result indicates that you have successfully enabled SSL passthrough and that the associated ingress class is named `nginx`, which is what the software version of the platform requires in order for it to be able to be installed on a {{site.data.keyword.containerlong_notm}} cluster. Verify that all pods are running before you attempt to [install](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#deploy-k8-login) the {{site.data.keyword.blockchainfull_notm}} Platform.
+
+

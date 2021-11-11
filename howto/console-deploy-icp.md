@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-10-13"
+lastupdated: "2021-11-11"
 
 keywords: IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -76,6 +76,7 @@ kubectl patch storageclass
 
 If you prefer not to choose a persistent storage option, the default storage class of your namespace or OpenShift project is used. `Host-local` volume storage is not supported.
 {: note}
+
 
 ### Considerations when choosing your persistent storage
 {: ibp-storage-considerations}
@@ -535,10 +536,10 @@ service/ibp-webhook created
 
 1. Extract the webhook TLS certificate from the `ibpinfra` namespace by running the following command:
     ```
-      TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibpinfra -o jsonpath={'.data.cert\.pem'})
+    TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibpinfra -o jsonpath={'.data.cert\.pem'})
     ```
     {: codeblock}
-  
+
 2. When you deploy the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 you need to apply the following four CRDs for the CA, peer, orderer, and console. If you are upgrading to 2.5.2, before you can update the operator, you need to update the CRDs to include a new `v1beta1` section as well as the webhook TLS certificate that you just stored in the `TLS_CERT` environment variable. In either case, run the following four commands to apply or update each CRD.
 
 Run this command to update the CA CRD:   
@@ -1339,14 +1340,14 @@ spec:
 - You can use the `resources:` section to allocate more resources to your console. The values in the example file are the default values allocated to each container. Allocating more resources to your console allows you to operate a larger number of nodes or channels. You can allocate more resources to a currently running console by editing the resource file and applying it to your cluster. The console will restart and return to its previous state, allowing you to operate all of your exiting nodes and channels.
 
 - If you plan to use the console with a multizone Kubernetes cluster, you need to add the zones to the `clusterdata.zones:` section of the file. When zones are provided to the deployment, you can select the zone that a node is deployed to using the console or the APIs. As an example, if you are deploying to a cluster across the zones of dal10, dal12, and dal13, you would add the zones to the file by using the format below.
-  ```yaml
-  clusterdata:
-    zones:
-      - dal10
-      - dal12
-      - dal13
-  ```
-  {: codeblock}
+    ```yaml
+    clusterdata:
+      zones:
+        - dal10
+        - dal12
+        - dal13
+    ```
+    {: codeblock}
 
 - Accept the [{{site.data.keyword.blockchainfull_notm}} Platform license](https://www-03.ibm.com/software/sla/sladb.nsf/lilookup/6CE1C5684689691C852586000043982B?OpenDocument){: external} by replacing the `license` parameter `accept: false` with the text `accept: true`.
 
@@ -1499,3 +1500,5 @@ When you access your console, you can view the **nodes** tab of your console UI.
 To learn how to manage the users that can access the console, view the logs of your console and your blockchain components, see [Administering your console](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-icp-manage#console-icp-manage).  
 
 Ready to automate the entire deployment process? Check out the [Ansible Playbook](/docs/blockchain-sw-252?topic=blockchain-sw-252-ansible-install-ibp) that can be used to complete all of the steps  in this topic for you.
+
+

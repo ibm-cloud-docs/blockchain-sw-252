@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-11"
+lastupdated: "2021-11-11"
 
 keywords: organizations, MSPs, create an MSP, MSP JSON file, consortium, system channel, remove an organization, multicloud
 
@@ -10,100 +10,7 @@ subcollection: blockchain-sw-252
 
 ---
 
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
-{:android: data-hd-operatingsystem="android"}
-{:api: .ph data-hd-interface='api'}
-{:apikey: data-credential-placeholder='apikey'}
-{:app_key: data-hd-keyref="app_key"}
-{:app_name: data-hd-keyref="app_name"}
-{:app_secret: data-hd-keyref="app_secret"}
-{:app_url: data-hd-keyref="app_url"}
-{:audio: .audio}
-{:authenticated-content: .authenticated-content}
-{:beta: .beta}
-{:c#: .ph data-hd-programlang='c#'}
-{:c#: data-hd-programlang="c#"}
-{:cli: .ph data-hd-interface='cli'}
-{:codeblock: .codeblock}
-{:curl: #curl .ph data-hd-programlang='curl'}
-{:curl: .ph data-hd-programlang='curl'}
-{:deprecated: .deprecated}
-{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
-{:download: .download}
-{:external: .external target="_blank"}
-{:external: target="_blank" .external}
-{:faq: data-hd-content-type='faq'}
-{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
-{:generic: data-hd-operatingsystem="generic"}
-{:generic: data-hd-programlang="generic"}
-{:gif: data-image-type='gif'}
-{:go: .ph data-hd-programlang='go'}
-{:help: data-hd-content-type='help'}
-{:hide-dashboard: .hide-dashboard}
-{:hide-in-docs: .hide-in-docs}
-{:important: .important}
-{:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
-{:java: .ph data-hd-programlang='java'}
-{:java: data-hd-programlang="java"}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:javascript: data-hd-programlang="javascript"}
-{:middle: .ph data-hd-position='middle'}
-{:navgroup: .navgroup}
-{:new_window: target="_blank"}
-{:node: .ph data-hd-programlang='node'}
-{:note: .note}
-{:objectc: .ph data-hd-programlang='Objective C'}
-{:objectc: data-hd-programlang="objectc"}
-{:org_name: data-hd-keyref="org_name"}
-{:php: .ph data-hd-programlang='PHP'}
-{:php: data-hd-programlang="php"}
-{:pre: .pre}
-{:preview: .preview}
-{:python: .ph data-hd-programlang='python'}
-{:python: data-hd-programlang="python"}
-{:right: .ph data-hd-position='right'}
-{:route: data-hd-keyref="route"}
-{:row-headers: .row-headers}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:ruby: data-hd-programlang="ruby"}
-{:runtime: architecture="runtime"}
-{:runtimeIcon: .runtimeIcon}
-{:runtimeIconList: .runtimeIconList}
-{:runtimeLink: .runtimeLink}
-{:runtimeTitle: .runtimeTitle}
-{:screen: .screen}
-{:script: data-hd-video='script'}
-{:service: architecture="service"}
-{:service_instance_name: data-hd-keyref="service_instance_name"}
-{:service_name: data-hd-keyref="service_name"}
-{:shortdesc: .shortdesc}
-{:space_name: data-hd-keyref="space_name"}
-{:step: data-tutorial-type='step'}
-{:step: data-tutorial-type='step'} 
-{:subsection: outputclass="subsection"}
-{:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
-{:swift: .ph data-hd-programlang='swift'}
-{:swift: data-hd-programlang="swift"}
-{:table: .aria-labeledby="caption"}
-{:term: .term}
-{:terraform: .ph data-hd-interface='terraform'}
-{:tip: .tip}
-{:tooling-url: data-tooling-url-placeholder='tooling-url'}
-{:topicgroup: .topicgroup}
-{:troubleshoot: data-hd-content-type='troubleshoot'}
-{:tsCauses: .tsCauses}
-{:tsResolve: .tsResolve}
-{:tsSymptoms: .tsSymptoms}
-{:tutorial: data-hd-content-type='tutorial'}
-{:ui: .ph data-hd-interface='ui'}
-{:unity: .ph data-hd-programlang='unity'}
-{:url: data-credential-placeholder='url'}
-{:user_ID: data-hd-keyref="user_ID"}
-{:vbnet: .ph data-hd-programlang='vb.net'}
-{:video: .video}
+{{site.data.keyword.attribute-definition-list}}
 
 
 
@@ -113,8 +20,8 @@ subcollection: blockchain-sw-252
 {: #ibp-console-organizations}
 
 <div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px;">
-  <p style="line-height: 15px;">
-    <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
+    <p style="line-height: 15px;">
+        <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
     <a href="/docs/blockchain-sw?topic=blockchain-sw-ibp-console-organizations">2.1.2</a>,
     <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-organizations">2.1.3</a>,
     <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-ibp-console-organizations">2.5</a>,
@@ -171,9 +78,9 @@ If your organization is joining an ordering service with other organizations, to
 
 - You can also use the **Admin certificates** tab to generate the identity of your organization admin. If you already have an admin identity you want to make your organization admin, click **Existing identity** and select the identity from the drop-down list. If you want to use the panel to generate a new admin identity, you need to register your organization admin with your CA. You then need to complete the following steps in order to use these identities to operate your network:
 
-  1. Enter the **Enroll ID** and **Enroll secret** of an admin identity that is registered with your CA. After you enter the enroll ID and enroll secret, choose a **Display name**. This name is used to represent the identity in the console.
-  2. Click **Generate**. This generates a certificate and private key and automatically add the keys to your Wallet. You can then find your admin identity in your Wallet by using the name that you selected on this panel. These keys are only stored in your browser local storage. Therefore, if you change browsers, they will not be in your Wallet. This is why you should click **Export** to export this identity to your local file system. If you switch browsers, you will need to import the identity from your file system into the Wallet of your new browser.
-  3. Then, click **Export** to download the key pair to your file system and secure them.
+    1. Enter the **Enroll ID** and **Enroll secret** of an admin identity that is registered with your CA. After you enter the enroll ID and enroll secret, choose a **Display name**. This name is used to represent the identity in the console.
+    2. Click **Generate**. This generates a certificate and private key and automatically add the keys to your Wallet. You can then find your admin identity in your Wallet by using the name that you selected on this panel. These keys are only stored in your browser local storage. Therefore, if you change browsers, they will not be in your Wallet. This is why you should click **Export** to export this identity to your local file system. If you switch browsers, you will need to import the identity from your file system into the Wallet of your new browser.
+    3. Then, click **Export** to download the key pair to your file system and secure them.
 
 - The **Administrators certificate** section of the side panel contains the signing certificates keys of your admins. The certificate that you generated by clicking **Generate** in the section above can be found in the first row of the field. If you want to use multiple admin identities to operate your network, you can paste additional certificates into **admin certificate** fields.
 
@@ -190,7 +97,7 @@ After you create an organization MSP definition and create peers with that organ
 
 Click the **Organization MSP** tile for the organization that your client application interacts with. Click **Create connection profile** to open a side panel where you can build and download your connection profile.
 
-  ![Create connection profile panel](../images/create-connx-profile.png "Create connection profile panel")
+![Create connection profile panel](../images/create-connx-profile.png "Create connection profile panel")
 
 If you plan to use the client application to register and enroll users with the organization CA, you need to include the Certificate Authority in the connection profile definition.
 
@@ -218,14 +125,14 @@ The generated connection profile without the CA information resembles:
 
 ```json
 {
-  "name": "org1profile",
-  "description": "Network on IBP v2",
-  "version": "1.0.0",
-  "client": {
-      "organization": "org1"
-  },
-  "organizations": {
-      "org1": {
+    "name": "org1profile",
+    "description": "Network on IBP v2",
+    "version": "1.0.0",
+    "client": {
+        "organization": "org1"
+    },
+    "organizations": {
+        "org1": {
           "mspid": "org1",
           "certificateAuthorities": [
               "xyz-ca.openshift-ibpv2-test-1-0001.us-south.containers.appdomain.cloud:443"
@@ -234,10 +141,10 @@ The generated connection profile without the CA information resembles:
               "va0414-ba-peer.openshift-ibpv2-test-1-0001.us-south.containers.appdomain.cloud:443",
               "va0414-peer.openshift-ibpv2-test-1-0001.us-south.containers.appdomain.cloud:443"
           ]
-      }
-  },
-  "peers": {
-      "xyz-peer.openshift-ibpv2-test-1-0001.us-south.containers.appdomain.cloud:443": {
+        }
+    },
+    "peers": {
+        "xyz-peer.openshift-ibpv2-test-1-0001.us-south.containers.appdomain.cloud:443": {
           "url": "grpcs://xyz-peer.openshift-ibpv2-test-1-0001.us-south.containers.appdomain.cloud:443",
           "tlsCACerts": {
               "pem": "-----BEGIN CERTIFICATE-----nnnnnn-----END CERTIFICATE-----\n"
@@ -245,8 +152,8 @@ The generated connection profile without the CA information resembles:
           "grpcOptions": {
               "ssl-target-name-override": "xyz-peer.openshift-ibpv2-test-1-0001.us-south.containers.appdomain.cloud"
           }
-      },
-      "va0414-peer.openshift-ibpv2-test-1-0001.us-south.containers.appdomain.cloud:443": {
+        },
+        "va0414-peer.openshift-ibpv2-test-1-0001.us-south.containers.appdomain.cloud:443": {
           "url": "grpcs://va0414-peer.openshift-ibpv2-test-1-0001.us-south.containers.appdomain.cloud:443",
           "tlsCACerts": {
               "pem": "-----BEGIN CERTIFICATE-----nnnnnn-----END CERTIFICATE-----\n"
@@ -254,16 +161,16 @@ The generated connection profile without the CA information resembles:
           "grpcOptions": {
               "ssl-target-name-override": "va0414-peer.openshift-ibpv2-test-1-0001.us-south.containers.appdomain.cloud"
           }
-      }
-  },
-  "certificateAuthorities": {}
+        }
+    },
+    "certificateAuthorities": {}
 }
 ```
 
 But if the `"certificateAuthorities"` section is empty and client application needs to register and enroll identities with the CA from the connection profile, then you must manually add the CA information to the generated connection profile. To get the CA connection information, simply export the CA, from the console where it resides, to a JSON file:
 
-  1. From the nodes panel, open the CA.
-  2. Click the **Export** icon to download the CA configuration to a JSON file.
+1. From the nodes panel, open the CA.
+2. Click the **Export** icon to download the CA configuration to a JSON file.
 
     ![Export CA](../images/ca-export.png "Export your CA"){: caption="Figure 4. Click the export icon to download the CA configuration to a JSON file." caption-side="bottom"}
 
@@ -283,8 +190,9 @@ But if the `"certificateAuthorities"` section is empty and client application ne
         "ca_url": "https://xyz-ca.openshift-ibpv2-test-1-0001.us-south.containers.appdomain.cloud:443"
     }
     ```
+    {: codeblock}
 
-  3. Open the _generated connection profile_ that you downloaded. Edit the `"certificateAuthorities":` section:
+3. Open the _generated connection profile_ that you downloaded. Edit the `"certificateAuthorities":` section:
 
     ```
     "certificateAuthorities": {
@@ -334,7 +242,7 @@ If you need to add a new admin certificate to an existing organization MSP defin
 If you prefer to use certificates for your peer or ordering service from an **external CA**, one that is not hosted by {{site.data.keyword.IBM_notm}}, you need to build an MSP definition JSON file that represents the peer or ordering service organization MSP definition.
 
 Note that all certificates must be encoded in base64 format.
-{:important}
+{: important}
 
 You can convert the contents of your certificate file, `<cert.pem>` from `PEM` format into a base64 string by running the following command on your local machine:
 
@@ -493,18 +401,18 @@ If you want to stop using an instance of the {{site.data.keyword.blockchainfull_
 
 1. **Remove your organization from channels that you joined**. You need to [update the endorsement policy](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-smart-contracts-v2#ibp-console-smart-contracts-v2-endorse) of the smart contracts that are deployed on the channel to remove your organization from the policy. If you do not update the endorsement policy, your organization might be required to endorse transactions after you have left the channel, causing transactions to fail.
 
-  You can then update to the channel to remove your organization from the list of channel members. Navigate to the **Channels** tab and click the **Settings** icon. You can use the **Organizations** section to remove your organization from the channel. The channel **update policy** is updated to remove your organization automatically. When you are ready, click **Update channel** to submit a channel update request. The request starts the [process for collecting the signatures](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-govern#ibp-console-govern-update-channel-signature-collection) that are required to update the channel, depending on your update policy.
+    You can then update to the channel to remove your organization from the list of channel members. Navigate to the **Channels** tab and click the **Settings** icon. You can use the **Organizations** section to remove your organization from the channel. The channel **update policy** is updated to remove your organization automatically. When you are ready, click **Update channel** to submit a channel update request. The request starts the [process for collecting the signatures](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-govern#ibp-console-govern-update-channel-signature-collection) that are required to update the channel, depending on your update policy.
 
-  After you remove your organization from the channel, you can delete your peers on the {{site.data.keyword.blockchainfull_notm}} Platform. If transactions can be successfully submitted to the network after you remove your peers, your organization is no longer required to endorse transactions.
+    After you remove your organization from the channel, you can delete your peers on the {{site.data.keyword.blockchainfull_notm}} Platform. If transactions can be successfully submitted to the network after you remove your peers, your organization is no longer required to endorse transactions.
 
 2. **Have your organization removed from the consortium hosted by the ordering service.** After you are removed from the consortium, your organization can no longer be added to new channels. This action needs to be completed by an ordering service administrator.
 
-  Navigate to the **Nodes** tab and click the ordering service of your network. On the ordering service panel, find the organization to be removed in the list of **Consortium members**. Click the **Delete** button in the corner of the organization MSP definition tile.
+    Navigate to the **Nodes** tab and click the ordering service of your network. On the ordering service panel, find the organization to be removed in the list of **Consortium members**. Click the **Delete** button in the corner of the organization MSP definition tile.
 
 3. **Delete your ordering nodes.** If you operate ordering nodes that are part of a multi-node ordering service, you need to remove your ordering nodes from the network before you remove your ordering organization. Your ordering nodes need to be removed from the consenter set of each channel before they are removed from the ordering service.
 
-  Navigate to the **Channels** tab and click the **Settings** icon to update the channel. You can use the **Consenter Set** section to remove your ordering node from the channel. When you are ready, click **Update channel** to submit the channel update request. The update request starts the [process for collecting the signatures](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-govern#ibp-console-govern-update-channel-signature-collection) that are required to update the channel, depending on the channel update policy. After you have you removed your ordering nodes, you can use the **Ordering service administrators** section to remove your organization from the set of orderer administrators.
+    Navigate to the **Channels** tab and click the **Settings** icon to update the channel. You can use the **Consenter Set** section to remove your ordering node from the channel. When you are ready, click **Update channel** to submit the channel update request. The update request starts the [process for collecting the signatures](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-govern#ibp-console-govern-update-channel-signature-collection) that are required to update the channel, depending on the channel update policy. After you have you removed your ordering nodes, you can use the **Ordering service administrators** section to remove your organization from the set of orderer administrators.
 
-  After you remove your ordering nodes from the consenter set of each channel, you can remove your nodes from the ordering service. Navigate to the **Nodes** tab and click the ordering service of your network. On the **Ordering service** panel, click the **Ordering nodes** tab. Click your ordering node and then click **Delete**. Because Raft consensus requires that a majority of ordering nodes are up to maintain a quorum, you need to remove one ordering node at a time. After you have deleted your ordering nodes, you can remove your organization from the set of ordering service administrators. Find your organization MSP definition on the list of **Orderer administrators** and click the **Delete** icon in the corner of the organization definition tile.
+    After you remove your ordering nodes from the consenter set of each channel, you can remove your nodes from the ordering service. Navigate to the **Nodes** tab and click the ordering service of your network. On the **Ordering service** panel, click the **Ordering nodes** tab. Click your ordering node and then click **Delete**. Because Raft consensus requires that a majority of ordering nodes are up to maintain a quorum, you need to remove one ordering node at a time. After you have deleted your ordering nodes, you can remove your organization from the set of ordering service administrators. Find your organization MSP definition on the list of **Orderer administrators** and click the **Delete** icon in the corner of the organization definition tile.
 
 After you complete these steps, your organization will no longer affect the governance of the network. 

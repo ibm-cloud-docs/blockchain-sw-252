@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-05"
+lastupdated: "2021-11-11"
 keywords: troubleshooting, debug, why, what does this mean, how can I, when I
 
 subcollection: blockchain-sw-252
@@ -22,8 +22,8 @@ content-type: troubleshoot
 {: #ibp-v2-troubleshooting}
 
 <div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px;">
-  <p style="line-height: 15px;">
-    <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
+    <p style="line-height: 15px;">
+        <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
     <a href="/docs/blockchain-sw?topic=blockchain-sw-ibp-v2-troubleshooting">2.1.2</a>,
     <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-v2-troubleshooting">2.1.3</a>,
     <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-ibp-v2-troubleshooting">2.5</a>,
@@ -223,52 +223,52 @@ To resolve this problem, you can execute the following steps:
 
 **Get the list of ALB replica set.** 
 If your cluster has only one ALB, you can get the replica set as follows:
-  ```
-  kubectl get replicaset -n kube-system | grep <ALB-name>
-  ```
-  {: codeblock}
+```
+kubectl get replicaset -n kube-system | grep <ALB-name>
+```
+{: codeblock}
 
 If you have multiple ALBs, execute the following steps for each ALB as follows:
-  1. Get the list of all replica sets. 
-      ```
-      kubectl get replicaset -n kube-system | grep alb
-      ```
-      {: codeblock}
+1. Get the list of all replica sets. 
+    ```
+    kubectl get replicaset -n kube-system | grep alb
+    ```
+    {: codeblock}
 
-     For example, you will see multiple replica sets listed as follows:
-      ```
-      $ kubectl get rs -n kube-system | grep alb
-      NAME  DESIRED   CURRENT   READY   AGE
-      public-x-alb1-59db7dbfb4   2         0         0       6d4h
-      public-x-alb1-6486c45c96   2         2         0       3d17h
-      public-x-alb1-d856b94c4    0         0         0       17d
-      ```
-      {: codeblock}
+    For example, you will see multiple replica sets listed as follows:
+    ```
+    $ kubectl get rs -n kube-system | grep alb
+    NAME  DESIRED   CURRENT   READY   AGE
+    public-x-alb1-59db7dbfb4   2         0         0       6d4h
+    public-x-alb1-6486c45c96   2         2         0       3d17h
+    public-x-alb1-d856b94c4    0         0         0       17d
+    ```
+    {: codeblock}
 
-  2. Delete all the replica sets except for the latest one.
-      ```
-      kubectl delete replicaset -n kube-system <replicaset-name>
-      ```
-      {: codeblock}
+2. Delete all the replica sets except for the latest one.
+    ```
+    kubectl delete replicaset -n kube-system <replicaset-name>
+    ```
+    {: codeblock}
 
     Based on the example shown, you need to delete the extra replica sets as follows:
-      ```
-      kubectl delete replicaset -n kube-system public-x-alb1-59db7dbfb4  
-      kubectl delete replicaset -n kube-system public-x-alb1-d856b94c4
-      ```
-      {: codeblock}
+    ```
+    kubectl delete replicaset -n kube-system public-x-alb1-59db7dbfb4  
+    kubectl delete replicaset -n kube-system public-x-alb1-d856b94c4
+    ```
+    {: codeblock}
 
-  3. Get the list of replica set again to ensure that there is only one remaining.
-      ```
-      kubectl get replicaset -n kube-system | grep <ALB-name>
-      ```
-      {: codeblock}
- 
+3. Get the list of replica set again to ensure that there is only one remaining.
+    ```
+    kubectl get replicaset -n kube-system | grep <ALB-name>
+    ```
+    {: codeblock}
+
     Referring to the example, the result will display as follows:
-      ```
-      public-x-alb1-6486c45c96   2         2         2       3d17h
-      ```
-      {: codeblock}
+    ```
+    public-x-alb1-6486c45c96   2         2         2       3d17h
+    ```
+    {: codeblock}
 
 ## Why are my console actions failing in my Chrome browser Version 77.0.3865.90 (Official Build) (64-bit)?
 {: #ibp-v2-troubleshooting-chrome-v77}
@@ -293,38 +293,38 @@ The console has been working successfully, but after I upgraded my Mac OS to Cat
 
 There are three ways to resolve this problem:
 {: tsResolve}
-1.  Use a different [supported browser](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-getting-started#deploy-ocp-browsers) with Catalina.
+1. Use a different [supported browser](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-getting-started#deploy-ocp-browsers) with Catalina.
 2. Use your own [TLS certificates when deploying on OpenShift Contain Platform](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp#console-deploy-ocp-use-your-own-tls-certificates-optional) or [TLS certificates when deploying on Kubernetes](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#deploy-k8-tls).
 3. Run the following commands to generate a new key and certificate pair for the console that will fix the problem.
-      - Run the following command to get the pod that corresponds to the console:
+    - Run the following command to get the pod that corresponds to the console:
 
-        ```
-        kubectl get po
-        ```
-        {: codeblock}
+    ```
+    kubectl get po
+    ```
+    {: codeblock}
 
-      - Exec into the pod by running the command:
+    - Exec into the pod by running the command:
 
-        ```
-        kubectl get po <pod-name> -c optools bash
-        ```
-        {: codeblock}
+    ```
+    kubectl get po <pod-name> -c optools bash
+    ```
+    {: codeblock}
 
-      - Delete the console key and certificate by running the command:
-        
-        ```
-        rm -f /certs/tls.key rm -f /certs/tls.crt
-        ```
-        {: codeblock}
+    - Delete the console key and certificate by running the command:
 
-      - Delete the console pod which causes it to restart by running the command:
+    ```
+    rm -f /certs/tls.key rm -f /certs/tls.crt
+    ```
+    {: codeblock}
 
-        ```
-        kubectl delete po <pod-name>
-        ```
-        {: codeblock}
+    - Delete the console pod which causes it to restart by running the command:
 
-   When the pod restart completes, you should now be able to log in to your console URL from a Chrome Browser.
+    ```
+    kubectl delete po <pod-name>
+    ```
+    {: codeblock}
+
+    When the pod restart completes, you should now be able to log in to your console URL from a Chrome Browser.
 
 ## Why is my channel creation failing or I am unable to add a new organization to my ordering service with the error "Unable to get system channel"?
 {: #ibp-v2-troubleshooting-accept-tls}
@@ -375,16 +375,16 @@ This condition can occur on peer and ordering nodes that were *imported* to the 
 {: tsResolve}
 **If you imported the node:**  
 You can resolve this problem by performing the following steps:
- 1. Click the node tile to open it.
- 2. Click the **Settings** icon.
- 3. Click **Associate identity**, view and make note of the identity that is associated with this node. Click **Cancel** to close this panel.
- 4. Click **Export** to generate a `JSON` file for the node.
- 5. Edit the generated `JSON` file and enter the `operations_url` for the node. The value of the `operations_url` depends on how it was configured as well as various network settings. This value needs to be provided by the network administrator who deployed the node.
- 6. Click **Delete**. This step removes the imported node from the console, but does not delete the actual node.
- 7. From the **Nodes** tab, click **Add Peer** or **Add ordering service** followed by **Import an existing peer** or **Import an existing Ordering service**.
- 8. Click **Upload JSON** and browse to the JSON file you just edited. Click **Next**.
- 9. Associate the same identity you noted in step three.
- 10. Click **Add peer** or **Add ordering service**.
+1. Click the node tile to open it.
+2. Click the **Settings** icon.
+3. Click **Associate identity**, view and make note of the identity that is associated with this node. Click **Cancel** to close this panel.
+4. Click **Export** to generate a `JSON` file for the node.
+5. Edit the generated `JSON` file and enter the `operations_url` for the node. The value of the `operations_url` depends on how it was configured as well as various network settings. This value needs to be provided by the network administrator who deployed the node.
+6. Click **Delete**. This step removes the imported node from the console, but does not delete the actual node.
+7. From the **Nodes** tab, click **Add Peer** or **Add ordering service** followed by **Import an existing peer** or **Import an existing Ordering service**.
+8. Click **Upload JSON** and browse to the JSON file you just edited. Click **Next**.
+9. Associate the same identity you noted in step three.
+10. Click **Add peer** or **Add ordering service**.
 The health checker can now run against the node and report the status of the node.
 
 
@@ -428,16 +428,16 @@ In some cases, if you simply wait several minutes and then refresh the **Smart c
 1. From the console, open the peer tile and click the **Settings** icon.
 2. Click **Edit configuration JSON (Advanced)**.
 3. In the **Configuration updates** box paste the following text and click **Update peer**.
-  ```
-  {
-   "chaincode":{
-      "startuptimeout":"300s",
-      "installTimeout":"600s",
-      "executetimeout":"30s"
+    ```
+    {
+    "chaincode":{
+        "startuptimeout":"300s",
+        "installTimeout":"600s",
+        "executetimeout":"30s"
     }
-  }
-  ```
-  {: codeblock}
+    }
+    ```
+    {: codeblock}
 
 The peer restarts and then you can retry the smart contract installation. Because the original installation failed you need to specify a new smart contract name and version. 
 
@@ -450,7 +450,7 @@ Instantiating a Node.js smart contract fails with the timeout error:
 ```
 [endorser] SimulateProposal -> ERRO 0ba [channel2][37876c5f] failed to invoke chaincode name:"lscc" , error: timeout expired while starting chaincode myassetc:0.0.1 for transaction
 github.com/hyperledger/fabric/core/chaincode.(*RuntimeLauncher).Launch
-	/go/src/github.com/hyperledger/fabric/core/chaincode/runtime_launcher.go:75
+  /go/src/github.com/hyperledger/fabric/core/chaincode/runtime_launcher.go:75
 ```
 {: codeblock}
 
@@ -509,13 +509,13 @@ One of the features of {{site.data.keyword.blockchainfull_notm}} Platform is tha
 
 - Whenever you create a new organization MSP definition, you generate keys for an identity that is allowed to administer the organization. Therefore, during that process you must click the **Generate** and then **Export** buttons to store the generated identity in your wallet and then save it to your file system as a JSON file.
 - To resolve this problem in your browser, you need to import those identities and associate them with the corresponding node:
-  - In the browser where you are experiencing the problem, click the **Wallet** tab followed by **Add identity** to import the JSON file into your wallet.
-  - Click **Upload JSON** and browse to the JSON file you exported using the **Add files** button.
-  - Click **Submit**.
-  - Now open the peer or ordering service node that this identity was originally associated to, and click on the **Settings** icon.
-  - Click the **Associate identity** button.
-  - Select the identity you just imported to your console wallet from the drop-down list.
-  - Click **Associate**.
+    - In the browser where you are experiencing the problem, click the **Wallet** tab followed by **Add identity** to import the JSON file into your wallet.
+    - Click **Upload JSON** and browse to the JSON file you exported using the **Add files** button.
+    - Click **Submit**.
+    - Now open the peer or ordering service node that this identity was originally associated to, and click on the **Settings** icon.
+    - Click the **Associate identity** button.
+    - Select the identity you just imported to your console wallet from the drop-down list.
+    - Click **Associate**.
 - Repeat this process for each identity that was in the wallet of the original browser.
 {: tsResolve}
 
@@ -567,6 +567,7 @@ If your session has become inactive, you can try simply refreshing your browser.
 
 As a best practice, you should have already stored your certificates and identities on your file system. If you happen to be using an incognito window, all the certificates are deleted from the browser local storage when you close the browser. After you log in again you will need to re-import your identities and certificates.
 {: note}
+
 
 
 ## Why am I getting an error “all SubConns are in TransientFailure” on the console?
@@ -642,10 +643,10 @@ Failed to initialize local MSP: admin 0 is invalid [The identity does not contai
 {: codeblock}
 
 - This error can occur under the following conditions:
-  - When you created the peer or ordering service organization MSP definition, you specified an enroll ID and secret that corresponds to an identity of type `peer` and not `client` or `admin`. It must be of type `client` or `admin`.
-  - When you created the peer or ordering service organization MSP definition, you specified an enroll ID and secret that does not match the enroll ID or secret of the corresponding organization admin identity.
-  - When you created the peer or ordering service, you specified the enroll ID and secret of an identity that is not type 'peer' or 'orderer'.
-  - When you created the peer or ordering service, you associated an identity that does not have the `admin` role.
+    - When you created the peer or ordering service organization MSP definition, you specified an enroll ID and secret that corresponds to an identity of type `peer` and not `client` or `admin`. It must be of type `client` or `admin`.
+    - When you created the peer or ordering service organization MSP definition, you specified an enroll ID and secret that does not match the enroll ID or secret of the corresponding organization admin identity.
+    - When you created the peer or ordering service, you specified the enroll ID and secret of an identity that is not type 'peer' or 'orderer'.
+    - When you created the peer or ordering service, you associated an identity that does not have the `admin` role.
 
 {: tsResolve}
 - Open your peer or ordering service CA node and view the registered identities listed in the **Registered Users** table.
@@ -714,7 +715,8 @@ After upgrading from {{site.data.keyword.blockchainfull_notm}} Platform v2.1.2 t
 
 To resolve this problem, you need to restart the Operator pod in your cluster.
 {: tsResolve}
-  - Run the following command to get the name of the pod that corresponds to the operator:
+
+- Run the following command to get the name of the pod that corresponds to the operator:
 
     ```
     kubectl get po | grep ibp-operator
@@ -723,16 +725,17 @@ To resolve this problem, you need to restart the Operator pod in your cluster.
 
     The output would look similar to:
 
-     ```
-     ibp-operator-5794799cff-pbm2h   1/1     Running   0          21d
-     ```
-     {: codeblock}
+    ```
+    ibp-operator-5794799cff-pbm2h   1/1     Running   0          21d
+    ```
+    {: codeblock}
 
-  - In the following command, replace `<OPERATOR-POD>` with the name of the operator pod from the previous command, for example `ibp-operator-5794799cff-pbm2h`.
+- In the following command, replace `<OPERATOR-POD>` with the name of the operator pod from the previous command, for example `ibp-operator-5794799cff-pbm2h`.
     ```
     kubectl delete po <CONSOLE-POD>
     ```
     {: codeblock}
+
 After the operator pod restarts, the CA node is successfully upgraded.
 
 ## Why are my transactions returning an endorsement policy error: signature set did not satisfy policy?
