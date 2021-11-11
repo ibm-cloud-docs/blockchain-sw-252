@@ -19,15 +19,15 @@ subcollection: blockchain-sw-252
 # Upgrading and deleting deployed nodes
 {: #ibp-console-govern-components}
 
-<div>
-    <p>
-        <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
-    <a href="/docs/blockchain-sw?topic=blockchain-sw-ibp-console-govern-components">2.1.2</a>,
-    <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-govern-components">2.1.3</a>,
-    <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-ibp-console-govern-components">2.5</a>,
-    <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-ibp-console-govern-components">2.5.1</a>, 2.52
-    </p>
-</div>
+
+<p>
+<strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
+<a href="/docs/blockchain-sw?topic=blockchain-sw-ibp-console-govern-components">2.1.2</a>,
+<a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-govern-components">2.1.3</a>,
+<a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-ibp-console-govern-components">2.5</a>,
+<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-ibp-console-govern-components">2.5.1</a>, 2.52
+</p>
+
 
 After creating CAs, peers, and ordering nodes, you need to monitor the resources used by the nodes and potentially reallocate resources.
 {: shortdesc}

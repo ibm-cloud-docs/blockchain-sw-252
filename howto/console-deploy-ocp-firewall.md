@@ -18,15 +18,15 @@ subcollection: blockchain-sw-252
 # Deploy {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 on-prem manually
 {: #deploy-ocp-firewall}
 
-<div>
-    <p>
-        <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
-    <a href="/docs/blockchain-sw?topic=blockchain-sw-deploy-ocp-firewall">2.1.2</a>,
-    <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-ocp-firewall">2.1.3</a>,
-    <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-deploy-ocp-firewall">2.5</a>,
-    <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-deploy-ocp-firewall">2.5.1</a>, 2.52
-    </p>
-</div>
+
+<p>
+<strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
+<a href="/docs/blockchain-sw?topic=blockchain-sw-deploy-ocp-firewall">2.1.2</a>,
+<a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-ocp-firewall">2.1.3</a>,
+<a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-deploy-ocp-firewall">2.5</a>,
+<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-deploy-ocp-firewall">2.5.1</a>, 2.52
+</p>
+
 
 
 You can use these instructions to deploy {{site.data.keyword.blockchainfull}} Platform 2.5.2 behind a firewall without internet connectivity. If you are deploying the platform on a cluster with access to the external internet, use the main instructions for [Deploy {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp).

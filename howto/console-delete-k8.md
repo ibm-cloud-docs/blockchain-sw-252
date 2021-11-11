@@ -18,15 +18,15 @@ subcollection: blockchain-sw-252
 # Removing your deployment
 {: #Removing-k8}
 
-<div>
-    <p>
-        <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
-    <a href="/docs/blockchain-sw?topic=blockchain-sw-Removing-k8">2.1.2</a>,
-    <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-Removing-k8">2.1.3</a>,
-    <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-Removing-k8">2.5</a>,
-    <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-Removing-k8">2.5.1</a>, 2.52
-    </p>
-</div>
+
+<p>
+<strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
+<a href="/docs/blockchain-sw?topic=blockchain-sw-Removing-k8">2.1.2</a>,
+<a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-Removing-k8">2.1.3</a>,
+<a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-Removing-k8">2.5</a>,
+<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-Removing-k8">2.5.1</a>, 2.52
+</p>
+
 
 The {{site.data.keyword.blockchainfull}} Platform operator automatically restarts your blockchain nodes or your console if they stop or crash. As a result, you cannot manually remove your blockchain components by manually deleting their pods. Use the following steps to remove the {{site.data.keyword.blockchainfull_notm}} Platform from your cluster. You must follow these steps for each Kubernetes namespace that you create.
 

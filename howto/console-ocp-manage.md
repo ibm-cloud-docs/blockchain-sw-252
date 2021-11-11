@@ -19,15 +19,15 @@ subcollection: blockchain-sw-252
 {: #console-icp-manage}
 
 
-<div>
-    <p>
-        <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
-    <a href="/docs/blockchain-sw?topic=blockchain-sw-console-icp-manage">2.1.2</a>,
-    <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-console-icp-manage">2.1.3</a>,
-    <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-console-icp-manage">2.5</a>,
-    <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-console-icp-manage">2.5.1</a>, 2.52
-    </p>
-</div>
+
+<p>
+<strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
+<a href="/docs/blockchain-sw?topic=blockchain-sw-console-icp-manage">2.1.2</a>,
+<a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-console-icp-manage">2.1.3</a>,
+<a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-console-icp-manage">2.5</a>,
+<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-console-icp-manage">2.5.1</a>, 2.52
+</p>
+
 
 After you install the console on your cluster, you can use the console to add or remove console users and access APIs that allow you to operate your network and govern your console. You can also access and customize the logs of your console.
 {: shortdesc}

@@ -19,15 +19,15 @@ subcollection: blockchain-sw-252
 # Glossary
 {: #glossary}
 
-<div>
-    <p>
-        <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
-    <a href="/docs/blockchain-sw?topic=blockchain-sw-glossary">2.1.2</a>,
-    <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-glossary">2.1.3</a>,
-    <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-glossary">2.5</a>,
-    <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-glossary">2.5.1</a>, 2.52
-    </p>
-</div>
+
+<p>
+<strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
+<a href="/docs/blockchain-sw?topic=blockchain-sw-glossary">2.1.2</a>,
+<a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-glossary">2.1.3</a>,
+<a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-glossary">2.5</a>,
+<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-glossary">2.5.1</a>, 2.52
+</p>
+
 
 This topic defines {{site.data.keyword.blockchainfull}} Platform-specific terms that appear in this documentation. For a deeper understanding of terms, and for a glossary of terms that relate to Hyperledger Fabric concepts, refer to the [Hyperledger Fabric glossary](https://hyperledger-fabric.readthedocs.io/en/release-2.2/glossary.html){: external}.
 {: shortdesc}

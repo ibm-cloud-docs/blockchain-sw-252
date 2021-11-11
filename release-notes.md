@@ -19,15 +19,15 @@ subcollection: blockchain-sw-252
 # Release notes
 {: #release-notes-saas-20}
 
-<div>
-    <p>
-        <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
-    <a href="/docs/blockchain-sw?topic=blockchain-sw-release-notes-saas-20">2.1.2</a>,
-    <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-release-notes-saas-20">2.1.3</a>,
-    <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-release-notes-saas-20">2.5</a>,
-    <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-release-notes-saas-20">2.5.1</a>, 2.52
-    </p>
-</div>
+
+<p>
+<strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
+<a href="/docs/blockchain-sw?topic=blockchain-sw-release-notes-saas-20">2.1.2</a>,
+<a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-release-notes-saas-20">2.1.3</a>,
+<a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-release-notes-saas-20">2.5</a>,
+<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-release-notes-saas-20">2.5.1</a>, 2.52
+</p>
+
 
 Use these release notes that are grouped by date to learn about the latest changes to {{site.data.keyword.blockchainfull}} Platform for {{site.data.keyword.cloud_notm}} that built on Hyperledger Fabric v1.4.12 and v2.2.4.
 {: shortdesc}
