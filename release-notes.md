@@ -75,7 +75,7 @@ Export certificates in .pem format for easy management and maintenance in {{site
 ## 14 Jul 2021
 {: #14-07-2021}
 
-**Certificate Authority (CA) patch 1.5.0-1, Peer and ordering node patch 1.4.12-2, 2.2.4-3**
+**Certificate Authority (CA) patch 1.5.0-1, Peer and ordering node patch 1.4.12-2, 2.2.4-2**
 
 Miscellaneous bug fixes and security patches.
 
