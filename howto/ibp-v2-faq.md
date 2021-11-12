@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-11"
+lastupdated: "2021-11-12"
 
 keywords: FAQs, can I, upgrade, what version, peer ledger database, supported languages, why do I, regions, multicloud
 
@@ -26,9 +26,8 @@ content-type: faq
 <a href="/docs/blockchain-sw?topic=blockchain-sw-ibp-v2-faq">2.1.2</a>,
 <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-v2-faq">2.1.3</a>,
 <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-ibp-v2-faq">2.5</a>,
-<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-ibp-v2-faq">2.5.1</a>, 2.52
+<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-ibp-v2-faq">2.5.1</a>, 2.5.2
 </p>
-
 
 **Hyperledger Fabric**
 - [What is the value of using {{site.data.keyword.blockchainfull_notm}} Platform over native Hyperledger Fabric?](#ibp-v2-faq-v2-IBP-Overview-1-7)

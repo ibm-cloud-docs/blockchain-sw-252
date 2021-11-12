@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-11-11"
+lastupdated: "2021-11-12"
 
 keywords: IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -24,9 +24,8 @@ subcollection: blockchain-sw-252
 <a href="/docs/blockchain-sw?topic=blockchain-sw-deploy-k8">2.1.2</a>,
 <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-k8">2.1.3</a>,
 <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-deploy-k8">2.5</a>,
-<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-deploy-k8">2.5.1</a>, 2.52
+<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-deploy-k8">2.5.1</a>, 2.5.2
 </p>
-
 
 
 You can use the following instructions to deploy the {{site.data.keyword.blockchainfull}} Platform 2.5.2 on any x86_64 Kubernetes cluster running at v1.19 - v1.21 or on s390x on OpenShift Container Platform running LinuxONE. The {{site.data.keyword.blockchainfull_notm}} Platform uses a [Kubernetes Operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/){: external} to install the {{site.data.keyword.blockchainfull_notm}} Platform console on your cluster and manage the deployment and your blockchain nodes. When the {{site.data.keyword.blockchainfull_notm}} Platform console is running on your cluster, you can use the console to create blockchain nodes and operate a multicloud blockchain network.
@@ -335,7 +334,7 @@ spec:
         fsGroup: 2000
       containers:
         - name: "ibp-webhook"
-          image: "cp.icr.io/cp/ibp-crdwebhook:2.5.2-20211026-amd64"
+          image: "cp.icr.io/cp/ibp-crdwebhook:2.5.2-20211116-amd64"
           imagePullPolicy: Always
           securityContext:
             privileged: false
@@ -1104,7 +1103,7 @@ spec:
         - name: docker-key-secret
       containers:
         - name: ibp-operator
-          image: cp.icr.io/cp/ibp-operator:2.5.2-20211026-amd64
+          image: cp.icr.io/cp/ibp-operator:2.5.2-20211116-amd64
           command:
             - ibp-operator
           imagePullPolicy: Always

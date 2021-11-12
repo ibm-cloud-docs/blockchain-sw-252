@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-11-11"
+lastupdated: "2021-11-12"
 
 keywords: site map
 subcollection: blockchain-sw-252
@@ -1413,7 +1413,9 @@ subcollection: blockchain-sw-252
 
 [Release notes](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20)
 
-* [26 Oct 2021](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#05-26-2021)
+* [16 Nov 2021](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#16-11-2021)
+
+* [26 Oct 2021](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#26-10-2021)
 
 * [05 Oct 2021](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#05-10-2021)
 
