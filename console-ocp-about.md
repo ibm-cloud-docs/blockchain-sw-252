@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-12"
+lastupdated: "2021-11-15"
 
 keywords: IBM Blockchain Platform, system requirements, Kubernetes, behind a firewall, azure, multicloud
 
@@ -108,7 +108,7 @@ The {{site.data.keyword.blockchainfull_notm}} Platform includes the following ke
 **OPERATE --- Total control of your deployments**
 - **Host or join a network**. Deploy peers that are hosted in your cluster to multiple channels on multiple clouds, or invite other organizations to join your consortium or channels while the organizations manage their nodes independently across infrastructures.
 - **Maintain complete control of your identities**. Store and manage the keys that are used to administer your nodes. Optionally, use a [Hardware Security Module (HSM)](#x6704988){: term} to generate and store the private key of your nodes.
-- **Run Anywhere**. Thanks to the **unified codebase** of the {{site.data.keyword.blockchainfull_notm}} Platform console, it is possible to run your components on any Kubernetes v1.19 - v1.21 container platform on x86_64 or s390x.
+- **Run Anywhere**. Thanks to the **unified codebase** of the {{site.data.keyword.blockchainfull_notm}} Platform console, it is possible to run your components on any Kubernetes v1.19 - v1.22 container platform on x86_64 or s390x.
 - **Unified operation**. The {{site.data.keyword.blockchainfull_notm}} Platform console allows you to deploy and manage all of your organizations and nodes in **one console**. You can also add or remove members from a blockchain consortium, create and join channels, and deploy smart contracts from your console.
 - **Dynamic signature collection** that allows better control over collaborative governance over channel configurations.
 - **Elimination of Docker-in-Docker for smart contracts** allows smart contract pods to be run more securely, without peers needing privileged access.
@@ -136,7 +136,7 @@ The {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 can be deployed wit
 | OpenShift Container Platform | 4.6, 4.7, 4.8 |  x86_64 |  4.6, 4.7, 4.8 |
 | OpenShift Container Platform on {{site.data.keyword.cloud_notm}} |  4.6, 4.7, 4.8 | x86_64 |  4.6, 4.7, 4.8 |
 | OpenShift Container Platform on LinuxONE |  4.6, 4.7, 4.8 | s390x | 4.6, 4.7, 4.8 |
-| Kubernetes ***   | v1.19 - v1.21 | x86_64 | v1.19 - v1.21 |
+| Kubernetes ***   | v1.19 - v1.22 | x86_64 | v1.19 - v1.22 |
 {: caption="Table 1. Supported platforms" caption-side="bottom"}
 
 *** If you want to use {{site.data.keyword.IBM_notm}} Kubernetes Service, we recommend that you check out the [{{site.data.keyword.blockchainfull_notm}} Platform for IBM Cloud](/docs/blockchain?topic=blockchain-ibp-v2-deploy-iks){: external} offering unless you specifically require this offering. See [Is IBM Blockchain Platform 2.5.2 suitable for you](/docs/blockchain-sw-252?topic=blockchain-sw-252-get-started-console-ocp#get-started-console-ocp-suitable).    
