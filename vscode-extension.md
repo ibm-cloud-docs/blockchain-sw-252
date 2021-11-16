@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-12"
+lastupdated: "2021-11-16"
 
 
 keywords: vs code extension, Visual Studio Code extension, smart contract, development tools, multicloud
@@ -19,7 +19,6 @@ subcollection: blockchain-sw-252
 
 # Developing smart contracts with {{site.data.keyword.blockchainfull_notm}} Platform Developer Tools
 {: #develop-vscode}
-
 
 <p>
 <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version

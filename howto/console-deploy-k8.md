@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-16"
 
 keywords: IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -17,7 +17,6 @@ subcollection: blockchain-sw-252
 
 # Deploying {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2
 {: #deploy-k8}
-
 
 <p>
 <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version

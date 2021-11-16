@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-12"
+lastupdated: "2021-11-16"
 
 keywords: getting started tutorials, create a CA, enroll, register, create an MSP, wallet, create a peer, create ordering service, Raft, ordering service, blockchain network, multicloud
 
@@ -18,7 +18,6 @@ subcollection: blockchain-sw-252
 
 # Build a network
 {: #ibp-console-build-network}
-
 
 <p>
 <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version

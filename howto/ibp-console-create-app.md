@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-12"
+lastupdated: "2021-11-16"
 
 keywords: client application, Commercial Paper, SDK, wallet, generate a certificate, generate a private key, fabric gateway, APIs, smart contract
 
@@ -18,7 +18,6 @@ subcollection: blockchain-sw-252
 
 # Creating applications
 {: #ibp-console-app}
-
 
 <p>
 <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version

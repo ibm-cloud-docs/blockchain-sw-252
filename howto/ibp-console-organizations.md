@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-12"
+lastupdated: "2021-11-16"
 
 keywords: organizations, MSPs, create an MSP, MSP JSON file, consortium, system channel, remove an organization, multicloud
 
@@ -18,7 +18,6 @@ subcollection: blockchain-sw-252
 
 # Managing organizations
 {: #ibp-console-organizations}
-
 
 <p>
 <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version

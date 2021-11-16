@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-12"
+lastupdated: "2021-11-16"
 
 keywords: IBM Blockchain Platform, administrate, add user, remove user, password, APIs, authentication, view logs
 
@@ -17,7 +17,6 @@ subcollection: blockchain-sw-252
 
 # Administering your console
 {: #console-icp-manage}
-
 
 
 <p>

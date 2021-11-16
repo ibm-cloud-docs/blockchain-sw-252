@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-11-11"
+lastupdated: "2021-11-16"
 
 keywords: IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -1104,14 +1104,15 @@ When the operator is running on your namespace, you can apply a custom resource 
 
 Save the custom resource definition below as `ibp-console.yaml` on your local system.
 ```
-apiVersion: ibp.com/v1alpha1
+apiVersion: ibp.com/v1beta1
 kind: IBPConsole
 metadata:
   name: ibpconsole
 spec:
   arch:
   - amd64
-  license: accept
+  license:
+    accept: true
   serviceAccountName: default
   email: "<EMAIL>"
   password: "<PASSWORD>"
@@ -1127,7 +1128,8 @@ spec:
     couchdbTag: 2.3.1-20210713
     deployerImage: ibp-deployer
     deployerTag: 2.5.2-20210713
-  imagePullSecret: "docker-key-secret"
+  imagePullSecrets:
+    - docker-key-secret
   networkinfo:
     domain: <DOMAIN>
     consolePort: <CONSOLE_PORT>

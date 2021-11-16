@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-16"
 
 keywords: APIs, build a network, authentication, service credentials, API key, API endpoint, IAM access token, Fabric CA client, import a network, generate certificates
 
@@ -17,7 +17,6 @@ subcollection: blockchain-sw-252
 
 # Using the {{site.data.keyword.blockchainfull_notm}} Platform APIs
 {: #ibp-v2-apis}
-
 
 <p>
 <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version

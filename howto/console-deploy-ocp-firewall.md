@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-16"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, firewall, on-premises, air-gapped, on-prem, multicloud, on-prem
 
@@ -17,7 +17,6 @@ subcollection: blockchain-sw-252
 
 # Deploy {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 on-prem manually
 {: #deploy-ocp-firewall}
-
 
 <p>
 <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version

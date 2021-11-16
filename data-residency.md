@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-12"
+lastupdated: "2021-11-16"
 
 keywords: IBM Blockchain Platform, Data residency, world state, channels, multicloud
 
@@ -18,7 +18,6 @@ subcollection: blockchain-sw-252
 
 # Data residency
 {: #console-icp-about-data-residency}
-
 
 <p>
 <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version

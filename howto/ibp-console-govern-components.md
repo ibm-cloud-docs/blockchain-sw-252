@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-12"
+lastupdated: "2021-11-16"
 
 keywords: network components, Kubernetes, OpenShift, allocate resources, batch timeout, reallocate resources, LevelDB, CouchDB, ordering nodes, ordering, add and remove, governance
 
@@ -18,7 +18,6 @@ subcollection: blockchain-sw-252
 
 # Upgrading and deleting deployed nodes
 {: #ibp-console-govern-components}
-
 
 <p>
 <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version

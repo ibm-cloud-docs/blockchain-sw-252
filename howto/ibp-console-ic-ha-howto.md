@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-12"
+lastupdated: "2021-11-16"
 
 keywords: HA, highly availability, multiregion
 
@@ -18,7 +18,6 @@ subcollection: blockchain-sw-252
 
 # Setting up multiregion High Availability (HA) deployments for peers
 {: #ibp-console-hadr-mr}
-
 
 <p>
 <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version

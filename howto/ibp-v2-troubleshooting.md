@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-12"
+lastupdated: "2021-11-16"
 keywords: troubleshooting, debug, why, what does this mean, how can I, when I
 
 subcollection: blockchain-sw-252
@@ -20,7 +20,6 @@ content-type: troubleshoot
 
 # Troubleshooting
 {: #ibp-v2-troubleshooting}
-
 
 <p>
 <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version

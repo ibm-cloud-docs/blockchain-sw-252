@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-16"
 
 
 keywords: release note, latest changes, Hyperledger Fabric, multicloud
@@ -18,7 +18,6 @@ subcollection: blockchain-sw-252
 
 # Release notes
 {: #release-notes-saas-20}
-
 
 <p>
 <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version

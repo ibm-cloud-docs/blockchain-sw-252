@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-12"
+lastupdated: "2021-11-16"
 
 keywords: high availability, HA, failures, zone failure, region failure, component failure, worker node failure, multicloud
 
@@ -18,7 +18,6 @@ subcollection: blockchain-sw-252
 
 # High availability (HA)
 {: #ibp-console-ha}
-
 
 <p>
 <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version

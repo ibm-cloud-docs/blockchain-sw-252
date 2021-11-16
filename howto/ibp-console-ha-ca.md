@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-12"
+lastupdated: "2021-11-16"
 
 keywords: high availability, CA, PostgreSQL, replica sets
 
@@ -19,7 +19,6 @@ subcollection: blockchain-sw-252
 
 # Building a high availability Certificate Authority (CA)
 {: #ibp-console-build-ha-ca}
-
 
 <p>
 <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version

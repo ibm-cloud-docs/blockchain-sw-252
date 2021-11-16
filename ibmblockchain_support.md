@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-11-12"
+lastupdated: "2021-11-16"
 
 keywords: IBM Blockchain Platform, support case, Hyperledger Fabric Community, Cloud tickets, Rocket Chat, dWAnswers, multicloud
 
@@ -17,7 +17,6 @@ subcollection: blockchain-sw-252
 
 # Getting support
 {: #blockchain-support}
-
 
 <p>
 <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version

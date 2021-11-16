@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-11-12"
+lastupdated: "2021-11-16"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters
 
@@ -18,7 +18,6 @@ subcollection: blockchain-sw-252
 
 # Removing your deployment
 {: #Removing-ocp}
-
 
 <p>
 <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version

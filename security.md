@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-12"
+lastupdated: "2021-11-16"
 
 keywords: security, encryption, storage, tls, iam, roles, keys, multicloud
 
@@ -18,7 +18,6 @@ subcollection: blockchain-sw-252
 
 # Security
 {: #ibp-security}
-
 
 <p>
 <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version

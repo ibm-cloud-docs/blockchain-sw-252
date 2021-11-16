@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-12"
+lastupdated: "2021-11-16"
 
 keywords: network components, Kubernetes, batch timeout, channel update, channels, governance, channel configuration, access control
 
@@ -18,7 +18,6 @@ subcollection: blockchain-sw-252
 
 # Advanced channel deployment and management
 {: #ibp-console-govern}
-
 
 <p>
 <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version

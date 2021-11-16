@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-12"
+lastupdated: "2021-11-16"
 
 keywords: FAQs, can I, upgrade, what version, peer ledger database, supported languages, why do I, regions, multicloud
 
@@ -19,7 +19,6 @@ content-type: faq
 
 # FAQs
 {: #ibp-v2-faq}
-
 
 <p>
 <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
