@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-12"
+lastupdated: "2021-11-16"
 
 keywords: pricing model, CPU, vCPU, virtual core, cost, scalability, estimation, optimize your cost
 
@@ -18,7 +18,6 @@ subcollection: blockchain-sw-252
 
 # Pricing
 {: #ibp-sw-pricing}
-
 
 <p>
 <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-12"
+lastupdated: "2021-11-16"
 
 keywords: catalina, chrome, external CA, TLS, orderer, error, multicloud
 
@@ -20,7 +20,6 @@ subcollection: blockchain-sw-252
 
 This page describes known issues that you might encounter when you use {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2.
 {: shortdesc}
-
 
 <p>
 <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version

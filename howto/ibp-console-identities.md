@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-12"
+lastupdated: "2021-11-16"
 
 keywords: create identities, manage identities, Certificate Authorities, register, enroll, TLS CA, wallet, certificate expiration, delete user
 
@@ -18,7 +18,6 @@ subcollection: blockchain-sw-252
 
 # Creating and managing identities
 {: #ibp-console-identities}
-
 
 <p>
 <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version

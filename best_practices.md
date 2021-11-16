@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-12"
+lastupdated: "2021-11-16"
 
 keywords: best practices, develop applications, connectivity, availability, mutual TLS, CouchDB
 
@@ -20,7 +20,6 @@ subcollection: blockchain-sw-252
 {: #best-practices-app}
 {: help}
 {: support}
-
 
 <p>
 <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version

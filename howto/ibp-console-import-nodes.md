@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-16"
 
 keywords: import nodes, another console, import a CA, import a peer, import admin identities, import an ordering service node
 
@@ -18,7 +18,6 @@ subcollection: blockchain-sw-252
 
 # Importing nodes, MSPs, and identities
 {: #ibp-console-import-nodes}
-
 
 <p>
 <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version

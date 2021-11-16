@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2021-11-12"
+lastupdated: "2021-11-16"
 
 keywords: smart contract, private data, private data collection, anchor peer, multicloud
 
@@ -18,7 +18,6 @@ subcollection: blockchain-sw-252
 
 # Deploy a smart contract
 {: #ibp-console-smart-contracts}
-
 
 <p>
 <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
