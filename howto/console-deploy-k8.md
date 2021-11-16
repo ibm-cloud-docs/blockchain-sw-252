@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-10-26"
+lastupdated: "2021-11-15"
 
 keywords: IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -18,21 +18,20 @@ subcollection: blockchain-sw-252
 # Deploying {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2
 {: #deploy-k8}
 
-<div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px;">
-  <p style="line-height: 15px;">
-    <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
-    <a href="/docs/blockchain-sw?topic=blockchain-sw-deploy-k8">2.1.2</a>,
-    <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-k8">2.1.3</a>,
-    <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-deploy-k8">2.5</a>,
-    <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-deploy-k8">2.5.1</a>, 2.52
-    </p>
-</div>
+
+<p>
+<strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
+<a href="/docs/blockchain-sw?topic=blockchain-sw-deploy-k8">2.1.2</a>,
+<a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-k8">2.1.3</a>,
+<a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-deploy-k8">2.5</a>,
+<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-deploy-k8">2.5.1</a>, 2.5.2
+</p>
 
 
-You can use the following instructions to deploy the {{site.data.keyword.blockchainfull}} Platform 2.5.2 on any x86_64 Kubernetes cluster running at v1.19 - v1.21 or on s390x on OpenShift Container Platform running LinuxONE. The {{site.data.keyword.blockchainfull_notm}} Platform uses a [Kubernetes Operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/){: external} to install the {{site.data.keyword.blockchainfull_notm}} Platform console on your cluster and manage the deployment and your blockchain nodes. When the {{site.data.keyword.blockchainfull_notm}} Platform console is running on your cluster, you can use the console to create blockchain nodes and operate a multicloud blockchain network.
+You can use the following instructions to deploy the {{site.data.keyword.blockchainfull}} Platform 2.5.2 on any x86_64 Kubernetes cluster running at v1.19 - v1.22 or on s390x on OpenShift Container Platform running LinuxONE. The {{site.data.keyword.blockchainfull_notm}} Platform uses a [Kubernetes Operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/){: external} to install the {{site.data.keyword.blockchainfull_notm}} Platform console on your cluster and manage the deployment and your blockchain nodes. When the {{site.data.keyword.blockchainfull_notm}} Platform console is running on your cluster, you can use the console to create blockchain nodes and operate a multicloud blockchain network.
 {: shortdesc}
 
-Kubernetes cluster does not download and update the latest version of {site.data.keyword.blockchainfull_notm}} Platform automatically. To get the latest update, you need to create a new cluster and a new service instance.
+Kubernetes cluster does not download and update the latest version of {{site.data.keyword.blockchainfull_notm}} Platform automatically. To get the latest update, you need to create a new cluster and a new service instance.
 {: note} 
 
 ## Resources required
@@ -83,6 +82,7 @@ kubectl patch storageclass
 
 If you prefer not to choose a persistent storage option, the default storage class of your namespace or OpenShift project is used. `Host-local` volume storage is not supported.
 {: note}
+
 
 ### Considerations when choosing your persistent storage
 {: ibp-storage-considerations}
@@ -334,7 +334,7 @@ spec:
         fsGroup: 2000
       containers:
         - name: "ibp-webhook"
-          image: "cp.icr.io/cp/ibp-crdwebhook:2.5.2-20211026-amd64"
+          image: "cp.icr.io/cp/ibp-crdwebhook:2.5.2-20211116-amd64"
           imagePullPolicy: Always
           securityContext:
             privileged: false
@@ -438,10 +438,10 @@ service/ibp-webhook created
 
 1. Extract the webhook TLS certificate from the `ibpinfra` namespace by running the following command:
     ```
-      TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibpinfra -o jsonpath={'.data.cert\.pem'})
+    TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibpinfra -o jsonpath={'.data.cert\.pem'})
     ```
     {: codeblock}
-  
+
 2. When you deploy the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 you need to apply the following four CRDs for the CA, peer, orderer, and console. If you are upgrading to 2.5.2, before you can update the operator, you need to update the CRDs to include a new `v1beta1` section as well as the webhook TLS certificate that you just stored in the `TLS_CERT` environment variable. In either case, run the following four commands to apply or update each CRD.
 
 Run this command to update the CA CRD:   
@@ -734,6 +734,7 @@ Run the following command to create the secret and add it to your namespace or p
 kubectl create secret docker-registry docker-key-secret --docker-server=cp.icr.io --docker-username=cp --docker-password=<KEY> --docker-email=<EMAIL> -n <NAMESPACE>
 ```
 {: codeblock}
+
 - Replace `<KEY>` with your entitlement key.
 - Replace `<EMAIL>` with your email address.
 - Replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace or OpenShift project.
@@ -1102,7 +1103,7 @@ spec:
         - name: docker-key-secret
       containers:
         - name: ibp-operator
-          image: cp.icr.io/cp/ibp-operator:2.5.2-20211026-amd64
+          image: cp.icr.io/cp/ibp-operator:2.5.2-20211116-amd64
           command:
             - ibp-operator
           imagePullPolicy: Always
@@ -1295,14 +1296,14 @@ spec:
 - You can use the `resources:` section to allocate more resources to your console. The values in the example file are the default values allocated to each container. Allocating more resources to your console allows you to operate a larger number of nodes or channels. You can allocate more resources to a currently running console by editing the resource file and applying it to your cluster. The console will restart and return to its previous state, allowing you to operate all of your exiting nodes and channels.
 
 - If you plan to use the console with a multizone Kubernetes cluster, you need to add the zones to the `clusterdata.zones:` section of the file. When zones are provided to the deployment, you can select the zone that a node is deployed to using the console or the APIs. As an example, if you are deploying to a cluster across the zones of dal10, dal12, and dal13, you would add the zones to the file by using the format below.
-  ```yaml
-  clusterdata:
-    zones:
-      - dal10
-      - dal12
-      - dal13
-  ```
-  {: codeblock}
+    ```yaml
+    clusterdata:
+      zones:
+        - dal10
+        - dal12
+        - dal13
+    ```
+    {: codeblock}
 
 - Accept the [IBM Blockchain Platform license](https://www-03.ibm.com/software/sla/sladb.nsf/lilookup/6CE1C5684689691C852586000043982B?OpenDocument){: external} by replacing the `license` parameter `accept: false` with the text `accept: true`.
 
@@ -1616,3 +1617,5 @@ containers:
 Confirm that `- --ingress-class=nginx` and `- --enable-ssl-passthrough=true`.
 
 This result indicates that you have successfully enabled SSL passthrough and that the associated ingress class is named `nginx`, which is what the software version of the platform requires in order for it to be able to be installed on a {{site.data.keyword.containerlong_notm}} cluster. Verify that all pods are running before you attempt to [install](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#deploy-k8-login) the {{site.data.keyword.blockchainfull_notm}} Platform.
+
+

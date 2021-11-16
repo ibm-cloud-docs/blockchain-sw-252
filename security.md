@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-05"
+lastupdated: "2021-11-12"
 
 keywords: security, encryption, storage, tls, iam, roles, keys, multicloud
 
@@ -19,15 +19,14 @@ subcollection: blockchain-sw-252
 # Security
 {: #ibp-security}
 
-<div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px;">
-  <p style="line-height: 15px;">
-    <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
-    <a href="/docs/blockchain-sw?topic=blockchain-sw-ibp-security">2.1.2</a>,
-    <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-security">2.1.3</a>,
-    <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-ibp-security">2.5</a>,
-    <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-ibp-security">2.5.1</a>, 2.52
-    </p>
-</div>
+
+<p>
+<strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
+<a href="/docs/blockchain-sw?topic=blockchain-sw-ibp-security">2.1.2</a>,
+<a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-security">2.1.3</a>,
+<a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-ibp-security">2.5</a>,
+<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-ibp-security">2.5.1</a>, 2.5.2
+</p>
 
 {{site.data.keyword.blockchainfull}} Platform provides a scalable, highly reliable platform that helps customers deploy applications and data quickly and securely. This document provides information about securing your {{site.data.keyword.blockchainfull_notm}} Platform service instance, where the blockchain console runs, and best practices for securing the  Kubernetes cluster where the blockchain nodes are deployed.
 {: shortdesc}
@@ -230,10 +229,10 @@ In the environment section under `spec.containers`, add the following:
 ```
 - name: IBPOPERATOR_CONSOLE_APPLYNETWORKPOLICY
    value:"true"
-   ```
-   {: codeblock}
+    ```
+    {: codeblock}
 
-   When the above option is enabled, the operator will install 2 network policies during the console installation. These network policies are meant to give basic defensive security mechanism, and opens only the ports that the offering uses. This by no means is a policy that can replace a firewall. The policies applied provide ingress security, as blockchain network may require to call npm, gradle, maven servers to get chaincode modules as well as to communicate with the orderers/peers/applications running outside the cluster on internet we do not provide egress policies.
+    When the above option is enabled, the operator will install 2 network policies during the console installation. These network policies are meant to give basic defensive security mechanism, and opens only the ports that the offering uses. This by no means is a policy that can replace a firewall. The policies applied provide ingress security, as blockchain network may require to call npm, gradle, maven servers to get chaincode modules as well as to communicate with the orderers/peers/applications running outside the cluster on internet we do not provide egress policies.
 
 Following are the two policies that we apply:
 1. Deny-all-ingress.

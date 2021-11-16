@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-04"
+lastupdated: "2021-11-12"
 
 keywords: pricing model, CPU, vCPU, virtual core, cost, scalability, estimation, optimize your cost
 
@@ -19,15 +19,14 @@ subcollection: blockchain-sw-252
 # Pricing
 {: #ibp-sw-pricing}
 
-<div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px;">
-  <p style="line-height: 15px;">
-    <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
-    <a href="/docs/blockchain-sw?topic=blockchain-sw-ibp-sw-pricing">2.1.2</a>,
-    <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-sw-pricing">2.1.3</a>,
-    <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-ibp-sw-pricing">2.5</a>,
-    <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-ibp-sw-pricing">2.5.1</a>, 2.52
-    </p>
-</div>
+
+<p>
+<strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
+<a href="/docs/blockchain-sw?topic=blockchain-sw-ibp-sw-pricing">2.1.2</a>,
+<a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-sw-pricing">2.1.3</a>,
+<a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-ibp-sw-pricing">2.5</a>,
+<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-ibp-sw-pricing">2.5.1</a>, 2.5.2
+</p>
 
 
 This guide helps you understand the pricing model for {{site.data.keyword.blockchainfull}} Platform 2.5.2, and how much you will pay when you develop and grow your blockchain network of Certificate Authorities, peers, and ordering service components, that are based on Hyperledger Fabric v1.4.12 and v2.2.4.

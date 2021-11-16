@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-11"
+lastupdated: "2021-11-12"
 
 keywords: network components, Kubernetes, OpenShift, allocate resources, batch timeout, reallocate resources, LevelDB, CouchDB, ordering nodes, ordering, add and remove, governance
 
@@ -10,100 +10,7 @@ subcollection: blockchain-sw-252
 
 ---
 
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
-{:android: data-hd-operatingsystem="android"}
-{:api: .ph data-hd-interface='api'}
-{:apikey: data-credential-placeholder='apikey'}
-{:app_key: data-hd-keyref="app_key"}
-{:app_name: data-hd-keyref="app_name"}
-{:app_secret: data-hd-keyref="app_secret"}
-{:app_url: data-hd-keyref="app_url"}
-{:audio: .audio}
-{:authenticated-content: .authenticated-content}
-{:beta: .beta}
-{:c#: .ph data-hd-programlang='c#'}
-{:c#: data-hd-programlang="c#"}
-{:cli: .ph data-hd-interface='cli'}
-{:codeblock: .codeblock}
-{:curl: #curl .ph data-hd-programlang='curl'}
-{:curl: .ph data-hd-programlang='curl'}
-{:deprecated: .deprecated}
-{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
-{:download: .download}
-{:external: .external target="_blank"}
-{:external: target="_blank" .external}
-{:faq: data-hd-content-type='faq'}
-{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
-{:generic: data-hd-operatingsystem="generic"}
-{:generic: data-hd-programlang="generic"}
-{:gif: data-image-type='gif'}
-{:go: .ph data-hd-programlang='go'}
-{:help: data-hd-content-type='help'}
-{:hide-dashboard: .hide-dashboard}
-{:hide-in-docs: .hide-in-docs}
-{:important: .important}
-{:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
-{:java: .ph data-hd-programlang='java'}
-{:java: data-hd-programlang="java"}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:javascript: data-hd-programlang="javascript"}
-{:middle: .ph data-hd-position='middle'}
-{:navgroup: .navgroup}
-{:new_window: target="_blank"}
-{:node: .ph data-hd-programlang='node'}
-{:note: .note}
-{:objectc: .ph data-hd-programlang='Objective C'}
-{:objectc: data-hd-programlang="objectc"}
-{:org_name: data-hd-keyref="org_name"}
-{:php: .ph data-hd-programlang='PHP'}
-{:php: data-hd-programlang="php"}
-{:pre: .pre}
-{:preview: .preview}
-{:python: .ph data-hd-programlang='python'}
-{:python: data-hd-programlang="python"}
-{:right: .ph data-hd-position='right'}
-{:route: data-hd-keyref="route"}
-{:row-headers: .row-headers}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:ruby: data-hd-programlang="ruby"}
-{:runtime: architecture="runtime"}
-{:runtimeIcon: .runtimeIcon}
-{:runtimeIconList: .runtimeIconList}
-{:runtimeLink: .runtimeLink}
-{:runtimeTitle: .runtimeTitle}
-{:screen: .screen}
-{:script: data-hd-video='script'}
-{:service: architecture="service"}
-{:service_instance_name: data-hd-keyref="service_instance_name"}
-{:service_name: data-hd-keyref="service_name"}
-{:shortdesc: .shortdesc}
-{:space_name: data-hd-keyref="space_name"}
-{:step: data-tutorial-type='step'}
-{:step: data-tutorial-type='step'} 
-{:subsection: outputclass="subsection"}
-{:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
-{:swift: .ph data-hd-programlang='swift'}
-{:swift: data-hd-programlang="swift"}
-{:table: .aria-labeledby="caption"}
-{:term: .term}
-{:terraform: .ph data-hd-interface='terraform'}
-{:tip: .tip}
-{:tooling-url: data-tooling-url-placeholder='tooling-url'}
-{:topicgroup: .topicgroup}
-{:troubleshoot: data-hd-content-type='troubleshoot'}
-{:tsCauses: .tsCauses}
-{:tsResolve: .tsResolve}
-{:tsSymptoms: .tsSymptoms}
-{:tutorial: data-hd-content-type='tutorial'}
-{:ui: .ph data-hd-interface='ui'}
-{:unity: .ph data-hd-programlang='unity'}
-{:url: data-credential-placeholder='url'}
-{:user_ID: data-hd-keyref="user_ID"}
-{:vbnet: .ph data-hd-programlang='vb.net'}
-{:video: .video}
+{{site.data.keyword.attribute-definition-list}}
 
 
 
@@ -112,15 +19,14 @@ subcollection: blockchain-sw-252
 # Upgrading and deleting deployed nodes
 {: #ibp-console-govern-components}
 
-<div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px;">
-  <p style="line-height: 15px;">
-    <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
-    <a href="/docs/blockchain-sw?topic=blockchain-sw-ibp-console-govern-components">2.1.2</a>,
-    <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-govern-components">2.1.3</a>,
-    <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-ibp-console-govern-components">2.5</a>,
-    <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-ibp-console-govern-components">2.5.1</a>, 2.52
-    </p>
-</div>
+
+<p>
+<strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
+<a href="/docs/blockchain-sw?topic=blockchain-sw-ibp-console-govern-components">2.1.2</a>,
+<a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-govern-components">2.1.3</a>,
+<a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-ibp-console-govern-components">2.5</a>,
+<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-ibp-console-govern-components">2.5.1</a>, 2.5.2
+</p>
 
 After creating CAs, peers, and ordering nodes, you need to monitor the resources used by the nodes and potentially reallocate resources.
 {: shortdesc}
@@ -139,12 +45,13 @@ In this topic, we'll cover the process for [reallocating resources](#ibp-console
 {: #ibp-console-govern-components-reallocate-resources}
 
 Resizing a node requires the containers to be rebuilt, which can cause a delay in the functioning of the node.
-{:important}
+{: important}
 
 
 
 Tools such as [{{site.data.keyword.mon_full_notm}}](https://www.ibm.com/cloud/cloud-monitoring) can be used to help monitor the usage in your cluster. If you determine that a worker node is running out of resources, you can add a new larger worker node to your cluster and then delete the existing working node.
-{:note}
+{: note}
+
 
 
 While it takes less effort to deploy enough resources to your Kubernetes cluster from the start and therefore be able deploy and expand resources without having to increase the resources in your cluster, the bigger the deployment, the more it will cost. Users need to consider their options carefully and recognize the tradeoffs that they are making regardless of the option that they choose.
@@ -241,24 +148,24 @@ Because Fabric v2.x peers do not have a "shim" (the external dependencies that a
 The `build.gradle` file for the smart contract must be updated:
 
 1. If the smart contract uses the `shadowjar` 2.x plugin, then it should be updated to version 5 by using the following code:
-	```
-	plugins {
-	    id 'com.github.johnrengelman.shadow' version '5.1.0'
-	    id 'java'
-	}
-	```
-	{: codeblock}
+    ```
+    plugins {
+        id 'com.github.johnrengelman.shadow' version '5.1.0'
+        id 'java'
+    }
+    ```
+    {: codeblock}
 
 2. The `repositories` section of the file must contain the `maven URL` for `jitpack`, for example:
-  ```
-	repositories {
-	    ...
-	    maven {
-	        url 'https://jitpack.io'
-	    }
-	}
-	```
-	{: codeblock}
+    ```
+        repositories {
+        ...
+        maven {
+            url 'https://jitpack.io'
+        }
+    }
+    ```
+    {: codeblock}
 
 
 **Init functions**  
@@ -293,6 +200,7 @@ Because smart contracts installed on a 2.x peer are deployed into their own pods
 
 If you are using OpenShift, you have the option to use either the kubectl CLI (which is native to Kubernetes), or the OpenShift cluster (oc) CLI. The commands should be largely the same, except that OpenShift uses "projects" instead of "namespaces". If you are running any cluster type other than OpenShift, you will have to use the kubectl CLI. In this topic, we'll use both CLIs.
 {: tip}
+
 
 
 
@@ -347,12 +255,14 @@ oc delete pod <POD_NAME> -n <PROJECT_NAME>
 
 
 
+
 If you cannot use your console or the APIs to remove your nodes, you can manually remove all of the nodes from your cluster by using the OpenShift CLI. Navigate to your OpenShift Project:
 
 ```
 oc project <PROJECT_NAME>
 ```
 {: codeblock}
+
 
 
 Then run the following commands to delete all of your blockchain nodes:

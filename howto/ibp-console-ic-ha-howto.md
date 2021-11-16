@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-11"
+lastupdated: "2021-11-12"
 
 keywords: HA, highly availability, multiregion
 
@@ -10,100 +10,7 @@ subcollection: blockchain-sw-252
 
 ---
 
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
-{:android: data-hd-operatingsystem="android"}
-{:api: .ph data-hd-interface='api'}
-{:apikey: data-credential-placeholder='apikey'}
-{:app_key: data-hd-keyref="app_key"}
-{:app_name: data-hd-keyref="app_name"}
-{:app_secret: data-hd-keyref="app_secret"}
-{:app_url: data-hd-keyref="app_url"}
-{:audio: .audio}
-{:authenticated-content: .authenticated-content}
-{:beta: .beta}
-{:c#: .ph data-hd-programlang='c#'}
-{:c#: data-hd-programlang="c#"}
-{:cli: .ph data-hd-interface='cli'}
-{:codeblock: .codeblock}
-{:curl: #curl .ph data-hd-programlang='curl'}
-{:curl: .ph data-hd-programlang='curl'}
-{:deprecated: .deprecated}
-{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
-{:download: .download}
-{:external: .external target="_blank"}
-{:external: target="_blank" .external}
-{:faq: data-hd-content-type='faq'}
-{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
-{:generic: data-hd-operatingsystem="generic"}
-{:generic: data-hd-programlang="generic"}
-{:gif: data-image-type='gif'}
-{:go: .ph data-hd-programlang='go'}
-{:help: data-hd-content-type='help'}
-{:hide-dashboard: .hide-dashboard}
-{:hide-in-docs: .hide-in-docs}
-{:important: .important}
-{:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
-{:java: .ph data-hd-programlang='java'}
-{:java: data-hd-programlang="java"}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:javascript: data-hd-programlang="javascript"}
-{:middle: .ph data-hd-position='middle'}
-{:navgroup: .navgroup}
-{:new_window: target="_blank"}
-{:node: .ph data-hd-programlang='node'}
-{:note: .note}
-{:objectc: .ph data-hd-programlang='Objective C'}
-{:objectc: data-hd-programlang="objectc"}
-{:org_name: data-hd-keyref="org_name"}
-{:php: .ph data-hd-programlang='PHP'}
-{:php: data-hd-programlang="php"}
-{:pre: .pre}
-{:preview: .preview}
-{:python: .ph data-hd-programlang='python'}
-{:python: data-hd-programlang="python"}
-{:right: .ph data-hd-position='right'}
-{:route: data-hd-keyref="route"}
-{:row-headers: .row-headers}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:ruby: data-hd-programlang="ruby"}
-{:runtime: architecture="runtime"}
-{:runtimeIcon: .runtimeIcon}
-{:runtimeIconList: .runtimeIconList}
-{:runtimeLink: .runtimeLink}
-{:runtimeTitle: .runtimeTitle}
-{:screen: .screen}
-{:script: data-hd-video='script'}
-{:service: architecture="service"}
-{:service_instance_name: data-hd-keyref="service_instance_name"}
-{:service_name: data-hd-keyref="service_name"}
-{:shortdesc: .shortdesc}
-{:space_name: data-hd-keyref="space_name"}
-{:step: data-tutorial-type='step'}
-{:step: data-tutorial-type='step'} 
-{:subsection: outputclass="subsection"}
-{:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
-{:swift: .ph data-hd-programlang='swift'}
-{:swift: data-hd-programlang="swift"}
-{:table: .aria-labeledby="caption"}
-{:term: .term}
-{:terraform: .ph data-hd-interface='terraform'}
-{:tip: .tip}
-{:tooling-url: data-tooling-url-placeholder='tooling-url'}
-{:topicgroup: .topicgroup}
-{:troubleshoot: data-hd-content-type='troubleshoot'}
-{:tsCauses: .tsCauses}
-{:tsResolve: .tsResolve}
-{:tsSymptoms: .tsSymptoms}
-{:tutorial: data-hd-content-type='tutorial'}
-{:ui: .ph data-hd-interface='ui'}
-{:unity: .ph data-hd-programlang='unity'}
-{:url: data-credential-placeholder='url'}
-{:user_ID: data-hd-keyref="user_ID"}
-{:vbnet: .ph data-hd-programlang='vb.net'}
-{:video: .video}
+{{site.data.keyword.attribute-definition-list}}
 
 
 
@@ -112,15 +19,14 @@ subcollection: blockchain-sw-252
 # Setting up multiregion High Availability (HA) deployments for peers
 {: #ibp-console-hadr-mr}
 
-<div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px;">
-  <p style="line-height: 15px;">
-    <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
-    <a href="/docs/blockchain-sw?topic=blockchain-sw-ibp-console-hadr-mr">2.1.2</a>,
-    <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-hadr-mr">2.1.3</a>,
-    <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-ibp-console-hadr-mr">2.5</a>,
-    <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-ibp-console-hadr-mr">2.5.1</a>, 2.52
-    </p>
-</div>
+
+<p>
+<strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
+<a href="/docs/blockchain-sw?topic=blockchain-sw-ibp-console-hadr-mr">2.1.2</a>,
+<a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-hadr-mr">2.1.3</a>,
+<a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-ibp-console-hadr-mr">2.5</a>,
+<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-ibp-console-hadr-mr">2.5.1</a>, 2.5.2
+</p>
 
 Multiregion HA configuration provides the highest degree of HA coverage that is possible. Deploying peers across multiple geographic regions ensures that if any one region becomes unavailable, the peers in other regions can continue to transact. Note that multiregion HA support for CAs and the ordering service is not currently available.
 
@@ -162,15 +68,15 @@ After the smart contract definition has been proposed, it must be [approved](/do
 {: #ibp-console-hadr-export-meta1}
 
 1. Export the CA definition to a JSON file.
-   - Open the CA in the **Nodes** tab.
-   - Click the download icon to generate the CA JSON file from your browser session.
+    - Open the CA in the **Nodes** tab.
+    - Click the download icon to generate the CA JSON file from your browser session.
 2. Export the peer's organization MSP definition to a JSON file.
-   - Open the MSP definition in the **Organizations** tab.
-   - Click the download icon on the tile.
+    - Open the MSP definition in the **Organizations** tab.
+    - Click the download icon on the tile.
 3. Export the peer's organization admin identity from your wallet.
-   - Navigate to the **Wallet** tab.
-   - Click the peer's organization admin identity and then click **Export identity**.
-   - A JSON file that contains the organization admin certificates is created. Make note of the file name and secure the file, because it is required when you create additional peers in your other clusters.
+    - Navigate to the **Wallet** tab.
+    - Click the peer's organization admin identity and then click **Export identity**.
+    - A JSON file that contains the organization admin certificates is created. Make note of the file name and secure the file, because it is required when you create additional peers in your other clusters.
 
 ### Step three: Import the metadata and identities in to cluster two and three
 {: #ibp-console-hadr-import-meta23}
@@ -178,10 +84,10 @@ After the smart contract definition has been proposed, it must be [approved](/do
 1. In clusters two and three, [import the CA JSON file](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-import-nodes#ibp-console-import-ca) that you exported from cluster one.  
 2. If you will need to use the CA to register other identities, you need to open the imported CA and associate the CA administrator enroll ID and secret that you used when you deployed the CA on cluster one.
 3. Import the peer organization MSP definition JSON file that you exported from cluster one.
-   - In the **Organizations** tab click **Import MSP definition**.
-   - Click **Add file** to upload the JSON file.
-   - Click **I have an administrator identity for the MSP definition** checkbox to allow you to use this MSP definition when you create new peers in other zones.
-   - Click **Import MSP definition**.
+    - In the **Organizations** tab click **Import MSP definition**.
+    - Click **Add file** to upload the JSON file.
+    - Click **I have an administrator identity for the MSP definition** checkbox to allow you to use this MSP definition when you create new peers in other zones.
+    - Click **Import MSP definition**.
 4. Import the organization admin identity JSON file that you exported from cluster one into the console wallet on clusters two and three.
 5. In clusters two and three, [import the ordering service JSON file](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-join-network#ibp-console-join-network-import-remote-orderer) to your console.
 
