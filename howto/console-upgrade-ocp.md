@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-16"
+lastupdated: "2021-11-29"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters
 
@@ -114,29 +114,30 @@ If you are running the platform on LinuxONE, replace `-amd64` with `-s390x`.
 Run this command to update the CA CRD:   
 ```yaml
 cat <<EOF | kubectl apply  -f -
-apiVersion: apiextensions.k8s.io/v1beta1
+apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
+  name: ibpcas.ibp.com
   labels:
     app.kubernetes.io/instance: ibpca
     app.kubernetes.io/managed-by: ibp-operator
     app.kubernetes.io/name: ibp
     helm.sh/chart: ibm-ibp
     release: operator
-  name: ibpcas.ibp.com
 spec:
-  preserveUnknownFields: false
   conversion:
     strategy: Webhook
-    webhookClientConfig:
-      service:
-        namespace: ibpinfra
-        name: ibp-webhook
-        path: /crdconvert
-      caBundle: "${TLS_CERT}"
-  validation:
-    openAPIV3Schema:
-      x-kubernetes-preserve-unknown-fields: true    
+    webhook:
+      clientConfig:
+        caBundle: "${TLS_CERT}"
+        service:
+          name: ibp-webhook
+          namespace: ibpinfra
+          path: /crdconvert
+      conversionReviewVersions:
+      - v1beta1
+      - v1alpha2
+      - v1alpha1
   group: ibp.com
   names:
     kind: IBPCA
@@ -144,25 +145,56 @@ spec:
     plural: ibpcas
     singular: ibpca
   scope: Namespaced
-  subresources:
-    status: {}
-  version: v1beta1
   versions:
   - name: v1beta1
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: true
+    subresources:
+      status: {}
   - name: v1alpha2
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: false
+    subresources:
+      status: {}
   - name: v210
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: false
     storage: false
+    subresources:
+      status: {}
   - name: v212
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: false
     storage: false
+    subresources:
+      status: {}
   - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: false
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: IBPCA
+    listKind: IBPCAList
+    plural: ibpcas
+    singular: ibpca
+  conditions: []
+  storedVersions:
+  - v1beta1
 EOF
 ```
 {: codeblock}
@@ -182,7 +214,7 @@ customresourcedefinition.apiextensions.k8s.io/ibpcas.ibp.com configured
 Run this command to update the peer CRD:
 ```yaml
 cat <<EOF | kubectl apply  -f -
-apiVersion: apiextensions.k8s.io/v1beta1
+apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: ibppeers.ibp.com
@@ -193,18 +225,19 @@ metadata:
     app.kubernetes.io/instance: "ibppeer"
     app.kubernetes.io/managed-by: "ibp-operator"
 spec:
-  preserveUnknownFields: false
   conversion:
     strategy: Webhook
-    webhookClientConfig:
-      service:
-        namespace: ibpinfra
-        name: ibp-webhook
-        path: /crdconvert
-      caBundle: "${TLS_CERT}"
-  validation:
-    openAPIV3Schema:
-      x-kubernetes-preserve-unknown-fields: true    
+    webhook:
+      clientConfig:
+        caBundle: "${TLS_CERT}"
+        service:
+          name: ibp-webhook
+          namespace: ibpinfra
+          path: /crdconvert
+      conversionReviewVersions:
+      - v1beta1
+      - v1alpha2
+      - v1alpha1
   group: ibp.com
   names:
     kind: IBPPeer
@@ -212,19 +245,40 @@ spec:
     plural: ibppeers
     singular: ibppeer
   scope: Namespaced
-  subresources:
-    status: {}
-  version: v1beta1
   versions:
   - name: v1beta1
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: true
+    subresources:
+      status: {}
   - name: v1alpha2
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: false
+    subresources:
+      status: {}
   - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: false
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: IBPPeer
+    listKind: IBPPeerList
+    plural: ibppeers
+    singular: ibppeer
+  conditions: []
+  storedVersions:
+  - v1beta1
 EOF
 ```
 {: codeblock}
@@ -244,7 +298,7 @@ customresourcedefinition.apiextensions.k8s.io/ibppeers.ibp.com configured
 Run this command to update the console CRD:
 ```yaml
 cat <<EOF | kubectl apply  -f -
-apiVersion: apiextensions.k8s.io/v1beta1
+apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: ibpconsoles.ibp.com
@@ -255,18 +309,19 @@ metadata:
     app.kubernetes.io/instance: "ibpconsole"
     app.kubernetes.io/managed-by: "ibp-operator"
 spec:
-  preserveUnknownFields: false
   conversion:
     strategy: Webhook
-    webhookClientConfig:
-      service:
-        namespace: ibpinfra
-        name: ibp-webhook
-        path: /crdconvert
-      caBundle: "${TLS_CERT}"
-  validation:
-    openAPIV3Schema:
-      x-kubernetes-preserve-unknown-fields: true
+    webhook:
+      clientConfig:
+        caBundle: "${TLS_CERT}"
+        service:
+          name: ibp-webhook
+          namespace: ibpinfra
+          path: /crdconvert
+      conversionReviewVersions:
+      - v1beta1
+      - v1alpha2
+      - v1alpha1
   group: ibp.com
   names:
     kind: IBPConsole
@@ -274,19 +329,41 @@ spec:
     plural: ibpconsoles
     singular: ibpconsole
   scope: Namespaced
-  subresources:
-    status: {}
-  version: v1beta1
   versions:
   - name: v1beta1
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: true
+    subresources:
+      status: {}
   - name: v1alpha2
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: false
+    subresources:
+      status: {}
   - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: false
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: IBPConsole
+    listKind: IBPConsoleList
+    plural: ibpconsoles
+    singular: ibpconsole
+  conditions: []
+  storedVersions:
+  - v1beta1
+
 EOF
 ```
 {: codeblock}
@@ -306,7 +383,7 @@ customresourcedefinition.apiextensions.k8s.io/ibpconsoles.ibp.com configured
 Run this command to update the orderer CRD:  
 ```yaml
 cat <<EOF | kubectl apply  -f -
-apiVersion: apiextensions.k8s.io/v1beta1
+apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: ibporderers.ibp.com
@@ -317,18 +394,19 @@ metadata:
     app.kubernetes.io/instance: "ibporderer"
     app.kubernetes.io/managed-by: "ibp-operator"
 spec:
-  preserveUnknownFields: false
   conversion:
     strategy: Webhook
-    webhookClientConfig:
-      service:
-        namespace: ibpinfra
-        name: ibp-webhook
-        path: /crdconvert
-      caBundle: "${TLS_CERT}"
-  validation:
-    openAPIV3Schema:
-      x-kubernetes-preserve-unknown-fields: true    
+    webhook:
+      clientConfig:
+        caBundle: "${TLS_CERT}"
+        service:
+          name: ibp-webhook
+          namespace: ibpinfra
+          path: /crdconvert
+      conversionReviewVersions:
+      - v1beta1
+      - v1alpha2
+      - v1alpha1
   group: ibp.com
   names:
     kind: IBPOrderer
@@ -336,19 +414,40 @@ spec:
     plural: ibporderers
     singular: ibporderer
   scope: Namespaced
-  subresources:
-    status: {}
-  version: v1beta1
   versions:
   - name: v1beta1
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: true
+    subresources:
+      status: {}
   - name: v1alpha2
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: false
+    subresources:
+      status: {}
   - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: false
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: IBPOrderer
+    listKind: IBPOrdererList
+    plural: ibporderers
+    singular: ibporderer
+  conditions: []
+  storedVersions:
+  - v1beta1
 EOF
 ```
 {: codeblock}
@@ -847,9 +946,9 @@ spec:
             runAsUser: 1000
             capabilities:
               drop:
-              - ALL
+                - ALL
               add:
-              - NET_BIND_SERVICE
+                - NET_BIND_SERVICE
           env:
             - name: "LICENSE"
               value: "accept"
@@ -948,29 +1047,30 @@ service/ibp-webhook created
 Run this command to update the CA CRD:   
 ```yaml
 cat <<EOF | kubectl apply  -f -
-apiVersion: apiextensions.k8s.io/v1beta1
+apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
+  name: ibpcas.ibp.com
   labels:
     app.kubernetes.io/instance: ibpca
     app.kubernetes.io/managed-by: ibp-operator
     app.kubernetes.io/name: ibp
     helm.sh/chart: ibm-ibp
     release: operator
-  name: ibpcas.ibp.com
 spec:
-  preserveUnknownFields: false
   conversion:
     strategy: Webhook
-    webhookClientConfig:
-      service:
-        namespace: ibpinfra
-        name: ibp-webhook
-        path: /crdconvert
-      caBundle: "${TLS_CERT}"
-  validation:
-    openAPIV3Schema:
-      x-kubernetes-preserve-unknown-fields: true    
+    webhook:
+      clientConfig:
+        caBundle: "${TLS_CERT}"
+        service:
+          name: ibp-webhook
+          namespace: ibpinfra
+          path: /crdconvert
+      conversionReviewVersions:
+      - v1beta1
+      - v1alpha2
+      - v1alpha1
   group: ibp.com
   names:
     kind: IBPCA
@@ -978,25 +1078,56 @@ spec:
     plural: ibpcas
     singular: ibpca
   scope: Namespaced
-  subresources:
-    status: {}
-  version: v1beta1
   versions:
   - name: v1beta1
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: true
+    subresources:
+      status: {}
   - name: v1alpha2
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: false
+    subresources:
+      status: {}
   - name: v210
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: false
     storage: false
+    subresources:
+      status: {}
   - name: v212
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: false
     storage: false
+    subresources:
+      status: {}
   - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: false
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: IBPCA
+    listKind: IBPCAList
+    plural: ibpcas
+    singular: ibpca
+  conditions: []
+  storedVersions:
+  - v1beta1
 EOF
 ```
 {: codeblock}
@@ -1016,7 +1147,7 @@ customresourcedefinition.apiextensions.k8s.io/ibpcas.ibp.com configured
 Run this command to update the peer CRD:
 ```yaml
 cat <<EOF | kubectl apply  -f -
-apiVersion: apiextensions.k8s.io/v1beta1
+apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: ibppeers.ibp.com
@@ -1027,18 +1158,19 @@ metadata:
     app.kubernetes.io/instance: "ibppeer"
     app.kubernetes.io/managed-by: "ibp-operator"
 spec:
-  preserveUnknownFields: false
   conversion:
     strategy: Webhook
-    webhookClientConfig:
-      service:
-        namespace: ibpinfra
-        name: ibp-webhook
-        path: /crdconvert
-      caBundle: "${TLS_CERT}"
-  validation:
-    openAPIV3Schema:
-      x-kubernetes-preserve-unknown-fields: true    
+    webhook:
+      clientConfig:
+        caBundle: "${TLS_CERT}"
+        service:
+          name: ibp-webhook
+          namespace: ibpinfra
+          path: /crdconvert
+      conversionReviewVersions:
+      - v1beta1
+      - v1alpha2
+      - v1alpha1
   group: ibp.com
   names:
     kind: IBPPeer
@@ -1046,19 +1178,40 @@ spec:
     plural: ibppeers
     singular: ibppeer
   scope: Namespaced
-  subresources:
-    status: {}
-  version: v1beta1
   versions:
   - name: v1beta1
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: true
+    subresources:
+      status: {}
   - name: v1alpha2
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: false
+    subresources:
+      status: {}
   - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: false
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: IBPPeer
+    listKind: IBPPeerList
+    plural: ibppeers
+    singular: ibppeer
+  conditions: []
+  storedVersions:
+  - v1beta1
 EOF
 ```
 {: codeblock}
@@ -1078,7 +1231,7 @@ customresourcedefinition.apiextensions.k8s.io/ibppeers.ibp.com configured
 Run this command to update the console CRD:
 ```yaml
 cat <<EOF | kubectl apply  -f -
-apiVersion: apiextensions.k8s.io/v1beta1
+apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: ibpconsoles.ibp.com
@@ -1089,18 +1242,19 @@ metadata:
     app.kubernetes.io/instance: "ibpconsole"
     app.kubernetes.io/managed-by: "ibp-operator"
 spec:
-  preserveUnknownFields: false
   conversion:
     strategy: Webhook
-    webhookClientConfig:
-      service:
-        namespace: ibpinfra
-        name: ibp-webhook
-        path: /crdconvert
-      caBundle: "${TLS_CERT}"
-  validation:
-    openAPIV3Schema:
-      x-kubernetes-preserve-unknown-fields: true
+    webhook:
+      clientConfig:
+        caBundle: "${TLS_CERT}"
+        service:
+          name: ibp-webhook
+          namespace: ibpinfra
+          path: /crdconvert
+      conversionReviewVersions:
+      - v1beta1
+      - v1alpha2
+      - v1alpha1
   group: ibp.com
   names:
     kind: IBPConsole
@@ -1108,19 +1262,41 @@ spec:
     plural: ibpconsoles
     singular: ibpconsole
   scope: Namespaced
-  subresources:
-    status: {}
-  version: v1beta1
   versions:
   - name: v1beta1
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: true
+    subresources:
+      status: {}
   - name: v1alpha2
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: false
+    subresources:
+      status: {}
   - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: false
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: IBPConsole
+    listKind: IBPConsoleList
+    plural: ibpconsoles
+    singular: ibpconsole
+  conditions: []
+  storedVersions:
+  - v1beta1
+
 EOF
 ```
 {: codeblock}
@@ -1140,7 +1316,7 @@ customresourcedefinition.apiextensions.k8s.io/ibpconsoles.ibp.com configured
 Run this command to update the orderer CRD:  
 ```yaml
 cat <<EOF | kubectl apply  -f -
-apiVersion: apiextensions.k8s.io/v1beta1
+apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: ibporderers.ibp.com
@@ -1151,18 +1327,19 @@ metadata:
     app.kubernetes.io/instance: "ibporderer"
     app.kubernetes.io/managed-by: "ibp-operator"
 spec:
-  preserveUnknownFields: false
   conversion:
     strategy: Webhook
-    webhookClientConfig:
-      service:
-        namespace: ibpinfra
-        name: ibp-webhook
-        path: /crdconvert
-      caBundle: "${TLS_CERT}"
-  validation:
-    openAPIV3Schema:
-      x-kubernetes-preserve-unknown-fields: true    
+    webhook:
+      clientConfig:
+        caBundle: "${TLS_CERT}"
+        service:
+          name: ibp-webhook
+          namespace: ibpinfra
+          path: /crdconvert
+      conversionReviewVersions:
+      - v1beta1
+      - v1alpha2
+      - v1alpha1
   group: ibp.com
   names:
     kind: IBPOrderer
@@ -1170,19 +1347,40 @@ spec:
     plural: ibporderers
     singular: ibporderer
   scope: Namespaced
-  subresources:
-    status: {}
-  version: v1beta1
   versions:
   - name: v1beta1
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: true
+    subresources:
+      status: {}
   - name: v1alpha2
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: false
+    subresources:
+      status: {}
   - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: false
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: IBPOrderer
+    listKind: IBPOrdererList
+    plural: ibporderers
+    singular: ibporderer
+  conditions: []
+  storedVersions:
+  - v1beta1
 EOF
 ```
 {: codeblock}
@@ -1773,9 +1971,9 @@ spec:
             runAsUser: 1000
             capabilities:
               drop:
-              - ALL
+                - ALL
               add:
-              - NET_BIND_SERVICE
+                - NET_BIND_SERVICE
           env:
             - name: "LICENSE"
               value: "accept"
@@ -1874,29 +2072,30 @@ service/ibp-webhook created
 Run this command to update the CA CRD:   
 ```yaml
 cat <<EOF | kubectl apply  -f -
-apiVersion: apiextensions.k8s.io/v1beta1
+apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
+  name: ibpcas.ibp.com
   labels:
     app.kubernetes.io/instance: ibpca
     app.kubernetes.io/managed-by: ibp-operator
     app.kubernetes.io/name: ibp
     helm.sh/chart: ibm-ibp
     release: operator
-  name: ibpcas.ibp.com
 spec:
-  preserveUnknownFields: false
   conversion:
     strategy: Webhook
-    webhookClientConfig:
-      service:
-        namespace: ibpinfra
-        name: ibp-webhook
-        path: /crdconvert
-      caBundle: "${TLS_CERT}"
-  validation:
-    openAPIV3Schema:
-      x-kubernetes-preserve-unknown-fields: true    
+    webhook:
+      clientConfig:
+        caBundle: "${TLS_CERT}"
+        service:
+          name: ibp-webhook
+          namespace: ibpinfra
+          path: /crdconvert
+      conversionReviewVersions:
+      - v1beta1
+      - v1alpha2
+      - v1alpha1
   group: ibp.com
   names:
     kind: IBPCA
@@ -1904,25 +2103,56 @@ spec:
     plural: ibpcas
     singular: ibpca
   scope: Namespaced
-  subresources:
-    status: {}
-  version: v1beta1
   versions:
   - name: v1beta1
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: true
+    subresources:
+      status: {}
   - name: v1alpha2
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: false
+    subresources:
+      status: {}
   - name: v210
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: false
     storage: false
+    subresources:
+      status: {}
   - name: v212
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: false
     storage: false
+    subresources:
+      status: {}
   - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: false
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: IBPCA
+    listKind: IBPCAList
+    plural: ibpcas
+    singular: ibpca
+  conditions: []
+  storedVersions:
+  - v1beta1
 EOF
 ```
 {: codeblock}
@@ -1942,7 +2172,7 @@ customresourcedefinition.apiextensions.k8s.io/ibpcas.ibp.com configured
 Run this command to update the peer CRD:
 ```yaml
 cat <<EOF | kubectl apply  -f -
-apiVersion: apiextensions.k8s.io/v1beta1
+apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: ibppeers.ibp.com
@@ -1953,18 +2183,19 @@ metadata:
     app.kubernetes.io/instance: "ibppeer"
     app.kubernetes.io/managed-by: "ibp-operator"
 spec:
-  preserveUnknownFields: false
   conversion:
     strategy: Webhook
-    webhookClientConfig:
-      service:
-        namespace: ibpinfra
-        name: ibp-webhook
-        path: /crdconvert
-      caBundle: "${TLS_CERT}"
-  validation:
-    openAPIV3Schema:
-      x-kubernetes-preserve-unknown-fields: true    
+    webhook:
+      clientConfig:
+        caBundle: "${TLS_CERT}"
+        service:
+          name: ibp-webhook
+          namespace: ibpinfra
+          path: /crdconvert
+      conversionReviewVersions:
+      - v1beta1
+      - v1alpha2
+      - v1alpha1
   group: ibp.com
   names:
     kind: IBPPeer
@@ -1972,19 +2203,40 @@ spec:
     plural: ibppeers
     singular: ibppeer
   scope: Namespaced
-  subresources:
-    status: {}
-  version: v1beta1
   versions:
   - name: v1beta1
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: true
+    subresources:
+      status: {}
   - name: v1alpha2
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: false
+    subresources:
+      status: {}
   - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: false
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: IBPPeer
+    listKind: IBPPeerList
+    plural: ibppeers
+    singular: ibppeer
+  conditions: []
+  storedVersions:
+  - v1beta1
 EOF
 ```
 {: codeblock}
@@ -2004,7 +2256,7 @@ customresourcedefinition.apiextensions.k8s.io/ibppeers.ibp.com configured
 Run this command to update the console CRD:
 ```yaml
 cat <<EOF | kubectl apply  -f -
-apiVersion: apiextensions.k8s.io/v1beta1
+apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: ibpconsoles.ibp.com
@@ -2015,18 +2267,19 @@ metadata:
     app.kubernetes.io/instance: "ibpconsole"
     app.kubernetes.io/managed-by: "ibp-operator"
 spec:
-  preserveUnknownFields: false
   conversion:
     strategy: Webhook
-    webhookClientConfig:
-      service:
-        namespace: ibpinfra
-        name: ibp-webhook
-        path: /crdconvert
-      caBundle: "${TLS_CERT}"
-  validation:
-    openAPIV3Schema:
-      x-kubernetes-preserve-unknown-fields: true
+    webhook:
+      clientConfig:
+        caBundle: "${TLS_CERT}"
+        service:
+          name: ibp-webhook
+          namespace: ibpinfra
+          path: /crdconvert
+      conversionReviewVersions:
+      - v1beta1
+      - v1alpha2
+      - v1alpha1
   group: ibp.com
   names:
     kind: IBPConsole
@@ -2034,19 +2287,41 @@ spec:
     plural: ibpconsoles
     singular: ibpconsole
   scope: Namespaced
-  subresources:
-    status: {}
-  version: v1beta1
   versions:
   - name: v1beta1
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: true
+    subresources:
+      status: {}
   - name: v1alpha2
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: false
+    subresources:
+      status: {}
   - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: false
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: IBPConsole
+    listKind: IBPConsoleList
+    plural: ibpconsoles
+    singular: ibpconsole
+  conditions: []
+  storedVersions:
+  - v1beta1
+
 EOF
 ```
 {: codeblock}
@@ -2066,7 +2341,7 @@ customresourcedefinition.apiextensions.k8s.io/ibpconsoles.ibp.com configured
 Run this command to update the orderer CRD:  
 ```yaml
 cat <<EOF | kubectl apply  -f -
-apiVersion: apiextensions.k8s.io/v1beta1
+apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: ibporderers.ibp.com
@@ -2077,18 +2352,19 @@ metadata:
     app.kubernetes.io/instance: "ibporderer"
     app.kubernetes.io/managed-by: "ibp-operator"
 spec:
-  preserveUnknownFields: false
   conversion:
     strategy: Webhook
-    webhookClientConfig:
-      service:
-        namespace: ibpinfra
-        name: ibp-webhook
-        path: /crdconvert
-      caBundle: "${TLS_CERT}"
-  validation:
-    openAPIV3Schema:
-      x-kubernetes-preserve-unknown-fields: true    
+    webhook:
+      clientConfig:
+        caBundle: "${TLS_CERT}"
+        service:
+          name: ibp-webhook
+          namespace: ibpinfra
+          path: /crdconvert
+      conversionReviewVersions:
+      - v1beta1
+      - v1alpha2
+      - v1alpha1
   group: ibp.com
   names:
     kind: IBPOrderer
@@ -2096,19 +2372,40 @@ spec:
     plural: ibporderers
     singular: ibporderer
   scope: Namespaced
-  subresources:
-    status: {}
-  version: v1beta1
   versions:
   - name: v1beta1
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: true
+    subresources:
+      status: {}
   - name: v1alpha2
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: false
+    subresources:
+      status: {}
   - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: false
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: IBPOrderer
+    listKind: IBPOrdererList
+    plural: ibporderers
+    singular: ibporderer
+  conditions: []
+  storedVersions:
+  - v1beta1
 EOF
 ```
 {: codeblock}
