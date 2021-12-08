@@ -39,7 +39,7 @@ case severity.
 
 - Search known IBM security issues on the [IBM Product Security Incident Response](https://www.ibm.com/blogs/psirt/). You can filter the issues by severity.
 - Report your security issue to the [IBM Product Security Incident Response Team (PSIRT)](https://www.ibm.com/trust/security-psirt). Reporting methods for third-parties and anonymous sources are also provided.
-- IBM support subscribers can log in and open a case with the appropriate severity. Refer to details, including IBM response times, below in [Submitting support cases](/docs/blockchain?topic=blockchain-blockchain-support#submitting-support-cases).
+- IBM support subscribers can log in and open a case with the appropriate severity. Refer to details, including IBM response times, below in [Submitting support cases](/docs/blockchain-sw-252?topic=blockchain-sw-252-blockchain-support#blockchain-support-cases).
 
 ## General support
 {: #blockchain-general-support}
