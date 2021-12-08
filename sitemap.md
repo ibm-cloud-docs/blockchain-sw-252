@@ -1538,6 +1538,10 @@ subcollection: blockchain-sw-252
 
 [Getting support](/docs/blockchain-sw-252?topic=blockchain-sw-252-blockchain-support)
 
+* [Security incidents](/docs/blockchain-sw-252?topic=blockchain-sw-252-blockchain-support#blockchain-security-incidents)
+
+* [General support](/docs/blockchain-sw-252?topic=blockchain-sw-252-blockchain-support#blockchain-general-support)
+
 * [Resources and support forums](/docs/blockchain-sw-252?topic=blockchain-sw-252-blockchain-support#blockchain-support-resources)
 
 * [Submitting support cases](/docs/blockchain-sw-252?topic=blockchain-sw-252-blockchain-support#blockchain-support-cases)
