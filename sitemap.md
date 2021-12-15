@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-11-30"
+lastupdated: "2021-12-13"
 
 keywords: site map
 subcollection: blockchain-sw-252
@@ -1411,39 +1411,41 @@ subcollection: blockchain-sw-252
 {: #sitemap_release_notes}
 
 
-[Release notes](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20)
+[Release notes](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-sw-252)
 
-* [16 Nov 2021](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#16-11-2021)
+* [14 Dec 2021](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-sw-252#14-12-2021)
 
-* [26 Oct 2021](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#26-10-2021)
+* [16 Nov 2021](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-sw-252#16-11-2021)
 
-* [05 Oct 2021](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#05-10-2021)
+* [26 Oct 2021](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-sw-252#26-10-2021)
 
-* [10 Aug 2021](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#10-08-2021)
+* [05 Oct 2021](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-sw-252#05-10-2021)
 
-* [14 Jul 2021](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#14-07-2021)
+* [10 Aug 2021](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-sw-252#10-08-2021)
 
-* [16 Jun 2021](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#16-06-2021)
+* [14 Jul 2021](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-sw-252#14-07-2021)
 
-* [05 May 2021](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#05-05-2021)
+* [16 Jun 2021](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-sw-252#16-06-2021)
 
-* [29 Mar 2021](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#29-03-2021)
+* [05 May 2021](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-sw-252#05-05-2021)
 
-* [22 Feb 2021](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#02-22-2021)
+* [29 Mar 2021](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-sw-252#29-03-2021)
 
-* [12 Jan 2021](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#01-12-2021)
-    * [New logging configuration panel](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#01-12-2021-logger-ui)
+* [22 Feb 2021](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-sw-252#02-22-2021)
 
-* [08 Dec 2020](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#12-08-2020)
+* [12 Jan 2021](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-sw-252#01-12-2021)
+    * [New logging configuration panel](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-sw-252#01-12-2021-logger-ui)
 
-* [19 Nov 2020](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#11-19-2020)
+* [08 Dec 2020](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-sw-252#12-08-2020)
 
-* [30 Oct 2020](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#10-20-2020)
-    * [Fabric v2.x node upgrade](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#11-02-2020-upgrade)
-    * [Support for Fabric v2.x smart contract lifecycle](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#11-02-2020-lc)
-    * [Improvements for HSM support](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#11-02-2020-hsm)
-    * [Certificate renewal enhancements](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#11-02-2020-cert-renew)
-    * [Remove registered user from CA](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20#11-02-2020-delete-user)
+* [19 Nov 2020](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-sw-252#11-19-2020)
+
+* [30 Oct 2020](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-sw-252#10-20-2020)
+    * [Fabric v2.x node upgrade](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-sw-252#11-02-2020-upgrade)
+    * [Support for Fabric v2.x smart contract lifecycle](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-sw-252#11-02-2020-lc)
+    * [Improvements for HSM support](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-sw-252#11-02-2020-hsm)
+    * [Certificate renewal enhancements](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-sw-252#11-02-2020-cert-renew)
+    * [Remove registered user from CA](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-sw-252#11-02-2020-delete-user)
 
 
 ## Known issues
@@ -1537,6 +1539,10 @@ subcollection: blockchain-sw-252
 
 
 [Getting support](/docs/blockchain-sw-252?topic=blockchain-sw-252-blockchain-support)
+
+* [Security incidents](/docs/blockchain-sw-252?topic=blockchain-sw-252-blockchain-support#blockchain-security-incidents)
+
+* [General support](/docs/blockchain-sw-252?topic=blockchain-sw-252-blockchain-support#blockchain-general-support)
 
 * [Resources and support forums](/docs/blockchain-sw-252?topic=blockchain-sw-252-blockchain-support#blockchain-support-resources)
 

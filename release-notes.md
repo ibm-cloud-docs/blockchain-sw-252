@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-16"
+lastupdated: "2021-12-13"
 
 
 keywords: release note, latest changes, Hyperledger Fabric, multicloud
@@ -17,14 +17,14 @@ subcollection: blockchain-sw-252
 
 
 # Release notes
-{: #release-notes-saas-20}
+{: #release-notes-sw-252}
 
 <p>
 <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
-<a href="/docs/blockchain-sw?topic=blockchain-sw-release-notes-saas-20">2.1.2</a>,
-<a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-release-notes-saas-20">2.1.3</a>,
-<a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-release-notes-saas-20">2.5</a>,
-<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-release-notes-saas-20">2.5.1</a>, 2.5.2
+<a href="/docs/blockchain-sw?topic=blockchain-sw-release-notes-sw-252">2.1.2</a>,
+<a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-release-notes-sw-252">2.1.3</a>,
+<a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-release-notes-sw-252">2.5</a>,
+<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-release-notes-sw-252">2.5.1</a>, 2.5.2
 </p>
 
 Use these release notes to learn about the latest changes to {{site.data.keyword.blockchainfull}} Platform for {{site.data.keyword.cloud_notm}} built on Hyperledger Fabric v1.4.12 and v2.2.4.
@@ -37,12 +37,22 @@ For instructions on how to apply the latest fix pack to your blockchain instance
 [Installing patches](/docs/blockchain?topic=blockchain-ibp-console-manage-console#ibp-console-manage-patch)  
 For instructions on how to apply patches to your existing blockchain nodes. Patches are cumulative. This means that if multiple patches, for example `1.4.7-0` and `1.4.12-1`, are available for a node, you should always select the latest patch, `1.4.12-1` in this case, wherever possible because it includes the fixes from the previous patches as well.   
 
+
+## 14 Dec 2021
+{: #14-12-2021}
+
+**Certificate Authority (CA) patch 1.5.2-4, Peer and ordering node patch 1.4.12-7, 2.2.4-4.**
+
+Miscellaneous bug fixes and security patches.
+
+
 ## 16 Nov 2021
 {: #16-11-2021}
 
 **Certificate Authority (CA) patch 1.5.2-3, Peer and ordering node patch 1.4.12-6, 2.2.4-3.**
 
 Miscellaneous bug fixes and security patches.
+
 
 
 
@@ -74,7 +84,7 @@ Export certificates in .pem format for easy management and maintenance in {{site
 ## 14 Jul 2021
 {: #14-07-2021}
 
-**Certificate Authority (CA) patch 1.5.0-1, Peer and ordering node patch 1.4.12-2, 2.2.4-2**
+**Certificate Authority (CA) patch 1.5.0-1, Peer and ordering node patch 1.4.12-2, 2.2.3-2**
 
 Miscellaneous bug fixes and security patches.
 
@@ -83,11 +93,11 @@ Miscellaneous bug fixes and security patches.
 ## 16 Jun 2021
 {: #16-06-2021}
 
-**Certificate Authority (CA) patch 1.4.9-8, Peer and ordering node patch 1.4.12-1, 2.2.4-1**
+**Certificate Authority (CA) patch 1.4.9-8, Peer and ordering node patch 1.4.12-1, 2.2.3-1**
 
 Miscellaneous bug fixes and security patches.
 
-The platform has been updated to include support for Hyperledger Fabric v1.4.12 and v2.2.4.
+The platform has been updated to include support for Hyperledger Fabric v1.4.12 and v2.2.3.
 
 
 ## 05 May 2021
