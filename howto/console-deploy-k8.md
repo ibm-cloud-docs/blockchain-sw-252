@@ -1450,7 +1450,7 @@ metadata:
   name: ibpconsole
 spec:
   arch:
-  - amd64
+    - amd64
   license:
     accept: false
   serviceAccountName: default
@@ -1459,6 +1459,7 @@ spec:
   registryURL: cp.icr.io/cp
   imagePullSecrets:
     - docker-key-secret
+    - ibm-entitlement-key
   networkinfo:
     domain: <DOMAIN>
   storage:
