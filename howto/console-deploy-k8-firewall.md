@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-01-05"
+lastupdated: "2022-01-06"
 
 keywords: IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, firewall, on-premises, air-gapped, on-prem, multicloud, on-prem
 
@@ -368,6 +368,7 @@ spec:
       serviceAccountName: webhook
       imagePullSecrets:
         - name: docker-key-secret
+        - name: ibm-entitlement-key
       hostIPC: false
       hostNetwork: false
       hostPID: false
@@ -377,7 +378,7 @@ spec:
         fsGroup: 2000
       containers:
         - name: "ibp-webhook"
-          image: "cp.icr.io/cp/ibp-crdwebhook:2.5.2-20211214-amd64"
+          image: "cp.icr.io/cp/ibp-crdwebhook:2.5.2-20220111-amd64"
           imagePullPolicy: Always
           securityContext:
             privileged: false
