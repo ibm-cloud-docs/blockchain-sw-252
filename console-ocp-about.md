@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2021
-lastupdated: "2021-11-30"
+  years: 2019, 2022
+lastupdated: "2022-01-11"
 
 keywords: IBM Blockchain Platform, system requirements, Kubernetes, behind a firewall, azure, multicloud
 
@@ -23,7 +23,8 @@ subcollection: blockchain-sw-252
 <a href="/docs/blockchain-sw?topic=blockchain-sw-console-ocp-about">2.1.2</a>,
 <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-console-ocp-about">2.1.3</a>,
 <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-console-ocp-about">2.5</a>,
-<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-console-ocp-about">2.5.1</a>, 2.5.2
+<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-console-ocp-about">2.5.1</a>,
+<a href="/docs/blockchain-sw-252?topic=blockchain-sw-252-console-ocp-about">2.5.2</a>
 </p>
 
 The {{site.data.keyword.blockchainfull}} Platform 2.5.2 enables a consortium of organizations to easily build and join a blockchain network [on-prem](#x4561212){: term}, or on any private, public, or hybrid multicloud that uses Kubernetes. Customers can deploy their nodes on the cloud platform of their choice and connect to any {{site.data.keyword.blockchainfull_notm}} Platform network, whether it is deployed on your own Kubernetes cluster or with the {{site.data.keyword.blockchainfull_notm}} Platform for {{site.data.keyword.cloud_notm}}. The {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 leverages Hyperledger Fabric v1.4.12 and v2.2.4 and supports deployment on multiple Kubernetes distributions.

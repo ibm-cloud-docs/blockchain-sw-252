@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2021
-lastupdated: "2021-11-16"
+  years: 2019, 2022
+lastupdated: "2022-01-11"
 
 keywords: IBM Blockchain Platform, Data residency, world state, channels, multicloud
 
@@ -24,7 +24,8 @@ subcollection: blockchain-sw-252
 <a href="/docs/blockchain-sw?topic=blockchain-sw-console-icp-about-data-residency">2.1.2</a>,
 <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-console-icp-about-data-residency">2.1.3</a>,
 <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-console-icp-about-data-residency">2.5</a>,
-<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-console-icp-about-data-residency">2.5.1</a>, 2.5.2
+<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-console-icp-about-data-residency">2.5.1</a>,
+<a href="/docs/blockchain-sw-252?topic=blockchain-sw-252-console-icp-about-data-residency">2.5.2</a>
 </p>
 
 Because blockchain networks are oblivious to the type of data that is processed, extra steps must sometimes be taken to keep certain kinds of data secure. The most common requirement on data residency is associated with laws within certain countries, which mandate that all data that is processed and stored in an IT system must remain within a specific country’s borders. Similarly, some companies in highly regulated industries, such as government, healthcare, and financial services, require that data must be stored entirely behind their firewall.

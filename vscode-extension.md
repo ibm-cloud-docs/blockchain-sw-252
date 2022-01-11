@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2021
-lastupdated: "2021-11-16"
+  years: 2019, 2022
+lastupdated: "2022-01-11"
 
 
 keywords: vs code extension, Visual Studio Code extension, smart contract, development tools, multicloud
@@ -25,7 +25,8 @@ subcollection: blockchain-sw-252
 <a href="/docs/blockchain-sw?topic=blockchain-sw-develop-vscode">2.1.2</a>,
 <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-develop-vscode">2.1.3</a>,
 <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-develop-vscode">2.5</a>,
-<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-develop-vscode">2.5.1</a>, 2.5.2
+<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-develop-vscode">2.5.1</a>,
+<a href="/docs/blockchain-sw-252?topic=blockchain-sw-252-develop-vscode">2.5.2</a>
 </p>
 
 The {{site.data.keyword.blockchainfull}} Platform Developer Tools provide an environment within Visual Studio Code or Red Hat CodeReady Workspaces for developing, packaging, and testing smart contracts. You can use the tools to create your smart contract project and get started developing your business logic. You can then use the tools to test your smart contract either on your local machine by using a preconfigured instance of Hyperledger Fabric, or by connecting to an {{site.data.keyword.blockchainfull_notm}} Platform network, before you deploy the smart contract to the {{site.data.keyword.blockchainfull_notm}} Platform. This tutorial describes how to install and use the Developer Tools.

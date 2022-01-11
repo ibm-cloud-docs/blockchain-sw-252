@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2021
-lastupdated: "2021-12-13"
+  years: 2019, 2022
+lastupdated: "2022-01-11"
 
 keywords: IBM Blockchain Platform, images, multicloud
 
@@ -23,7 +23,8 @@ subcollection: blockchain-sw-252
 <a href="/docs/blockchain-sw?topic=blockchain-sw-blockchain-images">2.1.2</a>,
 <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-blockchain-images">2.1.3</a>,
 <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-blockchain-images">2.5</a>,
-<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-blockchain-images">2.5.1</a>, 2.5.2
+<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-blockchain-images">2.5.1</a>,
+<a href="/docs/blockchain-sw-252?topic=blockchain-sw-252-blockchain-images">2.5.2</a>
 </p>
 
 
@@ -94,19 +95,19 @@ The following commands only work with a Docker container registry. Depending on 
 {: note}
 
 ```
-skopeo copy docker://cp.icr.io/cp/ibp-operator:2.5.2-20211214 docker://<LOCAL_REGISTRY>/ibp-operator:2.5.2-20211214 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-init:2.5.2-20211214 docker://<LOCAL_REGISTRY>/ibp-init:2.5.2-20211214 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-console:2.5.2-20211214 docker://<LOCAL_REGISTRY>/ibp-console:2.5.2-20211214 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-grpcweb:2.5.2-20211214 docker://<LOCAL_REGISTRY>/ibp-grpcweb:2.5.2-20211214 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-deployer:2.5.2-20211214 docker://<LOCAL_REGISTRY>/ibp-deployer:2.5.2-20211214 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-fluentd:2.5.2-20211214 docker://<LOCAL_REGISTRY>/ibp-fluentd:2.5.2-20211214 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-couchdb:2.3.1-20211214 docker://<LOCAL_REGISTRY>/ibp-couchdb:2.3.1-20211214 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-couchdb:3.1.1-20211214 docker://<LOCAL_REGISTRY>/ibp-couchdb:3.1.1-20211214 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-peer:1.4.12-20211214 docker://<LOCAL_REGISTRY>/ibp-peer:1.4.12-20211214 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-orderer:1.4.12-20211214 docker://<LOCAL_REGISTRY>/ibp-orderer:1.4.12-20211214 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-ca:1.5.2-20211214 docker://<LOCAL_REGISTRY>/ibp-ca:1.5.2-20211214 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-dind:1.4.12-20211214 docker://<LOCAL_REGISTRY>/ibp-dind:1.4.12-20211214 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-utilities:1.4.12-20211214 docker://<LOCAL_REGISTRY>/ibp-utilities:1.4.12-20211214 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-operator:2.5.2-20220111 docker://<LOCAL_REGISTRY>/ibp-operator:2.5.2-20220111 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-init:2.5.2-20220111 docker://<LOCAL_REGISTRY>/ibp-init:2.5.2-20220111 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-console:2.5.2-20220111 docker://<LOCAL_REGISTRY>/ibp-console:2.5.2-20220111 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-grpcweb:2.5.2-20220111 docker://<LOCAL_REGISTRY>/ibp-grpcweb:2.5.2-20220111 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-deployer:2.5.2-20220111 docker://<LOCAL_REGISTRY>/ibp-deployer:2.5.2-20220111 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-fluentd:2.5.2-20220111 docker://<LOCAL_REGISTRY>/ibp-fluentd:2.5.2-20220111 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-couchdb:2.3.1-20220111 docker://<LOCAL_REGISTRY>/ibp-couchdb:2.3.1-20220111 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-couchdb:3.1.1-20220111 docker://<LOCAL_REGISTRY>/ibp-couchdb:3.1.1-20220111 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-peer:1.4.12-20220111 docker://<LOCAL_REGISTRY>/ibp-peer:1.4.12-20220111 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-orderer:1.4.12-20220111 docker://<LOCAL_REGISTRY>/ibp-orderer:1.4.12-20220111 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-ca:1.5.2-20220111 docker://<LOCAL_REGISTRY>/ibp-ca:1.5.2-20220111 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-dind:1.4.12-20220111 docker://<LOCAL_REGISTRY>/ibp-dind:1.4.12-20220111 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-utilities:1.4.12-20220111 docker://<LOCAL_REGISTRY>/ibp-utilities:1.4.12-20220111 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 skopeo copy docker://cp.icr.io/cp/ibp-peer:2.2.4-30211116 docker://<LOCAL_REGISTRY>/ibp-peer:2.2.4-30211116 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 skopeo copy docker://cp.icr.io/cp/ibp-orderer:2.2.4-30211116 docker://<LOCAL_REGISTRY>/ibp-orderer:2.2.4-30211116 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 skopeo copy docker://cp.icr.io/cp/ibp-chaincode-launcher:2.2.4-30211116 docker://<LOCAL_REGISTRY>/ibp-chaincode-launcher:2.2.4-30211116 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
@@ -115,12 +116,12 @@ skopeo copy docker://cp.icr.io/cp/ibp-ccenv:2.2.4-30211116 docker://<LOCAL_REGIS
 skopeo copy docker://cp.icr.io/cp/ibp-goenv:2.2.4-30211116 docker://<LOCAL_REGISTRY>/ibp-goenv:2.2.4-30211116 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 skopeo copy docker://cp.icr.io/cp/ibp-nodeenv:2.2.4-30211116 docker://<LOCAL_REGISTRY>/ibp-nodeenv:2.2.4-30211116 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 skopeo copy docker://cp.icr.io/cp/ibp-javaenv:2.2.4-30211116 docker://<LOCAL_REGISTRY>/ibp-javaenv:2.2.4-30211116 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-crdwebhook:2.5.2-20211214 docker://<LOCAL_REGISTRY>/ibp-crdwebhook:2.5.2-20211214 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-ccenv:1.4.12-20211214 docker://<LOCAL_REGISTRY>/ibp-ccenv:1.4.12-20211214 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-goenv:1.4.12-20211214 docker://<LOCAL_REGISTRY>/ibp-goenv:1.4.12-20211214 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-nodeenv:1.4.12-20211214 docker://<LOCAL_REGISTRY>/ibp-nodeenv:1.4.12-20211214 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-javaenv:1.4.12-20211214 docker://<LOCAL_REGISTRY>/ibp-javaenv:1.4.12-20211214 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-enroller:2.5.2-20211214 docker://<LOCAL_REGISTRY>/ibp-enroller:2.5.2-20211214 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-crdwebhook:2.5.2-20220111 docker://<LOCAL_REGISTRY>/ibp-crdwebhook:2.5.2-20220111 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-ccenv:1.4.12-20220111 docker://<LOCAL_REGISTRY>/ibp-ccenv:1.4.12-20220111 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-goenv:1.4.12-20220111 docker://<LOCAL_REGISTRY>/ibp-goenv:1.4.12-20220111 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-nodeenv:1.4.12-20220111 docker://<LOCAL_REGISTRY>/ibp-nodeenv:1.4.12-20220111 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-javaenv:1.4.12-20220111 docker://<LOCAL_REGISTRY>/ibp-javaenv:1.4.12-20220111 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibp-enroller:2.5.2-20220111 docker://<LOCAL_REGISTRY>/ibp-enroller:2.5.2-20220111 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 ```
 {: codeblock}
 
@@ -143,7 +144,7 @@ If you are using the open source configuration files, you need to make the follo
 
 3. If you are deploying a peer node, you need to use the core chaincode variables to instruct the peer to build chaincode using the {{site.data.keyword.blockchainfull_notm}} certified images. For example, if you are using Go chaincode, you need to set the following variables:
     ```
-    CORE_CHAINCODE_NODE_RUNTIME=cp.icr.io/cp/ibp-nodeenv:1.4.12-20211214-amd64
+    CORE_CHAINCODE_NODE_RUNTIME=cp.icr.io/cp/ibp-nodeenv:1.4.12-20220111-amd64
     CORE_CHAINCODE_GOLANG_DYNAMICLINK=true
     ```
     {: codeblock}
@@ -242,11 +243,11 @@ orderer-base:
 ```
 {: codeblock}
 
-To deploy an ordering node by using the {{site.data.keyword.blockchainfull_notm}} image, change the `image` field to the tag of the {{site.data.keyword.blockchainfull_notm}} image, `cp.icr.io/cp/ibp-orderer:1.4.12-20211214-amd64`. Accept the license by adding the field of `LICENSE=accept`. You then need to add the `FABRIC_CFG_PATH` environment variable and set the path to the folder where you mount the configuration files. Set the `working_dir` variable to the same path. After your changes, the orderer section would look like the example below:
+To deploy an ordering node by using the {{site.data.keyword.blockchainfull_notm}} image, change the `image` field to the tag of the {{site.data.keyword.blockchainfull_notm}} image, `cp.icr.io/cp/ibp-orderer:1.4.12-20220111-amd64`. Accept the license by adding the field of `LICENSE=accept`. You then need to add the `FABRIC_CFG_PATH` environment variable and set the path to the folder where you mount the configuration files. Set the `working_dir` variable to the same path. After your changes, the orderer section would look like the example below:
 
 ```yaml
 orderer-base:
-  image: cp.icr.io/cp/ibp-orderer:1.4.12-20211214-amd64
+  image: cp.icr.io/cp/ibp-orderer:1.4.12-20220111-amd64
   environment:
     - LICENSE=accept
     - FABRIC_CFG_PATH=/etc/hyperledger/fabric
@@ -276,13 +277,13 @@ If you are deploying a peer, you can make the same changes to the peer section o
 ```yaml
 services:
   peer-base:
-    image: cp.icr.io/cp/ibp-peer:1.4.12-20211214-amd64
+    image: cp.icr.io/cp/ibp-peer:1.4.12-20220111-amd64
     environment:
       - LICENSE=accept
       - FABRIC_CFG_PATH=/etc/hyperledger/fabric
-      - CORE_CHAINCODE_BUILDER=cp.icr.io/cp/ibp-ccenv:1.4.12-20211214-amd64
-      - CORE_CHAINCODE_GOLANG_RUNTIME=cp.icr.io/cp/ibp-goenv:1.4.12-20211214-amd64
-      - CORE_CHAINCODE_NODE_RUNTIME=cp.icr.io/cp/ibp-nodeenv:1.4.12-20211214-amd64
+      - CORE_CHAINCODE_BUILDER=cp.icr.io/cp/ibp-ccenv:1.4.12-20220111-amd64
+      - CORE_CHAINCODE_GOLANG_RUNTIME=cp.icr.io/cp/ibp-goenv:1.4.12-20220111-amd64
+      - CORE_CHAINCODE_NODE_RUNTIME=cp.icr.io/cp/ibp-nodeenv:1.4.12-20220111-amd64
       - CORE_CHAINCODE_GOLANG_DYNAMICLINK=true
       - CORE_CHAINCODE_NODE_DYNAMICLINK=true
       - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
@@ -377,7 +378,7 @@ networks:
 services:
 
   ca-org1:
-    image: cp.icr.io/cp/ibp-ca:1.4.12-20211214-amd64
+    image: cp.icr.io/cp/ibp-ca:1.4.12-20220111-amd64
     environment:
       - LICENSE=accept
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
@@ -514,7 +515,7 @@ After we deploy a network, we can use the gRPC web proxy to import a peer or ord
     services:
       web_proxy.peer0.org1.example.com:
         container_name: web_proxy.peer0.org1.example.com
-        image: cp.icr.io/cp/ibp-grpcweb:2.5.2-20211214-amd64
+        image: cp.icr.io/cp/ibp-grpcweb:2.5.2-20220111-amd64
         environment:
           - LICENSE=accept
           - BACKEND_ADDRESS=peer0.org1.example.com:7051

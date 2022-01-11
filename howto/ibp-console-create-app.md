@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2021
-lastupdated: "2021-11-16"
+  years: 2019, 2022
+lastupdated: "2022-01-11"
 
 keywords: client application, Commercial Paper, SDK, wallet, generate a certificate, generate a private key, fabric gateway, APIs, smart contract
 
@@ -24,7 +24,8 @@ subcollection: blockchain-sw-252
 <a href="/docs/blockchain-sw?topic=blockchain-sw-ibp-console-app">2.1.2</a>,
 <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-app">2.1.3</a>,
 <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-ibp-console-app">2.5</a>,
-<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-ibp-console-app">2.5.1</a>, 2.5.2
+<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-ibp-console-app">2.5.1</a>,
+<a href="/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-app">2.5.2</a>
 </p>
 
 After you install smart contracts and deploy your nodes, you can use client applications to transact with other members of your network. Applications can invoke the business logic that is contained in smart contracts to create, transfer, or update assets on the blockchain ledger. Use this tutorial to learn how to use client applications to interact with networks that you manage from {{site.data.keyword.blockchainfull}} Platform console.

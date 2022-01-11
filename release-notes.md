@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2021
-lastupdated: "2021-12-13"
+  years: 2019, 2022
+lastupdated: "2022-01-11"
 
 
 keywords: release note, latest changes, Hyperledger Fabric, multicloud
@@ -24,7 +24,8 @@ subcollection: blockchain-sw-252
 <a href="/docs/blockchain-sw?topic=blockchain-sw-release-notes-sw-252">2.1.2</a>,
 <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-release-notes-sw-252">2.1.3</a>,
 <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-release-notes-sw-252">2.5</a>,
-<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-release-notes-sw-252">2.5.1</a>, 2.5.2
+<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-release-notes-sw-252">2.5.1</a>,
+<a href="/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-sw-252">2.5.2</a>
 </p>
 
 Use these release notes to learn about the latest changes to {{site.data.keyword.blockchainfull}} Platform for {{site.data.keyword.cloud_notm}} built on Hyperledger Fabric v1.4.12 and v2.2.4.
@@ -36,6 +37,13 @@ For instructions on how to apply the latest fix pack to your blockchain instance
 
 [Installing patches](/docs/blockchain?topic=blockchain-ibp-console-manage-console#ibp-console-manage-patch)  
 For instructions on how to apply patches to your existing blockchain nodes. Patches are cumulative. This means that if multiple patches, for example `1.4.7-0` and `1.4.12-1`, are available for a node, you should always select the latest patch, `1.4.12-1` in this case, wherever possible because it includes the fixes from the previous patches as well.   
+
+## 11 Jan 2022
+{: #11-01-2022}
+
+**Certificate Authority (CA) patch 1.5.2-5, Peer and ordering node patch 1.4.12-8, 2.2.4-5.**
+
+Miscellaneous bug fixes and security patches.
 
 
 ## 14 Dec 2021
