@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2021
-lastupdated: "2021-12-13"
+  years: 2018, 2022
+lastupdated: "2022-01-11"
 
 keywords: IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -23,7 +23,8 @@ subcollection: blockchain-sw-252
 <a href="/docs/blockchain-sw?topic=blockchain-sw-deploy-k8">2.1.2</a>,
 <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-k8">2.1.3</a>,
 <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-deploy-k8">2.5</a>,
-<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-deploy-k8">2.5.1</a>, 2.5.2
+<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-deploy-k8">2.5.1</a>,
+<a href="/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8">2.5.2</a>
 </p>
 
 
@@ -324,6 +325,7 @@ spec:
       serviceAccountName: webhook
       imagePullSecrets:
         - name: docker-key-secret
+        - name: ibm-entitlement-key
       hostIPC: false
       hostNetwork: false
       hostPID: false
@@ -333,7 +335,7 @@ spec:
         fsGroup: 2000
       containers:
         - name: "ibp-webhook"
-          image: "cp.icr.io/cp/ibp-crdwebhook:2.5.2-20211214-amd64"
+          image: "cp.icr.io/cp/ibp-crdwebhook:2.5.2-20220111-amd64"
           imagePullPolicy: Always
           securityContext:
             privileged: false
@@ -1199,9 +1201,10 @@ spec:
         fsGroup: 2000
       imagePullSecrets:
         - name: docker-key-secret
+        - name: ibm-entitlement-key
       containers:
         - name: ibp-operator
-          image: cp.icr.io/cp/ibp-operator:2.5.2-20211214-amd64
+          image: cp.icr.io/cp/ibp-operator:2.5.2-20220111-amd64
           command:
             - ibp-operator
           imagePullPolicy: Always
@@ -1284,7 +1287,7 @@ metadata:
   name: ibpconsole
 spec:
   arch:
-  - amd64
+    - amd64
   license:
     accept: false
   serviceAccountName: default
@@ -1293,6 +1296,7 @@ spec:
   registryURL: cp.icr.io/cp
   imagePullSecrets:
     - docker-key-secret
+    - ibm-entitlement-key
   networkinfo:
     domain: <DOMAIN>
   storage:
@@ -1341,7 +1345,7 @@ metadata:
   name: ibpconsole
 spec:
   arch:
-  - amd64
+    - amd64
   license:
     accept: false
   serviceAccountName: default
@@ -1350,6 +1354,7 @@ spec:
   registryURL: cp.icr.io/cp
   imagePullSecrets:
     - docker-key-secret
+    - ibm-entitlement-key
   networkinfo:
     domain: <DOMAIN>
   storage:
@@ -1448,7 +1453,7 @@ metadata:
   name: ibpconsole
 spec:
   arch:
-  - amd64
+    - amd64
   license:
     accept: false
   serviceAccountName: default
@@ -1457,6 +1462,7 @@ spec:
   registryURL: cp.icr.io/cp
   imagePullSecrets:
     - docker-key-secret
+    - ibm-entitlement-key
   networkinfo:
     domain: <DOMAIN>
   storage:

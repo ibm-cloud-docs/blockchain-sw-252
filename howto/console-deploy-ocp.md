@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2021
-lastupdated: "2021-12-13"
+  years: 2018, 2022
+lastupdated: "2022-01-11"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -23,7 +23,8 @@ subcollection: blockchain-sw-252
 <a href="/docs/blockchain-sw?topic=blockchain-sw-deploy-ocp">2.1.2</a>,
 <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-ocp">2.1.3</a>,
 <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-deploy-ocp">2.5</a>,
-<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-deploy-ocp">2.5.1</a>, 2.5.2
+<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-deploy-ocp">2.5.1</a>,
+<a href="/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp">2.5.2</a>
 </p>
 
 You can use the following instructions to deploy the {{site.data.keyword.blockchainfull}} Platform 2.5.2 onto a Kubernetes cluster that is running on OpenShift Container Platform. The {{site.data.keyword.blockchainfull_notm}} Platform uses a [Kubernetes Operator](https://www.openshift.com/learn/topics/operators){: external} to install the {{site.data.keyword.blockchainfull_notm}} Platform console on your cluster and manage the deployment and your blockchain nodes. After the {{site.data.keyword.blockchainfull_notm}} Platform console is running on your cluster, you can use the console to create blockchain nodes and operate a multicloud blockchain network.
@@ -288,6 +289,7 @@ spec:
       serviceAccountName: webhook
       imagePullSecrets:
         - name: docker-key-secret
+        - name: ibm-entitlement-key
       hostIPC: false
       hostNetwork: false
       hostPID: false
@@ -297,7 +299,7 @@ spec:
         fsGroup: 2000
       containers:
         - name: "ibp-webhook"
-          image: "cp.icr.io/cp/ibp-crdwebhook:2.5.2-20211214-amd64"
+          image: "cp.icr.io/cp/ibp-crdwebhook:2.5.2-20220111-amd64"
           imagePullPolicy: Always
           securityContext:
             privileged: false
@@ -1180,9 +1182,10 @@ spec:
         fsGroup: 2000
       imagePullSecrets:
         - name: docker-key-secret
+        - name: ibm-entitlement-key
       containers:
         - name: ibp-operator
-          image: cp.icr.io/cp/ibp-operator:2.5.2-20211214-amd64
+          image: cp.icr.io/cp/ibp-operator:2.5.2-20220111-amd64
           command:
             - ibp-operator
           imagePullPolicy: Always
@@ -1268,7 +1271,7 @@ metadata:
   name: ibpconsole
 spec:
   arch:
-  - amd64
+    - amd64
   license:
     accept: false
   serviceAccountName: default
@@ -1277,6 +1280,7 @@ spec:
   registryURL: cp.icr.io/cp
   imagePullSecrets:
     - docker-key-secret
+    - ibm-entitlement-key
   networkinfo:
     domain: <DOMAIN>
   storage:
@@ -1342,7 +1346,7 @@ metadata:
   name: ibpconsole
 spec:
   arch:
-  - amd64
+    - amd64
   license:
     accept: false
   serviceAccountName: default
@@ -1351,6 +1355,7 @@ spec:
   registryURL: cp.icr.io/cp
   imagePullSecrets:
     - docker-key-secret
+    - ibm-entitlement-key
   networkinfo:
     domain: <DOMAIN>
   storage:
@@ -1451,7 +1456,7 @@ metadata:
   name: ibpconsole
 spec:
   arch:
-  - amd64
+    - amd64
   license:
     accept: false
   serviceAccountName: default
@@ -1460,6 +1465,7 @@ spec:
   registryURL: cp.icr.io/cp
   imagePullSecrets:
     - docker-key-secret
+    - ibm-entitlement-key
   networkinfo:
     domain: <DOMAIN>
   storage:
@@ -1467,7 +1473,6 @@ spec:
       class: default
       size: 10Gi
   tlsSecretName: "<CONSOLE_TLS_SECRET_NAME>"
-  
 ```
 {: codeblock}
 

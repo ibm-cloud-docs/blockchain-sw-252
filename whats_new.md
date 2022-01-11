@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2021
-lastupdated: "2021-11-16"
+  years: 2017, 2022
+lastupdated: "2022-01-11"
 
 keywords: IBM Blockchain Platform, release, new features, multicloud
 
@@ -23,7 +23,8 @@ subcollection: blockchain-sw-252
 <a href="/docs/blockchain-sw?topic=blockchain-sw-whats-new">2.1.2</a>,
 <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-whats-new">2.1.3</a>,
 <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-whats-new">2.5</a>,
-<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-whats-new">2.5.1</a>, 2.5.2
+<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-whats-new">2.5.1</a>,
+<a href="/docs/blockchain-sw-252?topic=blockchain-sw-252-whats-new">2.5.2</a>
 </p>
 
 
@@ -155,7 +156,7 @@ The {{site.data.keyword.blockchainfull_notm}} Platform for {{site.data.keyword.c
 ### The {{site.data.keyword.blockchainfull_notm}} Platform console UI has been updated
 {: #whats-new-10-02-2019-Console}
 
-Review the [release notes](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20) to see the latest features available for your network.
+Review the [release notes](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-sw-252) to see the latest features available for your network.
 
 ## August 27, 2019
 {: #whats-new-8-27-2019}
