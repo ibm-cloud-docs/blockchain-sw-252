@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-01-18"
+lastupdated: "2022-01-19"
 
 keywords: site map
 subcollection: blockchain-sw-252
@@ -1114,7 +1114,7 @@ subcollection: blockchain-sw-252
 [Upgrading and deleting deployed nodes](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-govern-components)
 * [Considerations when reallocating resources](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-govern-components#ibp-console-govern-components-reallocate-resources)
 * [Upgrading to a new version of Fabric](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-govern-components#ibp-console-govern-components-upgrade)
-    * [Step one: Backup your ledger](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-govern-components#ibp-console-govern-components-upgrade-step-one-ledger)
+    * [Step one: Back up your ledger (optional)](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-govern-components#ibp-console-govern-components-upgrade-step-one-ledger)
     * [Step two: Upgrade your nodes one at a time](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-govern-components#ibp-console-govern-components-upgrade-step-two-rolling-upgrade)
     * [Step three: Update SDKs and smart contracts](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-govern-components#ibp-console-govern-components-upgrade-step-three)
     * [Step four: Update capabilities](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-govern-components#ibp-console-govern-components-upgrade-step-four-rolling-upgrade)
