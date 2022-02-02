@@ -1254,7 +1254,7 @@ spec:
         - name: ibm-entitlement-key
       containers:
         - name: ibp-operator
-          image: cp.icr.io/cp/ibp-operator:2.5.2-20220111-amd64
+          image: cp.icr.io/cp/ibp-operator:2.5.2-20220208-amd64
           command:
             - ibp-operator
           imagePullPolicy: Always
