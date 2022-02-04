@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-01-06"
+lastupdated: "2022-02-04"
 
 keywords: IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -1603,4 +1603,41 @@ To learn how to manage the users that can access the console, view the logs of y
 
 Ready to automate the entire deployment process? Check out the [Ansible Playbook](/docs/blockchain-sw-252?topic=blockchain-sw-252-ansible-install-ibp) that can be used to complete all of the steps  in this topic for you.
 
+## Docker in Docker considerations
+{: #deploy-icp-docker-in-docker-considerations}
 
+Kubernetes default values for IP addresses prevent conflicts between pods, services, and worker nodes. However, if IP address ranges are assigned during installation of Kubernetes, the potential for IP address conflicts exists. Therefore, if your Docker in Docker (dind) container is not reachable from the peer container, there may be an issue with the bridge IP address. To address this scenario, edit the `ibppeer` specification for the peer and add the bridge IP `-bip` argument to the `dind` container, as described below.
+
+Take the following steps to allow the container to set the IP address and subnet for the Docker in Docker container:
+
+Get the custom resource definition for all peers:
+
+`kubectl get ibppeers -n <ibp namespace>`
+
+Edit the custom resource definition for the peer to add default settings for the `dind` args:
+
+`kubectl edit ibppeer <peername> -n <ibp namespace>`
+
+Add the following `dindArgs` configuration under the `spec`. Change the `bip` argument to a IP address/subnet that does not conflict with other pods, services, or worker nodes:
+
+`  
+  spec:
+    action:
+      enroll: {}
+      reenroll: {}
+    configoverride: {}
+    customNames:
+      pvc: {}
+    dindArgs:
+    - --log-driver
+    - fluentd
+    - --log-opt
+    - fluentd-address=localhost:9880
+    - --mtu
+    - "1400"
+    - --bip
+    - 172.22.1.1/16
+`
+
+This configuration change is not required if you are using Hyperledger Fabric 2.x peers, which do not use Docker in Docker containers. Using Fabric 2.x is the recommended resolution for this case, but the procedure can be used to resolve potential IP address conflicts in nodes running Hyperledger Fabric 1.4.x.
+{: note}

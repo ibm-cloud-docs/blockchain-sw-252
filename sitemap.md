@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-02-02"
+lastupdated: "2022-02-04"
 
 keywords: site map
 subcollection: blockchain-sw-252
@@ -913,6 +913,7 @@ subcollection: blockchain-sw-252
     * [Verifying the console installation](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-verify)
 * [Log in to the console](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-log-in)
 * [Next steps](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-k8-next-steps)
+* [Docker in Docker considerations](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-icp#deploy-icp-docker-in-docker-considerations)
 
 
 ## Using the {{site.data.keyword.blockchainfull_notm}} images
