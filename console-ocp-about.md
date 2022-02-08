@@ -153,6 +153,28 @@ If you are running on Azure Kubernetes Service, Amazon Web Services, Rancher, Am
 {: important}
 
 
+### Fabric Component Support
+{: #fabric-component-support}
+
+The following support levels are provided for Hyperledger Fabric 2.2.3 or higher:
+
+Using IBM Certified Fabric Images, Kubernetes Operator, and Certified Fabric Operations Console **are required for support** and provide Hyperledger Fabric clients with a verified production setup, simplified management and support, and verified security patches.
+{: important}
+
+| Fabric Component | Support Level |
+|----|----|
+| IBM Certified Fabric images deployed using Kubernetes Operator and managed via the Certified Fabric Operations Console image. | All Certified Fabric images including IBM fix support for [supported Hyperledger Fabric versions](/docs/hlf-support?topic=hlf-support-console-ocp-about#console-ocp-about-prerequisites). |
+| Supported Environments | Recent [Kubernetes and OpenShift versions](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-ocp-about#console-ocp-about-prerequisites) on IBM Cloud, third-party Cloud or local installations. |
+| Hyperledger Fabric without IBMs Certified Images, Kubernetes Operator or Certified Fabric Operations Console image. | Not included in support - [community support only](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-ocp-about#blockchain-support-resources) |
+| Hyperledger Fabric Labs Support | Fabric Operations Console via Certified Image and deployed by Kubernetes Operator is supported. |
+| Hyperledger Fabric Open Source Projects - [IBM Blockchain GitHub](https://github.com/ibm-blockchain) | Open source projects are not included in support, with the exception of [Ansible](/docs/blockchain-sw-252?topic=blockchain-sw-252-ansible). All other open source projects are [community support only](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-ocp-about#blockchain-support-resources). | 
+| Hyperledger Fabric SDK and CLI | Basic connectivity diagnostics is supported. Code support and SDK API usage and tuning are not included in support - [community support only](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-ocp-about#blockchain-support-resources). |
+| Hyperledger Fabric Chaincode | Basic chaincode diagnostics is supported. Code support and tuning are not included in support - [community support only](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-ocp-about#blockchain-support-resources). |
+| Deployment Architecture and Design. | Basic deployment and management of highly available [peer](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-hadr-mr), [orderer](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-hadr-mr-os), and [Certificate Authority](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-hadr-mr-os) nodes via the Console are supported. Detailed Deployment Architecture and Design are not included in support - see [deployment options](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-ha) for more information. |
+| Solution Architecture and Design | [Deploying and managing smart contracts](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-smart-contracts) via the Console are supported. Solution Architecture and Design are not included in  support. |
+| Performance Tuning | [Resource allocation](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-adv-deployment-allocate-resources) via the Console is supported. Detailed performance analysis and tuning of the environment or application code are not included in support - see the documentation on creating [highly available applications and using indexes with CouchDB](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-app#console-app-ha). |
+| Certificate Renewal | [Automatic](/docs/blockchain-sw-252?topic=blockchain-sw-252-cert-mgmt#cert-mgmt-auto-renewal) and [Manual](/docs/blockchain-sw-252?topic=blockchain-sw-252-cert-mgmt#cert-mgmt-manual-renewal) Certificate renewal via the Certified Console image is supported. Fixing environments in which identities were lost or allowed to expire is not included in support. The user is responsible for keeping track of identities and performing manual certificate renewal. Using a [Certificate Management Solution](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-identities#storing-and-managing-certificates-in-ibm-cloud-certificate-manager) is recommended for keeping track of identities and certificates. |
+{: caption="Table 2. Fabric component support" caption-side="bottom"}
 
 ## License and pricing
 {: #console-ocp-about-license}

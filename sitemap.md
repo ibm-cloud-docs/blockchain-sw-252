@@ -55,6 +55,7 @@ subcollection: blockchain-sw-252
 * [What {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 offers](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-ocp-about#console-ocp-about-offers)
 
 * [Supported Platforms](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-ocp-about#console-ocp-about-prerequisites)
+    * [Fabric Component Support](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-ocp-about#fabric-component-support)
 
 * [License and pricing](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-ocp-about#console-ocp-about-license)
 
