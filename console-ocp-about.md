@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-02-25"
+lastupdated: "2022-03-01"
 
 keywords: IBM Blockchain Platform, system requirements, Kubernetes, behind a firewall, azure, multicloud
 
@@ -156,7 +156,7 @@ If you are running on Azure Kubernetes Service, Amazon Web Services, Rancher, Am
 ### Fabric Component Support
 {: #fabric-component-support}
 
-The following support levels are provided for Hyperledger Fabric v1.4.12, v2.2.2, v2.2.4, and
+The following support levels are provided for Hyperledger Fabric v1.4.12, v2.2.4, v2.2.5, and
 Fabric CA v1.5.0 and v1.5.2.
 
 Using IBM Certified Fabric Images, Kubernetes Operator, and Certified Fabric Operations Console **are required for support** and provide Hyperledger Fabric clients with a verified production setup, simplified management and support, and verified security patches.
