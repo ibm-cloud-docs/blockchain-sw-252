@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-02-08"
+lastupdated: "2022-03-02"
 
 keywords: Kubernetes, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters
 
@@ -938,7 +938,7 @@ spec:
         fsGroup: 2000
       containers:
         - name: "ibp-webhook"
-          image: "cp.icr.io/cp/ibp-crdwebhook:2.5.2-20220208-amd64"
+          image: "cp.icr.io/cp/ibp-crdwebhook:2.5.2-20220308-amd64"
           imagePullPolicy: Always
           securityContext:
             privileged: false
@@ -1969,7 +1969,7 @@ spec:
         fsGroup: 2000
       containers:
         - name: "ibp-webhook"
-          image: "cp.icr.io/cp/ibp-crdwebhook:2.5.2-20220208-amd64"
+          image: "cp.icr.io/cp/ibp-crdwebhook:2.5.2-20220308-amd64"
           imagePullPolicy: Always
           securityContext:
             privileged: false
