@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-03-01"
+lastupdated: "2022-03-08"
 
 keywords: IBM Blockchain Platform, system requirements, Kubernetes, behind a firewall, azure, multicloud
 
@@ -138,8 +138,8 @@ The {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 can be deployed wit
 
 | Kubernetes distribution | Version | Hardware |  Tested configuration|
 |----|----|----|-----|
-| OpenShift Container Platform | 4.6, 4.7, 4.8 |  x86_64 |  4.6, 4.7, 4.8 |
-| OpenShift Container Platform on {{site.data.keyword.cloud_notm}} |  4.6, 4.7, 4.8 | x86_64 |  4.6, 4.7, 4.8 |
+| OpenShift Container Platform | 4.6, 4.7, 4.8, 4.9 |  x86_64 |  4.6, 4.7, 4.8, 4.9 |
+| OpenShift Container Platform on {{site.data.keyword.cloud_notm}} |  4.6, 4.7, 4.8, 4.9 | x86_64 |  4.6, 4.7, 4.8, 4.9 |
 | OpenShift Container Platform on LinuxONE |  4.6, 4.7, 4.8 | s390x | 4.6, 4.7, 4.8 |
 | Kubernetes ***   | v1.19 - v1.22 | x86_64 | v1.19 - v1.22 |
 {: caption="Table 1. Supported platforms" caption-side="bottom"}

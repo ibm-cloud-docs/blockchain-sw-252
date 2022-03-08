@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-07"
+lastupdated: "2022-03-08"
 
 keywords: site map
 subcollection: blockchain-sw-252
@@ -1403,6 +1403,8 @@ subcollection: blockchain-sw-252
 
 
 [Release notes](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-sw-252)
+
+* [08 Mar 2022](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-sw-252#08-03-2022)
 
 * [08 Feb 2022](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-sw-252#08-02-2022)
 
