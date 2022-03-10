@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-02-09"
+lastupdated: "2022-03-10"
 
 keywords: IBM Blockchain Platform, system requirements, Kubernetes, behind a firewall, azure, multicloud
 
@@ -108,7 +108,7 @@ The {{site.data.keyword.blockchainfull_notm}} Platform includes the following ke
 **OPERATE --- Total control of your deployments**
 - **Host or join a network**. Deploy peers that are hosted in your cluster to multiple channels on multiple clouds, or invite other organizations to join your consortium or channels while the organizations manage their nodes independently across infrastructures.
 - **Maintain complete control of your identities**. Store and manage the keys that are used to administer your nodes. Optionally, use a [Hardware Security Module (HSM)](#x6704988){: term} to generate and store the private key of your nodes.
-- **Run Anywhere**. Thanks to the **unified codebase** of the {{site.data.keyword.blockchainfull_notm}} Platform console, it is possible to run your components on any Kubernetes v1.19 - v1.22 container platform on x86_64 or s390x.
+- **Run Anywhere**. Thanks to the **unified codebase** of the {{site.data.keyword.blockchainfull_notm}} Platform console, it is possible to run your components on any Kubernetes v1.19 - v1.23 container platform on x86_64 or s390x.
 - **Unified operation**. The {{site.data.keyword.blockchainfull_notm}} Platform console allows you to deploy and manage all of your organizations and nodes in **one console**. You can also add or remove members from a blockchain consortium, create and join channels, and deploy smart contracts from your console.
 - **Dynamic signature collection** that allows better control over collaborative governance over channel configurations.
 - **Elimination of Docker-in-Docker for smart contracts** allows smart contract pods to be run more securely, without peers needing privileged access.
@@ -129,7 +129,7 @@ Have questions and want to speak to an {{site.data.keyword.blockchainfull_notm}}
 ## Supported Platforms
 {: #console-ocp-about-prerequisites}
 
-**Reminder:** {{site.data.keyword.containerlong_notm}} 1.18 is no longer supported. If your {{site.data.keyword.blockchainfull_notm}} Platform instance is linked to an {{site.data.keyword.containerlong_notm}} 1.18 cluster, you must immediately upgrade it to {{site.data.keyword.containerlong_notm}} 1.20. Be aware that  {{site.data.keyword.containerlong_notm}} 1.19 is already deprecated, and therefore now is a good time to upgrade to 1.20 (the expected date for removal of 1.19 support is January 31, 2022). To get started, see [1.18 to 1.20 considerations](/docs/containers?topic=containers-cs_versions#cs_v120) and [1.18 to 1.21 considerations](/docs/containers?topic=containers-cs_versions#cs_v121). For the actual steps that are required, see [Updating clusters, worker nodes, and cluster components](/docs/containers?topic=containers-update#update). For the list of {{site.data.keyword.containerlong_notm}} supported versions and expiration dates see the [release history](/docs/containers?topic=containers-cs_versions#release-history).
+**Reminder:** {{site.data.keyword.containerlong_notm}} 1.18 is no longer supported. If your {{site.data.keyword.blockchainfull_notm}} Platform instance is linked to an {{site.data.keyword.containerlong_notm}} 1.18 cluster, you must immediately upgrade it to {{site.data.keyword.containerlong_notm}} 1.20. Be aware that  {{site.data.keyword.containerlong_notm}} 1.19 is already deprecated, and therefore now is a good time to upgrade to 1.20 (the expected date for removal of 1.19 support is March 14, 2022). To get started, see [1.18 to 1.20 considerations](/docs/containers?topic=containers-cs_versions#cs_v120) and [1.18 to 1.21 considerations](/docs/containers?topic=containers-cs_versions#cs_v121). For the actual steps that are required, see [Updating clusters, worker nodes, and cluster components](/docs/containers?topic=containers-update#update). For the list of {{site.data.keyword.containerlong_notm}} supported versions and expiration dates see the [release history](/docs/containers?topic=containers-cs_versions#release-history).
 
 All documentation on supported environments applies to the latest version of the code only. If necessary, refer to the [upgrade information](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-govern-components). For release-specific details, see [release notes](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20).
 
@@ -138,10 +138,10 @@ The {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 can be deployed wit
 
 | Kubernetes distribution | Version | Hardware |  Tested configuration|
 |----|----|----|-----|
-| OpenShift Container Platform | 4.6, 4.7, 4.8 |  x86_64 |  4.6, 4.7, 4.8 |
-| OpenShift Container Platform on {{site.data.keyword.cloud_notm}} |  4.6, 4.7, 4.8 | x86_64 |  4.6, 4.7, 4.8 |
+| OpenShift Container Platform | 4.6, 4.7, 4.8, 4.9 |  x86_64 |  4.6, 4.7, 4.8, 4.9 |
+| OpenShift Container Platform on {{site.data.keyword.cloud_notm}} |  4.6, 4.7, 4.8, 4.9 | x86_64 |  4.6, 4.7, 4.8, 4.9 |
 | OpenShift Container Platform on LinuxONE |  4.6, 4.7, 4.8 | s390x | 4.6, 4.7, 4.8 |
-| Kubernetes ***   | v1.19 - v1.22 | x86_64 | v1.19 - v1.22 |
+| Kubernetes ***   | v1.19 - v1.23 | x86_64 | v1.19 - v1.23 |
 {: caption="Table 1. Supported platforms" caption-side="bottom"}
 
 *** If you want to use {{site.data.keyword.IBM_notm}} Kubernetes Service, we recommend that you check out the [{{site.data.keyword.blockchainfull_notm}} Platform for IBM Cloud](/docs/blockchain?topic=blockchain-ibp-v2-deploy-iks){: external} offering unless you specifically require this offering. See [Is IBM Blockchain Platform 2.5.2 suitable for you](/docs/blockchain-sw-252?topic=blockchain-sw-252-get-started-console-ocp#get-started-console-ocp-suitable).    
@@ -149,23 +149,24 @@ The {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 can be deployed wit
 {{site.data.keyword.blockchainfull_notm}}Platform does not support IBM Cloud Virtual Server for VPC and Virtual Private Cloud (VPC).
 {: note}
 
-If you are running on Azure Kubernetes Service, Amazon Web Services, Rancher, Amazon Elastic Kubernetes Service, or Google Kubernetes Engine, then you need to set up the NGINX Ingress controller and it needs to be running in [SSL passthrough mode](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#ssl-passthrough){: external}. For more information, see [Considerations when using Kubernetes distributions](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#console-deploy-k8-considerations).
+If you are running on Azure Kubernetes Service, Amazon Web Services, Rancher, Amazon Elastic Kubernetes Service, or Google Kubernetes Engine, then you need to set up the NGINX Ingress controller and it needs to be running in [SSL passthrough mode](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#ssl-passthrough){: external}. For more information, see [Considerations when using Kubernetes distributions](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#console-deploy-k8-considerations). If you are using OpenShift with a load balancer that is external to the OpenShift cluster, using [SSL passthrough](https://www.ibm.com/docs/en/sdsu/8.0.1?topic=authentication-pass-through-over-ssl) is required.
 {: important}
 
 
 ### Fabric Component Support
 {: #fabric-component-support}
 
-The following support levels are provided for Hyperledger Fabric 2.2.3 or higher:
+The following support levels are provided for Hyperledger Fabric v1.4.12, v2.2.4, v2.2.5, and
+Fabric CA v1.5.0 and v1.5.2.
 
 Using IBM Certified Fabric Images, Kubernetes Operator, and Certified Fabric Operations Console **are required for support** and provide Hyperledger Fabric clients with a verified production setup, simplified management and support, and verified security patches.
 {: important}
 
 | Fabric Component | Support Level |
 |----|----|
-| IBM Certified Fabric images deployed using Kubernetes Operator and managed via the Certified Fabric Operations Console image. | All Certified Fabric images including IBM fix support for [supported Hyperledger Fabric versions](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-ocp-about#fabric-component-support). |
+| IBM Certified Fabric images deployed using Kubernetes Operator and managed via the Certified Fabric Operations Console image. | All Certified Fabric images include IBM fix support for [supported Hyperledger Fabric versions](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-ocp-about#fabric-component-support). |
 | Supported Environments | Recent [Kubernetes and OpenShift versions](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-ocp-about#console-ocp-about-prerequisites) on IBM Cloud, third-party Cloud or local installations. |
-| Hyperledger Fabric without IBMs Certified Images, Kubernetes Operator or Certified Fabric Operations Console image. | Not included in support - [community support only](/docs/blockchain-sw-252?topic=blockchain-sw-252-blockchain-support#blockchain-support-resources) |
+| Hyperledger Fabric without IBM Certified Images, Kubernetes Operator or Certified Fabric Operations Console image. | Not included in support - [community support only](/docs/blockchain-sw-252?topic=blockchain-sw-252-blockchain-support#blockchain-support-resources) |
 | Hyperledger Fabric Labs Support | Fabric Operations Console via Certified Image and deployed by Kubernetes Operator is supported. |
 | Hyperledger Fabric Open Source Projects - [IBM Blockchain GitHub](https://github.com/ibm-blockchain) | Open source projects are not included in support, with the exception of [Ansible](/docs/blockchain-sw-252?topic=blockchain-sw-252-ansible). All other open source projects are [community support only](/docs/blockchain-sw-252?topic=blockchain-sw-252-blockchain-support#blockchain-support-resources). | 
 | Hyperledger Fabric SDK and CLI | Basic connectivity diagnostics is supported. Code support and SDK API usage and tuning are not included in support - [community support only](/docs/blockchain-sw-252?topic=blockchain-sw-252-blockchain-support#blockchain-support-resources). |
@@ -173,7 +174,7 @@ Using IBM Certified Fabric Images, Kubernetes Operator, and Certified Fabric Ope
 | Deployment Architecture and Design | Basic deployment and management of highly available [peer](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-ha#ibp-console-ha-peers), [orderer](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-ha#ibp-console-ha-ordering-service), and [Certificate Authority](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-ha#ibp-console-ha-ca) nodes via the Console are supported. Detailed Deployment Architecture and Design are not included in support - see [deployment options](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-adv-deployment) for more information. |
 | Solution Architecture and Design | [Deploying and managing smart contracts](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-smart-contracts-v2) via the Console are supported. Solution Architecture and Design are not included in  support. |
 | Performance Tuning | [Resource allocation](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-adv-deployment#ibp-console-adv-deployment-options) via the Console is supported. Detailed performance analysis and tuning of the environment or application code are not included in support - see the documentation on creating [highly available applications and using indexes with CouchDB](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-app#console-app-couchdb). |
-| Certificate Renewal | [Automatic](/docs/blockchain-sw-252?topic=blockchain-sw-252-cert-mgmt#cert-mgmt-auto-renewal) and [Manual](/docs/blockchain-sw-252?topic=blockchain-sw-252-cert-mgmt#cert-mgmt-manual-renewal) Certificate renewal via the Certified Console image is supported. Fixing environments in which identities were lost or allowed to expire is not included in support. The user is responsible for keeping track of identities and performing manual certificate renewal. Using a [Certificate Management Solution](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-identities#storing-and-managing-certificates-in-ibm-cloud-certificate-manager) is recommended for keeping track of identities and certificates. |
+| Certificate Renewal | [Automatic](/docs/blockchain-sw-252?topic=blockchain-sw-252-cert-mgmt#cert-mgmt-auto-renewal) and [Manual](/docs/blockchain-sw-252?topic=blockchain-sw-252-cert-mgmt#cert-mgmt-manual-renewal) Certificate renewal via the Certified Console image is supported. The user is responsible for keeping track of identities and performing manual certificate renewal. Using a [Certificate Management Solution](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-identities#storing-and-managing-certificates-in-ibm-cloud-certificate-manager) is recommended for keeping track of identities and certificates. |
 {: caption="Table 2. Fabric component support" caption-side="bottom"}
 
 ## License and pricing

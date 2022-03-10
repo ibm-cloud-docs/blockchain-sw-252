@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-02-02"
+lastupdated: "2022-03-02"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -46,7 +46,7 @@ When you purchase the {{site.data.keyword.blockchainfull_notm}} Platform from PP
 
 2. You cannot deploy an {{site.data.keyword.blockchainfull_notm}} Platform v2.1.x and 2.5.x instance to the same cluster. If you need to run both instances of the product, then they must be running in separate clusters.
 
-3. You need to install and connect to your cluster by using the [OpenShift Container Platform CLI](https://docs.openshift.com/container-platform/4.7/cli_reference/openshift_cli/getting-started-cli.html){: external} to deploy the platform. If you are using an OpenShift cluster that was deployed with the {{site.data.keyword.IBM_notm}} Kubernetes Service, use these instructions to [Install the OpenShift Origin CLI](/docs/openshift?topic=openshift-openshift-cli#cli_oc).
+3. You need to install and connect to your cluster by using the [OpenShift Container Platform CLI](https://docs.openshift.com/container-platform/4.7/cli_reference/openshift_cli/getting-started-cli.html){: external} to deploy the platform. If you are using an OpenShift cluster that was deployed with the {{site.data.keyword.IBM_notm}} Kubernetes Service, use these instructions to [Install the OpenShift Origin CLI](/docs/openshift?topic=openshift-openshift-cli#cli_oc). If you are using OpenShift with a load balancer that is external to the OpenShift cluster, using [SSL passthrough](https://www.ibm.com/docs/en/sdsu/8.0.1?topic=authentication-pass-through-over-ssl) is required.
 
 4. If you have a Hardware Security Module (HSM) that you plan to use to generate and store the private key for your CA, peer, or ordering nodes, you need to create an HSM client image and push it to your container registry. Follow instructions in the [advanced deployment](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-adv-deployment#ibp-console-adv-deployment-hsm-build-docker) topic to build the image.
 
@@ -299,7 +299,7 @@ spec:
         fsGroup: 2000
       containers:
         - name: "ibp-webhook"
-          image: "cp.icr.io/cp/ibp-crdwebhook:2.5.2-20220208-amd64"
+          image: "cp.icr.io/cp/ibp-crdwebhook:2.5.2-20220308-amd64"
           imagePullPolicy: Always
           securityContext:
             privileged: false
@@ -1185,7 +1185,7 @@ spec:
         - name: ibm-entitlement-key
       containers:
         - name: ibp-operator
-          image: cp.icr.io/cp/ibp-operator:2.5.2-20220208-amd64
+          image: cp.icr.io/cp/ibp-operator:2.5.2-20220308-amd64
           command:
             - ibp-operator
           imagePullPolicy: Always
@@ -1573,5 +1573,3 @@ When you access your console, you can view the **nodes** tab of your console UI.
 To learn how to manage the users that can access the console, view the logs of your console and your blockchain components, see [Administering your console](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-icp-manage#console-icp-manage).  
 
 Ready to automate the entire deployment process? Check out the [Ansible Playbook](/docs/blockchain-sw-252?topic=blockchain-sw-252-ansible-install-ibp) that can be used to complete all of the steps  in this topic for you.
-
-
