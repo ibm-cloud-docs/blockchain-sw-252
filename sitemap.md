@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-11"
+lastupdated: "2022-03-14"
 
 keywords: site map
 subcollection: blockchain-sw-252
@@ -535,7 +535,6 @@ subcollection: blockchain-sw-252
     * [Part Three: Register the client with the HSM server](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-hsm-gemalto#ibp-hsm-gemalto-part-three)
     * [Part Four: Build a Docker image](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-hsm-gemalto#ibp-hsm-gemalto-part-four)
     * [What's next](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-hsm-gemalto#ibp-hsm-gemalto-next-steps)
-* [Using multiple partitions](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-hsm-gemalto#ibp-hsm-gemalto-multiple-partitions)
 
 
 ## Ansible Playbooks
@@ -1249,40 +1248,6 @@ subcollection: blockchain-sw-252
 * [Validating if License Service is deployed on the cluster](/docs/blockchain-sw-252?topic=blockchain-sw-252-metering#validating-if-license-service-is-deployed-on-the-cluster)
 
 * [Archiving license information data before you decommission the cluster](/docs/blockchain-sw-252?topic=blockchain-sw-252-metering#metering-archive)
-
-
-## HSM PKCS #11 proxy
-{: #sitemap_hsm_pkcs_#11_proxy}
-
-
-[HSM PKCS #11 proxy](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-hsm-build-pkcs11-proxy)
-
-* [Setting up a PKCS #11 proxy for your HSM](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-hsm-build-pkcs11-proxy#ibp-hsm-build-pkcs11-proxy)
-
-* [Why is a proxy required?](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-hsm-build-pkcs11-proxy#ibp-hsm-build-pkcs11-proxy-why)
-
-* [Building the proxy image](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-hsm-build-pkcs11-proxy#ibp-hsm-build-pkcs11-proxy-build-img)
-
-* [Deploying the proxy to your cluster](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-hsm-build-pkcs11-proxy#ibp-hsm-build-pkcs11-proxy-deploy)
-    * [**Step one:**  Create a new namespace](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-hsm-build-pkcs11-proxy#ibp-hsm-build-pkcs11-proxy-deploy-s1)
-    * [**Step two:** Create a Kubernetes secret](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-hsm-build-pkcs11-proxy#ibp-hsm-build-pkcs11-proxy-deploy-s2)
-    * [**Step three:** Deploy the proxy pod](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-hsm-build-pkcs11-proxy#ibp-hsm-build-pkcs11-proxy-deploy-s3)
-    * [**Step four:** Configure communication between the proxy and the blockchain components](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-hsm-build-pkcs11-proxy#ibp-hsm-build-pkcs11-proxy-deploy-s4)
-
-* [Next steps](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-hsm-build-pkcs11-proxy#ibp-hsm-build-pkcs11-proxy-next-steps)
-
-
-## IBM Cloud HSM PKCS #11 proxy
-{: #sitemap_ibm_cloud_hsm_pkcs_#11_proxy}
-
-
-[IBM Cloud HSM PKCS #11 proxy](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-hsm-build-pkcs11-proxy-ic)
-
-* [Build PKCS #11 Docker image](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-hsm-build-pkcs11-proxy-ic#ibp-hsm-build-pkcs11-proxy-ic-build)
-
-* [Deploy the Docker image onto your Kubernetes cluster](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-hsm-build-pkcs11-proxy-ic#ibp-hsm-build-pkcs11-proxy-ic-deploy-k8s)
-
-* [Next steps](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-hsm-build-pkcs11-proxy-ic#ibp-hsm-build-pkcs11-proxy-ic-next-steps)
 
 
 ## Glossary
