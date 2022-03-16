@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-03-11"
+lastupdated: "2022-03-16"
 
 keywords: IBM Blockchain Platform, system requirements, Kubernetes, behind a firewall, azure, multicloud
 
@@ -108,7 +108,7 @@ The {{site.data.keyword.blockchainfull_notm}} Platform includes the following ke
 **OPERATE --- Total control of your deployments**
 - **Host or join a network**. Deploy peers that are hosted in your cluster to multiple channels on multiple clouds, or invite other organizations to join your consortium or channels while the organizations manage their nodes independently across infrastructures.
 - **Maintain complete control of your identities**. Store and manage the keys that are used to administer your nodes. Optionally, use a [Hardware Security Module (HSM)](#x6704988){: term} to generate and store the private key of your nodes.
-- **Run Anywhere**. Thanks to the **unified codebase** of the {{site.data.keyword.blockchainfull_notm}} Platform console, it is possible to run your components on any Kubernetes v1.19 - v1.23 container platform on x86_64 or s390x.
+- **Run Anywhere**. Thanks to the **unified codebase** of the {{site.data.keyword.blockchainfull_notm}} Platform console, it is possible to run your components on any Kubernetes v1.20 - v1.23 container platform on x86_64 or s390x.
 - **Unified operation**. The {{site.data.keyword.blockchainfull_notm}} Platform console allows you to deploy and manage all of your organizations and nodes in **one console**. You can also add or remove members from a blockchain consortium, create and join channels, and deploy smart contracts from your console.
 - **Dynamic signature collection** that allows better control over collaborative governance over channel configurations.
 - **Elimination of Docker-in-Docker for smart contracts** allows smart contract pods to be run more securely, without peers needing privileged access.
@@ -129,7 +129,7 @@ Have questions and want to speak to an {{site.data.keyword.blockchainfull_notm}}
 ## Supported Platforms
 {: #console-ocp-about-prerequisites}
 
-**Reminder:** {{site.data.keyword.containerlong_notm}} 1.18 is no longer supported. If your {{site.data.keyword.blockchainfull_notm}} Platform instance is linked to an {{site.data.keyword.containerlong_notm}} 1.18 cluster, you must immediately upgrade it to {{site.data.keyword.containerlong_notm}} 1.20. Be aware that  {{site.data.keyword.containerlong_notm}} 1.19 is already deprecated, and therefore now is a good time to upgrade to 1.20 (the expected date for removal of 1.19 support is March 14, 2022). To get started, see [1.18 to 1.20 considerations](/docs/containers?topic=containers-cs_versions#cs_v120) and [1.18 to 1.21 considerations](/docs/containers?topic=containers-cs_versions#cs_v121). For the actual steps that are required, see [Updating clusters, worker nodes, and cluster components](/docs/containers?topic=containers-update#update). For the list of {{site.data.keyword.containerlong_notm}} supported versions and expiration dates see the [release history](/docs/containers?topic=containers-cs_versions#release-history).
+**Reminder:** {{site.data.keyword.containerlong_notm}} 1.19 is no longer supported. If your {{site.data.keyword.blockchainfull_notm}} Platform instance is linked to an {{site.data.keyword.containerlong_notm}} 1.19 cluster, you must immediately upgrade it to {{site.data.keyword.containerlong_notm}} 1.20. To get started, see [1.18 to 1.20 considerations](/docs/containers?topic=containers-cs_versions#cs_v120) and [1.18 to 1.21 considerations](/docs/containers?topic=containers-cs_versions#cs_v121). For the actual steps that are required, see [Updating clusters, worker nodes, and cluster components](/docs/containers?topic=containers-update#update). For the list of {{site.data.keyword.containerlong_notm}} supported versions and expiration dates see the [release history](/docs/containers?topic=containers-cs_versions#release-history).
 
 All documentation on supported environments applies to the latest version of the code only. If necessary, refer to the [upgrade information](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-govern-components). For release-specific details, see [release notes](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20).
 
@@ -141,7 +141,7 @@ The {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 can be deployed wit
 | OpenShift Container Platform | 4.6, 4.7, 4.8, 4.9 |  x86_64 |  4.6, 4.7, 4.8, 4.9 |
 | OpenShift Container Platform on {{site.data.keyword.cloud_notm}} |  4.6, 4.7, 4.8, 4.9 | x86_64 |  4.6, 4.7, 4.8, 4.9 |
 | OpenShift Container Platform on LinuxONE |  4.6, 4.7, 4.8 | s390x | 4.6, 4.7, 4.8 |
-| Kubernetes ***   | v1.19 - v1.23 | x86_64 | v1.19 - v1.23 |
+| Kubernetes ***   | v1.20 - v1.23 | x86_64 | v1.20 - v1.23 |
 {: caption="Table 1. Supported platforms" caption-side="bottom"}
 
 *** If you want to use {{site.data.keyword.IBM_notm}} Kubernetes Service, we recommend that you check out the [{{site.data.keyword.blockchainfull_notm}} Platform for IBM Cloud](/docs/blockchain?topic=blockchain-ibp-v2-deploy-iks){: external} offering unless you specifically require this offering. See [Is IBM Blockchain Platform 2.5.2 suitable for you](/docs/blockchain-sw-252?topic=blockchain-sw-252-get-started-console-ocp#get-started-console-ocp-suitable).    
