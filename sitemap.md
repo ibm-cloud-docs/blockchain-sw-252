@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-22"
+lastupdated: "2022-03-25"
 
 keywords: site map
 subcollection: blockchain-sw-252
@@ -429,7 +429,7 @@ subcollection: blockchain-sw-252
 * [Private data](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-smart-contracts-v2#ibp-console-smart-contracts-v2-private-data)
 * [Implicit data collections](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-smart-contracts-v2#ibp-console-smart-contracts-v2-implicit-colln)
 
-[Deploy a smart contract using Fabric v1.4 (Legacy)](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-smart-contracts-v14)
+[Deploy a smart contract using Fabric v1.4 (Deprecated)](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-smart-contracts-v14)
 * [Before you begin](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-smart-contracts-v14#ibp-console-smart-contracts-before)
 * [Step one: Write and package your smart contract](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-smart-contracts-v14#ibp-console-smart-contracts-write-package)
     * [Vendoring smart contracts](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-smart-contracts-v14#ibp-console-smart-contracts-write-package-vendor)
