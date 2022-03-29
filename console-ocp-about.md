@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-03-25"
+lastupdated: "2022-03-29"
 
 keywords: IBM Blockchain Platform, system requirements, Kubernetes, behind a firewall, azure, multicloud
 
@@ -155,6 +155,10 @@ If you are running on Azure Kubernetes Service, Amazon Web Services, Rancher, Am
 
 ### Fabric Component Support
 {: #fabric-component-support}
+
+Support for Hyperledger Fabric **v1.4 is now deprecated**, and support for Fabric v1.4 will be removed from  {{site.data.keyword.blockchainfull_notm}} Platform on March 31, 2023. Users should therefore [upgrade to Fabric v2.2](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-govern-components#ibp-console-govern-components-upgrade) as soon as possible. Your applications may  require changes as a result of upgrading to v2.2, so please plan for appropriate testing.
+Note that Fabric v1.4 has not been supported by the Hyperledger community since April of 2021. In addition, Fabric v1.4 uses Golang v1.14, which is no longer receiving security updates from the Golang community.
+{: important}
 
 The following support levels are provided for Hyperledger Fabric v1.4.12 (Deprecated), v2.2.4, v2.2.5, and Fabric CA v1.5.0 and v1.5.2.
 
