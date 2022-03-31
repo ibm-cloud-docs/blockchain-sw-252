@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-02-04"
+lastupdated: "2022-03-16"
 
 keywords: IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -19,10 +19,10 @@ subcollection: blockchain-sw-252
 
 You can use the following instructions to deploy {{site.data.keyword.blockchainfull}} Platform 2.5.2 on IBM Cloud Private with a minimum fix pack level of 3.2.2.2008.
 
-{{site.data.keyword.blockchainfull}} Platform 2.5.2 has been tested on IBM Cloud Private 3.2.2.2105, which contains a supported version of Kubernetes (1.19). However, the minimum fix level for IBM Cloud Private (3.2.2.2008) contains an earlier version of Kubernetes (1.16). Though IBM Blockchain Platform is functional with Kubernetes 1.16, version 1.16 is no longer supported by Kubernetes and may be missing fixes for identified vulnerabilities.
+{{site.data.keyword.blockchainfull}} Platform 2.5.2 has been tested on IBM Cloud Private 3.2.2.2105, which contains Kubernetes v1.19. However, the minimum fix level for IBM Cloud Private (3.2.2.2008) contains an earlier version of  Kubernetes. Though IBM Blockchain Platform is functional with earlier versions of Kubernetes, they are no longer supported and may be missing fixes for identified vulnerabilities.
 {: important}
 
-The {{site.data.keyword.blockchainfull_notm}} Platform uses a [Kubernetes Operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/){: external} to install the {{site.data.keyword.blockchainfull_notm}} Platform console on your cluster and manage the deployment and your blockchain nodes. When the {{site.data.keyword.blockchainfull_notm}} Platform console is running on your cluster, you can use the console to create blockchain nodes and operate a multicloud blockchain network.
+{{site.data.keyword.blockchainfull_notm}} Platform uses a [Kubernetes Operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/){: external} to install the {{site.data.keyword.blockchainfull_notm}} Platform console on your cluster and manage the deployment and your blockchain nodes. When the {{site.data.keyword.blockchainfull_notm}} Platform console is running on your cluster, you can use the console to create blockchain nodes and operate a multicloud blockchain network.
 {: shortdesc}
 
 Kubernetes does not download and update the latest version of {{site.data.keyword.blockchainfull_notm}} Platform automatically. To get the latest update, you need to create a new cluster and a new service instance.
