@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-03-31"
+lastupdated: "2022-04-01"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -11,7 +11,6 @@ subcollection: blockchain-sw-252
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 
@@ -171,6 +170,7 @@ roleRef:
   kind: Role
   name: webhook
   apiGroup: rbac.authorization.k8s.io
+
 ```
 {: codeblock}
 
@@ -230,6 +230,7 @@ users:
 - system:serviceaccounts:<PROJECT_NAME>
 volumes:
 - "*"
+
 ```
 {: codeblock}
 
@@ -342,6 +343,7 @@ spec:
             requests:
               cpu: 0.1
               memory: "100Mi"
+
 ```
 {: codeblock}
 
@@ -857,6 +859,7 @@ users:
 - system:serviceaccounts:<PROJECT_NAME>
 volumes:
 - "*"
+
 ```
 {: codeblock}
 
@@ -1103,6 +1106,7 @@ roleRef:
   kind: ClusterRole
   name: <PROJECT_NAME>
   apiGroup: rbac.authorization.k8s.io
+
 ```
 {: codeblock}
 
@@ -1233,6 +1237,7 @@ spec:
             limits:
               cpu: 100m
               memory: 200Mi
+
 ```
 {: codeblock}
 
@@ -1288,6 +1293,7 @@ spec:
       class: ""
       size: 5Gi
   version: 2.5.2
+
 ```
 {: codeblock}
 
@@ -1394,6 +1400,7 @@ spec:
         cpu: 100m
         memory: 200Mi
   version: 2.5.2
+
 ```
 {: codeblock}
 
@@ -1473,6 +1480,7 @@ spec:
       class: default
       size: 10Gi
   tlsSecretName: "<CONSOLE_TLS_SECRET_NAME>"
+
 ```
 {: codeblock}
 

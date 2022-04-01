@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-04-01"
 
 keywords: IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, delete, remove
 
@@ -11,7 +11,6 @@ subcollection: blockchain-sw-252
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 

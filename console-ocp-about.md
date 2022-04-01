@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-03-29"
+lastupdated: "2022-04-01"
 
 keywords: IBM Blockchain Platform, system requirements, Kubernetes, behind a firewall, azure, multicloud
 
@@ -11,7 +11,6 @@ subcollection: blockchain-sw-252
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 

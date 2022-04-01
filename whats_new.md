@@ -1,8 +1,8 @@
 ---
 
-copyright:
-  years: 2017, 2022
-lastupdated: "2022-02-01"
+copyright: 
+  years: 2014, 2022
+lastupdated: "2022-04-01"
 
 keywords: IBM Blockchain Platform, release, new features, multicloud
 
@@ -10,10 +10,9 @@ subcollection: blockchain-sw-252
 
 ---
 
+
+
 {{site.data.keyword.attribute-definition-list}}
-
-
-
 
 # What's new
 {: #whats-new}

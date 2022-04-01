@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-01-20"
+lastupdated: "2022-04-01"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, Red Hat Marketplace, subscription, operators
 
@@ -11,10 +11,6 @@ subcollection: blockchain-sw-252
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
-
-
-
 
 
 # Deploy from Red Hat Marketplace
@@ -521,4 +517,5 @@ You can also use the CLI to find the available storage classes for your namespac
 kubectl get storageclasses
 ```
 {: codeblock}
+
 
