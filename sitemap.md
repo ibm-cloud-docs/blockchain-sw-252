@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-31"
+lastupdated: "2022-04-05"
 
 keywords: site map
 subcollection: blockchain-sw-252
@@ -10,7 +10,6 @@ subcollection: blockchain-sw-252
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 
@@ -1000,7 +999,6 @@ subcollection: blockchain-sw-252
     * [What capability does HSM add to my blockchain node?](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-adv-deployment#ibp-console-adv-deployment-cfg-hsm-capability)
     * [Considerations when using HSM](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-adv-deployment#ibp-console-adv-deployment-cfg-hsm-considerations)
     * [Before you begin](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-adv-deployment#ibp-console-adv-deployment-hsm-before)
-    * [(Optional) Configure an HSM daemon](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-adv-deployment#ibp-console-adv-deployment-hsm-daemon)
     * [Build a Docker image](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-adv-deployment#ibp-console-adv-deployment-hsm-build-docker)
     * [Configuring a CA, peer, or ordering node to use the HSM](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-adv-deployment#ibp-console-adv-deployment-cfg-hsm-node)
 
@@ -1369,6 +1367,8 @@ subcollection: blockchain-sw-252
 
 
 [Release notes](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-sw-252)
+
+* [05 Apr 2022](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-sw-252#05-04-2022)
 
 * [08 Mar 2022](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-sw-252#08-03-2022)
 

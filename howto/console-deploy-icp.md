@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-03-16"
+lastupdated: "2022-04-01"
 
 keywords: IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -11,7 +11,6 @@ subcollection: blockchain-sw-252
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # Deploying {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 for {{site.data.keyword.cloud_notm}} Private
@@ -342,6 +341,7 @@ roleRef:
   kind: Role
   name: webhook
   apiGroup: rbac.authorization.k8s.io
+
 ```
 {: codeblock}
 
@@ -1512,6 +1512,7 @@ spec:
       class: default
       size: 10Gi
   tlsSecretName: "<CONSOLE_TLS_SECRET_NAME>"
+
 ```
 {: codeblock}
 

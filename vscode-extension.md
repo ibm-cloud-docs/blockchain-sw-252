@@ -1,9 +1,8 @@
 ---
 
-copyright:
-  years: 2019, 2022
-lastupdated: "2022-02-01"
-
+copyright: 
+  years: 2014, 2022
+lastupdated: "2022-04-01"
 
 keywords: vs code extension, Visual Studio Code extension, smart contract, development tools, multicloud
 
@@ -11,11 +10,9 @@ subcollection: blockchain-sw-252
 
 ---
 
+
+
 {{site.data.keyword.attribute-definition-list}}
-
-
-
-
 
 # Developing smart contracts with {{site.data.keyword.blockchainfull_notm}} Platform Developer Tools
 {: #develop-vscode}

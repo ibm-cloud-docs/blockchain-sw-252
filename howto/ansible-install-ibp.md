@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-11-11"
+  years: 2022
+lastupdated: "2022-04-01"
 
 keywords: ansible playbooks, docker image, blockchain network, APIs, ansible galaxy
 
@@ -11,10 +11,6 @@ subcollection: blockchain-sw-252
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
-
-
-
 
 
 # Deploy the service from an Ansible playbook
@@ -73,5 +69,6 @@ The first time you log in, you are required to change your password, and then lo
 If you are simply interested in automating the process of installing the {{site.data.keyword.blockchainfull_notm}} Platform, you are done. You can use the console UI or APIs to create your blockchain components. If you are not familiar with the process to build a network by using the console, check out the [tutorial](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-build-network) that walks you through the steps of building a sample network.
 
 Already familiar with how to build a network and want to continue to learn more about the available Ansible playbooks? Then check out the tutorial on [Building an {{site.data.keyword.blockchainfull_notm}} Platform network using Ansible playbooks](/docs/blockchain-sw-252?topic=blockchain-sw-252-ansible-build).
+
 
 

@@ -1,8 +1,8 @@
 ---
 
-copyright:
-  years: 2017, 2022
-lastupdated: "2022-01-11"
+copyright: 
+  years: 2014, 2022
+lastupdated: "2022-04-01"
 
 keywords: IBM Blockchain, IBM Blockchain Platform, terms, Fabric, Raft, CouchDB, consortium
 
@@ -10,11 +10,9 @@ subcollection: blockchain-sw-252
 
 ---
 
+
+
 {{site.data.keyword.attribute-definition-list}}
-
-
-
-
 
 # Glossary
 {: #glossary}
@@ -243,4 +241,3 @@ A user is a participant in a blockchain network that has indirect access to the 
 ## World state
 {: #glossary-world-state}
 See [Current state](#glossary-current-state).
-
