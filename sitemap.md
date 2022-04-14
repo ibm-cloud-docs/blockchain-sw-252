@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-05"
+lastupdated: "2022-04-14"
 
 keywords: site map
 subcollection: blockchain-sw-252
@@ -320,6 +320,8 @@ subcollection: blockchain-sw-252
 * [How can I back up and restore components and networks?](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-faq#ibp-v2-faq-backup-restore)
 
 * [What benefits are available with the new smart contract lifecycle available on nodes and channels running on Fabric v2.x?](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-faq#ibp-v2-faq-new-lifecycle)
+
+* [How can I check and interpret the status of my components through the Kubernetes command line?](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-faq#ibm-v2-faq-cr-status)
 
 * [Do you support using certificates from non-IBM Certificate Authorities?](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-faq#ibp-v2-faq-v2-external-certs)
 
