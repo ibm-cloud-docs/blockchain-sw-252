@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-04-01"
+lastupdated: "2022-04-15"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, Red Hat Marketplace, subscription, operators
 
@@ -124,6 +124,9 @@ scc "blockchain-project" added to: ["system:serviceaccounts:blockchain-project"]
 {: #deploy-ocp-rhm-secrets}
 
 To apply the image pull secrets, go to the **OpenShift Container Platform**.
+
+The required global pull secret is automatically copied from the `openshift-config` namespace to the `ibp` namespace. However, if the `ibm-entitlement-keyimage` pull secret is missing from the `ibp` namespace, manually copy the secret to the `ibp` namespace and reference it in your YAML file, as described below. 
+{: note}
 
 1. In the left navigation, click **Workloads** > **Secrets**.
 2. In the search box next to the **Name** drop down, type **pull-secret**.
@@ -517,5 +520,3 @@ You can also use the CLI to find the available storage classes for your namespac
 kubectl get storageclasses
 ```
 {: codeblock}
-
-
