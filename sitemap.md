@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-14"
+lastupdated: "2022-05-26"
 
 keywords: site map
 subcollection: blockchain-sw-252
@@ -599,6 +599,7 @@ subcollection: blockchain-sw-252
     * [Use your own TLS Certificates (Optional)](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm#console-deploy-ocp-use-your-own-tls-certificates-optional)
 * [Step four: Verify the console installation](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm#console-deploy-ocp-verify-install)
 * [Step five: Log in to the console](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm#deploy-ocp-rhm-log-in)
+* [Upgrading your deployment](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm#console-deploy-ocp-rhm-upgrade-deployment)
 * [Removing your deployment](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm#console-deploy-ocp-rhm-remove-deployment)
 * [Next steps](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm#console-deploy-ocp-rhm-next-steps)
 * [Support](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm#deploy-ocp-rhm-support)
@@ -631,6 +632,7 @@ subcollection: blockchain-sw-252
 * [Verify the console installation](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm-fw#console-deploy-ocp-rhm-fw-verify)
 * [Log in to the console](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm-fw#console-deploy-ocp-rhm-fw-login)
 * [Next steps](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm-fw#console-deploy-ocp-rhm-fw-next)
+* [Upgrade your deployment](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm-fw#console-deploy-ocp-rhm-upgrade-deployment)
 * [Remove your deployment](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm-fw#console-deploy-ocp-rhm-fw-remove-deployment)
 * [Create a project for your {{site.data.keyword.blockchainfull_notm}} Platform deployment](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm-fw#deploy-ocp-rhm-fw-project)
 
@@ -1002,6 +1004,7 @@ subcollection: blockchain-sw-252
     * [What capability does HSM add to my blockchain node?](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-adv-deployment#ibp-console-adv-deployment-cfg-hsm-capability)
     * [Considerations when using HSM](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-adv-deployment#ibp-console-adv-deployment-cfg-hsm-considerations)
     * [Before you begin](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-adv-deployment#ibp-console-adv-deployment-hsm-before)
+    * [(Optional) Configure an HSM daemon](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-adv-deployment#ibp-console-adv-deployment-hsm-daemon)
     * [Build a Docker image](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-adv-deployment#ibp-console-adv-deployment-hsm-build-docker)
     * [Configuring a CA, peer, or ordering node to use the HSM](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-adv-deployment#ibp-console-adv-deployment-cfg-hsm-node)
 
@@ -1513,3 +1516,10 @@ subcollection: blockchain-sw-252
 * [Resources and support forums](/docs/blockchain-sw-252?topic=blockchain-sw-252-blockchain-support#blockchain-support-resources)
 
 * [Submitting support cases](/docs/blockchain-sw-252?topic=blockchain-sw-252-blockchain-support#blockchain-support-cases)
+
+
+## Signed images
+{: #sitemap_signed_images}
+
+
+[Signed images](/docs/blockchain-sw-252?topic=blockchain-sw-252-signed-images)

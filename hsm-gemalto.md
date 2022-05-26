@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-08"
+lastupdated: "2022-05-26"
 
 keywords: HSM, Gemalto, IBM Cloud
 
@@ -395,6 +395,12 @@ metadata:
 
 
 
+Because the console needs to know the configuration settings to use for your HSM, you need to create a Kubernetes [configmap](https://kubernetes.io/docs/concepts/configuration/configmap/){: external} to store these values. The configMap settings depend on whether you configured a daemon for your HSM or not. In that case, the {{site.data.keyword.blockchainfull_notm}} Platform operator uses the HSM configuration passed in this configmap to get the details about the HSM client image, such as what image pull secret to use, and the folder mounts that are required. Based on the information provided, when a CA, peer, or ordering node is deployed with HSM enabled, the operator mounts required the files for the HSM client image. If you are using a daemon with your HSM, skip ahead to [Configure the operator to work with an HSM daemon](#daemon-configmap).
+
+**Configure the operator to work with an HSM that does not use a daemon**
+{: #x86-configmap}
+
+
 
 Copy the following text and save it to a file named `ibp-hsm-config.yaml`:
 
@@ -484,6 +490,77 @@ In this example, the first `mountpath` contains four configuration files (cafile
 
 A second mountpath is included for the HSM `/etc/Chrystoki.conf` file. Because the HSM requires its config file in the `/etc` folder, which is a system directory, we need to use the `subpath` parameter to avoid replacing the entire `/etc` directory. If the subpath is not used, the entire `/etc` directory is replaced with the volume being mounted.  
 
+
+You have completed the HSM configuration for your blockchain network. Now when you deploy a new CA, peer, or ordering node, you can configure it to use the HSM that you have configured here. See [Configuring a CA, peer, or ordering node to use the HSM](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-adv-deployment#ibp-console-adv-deployment-cfg-hsm-node) for details.
+
+**Configure the operator to work with an HSM daemon**  
+{: #daemon-configmap}
+
+If you configured an HSM daemon, the following sample configuration shows how to configure the openCryptoki zHSM on the operator. You need to customize the settings according to your daemon.   
+
+Copy the following text and save it to a file named `ibp-hsm-config.yaml`:
+
+```yaml
+daemon:
+  image: us.icr.io/ibp-test/opencryptoki-deamon:s390x-1.0.1
+  auth:
+    imagePullSecret: "ibprepo-key-secret"
+  resources:
+    limits:
+      cex.s390.ibm.com/ibp: 1
+  securityContext:
+    privileged: false
+    runAsNonRoot: false
+    runAsUser: 0
+library:
+  filepath: /hsm/opencryptoki/libopencryptoki.so.0.0.0
+  image: us.icr.io/ibp-test/opencryptoki-deamon:s390x-1.0.1
+  auth:
+    imagePullSecret: "ibprepo-key-secret"
+envs:
+  - name: LD_LIBRARY_PATH
+    value: /stdll
+mountpaths:
+  - mountpath: /usr/sbin/pkcsslotd
+    name: pkcsslotd
+    volumeSource:
+      emptyDir:
+        medium: Memory
+  - mountpath: /var/run
+    name: varrun
+    volumeSource:
+      emptyDir:
+        medium: Memory
+  - mountpath: /var/lib/opencryptoki
+    name: tokeninfo
+    usePVC: true
+  - mountpath: /etc/opencryptoki
+    name: opencryptoki-config
+    volumeSource:
+      emptyDir:
+        medium: Memory
+  - mountpath: /var/lock/opencryptoki
+    name: lock
+    volumeSource:
+      emptyDir:
+        medium: Memory
+  - mountpath: /stdll
+    name: stdll
+    volumeSource:
+      emptyDir:
+        medium: Memory
+type: hsm
+version: v1
+```
+{: codeblock}
+
+- In the `daemon:` section, provide the URL of the HSM daemon image that you created. If the image is not hosted publicly, then you need to create the appropriate pull secret and specify it here as well.
+
+- In the `library:` section, provide the URL of the HSM client image that you created in [step two](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-hsm-gemalto#ibp-hsm-gemalto-part-four-docker). This is the client that the CA, peer, and ordering node will use to talk to the HSM daemon. The `filepath:` is the location of the shared object library in the image. If the image is not hosted publicly then the user must create the appropriate pull secret and specify it as well.
+
+- In the `envs:` section, provide the list of environment variables that are required to configure the HSM.
+
+- In the `mountpaths:` section, provide all the necessary artifacts such as config, shared object libraries, shared memory, etc. that are needed to communicate with the HSM daemon. These settings are vendor-specific as it is your responsibility to know what directories or files need to be mounted. When the CA, peer, and ordering nodes are deployed, these mountpaths will be mounted on to their containers along with the HSM client. Most of these mountpaths can be of type `Memory`, however, if there are files that need to persist, then set `usePVC: true`. When set, the operator stores the files in the mountpath in a persistent medium, by leveraging the PVCs of the CA, peer, and ordering node as the persistent medium.
 
 Run the following command to create the configmap named `ibp-hsm-config` in your cluster namespace or project:
 ```

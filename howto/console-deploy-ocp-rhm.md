@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-04-15"
+lastupdated: "2022-05-26"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, Red Hat Marketplace, subscription, operators
 
@@ -451,6 +451,17 @@ Ensure that you are not using the ESR version of Firefox. If you are, switch to 
 {: important}
 
 The administrator who provisions the console can grant access to other users and restrict the actions they can perform. For more information, see [Managing users from the console](/docs/blockchain-sw-252?topic=blockchain-sw-252-console-icp-manage#console-icp-manage-users){: external} in the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 documentation.
+
+## Upgrading your deployment
+{: #console-deploy-ocp-rhm-upgrade-deployment}
+
+When you deployed the IBM Blockchain operator, you had the option of whether to allow upgrades to this operator to be made automatically or manually. The former is the default option, and if you left it selected, your operator will update whenever a new version is available. These updates may be applied at any time and could include updates to the console or the nodes, or a combination of both. If you chose to manually update your operator, you are prompted with a message when a new version is available. If you approve of the update request, the update proceeds. For more information about what is in each release, check out the [release notes](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20). Note that if you get behind by more than one release that each release will be applied in the order they became available. This could cause an update to take longer to finish.
+
+More often than not, updates pushed to the operator result in the console being updated as well, which triggers the console pod to restart. While the pod is restarting, the console is unavailable. However, this will not affect any transactions that are taking place, as transaction throughput depends on node availability, not console availability.
+
+In the rare cases where an update causes nodes to restart (for example, if the spec of a node is changed), it might be temporarily impossible to drive transactions, depending on the nodes being updated and the structure of your own deployment.
+
+If your update fails, the old version of the operator should continue to function. To resolve the update failure, you need to open a support ticket in [Red Hat support](https://marketplace.redhat.com/en-us/support){: external}.
 
 ## Removing your deployment
 {: #console-deploy-ocp-rhm-remove-deployment}

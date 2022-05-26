@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-04-01"
+lastupdated: "2022-05-26"
 
 keywords: IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -174,36 +174,6 @@ The first three steps are for deployment of the webhook. The last step is for th
 First, copy the following text to a file on your local system and save the file as `rbac.yaml`. This step allows the webhook to read and create a TLS secret in its own project.
 
 ```yaml
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: webhook
-  namespace: ibpinfra
----
-apiVersion: rbac.authorization.k8s.io/v1
-kind: Role
-metadata:
-  name: webhook
-rules:
-- apiGroups:
-  - "*"
-  resources:
-  - secrets
-  verbs:
-  - "*"
----
-kind: RoleBinding
-apiVersion: rbac.authorization.k8s.io/v1
-metadata:
-  name: ibpinfra
-subjects:
-- kind: ServiceAccount
-  name: webhook
-  namespace: ibpinfra
-roleRef:
-  kind: Role
-  name: webhook
-  apiGroup: rbac.authorization.k8s.io
 
 ```
 {: codeblock}
@@ -229,41 +199,6 @@ Skip this step if you are not using OpenShift. The {{site.data.keyword.blockchai
 
 Replace `<PROJECT_NAME>` with `ibpinfra`.
 ```yaml
-allowHostDirVolumePlugin: false
-allowHostIPC: false
-allowHostNetwork: false
-allowHostPID: false
-allowHostPorts: false
-allowPrivilegeEscalation: true
-allowPrivilegedContainer: true
-allowedCapabilities:
-- NET_BIND_SERVICE
-- CHOWN
-- DAC_OVERRIDE
-- SETGID
-- SETUID
-- FOWNER
-apiVersion: security.openshift.io/v1
-defaultAddCapabilities: []
-fsGroup:
-  type: RunAsAny
-groups:
-- system:serviceaccounts:<PROJECT_NAME>
-kind: SecurityContextConstraints
-metadata:
-  name: <PROJECT_NAME>
-readOnlyRootFilesystem: false
-requiredDropCapabilities: []
-runAsUser:
-  type: RunAsAny
-seLinuxContext:
-  type: RunAsAny
-supplementalGroups:
-  type: RunAsAny
-users:
-- system:serviceaccounts:<PROJECT_NAME>
-volumes:
-- "*"
 
 ```
 {: codeblock}
@@ -292,91 +227,12 @@ In order to deploy the webhook, you need to create two `.yaml` files and apply t
 
 Copy the following text to a file on your local system and save the file as `deployment.yaml`. If you are deploying on OpenShift Container Platform on LinuxONE, you need to replace `amd64` with `s390x`.
 
+TESTER: Edit the image tag, for example replace `image: cp.icr.io/cp/ibp-operator:2.5.2-20220405-amd64` with test image tag.
+{: note}
+
 
 
 ```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: "ibp-webhook"
-  labels:
-    helm.sh/chart: "ibm-ibp"
-    app.kubernetes.io/name: "ibp"
-    app.kubernetes.io/instance: "ibp-webhook"
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app.kubernetes.io/instance: "ibp-webhook"
-  strategy:
-    type: Recreate
-  template:
-    metadata:
-      labels:
-        helm.sh/chart: "ibm-ibp"
-        app.kubernetes.io/name: "ibp"
-        app.kubernetes.io/instance: "ibp-webhook"
-      annotations:
-        productName: "IBM Blockchain Platform"
-        productID: "54283fa24f1a4e8589964e6e92626ec4"
-        productVersion: "2.5.2"
-    spec:
-      serviceAccountName: webhook
-      imagePullSecrets:
-        - name: docker-key-secret
-        - name: ibm-entitlement-key
-      hostIPC: false
-      hostNetwork: false
-      hostPID: false
-      securityContext:
-        runAsNonRoot: true
-        runAsUser: 1000
-        fsGroup: 2000
-      containers:
-        - name: "ibp-webhook"
-          image: "cp.icr.io/cp/ibp-crdwebhook:2.5.2-20220405-amd64"
-          imagePullPolicy: Always
-          securityContext:
-            privileged: false
-            allowPrivilegeEscalation: false
-            readOnlyRootFilesystem: true
-            runAsNonRoot: true
-            runAsUser: 1000
-            capabilities:
-              drop:
-                - ALL
-              add:
-                - NET_BIND_SERVICE
-          env:
-            - name: "LICENSE"
-              value: "accept"
-            - name: NAMESPACE
-              valueFrom:
-                fieldRef:
-                  fieldPath: metadata.namespace
-          ports:
-            - name: server
-              containerPort: 3000
-          livenessProbe:
-            httpGet:
-              path: /healthz
-              port: server
-              scheme: HTTPS
-            initialDelaySeconds: 30
-            timeoutSeconds: 5
-            failureThreshold: 6
-          readinessProbe:
-            httpGet:
-              path: /healthz
-              port: server
-              scheme: HTTPS
-            initialDelaySeconds: 26
-            timeoutSeconds: 5
-            periodSeconds: 5
-          resources:
-            requests:
-              cpu: 0.1
-              memory: "100Mi"
 
 ```
 {: codeblock}
@@ -399,24 +255,6 @@ deployment.apps/ibp-webhook created
 Second, copy the following text to a file on your local system and save the file as `service.yaml`.
 
 ```yaml
-apiVersion: v1
-kind: Service
-metadata:
-  name: "ibp-webhook"
-  labels:
-    type: "webhook"
-    app.kubernetes.io/name: "ibp"
-    app.kubernetes.io/instance: "ibp-webhook"
-    helm.sh/chart: "ibm-ibp"
-spec:
-  type: ClusterIP
-  ports:
-    - name: server
-      port: 443
-      targetPort: server
-      protocol: TCP
-  selector:
-    app.kubernetes.io/instance: "ibp-webhook"
 
 ```
 {: codeblock}
@@ -447,87 +285,7 @@ service/ibp-webhook created
 Run this command to update the CA CRD:   
 ```yaml
 cat <<EOF | kubectl apply  -f -
-apiVersion: apiextensions.k8s.io/v1
-kind: CustomResourceDefinition
-metadata:
-  name: ibpcas.ibp.com
-  labels:
-    app.kubernetes.io/instance: ibpca
-    app.kubernetes.io/managed-by: ibp-operator
-    app.kubernetes.io/name: ibp
-    helm.sh/chart: ibm-ibp
-    release: operator
-spec:
-  conversion:
-    strategy: Webhook
-    webhook:
-      clientConfig:
-        caBundle: "${TLS_CERT}"
-        service:
-          name: ibp-webhook
-          namespace: ibpinfra
-          path: /crdconvert
-      conversionReviewVersions:
-      - v1beta1
-      - v1alpha2
-      - v1alpha1
-  group: ibp.com
-  names:
-    kind: IBPCA
-    listKind: IBPCAList
-    plural: ibpcas
-    singular: ibpca
-  scope: Namespaced
-  versions:
-  - name: v1beta1
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: true
-    subresources:
-      status: {}
-  - name: v1alpha2
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: false
-    subresources:
-      status: {}
-  - name: v210
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: false
-    storage: false
-    subresources:
-      status: {}
-  - name: v212
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: false
-    storage: false
-    subresources:
-      status: {}
-  - name: v1alpha1
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: false
-    subresources:
-      status: {}
-status:
-  acceptedNames:
-    kind: IBPCA
-    listKind: IBPCAList
-    plural: ibpcas
-    singular: ibpca
-  conditions: []
-  storedVersions:
-  - v1beta1
+
 EOF
 ```
 {: codeblock}
@@ -547,71 +305,7 @@ customresourcedefinition.apiextensions.k8s.io/ibpcas.ibp.com configured
 Run this command to update the peer CRD:
 ```yaml
 cat <<EOF | kubectl apply  -f -
-apiVersion: apiextensions.k8s.io/v1
-kind: CustomResourceDefinition
-metadata:
-  name: ibppeers.ibp.com
-  labels:
-    release: "operator"
-    helm.sh/chart: "ibm-ibp"
-    app.kubernetes.io/name: "ibp"
-    app.kubernetes.io/instance: "ibppeer"
-    app.kubernetes.io/managed-by: "ibp-operator"
-spec:
-  conversion:
-    strategy: Webhook
-    webhook:
-      clientConfig:
-        caBundle: "${TLS_CERT}"
-        service:
-          name: ibp-webhook
-          namespace: ibpinfra
-          path: /crdconvert
-      conversionReviewVersions:
-      - v1beta1
-      - v1alpha2
-      - v1alpha1
-  group: ibp.com
-  names:
-    kind: IBPPeer
-    listKind: IBPPeerList
-    plural: ibppeers
-    singular: ibppeer
-  scope: Namespaced
-  versions:
-  - name: v1beta1
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: true
-    subresources:
-      status: {}
-  - name: v1alpha2
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: false
-    subresources:
-      status: {}
-  - name: v1alpha1
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: false
-    subresources:
-      status: {}
-status:
-  acceptedNames:
-    kind: IBPPeer
-    listKind: IBPPeerList
-    plural: ibppeers
-    singular: ibppeer
-  conditions: []
-  storedVersions:
-  - v1beta1
+
 EOF
 ```
 {: codeblock}
@@ -631,71 +325,6 @@ customresourcedefinition.apiextensions.k8s.io/ibppeers.ibp.com configured
 Run this command to update the console CRD:
 ```yaml
 cat <<EOF | kubectl apply  -f -
-apiVersion: apiextensions.k8s.io/v1
-kind: CustomResourceDefinition
-metadata:
-  name: ibpconsoles.ibp.com
-  labels:
-    release: "operator"
-    helm.sh/chart: "ibm-ibp"
-    app.kubernetes.io/name: "ibp"
-    app.kubernetes.io/instance: "ibpconsole"
-    app.kubernetes.io/managed-by: "ibp-operator"
-spec:
-  conversion:
-    strategy: Webhook
-    webhook:
-      clientConfig:
-        caBundle: "${TLS_CERT}"
-        service:
-          name: ibp-webhook
-          namespace: ibpinfra
-          path: /crdconvert
-      conversionReviewVersions:
-      - v1beta1
-      - v1alpha2
-      - v1alpha1
-  group: ibp.com
-  names:
-    kind: IBPConsole
-    listKind: IBPConsoleList
-    plural: ibpconsoles
-    singular: ibpconsole
-  scope: Namespaced
-  versions:
-  - name: v1beta1
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: true
-    subresources:
-      status: {}
-  - name: v1alpha2
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: false
-    subresources:
-      status: {}
-  - name: v1alpha1
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: false
-    subresources:
-      status: {}
-status:
-  acceptedNames:
-    kind: IBPConsole
-    listKind: IBPConsoleList
-    plural: ibpconsoles
-    singular: ibpconsole
-  conditions: []
-  storedVersions:
-  - v1beta1
 
 EOF
 ```
@@ -716,71 +345,7 @@ customresourcedefinition.apiextensions.k8s.io/ibpconsoles.ibp.com configured
 Run this command to update the orderer CRD:  
 ```yaml
 cat <<EOF | kubectl apply  -f -
-apiVersion: apiextensions.k8s.io/v1
-kind: CustomResourceDefinition
-metadata:
-  name: ibporderers.ibp.com
-  labels:
-    release: "operator"
-    helm.sh/chart: "ibm-ibp"
-    app.kubernetes.io/name: "ibp"
-    app.kubernetes.io/instance: "ibporderer"
-    app.kubernetes.io/managed-by: "ibp-operator"
-spec:
-  conversion:
-    strategy: Webhook
-    webhook:
-      clientConfig:
-        caBundle: "${TLS_CERT}"
-        service:
-          name: ibp-webhook
-          namespace: ibpinfra
-          path: /crdconvert
-      conversionReviewVersions:
-      - v1beta1
-      - v1alpha2
-      - v1alpha1
-  group: ibp.com
-  names:
-    kind: IBPOrderer
-    listKind: IBPOrdererList
-    plural: ibporderers
-    singular: ibporderer
-  scope: Namespaced
-  versions:
-  - name: v1beta1
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: true
-    subresources:
-      status: {}
-  - name: v1alpha2
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: false
-    subresources:
-      status: {}
-  - name: v1alpha1
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: false
-    subresources:
-      status: {}
-status:
-  acceptedNames:
-    kind: IBPOrderer
-    listKind: IBPOrdererList
-    plural: ibporderers
-    singular: ibporderer
-  conditions: []
-  storedVersions:
-  - v1beta1
+
 EOF
 ```
 {: codeblock}
@@ -826,6 +391,9 @@ If you are not using the default storage class, additional configuration is requ
 
 You've already created a secret for the entitlement key in the `ibpinfra` namespace or project, now you need to create one in your {{site.data.keyword.blockchainfull_notm}} Platform namespace or project. After you purchase the {{site.data.keyword.blockchainfull_notm}} Platform, you can access the [My IBM dashboard](https://myibm.ibm.com/dashboard/){: external} to obtain your entitlement key for the offering. You need to store the entitlement key on your cluster by creating a [Kubernetes Secret](https://kubernetes.io/docs/concepts/configuration/secret/){: external}. Kubernetes secrets are used to securely store the key on your cluster and pass it to the operator and the console deployments.
 
+TESTER: Contact Mihir or Dhyey for the key that you need to use for pulling images from staging. Also the docker server should be `--docker-server=cp.stg.icr.io`
+{: note}
+
 
 
 Run the following command to create the secret and add it to your namespace or project:
@@ -852,36 +420,6 @@ The {{site.data.keyword.blockchainfull_notm}} Platform requires specific securit
 Copy the PodSecurityPolicy object below and save it to your local system as `ibp-psp.yaml`.
 
 ```yaml
-apiVersion: policy/v1beta1
-kind: PodSecurityPolicy
-metadata:
-  name: ibm-blockchain-platform-psp
-spec:
-  hostIPC: false
-  hostNetwork: false
-  hostPID: false
-  privileged: true
-  allowPrivilegeEscalation: true
-  readOnlyRootFilesystem: false
-  seLinux:
-    rule: RunAsAny
-  supplementalGroups:
-    rule: RunAsAny
-  runAsUser:
-    rule: RunAsAny
-  fsGroup:
-    rule: RunAsAny
-  requiredDropCapabilities:
-  - ALL
-  allowedCapabilities:
-  - NET_BIND_SERVICE
-  - CHOWN
-  - DAC_OVERRIDE
-  - SETGID
-  - SETUID
-  - FOWNER
-  volumes:
-  - '*'
 
 ```
 {: codeblock}
@@ -898,192 +436,7 @@ kubectl apply -f ibp-psp.yaml
 Copy the following text to a file on your local system and save the file as `ibp-clusterrole.yaml`. This file defines the required ClusterRole for the PodSecurityPolicy. Edit the file and replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.
 
 ```yaml
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRole
-metadata:
-  name: <NAMESPACE>
-  labels:
-    release: "operator"
-    helm.sh/chart: "ibm-ibp"
-    app.kubernetes.io/name: "ibp"
-    app.kubernetes.io/instance: "ibp"
-    app.kubernetes.io/managed-by: "ibp-operator"
-rules:
-- apiGroups:
-  - extensions
-  resourceNames:
-  - ibm-blockchain-platform-psp
-  resources:
-  - podsecuritypolicies
-  verbs:
-  - use
-- apiGroups:
-  - apiextensions.k8s.io
-  resources:
-  - persistentvolumeclaims
-  - persistentvolumes
-  verbs:
-  - get
-  - list
-  - create
-  - update
-  - patch
-  - watch
-  - delete
-  - deletecollection
-- apiGroups:
-  - apiextensions.k8s.io
-  resources:
-  - customresourcedefinitions
-  verbs:
-  - get
-- apiGroups:
-  - route.openshift.io
-  resources:
-  - routes
-  - routes/custom-host
-  verbs:
-  - get
-  - list
-  - create
-  - update
-  - patch
-  - watch
-  - delete
-  - deletecollection
-- apiGroups:
-  - ""
-  resources:
-  - pods
-  - pods/log
-  - persistentvolumeclaims
-  - persistentvolumes
-  - services
-  - endpoints
-  - events
-  - configmaps
-  - secrets
-  - nodes
-  - serviceaccounts
-  verbs:
-  - get
-  - list
-  - create
-  - update
-  - patch
-  - watch
-  - delete
-  - deletecollection
-- apiGroups:
-  - "batch"
-  resources:
-  - jobs
-  verbs:
-  - get
-  - list
-  - create
-  - update
-  - patch
-  - watch
-  - delete
-  - deletecollection
-- apiGroups:
-  - "authorization.openshift.io"
-  - "rbac.authorization.k8s.io"
-  resources:
-  - roles
-  - rolebindings
-  verbs:
-  - get
-  - list
-  - create
-  - update
-  - patch
-  - watch
-  - delete
-  - deletecollection
-  - bind
-  - escalate
-- apiGroups:
-  - ""
-  resources:
-  - namespaces
-  verbs:
-  - get
-- apiGroups:
-  - apps
-  resources:
-  - deployments
-  - daemonsets
-  - replicasets
-  - statefulsets
-  verbs:
-  - get
-  - list
-  - create
-  - update
-  - patch
-  - watch
-  - delete
-  - deletecollection
-- apiGroups:
-  - monitoring.coreos.com
-  resources:
-  - servicemonitors
-  verbs:
-  - get
-  - create
-- apiGroups:
-  - apps
-  resourceNames:
-  - ibp-operator
-  resources:
-  - deployments/finalizers
-  verbs:
-  - update
-- apiGroups:
-  - ibp.com
-  resources:
-  - ibpcas.ibp.com
-  - ibppeers.ibp.com
-  - ibporderers.ibp.com
-  - ibpconsoles.ibp.com
-  - ibpcas
-  - ibppeers
-  - ibporderers
-  - ibpconsoles
-  - ibpcas/finalizers
-  - ibppeers/finalizers
-  - ibporderers/finalizers
-  - ibpconsoles/finalizers
-  - ibpcas/status
-  - ibppeers/status
-  - ibporderers/status
-  - ibpconsoles/status
-  verbs:
-  - get
-  - list
-  - create
-  - update
-  - patch
-  - watch
-  - delete
-  - deletecollection
-- apiGroups:
-  - extensions
-  - networking.k8s.io
-  - config.openshift.io
-  resources:
-  - ingresses
-  verbs:
-  - get
-  - list
-  - create
-  - update
-  - patch
-  - watch
-  - delete
-  - deletecollection
+
 ```
 {: codeblock}
 
@@ -1101,24 +454,6 @@ Replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_n
 Copy the following text to a file on your local system and save the file as `ibp-clusterrolebinding.yaml`. This file defines the ClusterRoleBinding. Edit the file and replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.  
 
 ```yaml
-kind: ClusterRoleBinding
-apiVersion: rbac.authorization.k8s.io/v1
-metadata:
-  name: <NAMESPACE>
-  labels:
-    release: "operator"
-    helm.sh/chart: "ibm-ibp"
-    app.kubernetes.io/name: "ibp"
-    app.kubernetes.io/instance: "ibp"
-    app.kubernetes.io/managed-by: "ibp-operator"
-subjects:
-- kind: ServiceAccount
-  name: default
-  namespace: <NAMESPACE>
-roleRef:
-  kind: ClusterRole
-  name: <NAMESPACE>
-  apiGroup: rbac.authorization.k8s.io
 
 ```
 {: codeblock}
@@ -1150,109 +485,6 @@ The {{site.data.keyword.blockchainfull_notm}} Platform uses an operator to insta
 Copy the following text to a file on your local system and save the file as `ibp-operator.yaml`.
 
 ```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: ibp-operator
-  labels:
-    release: "operator"
-    helm.sh/chart: "ibm-ibp"
-    app.kubernetes.io/name: "ibp"
-    app.kubernetes.io/instance: "ibp"
-    app.kubernetes.io/managed-by: "ibp-operator"
-spec:
-  replicas: 1
-  strategy:
-    type: "Recreate"
-  selector:
-    matchLabels:
-      name: ibp-operator
-  template:
-    metadata:
-      labels:
-        name: ibp-operator
-        release: "operator"
-        helm.sh/chart: "ibm-ibp"
-        app.kubernetes.io/name: "ibp"
-        app.kubernetes.io/instance: "ibp"
-        app.kubernetes.io/managed-by: "ibp-operator"
-      annotations:
-        productName: "IBM Blockchain Platform"
-        productID: "54283fa24f1a4e8589964e6e92626ec4"
-        productVersion: "2.5.2"
-        productChargedContainers: ""
-        productMetric: "VIRTUAL_PROCESSOR_CORE"
-    spec:
-      hostIPC: false
-      hostNetwork: false
-      hostPID: false
-      serviceAccountName: default
-      affinity:
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-              - matchExpressions:
-                  - key: beta.kubernetes.io/arch
-                    operator: In
-                    values:
-                      - amd64
-      securityContext:
-        runAsNonRoot: true
-        runAsUser: 1001
-        fsGroup: 2000
-      imagePullSecrets:
-        - name: docker-key-secret
-        - name: ibm-entitlement-key
-      containers:
-        - name: ibp-operator
-          image: cp.icr.io/cp/ibp-operator:2.5.2-20220405-amd64
-          command:
-            - ibp-operator
-          imagePullPolicy: Always
-          securityContext:
-            privileged: false
-            allowPrivilegeEscalation: false
-            readOnlyRootFilesystem: false
-            runAsNonRoot: false
-            runAsUser: 1001
-            capabilities:
-              drop:
-                - ALL
-              add:
-                - CHOWN
-                - FOWNER
-          livenessProbe:
-            tcpSocket:
-              port: 8383
-            initialDelaySeconds: 10
-            timeoutSeconds: 5
-            failureThreshold: 5
-          readinessProbe:
-            tcpSocket:
-              port: 8383
-            initialDelaySeconds: 10
-            timeoutSeconds: 5
-            periodSeconds: 5
-          env:
-            - name: WATCH_NAMESPACE
-              valueFrom:
-                fieldRef:
-                  fieldPath: metadata.namespace
-            - name: POD_NAME
-              valueFrom:
-                fieldRef:
-                  fieldPath: metadata.name
-            - name: OPERATOR_NAME
-              value: "ibp-operator"
-            - name: CLUSTERTYPE
-              value: K8S
-          resources:
-            requests:
-              cpu: 100m
-              memory: 200Mi
-            limits:
-              cpu: 100m
-              memory: 200Mi
 
 ```
 {: codeblock}
@@ -1283,29 +515,6 @@ When the operator is running on your namespace, you can apply a custom resource 
 Save the custom resource definition below as `ibp-console.yaml` on your local system.
 
 ```yaml
-apiVersion: ibp.com/v1beta1
-kind: IBPConsole
-metadata:
-  name: ibpconsole
-spec:
-  arch:
-    - amd64
-  license:
-    accept: false
-  serviceAccountName: default
-  email: "<EMAIL>"
-  password: "<PASSWORD>"
-  registryURL: cp.icr.io/cp
-  imagePullSecrets:
-    - docker-key-secret
-    - ibm-entitlement-key
-  networkinfo:
-    domain: <DOMAIN>
-  storage:
-    console:
-      class: ""
-      size: 5Gi
-  version: 2.5.2
 
 ```
 {: codeblock}
@@ -1342,60 +551,6 @@ Replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_n
 Before you deploy the console, you can edit the `ibp-console.yaml` file to allocate more resources to your console or use zones for high availability in a multizone cluster. To take advantage of these deployment options, you can use the console resource definition with the `resources:` and `clusterdata:` sections added:
 
 ```yaml
-apiVersion: ibp.com/v1beta1
-kind: IBPConsole
-metadata:
-  name: ibpconsole
-spec:
-  arch:
-    - amd64
-  license:
-    accept: false
-  serviceAccountName: default
-  email: "<EMAIL>"
-  password: "<PASSWORD>"
-  registryURL: cp.icr.io/cp
-  imagePullSecrets:
-    - docker-key-secret
-    - ibm-entitlement-key
-  networkinfo:
-    domain: <DOMAIN>
-  storage:
-    console:
-      class: ""
-      size: 5Gi
-  clusterdata:
-    zones:
-  resources:
-    console:
-      requests:
-        cpu: 500m
-        memory: 1000Mi
-      limits:
-        cpu: 500m
-        memory: 1000Mi
-    configtxlator:
-      limits:
-        cpu: 25m
-        memory: 50Mi
-      requests:
-        cpu: 25m
-        memory: 50Mi
-    couchdb:
-      limits:
-        cpu: 500m
-        memory: 1000Mi
-      requests:
-        cpu: 500m
-        memory: 1000Mi
-    deployer:
-      limits:
-        cpu: 100m
-        memory: 200Mi
-      requests:
-        cpu: 100m
-        memory: 200Mi
-  version: 2.5.2
 
 ```
 {: codeblock}
@@ -1451,29 +606,6 @@ Replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_n
 
 After you create the secret, add the `tlsSecretName` field to the `spec:` section of `ibp-console.yaml` with one indent added, at the same level as the `resources:` and `clusterdata:` sections of the advanced deployment options. You must provide the name of the TLS secret that you created to the field. The following example deploys a console with the TLS certificate and key stored in a secret named `"console-tls-secret"`. Replace `"<CONSOLE_TLS_SECRET_NAME>"` with `"console-tls-secret"` unless you used a different name for the secret.
 ```yaml
-apiVersion: ibp.com/v1beta1
-kind: IBPConsole
-metadata:
-  name: ibpconsole
-spec:
-  arch:
-    - amd64
-  license:
-    accept: false
-  serviceAccountName: default
-  email: "<EMAIL>"
-  password: "<PASSWORD>"
-  registryURL: cp.icr.io/cp
-  imagePullSecrets:
-    - docker-key-secret
-    - ibm-entitlement-key
-  networkinfo:
-    domain: <DOMAIN>
-  storage:
-    console:
-      class: default
-      size: 10Gi
-  tlsSecretName: "<CONSOLE_TLS_SECRET_NAME>"
 
 ```
 {: codeblock}
