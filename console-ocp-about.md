@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-04-01"
+lastupdated: "2022-05-27"
 
 keywords: IBM Blockchain Platform, system requirements, Kubernetes, behind a firewall, azure, multicloud
 
@@ -130,7 +130,7 @@ Have questions and want to speak to an {{site.data.keyword.blockchainfull_notm}}
 
 **Reminder:** {{site.data.keyword.containerlong_notm}} 1.19 is no longer supported. If your {{site.data.keyword.blockchainfull_notm}} Platform instance is linked to an {{site.data.keyword.containerlong_notm}} 1.19 cluster, you must immediately upgrade it to {{site.data.keyword.containerlong_notm}} 1.20 or 1.21. To get started, see [1.20 considerations](/docs/containers?topic=containers-cs_versions#cs_v120) and [1.21 considerations](/docs/containers?topic=containers-cs_versions#cs_v121). For the actual steps that are required, see [Updating clusters, worker nodes, and cluster components](/docs/containers?topic=containers-update#update). For the list of {{site.data.keyword.containerlong_notm}} supported versions and expiration dates see the [release history](/docs/containers?topic=containers-cs_versions#release-history).
 
-All documentation on supported environments applies to the latest version of the code only. If necessary, refer to the [upgrade information](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-govern-components). For release-specific details, see [release notes](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20).
+All documentation on supported environments applies to the latest version of the code only. If necessary, refer to the [upgrade information](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-govern-components). For release-specific details, see [release notes](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-sw-252).
 
 
 The {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 can be deployed with the Kubernetes distributions on the following platforms:
