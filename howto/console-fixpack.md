@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-05"
+lastupdated: "2022-05-27"
 
 keywords: Kubernetes, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, fix pack, multicloud
 
@@ -32,7 +32,7 @@ You can use these steps if you deployed the platform on the OpenShift Container 
 ## What this fix pack contains
 {: #install-fixpack-contents}
 
-This cumulative fix pack contains security patches for the Fabric images and miscellaneous bug fixes.  See the [Release notes](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20) for more details.
+This cumulative fix pack contains security patches for the Fabric images and miscellaneous bug fixes.  See the [Release notes](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes) for more details.
 
 ## Before you begin
 {: #install-fixpack-begin}
