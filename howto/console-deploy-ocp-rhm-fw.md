@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-26"
+lastupdated: "2022-05-27"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, Red Hat Marketplace, subscription, operators, on-prem, firewall, airgap environment, container registry, portable storage, Bastion server
 

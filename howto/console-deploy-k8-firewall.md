@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-05-26"
+lastupdated: "2022-05-27"
 
 keywords: IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, firewall, on-premises, air-gapped, on-prem, multicloud, on-prem
 
