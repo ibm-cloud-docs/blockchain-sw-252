@@ -29,7 +29,7 @@
   * [Certificate Authority options](tutorials-certificate-authority-options.md)
     * [Creating an intermediate Certificate Authority](ibp-console-int-ca.md)
     * [Using certificates from an external Certificate Authority](ibp-v2-tutorial-extca.md)
-  * [Hardware Security Module (HSM)](reference/hsm-gemalto.md)
+  * [Hardware Security Module (HSM)](hsm-gemalto.md)
   * [Ansible Playbooks](howto-ansible-playbooks.md)
     * [Getting started with Ansible playbooks on the IBM Blockchain Platform](ansible.md)
     * [Deploy the service from an Ansible playbook](howto/ansible-install-ibp.md)
