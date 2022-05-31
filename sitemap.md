@@ -1117,6 +1117,14 @@ subcollection: blockchain-sw-252
     * [Step four: Update capabilities](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-govern-components#ibp-console-govern-components-upgrade-step-four-rolling-upgrade)
 * [Deleting components](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-govern-components#ibp-console-govern-components-delete)
 
+[Operating nodes with operations service](/docs/blockchain-sw-252?topic=blockchain-sw-252-operations_service)
+* [Considerations and limitations](/docs/blockchain-sw-252?topic=blockchain-sw-252-operations_service#operations_service_consideration_limitation)
+* [Before you begin](/docs/blockchain-sw-252?topic=blockchain-sw-252-operations_service#operations_service_before_you_begin)
+* [Checking node health](/docs/blockchain-sw-252?topic=blockchain-sw-252-operations_service#operations_service_health_check)
+* [Viewing the metrics](/docs/blockchain-sw-252?topic=blockchain-sw-252-operations_service#operations_service_view_metrics)
+* [Viewing logging levels](/docs/blockchain-sw-252?topic=blockchain-sw-252-operations_service#operations_service_log_level_view)
+* [Setting logging levels](/docs/blockchain-sw-252?topic=blockchain-sw-252-operations_service#operations_service_log_level_set)
+
 
 ## Developing smart contracts and applications
 {: #sitemap_developing_smart_contracts_and_applications}
