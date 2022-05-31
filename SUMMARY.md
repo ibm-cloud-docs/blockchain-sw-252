@@ -8,7 +8,7 @@
     * [Pricing](howto/pricing-sw.md)
     * [Blockchain component overview](blockchain_component_overview.md)
   * [Security](security.md)
-  * [High availability (HA)](ha.md)
+  * [High availability (HA)](ibp-ha.md)
     * [About High Availability](ibp-console-ha.md)
     * [Setting up multiregion High Availability (HA) deployments for peers](ibp-console-ic-ha-howto.md)
     * [Setting up multiregion High Availability (HA) deployments for the ordering service](ibp-console-ha-os.md)
