@@ -20,7 +20,7 @@
   * [Getting started](tutorials-getting-started.md)
     * [Build a network](ibp-console-build-network.md)
     * [Join a network](ibp-console-join-network.md)
-    * [Getting started videos](reference/videos.md)
+    * [Getting started videos](videos.md)
   * [Deploying smart contracts](tutorials-deploying-smart-contracts.md)
     * [Configure smart contracts](ibp-console-configure-smart-contracts.md)
     * [Deploy smart contracts on Fabric v2.x](ibp-console-smart-contracts-v2.md)
