@@ -80,7 +80,7 @@
 * [Help](help.md)
     * [Release notes](release-notes.md)
     * [Known issues](known-issues.md)
-    * [Troubleshooting](howto/ibp-v2-troubleshooting.md)
+    * [Troubleshooting](ibp-v2-troubleshooting.md)
     * [Getting support](ibmblockchain_support.md)
     * [Signed images](code-sign.md)
     * [Site map](sitemap.md)
