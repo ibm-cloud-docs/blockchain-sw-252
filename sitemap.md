@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-05-27"
+lastupdated: "2022-05-31"
 
 keywords: site map
 subcollection: blockchain-sw-252
@@ -395,9 +395,6 @@ subcollection: blockchain-sw-252
     * [Add Org2 MSP to the ordering service consortium](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-join-network#ibp-console-join-network-add-org2-local)
     * [Creating a channel: `channel2`](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-join-network#ibp-console-build-network-create-channel1)
 * [Next steps](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-join-network#ibp-console-join-network-next-steps)
-
-[{{site.data.keyword.blockchainfull_notm}} Platform getting started videos](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-videos)
-* [Getting started with {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-videos#ibp-videos-ibp-v2)
 
 
 ## Deploy a smart contract
