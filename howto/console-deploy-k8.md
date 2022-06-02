@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-05-31"
+lastupdated: "2022-06-02"
 
 keywords: IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -17,9 +17,21 @@ subcollection: blockchain-sw-252
 # Deploying {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2
 {: #deploy-k8}
 
-{[switcher.md]}
+Running a different version of IBM Blockchain Platform? Switch to version
+<a href="/docs/blockchain-sw?topic=blockchain-sw-deploy-k8">2.1.2</a>,
+<a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-k8">2.1.3</a>,
+<a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-deploy-k8">2.5</a>, 
+<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-deploy-k8">2.5.1</a>, 
+2.5.2,
+<a href="/docs/blockchain-sw-253?topic=blockchain-sw-253-deploy-k8">2.5.3</a>.
 
-{[upgrade-now.md]}
+<strong>Important: You are not looking at the latest product documentation. 
+It is strongly suggested that you upgrade to the latest version of the product as soon as possible.</strong> 
+Upgrading ensures that you are using the latest product features and fixes, such as improved product stability, 
+automated certificate renewal, and current security patches. <strong>Security patches are not applied to older 
+versions of the product that are no longer supported.</strong> The supported environments described in documentation for 
+earlier releases, such as a previously supported Kubernetes version, are not updated and may no longer be 
+accurate&mdash;do not rely upon support for any versions listed in earlier releases of the product.
 
 You can use the following instructions to deploy the {{site.data.keyword.blockchainfull}} Platform 2.5.2 on any x86_64 Kubernetes cluster running at v1.20 - v1.23 or on s390x on OpenShift Container Platform running LinuxONE. The {{site.data.keyword.blockchainfull_notm}} Platform uses a [Kubernetes Operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/){: external} to install the {{site.data.keyword.blockchainfull_notm}} Platform console on your cluster and manage the deployment and your blockchain nodes. When the {{site.data.keyword.blockchainfull_notm}} Platform console is running on your cluster, you can use the console to create blockchain nodes and operate a multicloud blockchain network.
 {: shortdesc}

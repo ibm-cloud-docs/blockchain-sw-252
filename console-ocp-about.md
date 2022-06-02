@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-06-01"
+lastupdated: "2022-06-02"
 
 keywords: IBM Blockchain Platform, system requirements, Kubernetes, behind a firewall, azure, multicloud
 
@@ -17,9 +17,21 @@ subcollection: blockchain-sw-252
 # About {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2
 {: #console-ocp-about}
 
-{[switcher.md]}
+Running a different version of IBM Blockchain Platform? Switch to version
+<a href="/docs/blockchain-sw?topic=blockchain-sw-console-ocp-about">2.1.2</a>,
+<a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-console-ocp-about">2.1.3</a>,
+<a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-console-ocp-about">2.5</a>, 
+<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-console-ocp-about">2.5.1</a>, 
+2.5.2,
+<a href="/docs/blockchain-sw-253?topic=blockchain-sw-253-console-ocp-about">2.5.3</a>.
 
-{[upgrade-now.md]}
+<strong>Important: You are not looking at the latest product documentation. 
+It is strongly suggested that you upgrade to the latest version of the product as soon as possible.</strong> 
+Upgrading ensures that you are using the latest product features and fixes, such as improved product stability, 
+automated certificate renewal, and current security patches. <strong>Security patches are not applied to older 
+versions of the product that are no longer supported.</strong> The supported environments described in documentation for 
+earlier releases, such as a previously supported Kubernetes version, are not updated and may no longer be 
+accurate&mdash;do not rely upon support for any versions listed in earlier releases of the product.
 
 The {{site.data.keyword.blockchainfull}} Platform 2.5.2 enables a consortium of organizations to easily build and join a blockchain network [on-prem](#x4561212){: term}, or on any private, public, or hybrid multicloud that uses Kubernetes. Customers can deploy their nodes on the cloud platform of their choice and connect to any {{site.data.keyword.blockchainfull_notm}} Platform network, whether it is deployed on your own Kubernetes cluster or with the {{site.data.keyword.blockchainfull_notm}} Platform for {{site.data.keyword.cloud_notm}}. The {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 leverages Hyperledger Fabric v1.4.12 and v2.2.5 and supports deployment on multiple Kubernetes distributions.
 {: shortdesc}
