@@ -349,6 +349,19 @@ subcollection: blockchain-sw-252
 * [Is there a best practice for monitoring my blockchain resources?](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-faq#ibp-v2-faq-mon-res)
 
 
+## Disclaimer
+{: #sitemap_disclaimer}
+
+
+[Disclaimer](/docs/blockchain-sw-252?topic=blockchain-sw-252-disclaimer)
+
+* [{{site.data.keyword.IBM_notm}} support statement](/docs/blockchain-sw-252?topic=blockchain-sw-252-disclaimer#disclaimer-support-statement)
+
+* [Open-source statement](/docs/blockchain-sw-252?topic=blockchain-sw-252-disclaimer#disclaimer-open-source-statement)
+
+* [Chaincode support statement](/docs/blockchain-sw-252?topic=blockchain-sw-252-disclaimer#disclaimer-chaincode-support-statement)
+
+
 ## Getting started
 {: #sitemap_getting_started}
 
