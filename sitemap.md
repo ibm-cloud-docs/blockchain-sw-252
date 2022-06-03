@@ -22,6 +22,7 @@ subcollection: blockchain-sw-252
 
 
 
+
 ## Getting started with {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2
 {: #sitemap_getting_started_with__platform_2.5.2}
 
