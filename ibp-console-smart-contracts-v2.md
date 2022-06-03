@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-08"
+lastupdated: "2022-06-03"
 
 keywords: smart contract, private data, private data collection, anchor peer, implicit collections
 
@@ -16,7 +16,7 @@ subcollection: blockchain-sw-252
 
 # Deploy a smart contract using Fabric v2.x
 {: #ibp-console-smart-contracts-v2}
-<img src="../images/2-x_Pill.png" alt="version 2.x" width="30" style="width:30px; border-style: none"/> Using the **Hyperledger Fabric v2.x chaincode lifecycle**, learn how to create and package a smart contract and how to propose the smart contract definition to channel members on a channel that runs `application capability 2.x`. Learn how to install the smart contract package on peers that run a Fabric 2.x image. Finally, see how channel members can approve and commit the smart contract definition to the channel.
+<img src="images/2-x_Pill.png" alt="version 2.x" width="30" style="width:30px; border-style: none"/> Using the **Hyperledger Fabric v2.x chaincode lifecycle**, learn how to create and package a smart contract and how to propose the smart contract definition to channel members on a channel that runs `application capability 2.x`. Learn how to install the smart contract package on peers that run a Fabric 2.x image. Finally, see how channel members can approve and commit the smart contract definition to the channel.
 {: shortdesc}
 
 While the terms "smart contract" and "chaincode" are often used interchangeably, "smart contracts" refers to the business logic that governs transactions and access to its data, while "chaincode" refers to the larger infrastructure of packages and other code that encompasses a smart contract.
