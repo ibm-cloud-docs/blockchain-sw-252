@@ -17,21 +17,14 @@ subcollection: blockchain-sw-252
 # Blockchain component overview
 {: #blockchain-component-overview}
 
-Running a different version of IBM Blockchain Platform? Switch to version
+<p>
+<strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
 <a href="/docs/blockchain-sw?topic=blockchain-sw-blockchain-component-overview">2.1.2</a>,
 <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-blockchain-component-overview">2.1.3</a>,
-<a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-blockchain-component-overview">2.5</a>, 
-<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-blockchain-component-overview">2.5.1</a>, 
-2.5.2,
-<a href="/docs/blockchain-sw-253?topic=blockchain-sw-253-blockchain-component-overview">2.5.3</a>.
-
-<strong>Important: You are not looking at the latest product documentation. 
-It is strongly suggested that you upgrade to the latest version of the product as soon as possible.</strong> 
-Upgrading ensures that you are using the latest product features and fixes, such as improved product stability, 
-automated certificate renewal, and current security patches. <strong>Security patches are not applied to older 
-versions of the product that are no longer supported.</strong> The supported environments described in documentation for 
-earlier releases, such as a previously supported Kubernetes version, are not updated and may no longer be 
-accurate&mdash;do not rely upon support for any versions listed in earlier releases of the product.
+<a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-blockchain-component-overview">2.5</a>,
+<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-blockchain-component-overview">2.5.1</a>,
+<a href="/docs/blockchain-sw-252?topic=blockchain-sw-252-blockchain-component-overview">2.5.2</a>
+</p>
 
 The components and structure of the {{site.data.keyword.blockchainfull}} Platform are based on the underlying infrastructure and tools of [Hyperledger Fabric](https://hyperledger-fabric.readthedocs.io/en/release-2.2/){: external}, an open source permissioned blockchain solution to which {{site.data.keyword.IBM_notm}} is a major contributor. Networks based on Fabric include several standard components that can be deployed in a number of configurations to support a wide variety of use cases.
 
