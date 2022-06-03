@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-20-04"
+lastupdated: "2022-06-03"
 
 keywords: tutorials, how-to, getting started, network
 
@@ -30,8 +30,8 @@ Use the IBM Blockchain Platform getting started tutorials to get hands-on experi
 **Target audience:** This topic is designed for architects, system administrators, and developers who are responsible 
 for planning, configuring, and developing applications for {{site.data.keyword.blockchainfull_notm}} 2.5.1 networks.
 
-Use the getting started tutorials to investigate how to [build a network](howto/ibp-console-build-network.md) 
-and [join a network](howto/ibp-console-join-network.md) on {{site.data.keyword.blockchainfull_notm}} 2.5.1.
+Use the getting started tutorials to investigate how to [build a network](ibp-console-build-network.md) 
+and [join a network](ibp-console-join-network.md) on {{site.data.keyword.blockchainfull_notm}} 2.5.1.
 
 You can also watch the [video series](reference/videos.md) to learn how to deploy a peer, deploy an ordering service, 
 and create and join a channel. 

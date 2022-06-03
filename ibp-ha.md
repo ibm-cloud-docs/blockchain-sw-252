@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-21-04"
+lastupdated: "2022-06-03"
 
 keywords: high availability
 
@@ -31,4 +31,4 @@ Use IBM Blockchain Platform High Availability to maximize resource availability 
 planning and configuring IBM Blockchain Platform 2.5.1 on a Kubernetes cluster.
 
 Use the High Availability (HA) topics to learn [about High Availability](ibp-console-ha.md) and for details on 
-[setting up multiregion High Availability deployments for peers](howto/ibp-console-ic-ha-howto.md), [setting up multiregion High Availability deployments for the ordering service](howto/ibp-console-ha-os.md), and [building a High Availability Certificate Authority](howto/ibp-console-ha-ca.md).
+[setting up multiregion High Availability deployments for peers](ibp-console-ic-ha-howto.md), [setting up multiregion High Availability deployments for the ordering service](ibp-console-ha-os.md), and [building a High Availability Certificate Authority](ibp-console-ha-ca.md).

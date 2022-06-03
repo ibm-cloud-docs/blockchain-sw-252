@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-05"
+lastupdated: "2022-06-03"
 
 keywords: tutorials, how-to, learn, help
 
@@ -33,6 +33,6 @@ The following help topics are available for {{site.data.keyword.blockchainfull_n
 
  * [Release notes](release-notes.md)
  * [Known issues](known-issues.md)
- * [Troubleshooting](howto/ibp-v2-troubleshooting.md)
+ * [Troubleshooting](ibp-v2-troubleshooting.md)
  * [Getting support](ibmblockchain_support.md)
  * [Site map](sitemap.md)

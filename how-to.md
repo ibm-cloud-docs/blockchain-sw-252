@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-22-04"
+lastupdated: "2022-06-03"
 
 keywords: tutorials, how-to, learn
 
@@ -71,14 +71,14 @@ signed and supported by IBM, for peer, Certificate Authority (CA), ordering serv
 Learn about [using the IBM Blockchain Platform console](howto-using-ibp-console.md) to manage a {{site.data.keyword.blockchainfull_notm}} 2.5.1 network:
 
 * [Administering your console](howto/console-ocp-manage.md)
-* [Advanced deployment options](howto/ibp-console-advanced-deployment.md)
-* [Advanced channel deployment and management](howto/ibp-console-advanced-channel.md)
-* [Adding and removing ordering service nodes](howto/ibp-console-add-remove-raft.md)
-* [Importing nodes, MSPs, and identities](howto/ibp-console-import-nodes.md)
-* [Creating and managing identities](howto/ibp-console-identities.md)
-* [Managing organizations](howto/ibp-console-organizations.md)
-* [Managing certificates](howto/ibp-console-certificates.md)
-* [Upgrading and deleting deployed nodes](howto/ibp-console-govern-components.md)
+* [Advanced deployment options](ibp-console-advanced-deployment.md)
+* [Advanced channel deployment and management](ibp-console-advanced-channel.md)
+* [Adding and removing ordering service nodes](ibp-console-add-remove-raft.md)
+* [Importing nodes, MSPs, and identities](ibp-console-import-nodes.md)
+* [Creating and managing identities](ibp-console-identities.md)
+* [Managing organizations](ibp-console-organizations.md)
+* [Managing certificates](ibp-console-certificates.md)
+* [Upgrading and deleting deployed nodes](ibp-console-govern-components.md)
 * [Operating nodes with operations service](/blockchain/blockchain-operations_service)
 
 
@@ -93,7 +93,7 @@ Review procedures for [developing smart contracts and applications](howto-develo
 ## Backing up and restoring components and networks
 {: #backup-restore-components-networks}
 
-Learn how to manage [backing up and restoring components and networks](howto/backup-restore.md) on 
+Learn how to manage [backing up and restoring components and networks](backup-restore.md) on 
 {{site.data.keyword.blockchainfull_notm}} 2.5.1.
 
 
