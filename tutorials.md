@@ -74,6 +74,6 @@ processing for key generation, encryption, decryption, and key storage on {{site
 ## Ansible playbooks 
 {: #ibp-tutorials-ansible-playbooks}
 
-Use the [Ansible playbooks](ansible-playbooks.md) tutorials to learn about [getting started with Ansible playbooks](ansible.md), 
+Use the [Ansible playbooks](howto-ansible-playbooks.md) tutorials to learn about [getting started with Ansible playbooks](ansible.md), 
 [deploying the service from an Ansible playbook](howto/ansible-install-ibp.md), and 
 [building an IBM Blockchain Platform network using Ansible playbooks](ansible-build-network.md) on {{site.data.keyword.blockchainfull_notm}} 2.5.1.

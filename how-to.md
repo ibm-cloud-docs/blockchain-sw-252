@@ -85,7 +85,7 @@ Learn about [using the IBM Blockchain Platform console](howto-using-ibp-console.
 ## Developing smart contracts and applications
 {: #develop-contracts-applications}
 
-Review procedures for [developing smart contracts and applications](howto-develop-contracts-applications.md) on 
+Review procedures for [developing smart contracts and applications](howto-develop.md) on 
 {{site.data.keyword.blockchainfull_notm}} 2.5.1, including [developing smart contracts with IBM Blockchain Developer Tools](vscode-extension.md), 
 [writing powerful smart contracts](write-powerful-smart-contracts.md), and [best practices for application development](best_practices.md). 
 
