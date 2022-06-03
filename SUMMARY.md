@@ -15,7 +15,7 @@
     * [Building a high availability Certificate Authority (CA)](ibp-console-ha-ca.md)
   * [Data residency](data-residency.md)
   * [FAQs](ibp-v2-faq.md)
-  * [Disclaimer](/blockchain/blockchain-disclaimer) 
+  * [Disclaimer](need-to-know.md)
 * [Tutorials](tutorials.md)
   * [Getting started](tutorials-getting-started.md)
     * [Build a network](ibp-console-build-network.md)
