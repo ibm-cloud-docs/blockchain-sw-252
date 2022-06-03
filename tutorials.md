@@ -67,7 +67,7 @@ Use the [Certificate Authority options](tutorials-certificate-authority-options.
 ## Hardware Security Module (HSM) 
 {: #ibp-tutorials-hardware-security-module}
 
-Use the [Hardware Security Module](reference/hsm-gemalto.md) tutorial to learn how to use the HSM service on IBM Cloud for cryptographic 
+Use the [Hardware Security Module](hsm-gemalto.md) tutorial to learn how to use the HSM service on IBM Cloud for cryptographic 
 processing for key generation, encryption, decryption, and key storage on {{site.data.keyword.blockchainfull_notm}} 2.5.1.
 
 
