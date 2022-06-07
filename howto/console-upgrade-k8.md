@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-06-03"
+lastupdated: "2022-06-07"
 
 keywords: Kubernetes, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters
 
@@ -17,15 +17,21 @@ subcollection: blockchain-sw-252
 # Upgrading your console and components
 {: #upgrade-k8}
 
-<p>
-<strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
+Running a different version of IBM Blockchain Platform? Switch to version
 <a href="/docs/blockchain-sw?topic=blockchain-sw-upgrade-k8">2.1.2</a>,
 <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-upgrade-k8">2.1.3</a>,
-<a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-upgrade-k8">2.5</a>,
-<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-upgrade-k8">2.5.1</a>,
-<a href="/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-k8">2.5.2</a>
-</p>
+<a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-upgrade-k8">2.5</a>, 
+<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-upgrade-k8">2.5.1</a>, 
+2.5.2,
+<a href="/docs/blockchain-sw-253?topic=blockchain-sw-253-upgrade-k8">2.5.3</a>.
 
+<strong>Important: You are not looking at the latest product documentation. 
+It is strongly suggested that you upgrade to the latest version of the product as soon as possible.</strong> 
+Upgrading ensures that you are using the latest product features and fixes, such as improved product stability, 
+automated certificate renewal, and current security patches. <strong>Security patches are not applied to older 
+versions of the product that are no longer supported.</strong> The supported environments described in documentation for 
+earlier releases, such as a previously supported Kubernetes version, are not updated and may no longer be 
+accurate&mdash;do not rely upon support for any versions listed in earlier releases of the product.
 
 You can upgrade the {{site.data.keyword.blockchainfull}} Platform without disrupting a running network. Because the platform is deployed by using a Kubernetes operator, you can pull the latest {{site.data.keyword.blockchainfull_notm}} Platform images from the {{site.data.keyword.IBM_notm}} Entitlement registry without having to reinstall the platform. You can use these instructions to upgrade to the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2.
 {: shortdesc}
