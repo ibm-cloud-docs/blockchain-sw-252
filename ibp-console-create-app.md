@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-03"
+lastupdated: "2022-06-07"
 
 keywords: client application, Commercial Paper, SDK, wallet, generate a certificate, generate a private key, fabric gateway, APIs, smart contract
 
@@ -132,7 +132,7 @@ Click the **Java SDK** or **Node SDK** tab for details.
 |[Node SDK Version 2.2](https://github.com/hyperledger/fabric-sdk-node/tree/release-2.2){: external} | 2.2 | Node 10 LTS<br><br> Node 12 LTS|
 |[Node SDK Version 1.4](https://github.com/hyperledger/fabric-sdk-node/tree/release-1.4){: external} | 2.2, 1.4  | Node 10 LTS<br><br> Node 12 LTS|
 {: caption="Table 1. Node SDK" caption-side="top"}
-{: #simpletabtable1}
+{: #simpletabtable1a}
 {: tab-title="Node SDK"}
 {: tab-group="IAM-simple"}
 {: class="simple-tab-table"}
@@ -157,7 +157,7 @@ Click the **Java Smart contract** or **Node Smart contract** tab for details.
 | [v1.4](https://github.com/hyperledger/fabric-chaincode-node/tree/release-1.4){: external}, [v2.2](https://github.com/hyperledger/fabric-chaincode-node/tree/release-2.2){: external} |v2.2  | Node 12 runtime|
 | [v1.4](https://github.com/hyperledger/fabric-chaincode-node/tree/release-1.4){: external} |v1.4| Node 8 runtime |
 {: caption="Table 2. Node Smart contract" caption-side="top"}
-{: #simpletabtable2}
+{: #simpletabtable2a}
 {: tab-title="Node Smart contract"}
 {: tab-group="IAM-simple2"}
 {: class="simple-tab-table"}
