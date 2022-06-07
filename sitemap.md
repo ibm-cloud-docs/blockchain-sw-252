@@ -814,7 +814,7 @@ subcollection: blockchain-sw-252
 * [Get your entitlement key](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8-firewall#deploy-k8-entitlement-key-firewall)
 * [Before you begin](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8-firewall#deploy-k8-prerequisites-firewall)
 * [Pull the {{site.data.keyword.blockchainfull_notm}} Platform images](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8-firewall#deploy-k8-images-firewall)
-* [Log in to your Kubernetes cluster](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8-firewall#deploy-k8s-login-firewall)
+* [Log in to your Kubernetes cluster](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8-firewall#deploy-k8-login-firewall)
 * [Create the `ibpinfra` namespace for the webhook](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8-firewall#deploy-k8-ibpinfra-fw)
 * [Set up the entitlement for a local registry](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8-firewall#deploy-k8-secret-ibpinfra-fw)
 * [Deploy the webhook and custom resource definitions to your OpenShift cluster](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8-firewall#deploy-k8s-webhook-crd-fw)

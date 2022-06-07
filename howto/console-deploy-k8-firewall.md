@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-06-03"
+lastupdated: "2022-06-07"
 
 keywords: IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, firewall, on-premises, air-gapped, on-prem, multicloud, on-prem
 
@@ -154,7 +154,7 @@ skopeo copy docker://cp.icr.io/cp/ibp-enroller:2.5.2-20220405 docker://<LOCAL_RE
 After you complete these steps, you can use the following instructions to deploy the {{site.data.keyword.blockchainfull_notm}} Platform with the images in your registry.
 
 ## Log in to your Kubernetes cluster
-{: #deploy-k8s-login-firewall}
+{: #deploy-k8-login-firewall}
 
 Before you can complete the next steps, you need to log in to your cluster by using the kubectl CLI. Follow the instructions for logging in to your cluster. If the command is successful, you can see the list of the namespaces in your cluster from your terminal by running the following command:
 ```
