@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-03"
+lastupdated: "2022-06-07"
 
 keywords: high availability
 

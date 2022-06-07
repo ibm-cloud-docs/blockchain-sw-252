@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-03"
+lastupdated: "2022-06-07"
 
 keywords: smart contract, private data, private data collection, anchor peer, multicloud
 
