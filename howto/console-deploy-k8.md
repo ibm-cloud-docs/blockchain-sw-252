@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-06-03"
+lastupdated: "2022-06-07"
 
 keywords: IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -167,7 +167,7 @@ The name of the secret that you are creating is `docker-key-secret`. It is requi
 {: note}
 
 ## Deploy the webhook and custom resource definitions (CRDS) to your Kubernetes cluster
-{: #deploy-k8s-webhook-crd}
+{: #deploy-k8-webhook-crd}
 
 Before you can upgrade an existing 2.1.x network to 2.5.x, or deploy a new instance of the platform to your Kubernetes cluster, you need to create the conversion webhook by completing the steps in this section. The webhook is deployed to its own namespace or project, referred to `ibpinfra` throughout these instructions.
 
@@ -193,7 +193,8 @@ kubectl apply -f rbac.yaml -n ibpinfra
 When the command completes successfully, you should see something similar to:
 ```
 serviceaccount/webhook created
-role.rbac.authorization.k8s.io/webhook created
+role.rbac.authorization.
+.io/webhook created
 rolebinding.rbac.authorization.k8s.io/ibpinfra created
 ```
 {: codeblock}
