@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-03"
+lastupdated: "2022-06-07"
 
 keywords: IBM Blockchain, IBM Blockchain Platform, terms, Fabric, Raft, CouchDB, consortium
 
@@ -29,7 +29,7 @@ This topic defines {{site.data.keyword.blockchainfull}} Platform-specific terms 
 {: shortdesc}
 
 ## Approve
-{: #glossary-propose}
+{: #glossary-approve}
 Referring to a step in the Hyperledger Fabric v2.x smart contract lifecycle, a smart contract definition is approved by organizations on the channel. After the number of approvals that are specified in the channel lifecycle endorsement policy are satisfied, the smart contract definition can be committed to a channel, and the peers where it is installed can begin to process requests.
 
 ## Asset
