@@ -25,6 +25,14 @@ Running a different version of IBM Blockchain Platform? Switch to version
 2.5.2,
 <a href="/docs/blockchain-sw-253?topic=blockchain-sw-253-glossary">2.5.3</a>.
 
+<strong>Important: You are not looking at the latest product documentation. 
+It is strongly suggested that you upgrade to the latest version of the product as soon as possible.</strong> 
+Upgrading ensures that you are using the latest product features and fixes, such as improved product stability, 
+automated certificate renewal, and current security patches. <strong>Security patches are not applied to older 
+versions of the product that are no longer supported.</strong> The supported environments described in documentation for 
+earlier releases, such as a previously supported Kubernetes version, are not updated and may no longer be 
+accurate&mdash;do not rely upon support for any versions listed in earlier releases of the product.
+
 This topic defines {{site.data.keyword.blockchainfull}} Platform-specific terms that appear in this documentation. For a deeper understanding of terms, and for a glossary of terms that relate to Hyperledger Fabric concepts, refer to the [Hyperledger Fabric glossary](https://hyperledger-fabric.readthedocs.io/en/release-2.2/glossary.html){: external}.
 {: shortdesc}
 
