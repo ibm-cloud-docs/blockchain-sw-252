@@ -162,7 +162,7 @@ The communication entity of the blockchain. There are three types of nodes: CA, 
 
 ## On-prem
 {: #glossary-on-prem}
-Pertaining to software that is installed and run on the local computers of a user or organization.
+Pertaining to software that is installed and run on the local (on premises) computers of a user or organization.
 
 ## Ordering node
 {: #glossary-orderer}
