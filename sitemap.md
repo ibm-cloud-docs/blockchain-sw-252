@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-06-07"
+lastupdated: "2022-06-08"
 
 keywords: site map
 subcollection: blockchain-sw-252
@@ -1346,6 +1346,8 @@ subcollection: blockchain-sw-252
 * [Network](/docs/blockchain-sw-252?topic=blockchain-sw-252-glossary#glossary-network)
 
 * [Node](/docs/blockchain-sw-252?topic=blockchain-sw-252-glossary#glossary-node)
+
+* [On-prem](/docs/blockchain-sw-252?topic=blockchain-sw-252-glossary#glossary-on-prem)
 
 * [Ordering node](/docs/blockchain-sw-252?topic=blockchain-sw-252-glossary#glossary-orderer)
 

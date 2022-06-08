@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-07"
+lastupdated: "2022-06-08"
 
 keywords: IBM Blockchain, IBM Blockchain Platform, terms, Fabric, Raft, CouchDB, consortium
 
@@ -159,6 +159,10 @@ An instance of an {{site.data.keyword.blockchainfull_notm}} Platform service on 
 ## Node
 {: #glossary-node}
 The communication entity of the blockchain. There are three types of nodes: CA, peer, and ordering node.
+
+## On-prem
+{: #glossary-on-prem}
+Pertaining to software that is installed and run on the local computers of a user or organization.
 
 ## Ordering node
 {: #glossary-orderer}
