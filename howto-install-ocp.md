@@ -2,11 +2,11 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-22-04"
+lastupdated: "2022-06-09"
 
 keywords: tutorials, how-to, learn
 
-subcollection: blockchain-sw-251
+subcollection: blockchain-sw-252
 
 ---
 
@@ -28,9 +28,9 @@ Use the install OpenShift Container Platform how-tos to complete common tasks fo
 {: shortdesc}
 
 **Target audience:** This topic is designed for architects and system administrators who are responsible 
-for planning, configuring, and installing {{site.data.keyword.blockchainfull_notm}} 2.5.1.
+for planning, configuring, and installing {{site.data.keyword.blockchainfull_notm}} 2.5.2.
 
-Review the following options detailed steps for deploying {{site.data.keyword.blockchainfull_notm}} 2.5.1 on OpenShift Container Platform: 
+Review the following options detailed steps for deploying {{site.data.keyword.blockchainfull_notm}} 2.5.2 on OpenShift Container Platform: 
 
 - [Deployment options](howto-deployment-options.md)
 - [Upgrading your console and components](howto/console-upgrade-ocp.md)
