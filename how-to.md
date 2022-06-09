@@ -2,11 +2,11 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-07"
+lastupdated: "2022-06-09"
 
 keywords: tutorials, how-to, learn
 
-subcollection: blockchain-sw-251
+subcollection: blockchain-sw-252
 
 ---
 
@@ -28,14 +28,14 @@ Use the IBM Blockchain Platform how-tos to complete common tasks for building an
 {: shortdesc}
 
 **Target audience:** This topic is designed for architects, system administrators, and developers who are responsible 
-for planning, configuring, and developing applications for {{site.data.keyword.blockchainfull_notm}} 2.5.1.
+for planning, configuring, and developing applications for {{site.data.keyword.blockchainfull_notm}} 2.5.2.
 
 
 ## Install on OpenShift Container Platform 
 {: #install-ocp}
 
 Review the [deployment options](howto-deployment-options.md) and detailed steps for 
-deploying {{site.data.keyword.blockchainfull_notm}} 2.5.1 on OpenShift Container Platform. 
+deploying {{site.data.keyword.blockchainfull_notm}} 2.5.2 on OpenShift Container Platform. 
 
 For existing installations on OpenShift, details on [upgrading your console and components](howto/console-upgrade-ocp.md) 
 and [removing your deployment](howto/console-delete-ocp.md) are provided.
@@ -51,10 +51,10 @@ For existing installations on Kubernetes, details on [upgrading your console and
 [removing your deployment](howto/console-delete-k8.md) are provided.
 
 
-## Installing the 2.5.1 fix pack
-{: #install-251-fixpack}
+## Installing the 2.5.2 fix pack
+{: #install-252-fixpack}
 
-Review the procedures for [installing the 2.5.1 fix pack](howto/console-deploy-k8.md) on an OpenShift or  
+Review the procedures for [installing the 2.5.2 fix pack](howto/console-deploy-k8.md) on an OpenShift or  
 Kubernetes {{site.data.keyword.blockchainfull_notm}} installation.
 
 
@@ -68,7 +68,7 @@ signed and supported by IBM, for peer, Certificate Authority (CA), ordering serv
 ## Using the IBM Blockchain Platform console
 {: #using-ibp-console}
 
-Learn about [using the IBM Blockchain Platform console](howto-using-ibp-console.md) to manage a {{site.data.keyword.blockchainfull_notm}} 2.5.1 network:
+Learn about [using the IBM Blockchain Platform console](howto-using-ibp-console.md) to manage a {{site.data.keyword.blockchainfull_notm}} 2.5.2 network:
 
 * [Administering your console](howto/console-ocp-manage.md)
 * [Advanced deployment options](ibp-console-advanced-deployment.md)
@@ -86,7 +86,7 @@ Learn about [using the IBM Blockchain Platform console](howto-using-ibp-console.
 {: #develop-contracts-applications}
 
 Review procedures for [developing smart contracts and applications](howto-develop.md) on 
-{{site.data.keyword.blockchainfull_notm}} 2.5.1, including [developing smart contracts with IBM Blockchain Developer Tools](vscode-extension.md), 
+{{site.data.keyword.blockchainfull_notm}} 2.5.2, including [developing smart contracts with IBM Blockchain Developer Tools](vscode-extension.md), 
 [writing powerful smart contracts](write-powerful-smart-contracts.md), and [best practices for application development](best_practices.md). 
 
 
@@ -94,11 +94,11 @@ Review procedures for [developing smart contracts and applications](howto-develo
 {: #backup-restore-components-networks}
 
 Learn how to manage [backing up and restoring components and networks](backup-restore.md) on 
-{{site.data.keyword.blockchainfull_notm}} 2.5.1.
+{{site.data.keyword.blockchainfull_notm}} 2.5.2.
 
 
 ## Using the IBM Blockchain Platform APIs
 {: #using-ibp-apis}
 
 Learn about [using the IBM Blockchain Platform APIs](howto/ibp-v2-apis.md) to develop applications 
-on {{site.data.keyword.blockchainfull_notm}} 2.5.1.
+on {{site.data.keyword.blockchainfull_notm}} 2.5.2.
