@@ -2,11 +2,11 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-07"
+lastupdated: "2022-06-09"
 
 keywords: tutorials, how-to, learn
 
-subcollection: blockchain-sw-251
+subcollection: blockchain-sw-252
 
 ---
 
@@ -28,14 +28,14 @@ Use the IBM Blockchain Platform tutorials to get hands-on experience building an
 {: shortdesc}
 
 **Target audience:** This topic is designed for architects, system administrators, and developers who are responsible 
-for planning, configuring, and developing applications for {{site.data.keyword.blockchainfull_notm}} 2.5.1.
+for planning, configuring, and developing applications for {{site.data.keyword.blockchainfull_notm}} 2.5.2.
 
 
 ## Getting started 
 {: #ibp-tutorials-getting-started}
 
 Use the [getting started](tutorials-getting-started.md) tutorials to investigate how to [build a network](ibp-console-build-network.md) 
-and [join a network](ibp-console-join-network.md) on {{site.data.keyword.blockchainfull_notm}} 2.5.1.
+and [join a network](ibp-console-join-network.md) on {{site.data.keyword.blockchainfull_notm}} 2.5.2.
 
 You can also watch the [video series](reference/videos.md) to learn how to deploy a peer, deploy an ordering service, 
 and create and join a channel. 
@@ -46,14 +46,14 @@ and create and join a channel.
 
 Use the [deploying smart contracts](tutorials-deploying-smart-contracts.md) tutorials to get an overview of smart contracts and to 
 learn how to deploy a smart contract on Hyperledger [Fabric v2.x](ibp-console-smart-contracts-v2.md) or 
-[Fabric v1.4](ibp-console-smart-contracts-v14.md) (deprecated) on {{site.data.keyword.blockchainfull_notm}} 2.5.1.
+[Fabric v1.4](ibp-console-smart-contracts-v14.md) (deprecated) on {{site.data.keyword.blockchainfull_notm}} 2.5.2.
 
 
 ## Creating applications 
 {: #ibp-tutorials-creating-applications}
 
 Use the [creating applications](ibp-console-create-app.md) tutorial to learn about the developer APIs and SDKs, 
-network consideratons, connectivity, and related application development topics on {{site.data.keyword.blockchainfull_notm}} 2.5.1.
+network consideratons, connectivity, and related application development topics on {{site.data.keyword.blockchainfull_notm}} 2.5.2.
 
 
 ## Certificate Authority (CA) options 
@@ -61,14 +61,14 @@ network consideratons, connectivity, and related application development topics 
 
 Use the [Certificate Authority options](tutorials-certificate-authority-options.md) tutorials to learn about
 [creating an intermediate Certificate Authority](ibp-console-int-ca.md) and 
-[using certificates from an external Certificate Authority](ibp-v2-tutorial-extca.md.md) on {{site.data.keyword.blockchainfull_notm}} 2.5.1.
+[using certificates from an external Certificate Authority](ibp-v2-tutorial-extca.md.md) on {{site.data.keyword.blockchainfull_notm}} 2.5.2.
 
 
 ## Hardware Security Module (HSM) 
 {: #ibp-tutorials-hardware-security-module}
 
 Use the [Hardware Security Module](hsm-gemalto.md) tutorial to learn how to use the HSM service on IBM Cloud for cryptographic 
-processing for key generation, encryption, decryption, and key storage on {{site.data.keyword.blockchainfull_notm}} 2.5.1.
+processing for key generation, encryption, decryption, and key storage on {{site.data.keyword.blockchainfull_notm}} 2.5.2.
 
 
 ## Ansible playbooks 
@@ -76,4 +76,4 @@ processing for key generation, encryption, decryption, and key storage on {{site
 
 Use the [Ansible playbooks](howto-ansible-playbooks.md) tutorials to learn about [getting started with Ansible playbooks](ansible.md), 
 [deploying the service from an Ansible playbook](howto/ansible-install-ibp.md), and 
-[building an IBM Blockchain Platform network using Ansible playbooks](ansible-build-network.md) on {{site.data.keyword.blockchainfull_notm}} 2.5.1.
+[building an IBM Blockchain Platform network using Ansible playbooks](ansible-build-network.md) on {{site.data.keyword.blockchainfull_notm}} 2.5.2.
