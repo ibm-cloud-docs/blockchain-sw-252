@@ -2,11 +2,11 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-22-04"
+lastupdated: "2022-06-09"
 
 keywords: tutorials, how-to, learn
 
-subcollection: blockchain-sw-251
+subcollection: blockchain-sw-252
 
 ---
 
@@ -27,7 +27,7 @@ subcollection: blockchain-sw-251
 Use the IBM Blockchain Platform developing smart contracts and applications how-tos to complete common tasks for developing chaincode and client apps for an IBM Blockchain network. 
 {: shortdesc}
 
-**Target audience:** This topic is designed for chaincode and application developers who are responsible for coding solutions on {{site.data.keyword.blockchainfull_notm}} 2.5.1.
+**Target audience:** This topic is designed for chaincode and application developers who are responsible for coding solutions on {{site.data.keyword.blockchainfull_notm}} 2.5.2.
 
 Review the following topics for how to develop smart contracts (chaincode) and client applications (Node.js, Go, and Java): 
 
