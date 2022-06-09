@@ -2,11 +2,11 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-07"
+lastupdated: "2022-06-09"
 
 keywords: tutorials, how-to, learn, help
 
-subcollection: blockchain-sw-251
+subcollection: blockchain-sw-252
 
 ---
 
@@ -27,9 +27,9 @@ Use the IBM Blockchain Platform help topics for information related to configuri
 {: shortdesc}
 
 **Target audience:** This topic is designed for architects, system administrators, and developers who are responsible 
-for planning, configuring, and developing applications for {{site.data.keyword.blockchainfull_notm}} 2.5.1.
+for planning, configuring, and developing applications for {{site.data.keyword.blockchainfull_notm}} 2.5.2.
 
-The following help topics are available for {{site.data.keyword.blockchainfull_notm}} 2.5.1: 
+The following help topics are available for {{site.data.keyword.blockchainfull_notm}} 2.5.2: 
 
  * [Release notes](release-notes.md)
  * [Known issues](known-issues.md)
