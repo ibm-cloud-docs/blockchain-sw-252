@@ -2,11 +2,11 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-05"
+lastupdated: "2022-06-09"
 
 keywords: tutorials, how-to, learn, reference
 
-subcollection: blockchain-sw-251
+subcollection: blockchain-sw-252
 
 ---
 
@@ -28,9 +28,9 @@ Use the IBM Blockchain Platform reference topics for information related to conf
 {: shortdesc}
 
 **Target audience:** This topic is designed for architects, system administrators, and developers who are responsible 
-for planning, configuring, and developing applications for {{site.data.keyword.blockchainfull_notm}} 2.5.1.
+for planning, configuring, and developing applications for {{site.data.keyword.blockchainfull_notm}} 2.5.2.
 
-The following reference topics are available for {{site.data.keyword.blockchainfull_notm}} 2.5.1: 
+The following reference topics are available for {{site.data.keyword.blockchainfull_notm}} 2.5.2: 
 
 * [API reference](https://cloud.ibm.com/apidocs/blockchain)
 * [Hyperledger Fabric](reference/v10_fabric.md)
