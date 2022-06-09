@@ -30,8 +30,6 @@ Use the IBM Blockchain Platform how-tos to complete common tasks for building an
 **Target audience:** This topic is designed for architects, system administrators, and developers who are responsible 
 for planning, configuring, and developing applications for {{site.data.keyword.blockchainfull_notm}} 2.5.2.
 
-{: #ibp-howto-install-k8s}
-
 Review the procedures for [deploying IBM Blockchain Platform 2.5.2](howto/console-deploy-k8.md) and 
 [deploying IBM Blockchain Platform 2.5.2 behind a firewall](howto/console-deploy-k8-firewall.md) on Kubernetes.
 
