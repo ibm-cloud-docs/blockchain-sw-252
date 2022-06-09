@@ -25,6 +25,6 @@ for designing and deploying an {{site.data.keyword.blockchainfull_notm}} 2.5.2 n
 Review the following topics to choose the best deployment option for your {{site.data.keyword.blockchainfull_notm}} 2.5.2 network on OpenShift Container Platform: 
 *	[Deploy from Red Hat Marketplace](howto/console-deploy-ocp-rhm.md)
 * [Deploy from Red Hat Marketplace (airgap installation)](howto/console-deploy-ocp-rhm-fw.md)
-*	[Deploy IBM Blockchain 2.5.2 manually](howto/console-deploy-ocp.md)
+*	[Deploy IBM Blockchain Platform 2.5.2 manually](howto/console-deploy-ocp.md)
 *	[Deploy IBM Blockchain Platform 2.5.2 on-prem manually](howto/console-deploy-ocp-firewall.md)
 *	[Deploy the service from an Ansible playbook](howto/ansible-install-ibp.md). 
