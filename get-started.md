@@ -17,7 +17,6 @@ subcollection: blockchain-sw-252
 {: #get-started-overview}
 
 Running a different version of IBM Blockchain Platform? Switch to version
-<a href="/docs/blockchain-sw?topic=blockchain-sw-get-started-overview">2.1.2</a>,
 <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-get-started-overview">2.1.3</a>,
 <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-get-started-overview">2.5</a>, 
 <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-get-started-overview">2.5.1</a>, 

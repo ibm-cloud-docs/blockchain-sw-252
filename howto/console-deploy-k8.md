@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-06-07"
+lastupdated: "2022-06-09"
 
 keywords: IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -18,7 +18,6 @@ subcollection: blockchain-sw-252
 {: #deploy-k8}
 
 Running a different version of IBM Blockchain Platform? Switch to version
-<a href="/docs/blockchain-sw?topic=blockchain-sw-deploy-k8">2.1.2</a>,
 <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-k8">2.1.3</a>,
 <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-deploy-k8">2.5</a>, 
 <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-deploy-k8">2.5.1</a>, 
