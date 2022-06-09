@@ -44,8 +44,8 @@ and [removing your deployment](howto/console-delete-ocp.md) are provided.
 ## Install on Kubernetes
 {: #install-k8s}
 
-Review the procedures for [deploying IBM Blockchain Platform 2.5.1](howto/console-deploy-k8.md) and 
-[deploying IBM Blockchain Platform 2.5.1 behind a firewall](howto/console-deploy-k8-firewall.md) on Kubernetes.
+Review the procedures for [deploying IBM Blockchain Platform 2.5.2](howto/console-deploy-k8.md) and 
+[deploying IBM Blockchain Platform 2.5.2 behind a firewall](howto/console-deploy-k8-firewall.md) on Kubernetes.
 
 For existing installations on Kubernetes, details on [upgrading your console and components](howto/console-upgrade-k8.md) and 
 [removing your deployment](howto/console-delete-k8.md) are provided.
