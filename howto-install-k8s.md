@@ -2,11 +2,11 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-22-04"
+lastupdated: "2022-06-09"
 
 keywords: tutorials, how-to, learn
 
-subcollection: blockchain-sw-251
+subcollection: blockchain-sw-252
 
 ---
 
@@ -28,12 +28,12 @@ Use the IBM Blockchain Platform how-tos to complete common tasks for building an
 {: shortdesc}
 
 **Target audience:** This topic is designed for architects, system administrators, and developers who are responsible 
-for planning, configuring, and developing applications for {{site.data.keyword.blockchainfull_notm}} 2.5.1.
+for planning, configuring, and developing applications for {{site.data.keyword.blockchainfull_notm}} 2.5.2.
 
 {: #ibp-howto-install-k8s}
 
-Review the procedures for [deploying IBM Blockchain Platform 2.5.1](howto/console-deploy-k8.md) and 
-[deploying IBM Blockchain Platform 2.5.1 behind a firewall](howto/console-deploy-k8-firewall.md) on Kubernetes.
+Review the procedures for [deploying IBM Blockchain Platform 2.5.2](howto/console-deploy-k8.md) and 
+[deploying IBM Blockchain Platform 2.5.2 behind a firewall](howto/console-deploy-k8-firewall.md) on Kubernetes.
 
 For existing installations on Kubernetes, details on [upgrading your console and components](howto/console-upgrade-k8.md) and 
 [removing your deployment](howto/console-delete-k8.md) are provided.
