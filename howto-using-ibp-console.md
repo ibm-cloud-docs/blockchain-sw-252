@@ -2,11 +2,11 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-07"
+lastupdated: "2022-06-09"
 
 keywords: tutorials, how-to, learn
 
-subcollection: blockchain-sw-251
+subcollection: blockchain-sw-252
 
 ---
 
@@ -29,9 +29,9 @@ in an IBM Blockchain network.
 {: shortdesc}
 
 **Target audience:** This topic is designed for system administrators who are responsible for configuring and managing
-{{site.data.keyword.blockchainfull_notm}} 2.5.1.
+{{site.data.keyword.blockchainfull_notm}} 2.5.2.
 
-Learn about using the IBM Blockchain Platform console to manage a {{site.data.keyword.blockchainfull_notm}} 2.5.1 network:
+Learn about using the IBM Blockchain Platform console to manage a {{site.data.keyword.blockchainfull_notm}} 2.5.2 network:
 
 * [Administering your console](howto/console-ocp-manage.md)
 * [Advanced deployment options](ibp-console-advanced-deployment.md)
