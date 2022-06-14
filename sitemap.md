@@ -555,7 +555,7 @@ subcollection: blockchain-sw-252
 {: #sitemap_ansible_playbooks}
 
 
-[Getting started with Ansible playbooks on the IBM Blockchain Platform](/docs/blockchain-sw-252?topic=blockchain-sw-252-ansible)
+[Getting started with Ansible playbooks on IBM Blockchain Platform](/docs/blockchain-sw-252?topic=blockchain-sw-252-ansible)
 * [What is Ansible](/docs/blockchain-sw-252?topic=blockchain-sw-252-ansible#ansible-whatis)
 * [How does the {{site.data.keyword.blockchainfull_notm}} Platform Ansible collection work?](/docs/blockchain-sw-252?topic=blockchain-sw-252-ansible#ansible-how)
 * [Why would I want to use an Ansible playbook?](/docs/blockchain-sw-252?topic=blockchain-sw-252-ansible#ansible-why)

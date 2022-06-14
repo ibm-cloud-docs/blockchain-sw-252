@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-01"
+lastupdated: "2022-06-14"
 
 keywords: ansible playbooks, docker image, blockchain network, APIs, ansible galaxy,
 
@@ -14,7 +14,7 @@ subcollection: blockchain-sw-252
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Getting started with Ansible playbooks on the IBM Blockchain Platform
+# Getting started with Ansible playbooks on IBM Blockchain Platform
 {: #ansible}
 
 Customers who are interested in automating their {{site.data.keyword.blockchainfull}} Platform network deployments can use Ansible playbooks to deploy an instance of the service and build out their networks.
