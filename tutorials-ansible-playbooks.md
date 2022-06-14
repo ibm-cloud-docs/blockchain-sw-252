@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-07"
+lastupdated: "2022-06-14"
 
 keywords: tutorials, how-to, Ansible playbooks, networks
 
@@ -32,5 +32,5 @@ for configuring and deploying {{site.data.keyword.blockchainfull_notm}} 2.5.1 ne
 
 Use the Ansible playbooks tutorials to learn about [getting started with Ansible playbooks](ansible.md), 
 [deploying the service from an Ansible playbook](howto/ansible-install-ibp.md), and 
-[building an IBM Blockchain Platform network using Ansible playbooks](ansible-build-network.md) on {{site.data.keyword.blockchainfull_notm}} 2.5.1.
+[building an IBM Blockchain Platform network using Ansible playbooks](ansible-build-network.md) on {{site.data.keyword.blockchainfull_notm}} 2.5.2.
 
