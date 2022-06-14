@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-09"
+lastupdated: "2022-06-14"
 
 keywords: tutorials, how-to, Certificate Authority, CA
 
@@ -32,5 +32,5 @@ intermediate and external Certificate Authorities on an IBM Blockchain v2.5.2 ne
 for planning, configuring, and managing Certificate Authorities for {{site.data.keyword.blockchainfull_notm}} 2.5.2.
 
 Use the Certificate Authority options tutorials to learn about [creating an intermediate Certificate Authority](ibp-console-int-ca.md) and 
-[using certificates from an external Certificate Authority](ibp-v2-tutorial-extca.md.md) on {{site.data.keyword.blockchainfull_notm}} 2.5.2.
+[using certificates from an external Certificate Authority](ibp-v2-tutorial-extca.md) on {{site.data.keyword.blockchainfull_notm}} 2.5.2.
 
