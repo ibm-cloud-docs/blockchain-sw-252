@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-08"
+lastupdated: "2022-06-21"
 
 keywords: getting started tutorials, create a CA, enroll, register, create an MSP, wallet, create a peer, create ordering service, Raft, ordering service, blockchain network, multicloud
 
@@ -17,15 +17,20 @@ subcollection: blockchain-sw-252
 # Build a network
 {: #ibp-console-build-network}
 
-<p>
-<strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
-<a href="/docs/blockchain-sw?topic=blockchain-sw-ibp-console-build-network">2.1.2</a>,
+Running a different version of IBM Blockchain Platform? Switch to version
 <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-build-network">2.1.3</a>,
-<a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-ibp-console-build-network">2.5</a>,
-<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-ibp-console-build-network">2.5.1</a>,
-<a href="/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-build-network">2.5.2</a>
-</p>
+<a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-ibp-console-build-network">2.5</a>, 
+<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-ibp-console-build-network">2.5.1</a>, 
+2.5.2,
+<a href="/docs/blockchain-sw-253?topic=blockchain-sw-253-ibp-console-build-network">2.5.3</a>.
 
+<strong>Important: You are not looking at the latest product documentation. 
+It is strongly suggested that you upgrade to the latest version of the product as soon as possible.</strong> 
+Upgrading ensures that you are using the latest product features and fixes, such as improved product stability, 
+automated certificate renewal, and current security patches. <strong>Security patches are not applied to older 
+versions of the product that are no longer supported.</strong> The supported environments described in documentation for 
+earlier releases, such as a previously supported Kubernetes version, are not updated and may no longer be 
+accurate&mdash;do not rely upon support for any versions listed in earlier releases of the product.
 
 
 {{site.data.keyword.blockchainfull}} Platform is a blockchain-as-a-service offering that enables you to develop, deploy, and operate blockchain applications and networks. You can learn more about blockchain components and how they work together by visiting the [Blockchain component overview](/docs/blockchain-sw-252?topic=blockchain-sw-252-blockchain-component-overview#blockchain-component-overview). This tutorial is the first part in the [sample network tutorial series](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-build-network#ibp-console-build-network-sample-tutorial) and describes how to use the {{site.data.keyword.blockchainfull_notm}} Platform console to build a fully functional network on Kubernetes cluster deployed into the cloud infrastructure of your choice.
@@ -99,7 +104,7 @@ In this tutorial, we create two organizations, one which will own a peer and ano
 
 Watch the following video to learn about the process to create the peer's organization and the peer (for video tutorials on how how to create an ordering service and a channel, see [video series](https://developer.ibm.com/series/ibm-blockchain-platform-console-video-series/){: external}:
 
-![Deployment tutorial series: peer](https://www.youtube.com/embed/PAC0PPPFxLE){: video output="iframe" data-script="#video-transcript-peer" id="youtubeplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
+<p><object width="608" height="405" data="https://www.youtube.com/embed/PAC0PPPFxLE?iframeembed=true&amp;playerId=kaltura_player&amp;entry_id=0_s1wchnbg&amp;flashvars[akamaiHD.loadingPolicy]=preInitialize&amp;flashvars[akamaiHD.asyncInit]=true&amp;flashvars[twoPhaseManifest]=true&amp;flashvars[streamerType]=hdnetworkmanifest&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&amp;wid=1_1ogb4fz9" outputclass="iframe"/></p>
 
 ### Video script
 {: #video-transcript-peer}
