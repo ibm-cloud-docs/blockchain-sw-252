@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-08"
+lastupdated: "2022-06-27"
 
 keywords: high availability, CA, PostgreSQL, replica sets
 
@@ -17,15 +17,12 @@ subcollection: blockchain-sw-252
 # Building a high availability Certificate Authority (CA)
 {: #ibp-console-build-ha-ca}
 
-<p>
-<strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
-<a href="/docs/blockchain-sw?topic=blockchain-sw-ibp-console-build-ha-ca">2.1.2</a>,
+Running a different version of IBM Blockchain Platform? Switch to version
 <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-build-ha-ca">2.1.3</a>,
-<a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-ibp-console-build-ha-ca">2.5</a>,
-<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-ibp-console-build-ha-ca">2.5.1</a>,
-<a href="/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-build-ha-ca">2.5.2</a>
-</p>
-
+<a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-ibp-console-build-ha-ca">2.5</a>, 
+<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-ibp-console-build-ha-ca">2.5.1</a>, 
+2.5.2,
+<a href="/docs/blockchain-sw-253?topic=blockchain-sw-253-ibp-console-build-ha-ca">2.5.3</a>.
 
 Because redundancy is required to achieve high availability (HA) networks, you can use the {{site.data.keyword.blockchainfull}} Platform console to configure a CA for high availability.
 {: shortdesc}
@@ -70,8 +67,8 @@ Use of a third-party PostgreSQL database is also supported.  If the third-party 
 For all three PostgreSQL database options, you need to provide a file that contains the connection information to the PostgreSQL database when you create the CA. The process to generate the file depends on whether the database resides in {{site.data.keyword.cloud_notm}} or is from third-party provider.
 
 - **{{site.data.keyword.cloud_notm}} Databases for PostgreSQL** If you are using a PostgreSQL database from {{site.data.keyword.cloud_notm}} Databases for PostgreSQL, you need to generate Service Credentials from the PostgreSQL resources page in your **{{site.data.keyword.cloud_notm}} Databases for PostgreSQL** dashboard by completing the process in the following clip:
-
-    ![Service credentials](images/service_credentials_postgresql.mp4 "Service credentials"){: video controls loop}
+    
+    <p><object width="608" height="405" data="images/service_credentials_postgresql.mp4?iframeembed=true&amp;playerId=kaltura_player&amp;entry_id=0_s1wchnbg&amp;flashvars[akamaiHD.loadingPolicy]=preInitialize&amp;flashvars[akamaiHD.asyncInit]=true&amp;flashvars[twoPhaseManifest]=true&amp;flashvars[streamerType]=hdnetworkmanifest&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&amp;wid=1_1ogb4fz9" outputclass="iframe"/></p>
 
     Save the credentials that you copied to a file of type JSON on your local system. When you create your CA, you need to provide this file.
 
