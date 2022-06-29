@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-06-27"
+lastupdated: "2022-06-29"
 
 keywords: site map
 subcollection: blockchain-sw-252
