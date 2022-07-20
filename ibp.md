@@ -2,13 +2,18 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-01"
+lastupdated: "2022-07-20"
 
 ---
 
 {{site.data.keyword.attribute-definition-list}}
 
 
+
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSVKZ7_2.5.2/ibp.html](https://www.ibm.com/docs/en/SSVKZ7_2.5.2/ibp.html){: external}. Update your bookmarks.
+{: important}
 
 # IBM Blockchain Platform for anywhere
 {: #kc-content}

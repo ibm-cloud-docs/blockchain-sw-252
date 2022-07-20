@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-06-09"
+lastupdated: "2022-07-20"
 
 keywords: Kubernetes, IBM Cloud Private, OCP, OpenShift Container Platform, IBM Blockchain Platform, multicloud
 
@@ -13,15 +13,14 @@ subcollection: blockchain-sw-252
 {{site.data.keyword.attribute-definition-list}}
 
 
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSVKZ7_2.5.2/index.html](https://www.ibm.com/docs/en/SSVKZ7_2.5.2/index.html){: external}. Update your bookmarks.
+{: important}
+
 # Getting started with {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2
 {: #get-started-console-ocp}
 
-Running a different version of IBM Blockchain Platform? Switch to version
-<a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-get-started-console-ocp">2.1.3</a>,
-<a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-get-started-console-ocp">2.5</a>, 
-<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-get-started-console-ocp">2.5.1</a>, 
-2.5.2,
-<a href="/docs/blockchain-sw-253?topic=blockchain-sw-253-get-started-console-ocp">2.5.3</a>.
 
 <strong>Important: You are not looking at the latest product documentation. 
 It is strongly suggested that you upgrade to the latest version of the product as soon as possible.</strong> 

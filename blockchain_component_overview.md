@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-09"
+lastupdated: "2022-07-20"
 
 keywords: blockchain components, ca, certificate authorities, peer, ordering service, orderer, channel, smart contract, applications, multicloud
 
@@ -14,15 +14,14 @@ subcollection: blockchain-sw-252
 
 {{site.data.keyword.attribute-definition-list}}
 
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSVKZ7_2.5.2/blockchain_component_overview.html](https://www.ibm.com/docs/en/SSVKZ7_2.5.2/blockchain_component_overview.html){: external}. Update your bookmarks.
+{: important}
+
 # Blockchain component overview
 {: #blockchain-component-overview}
 
-Running a different version of IBM Blockchain Platform? Switch to version
-<a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-blockchain-component-overview">2.1.3</a>,
-<a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-blockchain-component-overview">2.5</a>, 
-<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-blockchain-component-overview">2.5.1</a>, 
-2.5.2,
-<a href="/docs/blockchain-sw-253?topic=blockchain-sw-253-blockchain-component-overview">2.5.3</a>.
 
 <strong>Important: You are not looking at the latest product documentation. 
 It is strongly suggested that you upgrade to the latest version of the product as soon as possible.</strong> 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-06-16"
+lastupdated: "2022-07-20"
 
 keywords: catalina, chrome, external CA, TLS, orderer, error, multicloud
 
@@ -14,18 +14,17 @@ subcollection: blockchain-sw-252
 
 
 
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSVKZ7_2.5.2/known-issues.html](https://www.ibm.com/docs/en/SSVKZ7_2.5.2/known-issues.html){: external}. Update your bookmarks.
+{: important}
+
 # Known issues
 {: #sw-known-issues}
 
 This page describes known issues that you might encounter when you use {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2.
 {: shortdesc}
 
-Running a different version of IBM Blockchain Platform? Switch to version
-<a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-sw-known-issues">2.1.3</a>,
-<a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-sw-known-issues">2.5</a>, 
-<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-sw-known-issues">2.5.1</a>, 
-2.5.2,
-<a href="/docs/blockchain-sw-253?topic=blockchain-sw-253-sw-known-issues">2.5.3</a>.
 
 
 

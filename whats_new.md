@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-07"
+lastupdated: "2022-07-20"
 
 keywords: IBM Blockchain Platform, release, new features, multicloud
 
@@ -13,6 +13,11 @@ subcollection: blockchain-sw-252
 
 
 {{site.data.keyword.attribute-definition-list}}
+
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSVKZ7_2.5.2/whats_new.html](https://www.ibm.com/docs/en/SSVKZ7_2.5.2/whats_new.html){: external}. Update your bookmarks.
+{: important}
 
 # What's new
 {: #whats-new}

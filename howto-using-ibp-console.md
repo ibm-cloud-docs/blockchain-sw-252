@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-09"
+lastupdated: "2022-07-20"
 
 keywords: tutorials, how-to, learn
 
@@ -20,6 +20,11 @@ subcollection: blockchain-sw-252
 {:term: .term}
 {:pre: .pre}
 
+
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSVKZ7_2.5.2/howto-using-ibp-console.html](https://www.ibm.com/docs/en/SSVKZ7_2.5.2/howto-using-ibp-console.html){: external}. Update your bookmarks.
+{: important}
 
 # Using the IBM Blockchain Platform console
 {: #ibp-howto-using-ibp-console}
