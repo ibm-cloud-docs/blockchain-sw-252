@@ -12,7 +12,7 @@ subcollection: blockchain-sw-252
 
 {{site.data.keyword.attribute-definition-list}}
 
-Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSVKZ7_2.5.2/ansible-build-network.html](https://www.ibm.com/docs/en/SSVKZ7_2.5.2/howto/console-deploy-ocp.html){: external}. Update your bookmarks.
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSVKZ7_2.5.2/howto/console-deploy-ocp.html](https://www.ibm.com/docs/en/SSVKZ7_2.5.2/howto/console-deploy-ocp.html){: external}. Update your bookmarks.
 {: important}
 
 # Deploy {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 manually

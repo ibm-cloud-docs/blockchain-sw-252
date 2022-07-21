@@ -21,7 +21,9 @@ subcollection: blockchain-sw-252
 {:download: .download}
 
 
-Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSVKZ7_2.5.2/ansible-build-network.html](https://www.ibm.com/docs/en/SSVKZ7_2.5.2/reference/videos.html){: external}. Update your bookmarks.
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSVKZ7_2.5.2/reference/videos.html](https://www.ibm.com/docs/en/SSVKZ7_2.5.2/reference/videos.html){: external}. Update your bookmarks.
+
 {: important}
 
 # {{site.data.keyword.blockchainfull_notm}} Platform getting started videos

@@ -17,7 +17,7 @@ subcollection: blockchain
 {:tip: .tip}
 {:pre: .pre}
 
-Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSVKZ7_2.5.2/ansible-build-network.html](https://www.ibm.com/docs/en/SSVKZ7_2.5.2/reference/k8s.html){: external}. Update your bookmarks.
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSVKZ7_2.5.2/reference/k8s.html](https://www.ibm.com/docs/en/SSVKZ7_2.5.2/reference/k8s.html){: external}. Update your bookmarks.
 {: important}
 
 # Kubernetes
