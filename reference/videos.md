@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-07-20"
+lastupdated: "2022-07-21"
 
 keywords: IBM Blockchain Platform, video series, videos, getting started videos, demo videos
 
@@ -20,6 +20,9 @@ subcollection: blockchain-sw-252
 {:note: .note}
 {:download: .download}
 
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSVKZ7_2.5.2/ansible-build-network.html](https://www.ibm.com/docs/en/SSVKZ7_2.5.2/reference/videos.html){: external}. Update your bookmarks.
+{: important}
 
 # {{site.data.keyword.blockchainfull_notm}} Platform getting started videos
 {: #ibp-videos}

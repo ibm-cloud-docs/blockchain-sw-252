@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-04-01"
+lastupdated: "2022-07-21"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -13,7 +13,8 @@ subcollection: blockchain-sw-252
 {{site.data.keyword.attribute-definition-list}}
 
 
-
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSVKZ7_2.5.2/ansible-build-network.html](https://www.ibm.com/docs/en/SSVKZ7_2.5.2/howto/console-deploy-ocp-getting-started.html){: external}. Update your bookmarks.
+{: important}
 
 
 # Getting started

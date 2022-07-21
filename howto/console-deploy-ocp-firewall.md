@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-06-07"
+lastupdated: "2022-07-21"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, firewall, on-premises, air-gapped, on-prem, multicloud, on-prem
 
@@ -12,20 +12,11 @@ subcollection: blockchain-sw-252
 
 {{site.data.keyword.attribute-definition-list}}
 
-
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSVKZ7_2.5.2/ansible-build-network.html](https://www.ibm.com/docs/en/SSVKZ7_2.5.2/howto/console-deploy-ocp-firewall.html){: external}. Update your bookmarks.
+{: important}
 
 # Deploy {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 on-prem manually
 {: #deploy-ocp-firewall}
-
-<p>
-<strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
-<a href="/docs/blockchain-sw?topic=blockchain-sw-deploy-ocp-firewall">2.1.2</a>,
-<a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-ocp-firewall">2.1.3</a>,
-<a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-deploy-ocp-firewall">2.5</a>,
-<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-deploy-ocp-firewall">2.5.1</a>,
-<a href="/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-firewall">2.5.2</a>
-</p>
-
 
 You can use these instructions to deploy {{site.data.keyword.blockchainfull}} Platform 2.5.2 behind a firewall without internet connectivity. If you are deploying the platform on a cluster with access to the external internet, use the main instructions for [Deploy {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp).
 {: shortdesc}

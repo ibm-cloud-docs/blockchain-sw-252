@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-07"
+lastupdated: "2022-07-21"
 
 keywords: Kubernetes, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, fix pack, multicloud
 
@@ -12,7 +12,8 @@ subcollection: blockchain-sw-252
 
 {{site.data.keyword.attribute-definition-list}}
 
-
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSVKZ7_2.5.2/ansible-build-network.html](https://www.ibm.com/docs/en/SSVKZ7_2.5.2/howto/console-fixpack.html){: external}. Update your bookmarks.
+{: important}
 
 # Installing the 2.5.2 fix pack
 {: #install-fixpack}

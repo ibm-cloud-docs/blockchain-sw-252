@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-06-07"
+lastupdated: "2022-07-21"
 
 keywords: IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -11,6 +11,10 @@ subcollection: blockchain-sw-252
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSVKZ7_2.5.2/ansible-build-network.html](https://www.ibm.com/docs/en/SSVKZ7_2.5.2/howto/console-delete-icp.html){: external}. Update your bookmarks.
+{: important}
+
 
 
 # Deploying {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 for {{site.data.keyword.cloud_notm}} Private

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-08-11"
+  years: 2022
+lastupdated: "2022-07-21"
 
 keywords: metering, licensing service, license consumption, license tracking
 
@@ -108,7 +108,8 @@ subcollection: blockchain-sw-252
 
 {:table:.aria-labeledby="caption"}
 
-
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSVKZ7_2.5.2/ansible-build-network.html](https://www.ibm.com/docs/en/SSVKZ7_2.5.2/reference/metering.html){: external}. Update your bookmarks.
+{: important}
 
 # Tracking license consumption
 {: #metering}
