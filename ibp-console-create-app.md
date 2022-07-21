@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-01"
+lastupdated: "2022-07-20"
 
 keywords: client application, Commercial Paper, SDK, wallet, generate a certificate, generate a private key, fabric gateway, APIs, smart contract
 
@@ -14,17 +14,14 @@ subcollection: blockchain-sw-252
 
 {{site.data.keyword.attribute-definition-list}}
 
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSVKZ7_2.5.2/ibp-console-create-app.html](https://www.ibm.com/docs/en/SSVKZ7_2.5.2/ibp-console-create-app.html){: external}. Update your bookmarks.
+{: important}
+
 # Creating applications
 {: #ibp-console-app}
 
-<p>
-<strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
-<a href="/docs/blockchain-sw?topic=blockchain-sw-ibp-console-app">2.1.2</a>,
-<a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-app">2.1.3</a>,
-<a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-ibp-console-app">2.5</a>,
-<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-ibp-console-app">2.5.1</a>,
-<a href="/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-app">2.5.2</a>
-</p>
 
 After you install smart contracts and deploy your nodes, you can use client applications to transact with other members of your network. Applications can invoke the business logic that is contained in smart contracts to create, transfer, or update assets on the blockchain ledger. Use this tutorial to learn how to use client applications to interact with networks that you manage from {{site.data.keyword.blockchainfull}} Platform console.
 {: shortdesc}
@@ -132,7 +129,7 @@ Click the **Java SDK** or **Node SDK** tab for details.
 |[Node SDK Version 2.2](https://github.com/hyperledger/fabric-sdk-node/tree/release-2.2){: external} | 2.2 | Node 10 LTS<br><br> Node 12 LTS|
 |[Node SDK Version 1.4](https://github.com/hyperledger/fabric-sdk-node/tree/release-1.4){: external} | 2.2, 1.4  | Node 10 LTS<br><br> Node 12 LTS|
 {: caption="Table 1. Node SDK" caption-side="top"}
-{: #simpletabtable1}
+{: #simpletabtable1a}
 {: tab-title="Node SDK"}
 {: tab-group="IAM-simple"}
 {: class="simple-tab-table"}
@@ -157,7 +154,7 @@ Click the **Java Smart contract** or **Node Smart contract** tab for details.
 | [v1.4](https://github.com/hyperledger/fabric-chaincode-node/tree/release-1.4){: external}, [v2.2](https://github.com/hyperledger/fabric-chaincode-node/tree/release-2.2){: external} |v2.2  | Node 12 runtime|
 | [v1.4](https://github.com/hyperledger/fabric-chaincode-node/tree/release-1.4){: external} |v1.4| Node 8 runtime |
 {: caption="Table 2. Node Smart contract" caption-side="top"}
-{: #simpletabtable2}
+{: #simpletabtable2a}
 {: tab-title="Node Smart contract"}
 {: tab-group="IAM-simple2"}
 {: class="simple-tab-table"}
@@ -193,7 +190,7 @@ The Hyperledger Fabric [Transaction Flow](https://hyperledger-fabric.readthedocs
 
 Click the **Organization MSP** tile for the organization that your client application interacts with. Click **Create connection profile** to open a side panel where you can build and download your connection profile.
 
-![Create connection profile panel](../images/create-connx-profile.png "Create connection profile panel")
+![Create connection profile panel](images/create-connx-profile.png "Create connection profile panel")
 
 If you plan to use the client application to register and enroll users with the organization CA, you need to include the Certificate Authority in the connection profile definition.
 

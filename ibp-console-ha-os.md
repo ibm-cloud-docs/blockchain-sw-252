@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-08"
+lastupdated: "2022-07-20"
 
 keywords: high availability, Ordering Service, Raft
 
@@ -15,6 +15,11 @@ content-type: tutorial
 
 {{site.data.keyword.attribute-definition-list}}
 
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSVKZ7_2.5.2/ibp-console-ha-os.html](https://www.ibm.com/docs/en/SSVKZ7_2.5.2/ibp-console-ha-os.html){: external}. Update your bookmarks.
+{: important}
+
 # Setting up multiregion High Availability (HA) deployments for the ordering service
 {: #ibp-console-hadr-mr-os}
 {: toc-content-type="tutorial"}
@@ -26,7 +31,7 @@ In this tutorial, you learn how to set up a Raft ordering service with five orde
 
 ![Architectural diagram](images/mr-ha-os.png "Multiregion ordering service"){: caption="Figure 1. A diagram that shows the architecture of a multiregion ordering service" caption-side="bottom"}
 
-The diagram shows a multiregion ordering service that includes five ordering nodes that are spread across three Kubernetes clusters in three different regions. For simplicity, this tutorial assumes that all of the ordering nodes are contributed by the same organization. The setup requires a single Certificate Authority (CA), created in one cluster and imported into the blockchain consoles on the other two clusters. 
+The diagram shows a multiregion ordering service that includes five ordering nodes that are spread across three Kubernetes clusters in three different regions. For simplicity, this tutorial assumes that all the ordering nodes are contributed by the same organization. The setup requires a single Certificate Authority (CA), created in one cluster and imported into the blockchain consoles on the other two clusters. 
 
 Throughout this tutorial we refer to two types of nodes: "ordering nodes" and "worker nodes". Ordering nodes belong to a Raft ordering service cluster. Worker nodes refer to the Kubernetes component that hosts the pods where the ordering nodes are deployed.
 {: note}

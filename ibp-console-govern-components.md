@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-01"
+lastupdated: "2022-07-20"
 
 keywords: network components, Kubernetes, OpenShift, allocate resources, batch timeout, reallocate resources, LevelDB, CouchDB, ordering nodes, ordering, add and remove, governance
 
@@ -13,6 +13,11 @@ subcollection: blockchain-sw-252
 
 
 {{site.data.keyword.attribute-definition-list}}
+
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSVKZ7_2.5.2/ibp-console-govern-components.html](https://www.ibm.com/docs/en/SSVKZ7_2.5.2/ibp-console-govern-components.html){: external}. Update your bookmarks.
+{: important}
 
 # Upgrading and deleting deployed nodes
 {: #ibp-console-govern-components}

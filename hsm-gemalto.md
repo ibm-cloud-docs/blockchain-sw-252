@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-08"
+lastupdated: "2022-07-20"
 
 keywords: HSM, Gemalto, IBM Cloud
 
@@ -13,6 +13,11 @@ subcollection: blockchain-sw-252
 
 
 {{site.data.keyword.attribute-definition-list}}
+
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSVKZ7_2.5.2/hsm-gemalto.html](https://www.ibm.com/docs/en/SSVKZ7_2.5.2/hsm-gemalto.html){: external}. Update your bookmarks.
+{: important}
 
 # IBM Cloud Hardware Security Module (HSM)
 {: #ibp-hsm-gemalto}
@@ -44,7 +49,7 @@ Because only the private keys of node identities are secured in the HSM, when yo
 
 - [Part One: Set up the HSM device and HSM client](#ibp-hsm-gemalto-part-one)
 
-    This process involves deploying an **HSM** and configuring a partition as well as deploying an **HSM client** that you will use to configure the device. Throughout these instructions you will run some commands from the HSM server and others from the HSM client. For clarity, we prefix these steps with either <img src="../images/icon-hsm-2.png" alt="HSM server" width="30" style="width:30px; border-style: none"/> or <img src="../images/icon-hsm-client.png" alt="HSM client" width="30" style="width:30px; border-style: none"/>.
+    This process involves deploying an **HSM** and configuring a partition as well as deploying an **HSM client** that you will use to configure the device. Throughout these instructions you will run some commands from the HSM server and others from the HSM client. For clarity, we prefix these steps with either <img src="images/icon-hsm-2.png" alt="HSM server" width="30" style="width:30px; border-style: none"/> or <img src="images/icon-hsm-client.png" alt="HSM client" width="30" style="width:30px; border-style: none"/>.
 
 - [Part Two: Configure communications between the HSM server and client](#ibp-hsm-gemalto-part-two)
 
@@ -88,7 +93,7 @@ The steps in this topic focus specifically on the creation of the Cloud HSM and 
 
 In this section you will get the HSM server certificate and create the HSM client certificate-key pair in order for them to be exchanged.
 
-1. <img src="../images/icon-hsm-client.png" alt="HSM client" width="30" style="width:30px; border-style: none"/> Run the following command using the HSM client to get the server certificate. This certificate enables the client to communicate with the server.
+1. <img src="images/icon-hsm-client.png" alt="HSM client" width="30" style="width:30px; border-style: none"/> Run the following command using the HSM client to get the server certificate. This certificate enables the client to communicate with the server.
 
     ```bash
     scp hsm_admin@<HSM_ADDRESS>:server.pem server.pem
@@ -98,7 +103,7 @@ In this section you will get the HSM server certificate and create the HSM clien
     Replace
     - `<HSM_ADDRESS>` with the IP address of the HSM.
 
-2. <img src="../images/icon-hsm-client.png" alt="HSM client" width="30" style="width:30px; border-style: none"/> Now, add the HSM server to the client configuration by running the following command:
+2. <img src="images/icon-hsm-client.png" alt="HSM client" width="30" style="width:30px; border-style: none"/> Now, add the HSM server to the client configuration by running the following command:
 
     ```bash
     vtl addServer -n <HSM_ADDRESS> -c server.pem
@@ -108,7 +113,7 @@ In this section you will get the HSM server certificate and create the HSM clien
     Replace
     - `<HSM_ADDRESS>` with the IP address of the HSM.
 
-3. <img src="../images/icon-hsm-client.png" alt="HSM client" width="30" style="width:30px; border-style: none"/> Create the certificate and private key for the client by running the command:
+3. <img src="images/icon-hsm-client.png" alt="HSM client" width="30" style="width:30px; border-style: none"/> Create the certificate and private key for the client by running the command:
 
     ```bash
     vtl createcert -n <CLIENT_ADDRESS>
@@ -124,7 +129,7 @@ In this section you will get the HSM server certificate and create the HSM clien
     Certificate created and written to: /usr/safenet/lunaclient/cert/client/<CLIENT_ADDRESS>.pem
     ```
 
-4. <img src="../images/icon-hsm-client.png" alt="HSM client" width="30" style="width:30px; border-style: none"/> Copy the client certificate and private key to the HSM server by running the command:
+4. <img src="images/icon-hsm-client.png" alt="HSM client" width="30" style="width:30px; border-style: none"/> Copy the client certificate and private key to the HSM server by running the command:
 
     ```bash
     scp /usr/safenet/lunaclient/cert/client/<CLIENT_ADDRESS>.pem hsm_admin@<HSM_ADDRESS>:.
@@ -138,7 +143,7 @@ In this section you will get the HSM server certificate and create the HSM clien
 ### Part Three: Register the client with the HSM server
 {: #ibp-hsm-gemalto-part-three}
 
-1. <img src="../images/icon-hsm-2.png" alt="HSM server" width="30" style="width:30px; border-style: none"/> SSH into the HSM as the admin the HSM server and register the client by running **one** of the following commands.
+1. <img src="images/icon-hsm-2.png" alt="HSM server" width="30" style="width:30px; border-style: none"/> SSH into the HSM as the admin the HSM server and register the client by running **one** of the following commands.
 
     If the `<CLIENT_ADDRESS>` is the IP address of the client:
 
@@ -158,7 +163,7 @@ In this section you will get the HSM server certificate and create the HSM clien
     - `{CLIENT_NAME}` with the name of the client. This value can be anything meaningful to you.
     - `<CLIENT_ADDRESS>` with either the IP address or fully qualified host name of the client.
 
-2. <img src="../images/icon-hsm-2.png" alt="HSM server" width="30" style="width:30px; border-style: none"/> Because network address translation (NAT) exists between the client and the HSM, we need to disable client source IP address validation by the Network Trust Link Server (NTLS) upon Network Trust Link Agent (NTLA) client connection.  Disable ip check on the HSM server and then restart the NTLS service on the HSM server by running the following commands:
+2. <img src="images/icon-hsm-2.png" alt="HSM server" width="30" style="width:30px; border-style: none"/> Because network address translation (NAT) exists between the client and the HSM, we need to disable client source IP address validation by the Network Trust Link Server (NTLS) upon Network Trust Link Agent (NTLA) client connection.  Disable ip check on the HSM server and then restart the NTLS service on the HSM server by running the following commands:
 
     ```bash
     ntls ipcheck disable
@@ -166,7 +171,7 @@ In this section you will get the HSM server certificate and create the HSM clien
     ```
     {: codeblock}
 
-3. <img src="../images/icon-hsm-2.png" alt="HSM server" width="30" style="width:30px; border-style: none"/> Assign a partition to the newly created client on the HSM server by running the following command:
+3. <img src="images/icon-hsm-2.png" alt="HSM server" width="30" style="width:30px; border-style: none"/> Assign a partition to the newly created client on the HSM server by running the following command:
 
     ```bash
     client assignpartition -client ${CLIENT_NAME} -partition ${PARTITION_NAME}
@@ -197,7 +202,7 @@ In this section you will get the HSM server certificate and create the HSM clien
     ```
     {: codeblock}
 
-4. <img src="../images/icon-hsm-client.png" alt="HSM client" width="30" style="width:30px; border-style: none"/> Verify the client can connect to HSM server by running the command:
+4. <img src="images/icon-hsm-client.png" alt="HSM client" width="30" style="width:30px; border-style: none"/> Verify the client can connect to HSM server by running the command:
 
     ```bash
     vtl verify
@@ -213,7 +218,7 @@ In this section you will get the HSM server certificate and create the HSM clien
     0       500752010           partition1
     ```
 
-5. <img src="../images/icon-hsm-client.png" alt="HSM client" width="30" style="width:30px; border-style: none"/>  Create a `configs` folder on the client and then copy the `server.pem` certificate from [Part two](#ibp-hsm-gemalto-part-two), step 1 and the `<CLIENT_ADDRESS>Key.pem` and `<CLIENT_ADDRESS>.pem` files from [Part two](#ibp-hsm-gemalto-part-two), step 3 into the folder:
+5. <img src="images/icon-hsm-client.png" alt="HSM client" width="30" style="width:30px; border-style: none"/>  Create a `configs` folder on the client and then copy the `server.pem` certificate from [Part two](#ibp-hsm-gemalto-part-two), step 1 and the `<CLIENT_ADDRESS>Key.pem` and `<CLIENT_ADDRESS>.pem` files from [Part two](#ibp-hsm-gemalto-part-two), step 3 into the folder:
 
     - Copy `server.pem` to `configs/server.pem`  
     - Copy `/usr/safenet/lunaclient/cert/client/<CLIENT_ADDRESS>Key.pem` to `configs/key.pem`  
@@ -395,6 +400,12 @@ metadata:
 
 
 
+Because the console needs to know the configuration settings to use for your HSM, you need to create a Kubernetes [configmap](https://kubernetes.io/docs/concepts/configuration/configmap/){: external} to store these values. The configMap settings depend on whether you configured a daemon for your HSM or not. In that case, the {{site.data.keyword.blockchainfull_notm}} Platform operator uses the HSM configuration passed in this configmap to get the details about the HSM client image, such as what image pull secret to use, and the folder mounts that are required. Based on the information provided, when a CA, peer, or ordering node is deployed with HSM enabled, the operator mounts required the files for the HSM client image. If you are using a daemon with your HSM, skip ahead to [Configure the operator to work with an HSM daemon](#daemon-configmap).
+
+**Configure the operator to work with an HSM that does not use a daemon**
+{: #x86-configmap}
+
+
 
 Copy the following text and save it to a file named `ibp-hsm-config.yaml`:
 
@@ -484,6 +495,77 @@ In this example, the first `mountpath` contains four configuration files (cafile
 
 A second mountpath is included for the HSM `/etc/Chrystoki.conf` file. Because the HSM requires its config file in the `/etc` folder, which is a system directory, we need to use the `subpath` parameter to avoid replacing the entire `/etc` directory. If the subpath is not used, the entire `/etc` directory is replaced with the volume being mounted.  
 
+
+You have completed the HSM configuration for your blockchain network. Now when you deploy a new CA, peer, or ordering node, you can configure it to use the HSM that you have configured here. See [Configuring a CA, peer, or ordering node to use the HSM](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-adv-deployment#ibp-console-adv-deployment-cfg-hsm-node) for details.
+
+**Configure the operator to work with an HSM daemon**  
+{: #daemon-configmap}
+
+If you configured an HSM daemon, the following sample configuration shows how to configure the openCryptoki zHSM on the operator. You need to customize the settings according to your daemon.   
+
+Copy the following text and save it to a file named `ibp-hsm-config.yaml`:
+
+```yaml
+daemon:
+  image: us.icr.io/ibp-test/opencryptoki-deamon:s390x-1.0.1
+  auth:
+    imagePullSecret: "ibprepo-key-secret"
+  resources:
+    limits:
+      cex.s390.ibm.com/ibp: 1
+  securityContext:
+    privileged: false
+    runAsNonRoot: false
+    runAsUser: 0
+library:
+  filepath: /hsm/opencryptoki/libopencryptoki.so.0.0.0
+  image: us.icr.io/ibp-test/opencryptoki-deamon:s390x-1.0.1
+  auth:
+    imagePullSecret: "ibprepo-key-secret"
+envs:
+  - name: LD_LIBRARY_PATH
+    value: /stdll
+mountpaths:
+  - mountpath: /usr/sbin/pkcsslotd
+    name: pkcsslotd
+    volumeSource:
+      emptyDir:
+        medium: Memory
+  - mountpath: /var/run
+    name: varrun
+    volumeSource:
+      emptyDir:
+        medium: Memory
+  - mountpath: /var/lib/opencryptoki
+    name: tokeninfo
+    usePVC: true
+  - mountpath: /etc/opencryptoki
+    name: opencryptoki-config
+    volumeSource:
+      emptyDir:
+        medium: Memory
+  - mountpath: /var/lock/opencryptoki
+    name: lock
+    volumeSource:
+      emptyDir:
+        medium: Memory
+  - mountpath: /stdll
+    name: stdll
+    volumeSource:
+      emptyDir:
+        medium: Memory
+type: hsm
+version: v1
+```
+{: codeblock}
+
+- In the `daemon:` section, provide the URL of the HSM daemon image that you created. If the image is not hosted publicly, then you need to create the appropriate pull secret and specify it here as well.
+
+- In the `library:` section, provide the URL of the HSM client image that you created in [step two](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-hsm-gemalto#ibp-hsm-gemalto-part-four-docker). This is the client that the CA, peer, and ordering node will use to talk to the HSM daemon. The `filepath:` is the location of the shared object library in the image. If the image is not hosted publicly then the user must create the appropriate pull secret and specify it as well.
+
+- In the `envs:` section, provide the list of environment variables that are required to configure the HSM.
+
+- In the `mountpaths:` section, provide all the necessary artifacts such as config, shared object libraries, shared memory, etc. that are needed to communicate with the HSM daemon. These settings are vendor-specific as it is your responsibility to know what directories or files need to be mounted. When the CA, peer, and ordering nodes are deployed, these mountpaths will be mounted on to their containers along with the HSM client. Most of these mountpaths can be of type `Memory`, however, if there are files that need to persist, then set `usePVC: true`. When set, the operator stores the files in the mountpath in a persistent medium, by leveraging the PVCs of the CA, peer, and ordering node as the persistent medium.
 
 Run the following command to create the configmap named `ibp-hsm-config` in your cluster namespace or project:
 ```

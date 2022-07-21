@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-01"
+lastupdated: "2022-07-20"
 
 keywords: IBM Blockchain, IBM Blockchain Platform, terms, Fabric, Raft, CouchDB, consortium
 
@@ -14,23 +14,28 @@ subcollection: blockchain-sw-252
 
 {{site.data.keyword.attribute-definition-list}}
 
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSVKZ7_2.5.2/glossary.html](https://www.ibm.com/docs/en/SSVKZ7_2.5.2/glossary.html){: external}. Update your bookmarks.
+{: important}
+
 # Glossary
 {: #glossary}
 
-<p>
-<strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
-<a href="/docs/blockchain-sw?topic=blockchain-sw-glossary">2.1.2</a>,
-<a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-glossary">2.1.3</a>,
-<a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-glossary">2.5</a>,
-<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-glossary">2.5.1</a>,
-<a href="/docs/blockchain-sw-252?topic=blockchain-sw-252-glossary">2.5.2</a>
-</p>
+
+<strong>Important: You are not looking at the latest product documentation. 
+It is strongly suggested that you upgrade to the latest version of the product as soon as possible.</strong> 
+Upgrading ensures that you are using the latest product features and fixes, such as improved product stability, 
+automated certificate renewal, and current security patches. <strong>Security patches are not applied to older 
+versions of the product that are no longer supported.</strong> The supported environments described in documentation for 
+earlier releases, such as a previously supported Kubernetes version, are not updated and may no longer be 
+accurate&mdash;do not rely upon support for any versions listed in earlier releases of the product.
 
 This topic defines {{site.data.keyword.blockchainfull}} Platform-specific terms that appear in this documentation. For a deeper understanding of terms, and for a glossary of terms that relate to Hyperledger Fabric concepts, refer to the [Hyperledger Fabric glossary](https://hyperledger-fabric.readthedocs.io/en/release-2.2/glossary.html){: external}.
 {: shortdesc}
 
 ## Approve
-{: #glossary-propose}
+{: #glossary-approve}
 Referring to a step in the Hyperledger Fabric v2.x smart contract lifecycle, a smart contract definition is approved by organizations on the channel. After the number of approvals that are specified in the channel lifecycle endorsement policy are satisfied, the smart contract definition can be committed to a channel, and the peers where it is installed can begin to process requests.
 
 ## Asset
@@ -160,6 +165,10 @@ An instance of an {{site.data.keyword.blockchainfull_notm}} Platform service on 
 ## Node
 {: #glossary-node}
 The communication entity of the blockchain. There are three types of nodes: CA, peer, and ordering node.
+
+## On-prem
+{: #glossary-on-prem}
+Pertaining to software that is installed and run on the local (on premises) computers of a user or organization.
 
 ## Ordering node
 {: #glossary-orderer}

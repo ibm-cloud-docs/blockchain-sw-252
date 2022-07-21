@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-08"
+lastupdated: "2022-07-20"
 
 keywords: import nodes, another console, import a CA, import a peer, import admin identities, import an ordering service node
 
@@ -13,6 +13,11 @@ subcollection: blockchain-sw-252
 
 
 {{site.data.keyword.attribute-definition-list}}
+
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSVKZ7_2.5.2/ibp-console-import-nodes.html](https://www.ibm.com/docs/en/SSVKZ7_2.5.2/ibp-console-import-nodes.html){: external}. Update your bookmarks.
+{: important}
 
 # Importing nodes, MSPs, and identities
 {: #ibp-console-import-nodes}

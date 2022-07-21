@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-01"
+lastupdated: "2022-07-20"
 
 keywords: smart contract, private data, private data collection, anchor peer, instantiation, install smart contract
 
@@ -14,9 +14,14 @@ subcollection: blockchain-sw-252
 
 {{site.data.keyword.attribute-definition-list}}
 
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSVKZ7_2.5.2/ibp-console-smart-contracts-v14.html](https://www.ibm.com/docs/en/SSVKZ7_2.5.2/ibp-console-smart-contracts-v14.html){: external}. Update your bookmarks.
+{: important}
+
 # Deploy a smart contract using Fabric v1.4 (Deprecated)
 {: #ibp-console-smart-contracts-v14}
-<img src="../images/1-4_Pill.png" alt="version 1.4" width="30" style="width:30px; border-style: none"/> (Deprecated) Learn how to create and package a smart contract, how to install the smart contract on a peer running a Fabric 1.4 image, and how to instantiate the smart contract on a channel using application capability 1.x.
+<img src="images/1-4_Pill.png" alt="version 1.4" width="30" style="width:30px; border-style: none"/> (Deprecated) Learn how to create and package a smart contract, how to install the smart contract on a peer running a Fabric 1.4 image, and how to instantiate the smart contract on a channel using application capability 1.x.
 {: shortdesc}
 
 
@@ -221,7 +226,7 @@ After you create an organization MSP definition, you can download a connection p
 
 Click the **Organization MSP** tile for the organization that your client application interacts with. Click **Create connection profile** to open a side panel where you can build and download your connection profile.
 
-![Create connection profile panel](../images/create-connx-profile.png "Create connection profile panel")
+![Create connection profile panel](images/create-connx-profile.png "Create connection profile panel")
 
 If you plan to use the client application to register and enroll users with the organization CA, you need to include the Certificate Authority in the connection profile definition.
 

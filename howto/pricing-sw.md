@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-04-01"
+lastupdated: "2022-07-21"
 
 keywords: pricing model, CPU, vCPU, virtual core, cost, scalability, estimation, optimize your cost
 
@@ -12,21 +12,12 @@ subcollection: blockchain-sw-252
 
 {{site.data.keyword.attribute-definition-list}}
 
-
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSVKZ7_2.5.2/howto/pricing-sw.html](https://www.ibm.com/docs/en/SSVKZ7_2.5.2/howto/pricing-sw.html){: external}. Update your bookmarks.
+{: important}
 
 
 # Pricing
 {: #ibp-sw-pricing}
-
-<p>
-<strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
-<a href="/docs/blockchain-sw?topic=blockchain-sw-ibp-sw-pricing">2.1.2</a>,
-<a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-sw-pricing">2.1.3</a>,
-<a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-ibp-sw-pricing">2.5</a>,
-<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-ibp-sw-pricing">2.5.1</a>,
-<a href="/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-sw-pricing">2.5.2</a>
-</p>
-
 
 This guide helps you understand the pricing model for {{site.data.keyword.blockchainfull}} Platform 2.5.2, and how much you will pay when you develop and grow your blockchain network of Certificate Authorities, peers, and ordering service components, that are based on Hyperledger Fabric v1.4.12 and v2.2.5.
 {: shortdesc}

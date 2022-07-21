@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-08"
+lastupdated: "2022-07-20"
 
 keywords: network components, Kubernetes, channel update, channels, governance, channel configuration, orderer, ordering node, ordering service, raft, tutorial
 
@@ -13,6 +13,11 @@ subcollection: blockchain-sw-252
 
 
 {{site.data.keyword.attribute-definition-list}}
+
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSVKZ7_2.5.2/ibp-console-add-remove-raft.html](https://www.ibm.com/docs/en/SSVKZ7_2.5.2/ibp-console-add-remove-raft.html){: external}. Update your bookmarks.
+{: important}
 
 # Adding and removing ordering service nodes
 {: #ibp-console-add-remove-orderer}
@@ -35,7 +40,7 @@ This is why, by default, the console offers two options: one node or five nodes.
 
 For this reason, it is considered a best practice to have an odd number of nodes in an ordering service. There is nothing wrong with an even number of nodes, but they add costs without making the ordering service more highly available.
 
-Because the number of nodes needed for a quorum is updated automatically when nodes are added to the consenter set, it is a best practice to make sure that all of the nodes in the consenter set are servicing the channel before attempting to add a new node. This is because the consenter set is updated before the node has finished provisioning. For example, if you have three nodes servicing a channel, you will have a quorum as long as two nodes are up. When attempting to add a new node, the consenter set will index to three nodes being needed (out of four). In a case where only two nodes are up out of three when a new node is added, and the new node fails to provision for any reason, you will only have two nodes available out of the three that are needed.
+Because the number of nodes needed for a quorum is updated automatically when nodes are added to the consenter set, it is a best practice to make sure that all the nodes in the consenter set are servicing the channel before attempting to add a new node. This is because the consenter set is updated before the node has finished provisioning. For example, if you have three nodes servicing a channel, you will have a quorum as long as two nodes are up. When attempting to add a new node, the consenter set will index to three nodes being needed (out of four). In a case where only two nodes are up out of three when a new node is added, and the new node fails to provision for any reason, you will only have two nodes available out of the three that are needed.
 {: tip}
 
 ## Overview

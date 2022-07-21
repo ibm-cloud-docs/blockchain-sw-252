@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-05"
+lastupdated: "2022-07-21"
 
 keywords: Kubernetes, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, fix pack, multicloud
 
@@ -12,7 +12,8 @@ subcollection: blockchain-sw-252
 
 {{site.data.keyword.attribute-definition-list}}
 
-
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSVKZ7_2.5.2/howto/console-fixpack.html](https://www.ibm.com/docs/en/SSVKZ7_2.5.2/howto/console-fixpack.html){: external}. Update your bookmarks.
+{: important}
 
 # Installing the 2.5.2 fix pack
 {: #install-fixpack}
@@ -32,7 +33,7 @@ You can use these steps if you deployed the platform on the OpenShift Container 
 ## What this fix pack contains
 {: #install-fixpack-contents}
 
-This cumulative fix pack contains security patches for the Fabric images and miscellaneous bug fixes.  See the [Release notes](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes-saas-20) for more details.
+This cumulative fix pack contains security patches for the Fabric images and miscellaneous bug fixes.  See the [Release notes](/docs/blockchain-sw-252?topic=blockchain-sw-252-release-notes) for more details.
 
 ## Before you begin
 {: #install-fixpack-begin}

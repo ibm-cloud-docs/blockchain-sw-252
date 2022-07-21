@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-05"
+lastupdated: "2022-07-21"
 
 keywords: site map
 subcollection: blockchain-sw-252
@@ -14,8 +14,16 @@ subcollection: blockchain-sw-252
 
 
 
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSVKZ7_2.5.2/sitemap.html](https://www.ibm.com/docs/en/SSVKZ7_2.5.2/sitemap.html){: external}. Update your bookmarks.
+{: important}
+
 # Site map
 {: #sitemap}
+
+
+
 
 
 
@@ -321,6 +329,8 @@ subcollection: blockchain-sw-252
 
 * [What benefits are available with the new smart contract lifecycle available on nodes and channels running on Fabric v2.x?](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-faq#ibp-v2-faq-new-lifecycle)
 
+* [How can I check and interpret the status of my components through the Kubernetes command line?](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-faq#ibm-v2-faq-cr-status)
+
 * [Do you support using certificates from non-IBM Certificate Authorities?](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-faq#ibp-v2-faq-v2-external-certs)
 
 * [What is the recommended way to manage private keys?](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-faq#ibp-v2-faq-hsm)
@@ -344,6 +354,19 @@ subcollection: blockchain-sw-252
 * [Do we have access to logging services and what logs are available to me?](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-faq#ibp-v2-faq-v2-Logging-and-Monitoring-11-6)
 
 * [Is there a best practice for monitoring my blockchain resources?](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-v2-faq#ibp-v2-faq-mon-res)
+
+
+## Disclaimer
+{: #sitemap_disclaimer}
+
+
+[Disclaimer](/docs/blockchain-sw-252?topic=blockchain-sw-252-disclaimer)
+
+* [{{site.data.keyword.IBM_notm}} support statement](/docs/blockchain-sw-252?topic=blockchain-sw-252-disclaimer#disclaimer-support-statement)
+
+* [Open-source statement](/docs/blockchain-sw-252?topic=blockchain-sw-252-disclaimer#disclaimer-open-source-statement)
+
+* [Chaincode support statement](/docs/blockchain-sw-252?topic=blockchain-sw-252-disclaimer#disclaimer-chaincode-support-statement)
 
 
 ## Getting started
@@ -392,9 +415,6 @@ subcollection: blockchain-sw-252
     * [Add Org2 MSP to the ordering service consortium](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-join-network#ibp-console-join-network-add-org2-local)
     * [Creating a channel: `channel2`](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-join-network#ibp-console-build-network-create-channel1)
 * [Next steps](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-join-network#ibp-console-join-network-next-steps)
-
-[{{site.data.keyword.blockchainfull_notm}} Platform getting started videos](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-videos)
-* [Getting started with {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-videos#ibp-videos-ibp-v2)
 
 
 ## Deploy a smart contract
@@ -540,7 +560,7 @@ subcollection: blockchain-sw-252
 {: #sitemap_ansible_playbooks}
 
 
-[Getting started with Ansible playbooks on the IBM Blockchain Platform](/docs/blockchain-sw-252?topic=blockchain-sw-252-ansible)
+[Getting started with Ansible playbooks on IBM Blockchain Platform](/docs/blockchain-sw-252?topic=blockchain-sw-252-ansible)
 * [What is Ansible](/docs/blockchain-sw-252?topic=blockchain-sw-252-ansible#ansible-whatis)
 * [How does the {{site.data.keyword.blockchainfull_notm}} Platform Ansible collection work?](/docs/blockchain-sw-252?topic=blockchain-sw-252-ansible#ansible-how)
 * [Why would I want to use an Ansible playbook?](/docs/blockchain-sw-252?topic=blockchain-sw-252-ansible#ansible-why)
@@ -596,6 +616,7 @@ subcollection: blockchain-sw-252
     * [Use your own TLS Certificates (Optional)](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm#console-deploy-ocp-use-your-own-tls-certificates-optional)
 * [Step four: Verify the console installation](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm#console-deploy-ocp-verify-install)
 * [Step five: Log in to the console](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm#deploy-ocp-rhm-log-in)
+* [Upgrading your deployment](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm#console-deploy-ocp-rhm-upgrade-deployment)
 * [Removing your deployment](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm#console-deploy-ocp-rhm-remove-deployment)
 * [Next steps](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm#console-deploy-ocp-rhm-next-steps)
 * [Support](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm#deploy-ocp-rhm-support)
@@ -628,6 +649,7 @@ subcollection: blockchain-sw-252
 * [Verify the console installation](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm-fw#console-deploy-ocp-rhm-fw-verify)
 * [Log in to the console](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm-fw#console-deploy-ocp-rhm-fw-login)
 * [Next steps](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm-fw#console-deploy-ocp-rhm-fw-next)
+* [Upgrade your deployment](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm-fw#console-deploy-ocp-rhm-upgrade-deployment)
 * [Remove your deployment](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm-fw#console-deploy-ocp-rhm-fw-remove-deployment)
 * [Create a project for your {{site.data.keyword.blockchainfull_notm}} Platform deployment](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-ocp-rhm-fw#deploy-ocp-rhm-fw-project)
 
@@ -765,7 +787,7 @@ subcollection: blockchain-sw-252
 * [Log in to your cluster](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#deploy-k8-login)
 * [Create the `ibpinfra` namespace for the webhook](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#deploy-k8-ibpinfra)
 * [Create a secret for your entitlement key](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#deploy-k8-secret-ibpinfra)
-* [Deploy the webhook and custom resource definitions (CRDS) to your Kubernetes cluster](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#deploy-k8s-webhook-crd)
+* [Deploy the webhook and custom resource definitions (CRDS) to your Kubernetes cluster](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#deploy-k8-webhook-crd)
     * [1. Configure role-based access control (RBAC) for the webhook](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#webhook-rbac)
     * [2. (OpenShift cluster only) Apply the Security Context Constraint](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#webhook-scc)
     * [3. Deploy the webhook](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#webhook-deploy)
@@ -797,7 +819,7 @@ subcollection: blockchain-sw-252
 * [Get your entitlement key](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8-firewall#deploy-k8-entitlement-key-firewall)
 * [Before you begin](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8-firewall#deploy-k8-prerequisites-firewall)
 * [Pull the {{site.data.keyword.blockchainfull_notm}} Platform images](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8-firewall#deploy-k8-images-firewall)
-* [Log in to your Kubernetes cluster](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8-firewall#deploy-k8s-login-firewall)
+* [Log in to your Kubernetes cluster](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8-firewall#deploy-k8-login-firewall)
 * [Create the `ibpinfra` namespace for the webhook](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8-firewall#deploy-k8-ibpinfra-fw)
 * [Set up the entitlement for a local registry](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8-firewall#deploy-k8-secret-ibpinfra-fw)
 * [Deploy the webhook and custom resource definitions to your OpenShift cluster](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8-firewall#deploy-k8s-webhook-crd-fw)
@@ -999,6 +1021,7 @@ subcollection: blockchain-sw-252
     * [What capability does HSM add to my blockchain node?](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-adv-deployment#ibp-console-adv-deployment-cfg-hsm-capability)
     * [Considerations when using HSM](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-adv-deployment#ibp-console-adv-deployment-cfg-hsm-considerations)
     * [Before you begin](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-adv-deployment#ibp-console-adv-deployment-hsm-before)
+    * [(Optional) Configure an HSM daemon](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-adv-deployment#ibp-console-adv-deployment-hsm-daemon)
     * [Build a Docker image](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-adv-deployment#ibp-console-adv-deployment-hsm-build-docker)
     * [Configuring a CA, peer, or ordering node to use the HSM](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-adv-deployment#ibp-console-adv-deployment-cfg-hsm-node)
 
@@ -1113,6 +1136,14 @@ subcollection: blockchain-sw-252
     * [Step three: Update SDKs and smart contracts](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-govern-components#ibp-console-govern-components-upgrade-step-three)
     * [Step four: Update capabilities](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-govern-components#ibp-console-govern-components-upgrade-step-four-rolling-upgrade)
 * [Deleting components](/docs/blockchain-sw-252?topic=blockchain-sw-252-ibp-console-govern-components#ibp-console-govern-components-delete)
+
+[Operating nodes with operations service](/docs/blockchain-sw-252?topic=blockchain-sw-252-operations_service)
+* [Considerations and limitations](/docs/blockchain-sw-252?topic=blockchain-sw-252-operations_service#operations_service_consideration_limitation)
+* [Before you begin](/docs/blockchain-sw-252?topic=blockchain-sw-252-operations_service#operations_service_before_you_begin)
+* [Checking node health](/docs/blockchain-sw-252?topic=blockchain-sw-252-operations_service#operations_service_health_check)
+* [Viewing the metrics](/docs/blockchain-sw-252?topic=blockchain-sw-252-operations_service#operations_service_view_metrics)
+* [Viewing logging levels](/docs/blockchain-sw-252?topic=blockchain-sw-252-operations_service#operations_service_log_level_view)
+* [Setting logging levels](/docs/blockchain-sw-252?topic=blockchain-sw-252-operations_service#operations_service_log_level_set)
 
 
 ## Developing smart contracts and applications
@@ -1255,7 +1286,7 @@ subcollection: blockchain-sw-252
 
 [Glossary](/docs/blockchain-sw-252?topic=blockchain-sw-252-glossary)
 
-* [Approve](/docs/blockchain-sw-252?topic=blockchain-sw-252-glossary#glossary-propose)
+* [Approve](/docs/blockchain-sw-252?topic=blockchain-sw-252-glossary#glossary-approve)
 
 * [Asset](/docs/blockchain-sw-252?topic=blockchain-sw-252-glossary#glossary-asset)
 
@@ -1320,6 +1351,8 @@ subcollection: blockchain-sw-252
 * [Network](/docs/blockchain-sw-252?topic=blockchain-sw-252-glossary#glossary-network)
 
 * [Node](/docs/blockchain-sw-252?topic=blockchain-sw-252-glossary#glossary-node)
+
+* [On-prem](/docs/blockchain-sw-252?topic=blockchain-sw-252-glossary#glossary-on-prem)
 
 * [Ordering node](/docs/blockchain-sw-252?topic=blockchain-sw-252-glossary#glossary-orderer)
 
@@ -1510,3 +1543,10 @@ subcollection: blockchain-sw-252
 * [Resources and support forums](/docs/blockchain-sw-252?topic=blockchain-sw-252-blockchain-support#blockchain-support-resources)
 
 * [Submitting support cases](/docs/blockchain-sw-252?topic=blockchain-sw-252-blockchain-support#blockchain-support-cases)
+
+
+## Signed images
+{: #sitemap_signed_images}
+
+
+[Signed images](/docs/blockchain-sw-252?topic=blockchain-sw-252-signed-images)

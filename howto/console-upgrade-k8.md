@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-04-05"
+lastupdated: "2022-07-21"
 
 keywords: Kubernetes, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters
 
@@ -12,20 +12,19 @@ subcollection: blockchain-sw-252
 
 {{site.data.keyword.attribute-definition-list}}
 
-
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSVKZ7_2.5.2/howto/console-upgrade-k8.html](https://www.ibm.com/docs/en/SSVKZ7_2.5.2/howto/console-upgrade-k8.html){: external}. Update your bookmarks.
+{: important}
 
 # Upgrading your console and components
 {: #upgrade-k8}
 
-<p>
-<strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
-<a href="/docs/blockchain-sw?topic=blockchain-sw-upgrade-k8">2.1.2</a>,
-<a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-upgrade-k8">2.1.3</a>,
-<a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-upgrade-k8">2.5</a>,
-<a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-upgrade-k8">2.5.1</a>,
-<a href="/docs/blockchain-sw-252?topic=blockchain-sw-252-upgrade-k8">2.5.2</a>
-</p>
-
+<strong>Important: You are not looking at the latest product documentation. 
+It is strongly suggested that you upgrade to the latest version of the product as soon as possible.</strong> 
+Upgrading ensures that you are using the latest product features and fixes, such as improved product stability, 
+automated certificate renewal, and current security patches. <strong>Security patches are not applied to older 
+versions of the product that are no longer supported.</strong> The supported environments described in documentation for 
+earlier releases, such as a previously supported Kubernetes version, are not updated and may no longer be 
+accurate&mdash;do not rely upon support for any versions listed in earlier releases of the product.
 
 You can upgrade the {{site.data.keyword.blockchainfull}} Platform without disrupting a running network. Because the platform is deployed by using a Kubernetes operator, you can pull the latest {{site.data.keyword.blockchainfull_notm}} Platform images from the {{site.data.keyword.IBM_notm}} Entitlement registry without having to reinstall the platform. You can use these instructions to upgrade to the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2.
 {: shortdesc}
@@ -38,11 +37,11 @@ Use these instructions to upgrade to the {{site.data.keyword.blockchainfull_notm
 | Version | Release date | Image tags | New features |
 |----|----|----|----|
 | [{{site.data.keyword.blockchainfull_notm}} Platform 2.5.2](/docs/blockchain-sw-252?topic=blockchain-sw-252-whats-new#whats-new-03-29-2021) | 29 Mar 2021| **Console and tools** <ul><li>2.5.2-20220405-amd64</li><li>2.5.2-20210810-amd64</li><li>2.5.2-20210616-amd64</li><li>2.5.2-20210505-amd64</li><li>2.5.2-20210325-amd64</li></ul> **Fabric nodes** <ul><li>1.4.12-20210616</li><li>1.4.11-20210505</li><li>1.4.11-20210325</li></ul> **CouchDB** <ul> <li>2.3.1-20210505</li><li>2.3.1-20210325</li> <li>3.1.1-20210505</li> <li>3.1.1-20210325</li></ul> | **Fabric Version Upgrade** <ul><li>Fabric version 1.4.12 and 2.2.4</li><li>Fabric version 1.4.11 and 2.2.2</li></ul> **Improvements to the Console UI** <ul><li>Support for Fabric v2.x Lifecycle.</li><li>Upgrade CA, peer, and ordering nodes from Fabric v1.4 to Fabric v2.x.</li><li>Certificate renewal enhancements added to the console.</li></ul> |
-| [{{site.data.keyword.blockchainfull_notm}} Platform 2.5.1](/docs/blockchain-sw-251?topic=blockchain-sw-251-release-notes-saas-20#01-12-2021) | 12 Jan 2021| **Console and tools** <ul><li>2.5.1-20210112-amd64</li> <li>2.5.1-20201208-amd64</li> <li>2.5.1-20201119-amd64</li> <li>2.5.1-20201030-amd64</li></ul> **Fabric nodes** <ul><li>1.4.9-20210112-amd64</li><li>1.4.9-20201208-amd64</li> <li>1.4.9-20201119-amd64</li> <li>1.4.9-20201030-amd64</li><li>2.2.1-20210112-amd64</li><li>2.2.1-20201208-amd64</li><li>2.2.1-20201119-amd64</li><li>2.2.1-20201030-amd64</li></ul> **CouchDB** <ul> <li>2.3.1-20210112-amd64</li> <li>2.3.1-20201208-amd64</li>  <li>2.3.1-20201119-amd64</li><li>2.3.1-20201030-amd64</li></ul> | **Fabric Version Upgrade** <ul><li>Fabric version 1.4.9 and 2.2.1</ul> <strong>Improvements to the Console UI</strong> <ul><li>Support for Fabric v2.x Lifecycle.</li><li>Upgrade CA, peer, and ordering nodes from Fabric v1.4 to Fabric v2.x.</li><li>Certificate renewal enhancements added to the console.</li></ul> |
-| [{{site.data.keyword.blockchainfull_notm}} Platform 2.5](/docs/blockchain-sw-25?topic=blockchain-sw-25-release-notes-saas-20#08-25-2020){: external} | 9 Sept 2020| **Console and tools** <ul><li>2.5.0-20200825-amd64</li><li>2.5.0-20200714-amd64</li><li>2.5.0-20200618-amd64</li></ul> **Fabric nodes** <ul><li>1.4.7-20200825-amd64</li><li>1.4.7-20200714-amd64</li><li>1.4.7-20200618-amd64</li><li>2.1.1-20200825-amd64</li><li>2.1.1-20200714-amd64</li><li>2.1.1-20200618-amd64</li></ul> **CouchDB** <ul><li>2.3.1-20200825-amd64</li><li>2.3.1-20200714-amd64</li><li>2.3.1-20200618-amd64</li></ul> | **Fabric Version Upgrade** <ul><li>Fabric version 1.4.7 and 2.1.1</ul> <strong>Improvements to the Console UI</strong> <ul><li>Ability to select Fabric version when you deploy a new peer or ordering node.</li></ul> |
+| [{{site.data.keyword.blockchainfull_notm}} Platform 2.5.1](/docs/blockchain-sw-251?topic=blockchain-sw-251-release-notes#01-12-2021) | 12 Jan 2021| **Console and tools** <ul><li>2.5.1-20210112-amd64</li> <li>2.5.1-20201208-amd64</li> <li>2.5.1-20201119-amd64</li> <li>2.5.1-20201030-amd64</li></ul> **Fabric nodes** <ul><li>1.4.9-20210112-amd64</li><li>1.4.9-20201208-amd64</li> <li>1.4.9-20201119-amd64</li> <li>1.4.9-20201030-amd64</li><li>2.2.1-20210112-amd64</li><li>2.2.1-20201208-amd64</li><li>2.2.1-20201119-amd64</li><li>2.2.1-20201030-amd64</li></ul> **CouchDB** <ul> <li>2.3.1-20210112-amd64</li> <li>2.3.1-20201208-amd64</li>  <li>2.3.1-20201119-amd64</li><li>2.3.1-20201030-amd64</li></ul> | **Fabric Version Upgrade** <ul><li>Fabric version 1.4.9 and 2.2.1</ul> <strong>Improvements to the Console UI</strong> <ul><li>Support for Fabric v2.x Lifecycle.</li><li>Upgrade CA, peer, and ordering nodes from Fabric v1.4 to Fabric v2.x.</li><li>Certificate renewal enhancements added to the console.</li></ul> |
+| [{{site.data.keyword.blockchainfull_notm}} Platform 2.5](/docs/blockchain-sw-25?topic=blockchain-sw-25-release-notes#08-25-2020){: external} | 9 Sept 2020| **Console and tools** <ul><li>2.5.0-20200825-amd64</li><li>2.5.0-20200714-amd64</li><li>2.5.0-20200618-amd64</li></ul> **Fabric nodes** <ul><li>1.4.7-20200825-amd64</li><li>1.4.7-20200714-amd64</li><li>1.4.7-20200618-amd64</li><li>2.1.1-20200825-amd64</li><li>2.1.1-20200714-amd64</li><li>2.1.1-20200618-amd64</li></ul> **CouchDB** <ul><li>2.3.1-20200825-amd64</li><li>2.3.1-20200714-amd64</li><li>2.3.1-20200618-amd64</li></ul> | **Fabric Version Upgrade** <ul><li>Fabric version 1.4.7 and 2.1.1</ul> <strong>Improvements to the Console UI</strong> <ul><li>Ability to select Fabric version when you deploy a new peer or ordering node.</li></ul> |
 | [{{site.data.keyword.blockchainfull_notm}} Platform v2.1.3](/docs/blockchain-sw-213?topic=blockchain-sw-213-whats-new#whats-new-03-24-2020){: external} | 24 March 2020| **Console and tools** <ul><li>2.1.3-20200520-amd64</li><li>2.1.3-20200416-amd64</li><li>2.1.3-20200324-amd64</li></ul> **Fabric nodes** <ul><li>1.4.6-20200520-amd64</li><li>1.4.6-20200416-amd64</li><li>1.4.6-20200324-amd64</li></ul> **CouchDB** <ul><li>2.3.1-20200520-amd64</li><li>2.3.1-20200416-amd64</li><li>2.3.1-20200324-amd64</li></ul> | **Fabric Version Upgrade** <ul><li>Fabric version 1.4.6</ul> <strong>Additional platforms</strong> <ul><li>Platform can be deployed on the OpenShift Container Platform 4.2 on LinuxONE (s390x)</ul> <strong>Improvements to the Console UI</strong> <ul><li>Hardware Security Module (HSM) support for node identities</li><li>Ability to override CA, peer, and ordering node configuration</li><li>Ability to add and remove Raft ordering nodes</li><li>Java smart contract instantiation</li><li>Updated create channel and create organization panels</ul> |
 | <a href="/docs/blockchain-sw?topic=blockchain-sw-whats-new#whats-new-12-17-2019">{{site.data.keyword.blockchainfull_notm}} Platform v2.1.2</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> | 17 December 2019 | <strong>Console and tools</strong> <ul><li>2.1.2-20191217-amd64</li><li>2.1.2-20200213-amd64</li></ul> **Fabric nodes** <ul><li>1.4.4-20191217-amd64</li><li>1.4.4-20200213-amd64</li></ul> **CouchDB** <ul><li>2.3.1-20191217-amd64</li><li>2.3.1-20200213-amd64</li></ul> | **Fabric Version Upgrade** <ul><li>Fabric version 1.4.4</ul> <strong>Additional platforms</strong> <ul><li>Platform can be deployed on the OpenShift Container Platform 4.1 and 4.2</ul> <strong>Improvements to the Console UI</strong> <ul><li>Simplified component creation flows</li><li>Zone selection for ordering nodes</li><li>Add peer to a channel from Channels tab</li><li>Anchor peer during join</li><li>Export/Import all</ul> |
-| <a href=" /docs/blockchain-sw?topic=blockchain-sw-whats-new#whats-new-11-08-2019">{{site.data.keyword.blockchainfull_notm}} Platform v2.1.1</a> <img src="../icons/launch-glyph.svg" alt="External link icon">| 8 November 2019 | <strong>Console and tools</strong> <ul><li>2.1.1-20191108-amd64</ul> <strong>Fabric nodes</strong> <ul><li>1.4.3-20191108-amd64</ul> <strong>CouchDB</strong> <ul><li>2.3.1-20191108-amd64</ul> | <strong>Additional platforms</strong> <ul><li>Platform can be deployed on Kubernetes v1.14 - v1.16</li><li>Platform can be deployed on {{site.data.keyword.cloud_notm}} Private 3.2.1</li></ul> |
+| <a href="/docs/blockchain-sw?topic=blockchain-sw-whats-new#whats-new-11-08-2019">{{site.data.keyword.blockchainfull_notm}} Platform v2.1.1</a> <img src="../icons/launch-glyph.svg" alt="External link icon">| 8 November 2019 | <strong>Console and tools</strong> <ul><li>2.1.1-20191108-amd64</ul> <strong>Fabric nodes</strong> <ul><li>1.4.3-20191108-amd64</ul> <strong>CouchDB</strong> <ul><li>2.3.1-20191108-amd64</ul> | <strong>Additional platforms</strong> <ul><li>Platform can be deployed on Kubernetes v1.14 - v1.16</li><li>Platform can be deployed on {{site.data.keyword.cloud_notm}} Private 3.2.1</li></ul> |
 | [{{site.data.keyword.blockchainfull_notm}} Platform v2.1.0](/docs/blockchain-sw?topic=blockchain-sw-whats-new#whats-new-9-24-2019){: external} | 24 September 2019 | **Console and tools** <ul><li>2.1.0-20190918-amd64</ul> **Fabric nodes** <ul><li>1.4.3-20190918-amd64</ul> **CouchDB** <ul><li>2.3.1-20190918-amd64</ul> | **Fabric Version Upgrade** <ul><li>Fabric version 1.4.3</ul> **Additional platforms** <ul><li>Platform can be deployed on the OpenShift Container Platform 3.11</ul> |
 {: caption="Table 1. {{site.data.keyword.blockchainfull_notm}} Platform versions" caption-side="bottom"}
 
@@ -106,87 +105,7 @@ kubectl set image deploy/ibp-webhook -n ibpinfra ibp-webhook="cp.icr.io/cp/ibp-c
 Run this command to update the CA CRD:   
 ```yaml
 cat <<EOF | kubectl apply  -f -
-apiVersion: apiextensions.k8s.io/v1
-kind: CustomResourceDefinition
-metadata:
-  name: ibpcas.ibp.com
-  labels:
-    app.kubernetes.io/instance: ibpca
-    app.kubernetes.io/managed-by: ibp-operator
-    app.kubernetes.io/name: ibp
-    helm.sh/chart: ibm-ibp
-    release: operator
-spec:
-  conversion:
-    strategy: Webhook
-    webhook:
-      clientConfig:
-        caBundle: "${TLS_CERT}"
-        service:
-          name: ibp-webhook
-          namespace: ibpinfra
-          path: /crdconvert
-      conversionReviewVersions:
-      - v1beta1
-      - v1alpha2
-      - v1alpha1
-  group: ibp.com
-  names:
-    kind: IBPCA
-    listKind: IBPCAList
-    plural: ibpcas
-    singular: ibpca
-  scope: Namespaced
-  versions:
-  - name: v1beta1
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: true
-    subresources:
-      status: {}
-  - name: v1alpha2
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: false
-    subresources:
-      status: {}
-  - name: v210
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: false
-    storage: false
-    subresources:
-      status: {}
-  - name: v212
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: false
-    storage: false
-    subresources:
-      status: {}
-  - name: v1alpha1
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: false
-    subresources:
-      status: {}
-status:
-  acceptedNames:
-    kind: IBPCA
-    listKind: IBPCAList
-    plural: ibpcas
-    singular: ibpca
-  conditions: []
-  storedVersions:
-  - v1beta1
+
 EOF
 ```
 {: codeblock}
@@ -206,71 +125,7 @@ customresourcedefinition.apiextensions.k8s.io/ibpcas.ibp.com configured
 Run this command to update the peer CRD:
 ```yaml
 cat <<EOF | kubectl apply  -f -
-apiVersion: apiextensions.k8s.io/v1
-kind: CustomResourceDefinition
-metadata:
-  name: ibppeers.ibp.com
-  labels:
-    release: "operator"
-    helm.sh/chart: "ibm-ibp"
-    app.kubernetes.io/name: "ibp"
-    app.kubernetes.io/instance: "ibppeer"
-    app.kubernetes.io/managed-by: "ibp-operator"
-spec:
-  conversion:
-    strategy: Webhook
-    webhook:
-      clientConfig:
-        caBundle: "${TLS_CERT}"
-        service:
-          name: ibp-webhook
-          namespace: ibpinfra
-          path: /crdconvert
-      conversionReviewVersions:
-      - v1beta1
-      - v1alpha2
-      - v1alpha1
-  group: ibp.com
-  names:
-    kind: IBPPeer
-    listKind: IBPPeerList
-    plural: ibppeers
-    singular: ibppeer
-  scope: Namespaced
-  versions:
-  - name: v1beta1
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: true
-    subresources:
-      status: {}
-  - name: v1alpha2
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: false
-    subresources:
-      status: {}
-  - name: v1alpha1
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: false
-    subresources:
-      status: {}
-status:
-  acceptedNames:
-    kind: IBPPeer
-    listKind: IBPPeerList
-    plural: ibppeers
-    singular: ibppeer
-  conditions: []
-  storedVersions:
-  - v1beta1
+
 EOF
 ```
 {: codeblock}
@@ -290,71 +145,6 @@ customresourcedefinition.apiextensions.k8s.io/ibppeers.ibp.com configured
 Run this command to update the console CRD:
 ```yaml
 cat <<EOF | kubectl apply  -f -
-apiVersion: apiextensions.k8s.io/v1
-kind: CustomResourceDefinition
-metadata:
-  name: ibpconsoles.ibp.com
-  labels:
-    release: "operator"
-    helm.sh/chart: "ibm-ibp"
-    app.kubernetes.io/name: "ibp"
-    app.kubernetes.io/instance: "ibpconsole"
-    app.kubernetes.io/managed-by: "ibp-operator"
-spec:
-  conversion:
-    strategy: Webhook
-    webhook:
-      clientConfig:
-        caBundle: "${TLS_CERT}"
-        service:
-          name: ibp-webhook
-          namespace: ibpinfra
-          path: /crdconvert
-      conversionReviewVersions:
-      - v1beta1
-      - v1alpha2
-      - v1alpha1
-  group: ibp.com
-  names:
-    kind: IBPConsole
-    listKind: IBPConsoleList
-    plural: ibpconsoles
-    singular: ibpconsole
-  scope: Namespaced
-  versions:
-  - name: v1beta1
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: true
-    subresources:
-      status: {}
-  - name: v1alpha2
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: false
-    subresources:
-      status: {}
-  - name: v1alpha1
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: false
-    subresources:
-      status: {}
-status:
-  acceptedNames:
-    kind: IBPConsole
-    listKind: IBPConsoleList
-    plural: ibpconsoles
-    singular: ibpconsole
-  conditions: []
-  storedVersions:
-  - v1beta1
 
 EOF
 ```
@@ -375,71 +165,7 @@ customresourcedefinition.apiextensions.k8s.io/ibpconsoles.ibp.com configured
 Run this command to update the orderer CRD:  
 ```yaml
 cat <<EOF | kubectl apply  -f -
-apiVersion: apiextensions.k8s.io/v1
-kind: CustomResourceDefinition
-metadata:
-  name: ibporderers.ibp.com
-  labels:
-    release: "operator"
-    helm.sh/chart: "ibm-ibp"
-    app.kubernetes.io/name: "ibp"
-    app.kubernetes.io/instance: "ibporderer"
-    app.kubernetes.io/managed-by: "ibp-operator"
-spec:
-  conversion:
-    strategy: Webhook
-    webhook:
-      clientConfig:
-        caBundle: "${TLS_CERT}"
-        service:
-          name: ibp-webhook
-          namespace: ibpinfra
-          path: /crdconvert
-      conversionReviewVersions:
-      - v1beta1
-      - v1alpha2
-      - v1alpha1
-  group: ibp.com
-  names:
-    kind: IBPOrderer
-    listKind: IBPOrdererList
-    plural: ibporderers
-    singular: ibporderer
-  scope: Namespaced
-  versions:
-  - name: v1beta1
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: true
-    subresources:
-      status: {}
-  - name: v1alpha2
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: false
-    subresources:
-      status: {}
-  - name: v1alpha1
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: false
-    subresources:
-      status: {}
-status:
-  acceptedNames:
-    kind: IBPOrderer
-    listKind: IBPOrdererList
-    plural: ibporderers
-    singular: ibporderer
-  conditions: []
-  storedVersions:
-  - v1beta1
+
 EOF
 ```
 {: codeblock}
@@ -463,192 +189,7 @@ customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com configured
 You need to update the ClusterRole that is applied to your namespace. Copy the following text to a file on your local system and save the file as `ibp-clusterrole.yaml`. Edit the file and replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.  
 
 ```yaml
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRole
-metadata:
-  name: <NAMESPACE>
-  labels:
-    release: "operator"
-    helm.sh/chart: "ibm-ibp"
-    app.kubernetes.io/name: "ibp"
-    app.kubernetes.io/instance: "ibp"
-    app.kubernetes.io/managed-by: "ibp-operator"
-rules:
-- apiGroups:
-  - extensions
-  resourceNames:
-  - ibm-blockchain-platform-psp
-  resources:
-  - podsecuritypolicies
-  verbs:
-  - use
-- apiGroups:
-  - apiextensions.k8s.io
-  resources:
-  - persistentvolumeclaims
-  - persistentvolumes
-  verbs:
-  - get
-  - list
-  - create
-  - update
-  - patch
-  - watch
-  - delete
-  - deletecollection
-- apiGroups:
-  - apiextensions.k8s.io
-  resources:
-  - customresourcedefinitions
-  verbs:
-  - get
-- apiGroups:
-  - route.openshift.io
-  resources:
-  - routes
-  - routes/custom-host
-  verbs:
-  - get
-  - list
-  - create
-  - update
-  - patch
-  - watch
-  - delete
-  - deletecollection
-- apiGroups:
-  - ""
-  resources:
-  - pods
-  - pods/log
-  - persistentvolumeclaims
-  - persistentvolumes
-  - services
-  - endpoints
-  - events
-  - configmaps
-  - secrets
-  - nodes
-  - serviceaccounts
-  verbs:
-  - get
-  - list
-  - create
-  - update
-  - patch
-  - watch
-  - delete
-  - deletecollection
-- apiGroups:
-  - "batch"
-  resources:
-  - jobs
-  verbs:
-  - get
-  - list
-  - create
-  - update
-  - patch
-  - watch
-  - delete
-  - deletecollection
-- apiGroups:
-  - "authorization.openshift.io"
-  - "rbac.authorization.k8s.io"
-  resources:
-  - roles
-  - rolebindings
-  verbs:
-  - get
-  - list
-  - create
-  - update
-  - patch
-  - watch
-  - delete
-  - deletecollection
-  - bind
-  - escalate
-- apiGroups:
-  - ""
-  resources:
-  - namespaces
-  verbs:
-  - get
-- apiGroups:
-  - apps
-  resources:
-  - deployments
-  - daemonsets
-  - replicasets
-  - statefulsets
-  verbs:
-  - get
-  - list
-  - create
-  - update
-  - patch
-  - watch
-  - delete
-  - deletecollection
-- apiGroups:
-  - monitoring.coreos.com
-  resources:
-  - servicemonitors
-  verbs:
-  - get
-  - create
-- apiGroups:
-  - apps
-  resourceNames:
-  - ibp-operator
-  resources:
-  - deployments/finalizers
-  verbs:
-  - update
-- apiGroups:
-  - ibp.com
-  resources:
-  - ibpcas.ibp.com
-  - ibppeers.ibp.com
-  - ibporderers.ibp.com
-  - ibpconsoles.ibp.com
-  - ibpcas
-  - ibppeers
-  - ibporderers
-  - ibpconsoles
-  - ibpcas/finalizers
-  - ibppeers/finalizers
-  - ibporderers/finalizers
-  - ibpconsoles/finalizers
-  - ibpcas/status
-  - ibppeers/status
-  - ibporderers/status
-  - ibpconsoles/status
-  verbs:
-  - get
-  - list
-  - create
-  - update
-  - patch
-  - watch
-  - delete
-  - deletecollection
-- apiGroups:
-  - extensions
-  - networking.k8s.io
-  - config.openshift.io
-  resources:
-  - ingresses
-  verbs:
-  - get
-  - list
-  - create
-  - update
-  - patch
-  - watch
-  - delete
-  - deletecollection
+
 ```
 {: codeblock}
 
@@ -781,36 +322,6 @@ The first three steps are for deployment of the webhook. The last step is for cr
 Copy the following text to a file on your local system and save the file as `rbac.yaml`. This step allows the webhook to read and create a TLS secret in its own project.
 
 ```yaml
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: webhook
-  namespace: ibpinfra
----
-apiVersion: rbac.authorization.k8s.io/v1
-kind: Role
-metadata:
-  name: webhook
-rules:
-- apiGroups:
-  - "*"
-  resources:
-  - secrets
-  verbs:
-  - "*"
----
-kind: RoleBinding
-apiVersion: rbac.authorization.k8s.io/v1
-metadata:
-  name: ibpinfra
-subjects:
-- kind: ServiceAccount
-  name: webhook
-  namespace: ibpinfra
-roleRef:
-  kind: Role
-  name: webhook
-  apiGroup: rbac.authorization.k8s.io
 
 ```
 {: codeblock}
@@ -832,41 +343,6 @@ rolebinding.rbac.authorization.k8s.io/ibpinfra created
 
 Skip this step if you are not using OpenShift. The {{site.data.keyword.blockchainfull_notm}} Platform requires specific security and access policies to be added to the `ibpinfra` project. Copy the security context constraint object below and save it to your local system as `ibpinfra-scc.yaml`. Replace `<PROJECT_NAME>` with `ibpinfra`.
 ```yaml
-allowHostDirVolumePlugin: false
-allowHostIPC: false
-allowHostNetwork: false
-allowHostPID: false
-allowHostPorts: false
-allowPrivilegeEscalation: true
-allowPrivilegedContainer: true
-allowedCapabilities:
-- NET_BIND_SERVICE
-- CHOWN
-- DAC_OVERRIDE
-- SETGID
-- SETUID
-- FOWNER
-apiVersion: security.openshift.io/v1
-defaultAddCapabilities: []
-fsGroup:
-  type: RunAsAny
-groups:
-- system:serviceaccounts:<PROJECT_NAME>
-kind: SecurityContextConstraints
-metadata:
-  name: <PROJECT_NAME>
-readOnlyRootFilesystem: false
-requiredDropCapabilities: []
-runAsUser:
-  type: RunAsAny
-seLinuxContext:
-  type: RunAsAny
-supplementalGroups:
-  type: RunAsAny
-users:
-- system:serviceaccounts:<PROJECT_NAME>
-volumes:
-- "*"
 
 ```
 {: codeblock}
@@ -895,91 +371,12 @@ In order to deploy the webhook, you need to create two `.yaml` files and apply t
 
 Copy the following text to a file on your local system and save the file as `deployment.yaml`. If you are deploying on OpenShift Container Platform on LinuxONE, you need to replace `amd64` with `s390x`.
 
+TESTER: Edit the image tag, for example replace `image: cp.icr.io/cp/ibp-operator:2.5.2-20220405-amd64` with test image tag.
+{: note}
+
 
 
 ```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: "ibp-webhook"
-  labels:
-    helm.sh/chart: "ibm-ibp"
-    app.kubernetes.io/name: "ibp"
-    app.kubernetes.io/instance: "ibp-webhook"
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app.kubernetes.io/instance: "ibp-webhook"
-  strategy:
-    type: Recreate
-  template:
-    metadata:
-      labels:
-        helm.sh/chart: "ibm-ibp"
-        app.kubernetes.io/name: "ibp"
-        app.kubernetes.io/instance: "ibp-webhook"
-      annotations:
-        productName: "IBM Blockchain Platform"
-        productID: "54283fa24f1a4e8589964e6e92626ec4"
-        productVersion: "2.5.2"
-    spec:
-      serviceAccountName: webhook
-      imagePullSecrets:
-        - name: docker-key-secret
-        - name: ibm-entitlement-key
-      hostIPC: false
-      hostNetwork: false
-      hostPID: false
-      securityContext:
-        runAsNonRoot: true
-        runAsUser: 1000
-        fsGroup: 2000
-      containers:
-        - name: "ibp-webhook"
-          image: "cp.icr.io/cp/ibp-crdwebhook:2.5.2-20220405-amd64"
-          imagePullPolicy: Always
-          securityContext:
-            privileged: false
-            allowPrivilegeEscalation: false
-            readOnlyRootFilesystem: true
-            runAsNonRoot: true
-            runAsUser: 1000
-            capabilities:
-              drop:
-                - ALL
-              add:
-                - NET_BIND_SERVICE
-          env:
-            - name: "LICENSE"
-              value: "accept"
-            - name: NAMESPACE
-              valueFrom:
-                fieldRef:
-                  fieldPath: metadata.namespace
-          ports:
-            - name: server
-              containerPort: 3000
-          livenessProbe:
-            httpGet:
-              path: /healthz
-              port: server
-              scheme: HTTPS
-            initialDelaySeconds: 30
-            timeoutSeconds: 5
-            failureThreshold: 6
-          readinessProbe:
-            httpGet:
-              path: /healthz
-              port: server
-              scheme: HTTPS
-            initialDelaySeconds: 26
-            timeoutSeconds: 5
-            periodSeconds: 5
-          resources:
-            requests:
-              cpu: 0.1
-              memory: "100Mi"
 
 ```
 {: codeblock}
@@ -1001,24 +398,6 @@ deployment.apps/ibp-webhook created
 Secondly, copy the following text to a file on your local system and save the file as `service.yaml`.
 
 ```yaml
-apiVersion: v1
-kind: Service
-metadata:
-  name: "ibp-webhook"
-  labels:
-    type: "webhook"
-    app.kubernetes.io/name: "ibp"
-    app.kubernetes.io/instance: "ibp-webhook"
-    helm.sh/chart: "ibm-ibp"
-spec:
-  type: ClusterIP
-  ports:
-    - name: server
-      port: 443
-      targetPort: server
-      protocol: TCP
-  selector:
-    app.kubernetes.io/instance: "ibp-webhook"
 
 ```
 {: codeblock}
@@ -1048,87 +427,7 @@ service/ibp-webhook created
 Run this command to update the CA CRD:   
 ```yaml
 cat <<EOF | kubectl apply  -f -
-apiVersion: apiextensions.k8s.io/v1
-kind: CustomResourceDefinition
-metadata:
-  name: ibpcas.ibp.com
-  labels:
-    app.kubernetes.io/instance: ibpca
-    app.kubernetes.io/managed-by: ibp-operator
-    app.kubernetes.io/name: ibp
-    helm.sh/chart: ibm-ibp
-    release: operator
-spec:
-  conversion:
-    strategy: Webhook
-    webhook:
-      clientConfig:
-        caBundle: "${TLS_CERT}"
-        service:
-          name: ibp-webhook
-          namespace: ibpinfra
-          path: /crdconvert
-      conversionReviewVersions:
-      - v1beta1
-      - v1alpha2
-      - v1alpha1
-  group: ibp.com
-  names:
-    kind: IBPCA
-    listKind: IBPCAList
-    plural: ibpcas
-    singular: ibpca
-  scope: Namespaced
-  versions:
-  - name: v1beta1
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: true
-    subresources:
-      status: {}
-  - name: v1alpha2
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: false
-    subresources:
-      status: {}
-  - name: v210
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: false
-    storage: false
-    subresources:
-      status: {}
-  - name: v212
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: false
-    storage: false
-    subresources:
-      status: {}
-  - name: v1alpha1
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: false
-    subresources:
-      status: {}
-status:
-  acceptedNames:
-    kind: IBPCA
-    listKind: IBPCAList
-    plural: ibpcas
-    singular: ibpca
-  conditions: []
-  storedVersions:
-  - v1beta1
+
 EOF
 ```
 {: codeblock}
@@ -1148,71 +447,7 @@ customresourcedefinition.apiextensions.k8s.io/ibpcas.ibp.com configured
 Run this command to update the peer CRD:
 ```yaml
 cat <<EOF | kubectl apply  -f -
-apiVersion: apiextensions.k8s.io/v1
-kind: CustomResourceDefinition
-metadata:
-  name: ibppeers.ibp.com
-  labels:
-    release: "operator"
-    helm.sh/chart: "ibm-ibp"
-    app.kubernetes.io/name: "ibp"
-    app.kubernetes.io/instance: "ibppeer"
-    app.kubernetes.io/managed-by: "ibp-operator"
-spec:
-  conversion:
-    strategy: Webhook
-    webhook:
-      clientConfig:
-        caBundle: "${TLS_CERT}"
-        service:
-          name: ibp-webhook
-          namespace: ibpinfra
-          path: /crdconvert
-      conversionReviewVersions:
-      - v1beta1
-      - v1alpha2
-      - v1alpha1
-  group: ibp.com
-  names:
-    kind: IBPPeer
-    listKind: IBPPeerList
-    plural: ibppeers
-    singular: ibppeer
-  scope: Namespaced
-  versions:
-  - name: v1beta1
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: true
-    subresources:
-      status: {}
-  - name: v1alpha2
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: false
-    subresources:
-      status: {}
-  - name: v1alpha1
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: false
-    subresources:
-      status: {}
-status:
-  acceptedNames:
-    kind: IBPPeer
-    listKind: IBPPeerList
-    plural: ibppeers
-    singular: ibppeer
-  conditions: []
-  storedVersions:
-  - v1beta1
+
 EOF
 ```
 {: codeblock}
@@ -1232,71 +467,6 @@ customresourcedefinition.apiextensions.k8s.io/ibppeers.ibp.com configured
 Run this command to update the console CRD:
 ```yaml
 cat <<EOF | kubectl apply  -f -
-apiVersion: apiextensions.k8s.io/v1
-kind: CustomResourceDefinition
-metadata:
-  name: ibpconsoles.ibp.com
-  labels:
-    release: "operator"
-    helm.sh/chart: "ibm-ibp"
-    app.kubernetes.io/name: "ibp"
-    app.kubernetes.io/instance: "ibpconsole"
-    app.kubernetes.io/managed-by: "ibp-operator"
-spec:
-  conversion:
-    strategy: Webhook
-    webhook:
-      clientConfig:
-        caBundle: "${TLS_CERT}"
-        service:
-          name: ibp-webhook
-          namespace: ibpinfra
-          path: /crdconvert
-      conversionReviewVersions:
-      - v1beta1
-      - v1alpha2
-      - v1alpha1
-  group: ibp.com
-  names:
-    kind: IBPConsole
-    listKind: IBPConsoleList
-    plural: ibpconsoles
-    singular: ibpconsole
-  scope: Namespaced
-  versions:
-  - name: v1beta1
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: true
-    subresources:
-      status: {}
-  - name: v1alpha2
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: false
-    subresources:
-      status: {}
-  - name: v1alpha1
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: false
-    subresources:
-      status: {}
-status:
-  acceptedNames:
-    kind: IBPConsole
-    listKind: IBPConsoleList
-    plural: ibpconsoles
-    singular: ibpconsole
-  conditions: []
-  storedVersions:
-  - v1beta1
 
 EOF
 ```
@@ -1317,71 +487,7 @@ customresourcedefinition.apiextensions.k8s.io/ibpconsoles.ibp.com configured
 Run this command to update the orderer CRD:  
 ```yaml
 cat <<EOF | kubectl apply  -f -
-apiVersion: apiextensions.k8s.io/v1
-kind: CustomResourceDefinition
-metadata:
-  name: ibporderers.ibp.com
-  labels:
-    release: "operator"
-    helm.sh/chart: "ibm-ibp"
-    app.kubernetes.io/name: "ibp"
-    app.kubernetes.io/instance: "ibporderer"
-    app.kubernetes.io/managed-by: "ibp-operator"
-spec:
-  conversion:
-    strategy: Webhook
-    webhook:
-      clientConfig:
-        caBundle: "${TLS_CERT}"
-        service:
-          name: ibp-webhook
-          namespace: ibpinfra
-          path: /crdconvert
-      conversionReviewVersions:
-      - v1beta1
-      - v1alpha2
-      - v1alpha1
-  group: ibp.com
-  names:
-    kind: IBPOrderer
-    listKind: IBPOrdererList
-    plural: ibporderers
-    singular: ibporderer
-  scope: Namespaced
-  versions:
-  - name: v1beta1
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: true
-    subresources:
-      status: {}
-  - name: v1alpha2
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: false
-    subresources:
-      status: {}
-  - name: v1alpha1
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: false
-    subresources:
-      status: {}
-status:
-  acceptedNames:
-    kind: IBPOrderer
-    listKind: IBPOrdererList
-    plural: ibporderers
-    singular: ibporderer
-  conditions: []
-  storedVersions:
-  - v1beta1
+
 EOF
 ```
 {: codeblock}
@@ -1404,192 +510,7 @@ customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com configured
 You need to update the ClusterRole that is applied to your project. Copy the following text to a file on your local system and save the file as `ibp-clusterrole.yaml`. Edit the file and replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.
 
 ```yaml
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRole
-metadata:
-  name: <NAMESPACE>
-  labels:
-    release: "operator"
-    helm.sh/chart: "ibm-ibp"
-    app.kubernetes.io/name: "ibp"
-    app.kubernetes.io/instance: "ibp"
-    app.kubernetes.io/managed-by: "ibp-operator"
-rules:
-- apiGroups:
-  - extensions
-  resourceNames:
-  - ibm-blockchain-platform-psp
-  resources:
-  - podsecuritypolicies
-  verbs:
-  - use
-- apiGroups:
-  - apiextensions.k8s.io
-  resources:
-  - persistentvolumeclaims
-  - persistentvolumes
-  verbs:
-  - get
-  - list
-  - create
-  - update
-  - patch
-  - watch
-  - delete
-  - deletecollection
-- apiGroups:
-  - apiextensions.k8s.io
-  resources:
-  - customresourcedefinitions
-  verbs:
-  - get
-- apiGroups:
-  - route.openshift.io
-  resources:
-  - routes
-  - routes/custom-host
-  verbs:
-  - get
-  - list
-  - create
-  - update
-  - patch
-  - watch
-  - delete
-  - deletecollection
-- apiGroups:
-  - ""
-  resources:
-  - pods
-  - pods/log
-  - persistentvolumeclaims
-  - persistentvolumes
-  - services
-  - endpoints
-  - events
-  - configmaps
-  - secrets
-  - nodes
-  - serviceaccounts
-  verbs:
-  - get
-  - list
-  - create
-  - update
-  - patch
-  - watch
-  - delete
-  - deletecollection
-- apiGroups:
-  - "batch"
-  resources:
-  - jobs
-  verbs:
-  - get
-  - list
-  - create
-  - update
-  - patch
-  - watch
-  - delete
-  - deletecollection
-- apiGroups:
-  - "authorization.openshift.io"
-  - "rbac.authorization.k8s.io"
-  resources:
-  - roles
-  - rolebindings
-  verbs:
-  - get
-  - list
-  - create
-  - update
-  - patch
-  - watch
-  - delete
-  - deletecollection
-  - bind
-  - escalate
-- apiGroups:
-  - ""
-  resources:
-  - namespaces
-  verbs:
-  - get
-- apiGroups:
-  - apps
-  resources:
-  - deployments
-  - daemonsets
-  - replicasets
-  - statefulsets
-  verbs:
-  - get
-  - list
-  - create
-  - update
-  - patch
-  - watch
-  - delete
-  - deletecollection
-- apiGroups:
-  - monitoring.coreos.com
-  resources:
-  - servicemonitors
-  verbs:
-  - get
-  - create
-- apiGroups:
-  - apps
-  resourceNames:
-  - ibp-operator
-  resources:
-  - deployments/finalizers
-  verbs:
-  - update
-- apiGroups:
-  - ibp.com
-  resources:
-  - ibpcas.ibp.com
-  - ibppeers.ibp.com
-  - ibporderers.ibp.com
-  - ibpconsoles.ibp.com
-  - ibpcas
-  - ibppeers
-  - ibporderers
-  - ibpconsoles
-  - ibpcas/finalizers
-  - ibppeers/finalizers
-  - ibporderers/finalizers
-  - ibpconsoles/finalizers
-  - ibpcas/status
-  - ibppeers/status
-  - ibporderers/status
-  - ibpconsoles/status
-  verbs:
-  - get
-  - list
-  - create
-  - update
-  - patch
-  - watch
-  - delete
-  - deletecollection
-- apiGroups:
-  - extensions
-  - networking.k8s.io
-  - config.openshift.io
-  resources:
-  - ingresses
-  verbs:
-  - get
-  - list
-  - create
-  - update
-  - patch
-  - watch
-  - delete
-  - deletecollection
+
 ```
 {: codeblock}
 
@@ -1812,36 +733,6 @@ The first three steps are for deployment of the webhook. The last step is for cr
 Copy the following text to a file on your local system and save the file as `rbac.yaml`. This step allows the webhook to read and create a TLS secret in its own project.
 
 ```yaml
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: webhook
-  namespace: ibpinfra
----
-apiVersion: rbac.authorization.k8s.io/v1
-kind: Role
-metadata:
-  name: webhook
-rules:
-- apiGroups:
-  - "*"
-  resources:
-  - secrets
-  verbs:
-  - "*"
----
-kind: RoleBinding
-apiVersion: rbac.authorization.k8s.io/v1
-metadata:
-  name: ibpinfra
-subjects:
-- kind: ServiceAccount
-  name: webhook
-  namespace: ibpinfra
-roleRef:
-  kind: Role
-  name: webhook
-  apiGroup: rbac.authorization.k8s.io
 
 ```
 {: codeblock}
@@ -1863,41 +754,6 @@ rolebinding.rbac.authorization.k8s.io/ibpinfra created
 
 Skip this step if you are not using OpenShift. The {{site.data.keyword.blockchainfull_notm}} Platform requires specific security and access policies to be added to the `ibpinfra` project. Copy the security context constraint object below and save it to your local system as `ibpinfra-scc.yaml`. Replace `<PROJECT_NAME>` with `ibpinfra`.
 ```yaml
-allowHostDirVolumePlugin: false
-allowHostIPC: false
-allowHostNetwork: false
-allowHostPID: false
-allowHostPorts: false
-allowPrivilegeEscalation: true
-allowPrivilegedContainer: true
-allowedCapabilities:
-- NET_BIND_SERVICE
-- CHOWN
-- DAC_OVERRIDE
-- SETGID
-- SETUID
-- FOWNER
-apiVersion: security.openshift.io/v1
-defaultAddCapabilities: []
-fsGroup:
-  type: RunAsAny
-groups:
-- system:serviceaccounts:<PROJECT_NAME>
-kind: SecurityContextConstraints
-metadata:
-  name: <PROJECT_NAME>
-readOnlyRootFilesystem: false
-requiredDropCapabilities: []
-runAsUser:
-  type: RunAsAny
-seLinuxContext:
-  type: RunAsAny
-supplementalGroups:
-  type: RunAsAny
-users:
-- system:serviceaccounts:<PROJECT_NAME>
-volumes:
-- "*"
 
 ```
 {: codeblock}
@@ -1926,91 +782,12 @@ In order to deploy the webhook, you need to create two `.yaml` files and apply t
 
 Copy the following text to a file on your local system and save the file as `deployment.yaml`. If you are deploying on OpenShift Container Platform on LinuxONE, you need to replace `amd64` with `s390x`.
 
+TESTER: Edit the image tag, for example replace `image: cp.icr.io/cp/ibp-operator:2.5.2-20220405-amd64` with test image tag.
+{: note}
+
 
 
 ```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: "ibp-webhook"
-  labels:
-    helm.sh/chart: "ibm-ibp"
-    app.kubernetes.io/name: "ibp"
-    app.kubernetes.io/instance: "ibp-webhook"
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app.kubernetes.io/instance: "ibp-webhook"
-  strategy:
-    type: Recreate
-  template:
-    metadata:
-      labels:
-        helm.sh/chart: "ibm-ibp"
-        app.kubernetes.io/name: "ibp"
-        app.kubernetes.io/instance: "ibp-webhook"
-      annotations:
-        productName: "IBM Blockchain Platform"
-        productID: "54283fa24f1a4e8589964e6e92626ec4"
-        productVersion: "2.5.2"
-    spec:
-      serviceAccountName: webhook
-      imagePullSecrets:
-        - name: docker-key-secret
-        - name: ibm-entitlement-key
-      hostIPC: false
-      hostNetwork: false
-      hostPID: false
-      securityContext:
-        runAsNonRoot: true
-        runAsUser: 1000
-        fsGroup: 2000
-      containers:
-        - name: "ibp-webhook"
-          image: "cp.icr.io/cp/ibp-crdwebhook:2.5.2-20220405-amd64"
-          imagePullPolicy: Always
-          securityContext:
-            privileged: false
-            allowPrivilegeEscalation: false
-            readOnlyRootFilesystem: true
-            runAsNonRoot: true
-            runAsUser: 1000
-            capabilities:
-              drop:
-                - ALL
-              add:
-                - NET_BIND_SERVICE
-          env:
-            - name: "LICENSE"
-              value: "accept"
-            - name: NAMESPACE
-              valueFrom:
-                fieldRef:
-                  fieldPath: metadata.namespace
-          ports:
-            - name: server
-              containerPort: 3000
-          livenessProbe:
-            httpGet:
-              path: /healthz
-              port: server
-              scheme: HTTPS
-            initialDelaySeconds: 30
-            timeoutSeconds: 5
-            failureThreshold: 6
-          readinessProbe:
-            httpGet:
-              path: /healthz
-              port: server
-              scheme: HTTPS
-            initialDelaySeconds: 26
-            timeoutSeconds: 5
-            periodSeconds: 5
-          resources:
-            requests:
-              cpu: 0.1
-              memory: "100Mi"
 
 ```
 {: codeblock}
@@ -2032,24 +809,6 @@ deployment.apps/ibp-webhook created
 Secondly, copy the following text to a file on your local system and save the file as `service.yaml`.
 
 ```yaml
-apiVersion: v1
-kind: Service
-metadata:
-  name: "ibp-webhook"
-  labels:
-    type: "webhook"
-    app.kubernetes.io/name: "ibp"
-    app.kubernetes.io/instance: "ibp-webhook"
-    helm.sh/chart: "ibm-ibp"
-spec:
-  type: ClusterIP
-  ports:
-    - name: server
-      port: 443
-      targetPort: server
-      protocol: TCP
-  selector:
-    app.kubernetes.io/instance: "ibp-webhook"
 
 ```
 {: codeblock}
@@ -2079,87 +838,7 @@ service/ibp-webhook created
 Run this command to update the CA CRD:   
 ```yaml
 cat <<EOF | kubectl apply  -f -
-apiVersion: apiextensions.k8s.io/v1
-kind: CustomResourceDefinition
-metadata:
-  name: ibpcas.ibp.com
-  labels:
-    app.kubernetes.io/instance: ibpca
-    app.kubernetes.io/managed-by: ibp-operator
-    app.kubernetes.io/name: ibp
-    helm.sh/chart: ibm-ibp
-    release: operator
-spec:
-  conversion:
-    strategy: Webhook
-    webhook:
-      clientConfig:
-        caBundle: "${TLS_CERT}"
-        service:
-          name: ibp-webhook
-          namespace: ibpinfra
-          path: /crdconvert
-      conversionReviewVersions:
-      - v1beta1
-      - v1alpha2
-      - v1alpha1
-  group: ibp.com
-  names:
-    kind: IBPCA
-    listKind: IBPCAList
-    plural: ibpcas
-    singular: ibpca
-  scope: Namespaced
-  versions:
-  - name: v1beta1
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: true
-    subresources:
-      status: {}
-  - name: v1alpha2
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: false
-    subresources:
-      status: {}
-  - name: v210
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: false
-    storage: false
-    subresources:
-      status: {}
-  - name: v212
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: false
-    storage: false
-    subresources:
-      status: {}
-  - name: v1alpha1
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: false
-    subresources:
-      status: {}
-status:
-  acceptedNames:
-    kind: IBPCA
-    listKind: IBPCAList
-    plural: ibpcas
-    singular: ibpca
-  conditions: []
-  storedVersions:
-  - v1beta1
+
 EOF
 ```
 {: codeblock}
@@ -2179,71 +858,7 @@ customresourcedefinition.apiextensions.k8s.io/ibpcas.ibp.com configured
 Run this command to update the peer CRD:
 ```yaml
 cat <<EOF | kubectl apply  -f -
-apiVersion: apiextensions.k8s.io/v1
-kind: CustomResourceDefinition
-metadata:
-  name: ibppeers.ibp.com
-  labels:
-    release: "operator"
-    helm.sh/chart: "ibm-ibp"
-    app.kubernetes.io/name: "ibp"
-    app.kubernetes.io/instance: "ibppeer"
-    app.kubernetes.io/managed-by: "ibp-operator"
-spec:
-  conversion:
-    strategy: Webhook
-    webhook:
-      clientConfig:
-        caBundle: "${TLS_CERT}"
-        service:
-          name: ibp-webhook
-          namespace: ibpinfra
-          path: /crdconvert
-      conversionReviewVersions:
-      - v1beta1
-      - v1alpha2
-      - v1alpha1
-  group: ibp.com
-  names:
-    kind: IBPPeer
-    listKind: IBPPeerList
-    plural: ibppeers
-    singular: ibppeer
-  scope: Namespaced
-  versions:
-  - name: v1beta1
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: true
-    subresources:
-      status: {}
-  - name: v1alpha2
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: false
-    subresources:
-      status: {}
-  - name: v1alpha1
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: false
-    subresources:
-      status: {}
-status:
-  acceptedNames:
-    kind: IBPPeer
-    listKind: IBPPeerList
-    plural: ibppeers
-    singular: ibppeer
-  conditions: []
-  storedVersions:
-  - v1beta1
+
 EOF
 ```
 {: codeblock}
@@ -2263,71 +878,6 @@ customresourcedefinition.apiextensions.k8s.io/ibppeers.ibp.com configured
 Run this command to update the console CRD:
 ```yaml
 cat <<EOF | kubectl apply  -f -
-apiVersion: apiextensions.k8s.io/v1
-kind: CustomResourceDefinition
-metadata:
-  name: ibpconsoles.ibp.com
-  labels:
-    release: "operator"
-    helm.sh/chart: "ibm-ibp"
-    app.kubernetes.io/name: "ibp"
-    app.kubernetes.io/instance: "ibpconsole"
-    app.kubernetes.io/managed-by: "ibp-operator"
-spec:
-  conversion:
-    strategy: Webhook
-    webhook:
-      clientConfig:
-        caBundle: "${TLS_CERT}"
-        service:
-          name: ibp-webhook
-          namespace: ibpinfra
-          path: /crdconvert
-      conversionReviewVersions:
-      - v1beta1
-      - v1alpha2
-      - v1alpha1
-  group: ibp.com
-  names:
-    kind: IBPConsole
-    listKind: IBPConsoleList
-    plural: ibpconsoles
-    singular: ibpconsole
-  scope: Namespaced
-  versions:
-  - name: v1beta1
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: true
-    subresources:
-      status: {}
-  - name: v1alpha2
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: false
-    subresources:
-      status: {}
-  - name: v1alpha1
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: false
-    subresources:
-      status: {}
-status:
-  acceptedNames:
-    kind: IBPConsole
-    listKind: IBPConsoleList
-    plural: ibpconsoles
-    singular: ibpconsole
-  conditions: []
-  storedVersions:
-  - v1beta1
 
 EOF
 ```
@@ -2348,71 +898,7 @@ customresourcedefinition.apiextensions.k8s.io/ibpconsoles.ibp.com configured
 Run this command to update the orderer CRD:  
 ```yaml
 cat <<EOF | kubectl apply  -f -
-apiVersion: apiextensions.k8s.io/v1
-kind: CustomResourceDefinition
-metadata:
-  name: ibporderers.ibp.com
-  labels:
-    release: "operator"
-    helm.sh/chart: "ibm-ibp"
-    app.kubernetes.io/name: "ibp"
-    app.kubernetes.io/instance: "ibporderer"
-    app.kubernetes.io/managed-by: "ibp-operator"
-spec:
-  conversion:
-    strategy: Webhook
-    webhook:
-      clientConfig:
-        caBundle: "${TLS_CERT}"
-        service:
-          name: ibp-webhook
-          namespace: ibpinfra
-          path: /crdconvert
-      conversionReviewVersions:
-      - v1beta1
-      - v1alpha2
-      - v1alpha1
-  group: ibp.com
-  names:
-    kind: IBPOrderer
-    listKind: IBPOrdererList
-    plural: ibporderers
-    singular: ibporderer
-  scope: Namespaced
-  versions:
-  - name: v1beta1
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: true
-    subresources:
-      status: {}
-  - name: v1alpha2
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: false
-    subresources:
-      status: {}
-  - name: v1alpha1
-    schema:
-      openAPIV3Schema:
-        x-kubernetes-preserve-unknown-fields: true
-    served: true
-    storage: false
-    subresources:
-      status: {}
-status:
-  acceptedNames:
-    kind: IBPOrderer
-    listKind: IBPOrdererList
-    plural: ibporderers
-    singular: ibporderer
-  conditions: []
-  storedVersions:
-  - v1beta1
+
 EOF
 ```
 {: codeblock}
@@ -2435,192 +921,7 @@ customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com configured
 You need to update the ClusterRole that is applied to your project. Copy the following text to a file on your local system and save the file as `ibp-clusterrole.yaml`. Edit the file and replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace.  
 
 ```yaml
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRole
-metadata:
-  name: <NAMESPACE>
-  labels:
-    release: "operator"
-    helm.sh/chart: "ibm-ibp"
-    app.kubernetes.io/name: "ibp"
-    app.kubernetes.io/instance: "ibp"
-    app.kubernetes.io/managed-by: "ibp-operator"
-rules:
-- apiGroups:
-  - extensions
-  resourceNames:
-  - ibm-blockchain-platform-psp
-  resources:
-  - podsecuritypolicies
-  verbs:
-  - use
-- apiGroups:
-  - apiextensions.k8s.io
-  resources:
-  - persistentvolumeclaims
-  - persistentvolumes
-  verbs:
-  - get
-  - list
-  - create
-  - update
-  - patch
-  - watch
-  - delete
-  - deletecollection
-- apiGroups:
-  - apiextensions.k8s.io
-  resources:
-  - customresourcedefinitions
-  verbs:
-  - get
-- apiGroups:
-  - route.openshift.io
-  resources:
-  - routes
-  - routes/custom-host
-  verbs:
-  - get
-  - list
-  - create
-  - update
-  - patch
-  - watch
-  - delete
-  - deletecollection
-- apiGroups:
-  - ""
-  resources:
-  - pods
-  - pods/log
-  - persistentvolumeclaims
-  - persistentvolumes
-  - services
-  - endpoints
-  - events
-  - configmaps
-  - secrets
-  - nodes
-  - serviceaccounts
-  verbs:
-  - get
-  - list
-  - create
-  - update
-  - patch
-  - watch
-  - delete
-  - deletecollection
-- apiGroups:
-  - "batch"
-  resources:
-  - jobs
-  verbs:
-  - get
-  - list
-  - create
-  - update
-  - patch
-  - watch
-  - delete
-  - deletecollection
-- apiGroups:
-  - "authorization.openshift.io"
-  - "rbac.authorization.k8s.io"
-  resources:
-  - roles
-  - rolebindings
-  verbs:
-  - get
-  - list
-  - create
-  - update
-  - patch
-  - watch
-  - delete
-  - deletecollection
-  - bind
-  - escalate
-- apiGroups:
-  - ""
-  resources:
-  - namespaces
-  verbs:
-  - get
-- apiGroups:
-  - apps
-  resources:
-  - deployments
-  - daemonsets
-  - replicasets
-  - statefulsets
-  verbs:
-  - get
-  - list
-  - create
-  - update
-  - patch
-  - watch
-  - delete
-  - deletecollection
-- apiGroups:
-  - monitoring.coreos.com
-  resources:
-  - servicemonitors
-  verbs:
-  - get
-  - create
-- apiGroups:
-  - apps
-  resourceNames:
-  - ibp-operator
-  resources:
-  - deployments/finalizers
-  verbs:
-  - update
-- apiGroups:
-  - ibp.com
-  resources:
-  - ibpcas.ibp.com
-  - ibppeers.ibp.com
-  - ibporderers.ibp.com
-  - ibpconsoles.ibp.com
-  - ibpcas
-  - ibppeers
-  - ibporderers
-  - ibpconsoles
-  - ibpcas/finalizers
-  - ibppeers/finalizers
-  - ibporderers/finalizers
-  - ibpconsoles/finalizers
-  - ibpcas/status
-  - ibppeers/status
-  - ibporderers/status
-  - ibpconsoles/status
-  verbs:
-  - get
-  - list
-  - create
-  - update
-  - patch
-  - watch
-  - delete
-  - deletecollection
-- apiGroups:
-  - extensions
-  - networking.k8s.io
-  - config.openshift.io
-  resources:
-  - ingresses
-  verbs:
-  - get
-  - list
-  - create
-  - update
-  - patch
-  - watch
-  - delete
-  - deletecollection
+
 ```
 {: codeblock}
 

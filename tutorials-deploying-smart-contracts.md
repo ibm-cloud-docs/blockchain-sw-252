@@ -1,0 +1,40 @@
+---
+
+copyright:
+  years: 2022
+lastupdated: "2022-07-20"
+
+keywords: tutorials, how-to, deploy smart contracts
+
+subcollection: blockchain-sw-252
+
+---
+
+{:external: target="_blank" .external}
+{:shortdesc: .shortdesc}
+{:screen: .screen}
+{:codeblock: .codeblock}
+{:note: .note}
+{:important: .important}
+{:tip: .tip}
+{:term: .term}
+{:pre: .pre}
+
+
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSVKZ7_2.5.2/tutorials-deploying-smart-contracts.html](https://www.ibm.com/docs/en/SSVKZ7_2.5.2/tutorials-deploying-smart-contracts.html){: external}. Update your bookmarks.
+{: important}
+
+# Deploying smart contracts
+{: #ibp-tutorials-deploying-smart-contracts}
+
+Use the IBM Blockchain Platform deploying smart contracts tutorials to get hands-on experience configuring, developing, and 
+deploying smart contracts (in chaincode) on {{site.data.keyword.blockchainfull_notm}} networks.
+{: shortdesc}
+
+**Target audience:** This topic is designed for architects, system administrators, and developers who are responsible 
+for planning, configuring, and developing smart contracts in chaincode for {{site.data.keyword.blockchainfull_notm}} 2.5.2 networks.
+
+Use the deploying smart contracts tutorials to get an overview of smart contracts and chaincode, and to learn how to deploy a smart contract on Hyperledger [Fabric v2.x](howto/ibp-console-smart-contracts-v2.md) or [Fabric v1.4](howto/ibp-console-smart-contracts-v14.md) (deprecated).
+
